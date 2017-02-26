@@ -1,0 +1,24 @@
+{
+    "curly": true,
+    "eqeqeq": true,
+    "forin": true,
+    "funcscope": true,
+    "freeze": true,
+    "futurehostile": true,
+    "jasmine": true,
+    "nonbsp": true,
+    "nonew": true,
+    "notypeof": true,
+    "unused": true,
+    "undef": true,
+    "globals": {
+        "document": true,
+        "angular": true,
+        "require": true,
+        "module": true,
+        "inject": true,
+        "exports": true,
+        "window": true,
+        "zw": true
+    }
+}
