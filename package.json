@@ -1,7 +1,7 @@
 {
-  "name": "zstyles.javascript",
-  "version": "1.0.0",
-  "description": "Zthun's style formatters for javascript.",
+  "name": "zwebstyles",
+  "version": "0.0.0",
+  "description": "Style checks for web projects using common rules.",
   "license": "ISC",
   "scripts": {
     "prepublish": "grunt"
