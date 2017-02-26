@@ -10,7 +10,7 @@
     "type": "git",
     "url": "https://bitbucket.org/zthun/zstyles.javascript"
   },
-  "keywords": {
+  "keywords": [
     "styles",
     "practices",
     "formatting",
@@ -21,7 +21,7 @@
     "zstyles",
     "zstyles.javascript",
     "javascript"
-  },
+  ],
   "author": "Anthony Bonta",
   "devDependencies": {
     "grunt": "^1.0.1",
