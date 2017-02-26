@@ -17,10 +17,16 @@ module.exports = function (grunt) {
             jshint: {
                 src: ['.jshintrc']
             }
+        },
+        yaml_validator: {
+            sasslint: {
+                src: ['.sasslint.yml']
+            }
         }
     });
 
     grunt.registerTask('default', [
-        'jsonlint'
+        'jsonlint',
+        'yaml_validator'
     ]);
 };
