@@ -22,9 +22,12 @@ rules:
   no-important: 2
   variable-for-property: 2
   hex-notation: 2
-  space-after-color: 2
+  space-before-brace: 2
+  space-after-colon: 2
   single-line-per-selector: 2
   force-pseudo-nesting: 2
+  force-element-nesting: 2
+  border-zero: 2
   nesting-depth:
     - 2
     -
