@@ -11,9 +11,9 @@ pipelines:
   custom: 
     snapshot:
       - step:
-        script:
-          - npm install
-          - grunt
-          - npm version
-          - git push 
-          - git push --tags
+          script:
+            - npm install
+            - grunt
+            - npm version
+            - git push 
+            - git push --tags
