@@ -21,6 +21,9 @@ module.exports = function (grunt) {
         yaml_validator: {
             sasslint: {
                 src: ['.sasslint.yml']
+            },
+            bitbucket: {
+                src: ['bitbucket-pipelines.yml']
             }
         }
     });
