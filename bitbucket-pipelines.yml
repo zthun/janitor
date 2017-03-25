@@ -10,7 +10,7 @@ pipelines:
           - grunt
   custom: 
     - snapshot:
-      -step:
+      - step:
         script:
           - npm install
           - grunt
