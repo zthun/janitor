@@ -9,8 +9,8 @@ pipelines:
           - npm install
           - grunt
   custom: 
-    - snapshot
-        script
+    - snapshot:
+        script:
           - npm install
           - grunt
           - npm version
