@@ -8,4 +8,11 @@ pipelines:
         script:
           - npm install
           - grunt
-    
+  custom: 
+    - snapshot
+        script
+          - npm install
+          - grunt
+          - npm version
+          - git push 
+          - git push --tags
