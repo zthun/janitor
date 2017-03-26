@@ -1,3 +1,7 @@
 *
 !.*rc
 !*.yml
+*
+!.*rc
+!*.yml
+bitbucket-pipelines.yml
