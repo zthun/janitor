@@ -3,12 +3,9 @@
   "version": "1.0.2",
   "description": "Style checks for web projects using common rules.",
   "license": "ISC",
-  "scripts": {
-    "prepublish": "grunt"
-  },
   "repository": {
     "type": "git",
-    "url": "https://bitbucket.org/zthun/zstyles.javascript"
+    "url": "https://github.com/zthun/zwebstyles"
   },
   "keywords": [
     "styles",
@@ -18,15 +15,16 @@
     "jshint",
     "htmlhint",
     "sasslint",
-    "zstyles",
-    "zstyles.javascript",
+    "eslint",
+    "sass",
     "javascript"
   ],
   "author": "Anthony Bonta",
   "devDependencies": {
-    "grunt": "^1.0.1",
-    "grunt-jsonlint": "^1.1.0",
-    "grunt-yaml-validator": "^0.10.0",
-    "load-grunt-tasks": "^3.5.2"
+    "grunt": "=1.0.1",
+    "grunt-jsonlint": "=1.1.0",
+    "grunt-release": "=0.14.0",
+    "grunt-yaml-validator": "=0.10.0",
+    "load-grunt-tasks": "=3.5.2"
   }
 }

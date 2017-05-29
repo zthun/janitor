@@ -8,19 +8,24 @@ module.exports = function (grunt) {
     grunt.initConfig({
         // Check
         jsonlint: {
-            options: {
-                jshintrc: true
-            },
             htmlhint: {
                 src: ['.htmlhintrc']
             },
             jshint: {
                 src: ['.jshintrc']
+            },
+            eslint: {
+                src: ['.eslintrc']
             }
         },
         yaml_validator: {
             sasslint: {
                 src: ['.sasslint.yml']
+            }
+        },
+        release: {
+            options: {
+                beforeBump: ['default']
             }
         }
     });
