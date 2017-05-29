@@ -18,9 +18,10 @@ The following styling options are included in this package.
 
 |Config File|For|Description|
 |----|--|---------|
-|.jshintrc|Javascript|Used for [jshint](https://github.com/jshint/jshint) checks.|
-|.htmlhintrc|HTML|Used for [htmlhint](https://github.com/yaniswang/HTMLHint) checks.|
+|.jshintrc|Javascript|Used for [jshint](http://jshint.com/) checks.|
+|.htmlhintrc|HTML|Used for [htmlhint](http://htmlhint.com/) checks.|
 |.sasslint.yml|SASS|Used for [sasslint](https://github.com/sasstools/sass-lint) checks.|
+|.eslintrc|Used for [eslint](http://eslint.org/) checks.|
 
 
 Example
