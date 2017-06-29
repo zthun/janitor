@@ -7,7 +7,9 @@
     "env": {
         "browser": true,
         "node": true,
+        "commonjs": true,
         "jasmine": true,
+        "mocha": true,
         "protractor": true,
         "jquery": true
     }
