@@ -8,6 +8,9 @@ module.exports = function (grunt) {
     grunt.initConfig({
         // Check
         jsonlint: {
+            general: {
+                src: ['*.json']
+            },
             htmlhint: {
                 src: ['.htmlhintrc']
             },
@@ -19,8 +22,8 @@ module.exports = function (grunt) {
             }
         },
         yaml_validator: {
-            sasslint: {
-                src: ['.sasslint.yml']
+            general: {
+                src: ['*.json']
             }
         },
         release: {

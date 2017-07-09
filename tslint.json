@@ -1,0 +1,10 @@
+{
+    "extends": "tslint:recommended",
+    "rules": {
+        "no-empty-interface": false,
+        "no-invalid-this": false,
+        "no-null-keyword": false,
+        "quotemark": "single",
+        "trailing-comma": false
+    }
+}

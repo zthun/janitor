@@ -22,6 +22,7 @@ The following styling options are included in this package.
 |.htmlhintrc|HTML|Used for [htmlhint](http://htmlhint.com/) checks.|
 |.sasslint.yml|SASS|Used for [sasslint](https://github.com/sasstools/sass-lint) checks.|
 |.eslintrc|Javascript|Used for [eslint](http://eslint.org/) checks.|
+|tslint.json|Typescript|Used for [tslint](https://palantir.github.io/tslint/) checks.|
 
 
 Example

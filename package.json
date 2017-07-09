@@ -16,6 +16,7 @@
     "htmlhint",
     "sasslint",
     "eslint",
+    "tslint",
     "sass",
     "javascript"
   ],
