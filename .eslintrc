@@ -5,6 +5,23 @@
         "sourceType": "module"
     },
     "rules": {
+        "block-scoped-var": "error",
+        "eqeqeq": "error",
+        "no-else-return": "error",
+        "no-eval": "error",
+        "no-implied-eval": "error",
+        "strict": "error",
+        "no-undef": "error",
+        "no-undef-init": "error",
+        "no-undefined": "error",
+        "no-unused-vars": "error",
+        "no-use-before-define": ["error", {
+            "functions": false,
+            "classes": false,
+            "variables": true
+        }],
+        "no-path-concat": "error",
+        "callback-return": "error",
         "array-bracket-spacing": "error",
         "array-element-newline": "off",
         "block-spacing": "error",
