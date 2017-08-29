@@ -21,7 +21,8 @@
         "new-parens": true,
         "no-trailing-whitespace": false,
         "semicolon": [true, "always"],
-        "quotemark": "single",
-        "trailing-comma": false
+        "quotemark": [true, "single"],
+        "trailing-comma": false,
+        "max-line-length": false
     }
 }
