@@ -1,14 +1,13 @@
 Description
 ===========
-ZWebStyles is a collection of hint files that can be used with build tools to validate coding styles. 
-
+ZWebStyles is a collection of hint files that can be used with build tools to validate coding styles.
 
 Usage
 =====
 The usage depends on the tools your using.  To get the package itself, you can use npm.
 
 ```
-npm install zwebstyles --save-dev
+npm install @zthun/zwebstyles --save-dev
 ```
 
 Available Styles
@@ -56,7 +55,7 @@ You can also use them on the command line with various tools.
 
 ```
 eslint src/**/*.js config/**/*.js --config=node_modules/zwebstyles/.eslintrc --parser babel-eslint
-tslint -c node_modules/zwebstyles/tslint.json src/**/*.ts src/*.ts 
+tslint -c node_modules/zwebstyles/tslint.json src/**/*.ts src/*.ts
 sass-lint src/**/*.scss --config=node_modules/zwebstyles/.sasslint.yml -v -q
 htmlhint src/**/*.html --config=node_modules/zwebstyles/.htmlhintrc
 ```
