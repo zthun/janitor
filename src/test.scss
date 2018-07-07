@@ -1,0 +1,10 @@
+$blue: #00f;
+
+.article {
+  &.article-basic {
+    color: $blue;
+    ::before {
+      content: 'OK';
+    }
+  }
+}

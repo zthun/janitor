@@ -34,7 +34,7 @@
         "computed-property-spacing": "error",
         "eol-last": "error",
         "func-call-spacing": "error",
-        "indent": "error",
+        "indent": ["error", 2],
         "key-spacing": "error",
         "keyword-spacing": "error",
         "line-comment-position": "error",
@@ -66,10 +66,7 @@
         "no-plusplus": "off",
         "no-tabs": "error",
         "no-ternary": "off",
-        "no-trailing-spaces": ["error", {
-            "skipBlankLines": true,
-            "ignoreComments": true
-        }],
+        "no-trailing-spaces": "off",
         "no-underscore-dangle": "off",
         "no-unneeded-ternary": "error",
         "no-whitespace-before-property": "error",
@@ -89,14 +86,7 @@
             "unnecessary": true
         }],
         "quotes": ["error", "single"],
-        "require-jsdoc": ["error", {
-            "require": {
-                "FunctionDeclaration": true,
-                "ClassDeclaration": true,
-                "MethodDefinition": false,
-                "ArrowFunctionExpression": false
-            }
-        }],
+        "require-jsdoc": "off",
         "semi": "error",
         "semi-spacing": "error",
         "semi-style": "error",

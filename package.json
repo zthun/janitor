@@ -1,11 +1,24 @@
 {
-  "name": "@zthun/zwebstyles",
+  "name": "@zthun/web-styles",
   "version": "4.0.1",
-  "description": "Style checks for web projects using common rules.",
+  "description": "Style checks with tools for web projects using common rules.",
   "license": "ISC",
   "repository": {
     "type": "git",
     "url": "https://github.com/zthun/zwebstyles"
+  },
+  "scripts": {
+    "test:tslint": "tslint src/test.ts -c lint/tslint.json",
+    "test:sasslint": "sass-lint src/test.scss --config=lint/.sasslint.yml -v -q",
+    "test:htmlhint": "htmlhint src/test.html --config=lint/.htmlhintrc",
+    "test:eslint": "eslint src/test.js --config=lint/.eslintrc",
+    "test": "npm run test:eslint && npm run test:htmlhint && npm run test:sasslint && npm run test:tslint",
+    "lint:tslint": "jsonlint lint/tslint.json -q",
+    "lint:eslint": "jsonlint lint/.eslintrc -q",
+    "lint:htmlhint": "jsonlint lint/.htmlhintrc -q",
+    "lint:sasslint": "yamllint lint/.sasslint.yml",
+    "lint": "npm run lint:sasslint && npm run lint:htmlhint && npm run lint:eslint && npm run lint:tslint",
+    "make": "npm run lint && npm test"
   },
   "keywords": [
     "styles",
@@ -21,11 +34,13 @@
     "javascript"
   ],
   "author": "Anthony Bonta",
-  "devDependencies": {
-    "grunt": "=1.0.1",
-    "grunt-jsonlint": "=1.1.0",
-    "grunt-release": "=0.14.0",
-    "grunt-yaml-validator": "=0.10.0",
-    "load-grunt-tasks": "=3.5.2"
+  "dependencies": {
+    "eslint": "=5.0.1",
+    "htmlhint": "=0.9.13",
+    "jsonlint": "=1.6.3",
+    "sass-lint": "=1.12.1",
+    "tslint": "=5.10.0",
+    "typescript": "=2.9.2",
+    "yaml-lint": "=1.2.4"
   }
 }
