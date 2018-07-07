@@ -1,61 +1,39 @@
 Description
-===========
-ZWebStyles is a collection of hint files that can be used with build tools to validate coding styles.
+===
 
-Usage
-=====
-The usage depends on the tools your using.  To get the package itself, you can use npm.
+Zthuns web styles is a collection of lint files that can be used with build tools to validate coding styles.
+
+Getting Started
+===
+
+```sh
+npm install @zthun/web-styles --save-dev
+```
+In your package.json, add any of the following scripts.
 
 ```
-npm install @zthun/zwebstyles --save-dev
+"lint:js": "eslint src/**/*.js --config=node_modules/@zthun/web-styles/lint/.eslintrc",
+"lint:ts": "tslint src/**/*.ts -c node_modules/@zthun/web-styles/lint/tslint.json",
+"lint:sass": "sass-lint src/**/*.scss --config=node_modules/zwebstyles/.sasslint.yml -v -q",
+"lint:html": "htmlhint src/**/*.html --config=node_modules/zwebstyles/.htmlhintrc",
+"lint": "npm run lint:js && npm run lint:ts && npm run lint:sass && npm run lint:html"
 ```
 
-Available Styles
-================
-The following styling options are included in this package.
+You can now run the linters in your project directory.
 
+```sh
+npm run lint
+```
+
+Contents
+===
+The following styling options are included in this package under the lint folder.
 
 |Config File|For|Description|
 |-----------|---|-----------|
-|.jshintrc|Javascript|Used for [jshint](http://jshint.com/) checks.|
 |.htmlhintrc|HTML|Used for [htmlhint](http://htmlhint.com/) checks.|
 |.sasslint.yml|SASS|Used for [sasslint](https://github.com/sasstools/sass-lint) checks.|
 |.eslintrc|Javascript|Used for [eslint](http://eslint.org/) checks.|
 |tslint.json|Typescript|Used for [tslint](https://palantir.github.io/tslint/) checks.|
 
-
-Example
-=======
-In grunt, you can use this with the grunt-contrib-jshint plugin:
-
-```
-jshint: {
-    options: {
-        jshintrc: 'node_modules/zwebstyles/.jshintrc'
-    },
-    self: {
-        files: {
-            src: ['gruntfile.js']
-        }
-    },
-    main: {
-        files: {
-            src: ['src/**/*.js']
-        }
-    },
-    test: {
-        files: {
-            src: ['src/**/*.spec.js']
-        }
-    }
-}
-```
-
-You can also use them on the command line with various tools.
-
-```
-eslint src/**/*.js config/**/*.js --config=node_modules/zwebstyles/.eslintrc --parser babel-eslint
-tslint -c node_modules/zwebstyles/tslint.json src/**/*.ts src/*.ts
-sass-lint src/**/*.scss --config=node_modules/zwebstyles/.sasslint.yml -v -q
-htmlhint src/**/*.html --config=node_modules/zwebstyles/.htmlhintrc
-```
+You will also automatically receive all of the tools necessary for running lint checks along with this package so you do not need to install additional tools to use the linters.
