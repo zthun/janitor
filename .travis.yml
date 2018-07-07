@@ -1,10 +1,14 @@
-{
-  "language": "node_js",
-  "node_js": "8.11.3",
-  "install": [
-    "npm install"
-  ],
-  "script": [
-    "npm run make"
-  ]
-}
+language: node_js
+node_js: 8.11.3
+install:
+- npm install
+script:
+- npm run make
+deploy:
+  provider: npm
+  email: zthun.coding@gmail.com
+  api_key:
+    secure: mqgoqbHbzQmsvBpIYx5VwoThFEVzZujFcIkueKJOgvUGKJfasK2ibphgjk1Nhm+QCxzR9KIoT3QqL6DT8NtVdxu+CN/usKw82Ro9jAHommMPmpp5j3pXEBI9MJwqihBrqzBG+zEzA2lVxCblgRc4qqASuTRLT4zROlkZyWwJScQnqt7DfxZbanrSklSskj7wuP3qRX22xdbZ1seDPUDX6YUfCu+tPjNTPagw2NinwxrK2Sihbuk5KUwPdAI6QUf8FBw+fLt8oXBfO9Oa2LTdTJ4xV9OZvX97XXpjxOrelvdqq+5kYCkGtLjV8EJA86Tcne7/RSP/VfQzhuQprM1kUTLsEX34niWTcV2MlI8V0KR8I+XMMSXkmMiboJI7SJcERjCPJMnw2mOS9PaeqaH1wUkjb6bnsU76VR6GuufIxm1Zhb0S2+ir/C84dN8qlk2hjDfIX+io1IJdxBtnl9Bo+J82AB7NXqKyFkspyBlMdbCGySp/lJ7ypb0cfwI9P5G7593R+CbpWDfo5chyxWykKuGRFzz6WKHXAYmOs8kX3pK8U/zU65voqTh4bGjbeHNt0bYSeXLdQTj/ZdFNY9R8c7vvELgx40caPY8BF/kEyrEYYE0lECXtD+erDCTf9GbKvVyGXyl9VILdgs5RwsSeuu19tZxOmXmMXuImICePHtc=
+  on:
+    tags: true
+    repo: zthun/zwebstyles
