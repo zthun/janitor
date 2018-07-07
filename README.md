@@ -1,7 +1,7 @@
 Description
 ===
 
-Zthuns web styles is a collection of lint files that can be used with build tools to validate coding styles.
+Zthun's web styles is a collection of lint files that can be used with build tools to validate coding styles.
 
 Getting Started
 ===
