@@ -7,6 +7,9 @@
     "type": "git",
     "url": "https://github.com/zthun/zwebstyles"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "test:tslint": "tslint src/test.ts -c lint/tslint.json",
     "test:sasslint": "sass-lint src/test.scss --config=lint/.sasslint.yml -v -q",
