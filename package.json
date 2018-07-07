@@ -1,6 +1,6 @@
 {
   "name": "@zthun/web-styles",
-  "version": "4.0.1",
+  "version": "5.0.0-0",
   "description": "Style checks with tools for web projects using common rules.",
   "license": "ISC",
   "repository": {
