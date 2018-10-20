@@ -9,17 +9,39 @@ Getting Started
 ```sh
 npm install @zthun/web-styles --save-dev
 ```
+
+You'll want to create local lint files.  The main purpose of this is to have maximum support with different editors.  The local files will have the minimum amount of content needed but will also allow you to locally modify project settings if needed.
+
+```
+.eslintrc =>
+{
+    "extends": "./node_modules/@zthun/web-styles/lint/.eslintrc"
+}
+
+tslint.json => 
+{
+    "extends": "./node_modules/@zthun/web-styles/lint/tslint.json"
+}
+
+.sass-lint.yml => 
+options: 
+    config-file: './node_modules/@zthun/web-styles/lint/.sass-lint.yml'
+
+.htmlhintrc =>
+ln -s node_modules/@zthun/web-styles/lint/.htmlhintrc .htmlhintrc
+```
+
 In your package.json, add any of the following scripts.
 
 ```
-"lint:js": "eslint src/**/*.js --config=node_modules/@zthun/web-styles/lint/.eslintrc",
-"lint:ts": "tslint src/**/*.ts -c node_modules/@zthun/web-styles/lint/tslint.json",
-"lint:sass": "sass-lint src/**/*.scss --config=node_modules/zwebstyles/.sasslint.yml -v -q",
-"lint:html": "htmlhint src/**/*.html --config=node_modules/zwebstyles/.htmlhintrc",
+"lint:js": "eslint src/**/*.js",
+"lint:ts": "tslint src/**/*.ts",
+"lint:sass": "sass-lint src/**/*.scss -v -q",
+"lint:html": "htmlhint src/**/*.html",
 "lint": "npm run lint:js && npm run lint:ts && npm run lint:sass && npm run lint:html"
 ```
 
-You can now run the linters in your project directory.
+You can now run the linters in your project directory as well as get hints in your editors given the project rules.
 
 ```sh
 npm run lint
