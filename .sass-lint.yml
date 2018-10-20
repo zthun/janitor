@@ -1,2 +1,3 @@
 options: 
   config-file: './lint/.sass-lint.yml'
+  
