@@ -10,13 +10,13 @@
   "publishConfig": {
     "access": "public"
   },
-  "main": "./dist/app/index.js",
-  "types": "./dist/types/index.d.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "bin": {
-    "zlint": "./dist/app/index.js"
+    "zlint": "./dist/index.js"
   },
   "scripts": {
-    "clean": "rimraf dist *.tgz",
+    "clean": "rimraf coverage dist *.tgz",
     "verify:tslint": "tslint test/test.ts",
     "verify:sasslint": "sass-lint test/test.scss -v -q",
     "verify:htmlhint": "htmlhint test/test.html",
@@ -66,7 +66,7 @@
     "transform": {
       "^.+\\.(t|j)s$": "ts-jest"
     },
-    "coverageDirectory": "../dist/coverage",
+    "coverageDirectory": "../coverage",
     "testEnvironment": "node"
   }
 }

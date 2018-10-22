@@ -9,8 +9,8 @@
     "allowSyntheticDefaultImports": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "sourceMap": true,
-    "outDir": "./dist/app",
+    "sourceMap": false,
+    "outDir": "./dist",
     "baseUrl": "./src"
   },
   "include": [

@@ -29,6 +29,7 @@ export class ZEsLint implements IZLinter {
    */
   public async lint(src: string[], config?: string): Promise<boolean> {
     const configFile = config ? resolve(config) : ZEsLint.DefaultConfig;
+    this.logger.log(`Using eslint config file from ${configFile}`);
     const useEslintrc = true;
 
     const esOptions = { 
