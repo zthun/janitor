@@ -1,6 +1,6 @@
 {
   "name": "@zthun/web-styles",
-  "version": "6.0.0",
+  "version": "6.1.0",
   "description": "Style checks with tools for web projects using common rules.",
   "license": "ISC",
   "repository": {
@@ -10,32 +10,27 @@
   "publishConfig": {
     "access": "public"
   },
+  "main": "./dist/app/index.js",
+  "types": "./dist/types/index.d.ts",
+  "bin": {
+    "zlint": "./dist/app/index.js"
+  },
   "scripts": {
-    "test:tslint": "tslint src/test.ts",
-    "test:sasslint": "sass-lint src/test.scss -v -q",
-    "test:htmlhint": "htmlhint src/test.html",
-    "test:eslint": "eslint src/test.js",
-    "test": "npm run test:eslint && npm run test:htmlhint && npm run test:sasslint && npm run test:tslint",
+    "clean": "rimraf dist *.tgz",
+    "verify:tslint": "tslint test/test.ts",
+    "verify:sasslint": "sass-lint test/test.scss -v -q",
+    "verify:htmlhint": "htmlhint test/test.html",
+    "verify:eslint": "eslint test/test.js",
+    "verify": "npm run verify:eslint && npm run verify:htmlhint && npm run verify:sasslint && npm run verify:tslint",
+    "test": "jest --coverage",
     "lint:tslint": "jsonlint lint/tslint.json -q",
     "lint:eslint": "jsonlint lint/.eslintrc -q",
     "lint:htmlhint": "jsonlint lint/.htmlhintrc -q",
     "lint:sasslint": "yamllint lint/.sass-lint.yml",
     "lint": "npm run lint:sasslint && npm run lint:htmlhint && npm run lint:eslint && npm run lint:tslint",
-    "make": "npm run lint && npm test && npm pack"
+    "build": "tsc",
+    "make": "npm run clean && npm run lint && npm test && npm run verify && npm run build && npm pack"
   },
-  "keywords": [
-    "styles",
-    "practices",
-    "formatting",
-    "formatters",
-    "jshint",
-    "htmlhint",
-    "sasslint",
-    "eslint",
-    "tslint",
-    "sass",
-    "javascript"
-  ],
   "author": "Anthony Bonta",
   "dependencies": {
     "eslint": "=5.7.0",
@@ -44,6 +39,34 @@
     "sass-lint": "=1.12.1",
     "tslint": "=5.11.0",
     "typescript": "=3.1.3",
-    "yaml-lint": "=1.2.4"
+    "yaml-lint": "=1.2.4",
+    "yargs": "=12.0.2"
+  },
+  "devDependencies": {
+    "@types/jest": "=23.3.5",
+    "@types/node": "=10.12.0",
+    "@types/yargs": "=12.0.1",
+    "jest": "=23.6.0",
+    "ts-jest": "=23.10.4",
+    "ts-node": "=7.0.1"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "./tsconfig.spec.json"
+      }
+    },
+    "rootDir": "src",
+    "testRegex": ".spec.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "coverageDirectory": "../dist/coverage",
+    "testEnvironment": "node"
   }
 }

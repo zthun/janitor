@@ -1,7 +1,7 @@
 /**
  * This is a valid class.
  */
-export class ValidClass {
+export class ValidClass{
   /**
    * Gets or sets whether this class is valid.
    */
@@ -19,7 +19,7 @@ export class ValidClass {
    *
    * @return The valid flag.
    */
-  public toggle(): boolean {
+  public toggle (): boolean {
     this.isValid = !this.isValid;
     return this.isValid;
   }

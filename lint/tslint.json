@@ -12,9 +12,9 @@
         "no-invalid-this": false,
         "no-null-keyword": false,
         "no-var-keyword": true,
-        "indent": 4,
+        "indent": false,
         "no-default-export": true,
-        "no-require-imports": true,
+        "no-require-imports": false,
         "prefer-const": false,
         "class-name": true,
         "jsdoc-format": true,
@@ -23,6 +23,7 @@
         "semicolon": [true, "always"],
         "quotemark": [true, "single"],
         "trailing-comma": false,
-        "max-line-length": false
+        "max-line-length": false,
+        "object-literal-sort-keys": false
     }
 }

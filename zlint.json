@@ -1,0 +1,8 @@
+{
+  "esFiles": ["test/*.js"],
+  "tsFiles": ["test/*.ts", "src/**/*.ts"],
+  "sassFiles": ["test/*.scss"],
+  "htmlFiles": ["test/*.html"],
+  "jsonFiles": ["./*.json", ".eslintrc", ".htmlhintrc"],
+  "yamlFiles": ["./*.yml"]
+}

@@ -1,7 +1,9 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## [Unreleased]
+## [6.1.0] - 2018-10-21
+### Added
+- Added the zlint binary command which smart lints your entire project.
 
 ## [6.0.0] - 2018-10-20
 ### Added
