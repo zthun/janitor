@@ -1,11 +1,11 @@
+import chalk from 'chalk';
 import { readFile } from 'fs';
 import { resolve } from 'path';
 import { promisify } from 'util';
-import { ZEsLint } from '../zeslint/zeslint.class';
-import { ZSassLint } from '../zsasslint/zsasslint.class';
 import { IZLintArgs } from './zlint-args.interface';
 import { IZLintOptions } from './zlint-options.interface';
 import { IZLinter } from './zlinter.interface';
+import { ZSilentLinter } from './zsilent-linter.class';
 
 /**
  * Represents the main entry point object for the application.
@@ -14,7 +14,7 @@ export class ZLint {
   /**
    * The default config file.
    */
-  public static readonly DefaultConfig = resolve('./zlint.json');
+  public static readonly DefaultConfig = resolve('./package.json');
   /**
    * The encoding of the config file.
    */
@@ -50,12 +50,12 @@ export class ZLint {
    * @param logger The logger to use when formatting output.
    */
   public constructor(private logger: Console) {
-    this.eslint = new ZEsLint(require('eslint'), this.logger);
-    this.sasslint = new ZSassLint(require('sass-lint'), this.logger);
-    // this.htmlhint = new ZHtmlHint(require('htmlhint'), this.logger);
-    // this.tslint = new ZTsLint(require('tslint'), this.logger);
-    // this.jsonlint = new ZJsonLint(require('jsonlint'), this.logger);
-    // this.yamllint = new ZYamlLint(require('yaml-lint'), this.logger); 
+    this.eslint = new ZSilentLinter();
+    this.sasslint = new ZSilentLinter();
+    this.htmlhint = new ZSilentLinter();
+    this.tslint = new ZSilentLinter();
+    this.jsonlint = new ZSilentLinter();
+    this.yamllint = new ZSilentLinter();
   }
 
   /**
@@ -64,11 +64,12 @@ export class ZLint {
    * @return A promise that resolves the command line options.
    */
   public async parse(args: IZLintArgs): Promise<IZLintOptions> {
-    const configFile = args.config || ZLint.DefaultConfig;
-    this.logger.log(`Using config file:  ${configFile}`);
+    let configFile = args.config || ZLint.DefaultConfig;
+    this.logger.log(chalk.cyan(`Using config file:  ${configFile}`));
     const pread = promisify(readFile);
     const buffer = await pread(configFile, ZLint.ConfigEncoding);
-    return JSON.parse(buffer) as IZLintOptions;
+    const configData = JSON.parse(buffer);
+    return configData.zlint ? configData.zlint : configData;
   }
 
   /**
@@ -82,39 +83,39 @@ export class ZLint {
     let current = true;
     let result = true;
 
-    if (options.esFiles) {
-      this.logger.log(`Linting javascript files from ${options.esFiles.length} globs.`);
-      current = await this.eslint.lint(options.esFiles, options.esConfig);
-      result = result && current;
-    }
-
-    if (options.tsFiles) {
-      this.logger.log(`Linting typescript files from ${options.tsFiles.length} globs.`);
-      current = await this.tslint.lint(options.tsFiles, options.tsConfig);
-      result = result && current;
-    }
-
-    if (options.sassFiles) {
-      this.logger.log(`Linting sass files from ${options.sassFiles.length} globs.`);
-      current = await this.sasslint.lint(options.sassFiles, options.sassConfig);
-      result = result && current;
-    }
-
-    if (options.htmlFiles) {
-      this.logger.log(`Linting html files from ${options.htmlFiles.length} globs.`);
-      current = await this.htmlhint.lint(options.htmlFiles, options.htmlConfig);
-      result = result && current;
-    }
-  
     if (options.jsonFiles) {
-      this.logger.log(`Linting json files from ${options.jsonFiles.length} globs.`);
+      this.logger.log(chalk.magenta.underline(`Linting json files from ${options.jsonFiles.length} globs.`));
       current = await this.jsonlint.lint(options.jsonFiles);
       result = result && current;
     }
   
     if (options.yamlFiles) {
-      this.logger.log(`Linting yaml files from ${options.yamlFiles.length} globs.`);
+      this.logger.log(chalk.magenta.underline(`Linting yaml files from ${options.yamlFiles.length} globs.`));
       current = await this.yamllint.lint(options.yamlFiles);
+      result = result && current;
+    }
+
+    if (options.esFiles) {
+      this.logger.log(chalk.magenta.underline(`Linting javascript files from ${options.esFiles.length} globs.`));
+      current = await this.eslint.lint(options.esFiles, options.esConfig);
+      result = result && current;
+    }
+
+    if (options.tsFiles) {
+      this.logger.log(chalk.magenta.underline(`Linting typescript files from ${options.tsFiles.length} globs.`));
+      current = await this.tslint.lint(options.tsFiles, options.tsConfig);
+      result = result && current;
+    }
+
+    if (options.sassFiles) {
+      this.logger.log(chalk.magenta.underline(`Linting sass files from ${options.sassFiles.length} globs.`));
+      current = await this.sasslint.lint(options.sassFiles, options.sassConfig);
+      result = result && current;
+    }
+
+    if (options.htmlFiles) {
+      this.logger.log(chalk.magenta.underline(`Linting html files from ${options.htmlFiles.length} globs.`));
+      current = await this.htmlhint.lint(options.htmlFiles, options.htmlConfig);
       result = result && current;
     }
 

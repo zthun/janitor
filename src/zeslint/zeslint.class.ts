@@ -1,5 +1,8 @@
+import chalk from 'chalk';
+import { CLIEngine } from 'eslint';
 import { resolve } from 'path';
 import { IZLinter } from '../zlint/zlinter.interface';
+import { IZEsLintEngineFactory } from './zeslint-engine-factory.interface';
 
 /**
  * Represents an object that can be used to perform eslint on javascript files.
@@ -13,10 +16,10 @@ export class ZEsLint implements IZLinter {
   /**
    * Initializes a new instance of this object.
    * 
-   * @param eslint The eslint application.  Constructed from require('eslint')
+   * @param factory The factory object to construct the engine.
    * @param logger The logger to output to.
    */
-  public constructor(private readonly eslint: any, private readonly logger: Console) {}
+  public constructor(private readonly factory: IZEsLintEngineFactory, private readonly logger: Console) {}
 
   /**
    * Runs the lint given the specified config and source files.
@@ -29,7 +32,7 @@ export class ZEsLint implements IZLinter {
    */
   public async lint(src: string[], config?: string): Promise<boolean> {
     const configFile = config ? resolve(config) : ZEsLint.DefaultConfig;
-    this.logger.log(`Using eslint config file from ${configFile}`);
+    this.logger.log(chalk.green.italic(`Using eslint config file from ${configFile}`));
     const useEslintrc = true;
 
     const esOptions = { 
@@ -37,18 +40,18 @@ export class ZEsLint implements IZLinter {
       useEslintrc
     };
     
-    const formatter = this.eslint.CLIEngine.getFormatter();
-    const linter = new (this.eslint).CLIEngine(esOptions);
-    let report;
+    const engine = this.factory.create(esOptions);
+    const formatter = engine.getFormatter(null);
+    let report: CLIEngine.LintReport;
 
     try {
-      report = linter.executeOnFiles(src);
+      report = engine.executeOnFiles(src);
     } catch (err) {
       this.logger.log(err);
       return false;
     }
 
-    let results = this.eslint.CLIEngine.getErrorResults(report.results);
+    let results = CLIEngine.getErrorResults(report.results);
     const output = formatter(results);
     this.logger.log(output);
     return report.errorCount === 0;

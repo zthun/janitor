@@ -79,7 +79,7 @@ describe('ZLint', () => {
       expect(fs.readFile).toHaveBeenCalledWith(args.config, ZLint.ConfigEncoding, expect.anything());
     });
 
-    it('reads the default config file if none is specified.', async () => {
+    it('reads the package.json file if no config specified.', async () => {
       // Arrange
       const target = createTestTarget();
       delete args.config;
@@ -89,7 +89,17 @@ describe('ZLint', () => {
       expect(fs.readFile).toHaveBeenCalledWith(ZLint.DefaultConfig, ZLint.ConfigEncoding, expect.anything());
     });
 
-    it('retrieves the options.', async () => {
+    it('retrieves the options if a key of zlint is found.', async () => {
+      // Arrange
+      const target = createTestTarget();
+      jest.spyOn(fs, 'readFile').mockImplementation((path, opts, callback) => callback(null, JSON.stringify({zlint: options})));
+      // Act
+      const actual = await target.parse(args);
+      // Assert
+      expect(JSON.stringify(actual)).toEqual(JSON.stringify(options));
+    });
+
+    it('retrieves the options directly if there is no zlint key found in the config.', async () => {
       // Arrange
       const target = createTestTarget();
       // Act
