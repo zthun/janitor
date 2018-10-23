@@ -15,6 +15,7 @@
         "indent": false,
         "no-default-export": true,
         "no-require-imports": false,
+        "no-var-requires": false,
         "prefer-const": false,
         "class-name": true,
         "jsdoc-format": true,
