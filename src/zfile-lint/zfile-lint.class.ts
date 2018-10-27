@@ -1,7 +1,9 @@
 import chalk from 'chalk';
+import { readFile } from 'fs';
 import * as G from 'glob';
+import { promisify } from 'util';
 import { IZLinter } from '../zlint/zlinter.interface';
-import { IZFileLinter } from './zfile-linter.interface';
+import { IZContentLinter } from './zcontent-linter.interface';
 
 /**
  * Represnets an object that can lint files one at a time.
@@ -12,11 +14,11 @@ export class ZFileLint implements IZLinter {
   /**
    * Initializes a new instance of this object.
    * 
-   * @param filelint The linter for an individual file.
+   * @param contentlint The linter for an individual file.
    * @param logger The logger to use.
    * @param type The file type.
    */
-  public constructor(private filelint: IZFileLinter, private logger: Console, private type: string) {
+  public constructor(private contentlint: IZContentLinter, private logger: Console, private type: string) {
     this._globOptions = {
       dot: true
     };
@@ -26,8 +28,11 @@ export class ZFileLint implements IZLinter {
    * Lints the collection of json files.
    * 
    * @param src The file list of blobs to lint.
+   * @param config The optional path to the config file.
    */
   public async lint(src: string[]): Promise<boolean> {
+    const pread = promisify(readFile);
+    
     let result = true;
     let allFiles = [];
 
@@ -44,7 +49,8 @@ export class ZFileLint implements IZLinter {
 
     for (const file of allFiles) {
       try {
-        await this.filelint.lint(file);
+        const content = await pread(file, 'utf-8');
+        await this.contentlint.lint(content);
       } catch (err) {
         result = false;
         this._format(file, err);

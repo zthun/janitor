@@ -4,7 +4,6 @@ import * as yargs from 'yargs';
 import { ZEsLintEngineFactory } from './zes-lint/zes-lint-engine-factory.class';
 import { ZEsLint } from './zes-lint/zes-lint.class';
 import { ZFileLint } from './zfile-lint/zfile-lint.class';
-import { ZFileLinter } from './zfile-lint/zfile-linter.class';
 import { ZJsonLint } from './zjson-lint/zjson-lint.class';
 import { IZLintArgs } from './zlint/zlint-args.interface';
 import { ZLint } from './zlint/zlint.class';
@@ -21,6 +20,6 @@ const args: IZLintArgs = yargs.usage('$0 [args]')
 const zlint = new ZLint(console);
 zlint.eslint = new ZEsLint(new ZEsLintEngineFactory(), console);
 zlint.sasslint = new ZSassLint(require('sass-lint'), console);
-zlint.jsonlint = new ZFileLint(new ZFileLinter(new ZJsonLint()), console, 'json');
-zlint.yamllint = new ZFileLint(new ZFileLinter(new ZYamlLint()), console, 'yaml');
+zlint.jsonlint = new ZFileLint(new ZJsonLint(), console, 'json');
+zlint.yamllint = new ZFileLint(new ZYamlLint(), console, 'yaml');
 zlint.run(args).then((result) => process.exitCode = result);
