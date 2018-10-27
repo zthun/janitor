@@ -10,8 +10,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "sourceMap": false,
-    "outDir": "./dist",
-    "baseUrl": "./src"
+    "outDir": "./dist"
   },
   "include": [
     "src/**/*"
