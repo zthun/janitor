@@ -12,9 +12,25 @@ import { ZSilentLinter } from './zsilent-linter.class';
  */
 export class ZLint {
   /**
-   * The default config file.
+   * The default config for zlint.
    */
   public static readonly DefaultConfig = resolve('./package.json');
+  /**
+   * The default eslint config.
+   */
+  public static readonly DefaultEsLintConfig = resolve(__dirname, '../../lint/.eslintrc');
+  /**
+   * The default sass lint config.
+   */
+  public static readonly DefaultSassLintConfig = resolve(__dirname, '../../lint/.sass-lint.yml');
+  /**
+   * The default html hint config.
+   */
+  public static readonly DefaultHtmlHintConfig = resolve(__dirname, '../../lint/.htmlhintrc');
+  /**
+   * The default tslint config.
+   */
+  public static readonly DefaultTsLintConfig = resolve(__dirname, '../../lint/tslint.json');
   /**
    * The encoding of the config file.
    */
@@ -97,25 +113,25 @@ export class ZLint {
 
     if (options.esFiles) {
       this.logger.log(chalk.magenta.underline(`Linting javascript files from ${options.esFiles.length} globs.`));
-      current = await this.eslint.lint(options.esFiles, options.esConfig);
+      current = await this.eslint.lint(options.esFiles, options.esConfig || ZLint.DefaultEsLintConfig);
       result = result && current;
     }
 
     if (options.tsFiles) {
       this.logger.log(chalk.magenta.underline(`Linting typescript files from ${options.tsFiles.length} globs.`));
-      current = await this.tslint.lint(options.tsFiles, options.tsConfig);
+      current = await this.tslint.lint(options.tsFiles, options.tsConfig || ZLint.DefaultTsLintConfig);
       result = result && current;
     }
 
     if (options.sassFiles) {
       this.logger.log(chalk.magenta.underline(`Linting sass files from ${options.sassFiles.length} globs.`));
-      current = await this.sasslint.lint(options.sassFiles, options.sassConfig);
+      current = await this.sasslint.lint(options.sassFiles, options.sassConfig || ZLint.DefaultSassLintConfig);
       result = result && current;
     }
 
     if (options.htmlFiles) {
       this.logger.log(chalk.magenta.underline(`Linting html files from ${options.htmlFiles.length} globs.`));
-      current = await this.htmlhint.lint(options.htmlFiles, options.htmlConfig);
+      current = await this.htmlhint.lint(options.htmlFiles, options.htmlConfig || ZLint.DefaultHtmlHintConfig);
       result = result && current;
     }
 

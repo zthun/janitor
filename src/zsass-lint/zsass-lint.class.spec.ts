@@ -2,6 +2,7 @@ import { resolve } from 'path';
 import { ZSassLint } from './zsass-lint.class';
 
 describe('ZSassLint', () => {
+  let config: string;
   let files: string[];
   let sasslint: any;
   let logger: Console;
@@ -11,6 +12,7 @@ describe('ZSassLint', () => {
   }
 
   beforeEach(() => {
+    config = resolve(__dirname, '../../lint/.sass-lint.yml');
     logger = {} as any;
     logger.log = jest.fn();
 
@@ -26,20 +28,10 @@ describe('ZSassLint', () => {
     it('uses the specified config file.', async () => {
       // Arrange
       const target = createTestTarget();
-      const expected = resolve('./sass-lint.config');
       // Act
-      await target.lint(files, expected);
+      await target.lint(files, config);
       // Assert
-      expect(sasslint.lintFiles).toHaveBeenCalledWith(expect.anything(), expect.anything(), expected);
-    });
-
-    it('uses the default config file if none is specified.', async () => {
-      // Arrange
-      const target = createTestTarget();
-      // Act
-      await target.lint(files);
-      // Assert
-      expect(sasslint.lintFiles).toHaveBeenCalledWith(expect.anything(), expect.anything(), ZSassLint.DefaultConfig);
+      expect(sasslint.lintFiles).toHaveBeenCalledWith(expect.anything(), expect.anything(), config);
     });
   });
 
@@ -48,7 +40,7 @@ describe('ZSassLint', () => {
       // Arrange
       const target = createTestTarget();
       // Act
-      const actual = await target.lint(files);
+      const actual = await target.lint(files, config);
       // Assert
       expect(actual).toBeTruthy();
     });
@@ -58,7 +50,7 @@ describe('ZSassLint', () => {
       const target = createTestTarget();
       jest.spyOn(sasslint, 'errorCount').mockImplementation(() => ({count: 1}));
       // Act
-      const actual = await target.lint(files);
+      const actual = await target.lint(files, config);
       // Assert
       expect(actual).toBeFalsy();
     });
@@ -69,7 +61,7 @@ describe('ZSassLint', () => {
       const expected = sasslint.format();
       jest.spyOn(sasslint, 'errorCount').mockImplementation(() => 2);
       // Act
-      const actual = await target.lint(files);
+      const actual = await target.lint(files, config);
       // Assert
       expect(logger.log).toHaveBeenCalledWith(expected);
     });

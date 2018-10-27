@@ -6,7 +6,6 @@ import { IZLinter } from '../zlint/zlinter.interface';
  * Represents a linter that checks sass files.
  */
 export class ZSassLint implements IZLinter {
-  public static readonly DefaultConfig = resolve(__dirname, '../../lint/.sass-lint.yml');
   /**
    * Initializes a new instance of this object.
    * 
@@ -23,12 +22,11 @@ export class ZSassLint implements IZLinter {
    * 
    * @return A promise that resolves to true if the lint is successful, false if there are errors.
    */
-  public async lint(files: string[], config?: string): Promise<boolean> {
-    const configFile = config ? resolve(config) : ZSassLint.DefaultConfig;
-    this.logger.log(chalk.green.italic(`Using sass-lint config file from ${configFile}`));
-    const sassOptions = { configFile };
+  public async lint(files: string[], config: string): Promise<boolean> {
+    this.logger.log(chalk.green.italic(`Using sass-lint config file from ${config}`));
+    const sassOptions = { config };
     let results = [];
-    files.map((file) => this.sasslint.lintFiles(file, sassOptions, configFile)).forEach((res) => results = results.concat(res));
+    files.map((file) => this.sasslint.lintFiles(file, sassOptions, config)).forEach((res) => results = results.concat(res));
     const result = this.sasslint.format(results, {options: sassOptions});
     this.logger.log(result);
     return this.sasslint.errorCount(results).count === 0;

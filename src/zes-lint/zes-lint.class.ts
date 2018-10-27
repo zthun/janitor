@@ -9,11 +9,6 @@ import { IZEsLintEngineFactory } from './zes-lint-engine-factory.interface';
  */
 export class ZEsLint implements IZLinter {
   /**
-   * Gets the default config path.
-   */
-  public static readonly DefaultConfig = resolve(__dirname, '../../lint/.eslintrc');
-
-  /**
    * Initializes a new instance of this object.
    * 
    * @param factory The factory object to construct the engine.
@@ -30,14 +25,12 @@ export class ZEsLint implements IZLinter {
    * @return A promise that resolves to true if the lint is fully successful, and false if the lint
    *         has errors.
    */
-  public async lint(src: string[], config?: string): Promise<boolean> {
-    const configFile = config ? resolve(config) : ZEsLint.DefaultConfig;
-    this.logger.log(chalk.green.italic(`Using eslint config file from ${configFile}`));
-    const useEslintrc = true;
+  public async lint(src: string[], config: string): Promise<boolean> {
+    this.logger.log(chalk.green.italic(`Using eslint config file from ${config}`));
 
     const esOptions = { 
-      configFile,
-      useEslintrc
+      configFile: config,
+      useEslintrc: true
     };
     
     const engine = this.factory.create(esOptions);

@@ -146,6 +146,11 @@ describe('ZLint', () => {
         await assertLinterInvoked(eslint, options.esFiles, options.esConfig);
       });
 
+      it('uses the default config if no config is specified.', async () => {
+        delete options.esConfig;
+        await assertLinterInvoked(eslint, options.esFiles, ZLint.DefaultEsLintConfig);
+      });
+
       it('does not invoke the linter if there are no esFiles.', async () => {
         delete options.esFiles;
         await assertLinterNotInvoked(eslint);
@@ -155,6 +160,11 @@ describe('ZLint', () => {
     describe('TsLint', () => {
       it('invokes the linter if there are tsFiles', async () => {
         await assertLinterInvoked(tslint, options.tsFiles, options.tsConfig);
+      });
+
+      it('uses the default config if no config is specified.', async () => {
+        delete options.tsConfig;
+        await assertLinterInvoked(tslint, options.tsFiles, ZLint.DefaultTsLintConfig);
       });
 
       it('does not invoke the linter if there are no tsFiles.', async () => {
@@ -168,6 +178,11 @@ describe('ZLint', () => {
         await assertLinterInvoked(sasslint, options.sassFiles, options.sassConfig);
       });
 
+      it('uses the default config if no config is specified.', async () => {
+        delete options.sassConfig;
+        await assertLinterInvoked(sasslint, options.sassFiles, ZLint.DefaultSassLintConfig);
+      });
+
       it('does not invoke the linter if there are no sassFiles.', async () => {
         delete options.sassFiles;
         await assertLinterNotInvoked(sasslint);
@@ -177,6 +192,11 @@ describe('ZLint', () => {
     describe('HtmlHint', () => {
       it('invokes the linter if there are htmlFiles', async () => {
         await assertLinterInvoked(htmlhint, options.htmlFiles, options.htmlConfig);
+      });
+
+      it('uses the default config if no config is specified.', async () => {
+        delete options.htmlConfig;
+        await assertLinterInvoked(htmlhint, options.htmlFiles, ZLint.DefaultHtmlHintConfig);
       });
 
       it('does not invoke the linter if there are no esFiles.', async () => {

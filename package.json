@@ -39,6 +39,7 @@
   "devDependencies": {
     "@types/eslint": "=4.16.3",
     "@types/glob": "=7.1.1",
+    "@types/htmlhint": "=0.9.1",
     "@types/jest": "=23.3.5",
     "@types/js-yaml": "=3.11.2",
     "@types/node": "=10.12.0",

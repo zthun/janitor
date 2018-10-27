@@ -50,6 +50,7 @@ export class ZFileLint implements IZLinter {
     if (config) {
       try {
         options = await this.configReader.read(config);
+        this.logger.log(chalk.green.italic(`Using config file from ${config}`));
       } catch (err) {
         this.logger.error(chalk.red(err));
         return false;

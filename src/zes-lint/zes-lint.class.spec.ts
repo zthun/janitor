@@ -5,6 +5,7 @@ import { ZEsLint } from './zes-lint.class';
 
 describe('ZEsLint', () => {
   let files: string[];
+  let config: string;
   let successA: CLIEngine.LintResult;
   let successB: CLIEngine.LintResult;
   let failedA: CLIEngine.LintResult;
@@ -20,6 +21,7 @@ describe('ZEsLint', () => {
   }
 
   beforeEach(() => {
+    config = resolve(__dirname, '../../lint/.eslintrc');
     files = ['src/**/*.js'];
     successA = {
       filePath: 'src/index.js',
@@ -86,23 +88,13 @@ describe('ZEsLint', () => {
   });
 
   describe('Configuration', () => {
-    it('uses the default configuration if no config is specified.', async () => {
-      // Arrange
-      const target = createTestTarget();
-      // Act
-      await target.lint(files);
-      // Assert
-      expect(factory.create).toHaveBeenCalledWith(expect.objectContaining({ configFile: ZEsLint.DefaultConfig }));
-    });
-
     it('uses the supplied configuration.', async () => {
       // Arrange
       const target = createTestTarget();
-      const expected = resolve('./.eslint.config');
       // Act
-      await target.lint(files, expected);
+      await target.lint(files, config);
       // Assert
-      expect(factory.create).toHaveBeenCalledWith(expect.objectContaining({ configFile: expected }));
+      expect(factory.create).toHaveBeenCalledWith(expect.objectContaining({ configFile: config }));
     });
   });
 
@@ -112,7 +104,7 @@ describe('ZEsLint', () => {
       const target = createTestTarget();
       (engine.executeOnFiles as any).mockImplementation(() => { throw new Error('Cannot open file.'); });
       // Act
-      const actual = await target.lint(files);
+      const actual = await target.lint(files, config);
       // Assert
       expect(actual).toBeFalsy();
     });
@@ -122,7 +114,7 @@ describe('ZEsLint', () => {
       const target = createTestTarget();
       jest.spyOn(engine, 'executeOnFiles').mockImplementation(() => failedReport);
       // Act
-      const actual = await target.lint(files);
+      const actual = await target.lint(files, config);
       // Assert
       expect(actual).toBeFalsy();
     });
@@ -131,7 +123,7 @@ describe('ZEsLint', () => {
       // Arrange
       const target = createTestTarget();
       // Act
-      const actual = await target.lint(files);
+      const actual = await target.lint(files, config);
       // Assert
       expect(actual).toBeTruthy();
     });
@@ -140,7 +132,7 @@ describe('ZEsLint', () => {
       // Arrange
       const target = createTestTarget();
       // Act
-      await target.lint(files);
+      await target.lint(files, config);
       // Assert
       expect(formatter).toHaveBeenCalled();
     });
