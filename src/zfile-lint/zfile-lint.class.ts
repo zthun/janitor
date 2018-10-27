@@ -2,6 +2,7 @@ import chalk from 'chalk';
 import { readFile } from 'fs';
 import * as G from 'glob';
 import { promisify } from 'util';
+import { IZConfigReader } from '../zlint-config/zconfig-reader.interface';
 import { IZLinter } from '../zlint/zlinter.interface';
 import { IZContentLinter } from './zcontent-linter.interface';
 
@@ -19,7 +20,7 @@ export class ZFileLint implements IZLinter {
    * @param logger The logger to use.
    * @param type The file type.
    */
-  public constructor(private contentLint: IZContentLinter, private logger: Console, private type: string) {
+  public constructor(private contentLint: IZContentLinter, private configReader: IZConfigReader, private logger: Console, private type: string) {
     this._globOptions = {
       dot: true
     };
@@ -33,6 +34,7 @@ export class ZFileLint implements IZLinter {
    */
   public async lint(src: string[], config?: string): Promise<boolean> {
     const pread = promisify(readFile);
+    let options = {};
 
     let result = true;
     let allFiles = [];
@@ -45,13 +47,22 @@ export class ZFileLint implements IZLinter {
       return result;
     }
 
+    if (config) {
+      try {
+        options = await this.configReader.read(config);
+      } catch (err) {
+        this.logger.error(chalk.red(err));
+        return false;
+      }
+    }
+
     this.logger.log(chalk.green.italic(`Checking syntax for ${allFiles.length} ${this.type} files.`));
     this.logger.log();
 
     for (const file of allFiles) {
       try {
         const content = await pread(file, 'utf-8');
-        await this.contentLint.lint(content);
+        await this.contentLint.lint(content, options);
       } catch (err) {
         result = false;
         this._format(file, err);

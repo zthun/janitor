@@ -9,5 +9,5 @@ export interface IZConfigReader {
    * 
    * @return A promise that returns the content of the config file.
    */
-  read(config?: string): Promise<any>;
+  read(config: string): Promise<any>;
 }

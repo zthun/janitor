@@ -26,15 +26,6 @@ describe('ZConfigReader', () => {
     return new ZConfigReader(parser);
   }
 
-  it('returns the empty options if there is no config.', async () => {
-    // Arrange
-    const target = createTestTarget();
-    // Act
-    const actual = await target.read(null);
-    // Assert
-    expect(actual).toEqual({});
-  });
-
   it('returns the options parsed from the parser.', async () => {
     // Arrange
     const target = createTestTarget();

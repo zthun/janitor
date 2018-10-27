@@ -22,10 +22,6 @@ export class ZConfigReader implements IZConfigReader {
    * @return A promise that resolves the json object that represents the config.
    */
   public async read(config: string): Promise<any> {
-    if (!config) {
-      return {};
-    }
-
     const pread = promisify(readFile);
     const content = await pread(config, 'utf-8');
     return await this.parser.parse(content);
