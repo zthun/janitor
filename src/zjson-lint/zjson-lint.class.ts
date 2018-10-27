@@ -1,15 +1,15 @@
-import { IZFileContentLinter } from '../zfile-lint/zfile-content-linter.interface';
+import { IZContentLinter } from '../zfile-lint/zcontent-linter.interface';
 
 /**
  * Represents the linter for json files.
  */
-export class ZJsonLint implements IZFileContentLinter {
+export class ZJsonLint implements IZContentLinter {
   /**
    * Lints the collection of json files.
    * 
    * @param contents The json file contents.
    */
   public async lint(contents: string): Promise<any> {
-    return await JSON.parse(contents);
+    return JSON.parse(contents);
   }
 }

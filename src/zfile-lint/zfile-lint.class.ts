@@ -14,11 +14,12 @@ export class ZFileLint implements IZLinter {
   /**
    * Initializes a new instance of this object.
    * 
-   * @param contentlint The linter for an individual file.
+   * @param contentLint The linter for an individual file.
+   * @param configReader The config reader.
    * @param logger The logger to use.
    * @param type The file type.
    */
-  public constructor(private contentlint: IZContentLinter, private logger: Console, private type: string) {
+  public constructor(private contentLint: IZContentLinter, private logger: Console, private type: string) {
     this._globOptions = {
       dot: true
     };
@@ -30,9 +31,9 @@ export class ZFileLint implements IZLinter {
    * @param src The file list of blobs to lint.
    * @param config The optional path to the config file.
    */
-  public async lint(src: string[]): Promise<boolean> {
+  public async lint(src: string[], config?: string): Promise<boolean> {
     const pread = promisify(readFile);
-    
+
     let result = true;
     let allFiles = [];
 
@@ -50,7 +51,7 @@ export class ZFileLint implements IZLinter {
     for (const file of allFiles) {
       try {
         const content = await pread(file, 'utf-8');
-        await this.contentlint.lint(content);
+        await this.contentLint.lint(content);
       } catch (err) {
         result = false;
         this._format(file, err);
