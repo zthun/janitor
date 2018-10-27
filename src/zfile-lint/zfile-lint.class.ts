@@ -40,6 +40,7 @@ export class ZFileLint implements IZLinter {
     }
 
     this.logger.log(chalk.green.italic(`Checking syntax for ${allFiles.length} ${this.type} files.`));
+    this.logger.log();
 
     for (const file of allFiles) {
       try {

@@ -22,7 +22,7 @@ describe('ZJsonLint', () => {
     const target = createTestTarget();
     // Act
     // Assert
-    expect(target.lint(JSON.stringify(json))).resolves.toBeTruthy();
+    await expect(target.lint(JSON.stringify(json))).resolves.toBeTruthy();
   });
 
   it('returns a rejected promise if the json is not valid.', async () => {
@@ -30,6 +30,6 @@ describe('ZJsonLint', () => {
     const target = createTestTarget();
     // Act
     // Assert
-    expect(target.lint('This is not valid json')).rejects.toBeTruthy();
+    await expect(target.lint('This is not valid json')).rejects.toBeTruthy();
   });
 });

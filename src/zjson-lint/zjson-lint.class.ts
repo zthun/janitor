@@ -10,7 +10,6 @@ export class ZJsonLint implements IZFileContentLinter {
    * @param contents The json file contents.
    */
   public async lint(contents: string): Promise<any> {
-    JSON.parse(contents);
-    return Promise.resolve(true);
+    return await JSON.parse(contents);
   }
 }

@@ -13,6 +13,6 @@ export class ZYamlLint implements IZFileContentLinter {
    * @return A promise that resolves if successful, or rejects if failed.
    */
   public async lint(contents: string): Promise<any> {
-    return Promise.resolve(safeLoad(contents));
+    return await safeLoad(contents);
   }
 }

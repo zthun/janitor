@@ -20,7 +20,7 @@ describe('ZJsonLint', () => {
     const target = createTestTarget();
     // Act
     // Assert
-    expect(target.lint(safeDump(yaml))).resolves.toBeTruthy();
+    await expect(target.lint(safeDump(yaml))).resolves.toBeTruthy();
   });
 
   it('returns a rejected promise if the json is not valid.', async () => {
@@ -28,6 +28,6 @@ describe('ZJsonLint', () => {
     const target = createTestTarget();
     // Act
     // Assert
-    expect(target.lint('This is not valid yaml----\n\t\t\t\tinvalid')).rejects.toBeTruthy();
+    await expect(target.lint('brackets: invalid: "Square [brackets] can not go in the middle of strings"')).rejects.toBeTruthy();
   });
 });
