@@ -1,15 +1,13 @@
-import * as fs from 'fs';
 import * as G from 'glob';
-import { ZJsonLint } from './zjsonlint.class';
+import { ZFileLint } from './zfile-lint.class';
+import { IZFileLinter } from './zfile-linter.interface';
 
 jest.mock('glob');
 jest.mock('fs');
 
 describe('ZJsonLint', () => {
   let files: string[];
-  let fileJson: any;
-  let fileContents: string;
-  let fileContentsBad: string;
+  let filelint: IZFileLinter;
   let logger: Console;
 
   beforeEach(() => {
@@ -17,26 +15,19 @@ describe('ZJsonLint', () => {
     logger.error = jest.fn();
     logger.log = jest.fn();
 
-    fileJson = {
-      keyA: 'key-a',
-      keyB: 'key-b'
-    };
-
-    fileContents = JSON.stringify(fileJson);
-    fileContentsBad = 'This is not valid json';
+    filelint = {} as any;
+    filelint.lint = jest.fn(() => Promise.resolve(true));
 
     files = [
       '/files/log-a.json',
       '/files/lob-b.json',
       '/files/log-c.json'
     ];
-
-    (fs.readFile as any) = jest.fn((path, op, cb) => cb(null, fileContents));
     (G.sync as any) = jest.fn(() => files);
   });
 
   function createTestTarget() {
-    return new ZJsonLint(logger);
+    return new ZFileLint(filelint, logger, 'generic');
   }
 
   it('returns true if there are no files.', async () => {
@@ -58,10 +49,10 @@ describe('ZJsonLint', () => {
     expect(actual).toBeTruthy();
   });
 
-  it('returns false if any file contains bad json.', async () => {
+  it('returns false if any file fail the lint.', async () => {
     // Arrange
     const target = createTestTarget();
-    (fs.readFile as any) = jest.fn((path, op, cb) => cb(null, 'This is not valid json'));
+    filelint.lint = jest.fn(() => Promise.reject('failed'));
     // Act
     const actual = await target.lint(files);
     // Assert

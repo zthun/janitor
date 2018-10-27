@@ -1,5 +1,5 @@
 import { resolve } from 'path';
-import { ZSassLint } from './zsasslint.class';
+import { ZSassLint } from './zsass-lint.class';
 
 describe('ZSassLint', () => {
   let files: string[];

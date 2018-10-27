@@ -1,4 +1,4 @@
-import { ZEsLintEngineFactory } from './zeslint-engine-factory.class';
+import { ZEsLintEngineFactory } from './zes-lint-engine-factory.class';
 
 describe('ZEsLintEngineFactory', () => {
   function createTestTarget() {

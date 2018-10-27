@@ -1,5 +1,5 @@
 import { CLIEngine } from 'eslint';
-import { IZEsLintEngineFactory } from './zeslint-engine-factory.interface';
+import { IZEsLintEngineFactory } from './zes-lint-engine-factory.interface';
 
 /**
  * Represents a basic factory that constructs the eslint cli engine.

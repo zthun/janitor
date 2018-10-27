@@ -2,7 +2,7 @@ import chalk from 'chalk';
 import { CLIEngine } from 'eslint';
 import { resolve } from 'path';
 import { IZLinter } from '../zlint/zlinter.interface';
-import { IZEsLintEngineFactory } from './zeslint-engine-factory.interface';
+import { IZEsLintEngineFactory } from './zes-lint-engine-factory.interface';
 
 /**
  * Represents an object that can be used to perform eslint on javascript files.
