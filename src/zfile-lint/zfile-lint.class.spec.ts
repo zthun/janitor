@@ -1,3 +1,4 @@
+import chalk from 'chalk';
 import * as fs from 'fs';
 import * as G from 'glob';
 import { IZConfigReader } from '../zlint-config/zconfig-reader.interface';
@@ -114,6 +115,36 @@ describe('ZJsonLint', () => {
       const actual = await target.lint(files, config);
       // Assert
       expect(actual).toBeFalsy();
+    });
+  });
+
+  describe('Logging', () => {
+    let cfg: any;
+
+    beforeEach(() => {
+      cfg = {
+        errors: 'File is bad'
+      };
+
+      (contentLint.lint as any) = jest.fn(() => Promise.reject(cfg.errors));
+    });
+
+    async function assertLogged(logs: string[]) {
+      // Arrange
+      const target = createTestTarget();
+      // Act
+      await target.lint(files, config);
+      // Assert
+      logs.forEach((log) => expect(logger.error).toHaveBeenCalledWith(chalk.red(log)));
+    }
+
+    it('logs all errors on separate lines if an array is passed.', async () => {
+      cfg.errors = ['Bad line one', 'Bad line two', 'Bad line three'];
+      await assertLogged(cfg.errors);
+    });
+
+    it('logs the error directly if it is not an array.', async () => {
+      await assertLogged([cfg.errors]);
     });
   });
 });

@@ -1,6 +1,5 @@
 import chalk from 'chalk';
 import { CLIEngine } from 'eslint';
-import { resolve } from 'path';
 import { IZLinter } from '../zlint/zlinter.interface';
 import { IZEsLintEngineFactory } from './zes-lint-engine-factory.interface';
 
@@ -26,7 +25,7 @@ export class ZEsLint implements IZLinter {
    *         has errors.
    */
   public async lint(src: string[], config: string): Promise<boolean> {
-    this.logger.log(chalk.green.italic(`Using eslint config file from ${config}`));
+    this.logger.log(chalk.green.italic(`Using config file from ${config}`));
 
     const esOptions = { 
       configFile: config,

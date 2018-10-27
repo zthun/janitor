@@ -1,7 +1,8 @@
 import chalk from 'chalk';
 import { readFile } from 'fs';
 import * as G from 'glob';
-import { promisify } from 'util';
+import { resolve } from 'path';
+import { isArray, promisify } from 'util';
 import { IZConfigReader } from '../zlint-config/zconfig-reader.interface';
 import { IZLinter } from '../zlint/zlinter.interface';
 import { IZContentLinter } from './zcontent-linter.interface';
@@ -37,7 +38,7 @@ export class ZFileLint implements IZLinter {
     let options = {};
 
     let result = true;
-    let allFiles = [];
+    let allFiles: string[] = [];
 
     for (const pattern of src) {
       allFiles = allFiles.concat(G.sync(pattern, this._globOptions));
@@ -61,12 +62,13 @@ export class ZFileLint implements IZLinter {
     this.logger.log();
 
     for (const file of allFiles) {
+      const fullfile = resolve(file);
       try {
-        const content = await pread(file, 'utf-8');
+        const content = await pread(fullfile, 'utf-8');
         await this.contentLint.lint(content, options);
       } catch (err) {
         result = false;
-        this._format(file, err);
+        this._format(fullfile, err);
       }
     }
 
@@ -80,8 +82,13 @@ export class ZFileLint implements IZLinter {
    * @param err The error that occurred.
    */
   private _format(file: string, err: any) {
-    const fileFormat = `Errors in ${file}.`;
+    const fileFormat = `Errors in ${file}`;
     this.logger.error(chalk.red.underline(fileFormat));
-    this.logger.error(chalk.red(err));
+
+    if (isArray(err)) {
+      err.forEach((log) => this.logger.error(chalk.red(log)));
+    } else {
+      this.logger.error(chalk.red(err));
+    }
   }
 }

@@ -23,7 +23,7 @@ export class ZSassLint implements IZLinter {
    * @return A promise that resolves to true if the lint is successful, false if there are errors.
    */
   public async lint(files: string[], config: string): Promise<boolean> {
-    this.logger.log(chalk.green.italic(`Using sass-lint config file from ${config}`));
+    this.logger.log(chalk.green.italic(`Using config file from ${config}`));
     const sassOptions = { config };
     let results = [];
     files.map((file) => this.sasslint.lintFiles(file, sassOptions, config)).forEach((res) => results = results.concat(res));
