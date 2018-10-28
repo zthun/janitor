@@ -21,7 +21,7 @@
     "lint": "ts-node src/cli.ts",
     "build": "tsc",
     "make": "npm run clean && npm run lint && npm test && npm run build",
-    "prepublish": "npm run make",
+    "prepare": "npm run make",
     "start": "node --inspect --debug-brk -r ts-node/register src/cli.ts"
   },
   "author": "Anthony Bonta",
