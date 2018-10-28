@@ -4,4 +4,4 @@ sudo: required
 install:
 - npm install
 script:
-- npm run make
+- npm pack
