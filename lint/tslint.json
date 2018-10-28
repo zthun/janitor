@@ -12,17 +12,32 @@
         "no-invalid-this": false,
         "no-null-keyword": false,
         "no-var-keyword": true,
-        "indent": 4,
+        "indent": false,
         "no-default-export": true,
-        "no-require-imports": true,
+        "no-require-imports": false,
+        "no-var-requires": false,
         "prefer-const": false,
         "class-name": true,
         "jsdoc-format": true,
         "new-parens": true,
         "no-trailing-whitespace": false,
-        "semicolon": [true, "always"],
-        "quotemark": [true, "single"],
+        "semicolon": [
+            true,
+            "always"
+        ],
+        "quotemark": [
+            true,
+            "single"
+        ],
         "trailing-comma": false,
-        "max-line-length": false
+        "max-line-length": false,
+        "variable-name": [
+            true,
+            "ban-keywords",
+            "check-format",
+            "allow-leading-underscore",
+            "allow-pascal-case"
+        ],
+        "object-literal-sort-keys": false
     }
 }
