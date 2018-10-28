@@ -3,6 +3,7 @@ export * from './zes-lint/zes-lint-engine-factory.interface';
 export * from './zes-lint/zes-lint.class';
 export * from './zfile-lint/zcontent-linter.interface';
 export * from './zfile-lint/zfile-lint.class';
+export * from './zhtml-hint/zhtml-hint.class';
 export * from './zjson-lint/zjson-lint.class';
 export * from './zlint-config/zconfig-json-parser.class';
 export * from './zlint-config/zconfig-parser.interface';
