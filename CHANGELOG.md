@@ -1,10 +1,14 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [6.1.1] - 2018-10-28
+### Changed
+- Fixed the package index exports to include ts lint source.
+
 ## [6.1.0] - 2018-10-28
 ### Added
 - Added the zlint binary command which smart lints your entire project using one command and one config file.
-----
+
 
 ## [6.0.0] - 2018-10-20
 ### Added
