@@ -81,7 +81,7 @@ export class ZLint {
    */
   public async parse(args: IZLintArgs): Promise<IZLintOptions> {
     let configFile = args.config || ZLint.DefaultConfig;
-    this.logger.log(chalk.cyan(`Using config file:  ${configFile}`));
+    this.logger.log(chalk.cyan(`Reading config file:  ${configFile}`));
     const pread = promisify(readFile);
     const buffer = await pread(configFile, ZLint.ConfigEncoding);
     const configData = JSON.parse(buffer);
