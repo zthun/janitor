@@ -16,7 +16,7 @@ import { ZTsLint } from './zts-lint/zts-lint.class';
 import { ZTsLinterFactory } from './zts-lint/zts-linter-factory.class';
 import { ZYamlLint } from './zyaml-lint/zyaml-lint.class';
 
-const args: IZLintArgs = yargs.usage('$0 [args]')
+const args: IZLintArgs = yargs.usage('$0 [options]')
   .alias('c', 'config')
   .describe('c', 'Optional config file to use.')
   .string('c')

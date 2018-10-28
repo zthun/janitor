@@ -15,4 +15,7 @@ export * from './zlint/zlint.class';
 export * from './zlint/zlinter.interface';
 export * from './zlint/zsilent-linter.class';
 export * from './zsass-lint/zsass-lint.class';
+export * from './zts-lint/zts-lint.class';
+export * from './zts-lint/zts-linter-factory.class';
+export * from './zts-lint/zts-linter-factory.interface';
 export * from './zyaml-lint/zyaml-lint.class';
