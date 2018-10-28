@@ -1,6 +1,6 @@
 {
   "name": "@zthun/web-styles",
-  "version": "6.1.0",
+  "version": "6.1.1",
   "description": "Style checks with tools for web projects using common rules.",
   "license": "ISC",
   "repository": {
@@ -21,6 +21,7 @@
     "lint": "ts-node src/cli.ts",
     "build": "tsc",
     "make": "npm run clean && npm run lint && npm test && npm run build && npm pack",
+    "prepublishOnly": "npm run make",
     "start": "node --inspect --debug-brk -r ts-node/register src/cli.ts"
   },
   "author": "Anthony Bonta",
