@@ -1,11 +1,9 @@
 Description
 ===
-
 Zthun's web styles is a collection of lint files and tools that easily allow you to validate coding standards.
 
 Getting Started
 ===
-
 ```sh
 npm install @zthun/web-styles --save-dev
 ```
@@ -19,7 +17,7 @@ ln -s node_modules/@zthun/web-styles/lint/.sass-lint.yml .sass-lint.yml
 ln -s node_modules/@zthun/web-styles/lint/.htmlhintrc .htmlhintrc
 ```
 
-Alternatively, eslint, tslint, and sass-lint allow you to create non soft linked files that extend other configs.
+Alternatively, eslint, tslint, and sass-lint allow you to create non soft linked files that extend other configs.  This way is recommended for Windows users since windows doesn't really have the concept of symbolic links and can't really read them as shortcuts.
 
 ```
 .eslintrc =>
@@ -66,7 +64,7 @@ The following styling options are included in this package under the lint folder
 |Config File|For|Description|
 |-----------|---|-----------|
 |.htmlhintrc|HTML|Used for [htmlhint](http://htmlhint.com/) checks.|
-|.sasslint.yml|SASS|Used for [sasslint](https://github.com/sasstools/sass-lint) checks.|
+|.sass-lint.yml|SASS|Used for [sasslint](https://github.com/sasstools/sass-lint) checks.|
 |.eslintrc|Javascript|Used for [eslint](http://eslint.org/) checks.|
 |tslint.json|Typescript|Used for [tslint](https://palantir.github.io/tslint/) checks.|
 
@@ -77,13 +75,14 @@ Usage
 |Option|Alias|Description|Type|
 |------|-----|-----------|----|
 |--version||Show version number|boolean|
-|--config |-c|COptional config file to use.|string|
+|--config |-c|Optional config file to use.|string|
 |--help||Show help|boolean|
 
 Config File
 ===
+If you do not specify a config file on the command line, the linter will look at your package.json file for a key named **zlint**.
 
-If you do not specify a config file on the command line, the linter will look at your package.json file for a key named **zlint**.  Whether you specifiy a config file or use the zlint key in your package.json, the actual json formatted object can have any of these optional keys.  Please note that having any values undefined will mean that the linter for those files will be skipped.
+Please note that having any values undefined will mean that the linter for those files will be skipped.
 
 |Key|Description|Type|Default|
 |---|-----------|----|-------|
