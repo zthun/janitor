@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file.
 - Updated all dependencies to the latest versions
 - Updated the typescript rule set to remove rules that match the recommended.
 - Fixed a bug in the tslint phase which caused the linter to not look at the recommended rules.
+- The globstar pattern should now reflect at the root directory.
 
 ### Removed
 - Removed the IZEsLintEngineFactory interface.

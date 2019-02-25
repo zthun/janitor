@@ -1,4 +1,4 @@
-import { Linter, LintResult } from 'tslint';
+import { ILinterOptions, Linter, LintResult } from 'tslint';
 import { RawConfigFile } from 'tslint/lib/configuration';
 import { ZTsLint } from './zts-lint.class';
 
@@ -9,10 +9,11 @@ describe('ZTsLint', () => {
   let options: RawConfigFile;
   let optionsPath: string;
   let linter: Linter;
+  let linterFactory: (options: ILinterOptions) => Linter;
 
   function createTestTarget() {
     const target = new ZTsLint();
-    target.linter = linter;
+    target.linterFactory = linterFactory;
     return target;
   }
 
@@ -34,6 +35,17 @@ describe('ZTsLint', () => {
     linter = {} as Linter;
     linter.lint = jest.fn();
     linter.getResult = jest.fn(() => result);
+
+    linterFactory = () => linter;
+  });
+
+  it('returns a default linter.', () => {
+    // Arrange
+    const target = new ZTsLint();
+    // Act
+    const actual = target.linterFactory({ fix: false });
+    // Assert
+    expect(actual).toBeTruthy();
   });
 
   it('returns a resolved promise if the linting is successful.', async () => {

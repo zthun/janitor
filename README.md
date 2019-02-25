@@ -27,13 +27,13 @@ Alternatively, eslint, tslint, and sass-lint allow you to create non soft linked
     "extends": "./node_modules/@zthun/web-styles/lint/.eslintrc"
 }
 
-tslint.json => 
+tslint.json =>
 {
     "extends": "./node_modules/@zthun/web-styles/lint/tslint.json"
 }
 
-.sass-lint.yml => 
-options: 
+.sass-lint.yml =>
+options:
     config-file: './node_modules/@zthun/web-styles/lint/.sass-lint.yml'
 ```
 
@@ -77,11 +77,13 @@ Usage
 |Option|Alias|Description|Type|
 |------|-----|-----------|----|
 |--version||Show version number|boolean|
-|--config |-c|Config file to use.  Defaults to package.json => zlint if not specified.|string|
+|--config |-c|COptional config file to use.|string|
 |--help||Show help|boolean|
 
 Config File
 ===
+
+If you do not specify a config file on the command line, the linter will look at your package.json file for a key named **zlint**.  Whether you specifiy a config file or use the zlint key in your package.json, the actual json formatted object can have any of these optional keys.  Please note that having any values undefined will mean that the linter for those files will be skipped.
 
 |Key|Description|Type|Default|
 |---|-----------|----|-------|

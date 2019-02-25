@@ -1,5 +1,5 @@
 import { basename, dirname } from 'path';
-import { Configuration, Linter } from 'tslint';
+import { Configuration, ILinterOptions, Linter } from 'tslint';
 import { IZContentLinter } from '../zfile-lint/zcontent-linter.interface';
 
 /**
@@ -9,7 +9,7 @@ export class ZTsLint implements IZContentLinter {
   /**
    * The linter to use.
    */
-  public linter: Linter;
+  public linterFactory: (options: ILinterOptions) => Linter;
 
   /**
    * Initializes a new instance of this object.
@@ -17,9 +17,7 @@ export class ZTsLint implements IZContentLinter {
    * @param linterFactory The linter factory to construct the ts linter.
    */
   public constructor() {
-    this.linter = new Linter({
-      fix: false,
-    });
+    this.linterFactory = (options: ILinterOptions) => new Linter(options);
   }
 
   /**
@@ -32,8 +30,11 @@ export class ZTsLint implements IZContentLinter {
    */
   public lint(content: string, contentPath: string, options: Configuration.RawConfigFile, optionsPath: string): Promise<any> {
     const config = Configuration.parseConfigFile(options, dirname(optionsPath), require);
-    this.linter.lint(basename(contentPath), content, config);
-    const results = this.linter.getResult();
+    const linter = this.linterFactory({
+      fix: false
+    });
+    linter.lint(basename(contentPath), content, config);
+    const results = linter.getResult();
 
     if (results.errorCount > 0 || results.warningCount > 0) {
       return Promise.reject(results.output);
