@@ -1,7 +1,16 @@
 {
   "name": "@zthun/web-styles",
-  "version": "6.1.1",
+  "version": "7.0.0",
   "description": "Style checks with tools for web projects using common rules.",
+  "keywords": [
+    "lint",
+    "sasslint",
+    "tslint",
+    "htmlhint",
+    "eslint",
+    "jsonlint",
+    "yamllint"
+  ],
   "license": "ISC",
   "repository": {
     "type": "git",
@@ -70,27 +79,27 @@
   },
   "zlint": {
     "esFiles": [
-      "test/*.js"
+      "test/**/*.js"
     ],
     "tsFiles": [
-      "test/*.ts",
+      "test/**/*.ts",
       "src/**/*.ts"
     ],
     "sassFiles": [
-      "test/*.scss"
+      "test/**/*.scss"
     ],
     "htmlFiles": [
-      "test/*.html"
+      "test/**/*.html"
     ],
     "jsonFiles": [
-      "./*.json",
-      "./lint/*.json",
-      "./lint/.eslintrc",
-      "./lint/.htmlhintrc",
-      "./test/*.json",
-      "./src/**/*.json",
-      "./.eslintrc",
-      "./.htmlhintrc"
+      "*.json",
+      ".eslintrc",
+      ".htmlhintrc",
+      "lint/**/*.json",
+      "lint/.eslintrc",
+      "lint/.htmlhintrc",
+      "test/*.json",
+      "src/**/*.json"
     ],
     "yamlFiles": [
       "./.travis.yml",

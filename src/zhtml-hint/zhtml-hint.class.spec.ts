@@ -1,18 +1,18 @@
-import { HTMLHint, LintResult, RuleSet } from 'htmlhint';
+import * as hint from 'htmlhint';
 import { ZHtmlHint } from './zhtml-hint.class';
 
 describe('ZHtmlHint', () => {
   let contentPath: string;
   let content: string;
-  let options: RuleSet;
-  let resultA: LintResult;
-  let resultB: LintResult;
-  let results: LintResult[];
+  let options: hint.RuleSet;
+  let resultA: hint.LintResult;
+  let resultB: hint.LintResult;
+  let results: hint.LintResult[];
   let logs: string[];
 
   beforeEach(() => {
-    resultA = {} as LintResult;
-    resultB = {} as LintResult;
+    resultA = {} as hint.LintResult;
+    resultB = {} as hint.LintResult;
     results = [resultA, resultB];
 
     contentPath = '/dev/test.html';
@@ -21,8 +21,8 @@ describe('ZHtmlHint', () => {
 
     logs = ['Line One', 'Line Two'];
 
-    jest.spyOn(HTMLHint, 'verify').mockImplementation(() => results);
-    jest.spyOn(HTMLHint, 'format').mockImplementation(() => logs);
+    jest.spyOn((hint as any).default, 'verify').mockImplementation(() => results);
+    jest.spyOn((hint as any).default, 'format').mockImplementation(() => logs);
   });
 
   function createTestTarget() {
@@ -33,7 +33,7 @@ describe('ZHtmlHint', () => {
   it('returns a resolved promise if there are no hint messages.', async () => {
     // Arrange
     const target = createTestTarget();
-    jest.spyOn(HTMLHint, 'verify').mockImplementation(() => []);
+    jest.spyOn((hint as any).default, 'verify').mockImplementation(() => []);
     // Act
     // Assert
     await expect(target.lint(content, contentPath, options)).resolves.toBeTruthy();

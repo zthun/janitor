@@ -85,6 +85,15 @@ describe('ZEsLint', () => {
   });
 
   describe('Linting', () => {
+    it('constructs a default engine.', () => {
+      // Arrange
+      const target = new ZEsLint(logger);
+      // Act
+      const actual = target.engineFactory({});
+      // Assert
+      expect(actual).toBeTruthy();
+    });
+
     it('returns false if an IO exception occurs.', async () => {
       // Arrange
       const target = createTestTarget();
