@@ -6,10 +6,10 @@ import { IZLinter } from './zlinter.interface';
 export class ZSilentLinter implements IZLinter {
   /**
    * Returns a promise that resolves true.
-   * 
+   *
    * @return A promise that resolves true.
    */
-  public lint(): Promise<boolean> { 
-    return Promise.resolve(true); 
+  public lint(): Promise<boolean> {
+    return Promise.resolve(true);
   }
 }

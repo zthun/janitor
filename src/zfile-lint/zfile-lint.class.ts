@@ -15,7 +15,7 @@ export class ZFileLint implements IZLinter {
 
   /**
    * Initializes a new instance of this object.
-   * 
+   *
    * @param contentLint The linter for an individual file.
    * @param configReader The config reader.
    * @param logger The logger to use.
@@ -29,7 +29,7 @@ export class ZFileLint implements IZLinter {
 
   /**
    * Lints the collection of json files.
-   * 
+   *
    * @param src The file list of blobs to lint.
    * @param config The optional path to the config file.
    */
@@ -65,7 +65,7 @@ export class ZFileLint implements IZLinter {
       const fullfile = resolve(file);
       try {
         const content = await pread(fullfile, 'utf-8');
-        await this.contentLint.lint(content, options);
+        await this.contentLint.lint(content, fullfile, options, config);
       } catch (err) {
         result = false;
         this._format(fullfile, err);
@@ -77,8 +77,8 @@ export class ZFileLint implements IZLinter {
 
   /**
    * Formats a file error to the logger.
-   * 
-   * @param file The file that failed to parse. 
+   *
+   * @param file The file that failed to parse.
    * @param err The error that occurred.
    */
   private _format(file: string, err: any) {

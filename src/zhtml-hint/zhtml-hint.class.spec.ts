@@ -1,9 +1,8 @@
 import { HTMLHint, LintResult, RuleSet } from 'htmlhint';
 import { ZHtmlHint } from './zhtml-hint.class';
 
-jest.mock('htmlhint');
-
 describe('ZHtmlHint', () => {
+  let contentPath: string;
   let content: string;
   let options: RuleSet;
   let resultA: LintResult;
@@ -16,26 +15,28 @@ describe('ZHtmlHint', () => {
     resultB = {} as LintResult;
     results = [resultA, resultB];
 
+    contentPath = '/dev/test.html';
     content = '<html><head></head><body><div>Some HTML</div></body></html>';
     options = {};
 
     logs = ['Line One', 'Line Two'];
 
-    HTMLHint.verify = jest.fn(() => results);
-    HTMLHint.format = jest.fn(() => logs);
+    jest.spyOn(HTMLHint, 'verify').mockImplementation(() => results);
+    jest.spyOn(HTMLHint, 'format').mockImplementation(() => logs);
   });
 
   function createTestTarget() {
-    return new ZHtmlHint();
+    const target = new ZHtmlHint();
+    return target;
   }
 
   it('returns a resolved promise if there are no hint messages.', async () => {
     // Arrange
     const target = createTestTarget();
-    HTMLHint.verify = jest.fn(() => []);
+    jest.spyOn(HTMLHint, 'verify').mockImplementation(() => []);
     // Act
     // Assert
-    await expect(target.lint(content, options)).resolves.toBeTruthy();
+    await expect(target.lint(content, contentPath, options)).resolves.toBeTruthy();
   });
 
   it('returns a rejected promise with the logs if there are hint messages.', async () => {
@@ -43,7 +44,6 @@ describe('ZHtmlHint', () => {
     const target = createTestTarget();
     // Act
     // Assert
-    await expect(target.lint(content, options)).rejects.toEqual(logs);
+    await expect(target.lint(content, contentPath, options)).rejects.toEqual(logs);
   });
-
 });

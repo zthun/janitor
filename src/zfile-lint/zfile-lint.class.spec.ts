@@ -40,7 +40,7 @@ describe('ZJsonLint', () => {
     ];
 
     (G.sync as any) = jest.fn(() => files);
-    (fs.readFile as any) = jest.fn((file, op, cb) => cb(null, 'File content')); 
+    (fs.readFile as any) = jest.fn((file, op, cb) => cb(null, 'File content'));
   });
 
   function createTestTarget() {
@@ -57,7 +57,7 @@ describe('ZJsonLint', () => {
       // Assert
       expect(actual).toBeTruthy();
     });
-  
+
     it('returns true if all files pass.', async () => {
       // Arrange
       const target = createTestTarget();
@@ -66,7 +66,7 @@ describe('ZJsonLint', () => {
       // Assert
       expect(actual).toBeTruthy();
     });
-  
+
     it('returns false if any file cannot be read.', async () => {
       // Arrange
       const target = createTestTarget();
@@ -76,7 +76,7 @@ describe('ZJsonLint', () => {
       // Assert
       expect(actual).toBeFalsy();
     });
-  
+
     it('returns false if any file fail the lint.', async () => {
       // Arrange
       const target = createTestTarget();
@@ -104,7 +104,7 @@ describe('ZJsonLint', () => {
       // Act
       await targget.lint(files, config);
       // Assert
-      expect(contentLint.lint).toHaveBeenCalledWith(expect.anything(), options);
+      expect(contentLint.lint).toHaveBeenCalledWith(expect.anything(), expect.anything(), options, config);
     });
 
     it('returns false if the config cannot be read.', async () => {

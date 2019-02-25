@@ -1,6 +1,5 @@
 import { CLIEngine } from 'eslint';
 import { resolve } from 'path';
-import { IZEsLintEngineFactory } from './zes-lint-engine-factory.interface';
 import { ZEsLint } from './zes-lint.class';
 
 describe('ZEsLint', () => {
@@ -11,13 +10,14 @@ describe('ZEsLint', () => {
   let failedA: CLIEngine.LintResult;
   let successReport: CLIEngine.LintReport;
   let failedReport: CLIEngine.LintReport;
-  let formatter: () => void;
+  let formatter: () => string;
   let engine: CLIEngine;
-  let factory: IZEsLintEngineFactory;
   let logger: Console;
 
   function createTestTarget() {
-    return new ZEsLint(factory, logger);
+    const target = new ZEsLint(logger);
+    target.engineFactory = () => engine;
+    return target;
   }
 
   beforeEach(() => {
@@ -82,20 +82,6 @@ describe('ZEsLint', () => {
 
     logger = {} as any;
     logger.log = jest.fn();
-
-    factory = {} as any;
-    factory.create = jest.fn(() => engine);
-  });
-
-  describe('Configuration', () => {
-    it('uses the supplied configuration.', async () => {
-      // Arrange
-      const target = createTestTarget();
-      // Act
-      await target.lint(files, config);
-      // Assert
-      expect(factory.create).toHaveBeenCalledWith(expect.objectContaining({ configFile: config }));
-    });
   });
 
   describe('Linting', () => {

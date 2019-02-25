@@ -1,1 +1,3 @@
-lint/tslint.json
+{
+    "extends": "./lint/tslint.json"
+}

@@ -6,7 +6,7 @@ import { IZContentLinter } from '../zfile-lint/zcontent-linter.interface';
 export class ZJsonLint implements IZContentLinter {
   /**
    * Lints the collection of json files.
-   * 
+   *
    * @param contents The json file contents.
    */
   public async lint(contents: string): Promise<any> {

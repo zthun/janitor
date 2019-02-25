@@ -1,6 +1,18 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [7.0.0] - 2019-02-25
+### Changed
+- Updated all dependencies to the latest versions
+- Updated the typescript rule set to remove rules that match the recommended.
+- Fixed a bug in the tslint phase which caused the linter to not look at the recommended rules.
+
+### Removed
+- Removed the IZEsLintEngineFactory interface.
+- Removed the ZEsLintEngineFactory class.
+- Removed the IZTsLinterFactory interface.
+- Removed the ZTsLinterFactory class.
+
 ## [6.1.1] - 2018-10-28
 ### Changed
 - Fixed the package index exports to include ts lint source.

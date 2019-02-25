@@ -1,20 +1,23 @@
 import { Linter, LintResult } from 'tslint';
 import { RawConfigFile } from 'tslint/lib/configuration';
 import { ZTsLint } from './zts-lint.class';
-import { IZTsLinterFactory } from './zts-linter-factory.interface';
 
 describe('ZTsLint', () => {
   let result: LintResult;
   let content: string;
+  let contentPath: string;
   let options: RawConfigFile;
+  let optionsPath: string;
   let linter: Linter;
-  let linterFactory: IZTsLinterFactory;
 
   function createTestTarget() {
-    return new ZTsLint(linterFactory);
+    const target = new ZTsLint();
+    target.linter = linter;
+    return target;
   }
 
   beforeEach(() => {
+    contentPath = '/dev/test.ts';
     content = 'function getNull() { return null; }';
 
     result = {
@@ -23,16 +26,14 @@ describe('ZTsLint', () => {
       output: 'Some output'
     } as LintResult;
 
+    optionsPath = '/dev/tslint.json';
     options = {
-      extends: 'tslint:recommended'      
+      extends: 'tslint:recommended'
     };
 
     linter = {} as Linter;
     linter.lint = jest.fn();
     linter.getResult = jest.fn(() => result);
-
-    linterFactory = {} as any;
-    linterFactory.create = jest.fn(() => linter);
   });
 
   it('returns a resolved promise if the linting is successful.', async () => {
@@ -40,7 +41,7 @@ describe('ZTsLint', () => {
     const target = createTestTarget();
     // Act
     // Assert
-    await expect(target.lint(content, options)).resolves.toBeTruthy();
+    await expect(target.lint(content, contentPath, options, optionsPath)).resolves.toBeTruthy();
   });
 
   it('returns a rejected promise if there are warnings.', async () => {
@@ -49,7 +50,7 @@ describe('ZTsLint', () => {
     result.warningCount = 5;
     // Act
     // Assert
-    await expect(target.lint(content, options)).rejects.toEqual(result.output);
+    await expect(target.lint(content, contentPath, options, optionsPath)).rejects.toEqual(result.output);
   });
 
   it('returns a rejected promise if there are errors.', async () => {
@@ -58,6 +59,6 @@ describe('ZTsLint', () => {
     result.errorCount = 4;
     // Act
     // Assert
-    await expect(target.lint(content, options)).rejects.toEqual(result.output);
+    await expect(target.lint(content, contentPath, options, optionsPath)).rejects.toEqual(result.output);
   });
 });

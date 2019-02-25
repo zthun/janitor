@@ -18,13 +18,14 @@ export class ZHtmlHint implements IZContentLinter {
 
   /**
    * Lints the content.
-   * 
+   *
    * @param content The content to check.
+   * @param contentPath The path of the content data.
    * @param options The htmlhint options.
-   * 
+   *
    * @return A promise that resolves if the content is lint free, and rejects if it has lint errors.
    */
-  public lint(content: string, options?: RuleSet): Promise<any> {
+  public lint(content: string, contentPath: string, options?: RuleSet): Promise<any> {
     const messages = HTMLHint.verify(content, options);
 
     if (messages.length > 0) {
@@ -32,6 +33,6 @@ export class ZHtmlHint implements IZContentLinter {
       return Promise.reject(logs);
     }
 
-    return Promise.resolve('File is lint free.');
+    return Promise.resolve(`${contentPath} is lint free.`);
   }
 }

@@ -4,6 +4,8 @@ import { IZLintOptions } from './zlint-options.interface';
 import { ZLint } from './zlint.class';
 import { IZLinter } from './zlinter.interface';
 
+jest.mock('fs');
+
 describe('ZLint', () => {
   let args: IZLintArgs;
   let options: IZLintOptions;
@@ -66,7 +68,7 @@ describe('ZLint', () => {
       yamlFiles: ['**/*.yml']
     };
 
-    jest.spyOn(fs, 'readFile').mockImplementation((path, opts, callback) => callback(null, JSON.stringify(options)));
+    (fs.readFile as any).mockImplementation((path, opts, callback) => callback(null, JSON.stringify(options)));
   });
 
   describe('Parsing', () => {
@@ -92,7 +94,7 @@ describe('ZLint', () => {
     it('retrieves the options if a key of zlint is found.', async () => {
       // Arrange
       const target = createTestTarget();
-      jest.spyOn(fs, 'readFile').mockImplementation((path, opts, callback) => callback(null, JSON.stringify({zlint: options})));
+      (fs.readFile as any).mockImplementation((path, opts, callback) => callback(null, JSON.stringify({ zlint: options })));
       // Act
       const actual = await target.parse(args);
       // Assert

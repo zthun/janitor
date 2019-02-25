@@ -62,7 +62,7 @@ export class ZLint {
 
   /**
    * Initializes a new instance of this object.
-   * 
+   *
    * @param logger The logger to use when formatting output.
    */
   public constructor(private logger: Console) {
@@ -76,11 +76,11 @@ export class ZLint {
 
   /**
    * Parses the command line and returns the options for zlint.
-   * 
+   *
    * @return A promise that resolves the command line options.
    */
   public async parse(args: IZLintArgs): Promise<IZLintOptions> {
-    let configFile = args.config || ZLint.DefaultConfig;
+    const configFile = args.config || ZLint.DefaultConfig;
     this.logger.log(chalk.cyan(`Reading config file:  ${configFile}`));
     const pread = promisify(readFile);
     const buffer = await pread(configFile, ZLint.ConfigEncoding);
@@ -90,9 +90,9 @@ export class ZLint {
 
   /**
    * Runs the lint given the required options.
-   * 
+   *
    * @param options The lint options.
-   * 
+   *
    * @return A promise that returns 0 if all linting was successful, and 1 if any of the linting failed.
    */
   public async lint(options: IZLintOptions): Promise<number> {
@@ -104,7 +104,7 @@ export class ZLint {
       current = await this.jsonlint.lint(options.jsonFiles);
       result = result && current;
     }
-  
+
     if (options.yamlFiles) {
       this.logger.log(chalk.magenta.underline(`Linting yaml files from ${options.yamlFiles.length} globs.`));
       current = await this.yamllint.lint(options.yamlFiles);
@@ -135,12 +135,12 @@ export class ZLint {
       result = result && current;
     }
 
-    return result ? 0 : 1;  
+    return result ? 0 : 1;
   }
 
   /**
    * Runs the application.
-   * 
+   *
    * @return A promise that returns 0 if all linting was successful, and 1 if any of the linting failed.
    */
   public async run(args: IZLintArgs): Promise<number> {

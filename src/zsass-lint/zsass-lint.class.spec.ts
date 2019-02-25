@@ -8,7 +8,9 @@ describe('ZSassLint', () => {
   let logger: Console;
 
   function createTestTarget() {
-    return new ZSassLint(sasslint, logger);
+    const target = new ZSassLint(logger);
+    target.sasslint = sasslint;
+    return target;
   }
 
   beforeEach(() => {
@@ -21,7 +23,7 @@ describe('ZSassLint', () => {
     sasslint = require('sass-lint');
     jest.spyOn(sasslint, 'lintFiles').mockImplementation(() => ({}));
     jest.spyOn(sasslint, 'format').mockImplementation(() => 'Results');
-    jest.spyOn(sasslint, 'errorCount').mockImplementation(() => ({count: 0}));
+    jest.spyOn(sasslint, 'errorCount').mockImplementation(() => ({ count: 0 }));
   });
 
   describe('Configuration', () => {
@@ -48,7 +50,7 @@ describe('ZSassLint', () => {
     it('returns false if there are errors.', async () => {
       // Arrange
       const target = createTestTarget();
-      jest.spyOn(sasslint, 'errorCount').mockImplementation(() => ({count: 1}));
+      jest.spyOn(sasslint, 'errorCount').mockImplementation(() => ({ count: 1 }));
       // Act
       const actual = await target.lint(files, config);
       // Assert

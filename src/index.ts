@@ -1,5 +1,3 @@
-export * from './zes-lint/zes-lint-engine-factory.class';
-export * from './zes-lint/zes-lint-engine-factory.interface';
 export * from './zes-lint/zes-lint.class';
 export * from './zfile-lint/zcontent-linter.interface';
 export * from './zfile-lint/zfile-lint.class';
@@ -16,6 +14,4 @@ export * from './zlint/zlinter.interface';
 export * from './zlint/zsilent-linter.class';
 export * from './zsass-lint/zsass-lint.class';
 export * from './zts-lint/zts-lint.class';
-export * from './zts-lint/zts-linter-factory.class';
-export * from './zts-lint/zts-linter-factory.interface';
 export * from './zyaml-lint/zyaml-lint.class';

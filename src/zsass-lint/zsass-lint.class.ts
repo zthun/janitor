@@ -1,5 +1,4 @@
 import chalk from 'chalk';
-import { resolve } from 'path';
 import { IZLinter } from '../zlint/zlinter.interface';
 
 /**
@@ -7,19 +6,25 @@ import { IZLinter } from '../zlint/zlinter.interface';
  */
 export class ZSassLint implements IZLinter {
   /**
+   * The sasslinter.  Constructed from require('sass-lint')
+   */
+  public sasslint: any;
+
+  /**
    * Initializes a new instance of this object.
-   * 
-   * @param sasslint The sass lint application.  Constructed from require('sass-lint')
+   *
    * @param logger The logger to output the lint results to.
    */
-  public constructor(private readonly sasslint: any, private readonly logger: Console) { }
+  public constructor(private readonly logger: Console) {
+    this.sasslint = require('sass-lint');
+  }
 
   /**
    * Runs the linter on the file set.
-   * 
+   *
    * @param files The files to lint.
    * @param config The config file to lint with.
-   * 
+   *
    * @return A promise that resolves to true if the lint is successful, false if there are errors.
    */
   public async lint(files: string[], config: string): Promise<boolean> {
@@ -27,7 +32,7 @@ export class ZSassLint implements IZLinter {
     const sassOptions = { config };
     let results = [];
     files.map((file) => this.sasslint.lintFiles(file, sassOptions, config)).forEach((res) => results = results.concat(res));
-    const result = this.sasslint.format(results, {options: sassOptions});
+    const result = this.sasslint.format(results, { options: sassOptions });
     this.logger.log(result);
     return this.sasslint.errorCount(results).count === 0;
   }

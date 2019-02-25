@@ -38,7 +38,7 @@ describe('ZConfigReader', () => {
   it('returns a rejected promise if the config cannot be read.', async () => {
     // Arrange
     const target = createTestTarget();
-    (fs.readFile as any) = jest.fn((f, o, cb) => cb ('Cannot read file', null));
+    (fs.readFile as any) = jest.fn((f, o, cb) => cb('Cannot read file', null));
     // Act
     // Assert
     await expect(target.read(config)).rejects.toBeTruthy();

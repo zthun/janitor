@@ -6,7 +6,7 @@ import { IZConfigReader } from './zconfig-reader.interface';
 export class ZConfigNullReader implements IZConfigReader {
   /**
    * Returns a null resolved promise.
-   * 
+   *
    * @return A promise that resolves to null.
    */
   public async read(): Promise<any> {
