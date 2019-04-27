@@ -120,7 +120,7 @@ describe('ZLint', () => {
     });
   });
 
-  describe('Linting', async () => {
+  describe('Linting', () => {
     async function assertLinterInvoked(linter: IZLinter, files: string[], config?: string) {
       // Arrange
       const target = createTestTarget();
@@ -230,7 +230,7 @@ describe('ZLint', () => {
     });
   });
 
-  describe('Running', async () => {
+  describe('Running', () => {
     it('returns 0 if the linting is successful.', async () => {
       // Arrange
       const target = createTestTarget();
