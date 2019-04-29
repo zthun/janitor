@@ -2,9 +2,11 @@
 All notable changes to this project will be documented in this file.
 
 ## [7.0.2] - 2019-04-28
+### Changed
 - Fixed a bug with the internal .eslintrc where spaces were forbidden in curly braces.
 
 ## [7.0.1] - 2019-04-26
+### Changed
 - Updated all dependencies to the latest versions to resolve security errors.
 
 ## [7.0.0] - 2019-02-25
