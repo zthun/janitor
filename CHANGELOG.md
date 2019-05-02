@@ -1,6 +1,16 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [7.1.0] - 2019-05-02
+### Added
+- Added support for a .zlintrc config file
+- Added support for a .zlintrc.json config file
+- Added support for a .zlintrc.js config file
+- Added support for a .zlintrc.config.js config file.
+
+# Updated
+- Installed latest dependencies
+
 ## [7.0.2] - 2019-04-28
 ### Changed
 - Fixed a bug with the internal .eslintrc where spaces were forbidden in curly braces.

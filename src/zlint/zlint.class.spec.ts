@@ -4,6 +4,9 @@ import { IZLintOptions } from './zlint-options.interface';
 import { ZLint } from './zlint.class';
 import { IZLinter } from './zlinter.interface';
 
+import cosmiconfig = require('cosmiconfig');
+
+jest.mock('cosmiconfig');
 jest.mock('fs');
 
 describe('ZLint', () => {
@@ -81,14 +84,17 @@ describe('ZLint', () => {
       expect(fs.readFile).toHaveBeenCalledWith(args.config, ZLint.ConfigEncoding, expect.anything());
     });
 
-    it('reads the package.json file if no config specified.', async () => {
+    it('reads the cosmiconfig file if no config specified.', async () => {
       // Arrange
+      const expected = './zlintrc';
       const target = createTestTarget();
       delete args.config;
+      const search = jest.fn(() => Promise.resolve({ filepath: expected }));
+      (cosmiconfig as any).mockImplementation(() => ({ search }));
       // Act
       await target.parse(args);
       // Assert
-      expect(fs.readFile).toHaveBeenCalledWith(ZLint.DefaultConfig, ZLint.ConfigEncoding, expect.anything());
+      expect(fs.readFile).toHaveBeenCalledWith(expected, ZLint.ConfigEncoding, expect.anything());
     });
 
     it('retrieves the options if a key of zlint is found.', async () => {
@@ -108,6 +114,17 @@ describe('ZLint', () => {
       const actual = await target.parse(args);
       // Assert
       expect(JSON.stringify(actual)).toEqual(JSON.stringify(options));
+    });
+
+    it('throws an exception if there are no config files.', async () => {
+      // Arrange
+      const target = createTestTarget();
+      delete args.config;
+      const search = jest.fn(() => Promise.resolve(null));
+      (cosmiconfig as any).mockImplementation(() => ({ search }));
+      // Act
+      // Assert
+      expect(target.parse(args)).rejects.toBeDefined();
     });
 
     it('throws an exception if the config file cannot be read.', async () => {

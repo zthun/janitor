@@ -47,6 +47,7 @@
     "yargs": "^13.0.0"
   },
   "devDependencies": {
+    "@types/cosmiconfig": "^5.0.3",
     "@types/eslint": "^4.0.0",
     "@types/glob": "^7.0.0",
     "@types/htmlhint": "~0.9.0",
@@ -59,53 +60,8 @@
     "ts-jest": "^24.0.0",
     "ts-node": "^8.0.0"
   },
-  "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "json",
-      "ts"
-    ],
-    "globals": {
-      "ts-jest": {
-        "tsConfig": "./tsconfig.spec.json"
-      }
-    },
-    "rootDir": "src",
-    "testRegex": ".spec.ts$",
-    "transform": {
-      "^.+\\.(t|j)s$": "ts-jest"
-    },
-    "coverageDirectory": "../coverage",
-    "testEnvironment": "node"
-  },
-  "zlint": {
-    "esFiles": [
-      "test/**/*.js"
-    ],
-    "tsFiles": [
-      "test/**/*.ts",
-      "src/**/*.ts"
-    ],
-    "sassFiles": [
-      "test/**/*.scss"
-    ],
-    "htmlFiles": [
-      "test/**/*.html"
-    ],
-    "jsonFiles": [
-      "*.json",
-      ".eslintrc",
-      ".htmlhintrc",
-      "lint/**/*.json",
-      "lint/.eslintrc",
-      "lint/.htmlhintrc",
-      "test/*.json",
-      "src/**/*.json"
-    ],
-    "yamlFiles": [
-      "./.travis.yml",
-      "./.sass-lint.yml",
-      "./lint/.sass-lint.yml"
-    ]
-  }
+  "files": [
+    "dist/**",
+    "lint/**"
+  ]
 }

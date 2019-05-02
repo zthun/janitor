@@ -7,14 +7,12 @@ import { IZLintOptions } from './zlint-options.interface';
 import { IZLinter } from './zlinter.interface';
 import { ZSilentLinter } from './zsilent-linter.class';
 
+import cosmiconfig = require('cosmiconfig');
+
 /**
  * Represents the main entry point object for the application.
  */
 export class ZLint {
-  /**
-   * The default config for zlint.
-   */
-  public static readonly DefaultConfig = resolve('./package.json');
   /**
    * The default eslint config.
    */
@@ -80,7 +78,15 @@ export class ZLint {
    * @return A promise that resolves the command line options.
    */
   public async parse(args: IZLintArgs): Promise<IZLintOptions> {
-    const configFile = args.config || ZLint.DefaultConfig;
+    const configLoad = args.config ? Promise.resolve({ filepath: args.config }) : cosmiconfig('zlint').search();
+    const configResult = await configLoad;
+    const configFile = configResult ? configResult.filepath : null;
+
+    if (!configFile) {
+      const msg = 'Could not find a valid configuration.  Please add a .zlintrc file or a zlint field to your package.json';
+      throw new Error(msg);
+    }
+
     this.logger.log(chalk.cyan(`Reading config file:  ${configFile}`));
     const pread = promisify(readFile);
     const buffer = await pread(configFile, ZLint.ConfigEncoding);
