@@ -1,6 +1,6 @@
 {
   "name": "@zthun/web-styles",
-  "version": "7.0.2",
+  "version": "7.1.0",
   "description": "Style checks with tools for web projects using common rules.",
   "keywords": [
     "lint",
