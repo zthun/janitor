@@ -1,7 +1,7 @@
 language: node_js
-node_js: 10.2.1
+node_js: 10.15.3
 sudo: required
 install:
-- npm install
+- npm ci
 script:
 - npm run make
