@@ -4,6 +4,7 @@ All notable changes to this project will be documented in this file.
 ## [7.1.1] - 2019-08-22
 ### Changed
 - Updated dependencies to fix a critical security vulnerability.
+- Acorn is now a hard dependency.
 
 ## [7.1.0] - 2019-05-02
 ### Added
