@@ -1,6 +1,6 @@
 import * as fs from 'fs';
-import { IZConfigParser } from './zconfig-parser.interface';
-import { ZConfigReader } from './zconfig-reader.class';
+import { IZConfigParser } from './config-parser.interface';
+import { ZConfigReader } from './config-reader.class';
 
 jest.mock('fs');
 

@@ -1,4 +1,4 @@
-import { IZConfigReader } from './zconfig-reader.interface';
+import { IZConfigReader } from './config-reader.interface';
 
 /**
  * Represents a config reader that returns the empty options.

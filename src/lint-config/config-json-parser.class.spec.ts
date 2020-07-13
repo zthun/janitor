@@ -1,4 +1,4 @@
-import { ZConfigJsonParser } from './zconfig-json-parser.class';
+import { ZConfigJsonParser } from './config-json-parser.class';
 
 describe('ZConfigJsonParser', () => {
   function createTestTarget() {

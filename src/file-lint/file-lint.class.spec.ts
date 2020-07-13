@@ -1,9 +1,8 @@
-import chalk from 'chalk';
-import * as fs from 'fs';
-import * as G from 'glob';
-import { IZConfigReader } from '../zlint-config/zconfig-reader.interface';
-import { IZContentLinter } from './zcontent-linter.interface';
-import { ZFileLint } from './zfile-lint.class';
+import { readFile } from 'fs';
+import { sync } from 'glob';
+import { IZConfigReader } from '../lint-config/config-reader.interface';
+import { IZContentLinter } from './content-linter.interface';
+import { ZFileLint } from './file-lint.class';
 
 jest.mock('glob');
 jest.mock('fs');
@@ -33,14 +32,10 @@ describe('ZJsonLint', () => {
     contentLint = {} as any;
     contentLint.lint = jest.fn(() => Promise.resolve(true));
 
-    files = [
-      '/files/log-a.json',
-      '/files/lob-b.json',
-      '/files/log-c.json'
-    ];
+    files = ['/files/log-a.json', '/files/lob-b.json', '/files/log-c.json'];
 
-    (G.sync as any) = jest.fn(() => files);
-    (fs.readFile as any) = jest.fn((file, op, cb) => cb(null, 'File content'));
+    (sync as jest.Mock).mockImplementation(() => files);
+    ((readFile as unknown) as jest.Mock).mockImplementation((file, op, cb) => cb(null, 'File content'));
   });
 
   function createTestTarget() {
@@ -70,7 +65,7 @@ describe('ZJsonLint', () => {
     it('returns false if any file cannot be read.', async () => {
       // Arrange
       const target = createTestTarget();
-      (fs.readFile as any) = jest.fn((p, o, cb) => cb('Cannot read', null));
+      ((readFile as unknown) as jest.Mock).mockImplementation((p, o, cb) => cb('Cannot read', null));
       // Act
       const actual = await target.lint(files);
       // Assert
@@ -100,9 +95,9 @@ describe('ZJsonLint', () => {
 
     it('reads the config and passes it to the content linter.', async () => {
       // Arrange
-      const targget = createTestTarget();
+      const target = createTestTarget();
       // Act
-      await targget.lint(files, config);
+      await target.lint(files, config);
       // Assert
       expect(contentLint.lint).toHaveBeenCalledWith(expect.anything(), expect.anything(), options, config);
     });
@@ -135,7 +130,7 @@ describe('ZJsonLint', () => {
       // Act
       await target.lint(files, config);
       // Assert
-      logs.forEach((log) => expect(logger.error).toHaveBeenCalledWith(chalk.red(log)));
+      logs.forEach((log) => expect(logger.error).toHaveBeenCalledWith(expect.stringContaining(log)));
     }
 
     it('logs all errors on separate lines if an array is passed.', async () => {

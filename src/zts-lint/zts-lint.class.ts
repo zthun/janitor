@@ -1,6 +1,6 @@
 import { basename, dirname } from 'path';
 import { Configuration, ILinterOptions, Linter } from 'tslint';
-import { IZContentLinter } from '../zfile-lint/zcontent-linter.interface';
+import { IZContentLinter } from '../file-lint/content-linter.interface';
 
 /**
  * Represnets an object that can lint ts files.
@@ -42,5 +42,4 @@ export class ZTsLint implements IZContentLinter {
 
     return Promise.resolve('Lint free.');
   }
-
 }

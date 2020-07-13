@@ -1,4 +1,4 @@
-import { ZConfigNullReader } from './zconfig-null-reader.class';
+import { ZConfigNullReader } from './config-null-reader.class';
 
 describe('ZConfigNullReader', () => {
   function createTestTarget() {

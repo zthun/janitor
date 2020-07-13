@@ -1,4 +1,4 @@
-import chalk from 'chalk';
+import * as chalk from 'chalk';
 import { CLIEngine } from 'eslint';
 import { IZLinter } from '../zlint/zlinter.interface';
 

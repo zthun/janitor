@@ -1,5 +1,5 @@
 import { safeLoad } from 'js-yaml';
-import { IZContentLinter } from '../zfile-lint/zcontent-linter.interface';
+import { IZContentLinter } from '../file-lint/content-linter.interface';
 
 /**
  * Represents a linter for yml files.

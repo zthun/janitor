@@ -1,7 +1,7 @@
 import { readFile } from 'fs';
 import { promisify } from 'util';
-import { IZConfigParser } from './zconfig-parser.interface';
-import { IZConfigReader } from './zconfig-reader.interface';
+import { IZConfigParser } from './config-parser.interface';
+import { IZConfigReader } from './config-reader.interface';
 
 /**
  * Represents the standard config reader.
@@ -12,7 +12,7 @@ export class ZConfigReader implements IZConfigReader {
    *
    * @param parser The config content parser.
    */
-  public constructor(private parser: IZConfigParser) { }
+  public constructor(private parser: IZConfigParser) {}
 
   /**
    * Reads the config file.

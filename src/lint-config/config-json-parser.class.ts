@@ -1,4 +1,4 @@
-import { IZConfigParser } from './zconfig-parser.interface';
+import { IZConfigParser } from './config-parser.interface';
 
 /**
  * Parses a json config file.

@@ -1,4 +1,5 @@
-import chalk from 'chalk';
+import * as chalk from 'chalk';
+import {} from 'cosmiconfig';
 import { readFile } from 'fs';
 import { resolve } from 'path';
 import { promisify } from 'util';
@@ -6,8 +7,6 @@ import { IZLintArgs } from './zlint-args.interface';
 import { IZLintOptions } from './zlint-options.interface';
 import { IZLinter } from './zlinter.interface';
 import { ZSilentLinter } from './zsilent-linter.class';
-
-import cosmiconfig = require('cosmiconfig');
 
 /**
  * Represents the main entry point object for the application.

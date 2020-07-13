@@ -1,10 +1,9 @@
 import * as fs from 'fs';
+import * as cosmiconfig from 'cosmiconfig';
 import { IZLintArgs } from './zlint-args.interface';
 import { IZLintOptions } from './zlint-options.interface';
 import { ZLint } from './zlint.class';
 import { IZLinter } from './zlinter.interface';
-
-import cosmiconfig = require('cosmiconfig');
 
 jest.mock('cosmiconfig');
 jest.mock('fs');

@@ -1,4 +1,4 @@
-import chalk from 'chalk';
+import * as chalk from 'chalk';
 import { IZLinter } from '../zlint/zlinter.interface';
 
 /**
@@ -31,7 +31,7 @@ export class ZSassLint implements IZLinter {
     this.logger.log(chalk.green.italic(`Using config file from ${config}`));
     const sassOptions = { config };
     let results = [];
-    files.map((file) => this.sasslint.lintFiles(file, sassOptions, config)).forEach((res) => results = results.concat(res));
+    files.map((file) => this.sasslint.lintFiles(file, sassOptions, config)).forEach((res) => (results = results.concat(res)));
     const result = this.sasslint.format(results, { options: sassOptions });
     this.logger.log(result);
     return this.sasslint.errorCount(results).count === 0;

@@ -1,17 +1,17 @@
 import chalk from 'chalk';
 import { readFile } from 'fs';
-import * as G from 'glob';
+import { IOptions, sync } from 'glob';
 import { resolve } from 'path';
 import { isArray, promisify } from 'util';
-import { IZConfigReader } from '../zlint-config/zconfig-reader.interface';
+import { IZConfigReader } from '../lint-config/config-reader.interface';
 import { IZLinter } from '../zlint/zlinter.interface';
-import { IZContentLinter } from './zcontent-linter.interface';
+import { IZContentLinter } from './content-linter.interface';
 
 /**
- * Represnets an object that can lint files one at a time.
+ * Represents an object that can lint files one at a time.
  */
 export class ZFileLint implements IZLinter {
-  private _globOptions: G.IOptions;
+  private _globOptions: IOptions;
 
   /**
    * Initializes a new instance of this object.
@@ -34,14 +34,14 @@ export class ZFileLint implements IZLinter {
    * @param config The optional path to the config file.
    */
   public async lint(src: string[], config?: string): Promise<boolean> {
-    const pread = promisify(readFile);
+    const readFileAsync = promisify(readFile);
     let options = {};
 
     let result = true;
     let allFiles: string[] = [];
 
     for (const pattern of src) {
-      allFiles = allFiles.concat(G.sync(pattern, this._globOptions));
+      allFiles = allFiles.concat(sync(pattern, this._globOptions));
     }
 
     if (allFiles.length === 0) {
@@ -62,13 +62,13 @@ export class ZFileLint implements IZLinter {
     this.logger.log();
 
     for (const file of allFiles) {
-      const fullfile = resolve(file);
+      const fullFilePath = resolve(file);
       try {
-        const content = await pread(fullfile, 'utf-8');
-        await this.contentLint.lint(content, fullfile, options, config);
+        const content = await readFileAsync(fullFilePath, 'utf-8');
+        await this.contentLint.lint(content, fullFilePath, options, config);
       } catch (err) {
         result = false;
-        this._format(fullfile, err);
+        this._format(fullFilePath, err);
       }
     }
 
@@ -83,7 +83,7 @@ export class ZFileLint implements IZLinter {
    */
   private _format(file: string, err: any) {
     const fileFormat = `Errors in ${file}`;
-    this.logger.error(chalk.red.underline(fileFormat));
+    this.logger.error(chalk.green.underline(fileFormat));
 
     if (isArray(err)) {
       err.forEach((log) => this.logger.error(chalk.red(log)));

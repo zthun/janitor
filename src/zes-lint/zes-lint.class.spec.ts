@@ -29,7 +29,8 @@ describe('ZEsLint', () => {
       errorCount: 0,
       warningCount: 0,
       fixableErrorCount: 0,
-      fixableWarningCount: 0
+      fixableWarningCount: 0,
+      usedDeprecatedRules: []
     };
 
     successB = {
@@ -38,24 +39,28 @@ describe('ZEsLint', () => {
       errorCount: 0,
       warningCount: 0,
       fixableErrorCount: 0,
-      fixableWarningCount: 0
+      fixableWarningCount: 0,
+      usedDeprecatedRules: []
     };
 
     failedA = {
       filePath: 'src/app/error.js',
-      messages: [{
-        column: 33,
-        line: 10,
-        ruleId: 'eqeqeq',
-        message: 'Always use ===',
-        nodeType: 'branch',
-        severity: 2,
-        source: 'file'
-      }],
+      messages: [
+        {
+          column: 33,
+          line: 10,
+          ruleId: 'eqeqeq',
+          message: 'Always use ===',
+          nodeType: 'branch',
+          severity: 2,
+          source: 'file'
+        }
+      ],
       errorCount: 1,
       warningCount: 0,
       fixableErrorCount: 0,
-      fixableWarningCount: 0
+      fixableWarningCount: 0,
+      usedDeprecatedRules: []
     };
 
     successReport = {
@@ -63,7 +68,8 @@ describe('ZEsLint', () => {
       errorCount: 0,
       warningCount: 0,
       fixableErrorCount: 0,
-      fixableWarningCount: 0
+      fixableWarningCount: 0,
+      usedDeprecatedRules: []
     };
 
     failedReport = {
@@ -71,7 +77,8 @@ describe('ZEsLint', () => {
       errorCount: 1,
       warningCount: 0,
       fixableErrorCount: 0,
-      fixableWarningCount: 0
+      fixableWarningCount: 0,
+      usedDeprecatedRules: []
     };
 
     formatter = jest.fn();
@@ -97,7 +104,9 @@ describe('ZEsLint', () => {
     it('returns false if an IO exception occurs.', async () => {
       // Arrange
       const target = createTestTarget();
-      (engine.executeOnFiles as any).mockImplementation(() => { throw new Error('Cannot open file.'); });
+      (engine.executeOnFiles as any).mockImplementation(() => {
+        throw new Error('Cannot open file.');
+      });
       // Act
       const actual = await target.lint(files, config);
       // Assert
