@@ -12,6 +12,6 @@ export * from './lint/lint-options.interface';
 export * from './lint/lint.class';
 export * from './lint/linter.interface';
 export * from './lint/silent-linter.class';
-export * from './zsass-lint/zsass-lint.class';
+export * from './sass-lint/sass-lint.class';
 export * from './ts-lint/ts-lint.class';
-export * from './zyaml-lint/zyaml-lint.class';
+export * from './yaml-lint/yaml-lint.class';

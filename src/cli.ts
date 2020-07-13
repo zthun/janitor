@@ -10,9 +10,9 @@ import { ZConfigNullReader } from './lint-config/config-null-reader.class';
 import { ZConfigReader } from './lint-config/config-reader.class';
 import { IZLintArgs } from './lint/lint-args.interface';
 import { ZLint } from './lint/lint.class';
-import { ZSassLint } from './zsass-lint/zsass-lint.class';
+import { ZSassLint } from './sass-lint/sass-lint.class';
 import { ZTsLint } from './ts-lint/ts-lint.class';
-import { ZYamlLint } from './zyaml-lint/zyaml-lint.class';
+import { ZYamlLint } from './yaml-lint/yaml-lint.class';
 
 const args: IZLintArgs = yargs.usage('$0 [options]').alias('c', 'config').describe('c', 'Optional config file to use.').string('c').help().parse() as any;
 

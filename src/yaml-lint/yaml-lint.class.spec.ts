@@ -1,5 +1,5 @@
 import { safeDump } from 'js-yaml';
-import { ZYamlLint } from './zyaml-lint.class';
+import { ZYamlLint } from './yaml-lint.class';
 
 describe('ZJsonLint', () => {
   let yaml: any;

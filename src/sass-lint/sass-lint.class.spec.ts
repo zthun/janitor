@@ -1,5 +1,5 @@
 import { resolve } from 'path';
-import { ZSassLint } from './zsass-lint.class';
+import { ZSassLint } from './sass-lint.class';
 
 describe('ZSassLint', () => {
   let config: string;
