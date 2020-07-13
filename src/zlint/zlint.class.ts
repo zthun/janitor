@@ -1,5 +1,5 @@
-import * as chalk from 'chalk';
-import {} from 'cosmiconfig';
+import chalk from 'chalk';
+import { cosmiconfig } from 'cosmiconfig';
 import { readFile } from 'fs';
 import { resolve } from 'path';
 import { promisify } from 'util';

@@ -1,4 +1,4 @@
-import * as fs from 'fs';
+import { readFile } from 'fs';
 import { IZConfigParser } from './config-parser.interface';
 import { ZConfigReader } from './config-reader.class';
 
@@ -19,7 +19,7 @@ describe('ZConfigReader', () => {
     parser = {} as any;
     parser.parse = jest.fn(() => Promise.resolve(options));
 
-    (fs.readFile as any) = jest.fn((f, o, cb) => cb(null, JSON.stringify(options)));
+    (readFile as any).mockImplementation((f, o, cb) => cb(null, JSON.stringify(options)));
   });
 
   function createTestTarget() {
@@ -38,7 +38,7 @@ describe('ZConfigReader', () => {
   it('returns a rejected promise if the config cannot be read.', async () => {
     // Arrange
     const target = createTestTarget();
-    (fs.readFile as any) = jest.fn((f, o, cb) => cb('Cannot read file', null));
+    (readFile as any).mockImplementation((f, o, cb) => cb('Cannot read file', null));
     // Act
     // Assert
     await expect(target.read(config)).rejects.toBeTruthy();

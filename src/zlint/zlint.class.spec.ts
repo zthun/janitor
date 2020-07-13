@@ -1,5 +1,5 @@
-import * as fs from 'fs';
-import * as cosmiconfig from 'cosmiconfig';
+import { readFile } from 'fs';
+import { cosmiconfig } from 'cosmiconfig';
 import { IZLintArgs } from './zlint-args.interface';
 import { IZLintOptions } from './zlint-options.interface';
 import { ZLint } from './zlint.class';
@@ -70,7 +70,7 @@ describe('ZLint', () => {
       yamlFiles: ['**/*.yml']
     };
 
-    (fs.readFile as any).mockImplementation((path, opts, callback) => callback(null, JSON.stringify(options)));
+    ((readFile as unknown) as jest.Mock<any, any>).mockImplementation((path, opts, callback) => callback(null, JSON.stringify(options)));
   });
 
   describe('Parsing', () => {
@@ -80,7 +80,7 @@ describe('ZLint', () => {
       // Act
       await target.parse(args);
       // Assert
-      expect(fs.readFile).toHaveBeenCalledWith(args.config, ZLint.ConfigEncoding, expect.anything());
+      expect(readFile).toHaveBeenCalledWith(args.config, ZLint.ConfigEncoding, expect.anything());
     });
 
     it('reads the cosmiconfig file if no config specified.', async () => {
@@ -93,13 +93,13 @@ describe('ZLint', () => {
       // Act
       await target.parse(args);
       // Assert
-      expect(fs.readFile).toHaveBeenCalledWith(expected, ZLint.ConfigEncoding, expect.anything());
+      expect(readFile).toHaveBeenCalledWith(expected, ZLint.ConfigEncoding, expect.anything());
     });
 
     it('retrieves the options if a key of zlint is found.', async () => {
       // Arrange
       const target = createTestTarget();
-      (fs.readFile as any).mockImplementation((path, opts, callback) => callback(null, JSON.stringify({ zlint: options })));
+      (readFile as any).mockImplementation((path, opts, callback) => callback(null, JSON.stringify({ zlint: options })));
       // Act
       const actual = await target.parse(args);
       // Assert
@@ -129,7 +129,7 @@ describe('ZLint', () => {
     it('throws an exception if the config file cannot be read.', async () => {
       // Arrange
       const target = createTestTarget();
-      (fs.readFile as any).mockImplementation((file, encoding, callback) => callback('Cannot open file'));
+      (readFile as any).mockImplementation((file, encoding, callback) => callback('Cannot open file'));
       // Act
       // Assert
       expect(target.parse(args)).rejects.toBeDefined();
@@ -269,7 +269,7 @@ describe('ZLint', () => {
     it('returns 1 if any parsing fails.', async () => {
       // Arrange
       const target = createTestTarget();
-      (fs.readFile as any).mockImplementation((file, enc, callback) => callback('Failed'));
+      (readFile as any).mockImplementation((file, enc, callback) => callback('Failed'));
       // Act
       const actual = await target.run(args);
       // Assert
@@ -279,7 +279,7 @@ describe('ZLint', () => {
     it('logs parse errors.', async () => {
       // Arrange
       const target = createTestTarget();
-      (fs.readFile as any).mockImplementation((file, enc, callback) => callback('Failed'));
+      (readFile as any).mockImplementation((file, enc, callback) => callback('Failed'));
       // Act
       await target.run(args);
       // Assert
