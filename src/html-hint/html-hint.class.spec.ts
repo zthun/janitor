@@ -1,4 +1,4 @@
-import { ZHtmlHint } from './zhtml-hint.class';
+import { ZHtmlHint } from './html-hint.class';
 import { LintResult, RuleSet, HTMLHint } from 'htmlhint';
 
 describe('ZHtmlHint', () => {

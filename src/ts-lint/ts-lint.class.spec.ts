@@ -1,6 +1,6 @@
 import { ILinterOptions, Linter, LintResult } from 'tslint';
 import { RawConfigFile } from 'tslint/lib/configuration';
-import { ZTsLint } from './zts-lint.class';
+import { ZTsLint } from './ts-lint.class';
 
 describe('ZTsLint', () => {
   let result: LintResult;

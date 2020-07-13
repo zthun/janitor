@@ -1,4 +1,4 @@
-import { ZJsonLint } from './zjson-lint.class';
+import { ZJsonLint } from './json-lint.class';
 
 jest.mock('glob');
 jest.mock('fs');

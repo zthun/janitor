@@ -1,5 +1,5 @@
 import chalk from 'chalk';
-import { IZLinter } from '../zlint/zlinter.interface';
+import { IZLinter } from '../lint/linter.interface';
 
 /**
  * Represents a linter that checks sass files.

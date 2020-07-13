@@ -1,9 +1,9 @@
 import { readFile } from 'fs';
 import { cosmiconfig } from 'cosmiconfig';
-import { IZLintArgs } from './zlint-args.interface';
-import { IZLintOptions } from './zlint-options.interface';
-import { ZLint } from './zlint.class';
-import { IZLinter } from './zlinter.interface';
+import { IZLintArgs } from './lint-args.interface';
+import { IZLintOptions } from './lint-options.interface';
+import { ZLint } from './lint.class';
+import { IZLinter } from './linter.interface';
 
 jest.mock('cosmiconfig');
 jest.mock('fs');

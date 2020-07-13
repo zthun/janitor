@@ -3,10 +3,10 @@ import { cosmiconfig } from 'cosmiconfig';
 import { readFile } from 'fs';
 import { resolve } from 'path';
 import { promisify } from 'util';
-import { IZLintArgs } from './zlint-args.interface';
-import { IZLintOptions } from './zlint-options.interface';
-import { IZLinter } from './zlinter.interface';
-import { ZSilentLinter } from './zsilent-linter.class';
+import { IZLintArgs } from './lint-args.interface';
+import { IZLintOptions } from './lint-options.interface';
+import { IZLinter } from './linter.interface';
+import { ZSilentLinter } from './silent-linter.class';
 
 /**
  * Represents the main entry point object for the application.

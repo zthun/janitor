@@ -1,6 +1,6 @@
 import { CLIEngine } from 'eslint';
 import { resolve } from 'path';
-import { ZEsLint } from './zes-lint.class';
+import { ZEsLint } from './es-lint.class';
 
 describe('ZEsLint', () => {
   let files: string[];

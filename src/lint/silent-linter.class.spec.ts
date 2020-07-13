@@ -1,4 +1,4 @@
-import { ZSilentLinter } from './zsilent-linter.class';
+import { ZSilentLinter } from './silent-linter.class';
 
 describe('ZSilentLinter', () => {
   function createTestTarget() {
