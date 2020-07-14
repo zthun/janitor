@@ -24,7 +24,6 @@ describe('ZLint', () => {
     const target = new ZLint(logger);
     target.esLint = esLint;
     target.htmlHint = htmlHint;
-    target.sassLint = sassLint;
     target.jsonLint = jsonLint;
     target.yamlLint = yamlLint;
     target.styleLint = styleLint;
@@ -64,10 +63,8 @@ describe('ZLint', () => {
     options = {
       esConfig: './.eslintrc',
       esFiles: ['**/*.js'],
-      sassConfig: './.sass-lint.yml',
-      sassFiles: ['**/*.scss'],
       styleConfig: './.stylelintrc.json',
-      styleFiles: ['**/*.css', '**/*.less'],
+      styleFiles: ['**/*.css', '**/*.less', '**/*.scss', '**/*.sass'],
       htmlConfig: './.htmlhintrc',
       htmlFiles: ['**/*.html'],
       jsonFiles: ['**/*.json'],
@@ -166,22 +163,6 @@ describe('ZLint', () => {
       it('does not invoke the linter if there are no esFiles.', async () => {
         delete options.esFiles;
         await assertLinterNotInvoked(esLint);
-      });
-    });
-
-    describe('SassLint', () => {
-      it('invokes the linter if there are sassFiles', async () => {
-        await assertLinterInvoked(sassLint, options.sassFiles, options.sassConfig);
-      });
-
-      it('uses the default config if no config is specified.', async () => {
-        delete options.sassConfig;
-        await assertLinterInvoked(sassLint, options.sassFiles, ZLint.DefaultSassLintConfig);
-      });
-
-      it('does not invoke the linter if there are no sassFiles.', async () => {
-        delete options.sassFiles;
-        await assertLinterNotInvoked(sassLint);
       });
     });
 

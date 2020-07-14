@@ -15,10 +15,6 @@ export class ZLint {
    */
   public static readonly DefaultEsLintConfig = resolve(__dirname, '../../lint/.eslintrc');
   /**
-   * The default sass lint config.
-   */
-  public static readonly DefaultSassLintConfig = resolve(__dirname, '../../lint/.sass-lint.yml');
-  /**
    * The default html hint config.
    */
   public static readonly DefaultHtmlHintConfig = resolve(__dirname, '../../lint/.htmlhintrc');
@@ -34,10 +30,6 @@ export class ZLint {
    * The linter for style files.
    */
   public styleLint: IZLinter = new ZSilentLinter();
-  /**
-   * The linter for scss files.
-   */
-  public sassLint: IZLinter = new ZSilentLinter();
   /**
    * The linter for html files.
    */
@@ -105,12 +97,6 @@ export class ZLint {
     if (options.esFiles) {
       this.logger.log(chalk.magenta.underline(`Linting ecmaScript files from ${options.esFiles.length} globs.`));
       current = await this.esLint.lint(options.esFiles, options.esConfig || ZLint.DefaultEsLintConfig);
-      result = result && current;
-    }
-
-    if (options.sassFiles) {
-      this.logger.log(chalk.magenta.underline(`Linting sass files from ${options.sassFiles.length} globs.`));
-      current = await this.sassLint.lint(options.sassFiles, options.sassConfig || ZLint.DefaultSassLintConfig);
       result = result && current;
     }
 

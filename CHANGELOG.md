@@ -20,6 +20,8 @@ All notable changes to this project will be documented in this file.
 
 - [BREAKING] - Ts file globs are no longer supported in the config file.
 - [MIGRATION] - Use esFiles instead.
+- [BREAKING] - Sass file globs are no longer supported in the config file.
+- [MIGRATION] - Use style files instead.
 
 ## [7.1.1] - 2019-08-22
 

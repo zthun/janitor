@@ -55,12 +55,11 @@ npm run lint
 
 The following styling options are included in this package under the lint folder.
 
-| Config File       | For        | Description                                                         |
-| ----------------- | ---------- | ------------------------------------------------------------------- |
-| .htmlhintrc       | HTML       | Used for [htmlhint](http://htmlhint.com/) checks.                   |
-| .sass-lint.yml    | SASS       | Used for [sasslint](https://github.com/sasstools/sass-lint) checks. |
-| .eslintrc         | Javascript | Used for [eslint](http://eslint.org/) checks.                       |
-| .stylelintrc.json | Styles     | Used for [stylelint](https://stylelint.io/) checks.                 |
+| Config File       | For        | Description                                         |
+| ----------------- | ---------- | --------------------------------------------------- |
+| .htmlhintrc       | HTML       | Used for [htmlhint](http://htmlhint.com/) checks.   |
+| .eslintrc         | Javascript | Used for [eslint](http://eslint.org/) checks.       |
+| .stylelintrc.json | Styles     | Used for [stylelint](https://stylelint.io/) checks. |
 
 # Usage
 
@@ -78,15 +77,13 @@ If you do not specify a config file on the command line, the linter will look at
 
 Please note that having any values undefined will mean that the linter for those files will be skipped.
 
-| Key         | Description                            | Type   | Default                                              |
-| ----------- | -------------------------------------- | ------ | ---------------------------------------------------- |
-| esConfig    | The path to the .eslintrc file         | string | node_modules/@zthun/lint-janitor/lint/.eslintrc      |
-| sassConfig  | The path to the .sass-lint.yml file    | string | node_modules/@zthun/lint-janitor/lint/.sass-lint.yml |
-| htmlConfig  | The path to the .htmlhintrc file       | string | node_modules/@zthun/lint-janitor/lint/.htmlhintrc    |
-| styleConfig | The path to the .stylelintrc.json file | string | node_modules/@zthun/lint-janitor/lint.stylelintrc    |
-| esFiles     | The javascript file globs to lint      | array  | undefined                                            |
-| sassFiles   | The sass file globs to lint            | array  | undefined                                            |
-| styleFiles  | The style file globs to lint           | array  | undefined                                            |
-| htmlFiles   | The html file globs to lint            | array  | undefined                                            |
-| jsonFiles   | The json file globs to lint            | array  | undefined                                            |
-| yamlFiles   | The yml file globs to lint             | array  | undefined                                            |
+| Key         | Description                            | Type   | Default                                           |
+| ----------- | -------------------------------------- | ------ | ------------------------------------------------- |
+| esConfig    | The path to the .eslintrc file         | string | node_modules/@zthun/lint-janitor/lint/.eslintrc   |
+| htmlConfig  | The path to the .htmlhintrc file       | string | node_modules/@zthun/lint-janitor/lint/.htmlhintrc |
+| styleConfig | The path to the .stylelintrc.json file | string | node_modules/@zthun/lint-janitor/lint.stylelintrc |
+| esFiles     | The javascript file globs to lint      | array  | undefined                                         |
+| styleFiles  | The style file globs to lint           | array  | undefined                                         |
+| htmlFiles   | The html file globs to lint            | array  | undefined                                         |
+| jsonFiles   | The json file globs to lint            | array  | undefined                                         |
+| yamlFiles   | The yml file globs to lint             | array  | undefined                                         |

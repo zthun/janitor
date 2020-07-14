@@ -12,5 +12,4 @@ export { IZLintOptions } from './lint/lint-options.interface';
 export { ZLint } from './lint/lint.class';
 export { IZLinter } from './lint/linter.interface';
 export { ZSilentLinter } from './lint/silent-linter.class';
-export { ZSassLint } from './sass-lint/sass-lint.class';
 export { ZYamlLint } from './yaml-lint/yaml-lint.class';
