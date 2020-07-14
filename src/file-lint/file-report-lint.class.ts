@@ -37,7 +37,6 @@ export class ZFileReportLint implements IZLinter {
     }
 
     this.logger.log(chalk.green.italic(`Checking syntax for ${allFiles.length} ${this.type} files.`));
-
     return this._child.lint(src, config);
   }
 }

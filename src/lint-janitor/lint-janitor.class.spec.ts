@@ -17,6 +17,7 @@ describe('ZLintJanitor', () => {
   let jsonLint: IZLinter;
   let yamlLint: IZLinter;
   let styleLint: IZLinter;
+  let markdownLint: IZLinter;
   let load: jest.Mock;
   let search: jest.Mock;
 
@@ -27,6 +28,7 @@ describe('ZLintJanitor', () => {
     target.jsonLint = jsonLint;
     target.yamlLint = yamlLint;
     target.styleLint = styleLint;
+    target.markdownLint = markdownLint;
     return target;
   }
 
@@ -52,6 +54,9 @@ describe('ZLintJanitor', () => {
     styleLint = {} as any;
     styleLint.lint = jest.fn(() => Promise.resolve(true));
 
+    markdownLint = {} as any;
+    markdownLint.lint = jest.fn(() => Promise.resolve(true));
+
     logger = {} as any;
     logger.log = jest.fn();
     logger.error = jest.fn();
@@ -63,8 +68,10 @@ describe('ZLintJanitor', () => {
     options = {
       esConfig: './.eslintrc',
       esFiles: ['**/*.js'],
-      styleConfig: './.stylelintrc.json',
+      styleConfig: './.stylelintrc',
       styleFiles: ['**/*.css', '**/*.less', '**/*.scss', '**/*.sass'],
+      markdownConfig: './.markdownlintrc',
+      markdownFiles: ['**/*.md'],
       htmlConfig: './.htmlhintrc',
       htmlFiles: ['**/*.html'],
       jsonFiles: ['**/*.json'],
@@ -179,6 +186,22 @@ describe('ZLintJanitor', () => {
       it('does not invoke the linter if there are no styleFiles.', async () => {
         delete options.styleFiles;
         await assertLinterNotInvoked(styleLint);
+      });
+    });
+
+    describe('MarkdownLint', () => {
+      it('invokes the linter if there are markdownFiles', async () => {
+        await assertLinterInvoked(markdownLint, options.markdownFiles, options.markdownConfig);
+      });
+
+      it('uses the default config if no config is specified.', async () => {
+        delete options.markdownConfig;
+        await assertLinterInvoked(markdownLint, options.markdownFiles, ZLintJanitor.DefaultMarkdownLintConfig);
+      });
+
+      it('does not invoke the linter if there are no styleFiles.', async () => {
+        delete options.markdownFiles;
+        await assertLinterNotInvoked(markdownLint);
       });
     });
 

@@ -21,7 +21,12 @@ export class ZLintJanitor {
   /**
    * The default stylelint config.
    */
-  public static readonly DefaultStyleLintConfig = resolve(__dirname, '../../lint/.stylelintrc.json');
+  public static readonly DefaultStyleLintConfig = resolve(__dirname, '../../lint/.stylelintrc');
+  /**
+   * The default markdownlint config.
+   */
+  public static readonly DefaultMarkdownLintConfig = resolve(__dirname, '../../lint/.markdownlintrc');
+
   /**
    * The linter for js files.
    */
@@ -42,6 +47,10 @@ export class ZLintJanitor {
    * The linter for yaml files.
    */
   public yamlLint: IZLinter = new ZSilentLint();
+  /**
+   * The linter for markdown files.
+   */
+  public markdownLint: IZLinter = new ZSilentLint();
 
   /**
    * Initializes a new instance of this object.
@@ -91,6 +100,12 @@ export class ZLintJanitor {
     if (options.yamlFiles) {
       this.logger.log(chalk.magenta.underline(`Linting yaml files from ${options.yamlFiles.length} globs.`));
       current = await this.yamlLint.lint(options.yamlFiles);
+      result = result && current;
+    }
+
+    if (options.markdownFiles) {
+      this.logger.log(chalk.magenta.underline(`Linting markdown files from ${options.markdownFiles.length} globs.`));
+      current = await this.markdownLint.lint(options.markdownFiles, options.markdownConfig || ZLintJanitor.DefaultMarkdownLintConfig);
       result = result && current;
     }
 

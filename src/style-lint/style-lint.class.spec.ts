@@ -24,7 +24,7 @@ describe('ZStyleLint', () => {
     };
 
     content = ['fileA.less', 'fileB.css'];
-    config = '.stylelintrc.json';
+    config = '.stylelintrc';
 
     (lint as jest.Mock).mockResolvedValue(lintResult);
   });

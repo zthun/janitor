@@ -11,7 +11,7 @@ import { IZContentLinter } from './content-linter.interface';
  * Represents an object that can lint files one at a time.
  */
 export class ZFileLint implements IZLinter {
-  private _globOptions: IOptions;
+  private _globOptions: IOptions = { dot: true };
 
   /**
    * Initializes a new instance of this object.
@@ -21,11 +21,7 @@ export class ZFileLint implements IZLinter {
    * @param logger The logger to use.
    * @param type The file type.
    */
-  public constructor(private contentLint: IZContentLinter, private configReader: IZConfigReader, private logger: Console, private type: string) {
-    this._globOptions = {
-      dot: true
-    };
-  }
+  public constructor(private contentLint: IZContentLinter, private configReader: IZConfigReader, private logger: Console, private type: string) {}
 
   /**
    * Lints the collection of json files.

@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file.
 ### Added
 
 - Added support for linting less, css, sass, scss and other style files using style-lint.
+- Added support for linting markdown files using markdownlint.
 
 ### Changed
 

@@ -13,6 +13,7 @@ import { ZLintJanitor } from './lint-janitor/lint-janitor.class';
 import { ZStyleLint } from './style-lint/style-lint.class';
 import { ZYamlLint } from './yaml-lint/yaml-lint.class';
 import { ZFileReportLint } from './file-lint/file-report-lint.class';
+import { ZMarkdownLint } from './markdown-lint/markdown-lint.class';
 
 const args: IZLintJanitorArgs = usage('$0 [options]').alias('c', 'config').describe('c', 'Optional config file to use.').string('c').help().parse() as any;
 
@@ -25,12 +26,15 @@ const jsonLint = new ZJsonLint();
 const yamlLint = new ZYamlLint();
 const esLint = new ZEsLint(logger);
 const styleLint = new ZStyleLint(logger);
+const markdownLint = new ZMarkdownLint(logger, jsonConfigReader);
 
-const zLint = new ZLintJanitor(logger);
-zLint.esLint = new ZFileReportLint(esLint, logger, 'ecmaScript');
-zLint.styleLint = new ZFileReportLint(styleLint, logger, 'styles');
-zLint.htmlHint = new ZFileLint(htmlHint, jsonConfigReader, logger, 'html');
-zLint.jsonLint = new ZFileLint(jsonLint, nullConfigReader, logger, 'json');
-zLint.yamlLint = new ZFileLint(yamlLint, nullConfigReader, logger, 'yaml');
+const janitor = new ZLintJanitor(logger);
 
-zLint.run(args).then((result) => (process.exitCode = result));
+janitor.esLint = new ZFileReportLint(esLint, logger, 'ecmaScript');
+janitor.styleLint = new ZFileReportLint(styleLint, logger, 'styles');
+janitor.htmlHint = new ZFileLint(htmlHint, jsonConfigReader, logger, 'html');
+janitor.jsonLint = new ZFileLint(jsonLint, nullConfigReader, logger, 'json');
+janitor.yamlLint = new ZFileLint(yamlLint, nullConfigReader, logger, 'yaml');
+janitor.markdownLint = new ZFileReportLint(markdownLint, logger, 'markdown');
+
+janitor.run(args).then((result) => (process.exitCode = result));
