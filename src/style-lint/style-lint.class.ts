@@ -1,6 +1,6 @@
 import chalk from 'chalk';
 import { formatters, lint, LinterOptions } from 'stylelint';
-import { IZLinter } from '../lint-janitor/linter.interface';
+import { IZLinter } from '../lint/linter.interface';
 
 export class ZStyleLint implements IZLinter {
   /**

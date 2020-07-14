@@ -3,7 +3,7 @@ import { cosmiconfig } from 'cosmiconfig';
 import { resolve } from 'path';
 import { IZLintJanitorArgs } from './lint-janitor-args.interface';
 import { IZLintJanitorOptions } from './lint-janitor-options.interface';
-import { IZLinter } from './linter.interface';
+import { IZLinter } from '../lint/linter.interface';
 import { ZSilentLint } from '../silent-lint/silent-lint.class';
 
 /**
