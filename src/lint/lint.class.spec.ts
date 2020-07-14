@@ -6,7 +6,7 @@ import { IZLinter } from './linter.interface';
 
 jest.mock('cosmiconfig');
 
-describe('ZLint', () => {
+describe('ZLintJanitor', () => {
   let args: IZLintArgs;
   let options: IZLintOptions;
   let logger: Console;
@@ -57,7 +57,7 @@ describe('ZLint', () => {
     logger.error = jest.fn();
 
     args = {
-      config: './cfg/zlint.json'
+      config: './cfg/lint-janitor.json'
     };
 
     options = {
@@ -96,7 +96,7 @@ describe('ZLint', () => {
       expect(actual).toEqual(options);
     });
 
-    it('retrieves the options directly if there is no zlint key found in the config.', async () => {
+    it('retrieves the options directly if there is no key found in the config.', async () => {
       // Arrange
       const target = createTestTarget();
       // Act
