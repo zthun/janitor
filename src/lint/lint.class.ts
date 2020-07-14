@@ -35,41 +35,34 @@ export class ZLint {
   /**
    * The linter for js files.
    */
-  public eslint: IZLinter;
+  public esLint: IZLinter = new ZSilentLinter();
   /**
    * The linter for scss files.
    */
-  public sasslint: IZLinter;
+  public sassLint: IZLinter = new ZSilentLinter();
   /**
    * The linter for html files.
    */
-  public htmlhint: IZLinter;
+  public htmlHint: IZLinter = new ZSilentLinter();
   /**
    * The linter for ts files.
    */
-  public tslint: IZLinter;
+  public tsLint: IZLinter = new ZSilentLinter();
   /**
    * The linter for json files.
    */
-  public jsonlint: IZLinter;
+  public jsonLint: IZLinter = new ZSilentLinter();
   /**
    * The linter for yaml files.
    */
-  public yamllint: IZLinter;
+  public yamlLint: IZLinter = new ZSilentLinter();
 
   /**
    * Initializes a new instance of this object.
    *
    * @param logger The logger to use when formatting output.
    */
-  public constructor(private logger: Console) {
-    this.eslint = new ZSilentLinter();
-    this.sasslint = new ZSilentLinter();
-    this.htmlhint = new ZSilentLinter();
-    this.tslint = new ZSilentLinter();
-    this.jsonlint = new ZSilentLinter();
-    this.yamllint = new ZSilentLinter();
-  }
+  public constructor(private logger: Console) {}
 
   /**
    * Parses the command line and returns the options for zlint.
@@ -77,18 +70,18 @@ export class ZLint {
    * @return A promise that resolves the command line options.
    */
   public async parse(args: IZLintArgs): Promise<IZLintOptions> {
-    const configLoad = args.config ? Promise.resolve({ filepath: args.config }) : cosmiconfig('zlint').search();
+    const configLoad = args.config ? Promise.resolve({ filepath: args.config }) : cosmiconfig('lint').search();
     const configResult = await configLoad;
     const configFile = configResult ? configResult.filepath : null;
 
     if (!configFile) {
-      const msg = 'Could not find a valid configuration.  Please add a .zlintrc file or a zlint field to your package.json';
+      const msg = 'Could not find a valid configuration.  Please add a .lintrc file, a lintrc.config.js file, a .lintrc.json or a lint field to your package.json';
       throw new Error(msg);
     }
 
     this.logger.log(chalk.cyan(`Reading config file:  ${configFile}`));
-    const pread = promisify(readFile);
-    const buffer = await pread(configFile, ZLint.ConfigEncoding);
+    const readFileAsync = promisify(readFile);
+    const buffer = await readFileAsync(configFile, ZLint.ConfigEncoding);
     const configData = JSON.parse(buffer);
     return configData.zlint ? configData.zlint : configData;
   }
@@ -106,37 +99,37 @@ export class ZLint {
 
     if (options.jsonFiles) {
       this.logger.log(chalk.magenta.underline(`Linting json files from ${options.jsonFiles.length} globs.`));
-      current = await this.jsonlint.lint(options.jsonFiles);
+      current = await this.jsonLint.lint(options.jsonFiles);
       result = result && current;
     }
 
     if (options.yamlFiles) {
       this.logger.log(chalk.magenta.underline(`Linting yaml files from ${options.yamlFiles.length} globs.`));
-      current = await this.yamllint.lint(options.yamlFiles);
+      current = await this.yamlLint.lint(options.yamlFiles);
       result = result && current;
     }
 
     if (options.esFiles) {
       this.logger.log(chalk.magenta.underline(`Linting javascript files from ${options.esFiles.length} globs.`));
-      current = await this.eslint.lint(options.esFiles, options.esConfig || ZLint.DefaultEsLintConfig);
+      current = await this.esLint.lint(options.esFiles, options.esConfig || ZLint.DefaultEsLintConfig);
       result = result && current;
     }
 
     if (options.tsFiles) {
       this.logger.log(chalk.magenta.underline(`Linting typescript files from ${options.tsFiles.length} globs.`));
-      current = await this.tslint.lint(options.tsFiles, options.tsConfig || ZLint.DefaultTsLintConfig);
+      current = await this.tsLint.lint(options.tsFiles, options.tsConfig || ZLint.DefaultTsLintConfig);
       result = result && current;
     }
 
     if (options.sassFiles) {
       this.logger.log(chalk.magenta.underline(`Linting sass files from ${options.sassFiles.length} globs.`));
-      current = await this.sasslint.lint(options.sassFiles, options.sassConfig || ZLint.DefaultSassLintConfig);
+      current = await this.sassLint.lint(options.sassFiles, options.sassConfig || ZLint.DefaultSassLintConfig);
       result = result && current;
     }
 
     if (options.htmlFiles) {
       this.logger.log(chalk.magenta.underline(`Linting html files from ${options.htmlFiles.length} globs.`));
-      current = await this.htmlhint.lint(options.htmlFiles, options.htmlConfig || ZLint.DefaultHtmlHintConfig);
+      current = await this.htmlHint.lint(options.htmlFiles, options.htmlConfig || ZLint.DefaultHtmlHintConfig);
       result = result && current;
     }
 

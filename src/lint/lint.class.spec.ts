@@ -21,12 +21,12 @@ describe('ZLint', () => {
 
   function createTestTarget() {
     const target = new ZLint(logger);
-    target.eslint = eslint;
-    target.tslint = tslint;
-    target.htmlhint = htmlhint;
-    target.sasslint = sasslint;
-    target.jsonlint = jsonlint;
-    target.yamllint = yamllint;
+    target.esLint = eslint;
+    target.tsLint = tslint;
+    target.htmlHint = htmlhint;
+    target.sassLint = sasslint;
+    target.jsonLint = jsonlint;
+    target.yamlLint = yamllint;
     return target;
   }
 

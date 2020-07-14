@@ -20,16 +20,16 @@ const logger = console;
 const nullConfigReader = new ZConfigNullReader();
 const jsonConfigReader = new ZConfigReader(new ZConfigJsonParser());
 
-const htmlhint = new ZHtmlHint();
-const tslint = new ZTsLint();
-const jsonlint = new ZJsonLint();
-const yamllint = new ZYamlLint();
+const htmlHint = new ZHtmlHint();
+const tsLint = new ZTsLint();
+const jsonLint = new ZJsonLint();
+const yamlLint = new ZYamlLint();
 
-const zlint = new ZLint(logger);
-zlint.eslint = new ZEsLint(logger);
-zlint.sasslint = new ZSassLint(logger);
-zlint.htmlhint = new ZFileLint(htmlhint, jsonConfigReader, logger, 'html');
-zlint.tslint = new ZFileLint(tslint, jsonConfigReader, logger, 'ts');
-zlint.jsonlint = new ZFileLint(jsonlint, nullConfigReader, logger, 'json');
-zlint.yamllint = new ZFileLint(yamllint, nullConfigReader, logger, 'yaml');
-zlint.run(args).then((result) => (process.exitCode = result));
+const zLint = new ZLint(logger);
+zLint.esLint = new ZEsLint(logger);
+zLint.sassLint = new ZSassLint(logger);
+zLint.htmlHint = new ZFileLint(htmlHint, jsonConfigReader, logger, 'html');
+zLint.tsLint = new ZFileLint(tsLint, jsonConfigReader, logger, 'ts');
+zLint.jsonLint = new ZFileLint(jsonLint, nullConfigReader, logger, 'json');
+zLint.yamlLint = new ZFileLint(yamlLint, nullConfigReader, logger, 'yaml');
+zLint.run(args).then((result) => (process.exitCode = result));

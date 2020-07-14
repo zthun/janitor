@@ -9,7 +9,7 @@ export class ZEsLint implements IZLinter {
   /**
    * The factory that constructs a CLIEngine object.
    */
-  public engineFactory: (options: CLIEngine.Options) => CLIEngine;
+  public engineFactory: (options: CLIEngine.Options) => CLIEngine = (options) => new CLIEngine(options);
 
   /**
    * Initializes a new instance of this object.
@@ -17,9 +17,7 @@ export class ZEsLint implements IZLinter {
    * @param factory The factory object to construct the engine.
    * @param logger The logger to output to.
    */
-  public constructor(private readonly logger: Console) {
-    this.engineFactory = (options) => new CLIEngine(options);
-  }
+  public constructor(private readonly logger: Console) {}
 
   /**
    * Runs the lint given the specified config and source files.
