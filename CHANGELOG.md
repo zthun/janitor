@@ -10,6 +10,8 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
+- [BREAKING] - ZLint is now ZLintJanitor
+- [MIGRATION] - Replace all instance of ZLint, IZLintArgs, and IZLintOptions with ZLintJanitor, IZLintJanitorArgs, and IZLintJanitorOptions respectively.
 - [BREAKING] - ZSilentLinter is now ZSilentLint.
 - [MIGRATION] - Replace all instance of ZSilentLinter with ZSilentLint.
 - [BREAKING] - Renamed package to @zthun/lint-janitor.

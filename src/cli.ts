@@ -8,8 +8,8 @@ import { ZJsonLint } from './json-lint/json-lint.class';
 import { ZConfigJsonParser } from './config/config-json-parser.class';
 import { ZConfigNullReader } from './config/config-null-reader.class';
 import { ZConfigReader } from './config/config-reader.class';
-import { IZLintJanitorArgs } from './lint/lint-janitor-args.interface';
-import { ZLintJanitor } from './lint/lint-janitor.class';
+import { IZLintJanitorArgs } from './lint-janitor/lint-janitor-args.interface';
+import { ZLintJanitor } from './lint-janitor/lint-janitor.class';
 import { ZStyleLint } from './style-lint/style-lint.class';
 import { ZYamlLint } from './yaml-lint/yaml-lint.class';
 
