@@ -29,6 +29,10 @@ export class ZLint {
    */
   public static readonly DefaultTsLintConfig = resolve(__dirname, '../../lint/tslint.json');
   /**
+   * The default stylelint config.
+   */
+  public static readonly DefaultStyleLintConfig = resolve(__dirname, '../../lint/.stylelintrc.json');
+  /**
    * The encoding of the config file.
    */
   public static readonly ConfigEncoding = 'utf8';
@@ -36,6 +40,10 @@ export class ZLint {
    * The linter for js files.
    */
   public esLint: IZLinter = new ZSilentLinter();
+  /**
+   * The linter for style files.
+   */
+  public styleLint: IZLinter = new ZSilentLinter();
   /**
    * The linter for scss files.
    */
@@ -124,6 +132,12 @@ export class ZLint {
     if (options.sassFiles) {
       this.logger.log(chalk.magenta.underline(`Linting sass files from ${options.sassFiles.length} globs.`));
       current = await this.sassLint.lint(options.sassFiles, options.sassConfig || ZLint.DefaultSassLintConfig);
+      result = result && current;
+    }
+
+    if (options.styleFiles) {
+      this.logger.log(chalk.magenta.underline(`Linting style files from ${options.styleFiles.length} globs.`));
+      current = await this.styleLint.lint(options.styleFiles, options.styleConfig || ZLint.DefaultStyleLintConfig);
       result = result && current;
     }
 

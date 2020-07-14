@@ -12,42 +12,47 @@ describe('ZLint', () => {
   let args: IZLintArgs;
   let options: IZLintOptions;
   let logger: Console;
-  let eslint: IZLinter;
-  let tslint: IZLinter;
-  let htmlhint: IZLinter;
-  let sasslint: IZLinter;
-  let jsonlint: IZLinter;
-  let yamllint: IZLinter;
+  let esLint: IZLinter;
+  let tsLint: IZLinter;
+  let htmlHint: IZLinter;
+  let sassLint: IZLinter;
+  let jsonLint: IZLinter;
+  let yamlLint: IZLinter;
+  let styleLint: IZLinter;
 
   function createTestTarget() {
     const target = new ZLint(logger);
-    target.esLint = eslint;
-    target.tsLint = tslint;
-    target.htmlHint = htmlhint;
-    target.sassLint = sasslint;
-    target.jsonLint = jsonlint;
-    target.yamlLint = yamllint;
+    target.esLint = esLint;
+    target.tsLint = tsLint;
+    target.htmlHint = htmlHint;
+    target.sassLint = sassLint;
+    target.jsonLint = jsonLint;
+    target.yamlLint = yamlLint;
+    target.styleLint = styleLint;
     return target;
   }
 
   beforeEach(() => {
-    eslint = {} as any;
-    eslint.lint = jest.fn(() => Promise.resolve(true));
+    esLint = {} as any;
+    esLint.lint = jest.fn(() => Promise.resolve(true));
 
-    tslint = {} as any;
-    tslint.lint = jest.fn(() => Promise.resolve(true));
+    tsLint = {} as any;
+    tsLint.lint = jest.fn(() => Promise.resolve(true));
 
-    htmlhint = {} as any;
-    htmlhint.lint = jest.fn(() => Promise.resolve(true));
+    htmlHint = {} as any;
+    htmlHint.lint = jest.fn(() => Promise.resolve(true));
 
-    sasslint = {} as any;
-    sasslint.lint = jest.fn(() => Promise.resolve(true));
+    sassLint = {} as any;
+    sassLint.lint = jest.fn(() => Promise.resolve(true));
 
-    jsonlint = {} as any;
-    jsonlint.lint = jest.fn(() => Promise.resolve(true));
+    jsonLint = {} as any;
+    jsonLint.lint = jest.fn(() => Promise.resolve(true));
 
-    yamllint = {} as any;
-    yamllint.lint = jest.fn(() => Promise.resolve(true));
+    yamlLint = {} as any;
+    yamlLint.lint = jest.fn(() => Promise.resolve(true));
+
+    styleLint = {} as any;
+    styleLint.lint = jest.fn(() => Promise.resolve(true));
 
     logger = {} as any;
     logger.log = jest.fn();
@@ -64,6 +69,8 @@ describe('ZLint', () => {
       tsFiles: ['**/*.ts'],
       sassConfig: './.sass-lint.yml',
       sassFiles: ['**/*.scss'],
+      styleConfig: './.stylelintrc.json',
+      styleFiles: ['**/*.css', '**/*.less'],
       htmlConfig: './.htmlhintrc',
       htmlFiles: ['**/*.html'],
       jsonFiles: ['**/*.json'],
@@ -161,87 +168,103 @@ describe('ZLint', () => {
 
     describe('EsLint', () => {
       it('invokes the linter if there are esFiles', async () => {
-        await assertLinterInvoked(eslint, options.esFiles, options.esConfig);
+        await assertLinterInvoked(esLint, options.esFiles, options.esConfig);
       });
 
       it('uses the default config if no config is specified.', async () => {
         delete options.esConfig;
-        await assertLinterInvoked(eslint, options.esFiles, ZLint.DefaultEsLintConfig);
+        await assertLinterInvoked(esLint, options.esFiles, ZLint.DefaultEsLintConfig);
       });
 
       it('does not invoke the linter if there are no esFiles.', async () => {
         delete options.esFiles;
-        await assertLinterNotInvoked(eslint);
+        await assertLinterNotInvoked(esLint);
       });
     });
 
     describe('TsLint', () => {
       it('invokes the linter if there are tsFiles', async () => {
-        await assertLinterInvoked(tslint, options.tsFiles, options.tsConfig);
+        await assertLinterInvoked(tsLint, options.tsFiles, options.tsConfig);
       });
 
       it('uses the default config if no config is specified.', async () => {
         delete options.tsConfig;
-        await assertLinterInvoked(tslint, options.tsFiles, ZLint.DefaultTsLintConfig);
+        await assertLinterInvoked(tsLint, options.tsFiles, ZLint.DefaultTsLintConfig);
       });
 
       it('does not invoke the linter if there are no tsFiles.', async () => {
         delete options.tsFiles;
-        await assertLinterNotInvoked(tslint);
+        await assertLinterNotInvoked(tsLint);
       });
     });
 
     describe('SassLint', () => {
       it('invokes the linter if there are sassFiles', async () => {
-        await assertLinterInvoked(sasslint, options.sassFiles, options.sassConfig);
+        await assertLinterInvoked(sassLint, options.sassFiles, options.sassConfig);
       });
 
       it('uses the default config if no config is specified.', async () => {
         delete options.sassConfig;
-        await assertLinterInvoked(sasslint, options.sassFiles, ZLint.DefaultSassLintConfig);
+        await assertLinterInvoked(sassLint, options.sassFiles, ZLint.DefaultSassLintConfig);
       });
 
       it('does not invoke the linter if there are no sassFiles.', async () => {
         delete options.sassFiles;
-        await assertLinterNotInvoked(sasslint);
+        await assertLinterNotInvoked(sassLint);
+      });
+    });
+
+    describe('StyleLint', () => {
+      it('invokes the linter if there are styleFiles', async () => {
+        await assertLinterInvoked(styleLint, options.styleFiles, options.styleConfig);
+      });
+
+      it('uses the default config if no config is specified.', async () => {
+        delete options.styleConfig;
+        await assertLinterInvoked(styleLint, options.styleFiles, ZLint.DefaultStyleLintConfig);
+      });
+
+      it('does not invoke the linter if there are no styleFiles.', async () => {
+        delete options.styleFiles;
+        await assertLinterNotInvoked(styleLint);
       });
     });
 
     describe('HtmlHint', () => {
       it('invokes the linter if there are htmlFiles', async () => {
-        await assertLinterInvoked(htmlhint, options.htmlFiles, options.htmlConfig);
+        await assertLinterInvoked(htmlHint, options.htmlFiles, options.htmlConfig);
       });
 
       it('uses the default config if no config is specified.', async () => {
         delete options.htmlConfig;
-        await assertLinterInvoked(htmlhint, options.htmlFiles, ZLint.DefaultHtmlHintConfig);
+        await assertLinterInvoked(htmlHint, options.htmlFiles, ZLint.DefaultHtmlHintConfig);
       });
 
       it('does not invoke the linter if there are no esFiles.', async () => {
         delete options.htmlFiles;
-        await assertLinterNotInvoked(htmlhint);
+        await assertLinterNotInvoked(htmlHint);
       });
     });
 
     describe('JsonLint', () => {
       it('invokes the linter if there are jsonFiles', async () => {
-        await assertLinterInvoked(jsonlint, options.jsonFiles);
+        await assertLinterInvoked(jsonLint, options.jsonFiles);
       });
 
       it('does not invoke the linter if there are no esFiles.', async () => {
         delete options.jsonFiles;
-        await assertLinterNotInvoked(jsonlint);
+        await assertLinterNotInvoked(jsonLint);
       });
     });
 
     describe('YamlLint', () => {
       it('invokes the linter if there are yamlFiles', async () => {
-        await assertLinterInvoked(yamllint, options.yamlFiles);
+        await assertLinterInvoked(yamlLint, options.yamlFiles);
       });
 
       it('does not invoke the linter if there are no esFiles.', async () => {
         delete options.yamlFiles;
-        await assertLinterNotInvoked(yamllint);
+        await assertLinterNotInvoked(yamlLint);
       });
     });
   });
@@ -259,7 +282,7 @@ describe('ZLint', () => {
     it('returns 1 if any linting fails.', async () => {
       // Arrange
       const target = createTestTarget();
-      eslint.lint = jest.fn(() => Promise.resolve(false));
+      esLint.lint = jest.fn(() => Promise.resolve(false));
       // Act
       const actual = await target.run(args);
       // Assert
