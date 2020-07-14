@@ -1,7 +1,9 @@
 language: node_js
-node_js: 10.15.3
+node_js: 14.5.0
 sudo: required
 install:
-- npm ci
+  - npm ci
 script:
-- npm run make
+  - npm run lint
+  - npm test
+  - npm run build
