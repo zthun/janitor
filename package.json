@@ -22,7 +22,7 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "bin": {
-    "zlint": "./dist/cli.js"
+    "linters": "./dist/cli.js"
   },
   "scripts": {
     "clean": "rimraf coverage dist reports *.tgz",

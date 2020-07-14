@@ -65,17 +65,17 @@ export class ZLint {
   public constructor(private logger: Console) {}
 
   /**
-   * Parses the command line and returns the options for zlint.
+   * Parses the command line and returns the options for linters.
    *
    * @return A promise that resolves the command line options.
    */
   public async parse(args: IZLintArgs): Promise<IZLintOptions> {
-    const configLoad = args.config ? Promise.resolve({ filepath: args.config }) : cosmiconfig('lint').search();
+    const configLoad = args.config ? Promise.resolve({ filepath: args.config }) : cosmiconfig('linters').search();
     const configResult = await configLoad;
     const configFile = configResult ? configResult.filepath : null;
 
     if (!configFile) {
-      const msg = 'Could not find a valid configuration.  Please add a .lintrc file, a lintrc.config.js file, a .lintrc.json or a lint field to your package.json';
+      const msg = 'Could not find a valid configuration.  Please add a .lintersrc file, a lintersrc.config.js file, a .lintersrc.json or a linters field to your package.json';
       throw new Error(msg);
     }
 
