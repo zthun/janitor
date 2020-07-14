@@ -1,8 +1,6 @@
 import chalk from 'chalk';
 import { cosmiconfig } from 'cosmiconfig';
-import { readFile } from 'fs';
 import { resolve } from 'path';
-import { promisify } from 'util';
 import { IZLintArgs } from './lint-args.interface';
 import { IZLintOptions } from './lint-options.interface';
 import { IZLinter } from './linter.interface';
@@ -32,10 +30,6 @@ export class ZLint {
    * The default stylelint config.
    */
   public static readonly DefaultStyleLintConfig = resolve(__dirname, '../../lint/.stylelintrc.json');
-  /**
-   * The encoding of the config file.
-   */
-  public static readonly ConfigEncoding = 'utf8';
   /**
    * The linter for js files.
    */
@@ -78,20 +72,19 @@ export class ZLint {
    * @return A promise that resolves the command line options.
    */
   public async parse(args: IZLintArgs): Promise<IZLintOptions> {
-    const configLoad = args.config ? Promise.resolve({ filepath: args.config }) : cosmiconfig('linters').search();
+    const explorer = cosmiconfig('lint-janitor');
+    const configLoad = args.config ? Promise.resolve({ filepath: args.config }) : explorer.search();
     const configResult = await configLoad;
     const configFile = configResult ? configResult.filepath : null;
 
     if (!configFile) {
-      const msg = 'Could not find a valid configuration.  Please add a .lintersrc file, a lintersrc.config.js file, a .lintersrc.json or a linters field to your package.json';
+      const msg = 'Could not find a valid configuration.';
       throw new Error(msg);
     }
 
     this.logger.log(chalk.cyan(`Reading config file:  ${configFile}`));
-    const readFileAsync = promisify(readFile);
-    const buffer = await readFileAsync(configFile, ZLint.ConfigEncoding);
-    const configData = JSON.parse(buffer);
-    return configData.zlint ? configData.zlint : configData;
+    const buffer = await explorer.load(configFile);
+    return buffer.config;
   }
 
   /**

@@ -1,10 +1,11 @@
 {
-  "name": "@zthun/linters",
+  "name": "@zthun/lint-janitor",
   "version": "7.1.1",
   "description": "Style checks with tools for web projects using common rules.",
   "keywords": [
     "lint",
     "sasslint",
+    "styleLint",
     "tslint",
     "htmlhint",
     "eslint",

@@ -1,4 +1,3 @@
-import { readFile } from 'fs';
 import { cosmiconfig } from 'cosmiconfig';
 import { IZLintArgs } from './lint-args.interface';
 import { IZLintOptions } from './lint-options.interface';
@@ -6,7 +5,6 @@ import { ZLint } from './lint.class';
 import { IZLinter } from './linter.interface';
 
 jest.mock('cosmiconfig');
-jest.mock('fs');
 
 describe('ZLint', () => {
   let args: IZLintArgs;
@@ -19,6 +17,8 @@ describe('ZLint', () => {
   let jsonLint: IZLinter;
   let yamlLint: IZLinter;
   let styleLint: IZLinter;
+  let load: jest.Mock;
+  let search: jest.Mock;
 
   function createTestTarget() {
     const target = new ZLint(logger);
@@ -77,7 +77,9 @@ describe('ZLint', () => {
       yamlFiles: ['**/*.yml']
     };
 
-    ((readFile as unknown) as jest.Mock<any, any>).mockImplementation((path, opts, callback) => callback(null, JSON.stringify(options)));
+    search = jest.fn(() => Promise.resolve({ filepath: 'lint-janitor.config.js' }));
+    load = jest.fn(() => Promise.resolve({ config: options }));
+    (cosmiconfig as jest.Mock).mockReturnValue({ search, load });
   });
 
   describe('Parsing', () => {
@@ -87,30 +89,17 @@ describe('ZLint', () => {
       // Act
       await target.parse(args);
       // Assert
-      expect(readFile).toHaveBeenCalledWith(args.config, ZLint.ConfigEncoding, expect.anything());
+      expect(load).toHaveBeenCalledWith(args.config);
     });
 
     it('reads the cosmiconfig file if no config specified.', async () => {
       // Arrange
-      const expected = './zlintrc';
       const target = createTestTarget();
       delete args.config;
-      const search = jest.fn(() => Promise.resolve({ filepath: expected }));
-      (cosmiconfig as any).mockImplementation(() => ({ search }));
-      // Act
-      await target.parse(args);
-      // Assert
-      expect(readFile).toHaveBeenCalledWith(expected, ZLint.ConfigEncoding, expect.anything());
-    });
-
-    it('retrieves the options if a key of zlint is found.', async () => {
-      // Arrange
-      const target = createTestTarget();
-      (readFile as any).mockImplementation((path, opts, callback) => callback(null, JSON.stringify({ zlint: options })));
       // Act
       const actual = await target.parse(args);
       // Assert
-      expect(JSON.stringify(actual)).toEqual(JSON.stringify(options));
+      expect(actual).toEqual(options);
     });
 
     it('retrieves the options directly if there is no zlint key found in the config.', async () => {
@@ -126,8 +115,8 @@ describe('ZLint', () => {
       // Arrange
       const target = createTestTarget();
       delete args.config;
-      const search = jest.fn(() => Promise.resolve(null));
-      (cosmiconfig as any).mockImplementation(() => ({ search }));
+      search = jest.fn(() => Promise.resolve(null));
+      (cosmiconfig as jest.Mock).mockReturnValue({ search, load });
       // Act
       // Assert
       expect(target.parse(args)).rejects.toBeDefined();
@@ -136,7 +125,8 @@ describe('ZLint', () => {
     it('throws an exception if the config file cannot be read.', async () => {
       // Arrange
       const target = createTestTarget();
-      (readFile as any).mockImplementation((file, encoding, callback) => callback('Cannot open file'));
+      load = jest.fn(() => Promise.resolve(null));
+      (cosmiconfig as jest.Mock).mockReturnValue({ search, load });
       // Act
       // Assert
       expect(target.parse(args)).rejects.toBeDefined();
@@ -292,7 +282,9 @@ describe('ZLint', () => {
     it('returns 1 if any parsing fails.', async () => {
       // Arrange
       const target = createTestTarget();
-      (readFile as any).mockImplementation((file, enc, callback) => callback('Failed'));
+      delete args.config;
+      search = jest.fn(() => Promise.resolve(null));
+      (cosmiconfig as jest.Mock).mockReturnValue({ search, load });
       // Act
       const actual = await target.run(args);
       // Assert
@@ -302,8 +294,9 @@ describe('ZLint', () => {
     it('logs parse errors.', async () => {
       // Arrange
       const target = createTestTarget();
-      (readFile as any).mockImplementation((file, enc, callback) => callback('Failed'));
-      // Act
+      delete args.config;
+      search = jest.fn(() => Promise.resolve(null));
+      (cosmiconfig as jest.Mock).mockReturnValue({ search, load }); // Act
       await target.run(args);
       // Assert
       expect(logger.error).toHaveBeenCalled();

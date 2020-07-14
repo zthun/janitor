@@ -11,10 +11,11 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
-- [BREAKING] - Renamed package to @zthun/linters.
-- [MIGRATION] - Uninstall @zthun/web-styles and install @zthun/linters instead.
-- [BREAKING] - Renamed the application executable to linters.
-- [MIGRATION] - Change zlint to linters and the .zlint files or fields in package.json to linters respectively.
+- [BREAKING] - Renamed package to @zthun/lint-janitor.
+- [MIGRATION] - Uninstall @zthun/web-styles and install @zthun/lint-janitor instead.
+- [BREAKING] - Renamed the application executable to lint-janitor.
+- [MIGRATION] - Change zlint to lint-janitor and all .zlint based files to lint-janitor.
+- Fixed a bug where the config.js based config was not loading.
 
 ### Removed
 
