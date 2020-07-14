@@ -1,7 +1,9 @@
-import chalk from 'chalk';
 import { formatters, lint, LinterOptions } from 'stylelint';
 import { IZLinter } from '../common/linter.interface';
 
+/**
+ * Represents a linter for stylelint.
+ */
 export class ZStyleLint implements IZLinter {
   /**
    * Initializes a new instance of this object.
@@ -10,9 +12,16 @@ export class ZStyleLint implements IZLinter {
    */
   public constructor(private readonly _logger: Console) {}
 
+  /**
+   * Runs the file globs through the stylelint application.
+   *
+   * @param content The list of globs to lint.
+   * @param config The linter config file.
+   *
+   * @returns A promise that, when resolved, returns true if there are no lint errors, or
+   *          false if errors are present.
+   */
   public async lint(content: string[], config: string): Promise<boolean> {
-    this._logger.log(chalk.green.italic(`Using config file from ${config}`));
-
     const options: Partial<LinterOptions> = {
       configFile: config,
       files: content
@@ -29,22 +38,4 @@ export class ZStyleLint implements IZLinter {
     this._logger.log('');
     return true;
   }
-
-  /*
-  public async lint(content: string, contentPath: string, options: any, optionsPath: string): Promise<any> {
-    const lintOptions: Partial<LinterOptions> = {
-      config: options,
-      code: content,
-      formatter: 'verbose'
-    };
-
-    const data = await lint(lintOptions);
-
-    if (data.errored) {
-      return Promise.reject(data.output);
-    }
-
-    return data.output;
-  }
-  */
 }

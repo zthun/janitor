@@ -7,7 +7,7 @@ import { ZFileLint } from './file-lint.class';
 jest.mock('glob');
 jest.mock('fs');
 
-describe('ZJsonLint', () => {
+describe('ZFileLint', () => {
   let files: string[];
   let config: string;
   let options: any;
