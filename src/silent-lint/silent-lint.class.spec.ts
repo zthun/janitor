@@ -1,8 +1,8 @@
-import { ZSilentLinter } from './silent-linter.class';
+import { ZSilentLint } from './silent-lint.class';
 
-describe('ZSilentLinter', () => {
+describe('ZSilentLint', () => {
   function createTestTarget() {
-    return new ZSilentLinter();
+    return new ZSilentLint();
   }
 
   it('resolves to true.', async () => {

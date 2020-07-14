@@ -1,15 +1,15 @@
 import chalk from 'chalk';
 import { cosmiconfig } from 'cosmiconfig';
 import { resolve } from 'path';
-import { IZLintArgs } from './lint-args.interface';
-import { IZLintOptions } from './lint-options.interface';
+import { IZLintJanitorArgs } from './lint-janitor-args.interface';
+import { IZLintJanitorOptions } from './lint-janitor-options.interface';
 import { IZLinter } from './linter.interface';
-import { ZSilentLinter } from './silent-linter.class';
+import { ZSilentLint } from '../silent-lint/silent-lint.class';
 
 /**
  * Represents the main entry point object for the application.
  */
-export class ZLint {
+export class ZLintJanitor {
   /**
    * The default eslint config.
    */
@@ -25,23 +25,23 @@ export class ZLint {
   /**
    * The linter for js files.
    */
-  public esLint: IZLinter = new ZSilentLinter();
+  public esLint: IZLinter = new ZSilentLint();
   /**
    * The linter for style files.
    */
-  public styleLint: IZLinter = new ZSilentLinter();
+  public styleLint: IZLinter = new ZSilentLint();
   /**
    * The linter for html files.
    */
-  public htmlHint: IZLinter = new ZSilentLinter();
+  public htmlHint: IZLinter = new ZSilentLint();
   /**
    * The linter for json files.
    */
-  public jsonLint: IZLinter = new ZSilentLinter();
+  public jsonLint: IZLinter = new ZSilentLint();
   /**
    * The linter for yaml files.
    */
-  public yamlLint: IZLinter = new ZSilentLinter();
+  public yamlLint: IZLinter = new ZSilentLint();
 
   /**
    * Initializes a new instance of this object.
@@ -55,7 +55,7 @@ export class ZLint {
    *
    * @return A promise that resolves the command line options.
    */
-  public async parse(args: IZLintArgs): Promise<IZLintOptions> {
+  public async parse(args: IZLintJanitorArgs): Promise<IZLintJanitorOptions> {
     const explorer = cosmiconfig('lint-janitor');
     const configLoad = args.config ? Promise.resolve({ filepath: args.config }) : explorer.search();
     const configResult = await configLoad;
@@ -78,7 +78,7 @@ export class ZLint {
    *
    * @return A promise that returns 0 if all linting was successful, and 1 if any of the linting failed.
    */
-  public async lint(options: IZLintOptions): Promise<number> {
+  public async lint(options: IZLintJanitorOptions): Promise<number> {
     let current = true;
     let result = true;
 
@@ -96,19 +96,19 @@ export class ZLint {
 
     if (options.esFiles) {
       this.logger.log(chalk.magenta.underline(`Linting ecmaScript files from ${options.esFiles.length} globs.`));
-      current = await this.esLint.lint(options.esFiles, options.esConfig || ZLint.DefaultEsLintConfig);
+      current = await this.esLint.lint(options.esFiles, options.esConfig || ZLintJanitor.DefaultEsLintConfig);
       result = result && current;
     }
 
     if (options.styleFiles) {
       this.logger.log(chalk.magenta.underline(`Linting style files from ${options.styleFiles.length} globs.`));
-      current = await this.styleLint.lint(options.styleFiles, options.styleConfig || ZLint.DefaultStyleLintConfig);
+      current = await this.styleLint.lint(options.styleFiles, options.styleConfig || ZLintJanitor.DefaultStyleLintConfig);
       result = result && current;
     }
 
     if (options.htmlFiles) {
       this.logger.log(chalk.magenta.underline(`Linting html files from ${options.htmlFiles.length} globs.`));
-      current = await this.htmlHint.lint(options.htmlFiles, options.htmlConfig || ZLint.DefaultHtmlHintConfig);
+      current = await this.htmlHint.lint(options.htmlFiles, options.htmlConfig || ZLintJanitor.DefaultHtmlHintConfig);
       result = result && current;
     }
 
@@ -120,7 +120,7 @@ export class ZLint {
    *
    * @return A promise that returns 0 if all linting was successful, and 1 if any of the linting failed.
    */
-  public async run(args: IZLintArgs): Promise<number> {
+  public async run(args: IZLintJanitorArgs): Promise<number> {
     try {
       const options = await this.parse(args);
       return this.lint(options);

@@ -1,4 +1,4 @@
-export interface IZLintOptions {
+export interface IZLintJanitorOptions {
   esConfig?: string;
   styleConfig?: string;
   htmlConfig?: string;

@@ -1,9 +1,9 @@
-import { IZLinter } from './linter.interface';
+import { IZLinter } from '../lint/linter.interface';
 
 /**
  * Represents a silent linter that always succeeds.
  */
-export class ZSilentLinter implements IZLinter {
+export class ZSilentLint implements IZLinter {
   /**
    * Returns a promise that resolves true.
    *

@@ -10,6 +10,8 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
+- [BREAKING] - ZSilentLinter is now ZSilentLint.
+- [MIGRATION] - Replace all instance of ZSilentLinter with ZSilentLint.
 - [BREAKING] - Renamed package to @zthun/lint-janitor.
 - [MIGRATION] - Uninstall @zthun/web-styles and install @zthun/lint-janitor instead.
 - [BREAKING] - Renamed the application executable to lint-janitor.

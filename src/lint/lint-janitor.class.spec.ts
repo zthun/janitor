@@ -1,14 +1,14 @@
 import { cosmiconfig } from 'cosmiconfig';
-import { IZLintArgs } from './lint-args.interface';
-import { IZLintOptions } from './lint-options.interface';
-import { ZLint } from './lint.class';
+import { IZLintJanitorArgs } from './lint-janitor-args.interface';
+import { IZLintJanitorOptions } from './lint-janitor-options.interface';
+import { ZLintJanitor } from './lint-janitor.class';
 import { IZLinter } from './linter.interface';
 
 jest.mock('cosmiconfig');
 
 describe('ZLintJanitor', () => {
-  let args: IZLintArgs;
-  let options: IZLintOptions;
+  let args: IZLintJanitorArgs;
+  let options: IZLintJanitorOptions;
   let logger: Console;
   let esLint: IZLinter;
   let tsLint: IZLinter;
@@ -21,7 +21,7 @@ describe('ZLintJanitor', () => {
   let search: jest.Mock;
 
   function createTestTarget() {
-    const target = new ZLint(logger);
+    const target = new ZLintJanitor(logger);
     target.esLint = esLint;
     target.htmlHint = htmlHint;
     target.jsonLint = jsonLint;
@@ -157,7 +157,7 @@ describe('ZLintJanitor', () => {
 
       it('uses the default config if no config is specified.', async () => {
         delete options.esConfig;
-        await assertLinterInvoked(esLint, options.esFiles, ZLint.DefaultEsLintConfig);
+        await assertLinterInvoked(esLint, options.esFiles, ZLintJanitor.DefaultEsLintConfig);
       });
 
       it('does not invoke the linter if there are no esFiles.', async () => {
@@ -173,7 +173,7 @@ describe('ZLintJanitor', () => {
 
       it('uses the default config if no config is specified.', async () => {
         delete options.styleConfig;
-        await assertLinterInvoked(styleLint, options.styleFiles, ZLint.DefaultStyleLintConfig);
+        await assertLinterInvoked(styleLint, options.styleFiles, ZLintJanitor.DefaultStyleLintConfig);
       });
 
       it('does not invoke the linter if there are no styleFiles.', async () => {
@@ -189,7 +189,7 @@ describe('ZLintJanitor', () => {
 
       it('uses the default config if no config is specified.', async () => {
         delete options.htmlConfig;
-        await assertLinterInvoked(htmlHint, options.htmlFiles, ZLint.DefaultHtmlHintConfig);
+        await assertLinterInvoked(htmlHint, options.htmlFiles, ZLintJanitor.DefaultHtmlHintConfig);
       });
 
       it('does not invoke the linter if there are no esFiles.', async () => {
