@@ -2,7 +2,7 @@ import { cosmiconfig } from 'cosmiconfig';
 import { IZLintJanitorArgs } from './lint-janitor-args.interface';
 import { IZLintJanitorOptions } from './lint-janitor-options.interface';
 import { ZLintJanitor } from './lint-janitor.class';
-import { IZLinter } from '../lint/linter.interface';
+import { IZLinter } from '../common/linter.interface';
 
 jest.mock('cosmiconfig');
 

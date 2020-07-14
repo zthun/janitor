@@ -1,6 +1,6 @@
 import chalk from 'chalk';
 import { CLIEngine } from 'eslint';
-import { IZLinter } from '../lint/linter.interface';
+import { IZLinter } from '../common/linter.interface';
 
 /**
  * Represents an object that can be used to perform eslint on javascript files.
