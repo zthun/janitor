@@ -6,6 +6,7 @@ export { IZLinter } from './common/linter.interface';
 export { ZEsLint } from './es-lint/es-lint.class';
 export { IZContentLinter } from './file-lint/content-linter.interface';
 export { ZFileLint } from './file-lint/file-lint.class';
+export { ZFileReportLint } from './file-lint/file-report-lint.class';
 export { ZHtmlHint } from './html-hint/html-hint.class';
 export { ZJsonLint } from './json-lint/json-lint.class';
 export { IZLintJanitorArgs } from './lint-janitor/lint-janitor-args.interface';
