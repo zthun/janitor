@@ -4,13 +4,13 @@
   "description": "Style checks with tools for web projects using common rules.",
   "keywords": [
     "lint",
-    "sasslint",
+    "sassLint",
     "styleLint",
     "tslint",
-    "htmlhint",
+    "htmlHint",
     "eslint",
-    "jsonlint",
-    "yamllint"
+    "jsonLint",
+    "yamlLint"
   ],
   "license": "ISC",
   "repository": {
