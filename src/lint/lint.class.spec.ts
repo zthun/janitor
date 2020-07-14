@@ -23,7 +23,6 @@ describe('ZLint', () => {
   function createTestTarget() {
     const target = new ZLint(logger);
     target.esLint = esLint;
-    target.tsLint = tsLint;
     target.htmlHint = htmlHint;
     target.sassLint = sassLint;
     target.jsonLint = jsonLint;
@@ -65,8 +64,6 @@ describe('ZLint', () => {
     options = {
       esConfig: './.eslintrc',
       esFiles: ['**/*.js'],
-      tsConfig: './tslint.json',
-      tsFiles: ['**/*.ts'],
       sassConfig: './.sass-lint.yml',
       sassFiles: ['**/*.scss'],
       styleConfig: './.stylelintrc.json',
@@ -169,22 +166,6 @@ describe('ZLint', () => {
       it('does not invoke the linter if there are no esFiles.', async () => {
         delete options.esFiles;
         await assertLinterNotInvoked(esLint);
-      });
-    });
-
-    describe('TsLint', () => {
-      it('invokes the linter if there are tsFiles', async () => {
-        await assertLinterInvoked(tsLint, options.tsFiles, options.tsConfig);
-      });
-
-      it('uses the default config if no config is specified.', async () => {
-        delete options.tsConfig;
-        await assertLinterInvoked(tsLint, options.tsFiles, ZLint.DefaultTsLintConfig);
-      });
-
-      it('does not invoke the linter if there are no tsFiles.', async () => {
-        delete options.tsFiles;
-        await assertLinterNotInvoked(tsLint);
       });
     });
 
@@ -296,7 +277,8 @@ describe('ZLint', () => {
       const target = createTestTarget();
       delete args.config;
       search = jest.fn(() => Promise.resolve(null));
-      (cosmiconfig as jest.Mock).mockReturnValue({ search, load }); // Act
+      (cosmiconfig as jest.Mock).mockReturnValue({ search, load });
+      // Act
       await target.run(args);
       // Assert
       expect(logger.error).toHaveBeenCalled();

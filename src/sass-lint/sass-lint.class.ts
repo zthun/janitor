@@ -13,9 +13,9 @@ export class ZSassLint implements IZLinter {
   /**
    * Initializes a new instance of this object.
    *
-   * @param logger The logger to output the lint results to.
+   * @param _logger The logger to output the lint results to.
    */
-  public constructor(private readonly logger: Console) {
+  public constructor(private readonly _logger: Console) {
     this.sasslint = require('sass-lint');
   }
 
@@ -28,12 +28,12 @@ export class ZSassLint implements IZLinter {
    * @return A promise that resolves to true if the lint is successful, false if there are errors.
    */
   public async lint(files: string[], config: string): Promise<boolean> {
-    this.logger.log(chalk.green.italic(`Using config file from ${config}`));
+    this._logger.log(chalk.green.italic(`Using config file from ${config}`));
     const sassOptions = { config };
     let results = [];
     files.map((file) => this.sasslint.lintFiles(file, sassOptions, config)).forEach((res) => (results = results.concat(res)));
     const result = this.sasslint.format(results, { options: sassOptions });
-    this.logger.log(result);
+    this._logger.log(result);
     return this.sasslint.errorCount(results).count === 0;
   }
 }

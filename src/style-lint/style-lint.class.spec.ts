@@ -36,7 +36,7 @@ describe('ZStyleLint', () => {
       // Act
       await target.lint(content, config);
       // Assert
-      expect(logger.log).not.toHaveBeenCalled();
+      expect(logger.log).toHaveBeenCalledWith('');
     });
 
     it('should return true if there are no lint failures.', async () => {

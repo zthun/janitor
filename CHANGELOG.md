@@ -7,7 +7,6 @@ All notable changes to this project will be documented in this file.
 ### Added
 
 - Added support for linting less, css, sass, scss and other style files using style-lint.
-- Added support for linting docker files.
 
 ### Changed
 
@@ -19,7 +18,8 @@ All notable changes to this project will be documented in this file.
 
 ### Removed
 
-- The dependency on tslint has been removed. Now typescript files are linted through eslint.
+- [BREAKING] - Ts file globs are no longer supported in the config file.
+- [MIGRATION] - Use esFiles instead.
 
 ## [7.1.1] - 2019-08-22
 

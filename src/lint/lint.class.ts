@@ -23,10 +23,6 @@ export class ZLint {
    */
   public static readonly DefaultHtmlHintConfig = resolve(__dirname, '../../lint/.htmlhintrc');
   /**
-   * The default tslint config.
-   */
-  public static readonly DefaultTsLintConfig = resolve(__dirname, '../../lint/tslint.json');
-  /**
    * The default stylelint config.
    */
   public static readonly DefaultStyleLintConfig = resolve(__dirname, '../../lint/.stylelintrc.json');
@@ -46,10 +42,6 @@ export class ZLint {
    * The linter for html files.
    */
   public htmlHint: IZLinter = new ZSilentLinter();
-  /**
-   * The linter for ts files.
-   */
-  public tsLint: IZLinter = new ZSilentLinter();
   /**
    * The linter for json files.
    */
@@ -111,14 +103,8 @@ export class ZLint {
     }
 
     if (options.esFiles) {
-      this.logger.log(chalk.magenta.underline(`Linting javascript files from ${options.esFiles.length} globs.`));
+      this.logger.log(chalk.magenta.underline(`Linting ecmaScript files from ${options.esFiles.length} globs.`));
       current = await this.esLint.lint(options.esFiles, options.esConfig || ZLint.DefaultEsLintConfig);
-      result = result && current;
-    }
-
-    if (options.tsFiles) {
-      this.logger.log(chalk.magenta.underline(`Linting typescript files from ${options.tsFiles.length} globs.`));
-      current = await this.tsLint.lint(options.tsFiles, options.tsConfig || ZLint.DefaultTsLintConfig);
       result = result && current;
     }
 

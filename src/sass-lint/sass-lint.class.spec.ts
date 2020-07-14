@@ -63,7 +63,7 @@ describe('ZSassLint', () => {
       const expected = sasslint.format();
       jest.spyOn(sasslint, 'errorCount').mockImplementation(() => 2);
       // Act
-      const actual = await target.lint(files, config);
+      await target.lint(files, config);
       // Assert
       expect(logger.log).toHaveBeenCalledWith(expected);
     });

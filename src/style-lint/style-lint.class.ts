@@ -1,4 +1,5 @@
-import { formatters, lint, LinterOptions, LintResult } from 'stylelint';
+import chalk from 'chalk';
+import { formatters, lint, LinterOptions } from 'stylelint';
 import { IZLinter } from '../lint/linter.interface';
 
 export class ZStyleLint implements IZLinter {
@@ -10,6 +11,8 @@ export class ZStyleLint implements IZLinter {
   public constructor(private readonly _logger: Console) {}
 
   public async lint(content: string[], config: string): Promise<boolean> {
+    this._logger.log(chalk.green.italic(`Using config file from ${config}`));
+
     const options: Partial<LinterOptions> = {
       configFile: config,
       files: content
@@ -23,6 +26,7 @@ export class ZStyleLint implements IZLinter {
       return false;
     }
 
+    this._logger.log('');
     return true;
   }
 

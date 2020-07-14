@@ -15,9 +15,9 @@ export class ZEsLint implements IZLinter {
    * Initializes a new instance of this object.
    *
    * @param factory The factory object to construct the engine.
-   * @param logger The logger to output to.
+   * @param _logger The logger to output to.
    */
-  public constructor(private readonly logger: Console) {}
+  public constructor(private readonly _logger: Console) {}
 
   /**
    * Runs the lint given the specified config and source files.
@@ -29,7 +29,7 @@ export class ZEsLint implements IZLinter {
    *         has errors.
    */
   public async lint(src: string[], config: string): Promise<boolean> {
-    this.logger.log(chalk.green.italic(`Using config file from ${config}`));
+    this._logger.log(chalk.green.italic(`Using config file from ${config}`));
 
     const esOptions = {
       configFile: config,
@@ -43,13 +43,13 @@ export class ZEsLint implements IZLinter {
     try {
       report = engine.executeOnFiles(src);
     } catch (err) {
-      this.logger.log(err);
+      this._logger.log(err);
       return false;
     }
 
     const results = CLIEngine.getErrorResults(report.results);
     const output = formatter(results);
-    this.logger.log(output);
+    this._logger.log(output);
     return report.errorCount === 0;
   }
 }

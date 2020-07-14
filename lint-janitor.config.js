@@ -1,6 +1,5 @@
 module.exports = {
-  esFiles: ['test/**/*.js'],
-  tsFiles: ['test/**/*.ts', 'src/**/*.ts'],
+  esFiles: ['test/**/*.js', 'test/**/*.ts', 'src/**/*.ts'],
   sassFiles: ['test/**/*.scss'],
   styleFiles: ['test/**/*.less'],
   htmlFiles: ['test/**/*.html'],
