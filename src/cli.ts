@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import * as yargs from 'yargs';
+import { usage } from 'yargs';
 import { ZEsLint } from './es-lint/es-lint.class';
 import { ZFileLint } from './file-lint/file-lint.class';
 import { ZHtmlHint } from './html-hint/html-hint.class';
@@ -14,7 +14,7 @@ import { ZSassLint } from './sass-lint/sass-lint.class';
 import { ZTsLint } from './ts-lint/ts-lint.class';
 import { ZYamlLint } from './yaml-lint/yaml-lint.class';
 
-const args: IZLintArgs = yargs.usage('$0 [options]').alias('c', 'config').describe('c', 'Optional config file to use.').string('c').help().parse() as any;
+const args: IZLintArgs = usage('$0 [options]').alias('c', 'config').describe('c', 'Optional config file to use.').string('c').help().parse() as any;
 
 const logger = console;
 const nullConfigReader = new ZConfigNullReader();
