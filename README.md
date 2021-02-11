@@ -36,7 +36,7 @@ In your package json, add the following
 "lint-janitor": {
     "esFiles": ["globs/to/js-files"],
     "tsFiles": ["globs/to/ts-files"],
-    "sassFiles": ["globs/to/sass-files"],
+    "styleFiles": ["globs/to/style-files"],
     "htmlFiles": ["globs/to/html-files"],
     "jsonFiles": ["glob/to/json-files"],
     "yamlFiles": ["globs/to/yaml-files"]
