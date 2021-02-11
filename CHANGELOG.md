@@ -2,7 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
-## [8.0.0] - UNRELEASED
+## [9.0.0] - 2021-02-11
+
+### Changed
+
+- [BREAKING] - The default .eslintrc now has require-jsdoc set to error and js-doc options on.
+- [MIGRATION] - Either add required jsdoc to your typescript or turn off require-jsdoc in your local config file.
+- [BREAKING] - The default .eslintrc now favors @typescript/no-unused-vars over eslint no-unused-vars.
+- [MIGRATION] - Only fails if your using javascript and not typescript. Turn off @typescript/no-unused-vars and turn on no-unused-vars in your own config.
+- [BREAKING] - Update ESLint, js-yaml, markdownlint and typescript to the latest versions.
+- [MIGRATION] - See respective package changelogs for notes on changes.
+
+## [8.0.0] - 2020-07-14
 
 ### Added
 
