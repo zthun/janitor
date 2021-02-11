@@ -1,6 +1,6 @@
 {
   "name": "@zthun/lint-janitor",
-  "version": "8.0.0",
+  "version": "9.0.0",
   "description": "Style checks with tools for web projects using common rules.",
   "keywords": [
     "lint",
@@ -23,7 +23,7 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "bin": {
-    "lint-janitor": "./dist/cli.js"
+    "lint-janitor": "dist/cli.js"
   },
   "scripts": {
     "clean": "rimraf coverage dist reports *.tgz",
