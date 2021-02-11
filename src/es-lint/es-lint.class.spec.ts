@@ -1,18 +1,18 @@
 /* eslint-disable require-jsdoc */
-import { CLIEngine } from 'eslint';
+import { ESLint } from 'eslint';
 import { resolve } from 'path';
 import { ZEsLint } from './es-lint.class';
 
 describe('ZEsLint', () => {
   let files: string[];
   let config: string;
-  let successA: CLIEngine.LintResult;
-  let successB: CLIEngine.LintResult;
-  let failedA: CLIEngine.LintResult;
-  let successReport: CLIEngine.LintReport;
-  let failedReport: CLIEngine.LintReport;
-  let formatter: () => string;
-  let engine: CLIEngine;
+  let successA: ESLint.LintResult;
+  let successB: ESLint.LintResult;
+  let failedA: ESLint.LintResult;
+  let successReport: ESLint.LintResult[];
+  let failedReport: ESLint.LintResult[];
+  let engine: ESLint;
+  let formatter: ESLint.Formatter;
   let logger: Console;
 
   function createTestTarget() {
@@ -21,7 +21,7 @@ describe('ZEsLint', () => {
     return target;
   }
 
-  beforeEach(() => {
+  beforeEach(async () => {
     config = resolve(__dirname, '../../lint/.eslintrc');
     files = ['src/**/*.js'];
     successA = {
@@ -64,32 +64,19 @@ describe('ZEsLint', () => {
       usedDeprecatedRules: []
     };
 
-    successReport = {
-      results: [successA, successB],
-      errorCount: 0,
-      warningCount: 0,
-      fixableErrorCount: 0,
-      fixableWarningCount: 0,
-      usedDeprecatedRules: []
-    };
+    successReport = [successA, successB];
 
-    failedReport = {
-      results: [successA, failedA],
-      errorCount: 1,
-      warningCount: 0,
-      fixableErrorCount: 0,
-      fixableWarningCount: 0,
-      usedDeprecatedRules: []
-    };
+    failedReport = [successA, failedA];
 
-    formatter = jest.fn();
-
-    engine = new CLIEngine({});
-    jest.spyOn(engine, 'executeOnFiles').mockImplementation(() => successReport);
-    jest.spyOn(engine, 'getFormatter').mockImplementation(() => formatter);
+    engine = new ESLint({});
+    jest.spyOn(engine, 'lintFiles').mockResolvedValue(successReport);
 
     logger = {} as any;
     logger.log = jest.fn();
+
+    formatter = await engine.loadFormatter();
+    jest.spyOn(engine, 'loadFormatter').mockResolvedValue(formatter);
+    jest.spyOn(formatter, 'format');
   });
 
   describe('Linting', () => {
@@ -105,9 +92,7 @@ describe('ZEsLint', () => {
     it('returns false if an IO exception occurs.', async () => {
       // Arrange
       const target = createTestTarget();
-      (engine.executeOnFiles as any).mockImplementation(() => {
-        throw new Error('Cannot open file.');
-      });
+      jest.spyOn(engine, 'lintFiles').mockRejectedValue(new Error('Cannot open file'));
       // Act
       const actual = await target.lint(files, config);
       // Assert
@@ -117,7 +102,7 @@ describe('ZEsLint', () => {
     it('returns false if the error count is not 0.', async () => {
       // Arrange
       const target = createTestTarget();
-      jest.spyOn(engine, 'executeOnFiles').mockImplementation(() => failedReport);
+      jest.spyOn(engine, 'lintFiles').mockResolvedValue(failedReport);
       // Act
       const actual = await target.lint(files, config);
       // Assert
@@ -139,7 +124,7 @@ describe('ZEsLint', () => {
       // Act
       await target.lint(files, config);
       // Assert
-      expect(formatter).toHaveBeenCalled();
+      expect(formatter.format).toHaveBeenCalled();
     });
   });
 });

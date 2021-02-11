@@ -1,4 +1,5 @@
-import { CLIEngine } from 'eslint';
+import { ESLint } from 'eslint';
+import { every } from 'lodash';
 import { IZLinter } from '../common/linter.interface';
 
 /**
@@ -12,7 +13,7 @@ export class ZEsLint implements IZLinter {
    *
    * @returns The engine that can be used to perform eslint.
    */
-  public engineFactory: (options: CLIEngine.Options) => CLIEngine = (options) => new CLIEngine(options);
+  public engineFactory: (options: ESLint.Options) => ESLint = (options) => new ESLint(options);
 
   /**
    * Initializes a new instance of this object.
@@ -33,24 +34,23 @@ export class ZEsLint implements IZLinter {
    */
   public async lint(src: string[], config: string): Promise<boolean> {
     const esOptions = {
-      configFile: config,
+      overrideConfigFile: config,
       useEslintrc: true
     };
 
     const engine = this.engineFactory(esOptions);
-    const formatter = engine.getFormatter(null);
-    let report: CLIEngine.LintReport;
+    const formatter = await engine.loadFormatter();
+    let report: ESLint.LintResult[];
 
     try {
-      report = engine.executeOnFiles(src);
+      report = await engine.lintFiles(src);
     } catch (err) {
       this._logger.log(err);
       return false;
     }
 
-    const results = CLIEngine.getErrorResults(report.results);
-    const output = formatter(results);
+    const output = formatter.format(report);
     this._logger.log(output);
-    return report.errorCount === 0;
+    return every(report, (r) => r.errorCount === 0);
   }
 }
