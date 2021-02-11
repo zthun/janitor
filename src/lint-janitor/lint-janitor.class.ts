@@ -62,7 +62,9 @@ export class ZLintJanitor {
   /**
    * Parses the command line and returns the options for linters.
    *
-   * @return A promise that resolves the command line options.
+   * @param args The command line arguments.
+   *
+   * @returns A promise that resolves the command line options.
    */
   public async parse(args: IZLintJanitorArgs): Promise<IZLintJanitorOptions> {
     const explorer = cosmiconfig('lint-janitor');
@@ -85,7 +87,7 @@ export class ZLintJanitor {
    *
    * @param options The lint options.
    *
-   * @return A promise that returns 0 if all linting was successful, and 1 if any of the linting failed.
+   * @returns A promise that returns 0 if all linting was successful, and 1 if any of the linting failed.
    */
   public async lint(options: IZLintJanitorOptions): Promise<number> {
     let current = true;
@@ -133,7 +135,9 @@ export class ZLintJanitor {
   /**
    * Runs the application.
    *
-   * @return A promise that returns 0 if all linting was successful, and 1 if any of the linting failed.
+   * @param args The command line arguments.
+   *
+   * @returns A promise that returns 0 if all linting was successful, and 1 if any of the linting failed.
    */
   public async run(args: IZLintJanitorArgs): Promise<number> {
     try {

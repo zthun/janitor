@@ -1,3 +1,4 @@
+/* eslint-disable require-jsdoc */
 import { sync } from 'glob';
 import { IZLinter } from '../common/linter.interface';
 import { ZFileReportLint } from './file-report-lint.class';

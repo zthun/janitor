@@ -1,3 +1,4 @@
+/* eslint-disable require-jsdoc */
 import { safeDump } from 'js-yaml';
 import { ZYamlLint } from './yaml-lint.class';
 

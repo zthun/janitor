@@ -17,7 +17,7 @@ export class ValidClass {
   /**
    * Toggles the valid flag.
    *
-   * @return The valid flag.
+   * @returns The valid flag.
    */
   public toggle(): boolean {
     this.isValid = !this.isValid;

@@ -7,7 +7,7 @@ export class ZSilentLint implements IZLinter {
   /**
    * Returns a promise that resolves true.
    *
-   * @return A promise that resolves true.
+   * @returns A promise that resolves true.
    */
   public lint(): Promise<boolean> {
     return Promise.resolve(true);

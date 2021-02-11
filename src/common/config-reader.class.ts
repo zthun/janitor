@@ -19,7 +19,7 @@ export class ZConfigReader implements IZConfigReader {
    *
    * @param config The config file to read.
    *
-   * @return A promise that resolves the json object that represents the config.
+   * @returns A promise that resolves the json object that represents the config.
    */
   public async read(config: string): Promise<any> {
     const readFileAsync = promisify(readFile);

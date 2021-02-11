@@ -23,7 +23,7 @@ export class ZHtmlHint implements IZContentLinter {
    * @param contentPath The path of the content data.
    * @param options The htmlhint options.
    *
-   * @return A promise that resolves if the content is lint free, and rejects if it has lint errors.
+   * @returns A promise that resolves if the content is lint free, and rejects if it has lint errors.
    */
   public lint(content: string, contentPath: string, options?: RuleSet): Promise<any> {
     const messages = HTMLHint.verify(content, options);

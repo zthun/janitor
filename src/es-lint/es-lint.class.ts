@@ -7,6 +7,10 @@ import { IZLinter } from '../common/linter.interface';
 export class ZEsLint implements IZLinter {
   /**
    * The factory that constructs a CLIEngine object.
+   *
+   * @param options The engine options.
+   *
+   * @returns The engine that can be used to perform eslint.
    */
   public engineFactory: (options: CLIEngine.Options) => CLIEngine = (options) => new CLIEngine(options);
 
@@ -24,7 +28,7 @@ export class ZEsLint implements IZLinter {
    * @param src The list of files globs to lint.
    * @param config The lint config file.
    *
-   * @return A promise that resolves to true if the lint is fully successful, and false if the lint
+   * @returns A promise that resolves to true if the lint is fully successful, and false if the lint
    *         has errors.
    */
   public async lint(src: string[], config: string): Promise<boolean> {

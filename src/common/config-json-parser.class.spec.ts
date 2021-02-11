@@ -1,3 +1,4 @@
+/* eslint-disable require-jsdoc */
 import { ZConfigJsonParser } from './config-json-parser.class';
 
 describe('ZConfigJsonParser', () => {

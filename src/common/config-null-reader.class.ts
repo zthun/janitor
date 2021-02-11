@@ -7,7 +7,7 @@ export class ZConfigNullReader implements IZConfigReader {
   /**
    * Returns a null resolved promise.
    *
-   * @return A promise that resolves to null.
+   * @returns A promise that resolves to null.
    */
   public async read(): Promise<any> {
     return null;

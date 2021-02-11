@@ -1,3 +1,4 @@
+/* eslint-disable require-jsdoc */
 import { ZSilentLint } from './silent-lint.class';
 
 describe('ZSilentLint', () => {

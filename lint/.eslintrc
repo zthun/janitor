@@ -6,15 +6,15 @@
   },
   "rules": {
     "block-scoped-var": "error",
-    "eqeqeq": "error",
+    "eqeqeq": ["error", "smart"],
     "no-else-return": "error",
     "no-eval": "error",
     "no-implied-eval": "error",
     "strict": "error",
     "no-undef": "off",
     "no-undef-init": "error",
-    "no-undefined": "error",
-    "no-unused-vars": "error",
+    "no-undefined": "off",
+    "no-unused-vars": "off",
     "no-use-before-define": [
       "error",
       {
@@ -41,7 +41,7 @@
     "computed-property-spacing": "error",
     "eol-last": "error",
     "func-call-spacing": "error",
-    "indent": ["error", 2],
+    "indent": "off",
     "key-spacing": "error",
     "keyword-spacing": "error",
     "line-comment-position": "error",
@@ -50,12 +50,12 @@
     "max-depth": "error",
     "max-len": "off",
     "max-lines": "off",
-    "max-nested-callbacks": ["error", 4],
+    "max-nested-callbacks": "off",
     "max-params": "off",
     "max-statements": "off",
     "max-statements-per-line": "error",
-    "multiline-ternary": ["error", "always-multiline"],
-    "new-cap": "error",
+    "multiline-ternary": "off",
+    "new-cap": "off",
     "new-parens": "error",
     "newline-per-chained-call": "off",
     "no-array-constructor": "error",
@@ -63,7 +63,7 @@
     "no-continue": "off",
     "no-inline-comments": "error",
     "no-lonely-if": "error",
-    "no-mixed-operators": "error",
+    "no-mixed-operators": "off",
     "no-mixed-spaces-and-tabs": "error",
     "no-multi-assign": "error",
     "no-multiple-empty-lines": "error",
@@ -97,7 +97,18 @@
       }
     ],
     "quotes": ["error", "single"],
-    "require-jsdoc": "off",
+    "require-jsdoc": [
+      "error",
+      {
+        "require": {
+          "FunctionDeclaration": true,
+          "MethodDefinition": true,
+          "ClassDeclaration": true,
+          "ArrowFunctionExpression": false,
+          "FunctionExpression": false
+        }
+      }
+    ],
     "semi": "error",
     "semi-spacing": "error",
     "semi-style": "error",
@@ -118,8 +129,28 @@
     "switch-colon-spacing": "error",
     "template-tag-spacing": "error",
     "unicode-bom": "off",
+    "valid-jsdoc": [
+      "error",
+      {
+        "prefer": {
+          "arg": "param",
+          "return": "returns"
+        },
+        "matchDescription": ".+",
+        "requireParamDescription": true,
+        "requireReturnDescription": true,
+        "requireParamType": false,
+        "requireReturnType": false,
+        "requireReturn": false
+      }
+    ],
     "wrap-regex": "off",
-    "@typescript-eslint/no-explicit-any": "off"
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-empty-function": ["error", { "allow": ["constructors"] }],
+    "@typescript-eslint/ban-types": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off"
   },
   "env": {
     "browser": true,

@@ -1,3 +1,4 @@
+/* eslint-disable require-jsdoc */
 import { lint, LintResult, LinterResult } from 'stylelint';
 import { ZStyleLint } from './style-lint.class';
 

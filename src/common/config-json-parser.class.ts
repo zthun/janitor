@@ -9,7 +9,7 @@ export class ZConfigJsonParser implements IZConfigParser {
    *
    * @param content The content to parse.
    *
-   * @return A promise that resolves the parsed content.
+   * @returns A promise that resolves the parsed content.
    */
   public async parse(content: string): Promise<any> {
     return JSON.parse(content);

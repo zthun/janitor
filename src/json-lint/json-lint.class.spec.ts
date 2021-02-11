@@ -1,3 +1,4 @@
+/* eslint-disable require-jsdoc */
 import { ZJsonLint } from './json-lint.class';
 
 jest.mock('glob');

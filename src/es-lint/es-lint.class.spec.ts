@@ -1,3 +1,4 @@
+/* eslint-disable require-jsdoc */
 import { CLIEngine } from 'eslint';
 import { resolve } from 'path';
 import { ZEsLint } from './es-lint.class';

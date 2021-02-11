@@ -1,3 +1,8 @@
+/**
+ * This method should be lint free.
+ *
+ * @param logger The logger to log output to.
+ */
 function thisMethodShouldBeOk(logger) {
   // This should be a valid method.
   var a = 0;

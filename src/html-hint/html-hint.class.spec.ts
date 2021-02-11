@@ -1,3 +1,4 @@
+/* eslint-disable require-jsdoc */
 import { ZHtmlHint } from './html-hint.class';
 import { LintResult, RuleSet, HTMLHint } from 'htmlhint';
 

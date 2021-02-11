@@ -10,7 +10,7 @@ export class ZYamlLint implements IZContentLinter {
    *
    * @param contents Yaml formatted string.
    *
-   * @return A promise that resolves if successful, or rejects if failed.
+   * @returns A promise that resolves if successful, or rejects if failed.
    */
   public async lint(contents: string): Promise<any> {
     return safeLoad(contents);

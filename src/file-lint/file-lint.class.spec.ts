@@ -1,3 +1,4 @@
+/* eslint-disable require-jsdoc */
 import { readFile } from 'fs';
 import { sync } from 'glob';
 import { IZConfigReader } from '../common/config-reader.interface';

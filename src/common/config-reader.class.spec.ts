@@ -1,3 +1,4 @@
+/* eslint-disable require-jsdoc */
 import { readFile } from 'fs';
 import { IZConfigParser } from './config-parser.interface';
 import { ZConfigReader } from './config-reader.class';

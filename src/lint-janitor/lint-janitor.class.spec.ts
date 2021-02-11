@@ -1,3 +1,4 @@
+/* eslint-disable require-jsdoc */
 import { cosmiconfig } from 'cosmiconfig';
 import { IZLintJanitorArgs } from './lint-janitor-args.interface';
 import { IZLintJanitorOptions } from './lint-janitor-options.interface';

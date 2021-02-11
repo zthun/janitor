@@ -1,3 +1,4 @@
+/* eslint-disable require-jsdoc */
 import { ZConfigNullReader } from './config-null-reader.class';
 
 describe('ZConfigNullReader', () => {
