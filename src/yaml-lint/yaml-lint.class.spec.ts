@@ -1,5 +1,5 @@
 /* eslint-disable require-jsdoc */
-import { safeDump } from 'js-yaml';
+import { dump } from 'js-yaml';
 import { ZYamlLint } from './yaml-lint.class';
 
 describe('ZJsonLint', () => {
@@ -21,7 +21,7 @@ describe('ZJsonLint', () => {
     const target = createTestTarget();
     // Act
     // Assert
-    await expect(target.lint(safeDump(yaml))).resolves.toBeTruthy();
+    await expect(target.lint(dump(yaml))).resolves.toBeTruthy();
   });
 
   it('returns a rejected promise if the json is not valid.', async () => {

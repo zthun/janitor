@@ -1,4 +1,4 @@
-import { safeLoad } from 'js-yaml';
+import { load } from 'js-yaml';
 import { IZContentLinter } from '../file-lint/content-linter.interface';
 
 /**
@@ -13,6 +13,6 @@ export class ZYamlLint implements IZContentLinter {
    * @returns A promise that resolves if successful, or rejects if failed.
    */
   public async lint(contents: string): Promise<any> {
-    return safeLoad(contents);
+    return load(contents);
   }
 }
