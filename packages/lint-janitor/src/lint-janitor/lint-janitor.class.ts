@@ -13,7 +13,7 @@ export class ZLintJanitor {
   /**
    * The default eslint config.
    */
-  public static readonly DefaultEsLintConfig = resolve(__dirname, '../../lint/.eslintrc');
+  public static readonly DefaultEsLintConfig = resolve(process.cwd(), '.eslintrc');
   /**
    * The default html hint config.
    */

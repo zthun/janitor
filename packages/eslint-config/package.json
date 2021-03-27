@@ -1,0 +1,20 @@
+{
+  "name": "@zthun/eslint-config",
+  "version": "9.0.0",
+  "description": "A plugin for eslint that describes recommended rules for @zthun scoped projects.",
+  "keywords": [
+    "eslint",
+    "eslint-plugin"
+  ],
+  "main": "src/index.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zthun/lint-janitor",
+    "directory": "packages/eslint-plugin"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Anthony Bonta"
+}

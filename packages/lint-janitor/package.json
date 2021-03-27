@@ -1,0 +1,51 @@
+{
+  "name": "@zthun/lint-janitor",
+  "version": "9.0.0",
+  "description": "Style checks with tools for web projects using common rules.",
+  "keywords": [
+    "lint",
+    "sassLint",
+    "styleLint",
+    "tslint",
+    "htmlHint",
+    "eslint",
+    "jsonLint",
+    "yamlLint"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zthun/lint-janitor",
+    "directory": "packages/lint-janitor"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "lint-janitor": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.bin.json",
+    "start": "node --inspect-brk -r ts-node/register src/cli.ts"
+  },
+  "author": "Anthony Bonta",
+  "dependencies": {
+    "acorn": "^8.0.5",
+    "chalk": "^4.1.0",
+    "cosmiconfig": "^7.0.0",
+    "eslint": "^7.4.0",
+    "glob": "^7.1.6",
+    "htmlhint": "~0.14.1",
+    "js-yaml": "^4.0.0",
+    "lodash": "^4.17.19",
+    "markdownlint": "~0.23.0",
+    "stylelint": "^13.6.1",
+    "yargs": "^16.2.0"
+  },
+  "files": [
+    "dist",
+    "images"
+  ]
+}

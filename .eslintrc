@@ -1,3 +1,4 @@
 {
-    "extends": "./lint/.eslintrc"
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "@zthun"],
+  "plugins": ["@typescript-eslint"]
 }
