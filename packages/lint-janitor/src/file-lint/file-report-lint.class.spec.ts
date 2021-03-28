@@ -34,19 +34,9 @@ describe('ZFileReportLint', () => {
     const src = ['file-a.js', 'file-b.js'];
     const target = createTestTarget();
     // Act
-    await target.lint(src, config);
+    await target.lint(src);
     // Assert
-    expect(child.lint).toHaveBeenCalledWith(src, config);
-  });
-
-  it('logs the config file being used.', async () => {
-    // Arrange
-    const src = ['file-a.js', 'file-b.js'];
-    const target = createTestTarget();
-    // Act
-    await target.lint(src, config);
-    // Assert
-    expect(logger.log).toHaveBeenCalledWith(expect.stringContaining(config));
+    expect(child.lint).toHaveBeenCalledWith(src, undefined);
   });
 
   it('logs the total number of files.', async () => {
