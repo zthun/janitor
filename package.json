@@ -5,7 +5,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/zthun/lint-janitor"
+    "url": "https://github.com/zthun/janitor"
   },
   "private": true,
   "scripts": {
@@ -50,6 +50,8 @@
   "workspaces": [
     "packages/eslint-config",
     "packages/stylelint-config",
+    "packages/markdownlint-config",
+    "packages/htmlhint-config",
     "packages/lint-janitor"
   ]
 }
