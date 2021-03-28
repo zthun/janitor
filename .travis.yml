@@ -2,8 +2,8 @@ language: node_js
 node_js: 14.5.0
 sudo: required
 install:
-  - npm ci
+  - yarn install
 script:
-  - npm run lint
-  - npm test
-  - npm run build
+  - yarn lint
+  - yarn test
+  - yarn build
