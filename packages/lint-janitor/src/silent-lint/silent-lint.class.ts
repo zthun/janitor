@@ -5,11 +5,18 @@ import { IZLinter } from '../common/linter.interface';
  */
 export class ZSilentLint implements IZLinter {
   /**
-   * Returns a promise that resolves true.
+   * Initializes a new instance of this object.
    *
-   * @returns A promise that resolves true.
+   * @param _resolve The value to resolve.
+   */
+  public constructor(private _resolve = true) {}
+
+  /**
+   * Returns a promise that resolves the resolved value.
+   *
+   * @returns A promise that resolves the resolved value.
    */
   public lint(): Promise<boolean> {
-    return Promise.resolve(true);
+    return Promise.resolve(this._resolve);
   }
 }
