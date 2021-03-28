@@ -7,12 +7,12 @@
     "eslintconfig",
     "eslint-config"
   ],
-  "main": "src/index.js",
+  "main": "index.js",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/zthun/lint-janitor",
-    "directory": "packages/eslint-plugin"
+    "url": "https://github.com/zthun/janitor",
+    "directory": "packages/eslint-config"
   },
   "peerDependencies": {
     "eslint": "^7.4.0",
@@ -21,8 +21,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "files": [
-    "src"
-  ],
   "author": "Anthony Bonta"
 }
