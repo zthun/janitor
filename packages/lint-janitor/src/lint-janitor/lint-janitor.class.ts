@@ -11,17 +11,9 @@ import { ZSilentLint } from '../silent-lint/silent-lint.class';
  */
 export class ZLintJanitor {
   /**
-   * The default eslint config.
-   */
-  public static readonly DefaultEsLintConfig = resolve(process.cwd(), '.eslintrc');
-  /**
    * The default html hint config.
    */
   public static readonly DefaultHtmlHintConfig = resolve(process.cwd(), '.htmlhintrc');
-  /**
-   * The default stylelint config.
-   */
-  public static readonly DefaultStyleLintConfig = resolve(process.cwd(), '.stylelintrc');
   /**
    * The default markdownlint config.
    */
@@ -113,13 +105,13 @@ export class ZLintJanitor {
 
     if (options.esFiles) {
       this.logger.log(chalk.magenta.underline(`Linting ecmaScript files from ${options.esFiles.length} globs.`));
-      current = await this.esLint.lint(options.esFiles, options.esConfig || ZLintJanitor.DefaultEsLintConfig);
+      current = await this.esLint.lint(options.esFiles, options.esConfig || null);
       result = result && current;
     }
 
     if (options.styleFiles) {
       this.logger.log(chalk.magenta.underline(`Linting style files from ${options.styleFiles.length} globs.`));
-      current = await this.styleLint.lint(options.styleFiles, options.styleConfig || ZLintJanitor.DefaultStyleLintConfig);
+      current = await this.styleLint.lint(options.styleFiles, options.styleConfig || null);
       result = result && current;
     }
 

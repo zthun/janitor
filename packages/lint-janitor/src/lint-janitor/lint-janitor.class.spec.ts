@@ -142,7 +142,7 @@ describe('ZLintJanitor', () => {
       // Act
       await target.lint(options);
       // Assert
-      if (config) {
+      if (config !== undefined) {
         expect(linter.lint).toHaveBeenCalledWith(files, config);
       } else {
         expect(linter.lint).toHaveBeenCalledWith(files);
@@ -165,7 +165,7 @@ describe('ZLintJanitor', () => {
 
       it('uses the default config if no config is specified.', async () => {
         delete options.esConfig;
-        await assertLinterInvoked(esLint, options.esFiles, ZLintJanitor.DefaultEsLintConfig);
+        await assertLinterInvoked(esLint, options.esFiles, null);
       });
 
       it('does not invoke the linter if there are no esFiles.', async () => {
@@ -181,7 +181,7 @@ describe('ZLintJanitor', () => {
 
       it('uses the default config if no config is specified.', async () => {
         delete options.styleConfig;
-        await assertLinterInvoked(styleLint, options.styleFiles, ZLintJanitor.DefaultStyleLintConfig);
+        await assertLinterInvoked(styleLint, options.styleFiles, null);
       });
 
       it('does not invoke the linter if there are no styleFiles.', async () => {
