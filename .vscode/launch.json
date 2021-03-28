@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "Launch Lint Janitor",
-      "program": "${workspaceFolder}/packages/lint-janitor/src/cli.js",
-      "preLaunchTask": "tsc: build - ${workspaceFolder}/packages/lint-janitor/tsconfig.dev.json",
+      "program": "${workspaceFolder}/packages/lint-janitor/src/cli.ts",
+      "preLaunchTask": "tsc: build - packages/lint-janitor/tsconfig.dev.json",
       "request": "launch",
       "skipFiles": ["<node_internals>/**"],
       "type": "pwa-node"
