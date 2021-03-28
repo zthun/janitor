@@ -2,6 +2,14 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Launch Lint Janitor",
+      "program": "${workspaceFolder}/packages/lint-janitor/src/cli.js",
+      "preLaunchTask": "tsc: build - ${workspaceFolder}/packages/lint-janitor/tsconfig.dev.json",
+      "request": "launch",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "pwa-node"
+    },
+    {
       "type": "node",
       "request": "attach",
       "name": "Attach by Process ID",
