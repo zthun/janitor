@@ -2,7 +2,7 @@ import chalk from 'chalk';
 import { readFile } from 'fs';
 import { IOptions, sync } from 'glob';
 import { resolve } from 'path';
-import { isArray, promisify } from 'util';
+import { promisify } from 'util';
 import { IZConfigReader } from '../common/config-reader.interface';
 import { IZLinter } from '../common/linter.interface';
 import { IZContentLinter } from './content-linter.interface';
@@ -47,7 +47,6 @@ export class ZFileLint implements IZLinter {
     if (config) {
       try {
         options = await this.configReader.read(config);
-        this.logger.log(chalk.green.italic(`Using config file from ${config}`));
       } catch (err) {
         this.logger.error(chalk.red(err));
         return false;
@@ -75,13 +74,13 @@ export class ZFileLint implements IZLinter {
    * Formats a file error to the logger.
    *
    * @param file The file that failed to parse.
-   * @param err The error that occurred.
+   * @param err The error that occurred.Ø
    */
   private _format(file: string, err: any) {
     const fileFormat = `Errors in ${file}`;
     this.logger.error(chalk.green.underline(fileFormat));
 
-    if (isArray(err)) {
+    if (Array.isArray(err)) {
       err.forEach((log) => this.logger.error(chalk.red(log)));
     } else {
       this.logger.error(chalk.red(err));

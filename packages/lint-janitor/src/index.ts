@@ -1,3 +1,7 @@
+export { ZConfigCosmicReader } from './common/config-cosmic-reader.class';
+export { IZConfigDiscovery } from './common/config-discovery.interface';
+export { ZConfigExtender } from './common/config-extender.class';
+export { IZConfigExtender } from './common/config-extender.interface';
 export { ZConfigJsonParser } from './common/config-json-parser.class';
 export { IZConfigParser } from './common/config-parser.interface';
 export { ZConfigReader } from './common/config-reader.class';

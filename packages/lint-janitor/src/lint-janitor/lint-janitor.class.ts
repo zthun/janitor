@@ -1,48 +1,58 @@
 import chalk from 'chalk';
-import { cosmiconfig } from 'cosmiconfig';
-import { resolve } from 'path';
+import { ZFileReportLint } from '../file-lint/file-report-lint.class';
+import { ZConfigCosmicReader } from '../common/config-cosmic-reader.class';
+import { ZConfigExtender } from '../common/config-extender.class';
+import { ZConfigNullReader } from '../common/config-null-reader.class';
+import { IZConfigReader } from '../common/config-reader.interface';
+import { IZLinter } from '../common/linter.interface';
+import { ZEsLint } from '../es-lint/es-lint.class';
+import { ZFileLint } from '../file-lint/file-lint.class';
+import { ZHtmlHint } from '../html-hint/html-hint.class';
+import { ZJsonLint } from '../json-lint/json-lint.class';
+import { ZMarkdownLint } from '../markdown-lint/markdown-lint.class';
+import { ZStyleLint } from '../style-lint/style-lint.class';
+import { ZYamlLint } from '../yaml-lint/yaml-lint.class';
 import { IZLintJanitorArgs } from './lint-janitor-args.interface';
 import { IZLintJanitorOptions } from './lint-janitor-options.interface';
-import { IZLinter } from '../common/linter.interface';
-import { ZSilentLint } from '../silent-lint/silent-lint.class';
 
 /**
  * Represents the main entry point object for the application.
  */
 export class ZLintJanitor {
   /**
-   * The default html hint config.
-   */
-  public static readonly DefaultHtmlHintConfig = resolve(process.cwd(), '.htmlhintrc');
-  /**
-   * The default markdownlint config.
-   */
-  public static readonly DefaultMarkdownLintConfig = resolve(process.cwd(), '.markdownlintrc');
-
-  /**
    * The linter for js files.
    */
-  public esLint: IZLinter = new ZSilentLint();
+  public esLint: IZLinter = new ZFileReportLint(new ZEsLint(this.logger), this.logger, 'ecmaScript');
+
   /**
    * The linter for style files.
    */
-  public styleLint: IZLinter = new ZSilentLint();
+  public styleLint: IZLinter = new ZFileReportLint(new ZStyleLint(this.logger), this.logger, 'style');
+
   /**
    * The linter for html files.
    */
-  public htmlHint: IZLinter = new ZSilentLint();
+  public htmlHint: IZLinter = new ZFileLint(new ZHtmlHint(), new ZConfigCosmicReader('htmlhint', new ZConfigExtender()), this.logger, 'html');
+
   /**
    * The linter for json files.
    */
-  public jsonLint: IZLinter = new ZSilentLint();
+  public jsonLint: IZLinter = new ZFileLint(new ZJsonLint(), new ZConfigNullReader(), this.logger, 'json');
+
   /**
    * The linter for yaml files.
    */
-  public yamlLint: IZLinter = new ZSilentLint();
+  public yamlLint: IZLinter = new ZFileLint(new ZYamlLint(), new ZConfigNullReader(), this.logger, 'yaml');
+
   /**
    * The linter for markdown files.
    */
-  public markdownLint: IZLinter = new ZSilentLint();
+  public markdownLint: IZLinter = new ZFileReportLint(new ZMarkdownLint(this.logger, new ZConfigCosmicReader('markdownlint', new ZConfigExtender())), this.logger, 'markdown');
+
+  /**
+   * The configuration reader.
+   */
+  public config: IZConfigReader = new ZConfigCosmicReader('lint-janitor', new ZConfigExtender());
 
   /**
    * Initializes a new instance of this object.
@@ -50,29 +60,6 @@ export class ZLintJanitor {
    * @param logger The logger to use when formatting output.
    */
   public constructor(private logger: Console) {}
-
-  /**
-   * Parses the command line and returns the options for linters.
-   *
-   * @param args The command line arguments.
-   *
-   * @returns A promise that resolves the command line options.
-   */
-  public async parse(args: IZLintJanitorArgs): Promise<IZLintJanitorOptions> {
-    const explorer = cosmiconfig('lint-janitor');
-    const configLoad = args.config ? Promise.resolve({ filepath: args.config }) : explorer.search();
-    const configResult = await configLoad;
-    const configFile = configResult ? configResult.filepath : null;
-
-    if (!configFile) {
-      const msg = 'Could not find a valid configuration.';
-      throw new Error(msg);
-    }
-
-    this.logger.log(chalk.cyan(`Reading config file:  ${configFile}`));
-    const buffer = await explorer.load(configFile);
-    return buffer.config;
-  }
 
   /**
    * Runs the lint given the required options.
@@ -99,7 +86,7 @@ export class ZLintJanitor {
 
     if (options.markdownFiles) {
       this.logger.log(chalk.magenta.underline(`Linting markdown files from ${options.markdownFiles.length} globs.`));
-      current = await this.markdownLint.lint(options.markdownFiles, options.markdownConfig || ZLintJanitor.DefaultMarkdownLintConfig);
+      current = await this.markdownLint.lint(options.markdownFiles, options.markdownConfig || null);
       result = result && current;
     }
 
@@ -117,7 +104,7 @@ export class ZLintJanitor {
 
     if (options.htmlFiles) {
       this.logger.log(chalk.magenta.underline(`Linting html files from ${options.htmlFiles.length} globs.`));
-      current = await this.htmlHint.lint(options.htmlFiles, options.htmlConfig || ZLintJanitor.DefaultHtmlHintConfig);
+      current = await this.htmlHint.lint(options.htmlFiles, options.htmlConfig || null);
       result = result && current;
     }
 
@@ -133,7 +120,7 @@ export class ZLintJanitor {
    */
   public async run(args: IZLintJanitorArgs): Promise<number> {
     try {
-      const options = await this.parse(args);
+      const options = await this.config.read(args.config);
       return this.lint(options);
     } catch (err) {
       this.logger.error(err);

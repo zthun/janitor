@@ -25,7 +25,6 @@ export class ZFileReportLint implements IZLinter {
    * @param config The optional path to the config file.
    */
   public async lint(src: string[], config?: string): Promise<boolean> {
-    this.logger.log(chalk.green.italic(`Using config file from ${config}`));
     let allFiles: string[] = [];
 
     for (const pattern of src) {
