@@ -17,15 +17,15 @@ export class ZLintJanitor {
   /**
    * The default html hint config.
    */
-  public static readonly DefaultHtmlHintConfig = resolve(__dirname, '../../lint/.htmlhintrc');
+  public static readonly DefaultHtmlHintConfig = resolve(process.cwd(), '.htmlhintrc');
   /**
    * The default stylelint config.
    */
-  public static readonly DefaultStyleLintConfig = resolve(__dirname, '../../lint/.stylelintrc');
+  public static readonly DefaultStyleLintConfig = resolve(process.cwd(), '.stylelintrc');
   /**
    * The default markdownlint config.
    */
-  public static readonly DefaultMarkdownLintConfig = resolve(__dirname, '../../lint/.markdownlintrc');
+  public static readonly DefaultMarkdownLintConfig = resolve(process.cwd(), '.markdownlintrc');
 
   /**
    * The linter for js files.
