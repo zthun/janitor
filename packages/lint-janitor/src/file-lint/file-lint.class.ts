@@ -44,13 +44,11 @@ export class ZFileLint implements IZLinter {
       return result;
     }
 
-    if (config) {
-      try {
-        options = await this.configReader.read(config);
-      } catch (err) {
-        this.logger.error(chalk.red(err));
-        return false;
-      }
+    try {
+      options = await this.configReader.read(config);
+    } catch (err) {
+      this.logger.error(chalk.red(err));
+      return false;
     }
 
     this.logger.log(chalk.green.italic(`Checking syntax for ${allFiles.length} ${this.type} files.`));
