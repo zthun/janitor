@@ -27,16 +27,19 @@ export class ZEsLint implements IZLinter {
    * Runs the lint given the specified config and source files.
    *
    * @param src The list of files globs to lint.
-   * @param config The lint config file.
+   * @param config The optional lint config file.
    *
    * @returns A promise that resolves to true if the lint is fully successful, and false if the lint
    *         has errors.
    */
   public async lint(src: string[], config: string): Promise<boolean> {
-    const esOptions = {
-      overrideConfigFile: config,
+    const esOptions: ESLint.Options = {
       useEslintrc: true
     };
+
+    if (config) {
+      esOptions.overrideConfig = require(config);
+    }
 
     const engine = this.engineFactory(esOptions);
     const formatter = await engine.loadFormatter();

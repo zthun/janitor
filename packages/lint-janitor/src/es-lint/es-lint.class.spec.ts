@@ -1,6 +1,5 @@
 /* eslint-disable require-jsdoc */
 import { ESLint } from 'eslint';
-import { resolve } from 'path';
 import { ZEsLint } from './es-lint.class';
 
 describe('ZEsLint', () => {
@@ -22,7 +21,7 @@ describe('ZEsLint', () => {
   }
 
   beforeEach(async () => {
-    config = resolve(__dirname, '../../lint/.eslintrc');
+    config = '@zthun/eslint-config';
     files = ['src/**/*.js'];
     successA = {
       filePath: 'src/index.js',
@@ -77,6 +76,28 @@ describe('ZEsLint', () => {
     formatter = await engine.loadFormatter();
     jest.spyOn(engine, 'loadFormatter').mockResolvedValue(formatter);
     jest.spyOn(formatter, 'format');
+  });
+
+  describe('Config', () => {
+    it('should run the the required options if they are specified.', async () => {
+      // Arrange
+      const target = createTestTarget();
+      jest.spyOn(target, 'engineFactory');
+      // Act
+      await target.lint(files, config);
+      // Assert
+      expect(target.engineFactory).toHaveBeenCalledWith(expect.objectContaining({ useEslintrc: true, overrideConfig: expect.anything() }));
+    });
+
+    it('should run with the default configuration options if no config is specified.', async () => {
+      // Arrange
+      const target = createTestTarget();
+      jest.spyOn(target, 'engineFactory');
+      // Act
+      await target.lint(files, null);
+      // Assert
+      expect(target.engineFactory).toHaveBeenCalledWith({ useEslintrc: true });
+    });
   });
 
   describe('Linting', () => {
