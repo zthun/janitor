@@ -20,13 +20,13 @@ describe('ZConfigCosmicReader', () => {
     extender = {} as any;
     extender.extend = jest.fn((cfg) => Promise.resolve(cfg));
 
-    config = '.htmlhintrc';
+    config = '@zthun/htmlhint-config';
 
     options = {
       'tagname-lowercase': true
     };
 
-    search = jest.fn(() => Promise.resolve({ filepath: 'lint-janitor.config.js' }));
+    search = jest.fn(() => Promise.resolve({ filepath: config }));
     load = jest.fn(() => Promise.resolve({ config: options }));
     (cosmiconfig as jest.Mock).mockReturnValue({ search, load });
   });
@@ -34,10 +34,11 @@ describe('ZConfigCosmicReader', () => {
   it('reads the config file.', async () => {
     // Arrange
     const target = createTestTarget();
+    const expected = require.resolve(config);
     // Act
     await target.read(config);
     // Assert
-    expect(load).toHaveBeenCalledWith(config);
+    expect(load).toHaveBeenCalledWith(expected);
   });
 
   it('reads the cosmiconfig file if no config specified.', async () => {
@@ -56,6 +57,15 @@ describe('ZConfigCosmicReader', () => {
     const actual = await target.read(null);
     // Assert
     expect(JSON.stringify(actual)).toEqual(JSON.stringify(options));
+  });
+
+  it('throws an exception if the actual module cannot be resolved.', async () => {
+    // Arrange
+    const target = createTestTarget();
+    config = '@zthun/htmlhint-config-does-not-exist';
+    // Act
+    // Assert
+    await expect(target.read(config)).rejects.toBeDefined();
   });
 
   it('throws an exception if there are no config files.', async () => {

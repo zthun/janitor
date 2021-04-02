@@ -43,7 +43,8 @@ export class ZConfigCosmicReader implements IZConfigReader, IZConfigDiscovery {
       return Promise.reject(new Error('Could not find a valid configuration.'));
     }
 
-    const buffer = await cosmiconfig(this.name).load(configFile);
+    const path = require.resolve(configFile, { paths: [process.cwd()] });
+    const buffer = await cosmiconfig(this.name).load(path);
     return await this.extender.extend(buffer.config);
   }
 }
