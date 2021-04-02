@@ -23,9 +23,12 @@ export class ZStyleLint implements IZLinter {
    */
   public async lint(content: string[], config: string): Promise<boolean> {
     const options: Partial<LinterOptions> = {
-      configFile: config,
       files: content
     };
+
+    if (config) {
+      options.config = require(config);
+    }
 
     const result = await lint(options);
 

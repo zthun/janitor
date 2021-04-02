@@ -25,9 +25,30 @@ describe('ZStyleLint', () => {
     };
 
     content = ['fileA.less', 'fileB.css'];
-    config = '.stylelintrc';
+    config = '@zthun/stylelint-config';
 
+    (lint as jest.Mock).mockClear();
     (lint as jest.Mock).mockResolvedValue(lintResult);
+  });
+
+  describe('Config', () => {
+    it('should run the the required options if they are specified.', async () => {
+      // Arrange
+      const target = createTestTarget();
+      // Act
+      await target.lint(content, config);
+      // Assert
+      expect(lint).toHaveBeenCalledWith(expect.objectContaining({ files: content, config: expect.anything() }));
+    });
+
+    it('should run with the default configuration options if no config is specified.', async () => {
+      // Arrange
+      const target = createTestTarget();
+      // Act
+      await target.lint(content, null);
+      // Assert
+      expect(lint).toHaveBeenCalledWith({ files: content });
+    });
   });
 
   describe('Success', () => {
