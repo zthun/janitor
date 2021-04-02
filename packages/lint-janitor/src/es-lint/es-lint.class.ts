@@ -38,7 +38,7 @@ export class ZEsLint implements IZLinter {
     };
 
     if (config) {
-      esOptions.overrideConfig = require(config);
+      esOptions.overrideConfigFile = require.resolve(config, { paths: [process.cwd()] });
     }
 
     const engine = this.engineFactory(esOptions);

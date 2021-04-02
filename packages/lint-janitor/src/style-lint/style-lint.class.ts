@@ -27,7 +27,7 @@ export class ZStyleLint implements IZLinter {
     };
 
     if (config) {
-      options.config = require(config);
+      options.configFile = require.resolve(config, { paths: [process.cwd()] });
     }
 
     const result = await lint(options);
