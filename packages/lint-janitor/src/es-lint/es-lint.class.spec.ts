@@ -82,11 +82,12 @@ describe('ZEsLint', () => {
     it('should run the the required options if they are specified.', async () => {
       // Arrange
       const target = createTestTarget();
+      const expected = require.resolve(config);
       jest.spyOn(target, 'engineFactory');
       // Act
       await target.lint(files, config);
       // Assert
-      expect(target.engineFactory).toHaveBeenCalledWith(expect.objectContaining({ useEslintrc: true, overrideConfig: expect.anything() }));
+      expect(target.engineFactory).toHaveBeenCalledWith({ useEslintrc: true, overrideConfigFile: expected });
     });
 
     it('should run with the default configuration options if no config is specified.', async () => {

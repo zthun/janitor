@@ -35,10 +35,11 @@ describe('ZStyleLint', () => {
     it('should run the the required options if they are specified.', async () => {
       // Arrange
       const target = createTestTarget();
+      const expected = require.resolve(config);
       // Act
       await target.lint(content, config);
       // Assert
-      expect(lint).toHaveBeenCalledWith(expect.objectContaining({ files: content, config: expect.anything() }));
+      expect(lint).toHaveBeenCalledWith({ files: content, configFile: expected });
     });
 
     it('should run with the default configuration options if no config is specified.', async () => {
