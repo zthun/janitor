@@ -13,7 +13,7 @@ yarn add @zthun/prettier-config --dev
 
 ## Usage
 
-Use the .prettierrc.js convention.
+Use the prettier shared config convention.
 
 ```js
 module.exports = require('@zthun/prettier-config');

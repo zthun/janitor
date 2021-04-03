@@ -1,12 +1,13 @@
 import chalk from 'chalk';
-import { ZFileReportLint } from '../file-lint/file-report-lint.class';
 import { ZConfigCosmicReader } from '../common/config-cosmic-reader.class';
 import { ZConfigExtender } from '../common/config-extender.class';
 import { ZConfigNullReader } from '../common/config-null-reader.class';
 import { IZConfigReader } from '../common/config-reader.interface';
 import { IZLinter } from '../common/linter.interface';
+import { ZSpellLint } from '../spell-lint/spell-lint.class';
 import { ZEsLint } from '../es-lint/es-lint.class';
 import { ZFileLint } from '../file-lint/file-lint.class';
+import { ZFileReportLint } from '../file-lint/file-report-lint.class';
 import { ZHtmlHint } from '../html-hint/html-hint.class';
 import { ZJsonLint } from '../json-lint/json-lint.class';
 import { ZMarkdownLint } from '../markdown-lint/markdown-lint.class';
@@ -23,6 +24,11 @@ export class ZLintJanitor {
    * The linter for js files.
    */
   public esLint: IZLinter = new ZFileReportLint(new ZEsLint(this._logger), this._logger, 'ecmaScript');
+
+  /**
+   * The linter for cspell.  Useful for multiple file types.
+   */
+  public spellLint: IZLinter = new ZFileReportLint(new ZSpellLint(this._logger), this._logger, 'various');
 
   /**
    * The linter for style files.
@@ -105,6 +111,12 @@ export class ZLintJanitor {
     if (options.htmlFiles) {
       this._logger.log(chalk.magenta.underline(`Linting html files from ${options.htmlFiles.length} globs.`));
       current = await this.htmlHint.lint(options.htmlFiles, options.htmlConfig || null);
+      result = result && current;
+    }
+
+    if (options.spellingFiles) {
+      this._logger.log(chalk.magenta.underline(`Checking spelling for ${options.spellingFiles.length} globs.`));
+      current = await this.spellLint.lint(options.spellingFiles, options.spellingConfig || null);
       result = result && current;
     }
 

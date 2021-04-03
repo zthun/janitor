@@ -4,5 +4,6 @@ module.exports = {
   htmlFiles: ['test/**/*.html'],
   markdownFiles: ['*.md', 'packages/**/*.md'],
   jsonFiles: ['*.json', 'packages/**/*.json'],
-  yamlFiles: ['*.yml']
+  yamlFiles: ['*.yml'],
+  spellingFiles: ['packages/**/src/**/*.ts', '*.md', 'packages/**/*.md']
 };

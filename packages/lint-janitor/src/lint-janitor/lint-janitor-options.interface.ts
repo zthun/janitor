@@ -3,6 +3,7 @@ export interface IZLintJanitorOptions {
   styleConfig?: string;
   htmlConfig?: string;
   markdownConfig?: string;
+  spellingConfig?: string;
 
   esFiles?: string[];
   styleFiles?: string[];
@@ -10,4 +11,5 @@ export interface IZLintJanitorOptions {
   markdownFiles?: string[];
   jsonFiles?: string[];
   yamlFiles?: string[];
+  spellingFiles?: string[];
 }

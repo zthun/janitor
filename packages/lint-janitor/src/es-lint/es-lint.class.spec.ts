@@ -49,7 +49,7 @@ describe('ZEsLint', () => {
         {
           column: 33,
           line: 10,
-          ruleId: 'eqeqeq',
+          ruleId: 'equals',
           message: 'Always use ===',
           nodeType: 'branch',
           severity: 2,

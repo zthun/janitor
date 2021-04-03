@@ -23,7 +23,7 @@ describe('ZMarkdownLint', () => {
   beforeEach(() => {
     changelog = 'CHANGELOG.md';
     readme = 'README.md';
-    config = '.markdownlintrc';
+    config = '@zthun/markdownlint-config';
     files = ['*.md'];
 
     results = {};

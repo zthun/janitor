@@ -13,7 +13,7 @@ yarn add @zthun/stylelint-config --dev
 
 ## Usage
 
-In the .stylelintrc file, add the following
+In the stylelint config file, add the following
 
 ```json
 {

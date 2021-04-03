@@ -20,6 +20,7 @@ describe('ZLintJanitor', () => {
     target.yamlLint = new ZSilentLint();
     target.styleLint = new ZSilentLint();
     target.markdownLint = new ZSilentLint();
+    target.spellLint = new ZSilentLint();
     target.config = config;
     return target;
   }
@@ -34,16 +35,18 @@ describe('ZLintJanitor', () => {
     };
 
     options = {
-      esConfig: './.eslintrc',
+      esConfig: '@zthun/eslint-config',
       esFiles: ['**/*.js'],
-      styleConfig: './.stylelintrc',
+      styleConfig: '@zthun/stylelint-config',
       styleFiles: ['**/*.css', '**/*.less', '**/*.scss', '**/*.sass'],
-      markdownConfig: './.markdownlintrc',
+      markdownConfig: '@zthun/markdownlint-config',
       markdownFiles: ['**/*.md'],
-      htmlConfig: './.htmlhintrc',
+      htmlConfig: '@zthun/htmlhint-config',
       htmlFiles: ['**/*.html'],
       jsonFiles: ['**/*.json'],
-      yamlFiles: ['**/*.yml']
+      yamlFiles: ['**/*.yml'],
+      spellingConfig: './cspell.json',
+      spellingFiles: ['**/*.md']
     };
 
     config = {} as any;
@@ -161,6 +164,22 @@ describe('ZLintJanitor', () => {
       it('does not invoke the linter if there are no esFiles.', async () => {
         delete options.yamlFiles;
         await assertLinterNotInvoked((t) => t.yamlLint);
+      });
+    });
+
+    describe('SpellingLint', () => {
+      it('invokes the linter if there are spellingFiles', async () => {
+        await assertLinterInvoked((t) => t.spellLint, options.spellingFiles, options.spellingConfig);
+      });
+
+      it('uses the default config if no config is specified.', async () => {
+        delete options.spellingConfig;
+        await assertLinterInvoked((t) => t.spellLint, options.spellingFiles, null);
+      });
+
+      it('does not invoke the linter if there are no esFiles.', async () => {
+        delete options.spellingFiles;
+        await assertLinterNotInvoked((t) => t.spellLint);
       });
     });
   });

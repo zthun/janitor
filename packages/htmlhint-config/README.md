@@ -13,7 +13,7 @@ yarn add @zthun/htmlhint-config --dev
 
 ## Usage
 
-In the .htmlhintrc file, add the following
+In the htmlhint config file, add the following
 
 ```json
 {
