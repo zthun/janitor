@@ -22,32 +22,32 @@ export class ZLintJanitor {
   /**
    * The linter for js files.
    */
-  public esLint: IZLinter = new ZFileReportLint(new ZEsLint(this.logger), this.logger, 'ecmaScript');
+  public esLint: IZLinter = new ZFileReportLint(new ZEsLint(this._logger), this._logger, 'ecmaScript');
 
   /**
    * The linter for style files.
    */
-  public styleLint: IZLinter = new ZFileReportLint(new ZStyleLint(this.logger), this.logger, 'style');
+  public styleLint: IZLinter = new ZFileReportLint(new ZStyleLint(this._logger), this._logger, 'style');
 
   /**
    * The linter for html files.
    */
-  public htmlHint: IZLinter = new ZFileLint(new ZHtmlHint(), new ZConfigCosmicReader('htmlhint', new ZConfigExtender()), this.logger, 'html');
+  public htmlHint: IZLinter = new ZFileLint(new ZHtmlHint(), new ZConfigCosmicReader('htmlhint', new ZConfigExtender()), this._logger, 'html');
 
   /**
    * The linter for json files.
    */
-  public jsonLint: IZLinter = new ZFileLint(new ZJsonLint(), new ZConfigNullReader(), this.logger, 'json');
+  public jsonLint: IZLinter = new ZFileLint(new ZJsonLint(), new ZConfigNullReader(), this._logger, 'json');
 
   /**
    * The linter for yaml files.
    */
-  public yamlLint: IZLinter = new ZFileLint(new ZYamlLint(), new ZConfigNullReader(), this.logger, 'yaml');
+  public yamlLint: IZLinter = new ZFileLint(new ZYamlLint(), new ZConfigNullReader(), this._logger, 'yaml');
 
   /**
    * The linter for markdown files.
    */
-  public markdownLint: IZLinter = new ZFileReportLint(new ZMarkdownLint(this.logger, new ZConfigCosmicReader('markdownlint', new ZConfigExtender())), this.logger, 'markdown');
+  public markdownLint: IZLinter = new ZFileReportLint(new ZMarkdownLint(this._logger, new ZConfigCosmicReader('markdownlint', new ZConfigExtender())), this._logger, 'markdown');
 
   /**
    * The configuration reader.
@@ -57,9 +57,9 @@ export class ZLintJanitor {
   /**
    * Initializes a new instance of this object.
    *
-   * @param logger The logger to use when formatting output.
+   * @param _logger The logger to use when formatting output.
    */
-  public constructor(private logger: Console) {}
+  public constructor(private readonly _logger: Console) {}
 
   /**
    * Runs the lint given the required options.
@@ -73,37 +73,37 @@ export class ZLintJanitor {
     let result = true;
 
     if (options.jsonFiles) {
-      this.logger.log(chalk.magenta.underline(`Linting json files from ${options.jsonFiles.length} globs.`));
+      this._logger.log(chalk.magenta.underline(`Linting json files from ${options.jsonFiles.length} globs.`));
       current = await this.jsonLint.lint(options.jsonFiles);
       result = result && current;
     }
 
     if (options.yamlFiles) {
-      this.logger.log(chalk.magenta.underline(`Linting yaml files from ${options.yamlFiles.length} globs.`));
+      this._logger.log(chalk.magenta.underline(`Linting yaml files from ${options.yamlFiles.length} globs.`));
       current = await this.yamlLint.lint(options.yamlFiles);
       result = result && current;
     }
 
     if (options.markdownFiles) {
-      this.logger.log(chalk.magenta.underline(`Linting markdown files from ${options.markdownFiles.length} globs.`));
+      this._logger.log(chalk.magenta.underline(`Linting markdown files from ${options.markdownFiles.length} globs.`));
       current = await this.markdownLint.lint(options.markdownFiles, options.markdownConfig || null);
       result = result && current;
     }
 
     if (options.esFiles) {
-      this.logger.log(chalk.magenta.underline(`Linting ecmaScript files from ${options.esFiles.length} globs.`));
+      this._logger.log(chalk.magenta.underline(`Linting ecmaScript files from ${options.esFiles.length} globs.`));
       current = await this.esLint.lint(options.esFiles, options.esConfig || null);
       result = result && current;
     }
 
     if (options.styleFiles) {
-      this.logger.log(chalk.magenta.underline(`Linting style files from ${options.styleFiles.length} globs.`));
+      this._logger.log(chalk.magenta.underline(`Linting style files from ${options.styleFiles.length} globs.`));
       current = await this.styleLint.lint(options.styleFiles, options.styleConfig || null);
       result = result && current;
     }
 
     if (options.htmlFiles) {
-      this.logger.log(chalk.magenta.underline(`Linting html files from ${options.htmlFiles.length} globs.`));
+      this._logger.log(chalk.magenta.underline(`Linting html files from ${options.htmlFiles.length} globs.`));
       current = await this.htmlHint.lint(options.htmlFiles, options.htmlConfig || null);
       result = result && current;
     }
@@ -123,7 +123,7 @@ export class ZLintJanitor {
       const options = await this.config.read(args.config);
       return this.lint(options);
     } catch (err) {
-      this.logger.error(err);
+      this._logger.error(err);
       return 1;
     }
   }

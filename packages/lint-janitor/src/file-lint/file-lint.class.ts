@@ -16,12 +16,12 @@ export class ZFileLint implements IZLinter {
   /**
    * Initializes a new instance of this object.
    *
-   * @param contentLint The linter for an individual file.
-   * @param configReader The config reader.
-   * @param logger The logger to use.
-   * @param type The file type.
+   * @param _contentLint The linter for an individual file.
+   * @param _configReader The config reader.
+   * @param _logger The logger to use.
+   * @param _type The file type.
    */
-  public constructor(private contentLint: IZContentLinter, private configReader: IZConfigReader, private logger: Console, private type: string) {}
+  public constructor(private readonly _contentLint: IZContentLinter, private readonly _configReader: IZConfigReader, private readonly _logger: Console, private readonly _type: string) {}
 
   /**
    * Lints the collection of json files.
@@ -45,20 +45,20 @@ export class ZFileLint implements IZLinter {
     }
 
     try {
-      options = await this.configReader.read(config);
+      options = await this._configReader.read(config);
     } catch (err) {
-      this.logger.error(chalk.red(err));
+      this._logger.error(chalk.red(err));
       return false;
     }
 
-    this.logger.log(chalk.green.italic(`Checking syntax for ${allFiles.length} ${this.type} files.`));
-    this.logger.log();
+    this._logger.log(chalk.green.italic(`Checking syntax for ${allFiles.length} ${this._type} files.`));
+    this._logger.log();
 
     for (const file of allFiles) {
       const fullFilePath = resolve(file);
       try {
         const content = await readFileAsync(fullFilePath, 'utf-8');
-        await this.contentLint.lint(content, fullFilePath, options, config);
+        await this._contentLint.lint(content, fullFilePath, options, config);
       } catch (err) {
         result = false;
         this._format(fullFilePath, err);
@@ -76,12 +76,12 @@ export class ZFileLint implements IZLinter {
    */
   private _format(file: string, err: any) {
     const fileFormat = `Errors in ${file}`;
-    this.logger.error(chalk.green.underline(fileFormat));
+    this._logger.error(chalk.green.underline(fileFormat));
 
     if (Array.isArray(err)) {
-      err.forEach((log) => this.logger.error(chalk.red(log)));
+      err.forEach((log) => this._logger.error(chalk.red(log)));
     } else {
-      this.logger.error(chalk.red(err));
+      this._logger.error(chalk.red(err));
     }
   }
 }

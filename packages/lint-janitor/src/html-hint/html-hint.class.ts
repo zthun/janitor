@@ -5,16 +5,7 @@ import { IZContentLinter } from '../file-lint/content-linter.interface';
  * Represents an object that can be used to hint html files.
  */
 export class ZHtmlHint implements IZContentLinter {
-  private _formatOptions: FormatOptions;
-
-  /**
-   * Initializes a new instance of this object.
-   */
-  public constructor() {
-    this._formatOptions = {
-      colors: true
-    };
-  }
+  private readonly _formatOptions: FormatOptions = { colors: true };
 
   /**
    * Lints the content.

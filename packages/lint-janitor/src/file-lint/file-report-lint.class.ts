@@ -7,16 +7,16 @@ import { IZLinter } from '../common/linter.interface';
  * pass the actual linting job to another linter.
  */
 export class ZFileReportLint implements IZLinter {
-  private _globOptions: IOptions = { dot: true };
+  private readonly _globOptions: IOptions = { dot: true };
 
   /**
    * Initializes a new instance of this object.
    *
    * @param _child The child linter to pass the operation off to.
-   * @param logger The logger to use.
-   * @param type The file type.
+   * @param _logger The logger to use.
+   * @param _type The file type.
    */
-  public constructor(private readonly _child: IZLinter, private logger: Console, private type: string) {}
+  public constructor(private readonly _child: IZLinter, private readonly _logger: Console, private readonly _type: string) {}
 
   /**
    * Lints the collection of json files.
@@ -35,7 +35,7 @@ export class ZFileReportLint implements IZLinter {
       return true;
     }
 
-    this.logger.log(chalk.green.italic(`Checking syntax for ${allFiles.length} ${this.type} files.`));
+    this._logger.log(chalk.green.italic(`Checking syntax for ${allFiles.length} ${this._type} files.`));
     return this._child.lint(src, config);
   }
 }
