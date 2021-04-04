@@ -1,12 +1,12 @@
 import chalk from 'chalk';
 import { IOptions, sync } from 'glob';
-import { IZLinter } from '../linter/linter.interface';
+import { IZLinter } from './linter.interface';
 
 /**
  * Represents an object that will report on file globs, but will
  * pass the actual linting job to another linter.
  */
-export class ZFileReportLint implements IZLinter {
+export class ZLinterReport implements IZLinter {
   private readonly _globOptions: IOptions = { dot: true };
 
   /**

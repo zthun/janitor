@@ -1,11 +1,11 @@
 /* eslint-disable require-jsdoc */
 import { sync } from 'glob';
-import { IZLinter } from '../linter/linter.interface';
-import { ZFileReportLint } from './file-report-lint.class';
+import { IZLinter } from './linter.interface';
+import { ZLinterReport } from './linter-report.class';
 
 jest.mock('glob');
 
-describe('ZFileReportLint', () => {
+describe('ZLinterReport', () => {
   let files: string[];
   let config: string;
   let child: IZLinter;
@@ -26,7 +26,7 @@ describe('ZFileReportLint', () => {
   });
 
   function createTestTarget() {
-    return new ZFileReportLint(child, logger, 'generic');
+    return new ZLinterReport(child, logger, 'generic');
   }
 
   it('lints through the child linter.', async () => {

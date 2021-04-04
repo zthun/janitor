@@ -8,13 +8,13 @@ import { ZContentLinterHtml } from '../content/content-linter-html.class';
 import { ZContentLinterJson } from '../content/content-linter-json.class';
 import { ZContentLinterPretty } from '../content/content-linter-pretty.class';
 import { ZContentLinterYaml } from '../content/content-linter-yaml.class';
-import { ZFileReportLint } from '../file-lint/file-report-lint.class';
 import { ZLinterEs } from '../linter/linter-es.class';
 import { ZLinterFile } from '../linter/linter-file.class';
+import { ZLinterMarkdown } from '../linter/linter-markdown.class';
+import { ZLinterReport } from '../linter/linter-report.class';
 import { ZLinterSpelling } from '../linter/linter-spelling.class';
 import { ZLinterStyle } from '../linter/linter-style.class';
 import { IZLinter } from '../linter/linter.interface';
-import { ZLinterMarkdown } from '../linter/markdown-lint.class';
 import { IZLintJanitorArgs } from './lint-janitor-args.interface';
 import { IZLintJanitorOptions } from './lint-janitor-options.interface';
 
@@ -25,12 +25,12 @@ export class ZLintJanitor {
   /**
    * The linter for js files.
    */
-  public esLint: IZLinter = new ZFileReportLint(new ZLinterEs(this._logger), this._logger, 'es');
+  public esLint: IZLinter = new ZLinterReport(new ZLinterEs(this._logger), this._logger, 'es');
 
   /**
    * The linter for cspell.  Useful for multiple file types.
    */
-  public spellLint: IZLinter = new ZFileReportLint(new ZLinterSpelling(this._logger), this._logger, 'various');
+  public spellLint: IZLinter = new ZLinterReport(new ZLinterSpelling(this._logger), this._logger, 'various');
 
   /**
    * The linter for prettier formatting checks.
@@ -40,7 +40,7 @@ export class ZLintJanitor {
   /**
    * The linter for style files.
    */
-  public styleLint: IZLinter = new ZFileReportLint(new ZLinterStyle(this._logger), this._logger, 'style');
+  public styleLint: IZLinter = new ZLinterReport(new ZLinterStyle(this._logger), this._logger, 'style');
 
   /**
    * The linter for html files.
@@ -60,7 +60,7 @@ export class ZLintJanitor {
   /**
    * The linter for markdown files.
    */
-  public markdownLint: IZLinter = new ZFileReportLint(new ZLinterMarkdown(this._logger, new ZConfigReaderCosmic('markdownlint', new ZConfigExtender())), this._logger, 'markdown');
+  public markdownLint: IZLinter = new ZLinterReport(new ZLinterMarkdown(this._logger, new ZConfigReaderCosmic('markdownlint', new ZConfigExtender())), this._logger, 'markdown');
 
   /**
    * The configuration reader.
