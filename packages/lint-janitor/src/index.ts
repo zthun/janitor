@@ -20,6 +20,6 @@ export { IZLintJanitorOptions } from './lint-janitor/lint-janitor-options.interf
 export { ZLintJanitor } from './lint-janitor/lint-janitor.class';
 // Linter
 export { ZLinterEs } from './linter/linter-es.class';
+export { ZLinterSilent } from './linter/linter-silent.class';
 export { IZLinter } from './linter/linter.interface';
 export { ZMarkdownLint } from './markdown-lint/markdown-lint.class';
-export { ZSilentLint } from './silent-lint/silent-lint.class';

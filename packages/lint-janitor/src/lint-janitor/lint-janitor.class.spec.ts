@@ -1,7 +1,7 @@
 /* eslint-disable require-jsdoc */
 import { IZConfigReader } from '../config/config-reader.interface';
+import { ZLinterSilent } from '../linter/linter-silent.class';
 import { IZLinter } from '../linter/linter.interface';
-import { ZSilentLint } from '../silent-lint/silent-lint.class';
 import { IZLintJanitorArgs } from './lint-janitor-args.interface';
 import { IZLintJanitorOptions } from './lint-janitor-options.interface';
 import { ZLintJanitor } from './lint-janitor.class';
@@ -14,14 +14,14 @@ describe('ZLintJanitor', () => {
 
   function createTestTarget() {
     const target = new ZLintJanitor(logger);
-    target.esLint = new ZSilentLint();
-    target.htmlHint = new ZSilentLint();
-    target.jsonLint = new ZSilentLint();
-    target.yamlLint = new ZSilentLint();
-    target.styleLint = new ZSilentLint();
-    target.markdownLint = new ZSilentLint();
-    target.spellLint = new ZSilentLint();
-    target.prettyLint = new ZSilentLint();
+    target.esLint = new ZLinterSilent();
+    target.htmlHint = new ZLinterSilent();
+    target.jsonLint = new ZLinterSilent();
+    target.yamlLint = new ZLinterSilent();
+    target.styleLint = new ZLinterSilent();
+    target.markdownLint = new ZLinterSilent();
+    target.spellLint = new ZLinterSilent();
+    target.prettyLint = new ZLinterSilent();
     target.config = config;
     return target;
   }
@@ -216,7 +216,7 @@ describe('ZLintJanitor', () => {
     it('returns 1 if any linting fails.', async () => {
       // Arrange
       const target = createTestTarget();
-      target.esLint = new ZSilentLint(false);
+      target.esLint = new ZLinterSilent(false);
       // Act
       const actual = await target.run(args);
       // Assert

@@ -1,10 +1,10 @@
 /* eslint-disable require-jsdoc */
-import { ZSilentLint } from './silent-lint.class';
+import { ZLinterSilent } from './linter-silent.class';
 
-describe('ZSilentLint', () => {
+describe('ZLinterSilent', () => {
   it('resolves to true.', async () => {
     // Arrange
-    const target = new ZSilentLint();
+    const target = new ZLinterSilent();
     // Act
     const actual = await target.lint();
     // Assert
@@ -13,7 +13,7 @@ describe('ZSilentLint', () => {
 
   it('resolves to false.', async () => {
     // Arrange
-    const target = new ZSilentLint(false);
+    const target = new ZLinterSilent(false);
     // Act
     const actual = await target.lint();
     // Assert
