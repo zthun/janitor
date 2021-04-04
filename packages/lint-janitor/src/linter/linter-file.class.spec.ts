@@ -3,12 +3,12 @@ import { readFile } from 'fs';
 import { sync } from 'glob';
 import { IZConfigReader } from '../config/config-reader.interface';
 import { IZContentLinter } from '../content/content-linter.interface';
-import { ZFileLint } from './file-lint.class';
+import { ZLinterFile } from './linter-file.class';
 
 jest.mock('glob');
 jest.mock('fs');
 
-describe('ZFileLint', () => {
+describe('ZLinterFile', () => {
   let files: string[];
   let config: string;
   let options: any;
@@ -40,7 +40,7 @@ describe('ZFileLint', () => {
   });
 
   function createTestTarget() {
-    return new ZFileLint(contentLint, configReader, logger, 'generic');
+    return new ZLinterFile(contentLint, configReader, logger, 'generic');
   }
 
   describe('Without config', () => {

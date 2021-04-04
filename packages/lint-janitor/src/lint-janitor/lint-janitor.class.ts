@@ -8,9 +8,9 @@ import { ZContentLinterHtml } from '../content/content-linter-html.class';
 import { ZContentLinterJson } from '../content/content-linter-json.class';
 import { ZContentLinterPretty } from '../content/content-linter-pretty.class';
 import { ZContentLinterYaml } from '../content/content-linter-yaml.class';
-import { ZFileLint } from '../file-lint/file-lint.class';
 import { ZFileReportLint } from '../file-lint/file-report-lint.class';
 import { ZLinterEs } from '../linter/linter-es.class';
+import { ZLinterFile } from '../linter/linter-file.class';
 import { ZLinterSpelling } from '../linter/linter-spelling.class';
 import { ZLinterStyle } from '../linter/linter-style.class';
 import { IZLinter } from '../linter/linter.interface';
@@ -35,7 +35,7 @@ export class ZLintJanitor {
   /**
    * The linter for prettier formatting checks.
    */
-  public prettyLint: IZLinter = new ZFileLint(new ZContentLinterPretty(), new ZConfigReaderPrettier(), this._logger, 'pretty');
+  public prettyLint: IZLinter = new ZLinterFile(new ZContentLinterPretty(), new ZConfigReaderPrettier(), this._logger, 'pretty');
 
   /**
    * The linter for style files.
@@ -45,17 +45,17 @@ export class ZLintJanitor {
   /**
    * The linter for html files.
    */
-  public htmlHint: IZLinter = new ZFileLint(new ZContentLinterHtml(), new ZConfigReaderCosmic('htmlhint', new ZConfigExtender()), this._logger, 'html');
+  public htmlHint: IZLinter = new ZLinterFile(new ZContentLinterHtml(), new ZConfigReaderCosmic('htmlhint', new ZConfigExtender()), this._logger, 'html');
 
   /**
    * The linter for json files.
    */
-  public jsonLint: IZLinter = new ZFileLint(new ZContentLinterJson(), new ZConfigReaderNull(), this._logger, 'json');
+  public jsonLint: IZLinter = new ZLinterFile(new ZContentLinterJson(), new ZConfigReaderNull(), this._logger, 'json');
 
   /**
    * The linter for yaml files.
    */
-  public yamlLint: IZLinter = new ZFileLint(new ZContentLinterYaml(), new ZConfigReaderNull(), this._logger, 'yaml');
+  public yamlLint: IZLinter = new ZLinterFile(new ZContentLinterYaml(), new ZConfigReaderNull(), this._logger, 'yaml');
 
   /**
    * The linter for markdown files.

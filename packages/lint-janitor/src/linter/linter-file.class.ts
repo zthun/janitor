@@ -4,13 +4,13 @@ import { IOptions, sync } from 'glob';
 import { resolve } from 'path';
 import { promisify } from 'util';
 import { IZConfigReader } from '../config/config-reader.interface';
-import { IZLinter } from '../linter/linter.interface';
+import { IZLinter } from './linter.interface';
 import { IZContentLinter } from '../content/content-linter.interface';
 
 /**
  * Represents an object that can lint files one at a time.
  */
-export class ZFileLint implements IZLinter {
+export class ZLinterFile implements IZLinter {
   private _globOptions: IOptions = { dot: true };
 
   /**

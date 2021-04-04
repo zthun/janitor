@@ -12,12 +12,12 @@ export { ZContentLinterJson } from './content/content-linter-json.class';
 export { ZContentLinterPretty } from './content/content-linter-pretty.class';
 export { ZContentLinterYaml } from './content/content-linter-yaml.class';
 export { IZContentLinter } from './content/content-linter.interface';
-export { ZFileLint } from './file-lint/file-lint.class';
 export { ZFileReportLint } from './file-lint/file-report-lint.class';
 // Lint Janitor
 export { IZLintJanitorArgs } from './lint-janitor/lint-janitor-args.interface';
 export { IZLintJanitorOptions } from './lint-janitor/lint-janitor-options.interface';
 export { ZLintJanitor } from './lint-janitor/lint-janitor.class';
+export { ZLinterFile } from './linter/linter-file.class';
 // Linter
 export { ZLinterEs } from './linter/linter-es.class';
 export { ZLinterSilent } from './linter/linter-silent.class';
