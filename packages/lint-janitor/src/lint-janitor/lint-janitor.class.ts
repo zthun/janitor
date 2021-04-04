@@ -4,7 +4,7 @@ import { ZConfigReaderCosmic } from '../config/config-reader-cosmic.class';
 import { ZConfigReaderNull } from '../config/config-reader-null.class';
 import { ZConfigReaderPrettier } from '../config/config-reader-prettier.class';
 import { IZConfigReader } from '../config/config-reader.interface';
-import { ZEsLint } from '../es-lint/es-lint.class';
+import { ZLinterEs } from '../linter/linter-es.class';
 import { ZFileLint } from '../file-lint/file-lint.class';
 import { ZFileReportLint } from '../file-lint/file-report-lint.class';
 import { ZHtmlHint } from '../html-hint/html-hint.class';
@@ -25,7 +25,7 @@ export class ZLintJanitor {
   /**
    * The linter for js files.
    */
-  public esLint: IZLinter = new ZFileReportLint(new ZEsLint(this._logger), this._logger, 'ecmaScript');
+  public esLint: IZLinter = new ZFileReportLint(new ZLinterEs(this._logger), this._logger, 'ecmaScript');
 
   /**
    * The linter for cspell.  Useful for multiple file types.

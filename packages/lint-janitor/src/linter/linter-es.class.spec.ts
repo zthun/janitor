@@ -1,8 +1,8 @@
 /* eslint-disable require-jsdoc */
 import { ESLint } from 'eslint';
-import { ZEsLint } from './es-lint.class';
+import { ZLinterEs } from './linter-es.class';
 
-describe('ZEsLint', () => {
+describe('ZLinterEs', () => {
   let files: string[];
   let config: string;
   let successA: ESLint.LintResult;
@@ -15,7 +15,7 @@ describe('ZEsLint', () => {
   let logger: Console;
 
   function createTestTarget() {
-    const target = new ZEsLint(logger);
+    const target = new ZLinterEs(logger);
     target.engineFactory = () => engine;
     return target;
   }
@@ -104,7 +104,7 @@ describe('ZEsLint', () => {
   describe('Linting', () => {
     it('constructs a default engine.', () => {
       // Arrange
-      const target = new ZEsLint(logger);
+      const target = new ZLinterEs(logger);
       // Act
       const actual = target.engineFactory({});
       // Assert

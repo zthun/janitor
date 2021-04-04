@@ -1,11 +1,11 @@
 import { ESLint } from 'eslint';
 import { every } from 'lodash';
-import { IZLinter } from '../linter/linter.interface';
+import { IZLinter } from './linter.interface';
 
 /**
  * Represents an object that can be used to perform eslint on javascript files.
  */
-export class ZEsLint implements IZLinter {
+export class ZLinterEs implements IZLinter {
   /**
    * The factory that constructs a CLIEngine object.
    *
