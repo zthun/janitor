@@ -3,7 +3,7 @@ import { IZConfigReader } from './config-reader.interface';
 /**
  * Represents a config reader that returns the empty options.
  */
-export class ZConfigNullReader implements IZConfigReader {
+export class ZConfigReaderNull implements IZConfigReader {
   /**
    * Returns a null resolved promise.
    *

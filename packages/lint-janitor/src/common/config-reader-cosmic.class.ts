@@ -6,7 +6,7 @@ import { IZConfigReader } from './config-reader.interface';
 /**
  * Represents a reader that uses the cosmiconfig standard for files.
  */
-export class ZConfigCosmicReader implements IZConfigReader, IZConfigDiscovery {
+export class ZConfigReaderCosmic implements IZConfigReader, IZConfigDiscovery {
   /**
    * Initializes a new instance of this object.
    *

@@ -1,9 +1,9 @@
 /* eslint-disable require-jsdoc */
-import { ZConfigNullReader } from './config-null-reader.class';
+import { ZConfigReaderNull } from './config-reader-null.class';
 
-describe('ZConfigNullReader', () => {
+describe('ZConfigReaderNull', () => {
   function createTestTarget() {
-    return new ZConfigNullReader();
+    return new ZConfigReaderNull();
   }
 
   it('returns null on read.', async () => {

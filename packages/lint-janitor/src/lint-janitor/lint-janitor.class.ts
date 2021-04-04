@@ -1,7 +1,7 @@
 import chalk from 'chalk';
-import { ZConfigCosmicReader } from '../common/config-cosmic-reader.class';
+import { ZConfigReaderCosmic } from '../common/config-reader-cosmic.class';
 import { ZConfigExtender } from '../common/config-extender.class';
-import { ZConfigNullReader } from '../common/config-null-reader.class';
+import { ZConfigReaderNull } from '../common/config-reader-null.class';
 import { ZConfigReaderPrettier } from '../common/config-reader-prettier.class';
 import { IZConfigReader } from '../common/config-reader.interface';
 import { IZLinter } from '../common/linter.interface';
@@ -45,27 +45,27 @@ export class ZLintJanitor {
   /**
    * The linter for html files.
    */
-  public htmlHint: IZLinter = new ZFileLint(new ZHtmlHint(), new ZConfigCosmicReader('htmlhint', new ZConfigExtender()), this._logger, 'html');
+  public htmlHint: IZLinter = new ZFileLint(new ZHtmlHint(), new ZConfigReaderCosmic('htmlhint', new ZConfigExtender()), this._logger, 'html');
 
   /**
    * The linter for json files.
    */
-  public jsonLint: IZLinter = new ZFileLint(new ZJsonLint(), new ZConfigNullReader(), this._logger, 'json');
+  public jsonLint: IZLinter = new ZFileLint(new ZJsonLint(), new ZConfigReaderNull(), this._logger, 'json');
 
   /**
    * The linter for yaml files.
    */
-  public yamlLint: IZLinter = new ZFileLint(new ZYamlLint(), new ZConfigNullReader(), this._logger, 'yaml');
+  public yamlLint: IZLinter = new ZFileLint(new ZYamlLint(), new ZConfigReaderNull(), this._logger, 'yaml');
 
   /**
    * The linter for markdown files.
    */
-  public markdownLint: IZLinter = new ZFileReportLint(new ZMarkdownLint(this._logger, new ZConfigCosmicReader('markdownlint', new ZConfigExtender())), this._logger, 'markdown');
+  public markdownLint: IZLinter = new ZFileReportLint(new ZMarkdownLint(this._logger, new ZConfigReaderCosmic('markdownlint', new ZConfigExtender())), this._logger, 'markdown');
 
   /**
    * The configuration reader.
    */
-  public config: IZConfigReader = new ZConfigCosmicReader('lint-janitor', new ZConfigExtender());
+  public config: IZConfigReader = new ZConfigReaderCosmic('lint-janitor', new ZConfigExtender());
 
   /**
    * Initializes a new instance of this object.

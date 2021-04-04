@@ -1,5 +1,5 @@
 /* eslint-disable require-jsdoc */
-import { ZConfigCosmicReader } from './config-cosmic-reader.class';
+import { ZConfigReaderCosmic } from './config-reader-cosmic.class';
 import { IZConfigExtender } from './config-extender.interface';
 import { cosmiconfig } from 'cosmiconfig';
 
@@ -13,7 +13,7 @@ describe('ZConfigCosmicReader', () => {
   let search: jest.Mock;
 
   function createTestTarget() {
-    return new ZConfigCosmicReader('htmlhint', extender);
+    return new ZConfigReaderCosmic('htmlhint', extender);
   }
 
   beforeEach(() => {
