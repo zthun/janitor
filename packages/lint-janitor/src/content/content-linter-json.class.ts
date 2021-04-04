@@ -1,9 +1,9 @@
-import { IZContentLinter } from '../content/content-linter.interface';
+import { IZContentLinter } from './content-linter.interface';
 
 /**
  * Represents the linter for json files.
  */
-export class ZJsonLint implements IZContentLinter {
+export class ZContentLinterJson implements IZContentLinter {
   /**
    * Lints the collection of json files.
    *

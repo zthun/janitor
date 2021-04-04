@@ -1,10 +1,10 @@
 /* eslint-disable require-jsdoc */
-import { ZJsonLint } from './json-lint.class';
+import { ZContentLinterJson } from './content-linter-json.class';
 
 jest.mock('glob');
 jest.mock('fs');
 
-describe('ZJsonLint', () => {
+describe('ZContentLinterJson', () => {
   let json: any;
 
   beforeEach(() => {
@@ -15,7 +15,7 @@ describe('ZJsonLint', () => {
   });
 
   function createTestTarget() {
-    return new ZJsonLint();
+    return new ZContentLinterJson();
   }
 
   it('returns a resolved promise if the json is valid.', async () => {

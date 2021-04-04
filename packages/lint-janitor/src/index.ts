@@ -8,11 +8,10 @@ export { ZConfigReaderPrettier } from './config/config-reader-prettier.class';
 export { IZConfigReader } from './config/config-reader.interface';
 // Content
 export { ZContentLinterHtml } from './content/content-linter-html.class';
+export { ZContentLinterJson } from './content/content-linter-json.class';
 export { IZContentLinter } from './content/content-linter.interface';
 export { ZFileLint } from './file-lint/file-lint.class';
 export { ZFileReportLint } from './file-lint/file-report-lint.class';
-// JSON
-export { ZJsonLint } from './json-lint/json-lint.class';
 // Lint Janitor
 export { IZLintJanitorArgs } from './lint-janitor/lint-janitor-args.interface';
 export { IZLintJanitorOptions } from './lint-janitor/lint-janitor-options.interface';

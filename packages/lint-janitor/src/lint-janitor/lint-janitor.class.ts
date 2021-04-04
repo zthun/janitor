@@ -5,9 +5,9 @@ import { ZConfigReaderNull } from '../config/config-reader-null.class';
 import { ZConfigReaderPrettier } from '../config/config-reader-prettier.class';
 import { IZConfigReader } from '../config/config-reader.interface';
 import { ZContentLinterHtml } from '../content/content-linter-html.class';
+import { ZContentLinterJson } from '../content/content-linter-json.class';
 import { ZFileLint } from '../file-lint/file-lint.class';
 import { ZFileReportLint } from '../file-lint/file-report-lint.class';
-import { ZJsonLint } from '../json-lint/json-lint.class';
 import { ZLinterEs } from '../linter/linter-es.class';
 import { IZLinter } from '../linter/linter.interface';
 import { ZMarkdownLint } from '../markdown-lint/markdown-lint.class';
@@ -25,7 +25,7 @@ export class ZLintJanitor {
   /**
    * The linter for js files.
    */
-  public esLint: IZLinter = new ZFileReportLint(new ZLinterEs(this._logger), this._logger, 'ecmaScript');
+  public esLint: IZLinter = new ZFileReportLint(new ZLinterEs(this._logger), this._logger, 'es');
 
   /**
    * The linter for cspell.  Useful for multiple file types.
@@ -50,7 +50,7 @@ export class ZLintJanitor {
   /**
    * The linter for json files.
    */
-  public jsonLint: IZLinter = new ZFileLint(new ZJsonLint(), new ZConfigReaderNull(), this._logger, 'json');
+  public jsonLint: IZLinter = new ZFileLint(new ZContentLinterJson(), new ZConfigReaderNull(), this._logger, 'json');
 
   /**
    * The linter for yaml files.
