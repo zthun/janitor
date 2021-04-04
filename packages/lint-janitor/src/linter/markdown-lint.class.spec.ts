@@ -1,5 +1,5 @@
 /* eslint-disable require-jsdoc */
-import { ZMarkdownLint } from './markdown-lint.class';
+import { ZLinterMarkdown } from './markdown-lint.class';
 import { IZConfigReader } from '../config/config-reader.interface';
 import markdownlint, { LintError } from 'markdownlint';
 import { sync } from 'glob';
@@ -7,7 +7,7 @@ import { sync } from 'glob';
 jest.mock('markdownlint');
 jest.mock('glob');
 
-describe('ZMarkdownLint', () => {
+describe('ZLinterMarkdown', () => {
   let logger: Console;
   let config: string;
   let changelog: string;
@@ -17,7 +17,7 @@ describe('ZMarkdownLint', () => {
   let reader: IZConfigReader;
 
   function createTestTarget() {
-    return new ZMarkdownLint(logger, reader);
+    return new ZLinterMarkdown(logger, reader);
   }
 
   beforeEach(() => {

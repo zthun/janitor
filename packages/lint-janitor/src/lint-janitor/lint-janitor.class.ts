@@ -11,10 +11,10 @@ import { ZContentLinterYaml } from '../content/content-linter-yaml.class';
 import { ZFileLint } from '../file-lint/file-lint.class';
 import { ZFileReportLint } from '../file-lint/file-report-lint.class';
 import { ZLinterEs } from '../linter/linter-es.class';
+import { ZLinterSpelling } from '../linter/linter-spelling.class';
 import { ZLinterStyle } from '../linter/linter-style.class';
 import { IZLinter } from '../linter/linter.interface';
-import { ZLinterSpelling } from '../linter/linter-spelling.class';
-import { ZMarkdownLint } from '../markdown-lint/markdown-lint.class';
+import { ZLinterMarkdown } from '../linter/markdown-lint.class';
 import { IZLintJanitorArgs } from './lint-janitor-args.interface';
 import { IZLintJanitorOptions } from './lint-janitor-options.interface';
 
@@ -60,7 +60,7 @@ export class ZLintJanitor {
   /**
    * The linter for markdown files.
    */
-  public markdownLint: IZLinter = new ZFileReportLint(new ZMarkdownLint(this._logger, new ZConfigReaderCosmic('markdownlint', new ZConfigExtender())), this._logger, 'markdown');
+  public markdownLint: IZLinter = new ZFileReportLint(new ZLinterMarkdown(this._logger, new ZConfigReaderCosmic('markdownlint', new ZConfigExtender())), this._logger, 'markdown');
 
   /**
    * The configuration reader.

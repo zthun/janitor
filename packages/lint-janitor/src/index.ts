@@ -24,4 +24,4 @@ export { ZLinterSilent } from './linter/linter-silent.class';
 export { ZLinterSpelling } from './linter/linter-spelling.class';
 export { ZLinterStyle } from './linter/linter-style.class';
 export { IZLinter } from './linter/linter.interface';
-export { ZMarkdownLint } from './markdown-lint/markdown-lint.class';
+export { ZLinterMarkdown } from './linter/markdown-lint.class';

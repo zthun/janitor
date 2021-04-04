@@ -9,7 +9,7 @@ import { IZLinter } from '../linter/linter.interface';
 /**
  * Represents a linter object that checks markdown.
  */
-export class ZMarkdownLint implements IZLinter {
+export class ZLinterMarkdown implements IZLinter {
   private _globOptions: IOptions = { dot: true };
 
   /**
