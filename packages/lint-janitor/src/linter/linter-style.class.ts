@@ -1,10 +1,10 @@
 import { formatters, lint, LinterOptions } from 'stylelint';
-import { IZLinter } from '../linter/linter.interface';
+import { IZLinter } from './linter.interface';
 
 /**
  * Represents a linter for stylelint.
  */
-export class ZStyleLint implements IZLinter {
+export class ZLinterStyle implements IZLinter {
   /**
    * Initializes a new instance of this object.
    *

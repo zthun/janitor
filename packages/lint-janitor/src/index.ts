@@ -21,5 +21,6 @@ export { ZLintJanitor } from './lint-janitor/lint-janitor.class';
 // Linter
 export { ZLinterEs } from './linter/linter-es.class';
 export { ZLinterSilent } from './linter/linter-silent.class';
+export { ZLinterStyle } from './linter/linter-style.class';
 export { IZLinter } from './linter/linter.interface';
 export { ZMarkdownLint } from './markdown-lint/markdown-lint.class';

@@ -12,9 +12,9 @@ import { ZFileLint } from '../file-lint/file-lint.class';
 import { ZFileReportLint } from '../file-lint/file-report-lint.class';
 import { ZLinterEs } from '../linter/linter-es.class';
 import { IZLinter } from '../linter/linter.interface';
+import { ZLinterStyle } from '../linter/linter-style.class';
 import { ZMarkdownLint } from '../markdown-lint/markdown-lint.class';
 import { ZSpellLint } from '../spell-lint/spell-lint.class';
-import { ZStyleLint } from '../style-lint/style-lint.class';
 import { IZLintJanitorArgs } from './lint-janitor-args.interface';
 import { IZLintJanitorOptions } from './lint-janitor-options.interface';
 
@@ -40,7 +40,7 @@ export class ZLintJanitor {
   /**
    * The linter for style files.
    */
-  public styleLint: IZLinter = new ZFileReportLint(new ZStyleLint(this._logger), this._logger, 'style');
+  public styleLint: IZLinter = new ZFileReportLint(new ZLinterStyle(this._logger), this._logger, 'style');
 
   /**
    * The linter for html files.

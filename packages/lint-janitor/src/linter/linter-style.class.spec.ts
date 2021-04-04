@@ -1,17 +1,17 @@
 /* eslint-disable require-jsdoc */
 import { lint, LintResult, LinterResult } from 'stylelint';
-import { ZStyleLint } from './style-lint.class';
+import { ZLinterStyle } from './linter-style.class';
 
 jest.mock('stylelint');
 
-describe('ZStyleLint', () => {
+describe('ZLinterStyle', () => {
   let logger: Console;
   let lintResult: LinterResult;
   let content: string[];
   let config: string;
 
   function createTestTarget() {
-    return new ZStyleLint(logger);
+    return new ZLinterStyle(logger);
   }
 
   beforeEach(() => {
