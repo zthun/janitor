@@ -1,8 +1,8 @@
 /* eslint-disable require-jsdoc */
 import { dump } from 'js-yaml';
-import { ZYamlLint } from './yaml-lint.class';
+import { ZContentLinterYaml } from './yaml-lint.class';
 
-describe('ZJsonLint', () => {
+describe('ZContentLinterYaml', () => {
   let yaml: any;
 
   beforeEach(() => {
@@ -13,7 +13,7 @@ describe('ZJsonLint', () => {
   });
 
   function createTestTarget() {
-    return new ZYamlLint();
+    return new ZContentLinterYaml();
   }
 
   it('returns a resolved promise if the json is valid.', async () => {

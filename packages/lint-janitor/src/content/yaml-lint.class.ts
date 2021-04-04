@@ -4,7 +4,7 @@ import { IZContentLinter } from '../content/content-linter.interface';
 /**
  * Represents a linter for yml files.
  */
-export class ZYamlLint implements IZContentLinter {
+export class ZContentLinterYaml implements IZContentLinter {
   /**
    * Lints yml files.
    *

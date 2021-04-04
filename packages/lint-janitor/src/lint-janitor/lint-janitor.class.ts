@@ -6,6 +6,7 @@ import { ZConfigReaderPrettier } from '../config/config-reader-prettier.class';
 import { IZConfigReader } from '../config/config-reader.interface';
 import { ZContentLinterHtml } from '../content/content-linter-html.class';
 import { ZContentLinterJson } from '../content/content-linter-json.class';
+import { ZContentLinterYaml } from '../content/yaml-lint.class';
 import { ZFileLint } from '../file-lint/file-lint.class';
 import { ZFileReportLint } from '../file-lint/file-report-lint.class';
 import { ZLinterEs } from '../linter/linter-es.class';
@@ -14,7 +15,6 @@ import { ZMarkdownLint } from '../markdown-lint/markdown-lint.class';
 import { ZPrettyLint } from '../pretty-lint/pretty-lint';
 import { ZSpellLint } from '../spell-lint/spell-lint.class';
 import { ZStyleLint } from '../style-lint/style-lint.class';
-import { ZYamlLint } from '../yaml-lint/yaml-lint.class';
 import { IZLintJanitorArgs } from './lint-janitor-args.interface';
 import { IZLintJanitorOptions } from './lint-janitor-options.interface';
 
@@ -55,7 +55,7 @@ export class ZLintJanitor {
   /**
    * The linter for yaml files.
    */
-  public yamlLint: IZLinter = new ZFileLint(new ZYamlLint(), new ZConfigReaderNull(), this._logger, 'yaml');
+  public yamlLint: IZLinter = new ZFileLint(new ZContentLinterYaml(), new ZConfigReaderNull(), this._logger, 'yaml');
 
   /**
    * The linter for markdown files.
