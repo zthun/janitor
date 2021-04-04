@@ -2,12 +2,12 @@
 import chalk from 'chalk';
 import { CSpellApplicationOptions, Emitters, Issue, lint } from 'cspell';
 import { noop } from 'lodash';
-import { IZLinter } from '../linter/linter.interface';
+import { IZLinter } from './linter.interface';
 
 /**
  * Represents an object that can be used to perform cspell on files.
  */
-export class ZSpellLint implements IZLinter {
+export class ZLinterSpelling implements IZLinter {
   /**
    * Initializes a new instance of this object.
    *

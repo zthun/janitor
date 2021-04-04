@@ -11,10 +11,10 @@ import { ZContentLinterYaml } from '../content/content-linter-yaml.class';
 import { ZFileLint } from '../file-lint/file-lint.class';
 import { ZFileReportLint } from '../file-lint/file-report-lint.class';
 import { ZLinterEs } from '../linter/linter-es.class';
-import { IZLinter } from '../linter/linter.interface';
 import { ZLinterStyle } from '../linter/linter-style.class';
+import { IZLinter } from '../linter/linter.interface';
+import { ZLinterSpelling } from '../linter/linter-spelling.class';
 import { ZMarkdownLint } from '../markdown-lint/markdown-lint.class';
-import { ZSpellLint } from '../spell-lint/spell-lint.class';
 import { IZLintJanitorArgs } from './lint-janitor-args.interface';
 import { IZLintJanitorOptions } from './lint-janitor-options.interface';
 
@@ -30,7 +30,7 @@ export class ZLintJanitor {
   /**
    * The linter for cspell.  Useful for multiple file types.
    */
-  public spellLint: IZLinter = new ZFileReportLint(new ZSpellLint(this._logger), this._logger, 'various');
+  public spellLint: IZLinter = new ZFileReportLint(new ZLinterSpelling(this._logger), this._logger, 'various');
 
   /**
    * The linter for prettier formatting checks.

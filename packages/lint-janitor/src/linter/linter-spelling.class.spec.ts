@@ -1,17 +1,17 @@
 /* eslint-disable require-jsdoc */
 import { Emitters, Issue, lint, RunResult } from 'cspell';
-import { ZSpellLint } from './spell-lint.class';
+import { ZLinterSpelling } from './linter-spelling.class';
 
 jest.mock('cspell');
 
-describe('ZSpellLint', () => {
+describe('ZLinterSpelling', () => {
   let logger: Console;
   let lintResult: RunResult;
   let content: string[];
   let config: string;
 
   function createTestTarget() {
-    return new ZSpellLint(logger);
+    return new ZLinterSpelling(logger);
   }
 
   beforeEach(() => {
