@@ -2,15 +2,17 @@ import chalk from 'chalk';
 import { ZConfigCosmicReader } from '../common/config-cosmic-reader.class';
 import { ZConfigExtender } from '../common/config-extender.class';
 import { ZConfigNullReader } from '../common/config-null-reader.class';
+import { ZConfigReaderPrettier } from '../common/config-reader-prettier.class';
 import { IZConfigReader } from '../common/config-reader.interface';
 import { IZLinter } from '../common/linter.interface';
-import { ZSpellLint } from '../spell-lint/spell-lint.class';
 import { ZEsLint } from '../es-lint/es-lint.class';
 import { ZFileLint } from '../file-lint/file-lint.class';
 import { ZFileReportLint } from '../file-lint/file-report-lint.class';
 import { ZHtmlHint } from '../html-hint/html-hint.class';
 import { ZJsonLint } from '../json-lint/json-lint.class';
 import { ZMarkdownLint } from '../markdown-lint/markdown-lint.class';
+import { ZPrettyLint } from '../pretty-lint/pretty-lint';
+import { ZSpellLint } from '../spell-lint/spell-lint.class';
 import { ZStyleLint } from '../style-lint/style-lint.class';
 import { ZYamlLint } from '../yaml-lint/yaml-lint.class';
 import { IZLintJanitorArgs } from './lint-janitor-args.interface';
@@ -29,6 +31,11 @@ export class ZLintJanitor {
    * The linter for cspell.  Useful for multiple file types.
    */
   public spellLint: IZLinter = new ZFileReportLint(new ZSpellLint(this._logger), this._logger, 'various');
+
+  /**
+   * The linter for prettier formatting checks.
+   */
+  public prettyLint: IZLinter = new ZFileLint(new ZPrettyLint(), new ZConfigReaderPrettier(), this._logger, 'pretty');
 
   /**
    * The linter for style files.
@@ -117,6 +124,12 @@ export class ZLintJanitor {
     if (options.spellingFiles) {
       this._logger.log(chalk.magenta.underline(`Checking spelling for ${options.spellingFiles.length} globs.`));
       current = await this.spellLint.lint(options.spellingFiles, options.spellingConfig || null);
+      result = result && current;
+    }
+
+    if (options.prettyFiles) {
+      this._logger.log(chalk.magenta.underline(`Checking formatting for ${options.prettyFiles.length} globs.`));
+      current = await this.prettyLint.lint(options.prettyFiles, options.prettyConfig || null);
       result = result && current;
     }
 

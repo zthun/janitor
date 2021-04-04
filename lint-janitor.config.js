@@ -5,5 +5,6 @@ module.exports = {
   markdownFiles: ['*.md', 'packages/**/*.md'],
   jsonFiles: ['*.json', 'packages/**/*.json'],
   yamlFiles: ['*.yml'],
-  spellingFiles: ['packages/**/src/**/*.ts', '*.md', 'packages/**/*.md']
+  spellingFiles: ['packages/**/src/**/*.ts', '*.md', 'packages/**/*.md'],
+  prettyFiles: ['packages/**/src/**/*.ts', '*.md', 'packages/**/*.md', 'packages/**/*.json']
 };

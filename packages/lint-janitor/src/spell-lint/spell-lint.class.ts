@@ -11,7 +11,6 @@ export class ZSpellLint implements IZLinter {
   /**
    * Initializes a new instance of this object.
    *
-   * @param factory The factory object to construct the engine.
    * @param _logger The logger to output to.
    */
   public constructor(private readonly _logger: Console) {}
