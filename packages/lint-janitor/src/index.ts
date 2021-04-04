@@ -1,11 +1,11 @@
 // Common
-export { IZConfigDiscovery } from './common/config-discovery.interface';
-export { ZConfigExtender } from './common/config-extender.class';
-export { IZConfigExtender } from './common/config-extender.interface';
-export { ZConfigReaderCosmic } from './common/config-reader-cosmic.class';
-export { ZConfigReaderNull } from './common/config-reader-null.class';
-export { ZConfigReaderPrettier } from './common/config-reader-prettier.class';
-export { IZConfigReader } from './common/config-reader.interface';
+export { IZConfigDiscovery } from './config/config-discovery.interface';
+export { ZConfigExtender } from './config/config-extender.class';
+export { IZConfigExtender } from './config/config-extender.interface';
+export { ZConfigReaderCosmic } from './config/config-reader-cosmic.class';
+export { ZConfigReaderNull } from './config/config-reader-null.class';
+export { ZConfigReaderPrettier } from './config/config-reader-prettier.class';
+export { IZConfigReader } from './config/config-reader.interface';
 // ECMAScript
 export { ZEsLint } from './es-lint/es-lint.class';
 // File

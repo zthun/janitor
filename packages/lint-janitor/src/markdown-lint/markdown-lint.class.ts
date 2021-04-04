@@ -3,7 +3,7 @@ import { IOptions, sync } from 'glob';
 import { some, values } from 'lodash';
 import markdownlint, { Options } from 'markdownlint';
 import { promisify } from 'util';
-import { IZConfigReader } from '../common/config-reader.interface';
+import { IZConfigReader } from '../config/config-reader.interface';
 import { IZLinter } from '../linter/linter.interface';
 
 /**

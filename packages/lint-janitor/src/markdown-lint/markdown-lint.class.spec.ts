@@ -1,6 +1,6 @@
 /* eslint-disable require-jsdoc */
 import { ZMarkdownLint } from './markdown-lint.class';
-import { IZConfigReader } from '../common/config-reader.interface';
+import { IZConfigReader } from '../config/config-reader.interface';
 import markdownlint, { LintError } from 'markdownlint';
 import { sync } from 'glob';
 
