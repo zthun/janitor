@@ -4,7 +4,7 @@ import { some, values } from 'lodash';
 import markdownlint, { Options } from 'markdownlint';
 import { promisify } from 'util';
 import { IZConfigReader } from '../common/config-reader.interface';
-import { IZLinter } from '../common/linter.interface';
+import { IZLinter } from '../linter/linter.interface';
 
 /**
  * Represents a linter object that checks markdown.

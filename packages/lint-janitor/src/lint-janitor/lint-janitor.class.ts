@@ -4,7 +4,7 @@ import { ZConfigExtender } from '../common/config-extender.class';
 import { ZConfigReaderNull } from '../common/config-reader-null.class';
 import { ZConfigReaderPrettier } from '../common/config-reader-prettier.class';
 import { IZConfigReader } from '../common/config-reader.interface';
-import { IZLinter } from '../common/linter.interface';
+import { IZLinter } from '../linter/linter.interface';
 import { ZEsLint } from '../es-lint/es-lint.class';
 import { ZFileLint } from '../file-lint/file-lint.class';
 import { ZFileReportLint } from '../file-lint/file-report-lint.class';

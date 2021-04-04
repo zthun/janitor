@@ -1,6 +1,6 @@
 /* eslint-disable require-jsdoc */
 import { sync } from 'glob';
-import { IZLinter } from '../common/linter.interface';
+import { IZLinter } from '../linter/linter.interface';
 import { ZFileReportLint } from './file-report-lint.class';
 
 jest.mock('glob');

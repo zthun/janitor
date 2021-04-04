@@ -1,6 +1,6 @@
 /* eslint-disable require-jsdoc */
 import { IZConfigReader } from '../common/config-reader.interface';
-import { IZLinter } from '../common/linter.interface';
+import { IZLinter } from '../linter/linter.interface';
 import { ZSilentLint } from '../silent-lint/silent-lint.class';
 import { IZLintJanitorArgs } from './lint-janitor-args.interface';
 import { IZLintJanitorOptions } from './lint-janitor-options.interface';

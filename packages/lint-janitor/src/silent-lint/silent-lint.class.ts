@@ -1,4 +1,4 @@
-import { IZLinter } from '../common/linter.interface';
+import { IZLinter } from '../linter/linter.interface';
 
 /**
  * Represents a silent linter that always succeeds.

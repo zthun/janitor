@@ -4,7 +4,7 @@ import { IOptions, sync } from 'glob';
 import { resolve } from 'path';
 import { promisify } from 'util';
 import { IZConfigReader } from '../common/config-reader.interface';
-import { IZLinter } from '../common/linter.interface';
+import { IZLinter } from '../linter/linter.interface';
 import { IZContentLinter } from './content-linter.interface';
 
 /**

@@ -1,6 +1,6 @@
 import chalk from 'chalk';
 import { IOptions, sync } from 'glob';
-import { IZLinter } from '../common/linter.interface';
+import { IZLinter } from '../linter/linter.interface';
 
 /**
  * Represents an object that will report on file globs, but will

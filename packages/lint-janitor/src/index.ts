@@ -6,7 +6,6 @@ export { ZConfigReaderCosmic } from './common/config-reader-cosmic.class';
 export { ZConfigReaderNull } from './common/config-reader-null.class';
 export { ZConfigReaderPrettier } from './common/config-reader-prettier.class';
 export { IZConfigReader } from './common/config-reader.interface';
-export { IZLinter } from './common/linter.interface';
 // ECMAScript
 export { ZEsLint } from './es-lint/es-lint.class';
 // File
@@ -21,6 +20,8 @@ export { ZJsonLint } from './json-lint/json-lint.class';
 export { IZLintJanitorArgs } from './lint-janitor/lint-janitor-args.interface';
 export { IZLintJanitorOptions } from './lint-janitor/lint-janitor-options.interface';
 export { ZLintJanitor } from './lint-janitor/lint-janitor.class';
+// Linter
+export { IZLinter } from './linter/linter.interface';
 // Markdown
 export { ZMarkdownLint } from './markdown-lint/markdown-lint.class';
 // Silent

@@ -1,6 +1,6 @@
 import { ESLint } from 'eslint';
 import { every } from 'lodash';
-import { IZLinter } from '../common/linter.interface';
+import { IZLinter } from '../linter/linter.interface';
 
 /**
  * Represents an object that can be used to perform eslint on javascript files.
