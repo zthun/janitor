@@ -9,8 +9,9 @@ export { IZConfigReader } from './config/config-reader.interface';
 // Content
 export { ZContentLinterHtml } from './content/content-linter-html.class';
 export { ZContentLinterJson } from './content/content-linter-json.class';
+export { ZContentLinterPretty } from './content/content-linter-pretty.class';
+export { ZContentLinterYaml } from './content/content-linter-yaml.class';
 export { IZContentLinter } from './content/content-linter.interface';
-export { ZContentLinterYaml } from './content/yaml-lint.class';
 export { ZFileLint } from './file-lint/file-lint.class';
 export { ZFileReportLint } from './file-lint/file-report-lint.class';
 // Lint Janitor

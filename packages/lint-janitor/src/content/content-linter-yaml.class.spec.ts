@@ -1,6 +1,6 @@
 /* eslint-disable require-jsdoc */
 import { dump } from 'js-yaml';
-import { ZContentLinterYaml } from './yaml-lint.class';
+import { ZContentLinterYaml } from './content-linter-yaml.class';
 
 describe('ZContentLinterYaml', () => {
   let yaml: any;

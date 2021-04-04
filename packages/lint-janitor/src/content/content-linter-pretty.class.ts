@@ -1,11 +1,11 @@
 /* eslint-disable require-jsdoc */
 import { check, getFileInfo, Options } from 'prettier';
-import { IZContentLinter } from '../content/content-linter.interface';
+import { IZContentLinter } from './content-linter.interface';
 
 /**
  * Represents an object that can be used to perform prettier checks on files.
  */
-export class ZPrettyLint implements IZContentLinter {
+export class ZContentLinterPretty implements IZContentLinter {
   /**
    * Lints the content.
    *

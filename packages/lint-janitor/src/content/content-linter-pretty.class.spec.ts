@@ -1,10 +1,10 @@
 /* eslint-disable require-jsdoc */
 import { check, FileInfoResult, getFileInfo, Options } from 'prettier';
-import { ZPrettyLint } from './pretty-lint';
+import { ZContentLinterPretty } from './content-linter-pretty.class';
 
 jest.mock('prettier');
 
-describe('ZPrettyLint', () => {
+describe('ZContentLinterPretty', () => {
   let options: Options;
   let info: FileInfoResult;
   let contentPath: string;
@@ -29,7 +29,7 @@ describe('ZPrettyLint', () => {
   });
 
   function createTestTarget() {
-    return new ZPrettyLint();
+    return new ZContentLinterPretty();
   }
 
   it('returns a resolved promise if the content is formatted.', async () => {

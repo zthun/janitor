@@ -6,13 +6,13 @@ import { ZConfigReaderPrettier } from '../config/config-reader-prettier.class';
 import { IZConfigReader } from '../config/config-reader.interface';
 import { ZContentLinterHtml } from '../content/content-linter-html.class';
 import { ZContentLinterJson } from '../content/content-linter-json.class';
-import { ZContentLinterYaml } from '../content/yaml-lint.class';
+import { ZContentLinterPretty } from '../content/content-linter-pretty.class';
+import { ZContentLinterYaml } from '../content/content-linter-yaml.class';
 import { ZFileLint } from '../file-lint/file-lint.class';
 import { ZFileReportLint } from '../file-lint/file-report-lint.class';
 import { ZLinterEs } from '../linter/linter-es.class';
 import { IZLinter } from '../linter/linter.interface';
 import { ZMarkdownLint } from '../markdown-lint/markdown-lint.class';
-import { ZPrettyLint } from '../pretty-lint/pretty-lint';
 import { ZSpellLint } from '../spell-lint/spell-lint.class';
 import { ZStyleLint } from '../style-lint/style-lint.class';
 import { IZLintJanitorArgs } from './lint-janitor-args.interface';
@@ -35,7 +35,7 @@ export class ZLintJanitor {
   /**
    * The linter for prettier formatting checks.
    */
-  public prettyLint: IZLinter = new ZFileLint(new ZPrettyLint(), new ZConfigReaderPrettier(), this._logger, 'pretty');
+  public prettyLint: IZLinter = new ZFileLint(new ZContentLinterPretty(), new ZConfigReaderPrettier(), this._logger, 'pretty');
 
   /**
    * The linter for style files.
