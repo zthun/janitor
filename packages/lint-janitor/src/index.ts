@@ -6,12 +6,11 @@ export { ZConfigReaderCosmic } from './config/config-reader-cosmic.class';
 export { ZConfigReaderNull } from './config/config-reader-null.class';
 export { ZConfigReaderPrettier } from './config/config-reader-prettier.class';
 export { IZConfigReader } from './config/config-reader.interface';
-// File
-export { IZContentLinter } from './file-lint/content-linter.interface';
+// Content
+export { ZContentLinterHtml } from './content/content-linter-html.class';
+export { IZContentLinter } from './content/content-linter.interface';
 export { ZFileLint } from './file-lint/file-lint.class';
 export { ZFileReportLint } from './file-lint/file-report-lint.class';
-// HTML
-export { ZHtmlHint } from './html-hint/html-hint.class';
 // JSON
 export { ZJsonLint } from './json-lint/json-lint.class';
 // Lint Janitor

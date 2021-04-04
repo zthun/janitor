@@ -1,8 +1,8 @@
 /* eslint-disable require-jsdoc */
-import { ZHtmlHint } from './html-hint.class';
+import { ZContentLinterHtml } from './content-linter-html.class';
 import { LintResult, RuleSet, HTMLHint } from 'htmlhint';
 
-describe('ZHtmlHint', () => {
+describe('ZContentLinterHtml', () => {
   let contentPath: string;
   let content: string;
   let options: RuleSet;
@@ -27,7 +27,7 @@ describe('ZHtmlHint', () => {
   });
 
   function createTestTarget() {
-    const target = new ZHtmlHint();
+    const target = new ZContentLinterHtml();
     return target;
   }
 

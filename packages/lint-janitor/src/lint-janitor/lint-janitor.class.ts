@@ -4,11 +4,11 @@ import { ZConfigReaderCosmic } from '../config/config-reader-cosmic.class';
 import { ZConfigReaderNull } from '../config/config-reader-null.class';
 import { ZConfigReaderPrettier } from '../config/config-reader-prettier.class';
 import { IZConfigReader } from '../config/config-reader.interface';
-import { ZLinterEs } from '../linter/linter-es.class';
+import { ZContentLinterHtml } from '../content/content-linter-html.class';
 import { ZFileLint } from '../file-lint/file-lint.class';
 import { ZFileReportLint } from '../file-lint/file-report-lint.class';
-import { ZHtmlHint } from '../html-hint/html-hint.class';
 import { ZJsonLint } from '../json-lint/json-lint.class';
+import { ZLinterEs } from '../linter/linter-es.class';
 import { IZLinter } from '../linter/linter.interface';
 import { ZMarkdownLint } from '../markdown-lint/markdown-lint.class';
 import { ZPrettyLint } from '../pretty-lint/pretty-lint';
@@ -45,7 +45,7 @@ export class ZLintJanitor {
   /**
    * The linter for html files.
    */
-  public htmlHint: IZLinter = new ZFileLint(new ZHtmlHint(), new ZConfigReaderCosmic('htmlhint', new ZConfigExtender()), this._logger, 'html');
+  public htmlHint: IZLinter = new ZFileLint(new ZContentLinterHtml(), new ZConfigReaderCosmic('htmlhint', new ZConfigExtender()), this._logger, 'html');
 
   /**
    * The linter for json files.

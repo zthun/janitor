@@ -1,5 +1,5 @@
 import { load } from 'js-yaml';
-import { IZContentLinter } from '../file-lint/content-linter.interface';
+import { IZContentLinter } from '../content/content-linter.interface';
 
 /**
  * Represents a linter for yml files.

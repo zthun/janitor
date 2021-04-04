@@ -2,7 +2,7 @@
 import { readFile } from 'fs';
 import { sync } from 'glob';
 import { IZConfigReader } from '../config/config-reader.interface';
-import { IZContentLinter } from './content-linter.interface';
+import { IZContentLinter } from '../content/content-linter.interface';
 import { ZFileLint } from './file-lint.class';
 
 jest.mock('glob');

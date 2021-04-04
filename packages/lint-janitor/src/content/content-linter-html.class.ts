@@ -1,10 +1,10 @@
 import { HTMLHint, FormatOptions, RuleSet } from 'htmlhint';
-import { IZContentLinter } from '../file-lint/content-linter.interface';
+import { IZContentLinter } from './content-linter.interface';
 
 /**
  * Represents an object that can be used to hint html files.
  */
-export class ZHtmlHint implements IZContentLinter {
+export class ZContentLinterHtml implements IZContentLinter {
   private readonly _formatOptions: FormatOptions = { colors: true };
 
   /**
