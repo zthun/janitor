@@ -1,5 +1,9 @@
 # Lint Janitor
 
+<p align="center">
+  <img src="./images/svg/lint-janitor.svg" alt="lint-janitor" width="256">
+</p>
+
 Code gets messy. You will find that most places you work at will always have a big long list of tech debt tasks that need to be taken care of and this becomes a maintenance nightmare as it becomes very expensive to fix. Companies rarely want to let developers fix these issues because they tend to only look at the short term ROI, which isn't high for this kind of task. What then happens is that more functional, but messy, code gets introduced and the software begins to rot.
 
 One way to fix something like this is to start with linters. Linters will scour through your code base and notify you that you have various issues. In a good development pipeline, they will prevent developers from generating a messy room and will force them to write clean consistent code with the rest of the development team. They aren't a silver bullet, and messy solutions can still crop up, but linters take care of most of the inconsistent and formatting errors that can develop in a code base. Good developers love them - it keeps the entire team consistent in their code structure.
