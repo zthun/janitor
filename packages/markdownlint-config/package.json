@@ -4,7 +4,6 @@
   "description": "A shared configuration for markdownlint for @zthun scoped projects.",
   "keywords": [
     "markdownlint",
-    "markdownlintconfig",
     "markdownlint-config"
   ],
   "main": "index.js",

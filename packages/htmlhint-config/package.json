@@ -4,7 +4,6 @@
   "description": "A shared configuration for htmlhint for @zthun scoped projects.",
   "keywords": [
     "htmlhint",
-    "htmlhintconfig",
     "htmlhint-config"
   ],
   "main": "index.js",

@@ -1,7 +1,18 @@
 {
-  "version": "0.2",
-  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/master/cspell.schema.json",
-  "language": "en",
-  "words": ["cosmiconfig", "htmlhint", "markdownlint", "stylelint", "zthun"],
-  "dictionaries": ["typescript", "node", "npm", "html", "css", "en_US"]
+    "version": "0.1",
+    "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/master/cspell.schema.json",
+    "language": "en",
+    "words": [
+        "Bonta",
+        "cosmiconfig",
+        "errored",
+        "htmlhint",
+        "markdownlint",
+        "stylelint",
+        "zthun"
+    ],
+    "dictionaries": [
+        "typescript",
+        "en_US"
+    ]
 }

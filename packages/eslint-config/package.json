@@ -4,7 +4,6 @@
   "description": "A shared configuration for eslint for @zthun scoped projects.",
   "keywords": [
     "eslint",
-    "eslintconfig",
     "eslint-config"
   ],
   "main": "index.js",

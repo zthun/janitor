@@ -4,7 +4,6 @@
   "description": "A shared configuration for prettier for @zthun scoped projects.",
   "keywords": [
     "prettier",
-    "prettierconfig",
     "prettier-config"
   ],
   "main": "index.js",

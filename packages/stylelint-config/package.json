@@ -4,7 +4,6 @@
   "description": "A shared configuration for stylelint for @zthun scoped projects.",
   "keywords": [
     "stylelint",
-    "stylelintonfig",
     "stylelint-config"
   ],
   "main": "index.js",
