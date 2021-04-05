@@ -7,8 +7,12 @@
         "cosmiconfig",
         "errored",
         "htmlhint",
+        "janitorrc",
         "markdownlint",
+        "markdownlintrc",
+        "prettierrc",
         "stylelint",
+        "stylelintrc",
         "zthun"
     ],
     "dictionaries": [

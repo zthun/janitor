@@ -3,14 +3,7 @@
   "version": "9.0.0",
   "description": "Style checks with tools for web projects using common rules.",
   "keywords": [
-    "lint",
-    "sassLint",
-    "styleLint",
-    "tslint",
-    "htmlHint",
-    "eslint",
-    "jsonLint",
-    "yamlLint"
+    "linters"
   ],
   "license": "MIT",
   "repository": {
