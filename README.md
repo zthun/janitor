@@ -12,16 +12,16 @@ This repository contains series of tools and configurations that help with code 
 
 - [@zthun/lint-janitor](packages/lint-janitor)
   - An aggregate linter that keeps the total number of lint applications in check.
-- [@zthun/eslint-config](packages/eslint-config/README.md)
+- [@zthun/eslint-config](packages/eslint-config)
   - A shared configuration for eslint for @zthun scoped projects.
-- [@zthun/htmlhint-config](packages/htmlhint-config/README.md)
+- [@zthun/htmlhint-config](packages/htmlhint-config)
   - A shared configuration for htmlhint for @zthun scoped projects.
   - Not standard however, and not fully supported by the htmlhint application.
-- [@zthun/markdownlint-config](packages/markdownlint-config/README.md)
+- [@zthun/markdownlint-config](packages/markdownlint-config)
   - A shared configuration for markdownlint for @zthun scoped projects
-- [@zthun/prettier-config](packages/prettier-config/README.md)
+- [@zthun/prettier-config](packages/prettier-config)
   - A shared formatting configuration for @zthun scoped projects.
-- [@zthun/stylelint-config](packages/stylelint-config/README.md)
+- [@zthun/stylelint-config](packages/stylelint-config)
   - A shared configuration for stylelint for @zthun scoped projects.
 
 ## Contributions
