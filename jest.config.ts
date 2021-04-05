@@ -9,5 +9,13 @@ export default {
     '^.+\\.ts$': 'ts-jest'
   },
   moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>/' }),
-  coverageDirectory: '../reports/coverage'
+  coverageDirectory: '../reports/coverage',
+  coverageThreshold: {
+    global: {
+      branches: 100,
+      functions: 100,
+      lines: 100,
+      statements: 100
+    }
+  }
 };

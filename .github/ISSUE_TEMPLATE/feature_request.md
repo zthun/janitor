@@ -4,17 +4,16 @@ about: Suggest an idea for this project
 title: ''
 labels: ''
 assignees: ''
-
 ---
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+## Why do you want the feature
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+A description of why you want a new feature implemented and what problem you need solved.
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
+## Describe the solution you'd like
 
-**Additional context**
-Add any other context or screenshots about the feature request here.
+What do you actually want? Have you tried other alternatives?
+
+## Additional context
+
+Any additional information that you think is relevant.

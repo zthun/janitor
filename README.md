@@ -24,6 +24,8 @@ This repository contains series of tools and configurations that help with code 
 - [@zthun/stylelint-config](packages/stylelint-config)
   - A shared configuration for stylelint for @zthun scoped projects.
 
-## Contributions
+## Community
 
-See [Contributing](Contributions.md) for info on how to contribute.
+See [Contributing](CONTRIBUTING.md) for info on how to contribute.
+See [Code of Conduct](CODE_OF_CONDUCT.md) for acceptable behavior.
+See [License](LICENSE.md) for license information.
