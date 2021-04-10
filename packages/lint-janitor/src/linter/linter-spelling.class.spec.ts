@@ -68,8 +68,6 @@ describe('ZLinterSpelling', () => {
     let issue: Issue;
 
     beforeEach(() => {
-      lintResult.errors = 1;
-
       issue = {
         text: 'foo',
         doc: null,
@@ -87,8 +85,20 @@ describe('ZLinterSpelling', () => {
       });
     });
 
+    async function assertLintFailure(issues: number, errors: number) {
+      // Arrange
+      lintResult.issues = issues;
+      lintResult.errors = errors;
+      const target = createTestTarget();
+      // Act
+      const actual = await target.lint(content, config);
+      // Assert
+      expect(actual).toBeFalsy();
+    }
+
     it('should log if the linter errors.', async () => {
       // Arrange
+      lintResult.issues = 1;
       const target = createTestTarget();
       // Act
       await target.lint(content, config);
@@ -96,13 +106,12 @@ describe('ZLinterSpelling', () => {
       expect(logger.log).toHaveBeenCalledWith(expect.stringContaining(issue.uri));
     });
 
-    it('should return false if there are lint failures.', async () => {
-      // Arrange
-      const target = createTestTarget();
-      // Act
-      const actual = await target.lint(content, config);
-      // Assert
-      expect(actual).toBeFalsy();
+    it('should return false if there are lint issues.', async () => {
+      assertLintFailure(1, 0);
+    });
+
+    it('should return false if there are lint errors.', async () => {
+      assertLintFailure(0, 1);
     });
   });
 });

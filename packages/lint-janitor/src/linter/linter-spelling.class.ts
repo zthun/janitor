@@ -44,7 +44,7 @@ export class ZLinterSpelling implements IZLinter {
     const emitters: Emitters = { info, debug, error, progress, issue };
     const result = await lint(src, options, emitters);
 
-    if (result.errors > 0) {
+    if (result.errors > 0 || result.issues > 0) {
       return false;
     }
 
