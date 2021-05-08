@@ -1,6 +1,6 @@
 {
   "name": "@zthun/eslint-config",
-  "version": "9.0.0",
+  "version": "10.0.0",
   "description": "A shared configuration for eslint for @zthun scoped projects.",
   "keywords": [
     "eslint",
@@ -14,8 +14,8 @@
     "directory": "packages/eslint-config"
   },
   "peerDependencies": {
-    "eslint": "^7.4.0",
-    "@typescript-eslint/eslint-plugin": "^4.15.0"
+    "@typescript-eslint/eslint-plugin": "^4.15.0",
+    "eslint": "^7.4.0"
   },
   "publishConfig": {
     "access": "public"

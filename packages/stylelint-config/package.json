@@ -1,6 +1,6 @@
 {
   "name": "@zthun/stylelint-config",
-  "version": "9.0.0",
+  "version": "10.0.0",
   "description": "A shared configuration for stylelint for @zthun scoped projects.",
   "keywords": [
     "stylelint",
