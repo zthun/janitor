@@ -44,6 +44,9 @@ export class ZLintJanitor {
 
   /**
    * The linter for html files.
+   *
+   * Currently, htmlhint has no support for cosmiconfig based paths, so we're going to
+   * add them here.
    */
   public htmlHint: IZLinter = new ZLinterFile(new ZContentLinterHtml(), new ZConfigReaderCosmic('htmlhint', new ZConfigExtender()), this._logger, 'html');
 
@@ -59,8 +62,12 @@ export class ZLintJanitor {
 
   /**
    * The linter for markdown files.
+   *
+   * Markdownlint used to have support for cosmiconfig based paths officially, but it seems now
+   * they just use .markdownlint.json.  We have to add support for that path, which is not
+   * a cosmiconfig path.
    */
-  public markdownLint: IZLinter = new ZLinterReport(new ZLinterMarkdown(this._logger, new ZConfigReaderCosmic('markdownlint', new ZConfigExtender())), this._logger, 'markdown');
+  public markdownLint: IZLinter = new ZLinterReport(new ZLinterMarkdown(this._logger, new ZConfigReaderCosmic('markdownlint', new ZConfigExtender(), ['.markdownlint.json'])), this._logger, 'markdown');
 
   /**
    * The configuration reader.
