@@ -1,9 +1,20 @@
 language: node_js
-node_js: 16.1.0
-sudo: required
+node_js:
+  - 14
+  - 15
+  - 16
+
 install:
   - yarn install
-script:
-  - yarn lint
-  - yarn test
-  - yarn build
+
+jobs:
+  include:
+    - stage: Lint
+      script:
+        - yarn lint
+    - stage: Test
+      script:
+        - yarn test
+    - stage: Build
+      script:
+        - yarn build
