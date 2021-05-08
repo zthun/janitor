@@ -11,8 +11,6 @@ import { IZContentLinter } from '../content/content-linter.interface';
  * Represents an object that can lint files one at a time.
  */
 export class ZLinterFile implements IZLinter {
-  private _globOptions: IOptions = { dot: true };
-
   /**
    * Initializes a new instance of this object.
    *
@@ -28,20 +26,19 @@ export class ZLinterFile implements IZLinter {
    *
    * @param src The file list of blobs to lint.
    * @param config The optional path to the config file.
+   * @param exclude The list of globs to exclude.
    */
-  public async lint(src: string[], config?: string): Promise<boolean> {
+  public async lint(src: string[], config?: string, exclude?: string[]): Promise<boolean> {
     const readFileAsync = promisify(readFile);
     let options = {};
 
-    let result = true;
-    let allFiles: string[] = [];
+    const globOptions: IOptions = { dot: true, ignore: exclude };
+    let files: string[] = [];
+    src.forEach((pattern) => (files = files.concat(sync(pattern, globOptions))));
 
-    for (const pattern of src) {
-      allFiles = allFiles.concat(sync(pattern, this._globOptions));
-    }
-
-    if (allFiles.length === 0) {
-      return result;
+    if (files.length === 0) {
+      this._logger.log(chalk.yellow.italic('No globs matched any files.'));
+      return true;
     }
 
     try {
@@ -51,10 +48,12 @@ export class ZLinterFile implements IZLinter {
       return false;
     }
 
-    this._logger.log(chalk.green.italic(`Checking syntax for ${allFiles.length} ${this._type} files.`));
+    this._logger.log(chalk.green.italic(`Checking syntax for ${files.length} ${this._type} files.`));
     this._logger.log();
 
-    for (const file of allFiles) {
+    let result = true;
+
+    for (const file of files) {
       const fullFilePath = resolve(file);
       try {
         const content = await readFileAsync(fullFilePath, 'utf-8');

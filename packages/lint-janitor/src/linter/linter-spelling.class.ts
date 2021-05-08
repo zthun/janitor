@@ -20,12 +20,13 @@ export class ZLinterSpelling implements IZLinter {
    *
    * @param src The list of files globs to lint.
    * @param config The optional lint config file.
+   * @param exclude The list of file globs to exclude.
    *
    * @returns A promise that resolves to true if the lint is fully successful, and false if the lint
    *         has errors.
    */
-  public async lint(src: string[], config: string): Promise<boolean> {
-    const options: CSpellApplicationOptions = {};
+  public async lint(src: string[], config?: string, exclude?: string[]): Promise<boolean> {
+    const options: CSpellApplicationOptions = { exclude };
 
     if (config) {
       options.config = require.resolve(config, { paths: [process.cwd()] });

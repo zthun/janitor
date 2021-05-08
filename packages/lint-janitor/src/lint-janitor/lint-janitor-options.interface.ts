@@ -9,9 +9,15 @@ export interface IZLintJanitorOptions {
   esFiles?: string[];
   styleFiles?: string[];
   htmlFiles?: string[];
+  htmlFilesExclude?: string[];
   markdownFiles?: string[];
+  markdownFilesExclude?: string[];
   jsonFiles?: string[];
+  jsonFilesExclude?: string[];
   yamlFiles?: string[];
+  yamlFilesExclude?: string[];
   spellingFiles?: string[];
+  spellingFilesExclude?: string[];
   prettyFiles?: string[];
+  prettyFilesExclude?: string[];
 }

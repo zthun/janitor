@@ -10,8 +10,6 @@ import { IZLinter } from './linter.interface';
  * Represents a linter object that checks markdown.
  */
 export class ZLinterMarkdown implements IZLinter {
-  private _globOptions: IOptions = { dot: true };
-
   /**
    * Initializes a new instance of this object.
    *
@@ -25,10 +23,11 @@ export class ZLinterMarkdown implements IZLinter {
    *
    * @param src The glob patterns to match and lint.
    * @param cfg The optional config for the linter.
+   * @param exclude The glob patterns to exclude.
    *
    * @returns A promise that resolves to true if the linting is ok, and false if the linting fails.
    */
-  public async lint(src: string[], cfg: string): Promise<boolean> {
+  public async lint(src: string[], cfg: string, exclude: string[] = []): Promise<boolean> {
     let config: any;
 
     try {
@@ -38,8 +37,10 @@ export class ZLinterMarkdown implements IZLinter {
       return false;
     }
 
+    const globOptions: IOptions = { dot: true, ignore: exclude };
     let files: string[] = [];
-    src.forEach((pattern) => (files = files.concat(sync(pattern, this._globOptions))));
+    src.forEach((pattern) => (files = files.concat(sync(pattern, globOptions))));
+
     const options: Options = { files, config };
     const markdownLintAsync = promisify(markdownlint);
     const result = await markdownLintAsync(options);

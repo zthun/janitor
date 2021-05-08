@@ -7,8 +7,6 @@ import { IZLinter } from './linter.interface';
  * pass the actual linting job to another linter.
  */
 export class ZLinterReport implements IZLinter {
-  private readonly _globOptions: IOptions = { dot: true };
-
   /**
    * Initializes a new instance of this object.
    *
@@ -23,19 +21,20 @@ export class ZLinterReport implements IZLinter {
    *
    * @param src The file list of blobs to lint.
    * @param config The optional path to the config file.
+   * @param exclude The list of globs to exclude.
    */
-  public async lint(src: string[], config?: string): Promise<boolean> {
-    let allFiles: string[] = [];
+  public async lint(src: string[], config?: string, exclude?: string[]): Promise<boolean> {
+    const globOptions: IOptions = { dot: true, ignore: exclude };
 
-    for (const pattern of src) {
-      allFiles = allFiles.concat(sync(pattern, this._globOptions));
-    }
+    let files: string[] = [];
+    src.forEach((pattern) => (files = files.concat(sync(pattern, globOptions))));
 
-    if (allFiles.length === 0) {
+    if (files.length === 0) {
+      this._logger.log(chalk.yellow.italic('No globs matched any files.'));
       return true;
     }
 
-    this._logger.log(chalk.green.italic(`Checking syntax for ${allFiles.length} ${this._type} files.`));
-    return this._child.lint(src, config);
+    this._logger.log(chalk.green.italic(`Checking syntax for ${files.length} ${this._type} files.`));
+    return this._child.lint(src, config, exclude);
   }
 }

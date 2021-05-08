@@ -42,14 +42,20 @@ describe('ZLintJanitor', () => {
       styleFiles: ['**/*.css', '**/*.less', '**/*.scss', '**/*.sass'],
       markdownConfig: '@zthun/markdownlint-config',
       markdownFiles: ['**/*.md'],
+      markdownFilesExclude: ['**/exclude.md'],
       htmlConfig: '@zthun/htmlhint-config',
       htmlFiles: ['**/*.html'],
+      htmlFilesExclude: ['**/exclude.html'],
       jsonFiles: ['**/*.json'],
+      jsonFilesExclude: ['**/exclude.json'],
       yamlFiles: ['**/*.yml'],
+      yamlFilesExclude: ['**/exclude.yaml'],
       spellingConfig: './cspell.json',
       spellingFiles: ['**/*.md'],
+      spellingFilesExclude: ['**/exclude.md'],
       prettyConfig: '@zthun/prettier-config',
-      prettyFiles: ['**/*.ts']
+      prettyFiles: ['**/*.ts'],
+      prettyFilesExclude: ['**/exclude.ts']
     };
 
     config = {} as any;
@@ -58,7 +64,7 @@ describe('ZLintJanitor', () => {
   });
 
   describe('Linting', () => {
-    async function assertLinterInvoked(linter: (t: ZLintJanitor) => IZLinter, files: string[], config?: string) {
+    async function assertLinterInvoked(linter: (t: ZLintJanitor) => IZLinter, files: string[], config?: string, exclude?: string[]) {
       // Arrange
       const target = createTestTarget();
       const expected = linter(target);
@@ -66,11 +72,7 @@ describe('ZLintJanitor', () => {
       // Act
       await target.lint(options);
       // Assert
-      if (config !== undefined) {
-        expect(expected.lint).toHaveBeenCalledWith(files, config);
-      } else {
-        expect(expected.lint).toHaveBeenCalledWith(files);
-      }
+      expect(expected.lint).toHaveBeenCalledWith(files, config, exclude);
     }
 
     async function assertLinterNotInvoked(linter: (t: ZLintJanitor) => IZLinter) {
@@ -86,12 +88,7 @@ describe('ZLintJanitor', () => {
 
     describe('EsLint', () => {
       it('invokes the linter if there are esFiles', async () => {
-        await assertLinterInvoked((t) => t.esLint, options.esFiles, options.esConfig);
-      });
-
-      it('uses the default config if no config is specified.', async () => {
-        delete options.esConfig;
-        await assertLinterInvoked((t) => t.esLint, options.esFiles, null);
+        await assertLinterInvoked((t) => t.esLint, options.esFiles, options.esConfig, null);
       });
 
       it('does not invoke the linter if there are no esFiles.', async () => {
@@ -102,12 +99,7 @@ describe('ZLintJanitor', () => {
 
     describe('StyleLint', () => {
       it('invokes the linter if there are styleFiles', async () => {
-        await assertLinterInvoked((t) => t.styleLint, options.styleFiles, options.styleConfig);
-      });
-
-      it('uses the default config if no config is specified.', async () => {
-        delete options.styleConfig;
-        await assertLinterInvoked((t) => t.styleLint, options.styleFiles, null);
+        await assertLinterInvoked((t) => t.styleLint, options.styleFiles, options.styleConfig, null);
       });
 
       it('does not invoke the linter if there are no styleFiles.', async () => {
@@ -118,12 +110,7 @@ describe('ZLintJanitor', () => {
 
     describe('MarkdownLint', () => {
       it('invokes the linter if there are markdownFiles', async () => {
-        await assertLinterInvoked((t) => t.markdownLint, options.markdownFiles, options.markdownConfig);
-      });
-
-      it('uses the default config if no config is specified.', async () => {
-        delete options.markdownConfig;
-        await assertLinterInvoked((t) => t.markdownLint, options.markdownFiles, null);
+        await assertLinterInvoked((t) => t.markdownLint, options.markdownFiles, options.markdownConfig, options.markdownFilesExclude);
       });
 
       it('does not invoke the linter if there are no styleFiles.', async () => {
@@ -134,12 +121,7 @@ describe('ZLintJanitor', () => {
 
     describe('HtmlHint', () => {
       it('invokes the linter if there are htmlFiles', async () => {
-        await assertLinterInvoked((t) => t.htmlHint, options.htmlFiles, options.htmlConfig);
-      });
-
-      it('uses the default config if no config is specified.', async () => {
-        delete options.htmlConfig;
-        await assertLinterInvoked((t) => t.htmlHint, options.htmlFiles, null);
+        await assertLinterInvoked((t) => t.htmlHint, options.htmlFiles, options.htmlConfig, options.htmlFilesExclude);
       });
 
       it('does not invoke the linter if there are no esFiles.', async () => {
@@ -150,7 +132,7 @@ describe('ZLintJanitor', () => {
 
     describe('JsonLint', () => {
       it('invokes the linter if there are jsonFiles', async () => {
-        await assertLinterInvoked((t) => t.jsonLint, options.jsonFiles);
+        await assertLinterInvoked((t) => t.jsonLint, options.jsonFiles, null, options.jsonFilesExclude);
       });
 
       it('does not invoke the linter if there are no esFiles.', async () => {
@@ -161,7 +143,7 @@ describe('ZLintJanitor', () => {
 
     describe('YamlLint', () => {
       it('invokes the linter if there are yamlFiles', async () => {
-        await assertLinterInvoked((t) => t.yamlLint, options.yamlFiles);
+        await assertLinterInvoked((t) => t.yamlLint, options.yamlFiles, null, options.yamlFilesExclude);
       });
 
       it('does not invoke the linter if there are no esFiles.', async () => {
@@ -172,12 +154,7 @@ describe('ZLintJanitor', () => {
 
     describe('SpellingLint', () => {
       it('invokes the linter if there are spellingFiles', async () => {
-        await assertLinterInvoked((t) => t.spellLint, options.spellingFiles, options.spellingConfig);
-      });
-
-      it('uses the default config if no config is specified.', async () => {
-        delete options.spellingConfig;
-        await assertLinterInvoked((t) => t.spellLint, options.spellingFiles, null);
+        await assertLinterInvoked((t) => t.spellLint, options.spellingFiles, options.spellingConfig, options.spellingFilesExclude);
       });
 
       it('does not invoke the linter if there are no spellingFiles.', async () => {
@@ -188,12 +165,7 @@ describe('ZLintJanitor', () => {
 
     describe('PrettyLint', () => {
       it('invokes the linter if there are prettyFiles.', async () => {
-        await assertLinterInvoked((t) => t.prettyLint, options.prettyFiles, options.prettyConfig);
-      });
-
-      it('uses the default config if no config is specified.', async () => {
-        delete options.prettyConfig;
-        await assertLinterInvoked((t) => t.prettyLint, options.prettyFiles, null);
+        await assertLinterInvoked((t) => t.prettyLint, options.prettyFiles, options.prettyConfig, options.prettyFilesExclude);
       });
 
       it('does not invoke the linter if there are no prettyFiles.', async () => {

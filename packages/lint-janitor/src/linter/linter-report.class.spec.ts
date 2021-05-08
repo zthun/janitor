@@ -36,7 +36,7 @@ describe('ZLinterReport', () => {
     // Act
     await target.lint(src);
     // Assert
-    expect(child.lint).toHaveBeenCalledWith(src, undefined);
+    expect(child.lint).toHaveBeenCalledWith(src, undefined, undefined);
   });
 
   it('logs the total number of files.', async () => {
