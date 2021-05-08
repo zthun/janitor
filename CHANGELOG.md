@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [10.1.0](https://github.com/zthun/janitor/compare/v10.0.0...v10.1.0) (2021-05-08)
+
+
+### Features
+
+* it is now possible to exclude globs from the list ([995c7b7](https://github.com/zthun/janitor/commit/995c7b730b1ad6a360b632108595c5833ee32fdb))
+
+
+
+
+
 # [10.0.0](https://github.com/zthun/janitor/compare/v9.0.0...v10.0.0) (2021-05-08)
 
 
