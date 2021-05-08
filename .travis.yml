@@ -1,5 +1,5 @@
 language: node_js
-node_js: 14.5.0
+node_js: 16.1.0
 sudo: required
 install:
   - yarn install
