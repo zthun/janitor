@@ -1,19 +1,13 @@
 /* eslint-disable require-jsdoc */
-import { ZConfigReaderCosmic } from './config-reader-cosmic.class';
 import { IZConfigExtender } from './config-extender.interface';
-import { cosmiconfig } from 'cosmiconfig';
-
-jest.mock('cosmiconfig');
+import { ZConfigReaderCosmic } from './config-reader-cosmic.class';
 
 describe('ZConfigCosmicReader', () => {
   let config: string;
-  let options: any;
   let extender: IZConfigExtender;
-  let load: jest.Mock;
-  let search: jest.Mock;
 
-  function createTestTarget() {
-    return new ZConfigReaderCosmic('htmlhint', extender);
+  function createTestTarget(name = 'htmlhint', paths?: string[]) {
+    return new ZConfigReaderCosmic(name, extender, paths);
   }
 
   beforeEach(() => {
@@ -21,24 +15,15 @@ describe('ZConfigCosmicReader', () => {
     extender.extend = jest.fn((cfg) => Promise.resolve(cfg));
 
     config = '@zthun/htmlhint-config';
-
-    options = {
-      'tagname-lowercase': true
-    };
-
-    search = jest.fn(() => Promise.resolve({ filepath: config }));
-    load = jest.fn(() => Promise.resolve({ config: options }));
-    (cosmiconfig as jest.Mock).mockReturnValue({ search, load });
   });
 
   it('reads the config file.', async () => {
     // Arrange
     const target = createTestTarget();
-    const expected = require.resolve(config);
     // Act
-    await target.read(config);
+    const actual = await target.read(config);
     // Assert
-    expect(load).toHaveBeenCalledWith(expected);
+    expect(actual).toBeTruthy();
   });
 
   it('reads the cosmiconfig file if no config specified.', async () => {
@@ -47,16 +32,16 @@ describe('ZConfigCosmicReader', () => {
     // Act
     const actual = await target.read(null);
     // Assert
-    expect(actual).toEqual(options);
+    expect(actual).toBeTruthy();
   });
 
-  it('retrieves the options directly if there is no key found in the config.', async () => {
+  it('retrieves the config from the additional supported paths.', async () => {
     // Arrange
-    const target = createTestTarget();
+    const target = createTestTarget('markdownlint', ['.markdownlint-skip.json', '.markdownlint.json']);
     // Act
     const actual = await target.read(null);
     // Assert
-    expect(JSON.stringify(actual)).toEqual(JSON.stringify(options));
+    expect(actual).toBeTruthy();
   });
 
   it('throws an exception if the actual module cannot be resolved.', async () => {
@@ -70,19 +55,7 @@ describe('ZConfigCosmicReader', () => {
 
   it('throws an exception if there are no config files.', async () => {
     // Arrange
-    const target = createTestTarget();
-    search = jest.fn(() => Promise.resolve(null));
-    (cosmiconfig as jest.Mock).mockReturnValue({ search, load });
-    // Act
-    // Assert
-    await expect(target.read(null)).rejects.toBeDefined();
-  });
-
-  it('throws an exception if the config file cannot be read.', async () => {
-    // Arrange
-    const target = createTestTarget();
-    load = jest.fn(() => Promise.resolve(null));
-    (cosmiconfig as jest.Mock).mockReturnValue({ search, load });
+    const target = createTestTarget('markdownlint', ['.markdownlint-missing', 'markdown-skip']);
     // Act
     // Assert
     await expect(target.read(null)).rejects.toBeDefined();

@@ -1,4 +1,5 @@
 import { cosmiconfig } from 'cosmiconfig';
+import { resolve } from 'path';
 import { IZConfigDiscovery } from './config-discovery.interface';
 import { IZConfigExtender } from './config-extender.interface';
 import { IZConfigReader } from './config-reader.interface';
@@ -11,9 +12,13 @@ export class ZConfigReaderCosmic implements IZConfigReader, IZConfigDiscovery {
    * Initializes a new instance of this object.
    *
    * @param name The name of the application to load.
-   * @param extends The extender for
+   * @param extends The extender to expand upon the read configuration.
+   * @param paths The additional paths to read if cosmic config does not find a valid config.  Remember that these
+   *              are paths, not modules in this case, so you can't load things from the node modules directory
+   *              using these values.  These only affect the search for the config file, not the actual
+   *              read of the config.
    */
-  public constructor(public name: string, public extender: IZConfigExtender) {}
+  public constructor(public name: string, public extender: IZConfigExtender, public paths: string[] = []) {}
 
   /**
    * Runs a search for the appropriate configuration file.
@@ -24,8 +29,27 @@ export class ZConfigReaderCosmic implements IZConfigReader, IZConfigDiscovery {
    */
   public async search() {
     const explorer = cosmiconfig(this.name);
-    const actual = await explorer.search();
-    return actual?.filepath;
+
+    // The first step is the standard cosmiconfig
+    // search to see if any of these paths exists.
+    // These are highest priority.
+    const searched = await explorer.search();
+
+    if (searched) {
+      return searched.filepath;
+    }
+
+    // Try our additional paths, if any.
+    for (const path of this.paths) {
+      const full = resolve(path);
+      const result = await explorer.load(full).catch(() => null);
+
+      if (result) {
+        return result.filepath;
+      }
+    }
+
+    return null;
   }
 
   /**
