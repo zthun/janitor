@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [10.1.1](https://github.com/zthun/janitor/compare/v10.1.0...v10.1.1) (2021-05-09)
+
+
+### Bug Fixes
+
+* the icon should now appear visible on dark backgrounds ([ac57418](https://github.com/zthun/janitor/commit/ac57418e8b010c8a3e838485de1e0361dd181461))
+
+
+
 # [10.1.0](https://github.com/zthun/janitor/compare/v10.0.0...v10.1.0) (2021-05-08)
 
 
