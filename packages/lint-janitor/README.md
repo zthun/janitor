@@ -52,23 +52,37 @@ The configuration file uses the following schema.
   // The configuration file or module for formatting checks
   prettyConfig?: string;
 
-  // The white list of ECMAScript globs to lint.  This should include
-  // JavaScript and TypeScript based files
+  // The white list of ECMAScript globs to lint.  This should include JavaScript and TypeScript based files
+  // Note that eslint supports excludes directly in the config file so there is no exclude support for it here.
   esFiles?: string[];
   // The white list of CSS, Less, and Sass globs to lint.
+  // Note that stylelint supports excludes directly in the config file so there is no
+  // exclude support for it here.
   styleFiles?: string[];
   // The white list of HTML globs to lint.
   htmlFiles?: string[];
+  // The black list of HTML globs to exclude from linting.
+  htmlFilesExclude?: string[];
   // The white list of Markdown globs to lint.
   markdownFiles?: string[];
+  // The black list of Markdown globs to exclude from linting.
+  markdownFilesExclude?: string[];
   // The white list of JSON globs to lint.
   jsonFiles?: string[];
+  // The black list of JSON globs to exclude from linting.
+  jsonFilesExclude?: string[];
   // The white list of YAML globs to lint.
   yamlFiles?: string[];
+  // The black list of YAML globs to exclude from linting.
+  yamlFilesExclude?: string[];
   // The white list of globs to check for spelling errors.
   spellingFiles?: string[];
+  // The black list of globs to exclude from spell checking.
+  spellingFilesExclude?: string[];
   // The white list of globs to check for code formatting.
   prettyFiles?: string[];
+  // The black list of globs to exclude from code formatting.
+  prettyFilesExclude?: string[];
 }
 ```
 
@@ -93,6 +107,9 @@ module.exports = {
   htmlFiles: ['packages/**/src/**/*.html'],
   // You can have as many globs as you want.
   markdownFiles: ['packages/**/*.md', '*.md'],
+  // You can also exclude files from the include list.  These are normally
+  // used for code generated files and should not be linted.
+  markdownFilesExclude: ['**/CHANGELOG.md'],
   // You can also specify specific files - json and yaml have no
   // configurations as they are very specific formats.
   jsonFiles: ['package.json'],
@@ -214,7 +231,7 @@ MarkdownLint searches for the following configuration files at the root of your 
 1. .markdownlint.yaml or .markdownlint.yml
 1. .markdownlintrc
 
-Strangely enough, if you are using the vscode plugin, then it is recommended to just use the .markdownlintrc name because that seems to be the only one that the plugin will respect. There's not a lot of rules to markdown. You can find the list of rules [here](https://github.com/DavidAnson/markdownlint). While it's not documented, MarkdownLint does have support for shared configurations, but there is a gotcha with it. The actual shared configuration MUST be in a json format. If you are creating a shared configuration for markdown, you will want to export a module of it and also have an actual json formatted file that comes along with it.
+Strangely enough, if you are using the vscode plugin, then it is recommended to just use the .markdownlint.json name because that seems to be the only one that the plugin will respect. There's not a lot of rules to markdown. You can find the list of rules [here](https://github.com/DavidAnson/markdownlint). While it's not documented, MarkdownLint does have support for shared configurations, but there is a gotcha with it. The actual shared configuration MUST be in a json format. If you are creating a shared configuration for markdown, you will want to export a module of it and also have an actual json formatted file that comes along with it.
 
 ```json
 {
