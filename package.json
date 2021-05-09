@@ -14,10 +14,13 @@
     "lint": "ts-node packages/lint-janitor/src/cli.ts",
     "build": "lerna run build",
     "make": "yarn clean && yarn lint && npm test && npm run build",
+    "prepare": "husky install",
     "release": "yarn make && lerna publish --conventional-commits"
   },
   "author": "Anthony Bonta",
   "devDependencies": {
+    "@commitlint/cli": "^12.1.1",
+    "@commitlint/config-conventional": "^12.1.1",
     "@types/eslint": "^7.2.0",
     "@types/glob": "^7.1.3",
     "@types/htmlhint": "^0.9.1",
@@ -36,6 +39,7 @@
     "eslint": "^7.4.0",
     "glob": "^7.1.6",
     "htmlhint": "~0.14.1",
+    "husky": "^6.0.0",
     "jest": "^26.1.0",
     "js-yaml": "^4.0.0",
     "lerna": "^4.0.0",

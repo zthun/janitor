@@ -1,8 +1,14 @@
 {
   "npmClient": "yarn",
-  "packages": [
-    "packages/*"
-  ],
+  "packages": ["packages/*"],
   "stream": true,
-  "version": "10.1.0"
+  "version": "10.1.0",
+  "command": {
+    "publish": {
+      "message": "chore(release): publish [skip ci]"
+    }
+  },
+  "changelogPreset": {
+    "name": "conventionalcommits"
+  }
 }
