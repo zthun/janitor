@@ -1,5 +1,6 @@
 # Output files
 dist
+docs
 reports
 node_modules
 *.tgz

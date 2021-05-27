@@ -15,6 +15,7 @@
         "prettierrc",
         "stylelint",
         "stylelintrc",
+        "typedoc",
         "zthun"
     ],
     "dictionaries": [
