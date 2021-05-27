@@ -1,4 +1,4 @@
-var generated = ['**/CHANGELOG.md'];
+var generated = ['**/CHANGELOG.md', 'packages/**/dist/**', 'packages/**/docs/**'];
 
 module.exports = {
   esFiles: ['*.js', 'packages/**/src/**/*.ts', 'packages/*-config/index.js'],
