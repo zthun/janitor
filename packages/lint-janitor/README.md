@@ -1,9 +1,5 @@
 # Lint Janitor
 
-<p align="center">
-  <img src="./images/svg/lint-janitor.svg" alt="lint-janitor" width="256">
-</p>
-
 Code gets messy. You will find that most places you work at will always have a big long list of tech debt tasks that need to be taken care of and this becomes a maintenance nightmare as it becomes very expensive to fix. Companies rarely want to let developers fix these issues because they tend to only look at the short term ROI, which isn't high for this kind of task. What then happens is that more functional, but messy, code gets introduced and the software begins to rot.
 
 One way to fix something like this is to start with linters. Linters will scour through your code base and notify you that you have various issues. In a good development pipeline, they will prevent developers from generating a messy room and will force them to write clean consistent code with the rest of the development team. They aren't a silver bullet, and messy solutions can still crop up, but linters take care of most of the inconsistent and formatting errors that can develop in a code base. Good developers love them - it keeps the entire team consistent in their code structure.
@@ -143,11 +139,13 @@ You can always run lint-janitor on the command line using npx or if it is instal
 
 **lint-janitor** [options]
 
-| Option    | Alias | Description                  | Type    |
-| --------- | ----- | ---------------------------- | ------- |
-| --version |       | Show version number          | boolean |
-| --config  | -c    | Optional config file to use. | string  |
-| --help    |       | Show help                    | boolean |
+```json
+[
+  { "option": "--version", "description": "Show version number", "type": "boolean" }
+  { "option": "--config", "alias": "-c", "description": "Optional config file to use", "type": "string" },
+  { "option": "--help", "description": "Show help", "type": "boolean" }
+]
+```
 
 ## Linters
 
@@ -300,7 +298,7 @@ A. Possibly, but whether or not Lint Janitor will bother at the moment depends o
 1. Does the linter support shared configuration to not reinvent the wheel everywhere? Does Lint Janitor have to bridge that gap?
 1. Is the linter in question a node linter that has its API exported and can be integrated into a node application? **Important!**
 
-If you answered No to the last question, then the answer is No. Lint Janitor does not invoke external command lines of linters and instead calls into their node API directly. This is how Lint Janitor succeeds in not having you worry about what tools to install and what versions; it uses transitive dependencies.
+If you answered No to the last question, then the answer is No. Lint Janitor does not invoke external command lines of linters and instead calls into their node API directly. This is how Lint Janitor succeeds in not having you worry about what tools to install and what versions to use; it uses transitive dependencies.
 
 If the last question is a Yes, then it becomes a question of, is it worth it? That'll need to be prioritized. For the most part, using [Prettier](https://prettier.io/) takes care of almost all linting issues so you may not need more than what is available here. If you need the mother of all linters, there is the heavy [Mega Linter](https://github.com/nvuillam/mega-linter) which aggregates every linter in existence. Very cool, but a bit overkill for the solution we are trying to solve with Lint Janitor.
 
