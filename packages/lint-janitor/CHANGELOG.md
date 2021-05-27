@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [10.1.3](https://github.com/zthun/janitor/compare/v10.1.2...v10.1.3) (2021-05-27)
+
+
+### Bug Fixes
+
+* updated the readme to be more mobile and browser friendly ([4294212](https://github.com/zthun/janitor/commit/4294212d09e597d962cd4e07a97a5972375c9080))
+
+
+
 ### [10.1.2](https://github.com/zthun/janitor/compare/v10.1.1...v10.1.2) (2021-05-27)
 
 **Note:** Version bump only for package @zthun/lint-janitor
