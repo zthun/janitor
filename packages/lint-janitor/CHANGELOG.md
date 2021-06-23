@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [10.2.0](https://github.com/zthun/janitor/compare/v10.1.3...v10.2.0) (2021-06-23)
+
+
+### Features
+
+* update html hint to 0.15 ([b9c03e9](https://github.com/zthun/janitor/commit/b9c03e96e59644cf89e584d062e5c963b74b7fe3))
+
+
+
 ### [10.1.3](https://github.com/zthun/janitor/compare/v10.1.2...v10.1.3) (2021-05-27)
 
 
