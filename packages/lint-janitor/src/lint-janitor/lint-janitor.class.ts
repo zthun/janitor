@@ -25,22 +25,22 @@ export class ZLintJanitor {
   /**
    * The linter for js files.
    */
-  public esLint: IZLinter = new ZLinterReport(new ZLinterEs(this._logger), this._logger, 'es');
+  public esLint: IZLinter;
 
   /**
    * The linter for cspell.  Useful for multiple file types.
    */
-  public spellLint: IZLinter = new ZLinterReport(new ZLinterSpelling(this._logger), this._logger, 'various');
+  public spellLint: IZLinter;
 
   /**
    * The linter for prettier formatting checks.
    */
-  public prettyLint: IZLinter = new ZLinterFile(new ZContentLinterPretty(), new ZConfigReaderPrettier(), this._logger, 'pretty');
+  public prettyLint: IZLinter;
 
   /**
    * The linter for style files.
    */
-  public styleLint: IZLinter = new ZLinterReport(new ZLinterStyle(this._logger), this._logger, 'style');
+  public styleLint: IZLinter;
 
   /**
    * The linter for html files.
@@ -48,17 +48,17 @@ export class ZLintJanitor {
    * Currently, htmlhint has no support for cosmiconfig based paths, so we're going to
    * add them here.
    */
-  public htmlHint: IZLinter = new ZLinterFile(new ZContentLinterHtml(), new ZConfigReaderCosmic('htmlhint', new ZConfigExtender()), this._logger, 'html');
+  public htmlHint: IZLinter;
 
   /**
    * The linter for json files.
    */
-  public jsonLint: IZLinter = new ZLinterFile(new ZContentLinterJson(), new ZConfigReaderNull(), this._logger, 'json');
+  public jsonLint: IZLinter;
 
   /**
    * The linter for yaml files.
    */
-  public yamlLint: IZLinter = new ZLinterFile(new ZContentLinterYaml(), new ZConfigReaderNull(), this._logger, 'yaml');
+  public yamlLint: IZLinter;
 
   /**
    * The linter for markdown files.
@@ -67,19 +67,29 @@ export class ZLintJanitor {
    * they just use .markdownlint.json.  We have to add support for that path, which is not
    * a cosmiconfig path.
    */
-  public markdownLint: IZLinter = new ZLinterReport(new ZLinterMarkdown(this._logger, new ZConfigReaderCosmic('markdownlint', new ZConfigExtender(), ['.markdownlint.json'])), this._logger, 'markdown');
+  public markdownLint: IZLinter;
 
   /**
    * The configuration reader.
    */
-  public config: IZConfigReader = new ZConfigReaderCosmic('lint-janitor', new ZConfigExtender());
+  public config: IZConfigReader;
 
   /**
    * Initializes a new instance of this object.
    *
    * @param _logger The logger to use when formatting output.
    */
-  public constructor(private readonly _logger: Console) {}
+  public constructor(private readonly _logger: Console) {
+    this.esLint = new ZLinterReport(new ZLinterEs(this._logger), this._logger, 'es');
+    this.spellLint = new ZLinterReport(new ZLinterSpelling(this._logger), this._logger, 'various');
+    this.prettyLint = new ZLinterFile(new ZContentLinterPretty(), new ZConfigReaderPrettier(), this._logger, 'pretty');
+    this.styleLint = new ZLinterReport(new ZLinterStyle(this._logger), this._logger, 'style');
+    this.htmlHint = new ZLinterFile(new ZContentLinterHtml(), new ZConfigReaderCosmic('htmlhint', new ZConfigExtender()), this._logger, 'html');
+    this.jsonLint = new ZLinterFile(new ZContentLinterJson(), new ZConfigReaderNull(), this._logger, 'json');
+    this.yamlLint = new ZLinterFile(new ZContentLinterYaml(), new ZConfigReaderNull(), this._logger, 'yaml');
+    this.markdownLint = new ZLinterReport(new ZLinterMarkdown(this._logger, new ZConfigReaderCosmic('markdownlint', new ZConfigExtender(), ['.markdownlint.json'])), this._logger, 'markdown');
+    this.config = new ZConfigReaderCosmic('lint-janitor', new ZConfigExtender());
+  }
 
   /**
    * Runs the lint given the required options.

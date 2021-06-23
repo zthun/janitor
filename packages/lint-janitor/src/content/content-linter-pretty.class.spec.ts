@@ -21,11 +21,11 @@ describe('ZContentLinterPretty', () => {
 
     options = {};
 
-    ((getFileInfo as unknown) as jest.Mock).mockClear();
-    ((getFileInfo as unknown) as jest.Mock).mockResolvedValue(info);
+    (getFileInfo as unknown as jest.Mock).mockClear();
+    (getFileInfo as unknown as jest.Mock).mockResolvedValue(info);
 
-    ((check as unknown) as jest.Mock).mockClear();
-    ((check as unknown) as jest.Mock).mockReturnValue(true);
+    (check as unknown as jest.Mock).mockClear();
+    (check as unknown as jest.Mock).mockReturnValue(true);
   });
 
   function createTestTarget() {
@@ -43,7 +43,7 @@ describe('ZContentLinterPretty', () => {
   it('returns a rejected promise if the content is unformatted.', async () => {
     // Arrange
     const target = createTestTarget();
-    ((check as unknown) as jest.Mock).mockReturnValue(false);
+    (check as unknown as jest.Mock).mockReturnValue(false);
     // Act
     // Assert
     await expect(target.lint(content, contentPath, options)).rejects.toBeTruthy();

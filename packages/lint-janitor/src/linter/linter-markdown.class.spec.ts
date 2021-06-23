@@ -37,8 +37,8 @@ describe('ZLinterMarkdown', () => {
     reader = {} as any;
     reader.read = jest.fn(() => Promise.resolve({}));
 
-    ((sync as unknown) as jest.Mock).mockReturnValue([changelog, readme]);
-    ((markdownlint as unknown) as jest.Mock).mockImplementation((i, cb) => cb(null, results));
+    (sync as unknown as jest.Mock).mockReturnValue([changelog, readme]);
+    (markdownlint as unknown as jest.Mock).mockImplementation((i, cb) => cb(null, results));
   });
 
   describe('Success', () => {

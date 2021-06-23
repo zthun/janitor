@@ -16,8 +16,8 @@ describe('ZConfigReaderPrettier', () => {
       singleQuote: true
     };
 
-    ((resolveConfig as unknown) as jest.Mock).mockClear();
-    ((resolveConfig as unknown) as jest.Mock).mockResolvedValue(options);
+    (resolveConfig as unknown as jest.Mock).mockClear();
+    (resolveConfig as unknown as jest.Mock).mockResolvedValue(options);
   });
 
   it('reads the supplied config file if passed.', async () => {
@@ -51,7 +51,7 @@ describe('ZConfigReaderPrettier', () => {
 
   it('returns a rejected promise if no options can be loaded.', async () => {
     // Arrange
-    ((resolveConfig as unknown) as jest.Mock).mockResolvedValue(null);
+    (resolveConfig as unknown as jest.Mock).mockResolvedValue(null);
     const target = createTestTarget();
     // Act
     // Assert

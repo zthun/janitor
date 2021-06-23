@@ -36,7 +36,7 @@ describe('ZLinterFile', () => {
     files = ['/files/log-a.json', '/files/lob-b.json', '/files/log-c.json'];
 
     (sync as jest.Mock).mockImplementation(() => files);
-    ((readFile as unknown) as jest.Mock).mockImplementation((file, op, cb) => cb(null, 'File content'));
+    (readFile as unknown as jest.Mock).mockImplementation((file, op, cb) => cb(null, 'File content'));
   });
 
   function createTestTarget() {
@@ -66,7 +66,7 @@ describe('ZLinterFile', () => {
     it('returns false if any file cannot be read.', async () => {
       // Arrange
       const target = createTestTarget();
-      ((readFile as unknown) as jest.Mock).mockImplementation((p, o, cb) => cb('Cannot read', null));
+      (readFile as unknown as jest.Mock).mockImplementation((p, o, cb) => cb('Cannot read', null));
       // Act
       const actual = await target.lint(files);
       // Assert
