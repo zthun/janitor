@@ -34,7 +34,7 @@
     "cspell": "^5.3.10",
     "eslint": "^7.4.0",
     "glob": "^7.1.6",
-    "htmlhint": "~0.14.1",
+    "htmlhint": "~0.15.1",
     "js-yaml": "^4.0.0",
     "lodash": "^4.17.19",
     "markdownlint": "~0.23.0",
