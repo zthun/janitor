@@ -10,10 +10,12 @@
       "type": "pwa-node"
     },
     {
-      "type": "node",
-      "request": "attach",
-      "name": "Attach by Process ID",
-      "processId": "${command:PickProcess}"
+      "name": "Run Lint Janitor Extension",
+      "type": "extensionHost",
+      "request": "launch",
+      "args": ["--extensionDevelopmentPath=${workspaceFolder}/packages/vscode-lint-janitor"],
+      "outFiles": ["${workspaceFolder}/packages/vscode-lint-janitor/dist/**/*.js"],
+      "preLaunchTask": "tsc: build - packages/vscode-lint-janitor/tsconfig.dev.json"
     }
   ]
 }
