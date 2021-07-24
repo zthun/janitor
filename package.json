@@ -9,7 +9,7 @@
   },
   "private": true,
   "scripts": {
-    "clean": "rimraf packages/**/dist reports packages/**/*.tgz",
+    "clean": "rimraf packages/**/dist packages/**/docs reports packages/**/*.tgz",
     "test": "jest --coverage --runInBand",
     "lint": "ts-node packages/lint-janitor/src/cli.ts",
     "build": "lerna run build",
