@@ -14,7 +14,7 @@
     "directory": "packages/markdownlint-config"
   },
   "peerDependencies": {
-    "markdownlint": "~0.23.0"
+    "markdownlint": "~0.24.0"
   },
   "publishConfig": {
     "access": "public"
