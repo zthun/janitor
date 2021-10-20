@@ -19,9 +19,7 @@
   },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "bin": {
-    "lint-janitor": "dist/cli.js"
-  },
+  "bin": "dist/cli.js",
   "scripts": {
     "build": "tsc -p tsconfig.bin.json && typedoc",
     "start": "node --inspect-brk -r ts-node/register src/cli.ts"
