@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [11.0.0](https://github.com/zthun/janitor/compare/v10.2.0...v11.0.0) (2021-10-20)
+
+
+### ⚠ BREAKING CHANGES
+
+* updated cspell to the latest version
+* updated to markdownlint 0.24
+* updated to latest linters
+* updated to eslint 8
+
+### Features
+
+* added vscode extension skeleton ([bcda403](https://github.com/zthun/janitor/commit/bcda4037679187a62253bb8759d598c0b682df31))
+* updated cspell to the latest version ([ee1a534](https://github.com/zthun/janitor/commit/ee1a53447787137c3bf2cf87d4476d96ccfecea8))
+* updated to eslint 8 ([bc261c8](https://github.com/zthun/janitor/commit/bc261c8b71585909771a0c368990e22b963294d6))
+* updated to latest linters ([dab8404](https://github.com/zthun/janitor/commit/dab8404554dd111e8577b8a66628fe3d0267281c))
+* updated to markdownlint 0.24 ([049d5a6](https://github.com/zthun/janitor/commit/049d5a6c5e0cad5a70b225830edc2120b27e4c0d))
+
+
+### Bug Fixes
+
+* typedoc documentation should now properly generate ([d9bc7cc](https://github.com/zthun/janitor/commit/d9bc7ccade532025e14bb02c98adab75b8809851))
+
+
+
 ## [10.2.0](https://github.com/zthun/janitor/compare/v10.1.3...v10.2.0) (2021-06-23)
 
 

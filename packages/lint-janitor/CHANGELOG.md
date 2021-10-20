@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [11.0.0](https://github.com/zthun/janitor/compare/v10.2.0...v11.0.0) (2021-10-20)
+
+
+### ⚠ BREAKING CHANGES
+
+* updated cspell to the latest version
+* updated to latest linters
+
+### Features
+
+* updated cspell to the latest version ([ee1a534](https://github.com/zthun/janitor/commit/ee1a53447787137c3bf2cf87d4476d96ccfecea8))
+* updated to latest linters ([dab8404](https://github.com/zthun/janitor/commit/dab8404554dd111e8577b8a66628fe3d0267281c))
+
+
+
 ## [10.2.0](https://github.com/zthun/janitor/compare/v10.1.3...v10.2.0) (2021-06-23)
 
 
