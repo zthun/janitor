@@ -31,7 +31,7 @@
     "acorn": "^8.0.5",
     "chalk": "^4.1.0",
     "cosmiconfig": "^7.0.0",
-    "cspell": "^5.3.10",
+    "cspell": "^5.12.3",
     "eslint": "^8.0.1",
     "glob": "^7.1.6",
     "htmlhint": "~0.15.1",

@@ -1,5 +1,5 @@
 /* eslint-disable require-jsdoc */
-import { Emitters, Issue, lint, RunResult } from 'cspell';
+import { CSpellReporter, Issue, lint, RunResult } from 'cspell';
 import { ZLinterSpelling } from './linter-spelling.class';
 
 jest.mock('cspell');
@@ -70,7 +70,6 @@ describe('ZLinterSpelling', () => {
     beforeEach(() => {
       issue = {
         text: 'foo',
-        doc: null,
         line: null,
         offset: 5,
         context: null,
@@ -79,7 +78,7 @@ describe('ZLinterSpelling', () => {
         uri: '/path/to/file/with/issue'
       };
 
-      (lint as jest.Mock).mockImplementation((_, __, e: Emitters) => {
+      (lint as jest.Mock).mockImplementation((_, __, e: CSpellReporter) => {
         e.issue(issue);
         return Promise.resolve(lintResult);
       });

@@ -1,6 +1,6 @@
 /* eslint-disable require-jsdoc */
 import chalk from 'chalk';
-import { CSpellApplicationOptions, Emitters, Issue, lint } from 'cspell';
+import { CSpellApplicationOptions, CSpellReporter, Issue, lint } from 'cspell';
 import { noop } from 'lodash';
 import { IZLinter } from './linter.interface';
 
@@ -36,16 +36,17 @@ export class ZLinterSpelling implements IZLinter {
     const debug = noop;
     const error = noop;
     const progress = noop;
+    const result = noop;
 
     const issue = (issue: Issue) => {
       const position = `${issue.row}:${issue.col}`;
       this._logger.log(`${chalk.green(issue.uri)}:${chalk.yellow(position)} - Unknown word (${chalk.red(issue.text)})`);
     };
 
-    const emitters: Emitters = { info, debug, error, progress, issue };
-    const result = await lint(src, options, emitters);
+    const emitters: CSpellReporter = { info, debug, error, progress, issue, result };
+    const runResult = await lint(src, options, emitters);
 
-    if (result.errors > 0 || result.issues > 0) {
+    if (runResult.errors > 0 || runResult.issues > 0) {
       return false;
     }
 
