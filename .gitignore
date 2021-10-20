@@ -1,8 +1,17 @@
-# Output files
+# Generated Folders/Files
 dist
 docs
 reports
-node_modules
 *.tgz
-.DS_Store
 *.log
+
+# Node Modules
+node_modules
+
+# OS Turds
+.DS_Store
+
+# Yarn Turds
+.yarn/cache
+.yarn/unplugged
+.yarn/*.gz

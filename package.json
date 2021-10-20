@@ -9,7 +9,7 @@
   },
   "private": true,
   "scripts": {
-    "clean": "rimraf packages/**/dist packages/**/docs reports packages/**/*.tgz",
+    "clean": "rimraf 'packages/**/dist' 'packages/**/docs' 'reports' 'packages/**/*.tgz'",
     "test": "jest --coverage --runInBand",
     "lint": "ts-node packages/lint-janitor/src/cli.ts",
     "build": "lerna run build",
@@ -47,6 +47,7 @@
     "lodash": "^4.17.19",
     "markdownlint": "^0.24.0",
     "prettier": "^2.2.1",
+    "rimraf": "^3.0.2",
     "stylelint": "^13.6.1",
     "stylelint-config-standard": "^22.0.0",
     "ts-jest": "^27.0.3",
