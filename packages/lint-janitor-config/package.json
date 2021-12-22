@@ -1,0 +1,35 @@
+{
+  "name": "@zthun/lint-janitor-config",
+  "version": "11.0.0",
+  "description": "A shared configuration for lint janitor for @zthun scoped projects.",
+  "keywords": [
+    "markdownlint",
+    "markdownlint-config"
+  ],
+  "main": "index.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zthun/janitor",
+    "directory": "packages/markdownlint-config"
+  },
+  "dependencies": {
+    "@zthun/eslint-config": "^11.0.0",
+    "@zthun/htmlhint-config": "^11.0.0",
+    "@zthun/markdownlint-config": "^11.0.0",
+    "@zthun/prettier-config": "^11.0.0",
+    "@zthun/stylelint-config": "^11.0.0",
+    "eslint": "^8.5.0",
+    "htmlhint": "^1.0.0",
+    "markdownlint": "~0.24.0",
+    "prettier": "^2.2.0",
+    "stylelint": "^14.2.0"
+  },
+  "peerDependencies": {
+    "lint-janitor": "^11.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Anthony Bonta"
+}

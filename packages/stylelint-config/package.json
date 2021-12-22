@@ -13,9 +13,11 @@
     "url": "https://github.com/zthun/janitor",
     "directory": "packages/stylelint-config"
   },
+  "dependencies": {
+    "stylelint-config-standard": "^24.0.0"
+  },
   "peerDependencies": {
-    "stylelint": "^13.6.1",
-    "stylelint-config-standard": "^22.0.0"
+    "stylelint": "^14.2.0"
   },
   "publishConfig": {
     "access": "public"
