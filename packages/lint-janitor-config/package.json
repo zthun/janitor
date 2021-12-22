@@ -3,15 +3,21 @@
   "version": "11.1.0",
   "description": "A shared configuration for lint janitor for @zthun scoped projects.",
   "keywords": [
+    "eslint",
+    "eslint-config",
+    "htmlhint",
+    "htmlhint-config",
     "markdownlint",
-    "markdownlint-config"
+    "markdownlint-config",
+    "prettier",
+    "prettier-config"
   ],
   "main": "index.js",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/zthun/janitor",
-    "directory": "packages/markdownlint-config"
+    "directory": "packages/lint-janitor-config"
   },
   "dependencies": {
     "@zthun/eslint-config": "^11.1.0",
@@ -26,7 +32,7 @@
     "stylelint": "^14.2.0"
   },
   "peerDependencies": {
-    "lint-janitor": "^11.0.0"
+    "@zthun/lint-janitor": "^11.0.0"
   },
   "publishConfig": {
     "access": "public"
