@@ -2,7 +2,7 @@
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "baseUrl": "packages",
-    "target": "ESNext",
+    "target": "esnext",
     "paths": {}
   },
   "include": ["**/*.ts"]

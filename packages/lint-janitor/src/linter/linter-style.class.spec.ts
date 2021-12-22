@@ -21,6 +21,8 @@ describe('ZLinterStyle', () => {
     lintResult = {
       errored: false,
       output: '',
+      cwd: '',
+      reportedDisables: null,
       results: []
     };
 
@@ -90,7 +92,8 @@ describe('ZLinterStyle', () => {
           }
         ],
         deprecations: [],
-        invalidOptionWarnings: []
+        invalidOptionWarnings: [],
+        parseErrors: []
       };
 
       lintResult.errored = true;
