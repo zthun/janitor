@@ -14,7 +14,7 @@
     "directory": "packages/htmlhint-config"
   },
   "peerDependencies": {
-    "htmlhint": "~0.15.1"
+    "htmlhint": "^1.0.0"
   },
   "publishConfig": {
     "access": "public"
