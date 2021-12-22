@@ -65,5 +65,6 @@
     "packages/prettier-config",
     "packages/lint-janitor",
     "packages/vscode-lint-janitor"
-  ]
+  ],
+  "packageManager": "yarn@3.1.1"
 }
