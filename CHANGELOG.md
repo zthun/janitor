@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [11.1.0](https://github.com/zthun/janitor/compare/v11.0.0...v11.1.0) (2021-12-22)
+
+
+### Features
+
+* added lint-janitor config ([51a8fc0](https://github.com/zthun/janitor/commit/51a8fc065e40317b04cda045998ebf19898ca73d))
+* update htmlhint to 1.0.0 ([a5bee76](https://github.com/zthun/janitor/commit/a5bee764a945e0ea0c62b4e81ed9673e4dca6336))
+
+
+
 ## [11.0.0](https://github.com/zthun/janitor/compare/v10.2.0...v11.0.0) (2021-10-20)
 
 
