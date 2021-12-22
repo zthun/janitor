@@ -2349,7 +2349,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/glob@npm:^7.1.3":
+"@types/glob@npm:^7.2.0":
   version: 7.2.0
   resolution: "@types/glob@npm:7.2.0"
   dependencies:
@@ -2368,7 +2368,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/htmlhint@npm:^0.9.1":
+"@types/htmlhint@npm:^0.9.3":
   version: 0.9.3
   resolution: "@types/htmlhint@npm:0.9.3"
   checksum: e50887244feaf3d2617e1604181748bec17fc185637ed25cd7899f0bb41d7c997226b513f5181e20c6330e5b57eaa2752268ca3748b04e8d13cc86a80005751d
@@ -2400,7 +2400,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jest@npm:^27.0.2":
+"@types/jest@npm:^27.0.3":
   version: 27.0.3
   resolution: "@types/jest@npm:27.0.3"
   dependencies:
@@ -2410,7 +2410,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/js-yaml@npm:^4.0.0":
+"@types/js-yaml@npm:^4.0.5":
   version: 4.0.5
   resolution: "@types/js-yaml@npm:4.0.5"
   checksum: 7dcac8c50fec31643cc9d6444b5503239a861414cdfaa7ae9a38bc22597c4d850c4b8cec3d82d73b3fbca408348ce223b0408d598b32e094470dfffc6d486b4d
@@ -2424,7 +2424,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/lodash@npm:^4.14.157":
+"@types/lodash@npm:^4.14.178":
   version: 4.14.178
   resolution: "@types/lodash@npm:4.14.178"
   checksum: a69a04a60bfc5257c3130a554b4efa0c383f0141b7b3db8ab7cf07ad2a46ea085fce66d0242da41da7e5647b133d5dfb2c15add9cbed8d7fef955e4a1e5b3128
@@ -2523,7 +2523,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/vscode@npm:^1.58.1":
+"@types/vscode@npm:^1.63.1":
   version: 1.63.1
   resolution: "@types/vscode@npm:1.63.1"
   checksum: 9b40bf77497358d9d4cd646aab39045de9cf7f508d6c92116c6e766f8db38b87b313b3e9e48ecb41d4d81f5b531aa4b257de624eea8bf117b2f28f6b8332394b
@@ -2546,7 +2546,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/yargs@npm:^17.0.0":
+"@types/yargs@npm:^17.0.7":
   version: 17.0.7
   resolution: "@types/yargs@npm:17.0.7"
   dependencies:
@@ -2555,7 +2555,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin@npm:^5.1.0":
+"@typescript-eslint/eslint-plugin@npm:^5.8.0":
   version: 5.8.0
   resolution: "@typescript-eslint/eslint-plugin@npm:5.8.0"
   dependencies:
@@ -2593,7 +2593,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:^5.1.0":
+"@typescript-eslint/parser@npm:^5.8.0":
   version: 5.8.0
   resolution: "@typescript-eslint/parser@npm:5.8.0"
   dependencies:
@@ -2676,19 +2676,19 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zthun/lint-janitor@workspace:packages/lint-janitor"
   dependencies:
-    acorn: ^8.0.5
-    chalk: ^4.1.0
-    cosmiconfig: ^7.0.0
-    cspell: ^5.12.3
-    eslint: ^8.0.1
-    glob: ^7.1.6
-    htmlhint: ~0.15.1
-    js-yaml: ^4.0.0
-    lodash: ^4.17.19
+    acorn: ^8.6.0
+    chalk: ^4.1.2
+    cosmiconfig: ^7.0.1
+    cspell: ^5.13.4
+    eslint: ^8.5.0
+    glob: ^7.2.0
+    htmlhint: ~0.15.2
+    js-yaml: ^4.1.0
+    lodash: ^4.17.21
     markdownlint: ^0.24.0
-    prettier: ^2.2.1
-    stylelint: ^13.6.1
-    yargs: ^17.0.1
+    prettier: ^2.5.1
+    stylelint: ^13.13.1
+    yargs: ^17.3.0
   bin:
     lint-janitor: dist/cli.js
   languageName: unknown
@@ -2701,40 +2701,40 @@ __metadata:
     "@commitlint/cli": ^15.0.0
     "@commitlint/config-conventional": ^15.0.0
     "@types/eslint": ^7.2.0
-    "@types/glob": ^7.1.3
-    "@types/htmlhint": ^0.9.1
-    "@types/jest": ^27.0.2
-    "@types/js-yaml": ^4.0.0
-    "@types/lodash": ^4.14.157
+    "@types/glob": ^7.2.0
+    "@types/htmlhint": ^0.9.3
+    "@types/jest": ^27.0.3
+    "@types/js-yaml": ^4.0.5
+    "@types/lodash": ^4.14.178
     "@types/node": ^16.4.2
     "@types/stylelint": ^13.13.0
-    "@types/vscode": ^1.58.1
-    "@types/yargs": ^17.0.0
-    "@typescript-eslint/eslint-plugin": ^5.1.0
-    "@typescript-eslint/parser": ^5.1.0
-    acorn: ^8.0.5
-    chalk: ^4.1.0
-    cosmiconfig: ^7.0.0
-    cspell: ^5.3.10
-    eslint: ^8.0.1
-    glob: ^7.1.6
-    htmlhint: ^0.15.1
-    husky: ^7.0.1
-    jest: ^27.0.5
-    js-yaml: ^4.0.0
+    "@types/vscode": ^1.63.1
+    "@types/yargs": ^17.0.7
+    "@typescript-eslint/eslint-plugin": ^5.8.0
+    "@typescript-eslint/parser": ^5.8.0
+    acorn: ^8.6.0
+    chalk: ^4.1.2
+    cosmiconfig: ^7.0.1
+    cspell: ^5.13.4
+    eslint: ^8.5.0
+    glob: ^7.2.0
+    htmlhint: ^0.15.2
+    husky: ^7.0.4
+    jest: ^27.4.5
+    js-yaml: ^4.1.0
     lerna: ^4.0.0
-    lodash: ^4.17.19
+    lodash: ^4.17.21
     markdownlint: ^0.24.0
-    prettier: ^2.2.1
+    prettier: ^2.5.1
     rimraf: ^3.0.2
-    stylelint: ^13.6.1
+    stylelint: ^13.13.1
     stylelint-config-standard: ^22.0.0
-    ts-jest: ^27.0.3
-    ts-node: ^10.0.0
-    typedoc: ^0.22.6
-    typescript: ^4.1.5
+    ts-jest: ^27.1.2
+    ts-node: ^10.4.0
+    typedoc: ^0.22.10
+    typescript: ^4.5.4
     vscode-test: ^1.6.1
-    yargs: ^17.0.1
+    yargs: ^17.3.0
   languageName: unknown
   linkType: soft
 
@@ -2839,7 +2839,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"acorn@npm:^8.0.5, acorn@npm:^8.2.4, acorn@npm:^8.4.1, acorn@npm:^8.6.0":
+"acorn@npm:^8.2.4, acorn@npm:^8.4.1, acorn@npm:^8.6.0":
   version: 8.6.0
   resolution: "acorn@npm:8.6.0"
   bin:
@@ -4070,7 +4070,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cspell@npm:^5.12.3, cspell@npm:^5.3.10":
+"cspell@npm:^5.13.4":
   version: 5.13.4
   resolution: "cspell@npm:5.13.4"
   dependencies:
@@ -4660,7 +4660,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^8.0.1":
+"eslint@npm:^8.5.0":
   version: 8.5.0
   resolution: "eslint@npm:8.5.0"
   dependencies:
@@ -5596,7 +5596,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"htmlhint@npm:^0.15.1, htmlhint@npm:~0.15.1":
+"htmlhint@npm:^0.15.2, htmlhint@npm:~0.15.2":
   version: 0.15.2
   resolution: "htmlhint@npm:0.15.2"
   dependencies:
@@ -5684,7 +5684,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"husky@npm:^7.0.1":
+"husky@npm:^7.0.4":
   version: 7.0.4
   resolution: "husky@npm:7.0.4"
   bin:
@@ -6757,7 +6757,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest@npm:^27.0.5":
+"jest@npm:^27.4.5":
   version: 27.4.5
   resolution: "jest@npm:27.4.5"
   dependencies:
@@ -6794,7 +6794,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"js-yaml@npm:^4.0.0, js-yaml@npm:^4.1.0":
+"js-yaml@npm:^4.1.0":
   version: 4.1.0
   resolution: "js-yaml@npm:4.1.0"
   dependencies:
@@ -8673,7 +8673,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.2.1":
+"prettier@npm:^2.5.1":
   version: 2.5.1
   resolution: "prettier@npm:2.5.1"
   bin:
@@ -9748,7 +9748,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stylelint@npm:^13.6.1":
+"stylelint@npm:^13.13.1":
   version: 13.13.1
   resolution: "stylelint@npm:13.13.1"
   dependencies:
@@ -10086,7 +10086,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-jest@npm:^27.0.3":
+"ts-jest@npm:^27.1.2":
   version: 27.1.2
   resolution: "ts-jest@npm:27.1.2"
   dependencies:
@@ -10120,7 +10120,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-node@npm:^10.0.0":
+"ts-node@npm:^10.4.0":
   version: 10.4.0
   resolution: "ts-node@npm:10.4.0"
   dependencies:
@@ -10301,7 +10301,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typedoc@npm:^0.22.6":
+"typedoc@npm:^0.22.10":
   version: 0.22.10
   resolution: "typedoc@npm:0.22.10"
   dependencies:
@@ -10318,7 +10318,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^4.1.5, typescript@npm:^4.4.3":
+"typescript@npm:^4.4.3, typescript@npm:^4.5.4":
   version: 4.5.4
   resolution: "typescript@npm:4.5.4"
   bin:
@@ -10328,7 +10328,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.1.5#~builtin<compat/typescript>, typescript@patch:typescript@^4.4.3#~builtin<compat/typescript>":
+"typescript@patch:typescript@^4.4.3#~builtin<compat/typescript>, typescript@patch:typescript@^4.5.4#~builtin<compat/typescript>":
   version: 4.5.4
   resolution: "typescript@patch:typescript@npm%3A4.5.4#~builtin<compat/typescript>::version=4.5.4&hash=493e53"
   bin:
@@ -10975,7 +10975,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yargs@npm:^17.0.0, yargs@npm:^17.0.1":
+"yargs@npm:^17.0.0, yargs@npm:^17.3.0":
   version: 17.3.0
   resolution: "yargs@npm:17.3.0"
   dependencies:
