@@ -21,7 +21,7 @@ describe('ZLinterEs', () => {
   }
 
   beforeEach(async () => {
-    config = '@zthun/eslint-config';
+    config = '@zthun/lint-janitor-config/eslint';
     files = ['src/**/*.js'];
     successA = {
       filePath: 'src/index.js',
