@@ -30,6 +30,7 @@ describe('ZLinterEs', () => {
       warningCount: 0,
       fixableErrorCount: 0,
       fixableWarningCount: 0,
+      fatalErrorCount: 0,
       usedDeprecatedRules: []
     };
 
@@ -40,6 +41,7 @@ describe('ZLinterEs', () => {
       warningCount: 0,
       fixableErrorCount: 0,
       fixableWarningCount: 0,
+      fatalErrorCount: 0,
       usedDeprecatedRules: []
     };
 
@@ -60,6 +62,7 @@ describe('ZLinterEs', () => {
       warningCount: 0,
       fixableErrorCount: 0,
       fixableWarningCount: 0,
+      fatalErrorCount: 0,
       usedDeprecatedRules: []
     };
 
