@@ -2420,16 +2420,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node-fetch@npm:^2.5.12":
-  version: 2.5.12
-  resolution: "@types/node-fetch@npm:2.5.12"
-  dependencies:
-    "@types/node": "*"
-    form-data: ^3.0.0
-  checksum: ad63c85ba6a9477b8e057ec8682257738130d98e8ece4e31141789bd99df9d9147985cc8bc0cb5c8983ed5aa6bb95d46df23d1e055f4ad5cf8b82fc69cf626c7
-  languageName: node
-  linkType: hard
-
 "@types/node@npm:*, @types/node@npm:^17.0.2":
   version: 17.0.2
   resolution: "@types/node@npm:17.0.2"
@@ -2597,20 +2587,41 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zthun/eslint-config@workspace:packages/eslint-config":
+"@zthun/eslint-config@^11.0.0, @zthun/eslint-config@workspace:packages/eslint-config":
   version: 0.0.0-use.local
   resolution: "@zthun/eslint-config@workspace:packages/eslint-config"
+  dependencies:
+    "@typescript-eslint/eslint-plugin": ^5.8.0
+    "@typescript-eslint/parser": ^5.8.0
   peerDependencies:
-    "@typescript-eslint/eslint-plugin": ^5.0.0
-    eslint: ^8.0.0
+    eslint: ^8.5.0
   languageName: unknown
   linkType: soft
 
-"@zthun/htmlhint-config@workspace:packages/htmlhint-config":
+"@zthun/htmlhint-config@^11.0.0, @zthun/htmlhint-config@workspace:packages/htmlhint-config":
   version: 0.0.0-use.local
   resolution: "@zthun/htmlhint-config@workspace:packages/htmlhint-config"
   peerDependencies:
-    htmlhint: ~0.15.1
+    htmlhint: ^1.0.0
+  languageName: unknown
+  linkType: soft
+
+"@zthun/lint-janitor-config@workspace:packages/lint-janitor-config":
+  version: 0.0.0-use.local
+  resolution: "@zthun/lint-janitor-config@workspace:packages/lint-janitor-config"
+  dependencies:
+    "@zthun/eslint-config": ^11.0.0
+    "@zthun/htmlhint-config": ^11.0.0
+    "@zthun/markdownlint-config": ^11.0.0
+    "@zthun/prettier-config": ^11.0.0
+    "@zthun/stylelint-config": ^11.0.0
+    eslint: ^8.5.0
+    htmlhint: ^1.0.0
+    markdownlint: ~0.24.0
+    prettier: ^2.2.0
+    stylelint: ^14.2.0
+  peerDependencies:
+    lint-janitor: ^11.0.0
   languageName: unknown
   linkType: soft
 
@@ -2624,7 +2635,7 @@ __metadata:
     cspell: ^5.13.4
     eslint: ^8.5.0
     glob: ^7.2.0
-    htmlhint: ~0.15.2
+    htmlhint: ^1.0.0
     js-yaml: ^4.1.0
     lodash: ^4.17.21
     markdownlint: ^0.24.0
@@ -2651,13 +2662,10 @@ __metadata:
     "@types/node": ^17.0.2
     "@types/vscode": ^1.63.1
     "@types/yargs": ^17.0.7
-    "@typescript-eslint/eslint-plugin": ^5.8.0
-    "@typescript-eslint/parser": ^5.8.0
     husky: ^7.0.4
     jest: ^27.4.5
     lerna: ^4.0.0
     rimraf: ^3.0.2
-    stylelint-config-standard: ^24.0.0
     ts-jest: ^27.1.2
     ts-node: ^10.4.0
     typedoc: ^0.22.10
@@ -2666,7 +2674,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zthun/markdownlint-config@workspace:packages/markdownlint-config":
+"@zthun/markdownlint-config@^11.0.0, @zthun/markdownlint-config@workspace:packages/markdownlint-config":
   version: 0.0.0-use.local
   resolution: "@zthun/markdownlint-config@workspace:packages/markdownlint-config"
   peerDependencies:
@@ -2674,7 +2682,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zthun/prettier-config@workspace:packages/prettier-config":
+"@zthun/prettier-config@^11.0.0, @zthun/prettier-config@workspace:packages/prettier-config":
   version: 0.0.0-use.local
   resolution: "@zthun/prettier-config@workspace:packages/prettier-config"
   peerDependencies:
@@ -2682,12 +2690,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zthun/stylelint-config@workspace:packages/stylelint-config":
+"@zthun/stylelint-config@^11.0.0, @zthun/stylelint-config@workspace:packages/stylelint-config":
   version: 0.0.0-use.local
   resolution: "@zthun/stylelint-config@workspace:packages/stylelint-config"
+  dependencies:
+    stylelint-config-standard: ^24.0.0
   peerDependencies:
-    stylelint: ^13.6.1
-    stylelint-config-standard: ^22.0.0
+    stylelint: ^14.2.0
   languageName: unknown
   linkType: soft
 
@@ -3031,10 +3040,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"async@npm:3.2.0":
-  version: 3.2.0
-  resolution: "async@npm:3.2.0"
-  checksum: 6739fae769e6c9f76b272558f118ef041d45c979c573a8fe93f8cfbc32eb9c92da032e9effe6bbcc9b1131292cde6c4a9e61a442894aa06a262addd8dd3adda1
+"async@npm:3.2.2":
+  version: 3.2.2
+  resolution: "async@npm:3.2.2"
+  checksum: 90712c98df0c6d0ef0190f8bee9797bf6c7035a1317c9a036b80306a8d2246396b3ee356b4540ff349e29e625fafa25d4f04e11b6ac1c5f6b4c74c803e641137
   languageName: node
   linkType: hard
 
@@ -3389,16 +3398,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chalk@npm:4.1.0":
-  version: 4.1.0
-  resolution: "chalk@npm:4.1.0"
-  dependencies:
-    ansi-styles: ^4.1.0
-    supports-color: ^7.1.0
-  checksum: 5561c7b4c063badee3e16d04bce50bd033e1be1bf4c6948639275683ffa7a1993c44639b43c22b1c505f0f813a24b1889037eb182546b48946f9fe7cdd0e7d13
-  languageName: node
-  linkType: hard
-
 "chalk@npm:^2.0.0":
   version: 2.4.2
   resolution: "chalk@npm:2.4.2"
@@ -3634,13 +3633,6 @@ __metadata:
   dependencies:
     delayed-stream: ~1.0.0
   checksum: 49fa4aeb4916567e33ea81d088f6584749fc90c7abec76fd516bf1c5aa5c79f3584b5ba3de6b86d26ddd64bae5329c4c7479343250cfe71c75bb366eae53bb7c
-  languageName: node
-  linkType: hard
-
-"commander@npm:5.1.0":
-  version: 5.1.0
-  resolution: "commander@npm:5.1.0"
-  checksum: 0b7fec1712fbcc6230fcb161d8d73b4730fa91a21dc089515489402ad78810547683f058e2a9835929c212fead1d6a6ade70db28bbb03edbc2829a9ab7d69447
   languageName: node
   linkType: hard
 
@@ -5176,20 +5168,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:7.1.7":
-  version: 7.1.7
-  resolution: "glob@npm:7.1.7"
-  dependencies:
-    fs.realpath: ^1.0.0
-    inflight: ^1.0.4
-    inherits: 2
-    minimatch: ^3.0.4
-    once: ^1.3.0
-    path-is-absolute: ^1.0.0
-  checksum: b61f48973bbdcf5159997b0874a2165db572b368b931135832599875919c237fc05c12984e38fe828e69aa8a921eb0e8a4997266211c517c9cfaae8a93988bb8
-  languageName: node
-  linkType: hard
-
 "glob@npm:^7.1.1, glob@npm:^7.1.2, glob@npm:^7.1.3, glob@npm:^7.1.4, glob@npm:^7.1.6, glob@npm:^7.2.0":
   version: 7.2.0
   resolution: "glob@npm:7.2.0"
@@ -5418,22 +5396,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"htmlhint@npm:~0.15.2":
-  version: 0.15.2
-  resolution: "htmlhint@npm:0.15.2"
+"htmlhint@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "htmlhint@npm:1.0.0"
   dependencies:
-    "@types/node-fetch": ^2.5.12
-    async: 3.2.0
-    chalk: 4.1.0
-    commander: 5.1.0
-    glob: 7.1.7
+    async: 3.2.2
+    chalk: ^4.1.2
+    commander: ^8.3.0
+    glob: ^7.2.0
     node-fetch: ^2.6.2
     parse-glob: 3.0.4
     strip-json-comments: 3.1.0
     xml: 1.0.1
   bin:
     htmlhint: bin/htmlhint
-  checksum: 3d9c0481a84382808d9954aff82a60d692bb527d585e85938c7346e4aa9aea0d2d89bec3fbf73a7678706c108f01abc1ffb7ff424d6f9dc7d42ef2adce9c3233
+  checksum: be2267bcf2ba28288009bbb056635a6146c418917a361be97349f76aad51df8b1b8c76584eba3d2099b5ace98ba978633ab551d54850281bfe80debf3be10d42
   languageName: node
   linkType: hard
 
@@ -7094,7 +7071,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"markdownlint@npm:^0.24.0":
+"markdownlint@npm:^0.24.0, markdownlint@npm:~0.24.0":
   version: 0.24.0
   resolution: "markdownlint@npm:0.24.0"
   dependencies:
@@ -8260,12 +8237,12 @@ __metadata:
   linkType: hard
 
 "postcss-selector-parser@npm:^6.0.7":
-  version: 6.0.7
-  resolution: "postcss-selector-parser@npm:6.0.7"
+  version: 6.0.8
+  resolution: "postcss-selector-parser@npm:6.0.8"
   dependencies:
     cssesc: ^3.0.0
     util-deprecate: ^1.0.2
-  checksum: 661808ad629e3f289e0d237fbe9bb13766dadd2d548ec09ae86f68118f5d98be0f25bbaf5cd88486c5416e2eefaa9f73c59c2fc98dc370872fa51b250c7d1d9c
+  checksum: 550351c8d04216106e259f7c433652aa6742dd7ddbedf7afdc313526963bb170589a6fefd1bc1fe6268a2cf9f5073d4ecb09bc7b5b4bef49edf80634300500af
   languageName: node
   linkType: hard
 
@@ -8301,7 +8278,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.5.1":
+"prettier@npm:^2.2.0, prettier@npm:^2.5.1":
   version: 2.5.1
   resolution: "prettier@npm:2.5.1"
   bin:
