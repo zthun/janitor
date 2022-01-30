@@ -35,7 +35,7 @@ describe('ZLinterReport', () => {
 
   it('lints through the child linter.', async () => {
     // Arrange
-    const src = ['file-a.js', 'file-b.js'];
+    const src = ['*.json', '**/*.json'];
     const target = createTestTarget();
     // Act
     await target.lint(src);
@@ -45,7 +45,7 @@ describe('ZLinterReport', () => {
 
   it('logs the total number of distinct files.', async () => {
     // Arrange
-    const src = ['file-a.js', 'file-b.js'];
+    const src = ['*.json', '**/*.json'];
     const target = createTestTarget();
     // Act
     await target.lint(src, config);
