@@ -6,9 +6,9 @@ This is the shared eslint configuration for @zthun scoped react based projects.
 
 ```sh
 # NPM
-npm install @zthun/eslint-react --save-dev
+npm install @zthun/eslint-react-config --save-dev
 # Yarn
-yarn add @zthun/eslint-react --dev
+yarn add @zthun/eslint-react-config --dev
 ```
 
 ## Usage
@@ -17,7 +17,7 @@ In the .eslintrc file, add the following
 
 ```json
 {
-  "extends": ["@zthun/eslint-react"]
+  "extends": ["@zthun/eslint-react-config"]
 }
 ```
 
