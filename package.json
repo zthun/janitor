@@ -44,7 +44,7 @@
   },
   "workspaces": [
     "packages/eslint-config",
-    "packages/eslint-react",
+    "packages/eslint-react-config",
     "packages/stylelint-config",
     "packages/markdownlint-config",
     "packages/htmlhint-config",

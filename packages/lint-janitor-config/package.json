@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@zthun/eslint-config": "^11.1.0",
-    "@zthun/eslint-react": "^11.1.0",
+    "@zthun/eslint-react-config": "^11.1.0",
     "@zthun/htmlhint-config": "^11.1.0",
     "@zthun/markdownlint-config": "^11.0.0",
     "@zthun/prettier-config": "^11.0.0",
