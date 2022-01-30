@@ -1,0 +1,29 @@
+{
+  "name": "@zthun/eslint-react",
+  "version": "11.1.0",
+  "description": "A shared configuration for eslint for @zthun scoped react based projects.",
+  "keywords": [
+    "eslint",
+    "eslint-config",
+    "react",
+    "eslint-react"
+  ],
+  "main": "index.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zthun/janitor",
+    "directory": "packages/eslint-react"
+  },
+  "dependencies": {
+    "@zthun/eslint-config": "11.1.0",
+    "eslint-plugin-react": "^7.28.0"
+  },
+  "peerDependencies": {
+    "eslint": "^8.5.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Anthony Bonta"
+}
