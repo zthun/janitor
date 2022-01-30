@@ -17,8 +17,7 @@ USER root
 RUN git config --global credential.helper store && \
     git config --global user.name "Circle CI" && \
     git config --global user.email "circle-ci@zthunworks.com" && \
-    git remote set-url origin https://github.com/zthun/janitor && \
-    git checkout latest
+    git remote set-url origin https://github.com/zthun/janitor
 RUN --mount=type=secret,id=GIT_CREDENTIALS,dst=/root/.git-credentials npx lerna version --conventional-commits --yes --no-push -m "chore: version [skip ci]" && \
     yarn install && \
     git add . && \
