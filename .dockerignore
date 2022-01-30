@@ -1,0 +1,17 @@
+# Generated Folders/Files
+dist
+docs
+reports
+*.tgz
+*.log
+
+# Node Modules
+node_modules
+
+# OS Turds
+.DS_Store
+
+# Yarn Turds
+.yarn/cache
+.yarn/unplugged
+.yarn/*.gz
