@@ -97,7 +97,14 @@ module.exports = {
         unnecessary: true
       }
     ],
-    'quotes': ['error', 'single'],
+    'quotes': [
+      'error',
+      'single',
+      {
+        avoidEscape: true,
+        allowTemplateLiterals: true
+      }
+    ],
     'require-jsdoc': [
       'error',
       {
