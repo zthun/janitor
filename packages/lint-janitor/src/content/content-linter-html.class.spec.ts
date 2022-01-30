@@ -1,19 +1,19 @@
 /* eslint-disable require-jsdoc */
 import { ZContentLinterHtml } from './content-linter-html.class';
-import { LintResult, RuleSet, HTMLHint } from 'htmlhint';
+import { HTMLHint } from 'htmlhint';
 
 describe('ZContentLinterHtml', () => {
   let contentPath: string;
   let content: string;
-  let options: RuleSet;
-  let resultA: LintResult;
-  let resultB: LintResult;
-  let results: LintResult[];
+  let options: any;
+  let resultA: any;
+  let resultB: any;
+  let results: any[];
   let logs: string[];
 
   beforeEach(() => {
-    resultA = {} as LintResult;
-    resultB = {} as LintResult;
+    resultA = {};
+    resultB = {};
     results = [resultA, resultB];
 
     contentPath = '/dev/test.html';

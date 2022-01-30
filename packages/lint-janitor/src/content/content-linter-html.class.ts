@@ -1,4 +1,4 @@
-import { HTMLHint, FormatOptions, RuleSet } from 'htmlhint';
+import { HTMLHint, FormatOptions } from 'htmlhint';
 import { IZContentLinter } from './content-linter.interface';
 
 /**
@@ -16,7 +16,7 @@ export class ZContentLinterHtml implements IZContentLinter {
    *
    * @returns A promise that resolves if the content is lint free, and rejects if it has lint errors.
    */
-  public lint(content: string, contentPath: string, options?: RuleSet): Promise<any> {
+  public lint(content: string, contentPath: string, options?: any): Promise<any> {
     const messages = HTMLHint.verify(content, options);
 
     if (messages.length > 0) {
