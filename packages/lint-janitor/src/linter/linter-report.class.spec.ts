@@ -6,7 +6,7 @@ import { ZLinterReport } from './linter-report.class';
 jest.mock('glob');
 
 describe('ZLinterReport', () => {
-  let files: string[];
+  let expanded: string[];
   let config: string;
   let child: IZLinter;
   let logger: Console;
@@ -20,9 +20,13 @@ describe('ZLinterReport', () => {
     child = {} as any;
     child.lint = jest.fn(() => Promise.resolve(true));
 
-    files = ['/files/log-a.json', '/files/lob-b.json', '/files/log-c.json'];
+    expanded = ['/files/log-a.json', '/files/lob-b.json', '/files/log-c.json'];
 
-    (sync as jest.Mock).mockImplementation(() => files);
+    (sync as jest.Mock).mockReturnValue(expanded);
+  });
+
+  afterEach(() => {
+    (sync as jest.Mock).mockReset();
   });
 
   function createTestTarget() {
@@ -39,14 +43,14 @@ describe('ZLinterReport', () => {
     expect(child.lint).toHaveBeenCalledWith(src, undefined, undefined);
   });
 
-  it('logs the total number of files.', async () => {
+  it('logs the total number of distinct files.', async () => {
     // Arrange
     const src = ['file-a.js', 'file-b.js'];
     const target = createTestTarget();
     // Act
     await target.lint(src, config);
     // Assert
-    expect(logger.log).toHaveBeenCalledWith(expect.stringContaining(`${files.length}`));
+    expect(logger.log).toHaveBeenCalledWith(expect.stringContaining(`${expanded.length}`));
   });
 
   it('returns true if there are no files to lint.', async () => {

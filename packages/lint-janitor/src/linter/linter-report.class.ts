@@ -1,5 +1,6 @@
 import chalk from 'chalk';
 import { IOptions, sync } from 'glob';
+import { uniq } from 'lodash';
 import { IZLinter } from './linter.interface';
 
 /**
@@ -28,6 +29,7 @@ export class ZLinterReport implements IZLinter {
 
     let files: string[] = [];
     src.forEach((pattern) => (files = files.concat(sync(pattern, globOptions))));
+    files = uniq(files);
 
     if (files.length === 0) {
       this._logger.log(chalk.yellow.italic('No globs matched any files.'));
