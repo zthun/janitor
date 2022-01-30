@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@zthun/eslint-config": "^11.1.0",
+    "@zthun/eslint-react": "^11.1.0",
     "@zthun/htmlhint-config": "^11.1.0",
     "@zthun/markdownlint-config": "^11.0.0",
     "@zthun/prettier-config": "^11.0.0",
@@ -32,7 +33,7 @@
     "stylelint": "^14.3.0"
   },
   "peerDependencies": {
-    "@zthun/lint-janitor": "^11.0.0"
+    "@zthun/lint-janitor": "^11.2.0"
   },
   "publishConfig": {
     "access": "public"
