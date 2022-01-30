@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [11.2.0](https://github.com/zthun/janitor/compare/v11.1.1...v11.2.0) (2022-01-30)
+
+
+### Features
+
+* updated markdownlint to 0.25.x ([88a4213](https://github.com/zthun/janitor/commit/88a421300886ef8bd0bd5f0d1aa2b554ab849b47))
+
+
+
 ## [11.0.0](https://github.com/zthun/janitor/compare/v10.2.0...v11.0.0) (2021-10-20)
 
 
