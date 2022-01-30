@@ -2869,7 +2869,7 @@ __metadata:
     "@zthun/stylelint-config": ^11.1.0
     eslint: ^8.8.0
     htmlhint: ^1.1.2
-    markdownlint: ~0.24.0
+    markdownlint: ~0.25.1
     prettier: ^2.5.1
     stylelint: ^14.3.0
   peerDependencies:
@@ -2890,7 +2890,7 @@ __metadata:
     htmlhint: ^1.1.2
     js-yaml: ^4.1.0
     lodash: ^4.17.21
-    markdownlint: ~0.24.0
+    markdownlint: ~0.25.1
     prettier: ^2.5.1
     stylelint: ^14.3.0
     yargs: ^17.3.1
@@ -2930,7 +2930,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zthun/markdownlint-config@workspace:packages/markdownlint-config"
   peerDependencies:
-    markdownlint: ~0.24.0
+    markdownlint: ~0.25.0
   languageName: unknown
   linkType: soft
 
@@ -7341,9 +7341,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"markdown-it@npm:12.2.0":
-  version: 12.2.0
-  resolution: "markdown-it@npm:12.2.0"
+"markdown-it@npm:12.3.2":
+  version: 12.3.2
+  resolution: "markdown-it@npm:12.3.2"
   dependencies:
     argparse: ^2.0.1
     entities: ~2.1.0
@@ -7352,16 +7352,16 @@ __metadata:
     uc.micro: ^1.0.5
   bin:
     markdown-it: bin/markdown-it.js
-  checksum: 8e3d6646edf8e7ef19ed707c59d16741bd40804f1e7567407efd2f346ae0f7ddcdeada83e7affebd21b9d7d947b27fc60fd795a970461785030a4e52e750122b
+  checksum: 890555711c1c00fa03b936ca2b213001a3b9b37dea140d8445ae4130ce16628392aad24b12e2a0a9935336ca5951f2957a38f4e5309a2e38eab44e25ff32a41e
   languageName: node
   linkType: hard
 
-"markdownlint@npm:~0.24.0":
-  version: 0.24.0
-  resolution: "markdownlint@npm:0.24.0"
+"markdownlint@npm:~0.25.1":
+  version: 0.25.1
+  resolution: "markdownlint@npm:0.25.1"
   dependencies:
-    markdown-it: 12.2.0
-  checksum: 5308070947796d706e752e7dfe6c741fe613d007be152e710a1fb7bbe2f0481beb2be4c0ed053065aea631daeac3f86d66e5e8cb9a753febf35158930771f34f
+    markdown-it: 12.3.2
+  checksum: 3daf6aae6ad96754960611353658ef8daeeec17b44ebe8dec6c67a863ed39f33417d32f120264f0e4146be25a40ca82943da5c65ef8401008a03c0022c07890f
   languageName: node
   linkType: hard
 
