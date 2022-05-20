@@ -31,7 +31,8 @@ describe('ZLinterEs', () => {
       fixableErrorCount: 0,
       fixableWarningCount: 0,
       fatalErrorCount: 0,
-      usedDeprecatedRules: []
+      usedDeprecatedRules: [],
+      suppressedMessages: []
     };
 
     successB = {
@@ -42,7 +43,8 @@ describe('ZLinterEs', () => {
       fixableErrorCount: 0,
       fixableWarningCount: 0,
       fatalErrorCount: 0,
-      usedDeprecatedRules: []
+      usedDeprecatedRules: [],
+      suppressedMessages: []
     };
 
     failedA = {
@@ -63,7 +65,8 @@ describe('ZLinterEs', () => {
       fixableErrorCount: 0,
       fixableWarningCount: 0,
       fatalErrorCount: 0,
-      usedDeprecatedRules: []
+      usedDeprecatedRules: [],
+      suppressedMessages: []
     };
 
     successReport = [successA, successB];
