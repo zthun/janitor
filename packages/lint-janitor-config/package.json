@@ -1,6 +1,6 @@
 {
   "name": "@zthun/lint-janitor-config",
-  "version": "11.2.0",
+  "version": "11.2.1",
   "description": "A shared configuration for lint janitor for @zthun scoped projects.",
   "keywords": [
     "eslint",
@@ -20,12 +20,12 @@
     "directory": "packages/lint-janitor-config"
   },
   "dependencies": {
-    "@zthun/eslint-config": "^11.2.0",
-    "@zthun/eslint-react-config": "^11.2.0",
+    "@zthun/eslint-config": "^11.2.1",
+    "@zthun/eslint-react-config": "^11.2.1",
     "@zthun/htmlhint-config": "^11.2.0",
     "@zthun/markdownlint-config": "^11.2.0",
     "@zthun/prettier-config": "^11.2.0",
-    "@zthun/stylelint-config": "^11.2.0",
+    "@zthun/stylelint-config": "^11.2.1",
     "eslint": "^8.16.0",
     "htmlhint": "^1.1.4",
     "markdownlint": "~0.25.1",

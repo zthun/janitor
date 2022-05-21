@@ -2,7 +2,7 @@
   "name": "@zthun/vscode-lint-janitor",
   "displayName": "Lint Janitor",
   "description": "Style checks with tools for web projects using common rules.",
-  "version": "11.2.0",
+  "version": "11.2.1",
   "private": true,
   "engines": {
     "vscode": "^1.58.0"
@@ -26,6 +26,6 @@
     "_build": "tsc -p tsconfig.bin.json && typedoc"
   },
   "dependencies": {
-    "@zthun/lint-janitor": "^11.2.0"
+    "@zthun/lint-janitor": "^11.2.1"
   }
 }
