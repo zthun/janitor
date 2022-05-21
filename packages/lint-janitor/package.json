@@ -21,7 +21,8 @@
   "types": "./dist/index.d.ts",
   "bin": "dist/cli.js",
   "scripts": {
-    "build": "tsc -p tsconfig.bin.json && typedoc",
+    "doc": "typedoc",
+    "build": "tsc -p tsconfig.bin.json",
     "start": "node --inspect-brk -r ts-node/register src/cli.ts"
   },
   "author": "Anthony Bonta",

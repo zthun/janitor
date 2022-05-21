@@ -10,7 +10,7 @@ FROM setup as test
 RUN yarn test
 
 FROM setup as build
-RUN yarn build
+RUN yarn build & yarn doc
 
 FROM build as release
 USER root
