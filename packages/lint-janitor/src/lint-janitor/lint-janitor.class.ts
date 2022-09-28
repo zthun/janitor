@@ -84,10 +84,22 @@ export class ZLintJanitor {
     this.spellLint = new ZLinterReport(new ZLinterSpelling(this._logger), this._logger, 'various');
     this.prettyLint = new ZLinterFile(new ZContentLinterPretty(), new ZConfigReaderPrettier(), this._logger, 'pretty');
     this.styleLint = new ZLinterReport(new ZLinterStyle(this._logger), this._logger, 'style');
-    this.htmlHint = new ZLinterFile(new ZContentLinterHtml(), new ZConfigReaderCosmic('htmlhint', new ZConfigExtender()), this._logger, 'html');
+    this.htmlHint = new ZLinterFile(
+      new ZContentLinterHtml(),
+      new ZConfigReaderCosmic('htmlhint', new ZConfigExtender()),
+      this._logger,
+      'html'
+    );
     this.jsonLint = new ZLinterFile(new ZContentLinterJson(), new ZConfigReaderNull(), this._logger, 'json');
     this.yamlLint = new ZLinterFile(new ZContentLinterYaml(), new ZConfigReaderNull(), this._logger, 'yaml');
-    this.markdownLint = new ZLinterReport(new ZLinterMarkdown(this._logger, new ZConfigReaderCosmic('markdownlint', new ZConfigExtender(), ['.markdownlint.json'])), this._logger, 'markdown');
+    this.markdownLint = new ZLinterReport(
+      new ZLinterMarkdown(
+        this._logger,
+        new ZConfigReaderCosmic('markdownlint', new ZConfigExtender(), ['.markdownlint.json'])
+      ),
+      this._logger,
+      'markdown'
+    );
     this.config = new ZConfigReaderCosmic('lint-janitor', new ZConfigExtender());
   }
 
@@ -116,7 +128,11 @@ export class ZLintJanitor {
 
     if (options.markdownFiles) {
       this._logger.log(chalk.magenta.underline(`Linting markdown files from ${options.markdownFiles.length} globs.`));
-      current = await this.markdownLint.lint(options.markdownFiles, options.markdownConfig, options.markdownFilesExclude);
+      current = await this.markdownLint.lint(
+        options.markdownFiles,
+        options.markdownConfig,
+        options.markdownFilesExclude
+      );
       result = result && current;
     }
 

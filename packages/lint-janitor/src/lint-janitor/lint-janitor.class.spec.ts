@@ -64,7 +64,12 @@ describe('ZLintJanitor', () => {
   });
 
   describe('Linting', () => {
-    async function assertLinterInvoked(linter: (t: ZLintJanitor) => IZLinter, files: string[], config?: string, exclude?: string[]) {
+    async function assertLinterInvoked(
+      linter: (t: ZLintJanitor) => IZLinter,
+      files: string[],
+      config?: string,
+      exclude?: string[]
+    ) {
       // Arrange
       const target = createTestTarget();
       const expected = linter(target);
@@ -110,7 +115,12 @@ describe('ZLintJanitor', () => {
 
     describe('MarkdownLint', () => {
       it('invokes the linter if there are markdownFiles', async () => {
-        await assertLinterInvoked((t) => t.markdownLint, options.markdownFiles, options.markdownConfig, options.markdownFilesExclude);
+        await assertLinterInvoked(
+          (t) => t.markdownLint,
+          options.markdownFiles,
+          options.markdownConfig,
+          options.markdownFilesExclude
+        );
       });
 
       it('does not invoke the linter if there are no styleFiles.', async () => {
@@ -154,7 +164,12 @@ describe('ZLintJanitor', () => {
 
     describe('SpellingLint', () => {
       it('invokes the linter if there are spellingFiles', async () => {
-        await assertLinterInvoked((t) => t.spellLint, options.spellingFiles, options.spellingConfig, options.spellingFilesExclude);
+        await assertLinterInvoked(
+          (t) => t.spellLint,
+          options.spellingFiles,
+          options.spellingConfig,
+          options.spellingFilesExclude
+        );
       });
 
       it('does not invoke the linter if there are no spellingFiles.', async () => {
@@ -165,7 +180,12 @@ describe('ZLintJanitor', () => {
 
     describe('PrettyLint', () => {
       it('invokes the linter if there are prettyFiles.', async () => {
-        await assertLinterInvoked((t) => t.prettyLint, options.prettyFiles, options.prettyConfig, options.prettyFilesExclude);
+        await assertLinterInvoked(
+          (t) => t.prettyLint,
+          options.prettyFiles,
+          options.prettyConfig,
+          options.prettyFilesExclude
+        );
       });
 
       it('does not invoke the linter if there are no prettyFiles.', async () => {

@@ -19,7 +19,12 @@ export class ZLinterFile implements IZLinter {
    * @param _logger The logger to use.
    * @param _type The file type.
    */
-  public constructor(private readonly _contentLint: IZContentLinter, private readonly _configReader: IZConfigReader, private readonly _logger: Console, private readonly _type: string) {}
+  public constructor(
+    private readonly _contentLint: IZContentLinter,
+    private readonly _configReader: IZConfigReader,
+    private readonly _logger: Console,
+    private readonly _type: string
+  ) {}
 
   /**
    * Lints the collection of json files.

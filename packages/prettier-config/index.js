@@ -1,8 +1,9 @@
 module.exports = {
   endOfLine: 'auto',
   jsxSingleQuote: true,
-  printWidth: 256,
+  printWidth: 120,
   quoteProps: 'consistent',
+  proseWrap: 'always',
   singleQuote: true,
   trailingComma: 'none'
 };

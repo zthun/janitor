@@ -4,6 +4,11 @@ import { usage } from 'yargs';
 import { IZLintJanitorArgs } from './lint-janitor/lint-janitor-args.interface';
 import { ZLintJanitor } from './lint-janitor/lint-janitor.class';
 
-const args: IZLintJanitorArgs = usage('$0 [options]').alias('c', 'config').describe('c', 'Optional config file to use.').string('c').help().parse() as any;
+const args: IZLintJanitorArgs = usage('$0 [options]')
+  .alias('c', 'config')
+  .describe('c', 'Optional config file to use.')
+  .string('c')
+  .help()
+  .parse() as any;
 const janitor = new ZLintJanitor(console);
 janitor.run(args).then((result) => (process.exitCode = result));
