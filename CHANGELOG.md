@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [13.0.0](https://github.com/zthun/janitor/compare/v12.0.0...v13.0.0) (2022-09-28)
+
+
+### ⚠ BREAKING CHANGES
+
+* prettier printWidth is now 120 down from 256
+* added support for the eslint-import plugin
+
+### Features
+
+* added support for the eslint-import plugin ([42f91e7](https://github.com/zthun/janitor/commit/42f91e7b6f91ede6ef4dfd8915b5de66c2c74e6a))
+* adding eslint-plugin-import as a dependency ([1625ac7](https://github.com/zthun/janitor/commit/1625ac78a3bf4b0acea1df3296d6da6867c2d64e))
+* prettier printWidth is now 120 down from 256 ([c363685](https://github.com/zthun/janitor/commit/c363685d926b71ea3c609d5d460621fa9331e7b0))
+
+
+
 ## [12.0.0](https://github.com/zthun/janitor/compare/v11.2.1...v12.0.0) (2022-09-28)
 
 
