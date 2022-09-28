@@ -1,6 +1,6 @@
 module.exports = {
   extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
-  plugins: ['@typescript-eslint'],
+  plugins: ['@typescript-eslint', 'import'],
   parserOptions: {
     ecmaVersion: 8,
     sourceType: 'module'
@@ -153,12 +153,18 @@ module.exports = {
       }
     ],
     'wrap-regex': 'off',
+
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-unused-vars': 'error',
     '@typescript-eslint/no-empty-function': ['error', { allow: ['constructors'] }],
     '@typescript-eslint/ban-types': 'off',
     '@typescript-eslint/no-var-requires': 'off',
-    '@typescript-eslint/explicit-module-boundary-types': 'off'
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+
+    'import/first': 'error',
+    'import/no-absolute-path': 'error',
+    'import/no-extraneous-dependencies': 'error',
+    'import/no-deprecated': 'warn'
   },
   env: {
     browser: true,
