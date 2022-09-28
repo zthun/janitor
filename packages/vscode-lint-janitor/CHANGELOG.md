@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [12.0.0](https://github.com/zthun/janitor/compare/v11.2.1...v12.0.0) (2022-09-28)
+
+**Note:** Version bump only for package @zthun/vscode-lint-janitor
+
+
+
+
+
 ### [11.2.1](https://github.com/zthun/janitor/compare/v11.2.0...v11.2.1) (2022-05-21)
 
 **Note:** Version bump only for package @zthun/vscode-lint-janitor

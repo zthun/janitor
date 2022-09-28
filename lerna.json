@@ -2,7 +2,7 @@
   "npmClient": "yarn",
   "useWorkspaces": true,
   "stream": true,
-  "version": "11.2.1",
+  "version": "12.0.0",
   "command": {
     "publish": {
       "message": "chore(release): publish [skip ci]"
@@ -10,7 +10,9 @@
   },
   "changelogPreset": {
     "name": "conventionalcommits",
-    "issuePrefixes": ["#"],
+    "issuePrefixes": [
+      "#"
+    ],
     "types": [
       {
         "type": "feat",
