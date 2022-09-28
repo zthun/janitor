@@ -23,7 +23,8 @@ describe('ZLinterStyle', () => {
       output: '',
       cwd: '',
       reportedDisables: null,
-      results: []
+      results: [],
+      ruleMetadata: {}
     };
 
     content = ['fileA.less', 'fileB.css'];

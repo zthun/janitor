@@ -26,11 +26,11 @@
     "@zthun/markdownlint-config": "^11.2.0",
     "@zthun/prettier-config": "^11.2.0",
     "@zthun/stylelint-config": "^11.2.1",
-    "eslint": "^8.16.0",
+    "eslint": "^8.24.0",
     "htmlhint": "^1.1.4",
-    "markdownlint": "~0.25.1",
-    "prettier": "^2.6.2",
-    "stylelint": "^14.8.2"
+    "markdownlint": "~0.26.2",
+    "prettier": "^2.7.1",
+    "stylelint": "^14.13.0"
   },
   "peerDependencies": {
     "@zthun/lint-janitor": "^11.2.0"
