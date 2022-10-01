@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [13.0.1](https://github.com/zthun/janitor/compare/v13.0.0...v13.0.1) (2022-10-01)
+
+
+### Bug Fixes
+
+* update lint-janitor peer dependency ([5cea3ef](https://github.com/zthun/janitor/commit/5cea3ef0d79b6f49d236e5bd724275b7148c45a2))
+
+
+
 ## [13.0.0](https://github.com/zthun/janitor/compare/v12.0.0...v13.0.0) (2022-09-28)
 
 **Note:** Version bump only for package @zthun/lint-janitor-config
