@@ -3280,18 +3280,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zthun/eslint-config@npm:^12.0.0":
-  version: 12.0.0
-  resolution: "@zthun/eslint-config@npm:12.0.0"
-  dependencies:
-    "@typescript-eslint/eslint-plugin": ^5.38.1
-    "@typescript-eslint/parser": ^5.38.1
-  peerDependencies:
-    eslint: ^8.5.0
-  checksum: 470decf6f48ef7f6007a0d3ab180b407457484298da6dd8ab7cd33650240a0b4486de72a66cf3d2324c02f24eaceab937945d1cb3475aff9da41f1cb912f336c
-  languageName: node
-  linkType: hard
-
 "@zthun/eslint-react-config@^13.0.0, @zthun/eslint-react-config@workspace:packages/eslint-react-config":
   version: 0.0.0-use.local
   resolution: "@zthun/eslint-react-config@workspace:packages/eslint-react-config"
@@ -3303,18 +3291,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zthun/eslint-react-config@npm:^12.0.0":
-  version: 12.0.0
-  resolution: "@zthun/eslint-react-config@npm:12.0.0"
-  dependencies:
-    "@zthun/eslint-config": ^12.0.0
-    eslint-plugin-react: ^7.31.8
-  peerDependencies:
-    eslint: ^8.5.0
-  checksum: e805a0875324649a298decc666a8ab9979036720f70f268d26cda372ae608fe10b9dccac5eb3463b1e1dbfd149a0fa6b8922f23e7c096451e3427951f5c81a75
-  languageName: node
-  linkType: hard
-
 "@zthun/htmlhint-config@^13.0.0, @zthun/htmlhint-config@workspace:packages/htmlhint-config":
   version: 0.0.0-use.local
   resolution: "@zthun/htmlhint-config@workspace:packages/htmlhint-config"
@@ -3322,15 +3298,6 @@ __metadata:
     htmlhint: ^1.0.0
   languageName: unknown
   linkType: soft
-
-"@zthun/htmlhint-config@npm:^12.0.0":
-  version: 12.0.0
-  resolution: "@zthun/htmlhint-config@npm:12.0.0"
-  peerDependencies:
-    htmlhint: ^1.0.0
-  checksum: dc9b58dfeb9531ce6dee907aa36bc70f099265f287fbdb892b11802ec9015d2179c62ab4e264573c6685bb62e48868ba332d3354ed2ab925ec5949f54ae90cb0
-  languageName: node
-  linkType: hard
 
 "@zthun/lint-janitor-config@workspace:packages/lint-janitor-config":
   version: 0.0.0-use.local
@@ -3348,7 +3315,7 @@ __metadata:
     prettier: ^2.7.1
     stylelint: ^14.13.0
   peerDependencies:
-    "@zthun/lint-janitor": ^11.2.0
+    "@zthun/lint-janitor": ^13.0.0
   languageName: unknown
   linkType: soft
 
@@ -3389,8 +3356,6 @@ __metadata:
     "@types/node": ^18.7.23
     "@types/vscode": ^1.71.0
     "@types/yargs": ^17.0.13
-    "@zthun/eslint-react-config": ^12.0.0
-    "@zthun/htmlhint-config": ^12.0.0
     husky: ^8.0.1
     jest: ^29.1.1
     lerna: ^5.5.4
