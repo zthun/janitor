@@ -1,6 +1,7 @@
 /* eslint-disable require-jsdoc */
-import { ZContentLinterHtml } from './content-linter-html.class';
 import { HTMLHint } from 'htmlhint';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { ZContentLinterHtml } from './content-linter-html.class';
 
 describe('ZContentLinterHtml', () => {
   let contentPath: string;
@@ -22,8 +23,8 @@ describe('ZContentLinterHtml', () => {
 
     logs = ['Line One', 'Line Two'];
 
-    jest.spyOn(HTMLHint, 'verify').mockImplementation(() => results);
-    jest.spyOn(HTMLHint, 'format').mockImplementation(() => logs);
+    vi.spyOn(HTMLHint, 'verify').mockImplementation(() => results);
+    vi.spyOn(HTMLHint, 'format').mockImplementation(() => logs);
   });
 
   function createTestTarget() {
@@ -34,7 +35,7 @@ describe('ZContentLinterHtml', () => {
   it('returns a resolved promise if there are no hint messages.', async () => {
     // Arrange
     const target = createTestTarget();
-    jest.spyOn(HTMLHint, 'verify').mockImplementation(() => []);
+    vi.spyOn(HTMLHint, 'verify').mockImplementation(() => []);
     // Act
     // Assert
     await expect(target.lint(content, contentPath, options)).resolves.toBeTruthy();

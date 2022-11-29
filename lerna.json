@@ -3,6 +3,7 @@
   "useWorkspaces": true,
   "stream": true,
   "version": "13.0.1",
+  "nx": true,
   "command": {
     "publish": {
       "message": "chore(release): publish [skip ci]"
@@ -10,9 +11,7 @@
   },
   "changelogPreset": {
     "name": "conventionalcommits",
-    "issuePrefixes": [
-      "#"
-    ],
+    "issuePrefixes": ["#"],
     "types": [
       {
         "type": "feat",

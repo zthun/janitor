@@ -1,11 +1,17 @@
 /* eslint-disable require-jsdoc */
-import { ZLinterMarkdown } from './linter-markdown.class';
-import { IZConfigReader } from '../config/config-reader.interface';
-import markdownlint, { LintError } from 'markdownlint';
 import { sync } from 'glob';
+import markdownlint, { LintError } from 'markdownlint';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { IZConfigReader } from '../config/config-reader.interface';
+import { ZLinterMarkdown } from './linter-markdown.class';
 
-jest.mock('markdownlint');
-jest.mock('glob');
+vi.mock('markdownlint', () => ({
+  default: vi.fn()
+}));
+
+vi.mock('glob', () => ({
+  sync: vi.fn()
+}));
 
 describe('ZLinterMarkdown', () => {
   let logger: Console;
@@ -31,14 +37,14 @@ describe('ZLinterMarkdown', () => {
     results[readme] = [];
 
     logger = {} as any;
-    logger.error = jest.fn();
-    logger.log = jest.fn();
+    logger.error = vi.fn();
+    logger.log = vi.fn();
 
     reader = {} as any;
-    reader.read = jest.fn(() => Promise.resolve({}));
+    reader.read = vi.fn(() => Promise.resolve({}));
 
-    (sync as unknown as jest.Mock).mockReturnValue([changelog, readme]);
-    (markdownlint as unknown as jest.Mock).mockImplementation((i, cb) => cb(null, results));
+    vi.mocked(sync).mockReturnValue([changelog, readme]);
+    vi.mocked(markdownlint).mockImplementation((i, cb) => cb(null, results));
   });
 
   describe('Success', () => {
@@ -71,7 +77,7 @@ describe('ZLinterMarkdown', () => {
     it('should return false if the config cannot be read.', async () => {
       // Arrange
       const target = createTestTarget();
-      reader.read = jest.fn(() => Promise.reject('Failed'));
+      reader.read = vi.fn(() => Promise.reject('Failed'));
       // Act
       const actual = await target.lint(files, config);
       // Assert

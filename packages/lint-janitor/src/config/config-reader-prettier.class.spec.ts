@@ -1,8 +1,11 @@
 /* eslint-disable require-jsdoc */
 import { Options, resolveConfig } from 'prettier';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { ZConfigReaderPrettier } from './config-reader-prettier.class';
 
-jest.mock('prettier');
+vi.mock('prettier', () => ({
+  resolveConfig: vi.fn()
+}));
 
 describe('ZConfigReaderPrettier', () => {
   let options: Options;
@@ -16,8 +19,8 @@ describe('ZConfigReaderPrettier', () => {
       singleQuote: true
     };
 
-    (resolveConfig as unknown as jest.Mock).mockClear();
-    (resolveConfig as unknown as jest.Mock).mockResolvedValue(options);
+    vi.mocked(resolveConfig).mockClear();
+    vi.mocked(resolveConfig).mockResolvedValue(options);
   });
 
   it('reads the supplied config file if passed.', async () => {
@@ -51,7 +54,7 @@ describe('ZConfigReaderPrettier', () => {
 
   it('returns a rejected promise if no options can be loaded.', async () => {
     // Arrange
-    (resolveConfig as unknown as jest.Mock).mockResolvedValue(null);
+    vi.mocked(resolveConfig).mockResolvedValue(null);
     const target = createTestTarget();
     // Act
     // Assert

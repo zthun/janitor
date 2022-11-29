@@ -1,4 +1,5 @@
 /* eslint-disable require-jsdoc */
+import { describe, expect, it } from 'vitest';
 import { ZConfigReaderNull } from './config-reader-null.class';
 
 describe('ZConfigReaderNull', () => {

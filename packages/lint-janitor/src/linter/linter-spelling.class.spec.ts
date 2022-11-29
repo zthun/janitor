@@ -1,8 +1,9 @@
 /* eslint-disable require-jsdoc */
 import { CSpellReporter, Issue, lint, RunResult } from 'cspell';
+import { beforeEach, describe, expect, it, Mock, vi } from 'vitest';
 import { ZLinterSpelling } from './linter-spelling.class';
 
-jest.mock('cspell');
+vi.mock('cspell');
 
 describe('ZLinterSpelling', () => {
   let logger: Console;
@@ -16,7 +17,7 @@ describe('ZLinterSpelling', () => {
 
   beforeEach(() => {
     logger = {} as any;
-    logger.log = jest.fn();
+    logger.log = vi.fn();
 
     lintResult = {
       errors: 0,
@@ -28,8 +29,8 @@ describe('ZLinterSpelling', () => {
     content = ['fileA.less', 'fileB.css'];
     config = '@zthun/stylelint-config';
 
-    (lint as jest.Mock).mockClear();
-    (lint as jest.Mock).mockResolvedValue(lintResult);
+    (lint as Mock).mockClear();
+    (lint as Mock).mockResolvedValue(lintResult);
   });
 
   describe('Config', () => {
@@ -78,7 +79,7 @@ describe('ZLinterSpelling', () => {
         uri: '/path/to/file/with/issue'
       };
 
-      (lint as jest.Mock).mockImplementation((_, __, e: CSpellReporter) => {
+      (lint as Mock).mockImplementation((_, __, e: CSpellReporter) => {
         e.issue(issue);
         return Promise.resolve(lintResult);
       });

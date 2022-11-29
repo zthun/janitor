@@ -1,12 +1,24 @@
 /* eslint-disable require-jsdoc */
-import { readFile } from 'fs';
+import { PathOrFileDescriptor, readFile } from 'fs';
 import { sync } from 'glob';
 import { IZConfigReader } from '../config/config-reader.interface';
 import { IZContentLinter } from '../content/content-linter.interface';
 import { ZLinterFile } from './linter-file.class';
+import { describe, beforeEach, it, expect, vi, Mock } from 'vitest';
 
-jest.mock('glob');
-jest.mock('fs');
+vi.mock('glob', () => ({
+  sync: vi.fn()
+}));
+
+vi.mock('fs', () => ({
+  readFile: vi.fn()
+}));
+
+function readFileMock(_: PathOrFileDescriptor, __: BufferEncoding, cb: any): void {
+  cb(null, 'FileContent');
+}
+
+type ReadFile = typeof readFileMock;
 
 describe('ZLinterFile', () => {
   let files: string[];
@@ -24,19 +36,19 @@ describe('ZLinterFile', () => {
     };
 
     logger = {} as Console;
-    logger.error = jest.fn();
-    logger.log = jest.fn();
+    logger.error = vi.fn();
+    logger.log = vi.fn();
 
     configReader = {} as any;
-    configReader.read = jest.fn(() => Promise.resolve(options));
+    configReader.read = vi.fn(() => Promise.resolve(options));
 
     contentLint = {} as any;
-    contentLint.lint = jest.fn(() => Promise.resolve(true));
+    contentLint.lint = vi.fn(() => Promise.resolve(true));
 
     files = ['/files/log-a.json', '/files/lob-b.json', '/files/log-c.json'];
 
-    (sync as jest.Mock).mockImplementation(() => files);
-    (readFile as unknown as jest.Mock).mockImplementation((file, op, cb) => cb(null, 'File content'));
+    vi.mocked(sync).mockImplementation(() => files);
+    vi.mocked<ReadFile>(readFile).mockImplementation(readFileMock);
   });
 
   function createTestTarget() {
@@ -66,7 +78,7 @@ describe('ZLinterFile', () => {
     it('returns false if any file cannot be read.', async () => {
       // Arrange
       const target = createTestTarget();
-      (readFile as unknown as jest.Mock).mockImplementation((p, o, cb) => cb('Cannot read', null));
+      (readFile as unknown as Mock).mockImplementation((p, o, cb) => cb('Cannot read', null));
       // Act
       const actual = await target.lint(files);
       // Assert
@@ -76,7 +88,7 @@ describe('ZLinterFile', () => {
     it('returns false if any file fail the lint.', async () => {
       // Arrange
       const target = createTestTarget();
-      contentLint.lint = jest.fn(() => Promise.reject('failed'));
+      contentLint.lint = vi.fn(() => Promise.reject('failed'));
       // Act
       const actual = await target.lint(files);
       // Assert
@@ -106,7 +118,7 @@ describe('ZLinterFile', () => {
     it('returns false if the config cannot be read.', async () => {
       // Arrange
       const target = createTestTarget();
-      (configReader.read as any) = jest.fn(() => Promise.reject('Cannot read file'));
+      (configReader.read as any) = vi.fn(() => Promise.reject('Cannot read file'));
       // Act
       const actual = await target.lint(files, config);
       // Assert
@@ -122,7 +134,7 @@ describe('ZLinterFile', () => {
         errors: 'File is bad'
       };
 
-      (contentLint.lint as any) = jest.fn(() => Promise.reject(cfg.errors));
+      (contentLint.lint as any) = vi.fn(() => Promise.reject(cfg.errors));
     });
 
     async function assertLogged(logs: string[]) {
