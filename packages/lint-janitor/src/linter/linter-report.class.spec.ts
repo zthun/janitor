@@ -1,9 +1,12 @@
 /* eslint-disable require-jsdoc */
 import { sync } from 'glob';
-import { IZLinter } from './linter.interface';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { ZLinterReport } from './linter-report.class';
+import { IZLinter } from './linter.interface';
 
-jest.mock('glob');
+vi.mock('glob', () => ({
+  sync: vi.fn()
+}));
 
 describe('ZLinterReport', () => {
   let expanded: string[];
@@ -15,18 +18,18 @@ describe('ZLinterReport', () => {
     config = 'config.json';
 
     logger = {} as Console;
-    logger.log = jest.fn();
+    logger.log = vi.fn();
 
     child = {} as any;
-    child.lint = jest.fn(() => Promise.resolve(true));
+    child.lint = vi.fn(() => Promise.resolve(true));
 
     expanded = ['/files/log-a.json', '/files/lob-b.json', '/files/log-c.json'];
 
-    (sync as jest.Mock).mockReturnValue(expanded);
+    vi.mocked(sync).mockReturnValue(expanded);
   });
 
   afterEach(() => {
-    (sync as jest.Mock).mockReset();
+    vi.mocked(sync).mockReset();
   });
 
   function createTestTarget() {

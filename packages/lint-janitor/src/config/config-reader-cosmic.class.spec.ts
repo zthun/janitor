@@ -1,4 +1,5 @@
 /* eslint-disable require-jsdoc */
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { IZConfigExtender } from './config-extender.interface';
 import { ZConfigReaderCosmic } from './config-reader-cosmic.class';
 
@@ -12,7 +13,7 @@ describe('ZConfigCosmicReader', () => {
 
   beforeEach(() => {
     extender = {} as any;
-    extender.extend = jest.fn((cfg) => Promise.resolve(cfg));
+    extender.extend = vi.fn((cfg) => Promise.resolve(cfg));
 
     config = '@zthun/htmlhint-config';
   });

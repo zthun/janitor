@@ -1,8 +1,14 @@
 /* eslint-disable require-jsdoc */
 import { lint, LintResult, LinterResult } from 'stylelint';
 import { ZLinterStyle } from './linter-style.class';
+import { describe, beforeEach, it, expect, vi } from 'vitest';
 
-jest.mock('stylelint');
+vi.mock('stylelint', () => ({
+  lint: vi.fn(),
+  formatters: {
+    verbose: vi.fn()
+  }
+}));
 
 describe('ZLinterStyle', () => {
   let logger: Console;
@@ -16,7 +22,7 @@ describe('ZLinterStyle', () => {
 
   beforeEach(() => {
     logger = {} as any;
-    logger.log = jest.fn();
+    logger.log = vi.fn();
 
     lintResult = {
       errored: false,
@@ -30,8 +36,8 @@ describe('ZLinterStyle', () => {
     content = ['fileA.less', 'fileB.css'];
     config = '@zthun/stylelint-config';
 
-    (lint as jest.Mock).mockClear();
-    (lint as jest.Mock).mockResolvedValue(lintResult);
+    vi.mocked(lint).mockClear();
+    vi.mocked(lint).mockResolvedValue(lintResult);
   });
 
   describe('Config', () => {
@@ -100,7 +106,7 @@ describe('ZLinterStyle', () => {
       lintResult.errored = true;
       lintResult.results = [rule];
 
-      (lint as jest.Mock).mockResolvedValue(lintResult);
+      vi.mocked(lint).mockResolvedValue(lintResult);
     });
 
     it('should log if the linter errors.', async () => {

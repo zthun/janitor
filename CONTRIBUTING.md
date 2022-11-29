@@ -28,12 +28,7 @@ will need. There are a couple of extensions that are highly recommended to insta
 - [MarkdownLint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
 - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 - [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
-
-You'll also probably want a way to run jest based unit tests in your IDE, so it is recommended to choose one of the
-following extensions.
-
-- [Jest](https://marketplace.visualstudio.com/items?itemName=Orta.vscode-jest)
-- [Jest Runner](https://marketplace.visualstudio.com/items?itemName=firsttris.vscode-jest-runner)
+- [ViTest](https://marketplace.visualstudio.com/items?itemName=ZixuanChen.vitest-explorer)
 
 ## Build and Debug
 
@@ -51,9 +46,7 @@ and away you go.
 
 ## Test
 
-Unit testing is done using jest and code coverage thresholds are set to 100%. This is done on purpose to reduce the
-noise of missing tests. If you MUST write something that cannot have unit tests, then please add the istanbul ignore
-pragma to the file and add a comment on why it cannot be tested.
+Unit testing is done using vitest.
 
 To run the unit tests, use the following series of commands.
 

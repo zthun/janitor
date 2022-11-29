@@ -2,6 +2,7 @@
 dist
 docs
 reports
+coverage
 *.tgz
 *.log
 

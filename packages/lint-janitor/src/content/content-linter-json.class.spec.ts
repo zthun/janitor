@@ -1,8 +1,9 @@
 /* eslint-disable require-jsdoc */
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { ZContentLinterJson } from './content-linter-json.class';
 
-jest.mock('glob');
-jest.mock('fs');
+vi.mock('glob');
+vi.mock('fs');
 
 describe('ZContentLinterJson', () => {
   let json: any;

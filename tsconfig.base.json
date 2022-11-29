@@ -10,6 +10,7 @@
     "target": "es5",
     "declaration": true,
     "esModuleInterop": true,
+    "isolatedModules": true,
     "sourceMap": true
   }
 }

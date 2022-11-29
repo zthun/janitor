@@ -1,4 +1,5 @@
 /* eslint-disable require-jsdoc */
+import { beforeEach, describe, expect, it, Mocked, vi } from 'vitest';
 import { IZConfigReader } from '../config/config-reader.interface';
 import { ZLinterSilent } from '../linter/linter-silent.class';
 import { IZLinter } from '../linter/linter.interface';
@@ -9,7 +10,7 @@ import { ZLintJanitor } from './lint-janitor.class';
 describe('ZLintJanitor', () => {
   let args: IZLintJanitorArgs;
   let options: IZLintJanitorOptions;
-  let config: jest.Mocked<IZConfigReader>;
+  let config: Mocked<IZConfigReader>;
   let logger: Console;
 
   function createTestTarget() {
@@ -28,8 +29,8 @@ describe('ZLintJanitor', () => {
 
   beforeEach(() => {
     logger = {} as any;
-    logger.log = jest.fn();
-    logger.error = jest.fn();
+    logger.log = vi.fn();
+    logger.error = vi.fn();
 
     args = {
       config: './cfg/lint-janitor.json'
@@ -59,7 +60,7 @@ describe('ZLintJanitor', () => {
     };
 
     config = {} as any;
-    config.read = jest.fn();
+    config.read = vi.fn();
     config.read.mockResolvedValue(options);
   });
 
@@ -73,7 +74,7 @@ describe('ZLintJanitor', () => {
       // Arrange
       const target = createTestTarget();
       const expected = linter(target);
-      jest.spyOn(expected, 'lint');
+      vi.spyOn(expected, 'lint');
       // Act
       await target.lint(options);
       // Assert
@@ -84,7 +85,7 @@ describe('ZLintJanitor', () => {
       // Arrange
       const target = createTestTarget();
       const expected = linter(target);
-      jest.spyOn(expected, 'lint');
+      vi.spyOn(expected, 'lint');
       // Act
       await target.lint(options);
       // Assert

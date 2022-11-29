@@ -1,5 +1,6 @@
 /* eslint-disable require-jsdoc */
 import { ESLint } from 'eslint';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { ZLinterEs } from './linter-es.class';
 
 describe('ZLinterEs', () => {
@@ -74,14 +75,14 @@ describe('ZLinterEs', () => {
     failedReport = [successA, failedA];
 
     engine = new ESLint({});
-    jest.spyOn(engine, 'lintFiles').mockResolvedValue(successReport);
+    vi.spyOn(engine, 'lintFiles').mockResolvedValue(successReport);
 
     logger = {} as any;
-    logger.log = jest.fn();
+    logger.log = vi.fn();
 
     formatter = await engine.loadFormatter();
-    jest.spyOn(engine, 'loadFormatter').mockResolvedValue(formatter);
-    jest.spyOn(formatter, 'format');
+    vi.spyOn(engine, 'loadFormatter').mockResolvedValue(formatter);
+    vi.spyOn(formatter, 'format');
   });
 
   describe('Config', () => {
@@ -89,7 +90,7 @@ describe('ZLinterEs', () => {
       // Arrange
       const target = createTestTarget();
       const expected = require.resolve(config);
-      jest.spyOn(target, 'engineFactory');
+      vi.spyOn(target, 'engineFactory');
       // Act
       await target.lint(files, config);
       // Assert
@@ -99,7 +100,7 @@ describe('ZLinterEs', () => {
     it('should run with the default configuration options if no config is specified.', async () => {
       // Arrange
       const target = createTestTarget();
-      jest.spyOn(target, 'engineFactory');
+      vi.spyOn(target, 'engineFactory');
       // Act
       await target.lint(files, null);
       // Assert
@@ -120,7 +121,7 @@ describe('ZLinterEs', () => {
     it('returns false if an IO exception occurs.', async () => {
       // Arrange
       const target = createTestTarget();
-      jest.spyOn(engine, 'lintFiles').mockRejectedValue(new Error('Cannot open file'));
+      vi.spyOn(engine, 'lintFiles').mockRejectedValue(new Error('Cannot open file'));
       // Act
       const actual = await target.lint(files, config);
       // Assert
@@ -130,7 +131,7 @@ describe('ZLinterEs', () => {
     it('returns false if the error count is not 0.', async () => {
       // Arrange
       const target = createTestTarget();
-      jest.spyOn(engine, 'lintFiles').mockResolvedValue(failedReport);
+      vi.spyOn(engine, 'lintFiles').mockResolvedValue(failedReport);
       // Act
       const actual = await target.lint(files, config);
       // Assert

@@ -1,8 +1,12 @@
 /* eslint-disable require-jsdoc */
 import { check, FileInfoResult, getFileInfo, Options } from 'prettier';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { ZContentLinterPretty } from './content-linter-pretty.class';
 
-jest.mock('prettier');
+vi.mock('prettier', () => ({
+  getFileInfo: vi.fn(),
+  check: vi.fn()
+}));
 
 describe('ZContentLinterPretty', () => {
   let options: Options;
@@ -21,11 +25,11 @@ describe('ZContentLinterPretty', () => {
 
     options = {};
 
-    (getFileInfo as unknown as jest.Mock).mockClear();
-    (getFileInfo as unknown as jest.Mock).mockResolvedValue(info);
+    vi.mocked(getFileInfo).mockClear();
+    vi.mocked(getFileInfo).mockResolvedValue(info);
 
-    (check as unknown as jest.Mock).mockClear();
-    (check as unknown as jest.Mock).mockReturnValue(true);
+    vi.mocked(check).mockClear();
+    vi.mocked(check).mockReturnValue(true);
   });
 
   function createTestTarget() {
@@ -43,7 +47,7 @@ describe('ZContentLinterPretty', () => {
   it('returns a rejected promise if the content is unformatted.', async () => {
     // Arrange
     const target = createTestTarget();
-    (check as unknown as jest.Mock).mockReturnValue(false);
+    vi.mocked(check).mockReturnValue(false);
     // Act
     // Assert
     await expect(target.lint(content, contentPath, options)).rejects.toBeTruthy();
