@@ -1,6 +1,6 @@
 /* eslint-disable require-jsdoc */
 import { CSpellReporter, Issue, lint, RunResult } from 'cspell';
-import { beforeEach, describe, expect, it, Mock, vi } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { ZLinterSpelling } from './linter-spelling.class';
 
 vi.mock('cspell', () => ({
@@ -81,7 +81,7 @@ describe('ZLinterSpelling', () => {
         uri: '/path/to/file/with/issue'
       };
 
-      (lint as Mock).mockImplementation((_, __, e: CSpellReporter) => {
+      vi.mocked(lint).mockImplementation((_, __, e: CSpellReporter) => {
         e.issue(issue);
         return Promise.resolve(lintResult);
       });

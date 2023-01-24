@@ -1,10 +1,10 @@
 /* eslint-disable require-jsdoc */
 import { PathOrFileDescriptor, readFile } from 'fs';
 import { sync } from 'glob';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { IZConfigReader } from '../config/config-reader.interface';
 import { IZContentLinter } from '../content/content-linter.interface';
 import { ZLinterFile } from './linter-file.class';
-import { describe, beforeEach, it, expect, vi, Mock } from 'vitest';
 
 vi.mock('glob', () => ({
   sync: vi.fn()
@@ -78,7 +78,7 @@ describe('ZLinterFile', () => {
     it('returns false if any file cannot be read.', async () => {
       // Arrange
       const target = createTestTarget();
-      (readFile as unknown as Mock).mockImplementation((p, o, cb) => cb('Cannot read', null));
+      vi.mocked<ReadFile>(readFile).mockImplementation((p, o, cb) => cb('Cannot read', null));
       // Act
       const actual = await target.lint(files);
       // Assert
