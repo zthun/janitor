@@ -19,8 +19,8 @@
   },
   "author": "Anthony Bonta",
   "devDependencies": {
-    "@commitlint/cli": "^17.3.0",
-    "@commitlint/config-conventional": "^17.3.0",
+    "@commitlint/cli": "^17.4.2",
+    "@commitlint/config-conventional": "^17.4.2",
     "@types/eslint": "^8.4.10",
     "@types/glob": "^8.0.0",
     "@types/htmlhint": "^1.1.2",
