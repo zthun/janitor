@@ -1,4 +1,4 @@
-FROM node:17.3.0 as setup
+FROM node:18.13.0 as setup
 WORKDIR /usr/dev
 COPY . .
 RUN yarn install
