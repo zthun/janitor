@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [14.0.0](https://github.com/zthun/janitor/compare/v13.0.2...v14.0.0) (2023-01-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* updated dependencies to latest
+
+### Build System
+
+* updated dependencies to latest ([e6d7bb5](https://github.com/zthun/janitor/commit/e6d7bb5023193235d7069976a1fe39a59cfed1e4))
+
+
+
 ## [13.0.2](https://github.com/zthun/janitor/compare/v13.0.1...v13.0.2) (2022-11-29)
 
 **Note:** Version bump only for package @zthun/eslint-react-config
