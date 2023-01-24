@@ -29,8 +29,8 @@ describe('ZLinterSpelling', () => {
     content = ['fileA.less', 'fileB.css'];
     config = '@zthun/stylelint-config';
 
-    (lint as Mock).mockClear();
-    (lint as Mock).mockResolvedValue(lintResult);
+    vi.mocked(lint).mockClear();
+    vi.mocked(lint).mockResolvedValue(lintResult);
   });
 
   describe('Config', () => {
