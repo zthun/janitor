@@ -1,4 +1,3 @@
-/* eslint-disable require-jsdoc */
 import { PathOrFileDescriptor, readFile } from 'fs';
 import { sync } from 'glob';
 import { beforeEach, describe, expect, it, vi } from 'vitest';

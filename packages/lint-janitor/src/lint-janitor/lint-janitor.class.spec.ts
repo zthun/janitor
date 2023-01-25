@@ -1,4 +1,3 @@
-/* eslint-disable require-jsdoc */
 import { beforeEach, describe, expect, it, Mocked, vi } from 'vitest';
 import { IZConfigReader } from '../config/config-reader.interface';
 import { ZLinterSilent } from '../linter/linter-silent.class';

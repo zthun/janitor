@@ -10,11 +10,15 @@ export class ZContentLinterHtml implements IZContentLinter {
   /**
    * Lints the content.
    *
-   * @param content The content to check.
-   * @param contentPath The path of the content data.
-   * @param options The htmlhint options.
+   * @param content -
+   *        The content to check.
+   * @param contentPath -
+   *        The path of the content data.
+   * @param options -
+   *        The htmlhint options.
    *
-   * @returns A promise that resolves if the content is lint free, and rejects if it has lint errors.
+   * @returns
+   *        A promise that resolves if the content is lint free, and rejects if it has lint errors.
    */
   public lint(content: string, contentPath: string, options?: any): Promise<any> {
     const messages = HTMLHint.verify(content, options);

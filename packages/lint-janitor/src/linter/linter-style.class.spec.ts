@@ -1,4 +1,3 @@
-/* eslint-disable require-jsdoc */
 import { lint, LintResult, LinterResult } from 'stylelint';
 import { ZLinterStyle } from './linter-style.class';
 import { describe, beforeEach, it, expect, vi } from 'vitest';

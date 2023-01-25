@@ -14,10 +14,14 @@ export class ZLinterFile implements IZLinter {
   /**
    * Initializes a new instance of this object.
    *
-   * @param _contentLint The linter for an individual file.
-   * @param _configReader The config reader.
-   * @param _logger The logger to use.
-   * @param _type The file type.
+   * @param _contentLint -
+   *        The linter for an individual file.
+   * @param _configReader -
+   *        The config reader.
+   * @param _logger -
+   *        The logger to use.
+   * @param _type -
+   *        The file type.
    */
   public constructor(
     private readonly _contentLint: IZContentLinter,
@@ -29,9 +33,12 @@ export class ZLinterFile implements IZLinter {
   /**
    * Lints the collection of json files.
    *
-   * @param src The file list of blobs to lint.
-   * @param config The optional path to the config file.
-   * @param exclude The list of globs to exclude.
+   * @param src -
+   *        The file list of blobs to lint.
+   * @param config -
+   *        The optional path to the config file.
+   * @param exclude -
+   *        The list of globs to exclude.
    */
   public async lint(src: string[], config?: string, exclude?: string[]): Promise<boolean> {
     const readFileAsync = promisify(readFile);
@@ -75,8 +82,10 @@ export class ZLinterFile implements IZLinter {
   /**
    * Formats a file error to the logger.
    *
-   * @param file The file that failed to parse.
-   * @param err The error that occurred.Ø
+   * @param file -
+   *        The file that failed to parse.
+   * @param err -
+   *        The error that occurred.Ø
    */
   private _format(file: string, err: any) {
     const fileFormat = `Errors in ${file}`;

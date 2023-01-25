@@ -9,28 +9,36 @@ export class ZLinterEs implements IZLinter {
   /**
    * The factory that constructs a CLIEngine object.
    *
-   * @param options The engine options.
+   * @param options -
+   *        The engine options.
    *
-   * @returns The engine that can be used to perform eslint.
+   * @returns
+   *        The engine that can be used to perform eslint.
    */
   public engineFactory: (options: ESLint.Options) => ESLint = (options) => new ESLint(options);
 
   /**
    * Initializes a new instance of this object.
    *
-   * @param factory The factory object to construct the engine.
-   * @param _logger The logger to output to.
+   * @param factory -
+   *        The factory object to construct the engine.
+   * @param _logger -
+   *        The logger to output to.
    */
   public constructor(private readonly _logger: Console) {}
 
   /**
    * Runs the lint given the specified config and source files.
    *
-   * @param src The list of files globs to lint.
-   * @param config The optional lint config file.
+   * @param src -
+   *        The list of files globs to lint.
+   * @param config -
+   *        The optional lint config file.
    *
-   * @returns A promise that resolves to true if the lint is fully successful, and false if the lint
-   *         has errors.
+   * @returns
+   *        A promise that resolves to true if the lint is
+   *        fully successful, and false if the lint
+   *        has errors.
    */
   public async lint(src: string[], config: string): Promise<boolean> {
     const esOptions: ESLint.Options = {

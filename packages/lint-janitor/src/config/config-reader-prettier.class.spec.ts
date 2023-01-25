@@ -1,4 +1,3 @@
-/* eslint-disable require-jsdoc */
 import { Options, resolveConfig } from 'prettier';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { ZConfigReaderPrettier } from './config-reader-prettier.class';

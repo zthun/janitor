@@ -11,9 +11,12 @@ export class ZLinterReport implements IZLinter {
   /**
    * Initializes a new instance of this object.
    *
-   * @param _child The child linter to pass the operation off to.
-   * @param _logger The logger to use.
-   * @param _type The file type.
+   * @param _child -
+   *        The child linter to pass the operation off to.
+   * @param _logger -
+   *        The logger to use.
+   * @param _type -
+   *        The file type.
    */
   public constructor(
     private readonly _child: IZLinter,
@@ -24,9 +27,12 @@ export class ZLinterReport implements IZLinter {
   /**
    * Lints the collection of json files.
    *
-   * @param src The file list of blobs to lint.
-   * @param config The optional path to the config file.
-   * @param exclude The list of globs to exclude.
+   * @param src -
+   *        The file list of blobs to lint.
+   * @param config -
+   *        The optional path to the config file.
+   * @param exclude -
+   *        The list of globs to exclude.
    */
   public async lint(src: string[], config?: string, exclude?: string[]): Promise<boolean> {
     const globOptions: IOptions = { dot: true, ignore: exclude };

@@ -17,7 +17,8 @@ export class ZConfigExtender implements IZConfigExtender {
   /**
    * Initializes a new instance of this object.
    *
-   * @param key The key to extend.
+   * @param key
+   *        - The key to extend.
    */
   public constructor(public key = 'extends') {}
 
@@ -30,9 +31,11 @@ export class ZConfigExtender implements IZConfigExtender {
    *
    * The actual key in the config is deleted.
    *
-   * @param config The config to extend.
+   * @param config
+   *        - The config to extend.
    *
-   * @returns A promise that resolves the extended configuration.
+   * @returns
+   *        A promise that resolves the extended configuration.
    */
   public async extend(config: any): Promise<any> {
     if (!Object.hasOwnProperty.call(config, this.key)) {
@@ -51,9 +54,11 @@ export class ZConfigExtender implements IZConfigExtender {
   /**
    * Reads a module recursively.
    *
-   * @param module The module to read.
+   * @param module
+   *        - The module to read.
    *
-   * @returns A promise that resolves the extended inner module.
+   * @returns
+   *        A promise that resolves the extended inner module.
    */
   private _read(module: string) {
     return Promise.resolve(true)

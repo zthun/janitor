@@ -1,4 +1,3 @@
-/* eslint-disable require-jsdoc */
 import { beforeEach, describe, expect, it } from 'vitest';
 import { ZConfigExtender } from './config-extender.class';
 

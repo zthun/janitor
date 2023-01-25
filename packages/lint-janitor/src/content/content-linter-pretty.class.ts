@@ -1,4 +1,3 @@
-/* eslint-disable require-jsdoc */
 import { check, getFileInfo, Options } from 'prettier';
 import { IZContentLinter } from './content-linter.interface';
 
@@ -9,11 +8,15 @@ export class ZContentLinterPretty implements IZContentLinter {
   /**
    * Lints the content.
    *
-   * @param content The content to check.
-   * @param contentPath The path of the content data.
-   * @param options The htmlhint options.
+   * @param content -
+   *        The content to check.
+   * @param contentPath -
+   *        The path of the content data.
+   * @param options -
+   *        The htmlhint options.
    *
-   * @returns A promise that resolves if the content is lint free, and rejects if it has lint errors.
+   * @returns
+   *        A promise that resolves if the content is lint free, and rejects if it has lint errors.
    */
   public async lint(content: string, contentPath: string, options?: Options): Promise<any> {
     const file = await getFileInfo(contentPath);

@@ -1,4 +1,3 @@
-/* eslint-disable require-jsdoc */
 import chalk from 'chalk';
 import { CSpellApplicationOptions, CSpellReporter, Issue, lint } from 'cspell';
 import { noop } from 'lodash';
@@ -11,19 +10,25 @@ export class ZLinterSpelling implements IZLinter {
   /**
    * Initializes a new instance of this object.
    *
-   * @param _logger The logger to output to.
+   * @param _logger -
+   *        The logger to output to.
    */
   public constructor(private readonly _logger: Console) {}
 
   /**
    * Runs the lint given the specified config and source files.
    *
-   * @param src The list of files globs to lint.
-   * @param config The optional lint config file.
-   * @param exclude The list of file globs to exclude.
+   * @param src -
+   *        The list of files globs to lint.
+   * @param config -
+   *        The optional lint config file.
+   * @param exclude -
+   *        The list of file globs to exclude.
    *
-   * @returns A promise that resolves to true if the lint is fully successful, and false if the lint
-   *         has errors.
+   * @returns
+   *        A promise that resolves to true if the
+   *        lint is fully successful, and false if the lint
+   *        has errors.
    */
   public async lint(src: string[], config?: string, exclude?: string[]): Promise<boolean> {
     const options: CSpellApplicationOptions = { exclude };

@@ -1,4 +1,3 @@
-/* eslint-disable require-jsdoc */
 import { ZLinterSilent } from './linter-silent.class';
 import { describe, it, expect } from 'vitest';
 

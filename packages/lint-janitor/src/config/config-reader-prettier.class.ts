@@ -8,9 +8,12 @@ export class ZConfigReaderPrettier implements IZConfigReader {
   /**
    * Reads the configuration file.
    *
-   * @param config The config module to load.  If this value is falsy, then prettier will be used to retrieve the configuration.
+   * @param config -
+   *        The config module to load.  If this value is falsy,
+   *        then prettier will be used to retrieve the configuration.
    *
-   * @returns The options for the config file.
+   * @returns
+   *        The options for the config file.
    */
   public async read(config: string): Promise<Options> {
     const cwd = process.cwd();

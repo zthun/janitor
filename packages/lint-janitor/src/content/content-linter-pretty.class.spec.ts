@@ -1,4 +1,3 @@
-/* eslint-disable require-jsdoc */
 import { check, FileInfoResult, getFileInfo, Options } from 'prettier';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { ZContentLinterPretty } from './content-linter-pretty.class';

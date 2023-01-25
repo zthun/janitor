@@ -1,4 +1,3 @@
-/* eslint-disable require-jsdoc */
 import { HTMLHint } from 'htmlhint';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { ZContentLinterHtml } from './content-linter-html.class';

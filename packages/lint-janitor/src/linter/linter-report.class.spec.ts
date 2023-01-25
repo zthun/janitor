@@ -1,4 +1,3 @@
-/* eslint-disable require-jsdoc */
 import { sync } from 'glob';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { ZLinterReport } from './linter-report.class';

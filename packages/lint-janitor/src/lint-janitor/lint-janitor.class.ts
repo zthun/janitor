@@ -77,7 +77,8 @@ export class ZLintJanitor {
   /**
    * Initializes a new instance of this object.
    *
-   * @param _logger The logger to use when formatting output.
+   * @param _logger -
+   *        The logger to use when formatting output.
    */
   public constructor(private readonly _logger: Console) {
     this.esLint = new ZLinterReport(new ZLinterEs(this._logger), this._logger, 'es');
@@ -106,9 +107,12 @@ export class ZLintJanitor {
   /**
    * Runs the lint given the required options.
    *
-   * @param options The lint options.
+   * @param options -
+   *        The lint options.
    *
-   * @returns A promise that returns 0 if all linting was successful, and 1 if any of the linting failed.
+   * @returns
+   *        A promise that returns 0 if all linting was successful,
+   *        and 1 if any of the linting failed.
    */
   public async lint(options: IZLintJanitorOptions): Promise<number> {
     let current = true;
@@ -172,9 +176,12 @@ export class ZLintJanitor {
   /**
    * Runs the application.
    *
-   * @param args The command line arguments.
+   * @param args -
+   *        The command line arguments.
    *
-   * @returns A promise that returns 0 if all linting was successful, and 1 if any of the linting failed.
+   * @returns
+   *        A promise that returns 0 if all linting was
+   *        successful, and 1 if any of the linting failed.
    */
   public async run(args: IZLintJanitorArgs): Promise<number> {
     try {

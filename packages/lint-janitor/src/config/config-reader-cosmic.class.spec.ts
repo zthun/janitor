@@ -1,4 +1,3 @@
-/* eslint-disable require-jsdoc */
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { IZConfigExtender } from './config-extender.interface';
 import { ZConfigReaderCosmic } from './config-reader-cosmic.class';

@@ -11,12 +11,15 @@ export class ZConfigReaderCosmic implements IZConfigReader, IZConfigDiscovery {
   /**
    * Initializes a new instance of this object.
    *
-   * @param name The name of the application to load.
-   * @param extends The extender to expand upon the read configuration.
-   * @param paths The additional paths to read if cosmic config does not find a valid config.  Remember that these
-   *              are paths, not modules in this case, so you can't load things from the node modules directory
-   *              using these values.  These only affect the search for the config file, not the actual
-   *              read of the config.
+   * @param name -
+   *        The name of the application to load.
+   * @param extends -
+   *        The extender to expand upon the read configuration.
+   * @param paths -
+   *        The additional paths to read if cosmic config does not find a valid config.  Remember that these
+   *        are paths, not modules in this case, so you can't load things from the node modules directory
+   *        using these values.  These only affect the search for the config file, not the actual
+   *        read of the config.
    */
   public constructor(public name: string, public extender: IZConfigExtender, public paths: string[] = []) {}
 
@@ -25,7 +28,8 @@ export class ZConfigReaderCosmic implements IZConfigReader, IZConfigDiscovery {
    *
    * The extension keyword is deleted from the config.
    *
-   * @returns A promise that resolves with the expanded configuration.
+   * @returns
+   *        A promise that resolves with the expanded configuration.
    */
   public async search() {
     const explorer = cosmiconfig(this.name);
@@ -55,9 +59,11 @@ export class ZConfigReaderCosmic implements IZConfigReader, IZConfigDiscovery {
   /**
    * Reads the config file.
    *
-   * @param config The optional configuration file.  If this is null then the cosmiconfig path is searched on the name.
+   * @param config -
+   *        The optional configuration file.  If this is null then the cosmiconfig path is searched on the name.
    *
-   * @returns A promise that resolves the json object that represents the config.
+   * @returns
+   *        A promise that resolves the json object that represents the config.
    */
   public async read(config: string): Promise<any> {
     const configLoad = config ? Promise.resolve(config) : this.search();

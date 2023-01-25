@@ -1,4 +1,3 @@
-/* eslint-disable require-jsdoc */
 import { ESLint } from 'eslint';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { ZLinterEs } from './linter-es.class';

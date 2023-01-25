@@ -5,7 +5,8 @@ export interface IZConfigExtender {
   /**
    * Expands a configuration object.
    *
-   * @param config The current configuration object.
+   * @param config -
+   *        The current configuration object.
    */
   extend(config: any): Promise<string>;
 }
