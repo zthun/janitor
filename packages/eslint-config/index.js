@@ -1,6 +1,6 @@
 module.exports = {
   extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
-  plugins: ['@typescript-eslint', 'import'],
+  plugins: ['@typescript-eslint', 'import', 'tsdoc'],
   parserOptions: {
     ecmaVersion: 8,
     sourceType: 'module'
@@ -105,18 +105,6 @@ module.exports = {
         allowTemplateLiterals: true
       }
     ],
-    'require-jsdoc': [
-      'error',
-      {
-        require: {
-          FunctionDeclaration: true,
-          MethodDefinition: true,
-          ClassDeclaration: true,
-          ArrowFunctionExpression: false,
-          FunctionExpression: false
-        }
-      }
-    ],
     'semi': 'error',
     'semi-spacing': 'error',
     'semi-style': 'error',
@@ -137,21 +125,6 @@ module.exports = {
     'switch-colon-spacing': 'error',
     'template-tag-spacing': 'error',
     'unicode-bom': 'off',
-    'valid-jsdoc': [
-      'error',
-      {
-        prefer: {
-          arg: 'param',
-          return: 'returns'
-        },
-        matchDescription: '.+',
-        requireParamDescription: true,
-        requireReturnDescription: true,
-        requireParamType: false,
-        requireReturnType: false,
-        requireReturn: false
-      }
-    ],
     'wrap-regex': 'off',
 
     '@typescript-eslint/no-explicit-any': 'off',
@@ -160,11 +133,15 @@ module.exports = {
     '@typescript-eslint/ban-types': 'off',
     '@typescript-eslint/no-var-requires': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/no-empty-interface': 'off',
+    '@typescript-eslint/no-non-null-assertion': 'off',
 
     'import/first': 'error',
     'import/no-absolute-path': 'error',
     'import/no-extraneous-dependencies': 'error',
-    'import/no-deprecated': 'warn'
+    'import/no-deprecated': 'warn',
+
+    'tsdoc/syntax': 'warn'
   },
   env: {
     browser: true,
