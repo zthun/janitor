@@ -2,7 +2,7 @@
   "npmClient": "yarn",
   "useWorkspaces": true,
   "stream": true,
-  "version": "14.0.0",
+  "version": "14.1.0",
   "nx": true,
   "command": {
     "publish": {
