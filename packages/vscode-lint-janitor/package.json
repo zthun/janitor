@@ -23,7 +23,7 @@
     ]
   },
   "scripts": {
-    "_build": "tsc -p tsconfig.bin.json && typedoc"
+    "_build": "tsc -p tsconfig.bin.json"
   },
   "dependencies": {
     "@zthun/lint-janitor": "^14.1.0"

@@ -6,7 +6,8 @@ import { ExtensionContext, commands, window } from 'vscode';
 /**
  * The method that gets called as a result of activation.
  *
- * @param context The extension context.
+ * @param context -
+ *        The extension context.
  */
 export function activate(context: ExtensionContext) {
   // Use the console to output diagnostic information (console.log) and errors (console.error)

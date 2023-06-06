@@ -21,7 +21,6 @@
   "types": "./dist/index.d.ts",
   "bin": "dist/cli.js",
   "scripts": {
-    "doc": "typedoc",
     "build": "tsc -p tsconfig.bin.json",
     "start": "node --inspect-brk -r ts-node/register src/cli.ts"
   },
@@ -42,9 +41,7 @@
     "yargs": "^17.6.2"
   },
   "files": [
-    "dist",
-    "images",
-    "docs"
+    "dist"
   ],
   "devDependencies": {
     "typescript": "^4.9.4",
