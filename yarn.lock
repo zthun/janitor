@@ -2214,7 +2214,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zthun/markdownlint-config@workspace:packages/markdownlint-config"
   peerDependencies:
-    markdownlint: ~0.27.0
+    markdownlint: ~0.29.0
   languageName: unknown
   linkType: soft
 
@@ -2232,7 +2232,7 @@ __metadata:
   dependencies:
     stylelint-config-standard: ^33.0.0
   peerDependencies:
-    stylelint: ^14.2.0
+    stylelint: ^15.7.0
   languageName: unknown
   linkType: soft
 
