@@ -27,7 +27,7 @@
     "@types/js-yaml": "^4.0.5",
     "@types/lodash": "^4.14.191",
     "@types/node": "^18.11.18",
-    "@types/prettier": "^2.7.2",
+    "@types/prettier": "^2.7.3",
     "@types/vscode": "^1.74.0",
     "@types/yargs": "^17.0.20",
     "@vitest/coverage-istanbul": "^0.32.0",

@@ -1852,7 +1852,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/prettier@npm:^2.7.2":
+"@types/prettier@npm:^2.7.3":
   version: 2.7.3
   resolution: "@types/prettier@npm:2.7.3"
   checksum: 705384209cea6d1433ff6c187c80dcc0b95d99d5c5ce21a46a9a58060c527973506822e428789d842761e0280d25e3359300f017fbe77b9755bc772ab3dc2f83
@@ -2153,7 +2153,7 @@ __metadata:
     "@types/js-yaml": ^4.0.5
     "@types/lodash": ^4.14.191
     "@types/node": ^18.11.18
-    "@types/prettier": ^2.7.2
+    "@types/prettier": ^2.7.3
     "@types/vscode": ^1.74.0
     "@types/yargs": ^17.0.20
     "@vitest/coverage-istanbul": ^0.32.0
@@ -2182,7 +2182,7 @@ __metadata:
     eslint: ^8.42.0
     htmlhint: ^1.1.4
     markdownlint: ~0.27.0
-    prettier: ^2.8.3
+    prettier: ^2.8.8
     stylelint: ^14.16.1
   peerDependencies:
     "@zthun/lint-janitor": ^14.0.0
@@ -2203,7 +2203,7 @@ __metadata:
     js-yaml: ^4.1.0
     lodash: ^4.17.21
     markdownlint: ~0.27.0
-    prettier: ^2.8.3
+    prettier: ^2.8.8
     stylelint: ^14.16.1
     typescript: ^4.9.4
     vite: ^4.3.9
@@ -7825,7 +7825,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.8.3":
+"prettier@npm:^2.8.8":
   version: 2.8.8
   resolution: "prettier@npm:2.8.8"
   bin:
