@@ -1,6 +1,5 @@
 {
   "npmClient": "yarn",
-  "useWorkspaces": true,
   "stream": true,
   "version": "14.1.0",
   "nx": true,
