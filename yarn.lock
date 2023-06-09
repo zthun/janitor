@@ -2200,7 +2200,7 @@ __metadata:
     "@zthun/stylelint-config": ^14.1.0
     eslint: ^8.42.0
     htmlhint: ^1.1.4
-    markdownlint: ~0.27.0
+    markdownlint: ~0.29.0
     prettier: ^2.8.8
     stylelint: ^15.7.0
   peerDependencies:
@@ -2221,7 +2221,7 @@ __metadata:
     htmlhint: ^1.1.4
     js-yaml: ^4.1.0
     lodash: ^4.17.21
-    markdownlint: ~0.27.0
+    markdownlint: ~0.29.0
     prettier: ^2.8.8
     stylelint: ^15.7.0
     typescript: ^4.9.4
@@ -6507,12 +6507,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"markdownlint@npm:~0.27.0":
-  version: 0.27.0
-  resolution: "markdownlint@npm:0.27.0"
+"markdownlint-micromark@npm:0.1.5":
+  version: 0.1.5
+  resolution: "markdownlint-micromark@npm:0.1.5"
+  checksum: fc69c340c31a06b46cf358759348a12b60b0080d82406ec1ed2e015e96b664e4075584980cf1bf029287109503ec37d0da012ec67827bc7a21a9f7d0b5a624b8
+  languageName: node
+  linkType: hard
+
+"markdownlint@npm:~0.29.0":
+  version: 0.29.0
+  resolution: "markdownlint@npm:0.29.0"
   dependencies:
     markdown-it: 13.0.1
-  checksum: aecc5849e611f66f4c666c9fe47f798fc7cb044ee0bf7884d666152961f1bf585f0e16cafe575386d40d5d19b82e6071aeecee14f1a7006495fe46fcf93c7aa7
+    markdownlint-micromark: 0.1.5
+  checksum: 5785f5173f553510516bf1f68a0768118dcae3a3a19234f6ed57d5d5a8f5beedcca859593fdcf0d8e90fdccb69fd0e168e77416f5712e04e2062c5bf2dca5612
   languageName: node
   linkType: hard
 
