@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [14.2.0](https://github.com/zthun/janitor/compare/v14.1.0...v14.2.0) (2023-06-09)
+
+
+### Features
+
+* typedoc no longer distributed ([c1d8114](https://github.com/zthun/janitor/commit/c1d811493d669d6148825108bd44ea5008325d8a))
+* update cspell ([94e7464](https://github.com/zthun/janitor/commit/94e7464002cd821ee9a199c4fa474caab647e20f))
+* update markdownlint ([f331048](https://github.com/zthun/janitor/commit/f3310482cd355f382e0f02170b08d031457811af))
+* update prettier ([97bb183](https://github.com/zthun/janitor/commit/97bb183af6b1373567a81d980a7e4c73575e8095))
+* update stylelint ([3c5e59e](https://github.com/zthun/janitor/commit/3c5e59e022a8daec294a776cde24f7f5aebcabbb))
+
+
+
 ## [14.1.0](https://github.com/zthun/janitor/compare/v14.0.0...v14.1.0) (2023-01-25)
 
 **Note:** Version bump only for package @zthun/lint-janitor

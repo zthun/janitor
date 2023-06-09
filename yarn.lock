@@ -2106,7 +2106,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zthun/eslint-config@^14.1.0, @zthun/eslint-config@workspace:packages/eslint-config":
+"@zthun/eslint-config@^14.2.0, @zthun/eslint-config@workspace:packages/eslint-config":
   version: 0.0.0-use.local
   resolution: "@zthun/eslint-config@workspace:packages/eslint-config"
   dependencies:
@@ -2119,11 +2119,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zthun/eslint-react-config@^14.1.0, @zthun/eslint-react-config@workspace:packages/eslint-react-config":
+"@zthun/eslint-react-config@^14.2.0, @zthun/eslint-react-config@workspace:packages/eslint-react-config":
   version: 0.0.0-use.local
   resolution: "@zthun/eslint-react-config@workspace:packages/eslint-react-config"
   dependencies:
-    "@zthun/eslint-config": ^14.1.0
+    "@zthun/eslint-config": ^14.2.0
     eslint-plugin-react: ^7.32.2
   peerDependencies:
     eslint: ^8.5.0
@@ -2169,12 +2169,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zthun/lint-janitor-config@workspace:packages/lint-janitor-config"
   dependencies:
-    "@zthun/eslint-config": ^14.1.0
-    "@zthun/eslint-react-config": ^14.1.0
+    "@zthun/eslint-config": ^14.2.0
+    "@zthun/eslint-react-config": ^14.2.0
     "@zthun/htmlhint-config": ^14.1.0
-    "@zthun/markdownlint-config": ^14.1.0
+    "@zthun/markdownlint-config": ^14.2.0
     "@zthun/prettier-config": ^14.1.0
-    "@zthun/stylelint-config": ^14.1.0
+    "@zthun/stylelint-config": ^14.2.0
     eslint: ^8.42.0
     htmlhint: ^1.1.4
     markdownlint: ~0.29.0
@@ -2210,7 +2210,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zthun/markdownlint-config@^14.1.0, @zthun/markdownlint-config@workspace:packages/markdownlint-config":
+"@zthun/markdownlint-config@^14.2.0, @zthun/markdownlint-config@workspace:packages/markdownlint-config":
   version: 0.0.0-use.local
   resolution: "@zthun/markdownlint-config@workspace:packages/markdownlint-config"
   peerDependencies:
@@ -2226,7 +2226,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zthun/stylelint-config@^14.1.0, @zthun/stylelint-config@workspace:packages/stylelint-config":
+"@zthun/stylelint-config@^14.2.0, @zthun/stylelint-config@workspace:packages/stylelint-config":
   version: 0.0.0-use.local
   resolution: "@zthun/stylelint-config@workspace:packages/stylelint-config"
   dependencies:
