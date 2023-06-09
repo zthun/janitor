@@ -20,7 +20,8 @@
   "devDependencies": {
     "@commitlint/cli": "^17.6.5",
     "@commitlint/config-conventional": "^17.6.5",
-    "@types/eslint": "^8.4.10",
+    "@types/eslint": "^8.40.1",
+    "@types/estree": "^1.0.1",
     "@types/glob": "^8.0.1",
     "@types/htmlhint": "^1.1.2",
     "@types/js-yaml": "^4.0.5",

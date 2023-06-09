@@ -8,6 +8,7 @@
     "conventionalcommits",
     "cosmiconfig",
     "errored",
+    "estree",
     "htmlhint",
     "janitorrc",
     "linebreak",
