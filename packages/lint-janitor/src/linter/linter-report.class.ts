@@ -1,5 +1,5 @@
 import chalk from 'chalk';
-import { IOptions, sync } from 'glob';
+import { GlobOptionsWithFileTypesFalse, sync } from 'glob';
 import { uniq } from 'lodash';
 import { IZLinter } from './linter.interface';
 
@@ -35,7 +35,7 @@ export class ZLinterReport implements IZLinter {
    *        The list of globs to exclude.
    */
   public async lint(src: string[], config?: string, exclude?: string[]): Promise<boolean> {
-    const globOptions: IOptions = { dot: true, ignore: exclude };
+    const globOptions: GlobOptionsWithFileTypesFalse = { dot: true, ignore: exclude };
 
     let files: string[] = [];
     src.forEach((pattern) => (files = files.concat(sync(pattern, globOptions))));

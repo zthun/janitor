@@ -1,5 +1,5 @@
 import chalk from 'chalk';
-import { IOptions, sync } from 'glob';
+import { GlobOptionsWithFileTypesFalse, sync } from 'glob';
 import { some, values } from 'lodash';
 import markdownlint, { Options } from 'markdownlint';
 import { promisify } from 'util';
@@ -42,7 +42,7 @@ export class ZLinterMarkdown implements IZLinter {
       return false;
     }
 
-    const globOptions: IOptions = { dot: true, ignore: exclude };
+    const globOptions: GlobOptionsWithFileTypesFalse = { dot: true, ignore: exclude };
     let files: string[] = [];
     src.forEach((pattern) => (files = files.concat(sync(pattern, globOptions))));
 
