@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@zthun/eslint-config": "^14.2.0",
-    "eslint-plugin-react": "^7.32.2"
+    "eslint-plugin-react": "^7.33.1"
   },
   "peerDependencies": {
     "eslint": "^8.5.0"

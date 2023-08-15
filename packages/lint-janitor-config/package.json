@@ -26,7 +26,7 @@
     "@zthun/markdownlint-config": "^14.2.0",
     "@zthun/prettier-config": "^14.1.0",
     "@zthun/stylelint-config": "^14.2.0",
-    "eslint": "^8.42.0",
+    "eslint": "^8.47.0",
     "htmlhint": "^1.1.4",
     "markdownlint": "~0.29.0",
     "prettier": "^2.8.8",
