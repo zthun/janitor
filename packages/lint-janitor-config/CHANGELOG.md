@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [14.3.0](https://github.com/zthun/janitor/compare/v14.2.0...v14.3.0) (2023-08-15)
+
+
+### Features
+
+* update eslint ([ed7ebcb](https://github.com/zthun/janitor/commit/ed7ebcb48ad1199bf4f84cc7e98136ffe513f5ca))
+* update markdown lint ([d1e490c](https://github.com/zthun/janitor/commit/d1e490cb22d6ffac45c81b4076e00fe278f5ed4e))
+* update prettier ([5f1104c](https://github.com/zthun/janitor/commit/5f1104c127830389b46ad4d0954825bb9533ed1c))
+* update stylelint ([6ece8fa](https://github.com/zthun/janitor/commit/6ece8fa9a8ce261147f12f9a027b35f18fbf80f2))
+
+
+
 ## [14.2.0](https://github.com/zthun/janitor/compare/v14.1.0...v14.2.0) (2023-06-09)
 
 
