@@ -1,7 +1,5 @@
 {
   "compilerOptions": {
-    "moduleResolution": "node",
-    "removeComments": true,
     "allowSyntheticDefaultImports": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
