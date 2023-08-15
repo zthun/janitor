@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [14.3.1](https://github.com/zthun/janitor/compare/v14.3.0...v14.3.1) (2023-08-15)
+
+
+### Bug Fixes
+
+* peer dependencies ([7c5a080](https://github.com/zthun/janitor/commit/7c5a080c6e57007d0801ff4e0dd5d5395d83f199))
+
+
+
 ## [14.2.0](https://github.com/zthun/janitor/compare/v14.1.0...v14.2.0) (2023-06-09)
 
 **Note:** Version bump only for package @zthun/markdownlint-config
