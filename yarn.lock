@@ -2452,7 +2452,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zthun/markdownlint-config@workspace:packages/markdownlint-config"
   peerDependencies:
-    markdownlint: ~0.29.0
+    markdownlint: ~0.30.0
   languageName: unknown
   linkType: soft
 
@@ -2460,7 +2460,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zthun/prettier-config@workspace:packages/prettier-config"
   peerDependencies:
-    prettier: ^2.2.0
+    prettier: ^3.0.2
   languageName: unknown
   linkType: soft
 
