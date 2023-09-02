@@ -2345,7 +2345,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zthun/eslint-config@^14.3.1, @zthun/eslint-config@workspace:packages/eslint-config":
+"@zthun/eslint-config@^14.3.2, @zthun/eslint-config@workspace:packages/eslint-config":
   version: 0.0.0-use.local
   resolution: "@zthun/eslint-config@workspace:packages/eslint-config"
   dependencies:
@@ -2358,11 +2358,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zthun/eslint-react-config@^14.3.1, @zthun/eslint-react-config@workspace:packages/eslint-react-config":
+"@zthun/eslint-react-config@^14.3.2, @zthun/eslint-react-config@workspace:packages/eslint-react-config":
   version: 0.0.0-use.local
   resolution: "@zthun/eslint-react-config@workspace:packages/eslint-react-config"
   dependencies:
-    "@zthun/eslint-config": ^14.3.1
+    "@zthun/eslint-config": ^14.3.2
     eslint-plugin-react: ^7.33.2
   peerDependencies:
     eslint: ^8.5.0
@@ -2408,8 +2408,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zthun/lint-janitor-config@workspace:packages/lint-janitor-config"
   dependencies:
-    "@zthun/eslint-config": ^14.3.1
-    "@zthun/eslint-react-config": ^14.3.1
+    "@zthun/eslint-config": ^14.3.2
+    "@zthun/eslint-react-config": ^14.3.2
     "@zthun/htmlhint-config": ^14.1.0
     "@zthun/markdownlint-config": ^14.3.1
     "@zthun/prettier-config": ^14.3.1
