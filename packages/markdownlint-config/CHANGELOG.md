@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [14.4.0](https://github.com/zthun/janitor/compare/v14.3.2...v14.4.0) (2023-11-21)
+
+
+### Features
+
+* upgrade markdownlint to 0.32.x ([14d9226](https://github.com/zthun/janitor/commit/14d922674fe12b3b4215979759a031473ec9b195))
+
+
+
 ## [14.3.1](https://github.com/zthun/janitor/compare/v14.3.0...v14.3.1) (2023-08-15)
 
 

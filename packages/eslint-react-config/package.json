@@ -1,6 +1,6 @@
 {
   "name": "@zthun/eslint-react-config",
-  "version": "14.3.2",
+  "version": "14.4.0",
   "description": "A shared configuration for eslint for @zthun scoped react based projects.",
   "keywords": [
     "eslint",
@@ -16,7 +16,7 @@
     "directory": "packages/eslint-react-config"
   },
   "dependencies": {
-    "@zthun/eslint-config": "^14.3.2",
+    "@zthun/eslint-config": "^14.4.0",
     "eslint-plugin-react": "^7.33.2"
   },
   "peerDependencies": {
