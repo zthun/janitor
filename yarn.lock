@@ -2362,7 +2362,7 @@ __metadata:
     "@zthun/stylelint-config": ^14.3.1
     eslint: ^8.54.0
     htmlhint: ^1.1.4
-    markdownlint: ~0.30.0
+    markdownlint: ~0.32.1
     prettier: ^3.0.3
     stylelint: ^15.10.3
   peerDependencies:
@@ -2383,7 +2383,7 @@ __metadata:
     htmlhint: ^1.1.4
     js-yaml: ^4.1.0
     lodash: ^4.17.21
-    markdownlint: ~0.30.0
+    markdownlint: ~0.32.1
     prettier: ^3.0.3
     stylelint: ^15.10.3
     typescript: ~5.3.2
@@ -2398,7 +2398,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zthun/markdownlint-config@workspace:packages/markdownlint-config"
   peerDependencies:
-    markdownlint: ~0.30.0
+    markdownlint: ~0.32.0
   languageName: unknown
   linkType: soft
 
@@ -6911,9 +6911,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"markdown-it@npm:13.0.1":
-  version: 13.0.1
-  resolution: "markdown-it@npm:13.0.1"
+"markdown-it@npm:13.0.2":
+  version: 13.0.2
+  resolution: "markdown-it@npm:13.0.2"
   dependencies:
     argparse: ^2.0.1
     entities: ~3.0.1
@@ -6922,7 +6922,7 @@ __metadata:
     uc.micro: ^1.0.5
   bin:
     markdown-it: bin/markdown-it.js
-  checksum: faf5891d389dc433bcf21d3fbff2009beb044b42b117c92f4848899780ca1a2282a209e3ff4672db4afed726a7248304ec473e6e242a7d6498af7113d31974e7
+  checksum: bb4bf2cb3e5d77a7f3dc9cf48e17d050fbcd26d37992204eaa5812220752858fe9debe439b2ae1de06e749a3bba537c0baf6ce7510307cf7163a70f04fafe672
   languageName: node
   linkType: hard
 
@@ -6933,13 +6933,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"markdownlint@npm:~0.30.0":
-  version: 0.30.0
-  resolution: "markdownlint@npm:0.30.0"
+"markdownlint@npm:~0.32.1":
+  version: 0.32.1
+  resolution: "markdownlint@npm:0.32.1"
   dependencies:
-    markdown-it: 13.0.1
+    markdown-it: 13.0.2
     markdownlint-micromark: 0.1.7
-  checksum: cc99517c61fe8df9af918fafad314e685a8888162c476d6f7ef51555008c4f2581231e3930ea3d29b46a29307d2e4fce1c78db8dcd6962bf7069983e72cd3bba
+  checksum: e6f0988cbbd4bc0d3b8c2ff4d6cf2e97a2dc39a73529030a6a192fb572b5bd002d194280929b362254410a4df183e69d28c2cce752cc82980b43a557deeb624c
   languageName: node
   linkType: hard
 
