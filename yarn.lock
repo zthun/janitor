@@ -1945,17 +1945,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/htmlhint@npm:^1.1.2":
-  version: 1.1.2
-  resolution: "@types/htmlhint@npm:1.1.2"
-  checksum: ccfad419b6a0b2c1010b8882e463c66263d3de075621c93c429743e8b1b721a12fabafc9416b882925da35b172845c239d3599d9fd463b1d4b24ce825cc827ee
+"@types/htmlhint@npm:^1.1.5":
+  version: 1.1.5
+  resolution: "@types/htmlhint@npm:1.1.5"
+  checksum: e764554ed9c0ff10d2bce167c6ec77e5cbe6b6aa41e13067eee21712bbf4927245ac53b2382d5e658a958e3f5dd0399f75de0efcae2b55367429d1fe551b62f4
   languageName: node
   linkType: hard
 
-"@types/js-yaml@npm:^4.0.5":
-  version: 4.0.5
-  resolution: "@types/js-yaml@npm:4.0.5"
-  checksum: 7dcac8c50fec31643cc9d6444b5503239a861414cdfaa7ae9a38bc22597c4d850c4b8cec3d82d73b3fbca408348ce223b0408d598b32e094470dfffc6d486b4d
+"@types/js-yaml@npm:^4.0.9":
+  version: 4.0.9
+  resolution: "@types/js-yaml@npm:4.0.9"
+  checksum: e5e5e49b5789a29fdb1f7d204f82de11cb9e8f6cb24ab064c616da5d6e1b3ccfbf95aa5d1498a9fbd3b9e745564e69b4a20b6c530b5a8bbb2d4eb830cda9bc69
   languageName: node
   linkType: hard
 
@@ -2333,8 +2333,8 @@ __metadata:
     "@types/eslint": ^8.44.7
     "@types/estree": ^1.0.5
     "@types/glob": ^8.1.0
-    "@types/htmlhint": ^1.1.2
-    "@types/js-yaml": ^4.0.5
+    "@types/htmlhint": ^1.1.5
+    "@types/js-yaml": ^4.0.9
     "@types/lodash": ^4.14.202
     "@types/node": ^20.9.3
     "@types/prettier": ^3.0.0
