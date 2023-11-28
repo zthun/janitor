@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [15.0.0](https://github.com/zthun/janitor/compare/v14.4.0...v15.0.0) (2023-11-28)
+
+**Note:** Version bump only for package @zthun/htmlhint-config
+
+
+
+
+
 ## [14.1.0](https://github.com/zthun/janitor/compare/v14.0.0...v14.1.0) (2023-01-25)
 
 **Note:** Version bump only for package @zthun/htmlhint-config

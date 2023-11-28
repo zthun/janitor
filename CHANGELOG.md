@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [15.0.0](https://github.com/zthun/janitor/compare/v14.4.0...v15.0.0) (2023-11-28)
+
+
+### ⚠ BREAKING CHANGES
+
+* upgrade chalk to 5.x
+* upgrade cspell to 8.0.0
+* convert to esm module
+* convert lint janitor to esm modules only
+
+### Features
+
+* upgrade chalk to 5.x ([3304bbd](https://github.com/zthun/janitor/commit/3304bbd34090da39a51e2e04a3bf6bfda7b18c62))
+* upgrade cspell to 8.0.0 ([759d837](https://github.com/zthun/janitor/commit/759d8377f74e0494eb8d424d90d0f1c981a02306))
+
+
+### Code Refactoring
+
+* convert lint janitor to esm modules only ([5d73f75](https://github.com/zthun/janitor/commit/5d73f75615df32025d908e442bfeff2c5fc0c143))
+* convert to esm module ([26f3b64](https://github.com/zthun/janitor/commit/26f3b6460586b0f1b48855e739a894be158985ad))
+
+
+
 ## [14.4.0](https://github.com/zthun/janitor/compare/v14.3.2...v14.4.0) (2023-11-21)
 
 
