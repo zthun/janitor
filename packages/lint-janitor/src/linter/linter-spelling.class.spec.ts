@@ -1,6 +1,6 @@
 import { CSpellReporter, Issue, lint, RunResult } from 'cspell';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { ZLinterSpelling } from './linter-spelling.class';
+import { ZLinterSpelling } from './linter-spelling.mjs';
 
 vi.mock('cspell', () => ({
   lint: vi.fn()

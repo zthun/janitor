@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { ZConfigReaderNull } from './config-reader-null.class';
+import { ZConfigReaderNull } from './config-reader-null.mjs';
 
 describe('ZConfigReaderNull', () => {
   function createTestTarget() {

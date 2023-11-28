@@ -1,5 +1,5 @@
 import { formatters, lint, LinterOptions } from 'stylelint';
-import { IZLinter } from './linter.interface';
+import { IZLinter } from './linter.mjs';
 
 /**
  * Represents a linter for stylelint.

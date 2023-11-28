@@ -1,7 +1,7 @@
 import chalk from 'chalk';
 import { CSpellApplicationOptions, CSpellReporter, Issue, lint } from 'cspell';
 import { noop } from 'lodash';
-import { IZLinter } from './linter.interface';
+import { IZLinter } from './linter.mjs';
 
 /**
  * Represents an object that can be used to perform cspell on files.

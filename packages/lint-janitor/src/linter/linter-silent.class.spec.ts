@@ -1,4 +1,4 @@
-import { ZLinterSilent } from './linter-silent.class';
+import { ZLinterSilent } from './linter-silent.mjs';
 import { describe, it, expect } from 'vitest';
 
 describe('ZLinterSilent', () => {

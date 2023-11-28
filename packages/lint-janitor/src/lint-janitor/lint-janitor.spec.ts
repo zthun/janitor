@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it, Mocked, vi } from 'vitest';
-import { IZConfigReader } from '../config/config-reader.interface';
-import { ZLinterSilent } from '../linter/linter-silent.class';
-import { IZLinter } from '../linter/linter.interface';
+import { IZConfigReader } from '../config/config-reader.mjs';
+import { ZLinterSilent } from '../linter/linter-silent.mjs';
+import { IZLinter } from '../linter/linter.mjs';
 import { IZLintJanitorArgs } from './lint-janitor-args.mjs';
 import { IZLintJanitorOptions } from './lint-janitor-options.mjs';
 import { ZLintJanitor } from './lint-janitor.mjs';

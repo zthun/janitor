@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it } from 'vitest';
-import { ZConfigExtender } from './config-extender.class';
+import { ZConfigExtender } from './config-extender.mjs';
 
 /*
  * A note on these.  These are more integration tests since we are going to be importing real data.

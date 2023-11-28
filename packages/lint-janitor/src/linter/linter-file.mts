@@ -3,8 +3,8 @@ import { readFile } from 'fs';
 import { GlobOptionsWithFileTypesFalse, sync } from 'glob';
 import { resolve } from 'path';
 import { promisify } from 'util';
-import { IZConfigReader } from '../config/config-reader.interface';
-import { IZLinter } from './linter.interface';
+import { IZConfigReader } from '../config/config-reader.mjs';
+import { IZLinter } from './linter.mjs';
 import { IZContentLinter } from '../content/content-linter.interface';
 
 /**

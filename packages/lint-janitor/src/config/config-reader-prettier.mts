@@ -1,5 +1,5 @@
 import { Options, resolveConfig, ResolveConfigOptions } from 'prettier';
-import { IZConfigReader } from './config-reader.interface';
+import { IZConfigReader } from './config-reader.mjs';
 
 /**
  * Represents a configuration reader for prettier.

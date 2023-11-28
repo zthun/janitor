@@ -1,8 +1,8 @@
 import { sync } from 'glob';
 import markdownlint, { LintError } from 'markdownlint';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { IZConfigReader } from '../config/config-reader.interface';
-import { ZLinterMarkdown } from './linter-markdown.class';
+import { IZConfigReader } from '../config/config-reader.mjs';
+import { ZLinterMarkdown } from './linter-markdown.mjs';
 
 vi.mock('markdownlint', () => ({
   default: vi.fn()

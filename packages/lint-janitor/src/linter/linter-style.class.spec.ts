@@ -1,5 +1,5 @@
 import { lint, LintResult, LinterResult } from 'stylelint';
-import { ZLinterStyle } from './linter-style.class';
+import { ZLinterStyle } from './linter-style.mjs';
 import { describe, beforeEach, it, expect, vi } from 'vitest';
 
 vi.mock('stylelint', () => ({

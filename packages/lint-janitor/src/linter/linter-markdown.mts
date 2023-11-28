@@ -3,8 +3,8 @@ import { GlobOptionsWithFileTypesFalse, sync } from 'glob';
 import { some, values } from 'lodash';
 import markdownlint, { Options } from 'markdownlint';
 import { promisify } from 'util';
-import { IZConfigReader } from '../config/config-reader.interface';
-import { IZLinter } from './linter.interface';
+import { IZConfigReader } from '../config/config-reader.mjs';
+import { IZLinter } from './linter.mjs';
 
 /**
  * Represents a linter object that checks markdown.
@@ -18,7 +18,10 @@ export class ZLinterMarkdown implements IZLinter {
    * @param _reader -
    *        The configuration reader.
    */
-  public constructor(private readonly _logger: Console, private readonly _reader: IZConfigReader) {}
+  public constructor(
+    private readonly _logger: Console,
+    private readonly _reader: IZConfigReader
+  ) {}
 
   /**
    * Lints all files matched by the specified glob pattern.

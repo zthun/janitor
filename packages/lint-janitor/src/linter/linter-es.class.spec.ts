@@ -1,6 +1,6 @@
 import { ESLint } from 'eslint';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { ZLinterEs } from './linter-es.class';
+import { ZLinterEs } from './linter-es.mjs';
 
 describe('ZLinterEs', () => {
   let files: string[];

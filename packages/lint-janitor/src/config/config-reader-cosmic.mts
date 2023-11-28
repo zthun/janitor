@@ -1,8 +1,8 @@
 import { cosmiconfig } from 'cosmiconfig';
 import { resolve } from 'path';
-import { IZConfigDiscovery } from './config-discovery.interface';
-import { IZConfigExtender } from './config-extender.interface';
-import { IZConfigReader } from './config-reader.interface';
+import { IZConfigDiscovery } from './config-discovery.mjs';
+import { IZConfigReader } from './config-reader.mjs';
+import { IZConfigExtender } from './config-extender.mjs';
 
 /**
  * Represents a reader that uses the cosmiconfig standard for files.
@@ -21,7 +21,11 @@ export class ZConfigReaderCosmic implements IZConfigReader, IZConfigDiscovery {
    *        using these values.  These only affect the search for the config file, not the actual
    *        read of the config.
    */
-  public constructor(public name: string, public extender: IZConfigExtender, public paths: string[] = []) {}
+  public constructor(
+    public name: string,
+    public extender: IZConfigExtender,
+    public paths: string[] = []
+  ) {}
 
   /**
    * Runs a search for the appropriate configuration file.
