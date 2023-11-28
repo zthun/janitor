@@ -7,11 +7,11 @@ export { ZConfigReaderNull } from './config/config-reader-null.mjs';
 export { ZConfigReaderPrettier } from './config/config-reader-prettier.mjs';
 export type { IZConfigReader } from './config/config-reader.mjs';
 // Content
-export { ZContentLinterHtml } from './content/content-linter-html.class';
-export { ZContentLinterJson } from './content/content-linter-json.class';
-export { ZContentLinterPretty } from './content/content-linter-pretty.class';
-export { ZContentLinterYaml } from './content/content-linter-yaml.class';
-export type { IZContentLinter } from './content/content-linter.interface';
+export { ZContentLinterHtml } from './content/content-linter-html.mjs';
+export { ZContentLinterJson } from './content/content-linter-json.mjs';
+export { ZContentLinterPretty } from './content/content-linter-pretty.mjs';
+export { ZContentLinterYaml } from './content/content-linter-yaml.mjs';
+export type { IZContentLinter } from './content/content-linter.mjs';
 // Lint Janitor
 export type { IZLintJanitorArgs } from './lint-janitor/lint-janitor-args.mjs';
 export type { IZLintJanitorOptions } from './lint-janitor/lint-janitor-options.mjs';

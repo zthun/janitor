@@ -1,6 +1,7 @@
 import chalk from 'chalk';
 import { GlobOptionsWithFileTypesFalse, sync } from 'glob';
-import { some, values } from 'lodash';
+import some from 'lodash/some.js';
+import values from 'lodash/values.js';
 import markdownlint, { Options } from 'markdownlint';
 import { promisify } from 'util';
 import { IZConfigReader } from '../config/config-reader.mjs';

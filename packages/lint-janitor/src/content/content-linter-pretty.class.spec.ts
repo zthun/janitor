@@ -1,6 +1,6 @@
 import { check, FileInfoResult, getFileInfo, Options } from 'prettier';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { ZContentLinterPretty } from './content-linter-pretty.class';
+import { ZContentLinterPretty } from './content-linter-pretty.mjs';
 
 vi.mock('prettier', () => ({
   getFileInfo: vi.fn(),

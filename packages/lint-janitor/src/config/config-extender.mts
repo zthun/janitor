@@ -1,3 +1,5 @@
+import { $require } from './config-resolve.mjs';
+
 /**
  * Represents an object that can be used to build configs using an extends pattern.
  */
@@ -71,9 +73,8 @@ export class ZConfigExtender implements IZConfigExtender {
    * @returns
    *        A promise that resolves the extended inner module.
    */
-  private _read(module: string) {
-    return Promise.resolve(true)
-      .then(() => require(module))
-      .then((data) => this.extend(data));
+  private async _read(module: string) {
+    const data = $require(module);
+    return await this.extend(data);
   }
 }

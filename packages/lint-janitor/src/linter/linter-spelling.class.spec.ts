@@ -1,6 +1,7 @@
 import { CSpellReporter, Issue, lint, RunResult } from 'cspell';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { ZLinterSpelling } from './linter-spelling.mjs';
+import { $resolve } from '../config/config-resolve.mjs';
 
 vi.mock('cspell', () => ({
   lint: vi.fn()
@@ -38,7 +39,7 @@ describe('ZLinterSpelling', () => {
     it('should run the the required options if they are specified.', async () => {
       // Arrange
       const target = createTestTarget();
-      const expected = require.resolve(config);
+      const expected = $resolve(config);
       // Act
       await target.lint(content, config);
       // Assert

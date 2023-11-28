@@ -1,5 +1,6 @@
 import { Options, resolveConfig, ResolveConfigOptions } from 'prettier';
 import { IZConfigReader } from './config-reader.mjs';
+import { $resolve } from './config-resolve.mjs';
 
 /**
  * Represents a configuration reader for prettier.
@@ -17,7 +18,7 @@ export class ZConfigReaderPrettier implements IZConfigReader {
    */
   public async read(config: string): Promise<Options> {
     const cwd = process.cwd();
-    const configFile = config ? require.resolve(config, { paths: [cwd] }) : null;
+    const configFile = config ? $resolve(config, { paths: [cwd] }) : null;
     const ops: ResolveConfigOptions = { config: configFile };
     const options = await resolveConfig(process.cwd(), ops);
 

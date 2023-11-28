@@ -1,17 +1,20 @@
-import { lint, LintResult, LinterResult } from 'stylelint';
+import stylelint from 'stylelint';
 import { ZLinterStyle } from './linter-style.mjs';
 import { describe, beforeEach, it, expect, vi } from 'vitest';
+import { $resolve } from '../config/config-resolve.mjs';
 
 vi.mock('stylelint', () => ({
-  lint: vi.fn(),
-  formatters: {
-    verbose: vi.fn()
+  default: {
+    lint: vi.fn(),
+    formatters: {
+      verbose: vi.fn()
+    }
   }
 }));
 
 describe('ZLinterStyle', () => {
   let logger: Console;
-  let lintResult: LinterResult;
+  let lintResult: stylelint.LinterResult;
   let content: string[];
   let config: string;
 
@@ -35,19 +38,19 @@ describe('ZLinterStyle', () => {
     content = ['fileA.less', 'fileB.css'];
     config = '@zthun/stylelint-config';
 
-    vi.mocked(lint).mockClear();
-    vi.mocked(lint).mockResolvedValue(lintResult);
+    vi.mocked(stylelint.lint).mockClear();
+    vi.mocked(stylelint.lint).mockResolvedValue(lintResult);
   });
 
   describe('Config', () => {
     it('should run the the required options if they are specified.', async () => {
       // Arrange
       const target = createTestTarget();
-      const expected = require.resolve(config);
+      const expected = $resolve(config);
       // Act
       await target.lint(content, config);
       // Assert
-      expect(lint).toHaveBeenCalledWith({ files: content, configFile: expected });
+      expect(stylelint.lint).toHaveBeenCalledWith({ files: content, configFile: expected });
     });
 
     it('should run with the default configuration options if no config is specified.', async () => {
@@ -56,7 +59,7 @@ describe('ZLinterStyle', () => {
       // Act
       await target.lint(content, null);
       // Assert
-      expect(lint).toHaveBeenCalledWith({ files: content });
+      expect(stylelint.lint).toHaveBeenCalledWith({ files: content });
     });
   });
 
@@ -81,7 +84,7 @@ describe('ZLinterStyle', () => {
   });
 
   describe('Failure.', () => {
-    let rule: LintResult;
+    let rule: stylelint.LintResult;
 
     beforeEach(() => {
       rule = {
@@ -105,7 +108,7 @@ describe('ZLinterStyle', () => {
       lintResult.errored = true;
       lintResult.results = [rule];
 
-      vi.mocked(lint).mockResolvedValue(lintResult);
+      vi.mocked(stylelint.lint).mockResolvedValue(lintResult);
     });
 
     it('should log if the linter errors.', async () => {

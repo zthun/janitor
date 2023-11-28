@@ -2,7 +2,7 @@ import { PathOrFileDescriptor, readFile } from 'fs';
 import { sync } from 'glob';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { IZConfigReader } from '../config/config-reader.mjs';
-import { IZContentLinter } from '../content/content-linter.interface';
+import { IZContentLinter } from '../content/content-linter.mjs';
 import { ZLinterFile } from './linter-file.mjs';
 
 vi.mock('glob', () => ({

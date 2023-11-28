@@ -1,7 +1,8 @@
 import chalk from 'chalk';
 import { CSpellApplicationOptions, CSpellReporter, Issue, lint } from 'cspell';
-import { noop } from 'lodash';
+import noop from 'lodash/noop.js';
 import { IZLinter } from './linter.mjs';
+import { $resolve } from '../config/config-resolve.mjs';
 
 /**
  * Represents an object that can be used to perform cspell on files.
@@ -34,7 +35,7 @@ export class ZLinterSpelling implements IZLinter {
     const options: CSpellApplicationOptions = { exclude };
 
     if (config) {
-      options.config = require.resolve(config, { paths: [process.cwd()] });
+      options.config = $resolve(config, { paths: [process.cwd()] });
     }
 
     const info = noop;

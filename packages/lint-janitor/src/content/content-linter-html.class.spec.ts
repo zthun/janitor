@@ -1,6 +1,6 @@
 import { HTMLHint } from 'htmlhint';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { ZContentLinterHtml } from './content-linter-html.class';
+import { ZContentLinterHtml } from './content-linter-html.mjs';
 
 describe('ZContentLinterHtml', () => {
   let contentPath: string;

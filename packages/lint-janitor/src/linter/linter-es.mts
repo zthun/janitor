@@ -1,6 +1,7 @@
 import { ESLint } from 'eslint';
-import { every } from 'lodash';
+import every from 'lodash/every.js';
 import { IZLinter } from './linter.mjs';
+import { $resolve } from '../config/config-resolve.mjs';
 
 /**
  * Represents an object that can be used to perform eslint on javascript files.
@@ -46,7 +47,7 @@ export class ZLinterEs implements IZLinter {
     };
 
     if (config) {
-      esOptions.overrideConfigFile = require.resolve(config, { paths: [process.cwd()] });
+      esOptions.overrideConfigFile = $resolve(config, { paths: [process.cwd()] });
     }
 
     const engine = this.engineFactory(esOptions);

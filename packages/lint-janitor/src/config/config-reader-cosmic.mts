@@ -1,8 +1,10 @@
 import { cosmiconfig } from 'cosmiconfig';
+
 import { resolve } from 'path';
 import { IZConfigDiscovery } from './config-discovery.mjs';
 import { IZConfigReader } from './config-reader.mjs';
 import { IZConfigExtender } from './config-extender.mjs';
+import { $resolve } from './config-resolve.mjs';
 
 /**
  * Represents a reader that uses the cosmiconfig standard for files.
@@ -77,7 +79,7 @@ export class ZConfigReaderCosmic implements IZConfigReader, IZConfigDiscovery {
       return Promise.reject(new Error('Could not find a valid configuration.'));
     }
 
-    const path = require.resolve(configFile, { paths: [process.cwd()] });
+    const path = $resolve(configFile, { paths: [process.cwd()] });
     const buffer = await cosmiconfig(this.name).load(path);
     return await this.extender.extend(buffer.config);
   }

@@ -1,6 +1,6 @@
 import chalk from 'chalk';
 import { GlobOptionsWithFileTypesFalse, sync } from 'glob';
-import { uniq } from 'lodash';
+import uniq from 'lodash/uniq.js';
 import { IZLinter } from './linter.mjs';
 
 /**

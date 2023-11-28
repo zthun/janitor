@@ -1,6 +1,6 @@
 import { dump } from 'js-yaml';
 import { beforeEach, describe, expect, it } from 'vitest';
-import { ZContentLinterYaml } from './content-linter-yaml.class';
+import { ZContentLinterYaml } from './content-linter-yaml.mjs';
 
 describe('ZContentLinterYaml', () => {
   let yaml: any;

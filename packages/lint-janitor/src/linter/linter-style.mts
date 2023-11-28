@@ -1,5 +1,6 @@
-import { formatters, lint, LinterOptions } from 'stylelint';
+import stylelint from 'stylelint';
 import { IZLinter } from './linter.mjs';
+import { $resolve } from '../config/config-resolve.mjs';
 
 /**
  * Represents a linter for stylelint.
@@ -27,18 +28,18 @@ export class ZLinterStyle implements IZLinter {
    *        false if errors are present.
    */
   public async lint(content: string[], config: string): Promise<boolean> {
-    const options: Partial<LinterOptions> = {
+    const options: Partial<stylelint.LinterOptions> = {
       files: content
     };
 
     if (config) {
-      options.configFile = require.resolve(config, { paths: [process.cwd()] });
+      options.configFile = $resolve(config, { paths: [process.cwd()] });
     }
 
-    const result = await lint(options);
+    const result = await stylelint.lint(options);
 
     if (result.errored) {
-      const output = formatters.verbose(result.results, result);
+      const output = stylelint.formatters.verbose(result.results, result);
       this._logger.log(output);
       return false;
     }

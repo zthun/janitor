@@ -1,6 +1,7 @@
 import { ESLint } from 'eslint';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { ZLinterEs } from './linter-es.mjs';
+import { $resolve } from '../config/config-resolve.mjs';
 
 describe('ZLinterEs', () => {
   let files: string[];
@@ -88,7 +89,7 @@ describe('ZLinterEs', () => {
     it('should run the the required options if they are specified.', async () => {
       // Arrange
       const target = createTestTarget();
-      const expected = require.resolve(config);
+      const expected = $resolve(config);
       vi.spyOn(target, 'engineFactory');
       // Act
       await target.lint(files, config);

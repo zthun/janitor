@@ -1,6 +1,7 @@
 import { Options, resolveConfig } from 'prettier';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { ZConfigReaderPrettier } from './config-reader-prettier.mjs';
+import { $resolve } from './config-resolve.mjs';
 
 vi.mock('prettier', () => ({
   resolveConfig: vi.fn()
@@ -26,7 +27,7 @@ describe('ZConfigReaderPrettier', () => {
     // Arrange
     const config = '@zthun/prettier-config';
     const target = createTestTarget();
-    const expected = require.resolve(config);
+    const expected = $resolve(config);
     // Act
     await target.read(config);
     // Assert

@@ -5,7 +5,7 @@ import { resolve } from 'path';
 import { promisify } from 'util';
 import { IZConfigReader } from '../config/config-reader.mjs';
 import { IZLinter } from './linter.mjs';
-import { IZContentLinter } from '../content/content-linter.interface';
+import { IZContentLinter } from '../content/content-linter.mjs';
 
 /**
  * Represents an object that can lint files one at a time.
