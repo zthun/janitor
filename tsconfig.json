@@ -1,8 +1,4 @@
 {
   "extends": "./tsconfig.base.json",
-  "compilerOptions": {
-    "target": "esnext",
-    "paths": {}
-  },
-  "include": ["packages/**/*.ts"]
+  "include": ["packages/**/*.ts", "packages/**/*.mts"]
 }
