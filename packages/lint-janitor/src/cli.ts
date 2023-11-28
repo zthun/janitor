@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 import { usage } from 'yargs';
-import { IZLintJanitorArgs } from './lint-janitor/lint-janitor-args';
-import { ZLintJanitor } from './lint-janitor/lint-janitor';
+import { IZLintJanitorArgs } from './lint-janitor/lint-janitor-args.mjs';
+import { ZLintJanitor } from './lint-janitor/lint-janitor.mjs';
 
 const args: IZLintJanitorArgs = usage('$0 [options]')
   .alias('c', 'config')
