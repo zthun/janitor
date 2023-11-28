@@ -13,9 +13,9 @@ export { ZContentLinterPretty } from './content/content-linter-pretty.class';
 export { ZContentLinterYaml } from './content/content-linter-yaml.class';
 export type { IZContentLinter } from './content/content-linter.interface';
 // Lint Janitor
-export type { IZLintJanitorArgs } from './lint-janitor/lint-janitor-args.interface';
-export type { IZLintJanitorOptions } from './lint-janitor/lint-janitor-options.interface';
-export { ZLintJanitor } from './lint-janitor/lint-janitor.class';
+export type { IZLintJanitorArgs } from './lint-janitor/lint-janitor-args';
+export type { IZLintJanitorOptions } from './lint-janitor/lint-janitor-options';
+export { ZLintJanitor } from './lint-janitor/lint-janitor';
 // Linter
 export { ZLinterEs } from './linter/linter-es.class';
 export { ZLinterFile } from './linter/linter-file.class';

@@ -2,9 +2,9 @@ import { beforeEach, describe, expect, it, Mocked, vi } from 'vitest';
 import { IZConfigReader } from '../config/config-reader.interface';
 import { ZLinterSilent } from '../linter/linter-silent.class';
 import { IZLinter } from '../linter/linter.interface';
-import { IZLintJanitorArgs } from './lint-janitor-args.interface';
-import { IZLintJanitorOptions } from './lint-janitor-options.interface';
-import { ZLintJanitor } from './lint-janitor.class';
+import { IZLintJanitorArgs } from './lint-janitor-args';
+import { IZLintJanitorOptions } from './lint-janitor-options';
+import { ZLintJanitor } from './lint-janitor';
 
 describe('ZLintJanitor', () => {
   let args: IZLintJanitorArgs;
