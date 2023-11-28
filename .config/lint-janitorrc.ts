@@ -1,7 +1,7 @@
-var generated = ['**/CHANGELOG.md', 'packages/**/dist/**', 'packages/**/docs/**'];
+const generated = ['**/CHANGELOG.md', 'packages/**/dist/**', 'packages/**/docs/**'];
 
-module.exports = {
-  esFiles: ['*.js', 'packages/**/src/**/*.ts', 'packages/*-config/index.js'],
+export default {
+  esFiles: ['*.js', 'packages/**/src/**/*.ts', 'packages/**/src/**/*.mts', 'packages/*-config/*.js', '.config/*.ts'],
   styleFiles: ['test/**/*.less', 'test/**/*.scss'],
   htmlFiles: ['test/**/*.html'],
   markdownFiles: ['*.md', 'packages/**/*.md'],
