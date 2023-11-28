@@ -11,7 +11,7 @@
   "scripts": {
     "clean": "rimraf --glob 'packages/**/dist' 'packages/**/docs' 'reports' 'coverage' 'packages/**/*.tgz'",
     "test": "vitest --run --coverage",
-    "lint": "ts-node packages/lint-janitor/src/cli.ts",
+    "lint": "node --loader ts-node/esm packages/lint-janitor/src/cli.ts",
     "build": "lerna run build",
     "make": "yarn clean && yarn lint && yarn test && yarn build",
     "postinstall": "husky install"
