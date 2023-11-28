@@ -5,6 +5,7 @@
   "keywords": [
     "linters"
   ],
+  "type": "module",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -12,17 +13,17 @@
     "directory": "packages/lint-janitor"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
   "publishConfig": {
     "access": "public"
   },
-  "main": "./dist/index.js",
+  "exports": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "bin": "dist/cli.js",
   "scripts": {
     "build": "tsc -p tsconfig.bin.json",
-    "start": "node --inspect-brk -r ts-node/register src/cli.ts"
+    "start": "node dist/cli.js"
   },
   "author": "Anthony Bonta",
   "dependencies": {
