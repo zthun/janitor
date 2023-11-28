@@ -28,7 +28,7 @@
   "author": "Anthony Bonta",
   "dependencies": {
     "acorn": "^8.11.2",
-    "chalk": "^4.1.2",
+    "chalk": "^5.3.0",
     "cosmiconfig": "^9.0.0",
     "cspell": "^8.0.0",
     "eslint": "^8.54.0",
