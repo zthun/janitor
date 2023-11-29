@@ -4,15 +4,7 @@
   "categorizeByGroup": true,
   "entryPointStrategy": "packages",
   "entryPoints": ["../*"],
-  "exclude": [
-    "./",
-    "eslint-config",
-    "eslint-react-config",
-    "htmlhint-config",
-    "markdownlint-config",
-    "prettier-config",
-    "stylelint-config"
-  ],
+  "exclude": ["./"],
   "excludeNotDocumented": true,
   "name": "Janitor",
   "plugin": ["typedoc-plugin-extras"],
