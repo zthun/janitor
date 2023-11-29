@@ -1,0 +1,20 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "out": "./dist",
+  "categorizeByGroup": true,
+  "entryPointStrategy": "packages",
+  "entryPoints": ["../*"],
+  "exclude": [
+    "./",
+    "eslint-config",
+    "eslint-react-config",
+    "htmlhint-config",
+    "markdownlint-config",
+    "prettier-config",
+    "stylelint-config"
+  ],
+  "excludeNotDocumented": true,
+  "name": "Janitor",
+  "plugin": ["typedoc-plugin-extras"],
+  "favicon": "public/images/svg/janitor.svg"
+}
