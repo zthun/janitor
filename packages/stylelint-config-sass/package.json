@@ -1,0 +1,27 @@
+{
+  "name": "@zthun/stylelint-config-sass",
+  "version": "15.0.0",
+  "description": "A shared configuration for stylelint for @zthun scoped projects.",
+  "keywords": [
+    "stylelint",
+    "stylelint-config"
+  ],
+  "main": "index.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zthun/janitor",
+    "directory": "packages/stylelint-config"
+  },
+  "dependencies": {
+    "@zthun/stylelint-config": "^15.0.0",
+    "stylelint-config-standard-scss": "^11.1.0"
+  },
+  "peerDependencies": {
+    "stylelint": "^15.7.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Anthony Bonta"
+}
