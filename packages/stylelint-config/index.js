@@ -4,7 +4,6 @@ module.exports = {
     'at-rule-no-unknown': null,
     'max-nesting-depth': 4,
     'no-descending-specificity': null,
-    'declaration-empty-line-before': 'never',
-    'string-quotes': 'single'
+    'declaration-empty-line-before': 'never'
   }
 };
