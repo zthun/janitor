@@ -2390,13 +2390,15 @@ __metadata:
     "@zthun/markdownlint-config": "npm:^15.1.0"
     "@zthun/prettier-config": "npm:^15.1.0"
     "@zthun/stylelint-config": "npm:^15.1.0"
+    "@zthun/stylelint-config-less": "npm:^15.1.0"
+    "@zthun/stylelint-config-sass": "npm:^15.1.0"
     eslint: "npm:^8.54.0"
     htmlhint: "npm:^1.1.4"
     markdownlint: "npm:~0.32.1"
     prettier: "npm:^3.1.0"
     stylelint: "npm:^15.11.0"
   peerDependencies:
-    "@zthun/lint-janitor": ^14.0.0
+    "@zthun/lint-janitor": ^15.0.0
   languageName: unknown
   linkType: soft
 
@@ -2440,7 +2442,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zthun/stylelint-config-less@workspace:packages/stylelint-config-less":
+"@zthun/stylelint-config-less@npm:^15.1.0, @zthun/stylelint-config-less@workspace:packages/stylelint-config-less":
   version: 0.0.0-use.local
   resolution: "@zthun/stylelint-config-less@workspace:packages/stylelint-config-less"
   dependencies:
@@ -2451,7 +2453,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zthun/stylelint-config-sass@workspace:packages/stylelint-config-sass":
+"@zthun/stylelint-config-sass@npm:^15.1.0, @zthun/stylelint-config-sass@workspace:packages/stylelint-config-sass":
   version: 0.0.0-use.local
   resolution: "@zthun/stylelint-config-sass@workspace:packages/stylelint-config-sass"
   dependencies:
