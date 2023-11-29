@@ -28,7 +28,7 @@ describe('ZContentLinterPretty', () => {
     vi.mocked(getFileInfo).mockResolvedValue(info);
 
     vi.mocked(check).mockClear();
-    vi.mocked(check).mockReturnValue(true);
+    vi.mocked(check).mockResolvedValue(true);
   });
 
   function createTestTarget() {
@@ -46,7 +46,7 @@ describe('ZContentLinterPretty', () => {
   it('returns a rejected promise if the content is unformatted.', async () => {
     // Arrange
     const target = createTestTarget();
-    vi.mocked(check).mockReturnValue(false);
+    vi.mocked(check).mockResolvedValue(false);
     // Act
     // Assert
     await expect(target.lint(content, contentPath, options)).rejects.toBeTruthy();

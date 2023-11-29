@@ -21,7 +21,7 @@ export class ZContentLinterPretty implements IZContentLinter {
   public async lint(content: string, contentPath: string, options?: Options): Promise<any> {
     const file = await getFileInfo(contentPath);
     const finalOptions = Object.assign({}, { parser: file.inferredParser }, options);
-    const formatted = check(content, finalOptions);
+    const formatted = await check(content, finalOptions);
 
     if (!formatted) {
       return Promise.reject(`${contentPath} is not formatted.`);
