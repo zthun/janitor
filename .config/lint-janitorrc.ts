@@ -4,7 +4,7 @@ export default {
   esFiles: ['*.js', 'packages/**/src/**/*.ts', 'packages/**/src/**/*.mts', 'packages/*-config/*.js', '.config/*.ts'],
   styleFiles: ['test/**/*.less', 'test/**/*.scss'],
   htmlFiles: ['test/**/*.html'],
-  markdownFiles: ['*.md', 'packages/**/*.md'],
+  markdownFiles: ['*.md', 'packages/**/*.md', 'packages/**/LICENSE'],
   markdownFilesExclude: generated,
   jsonFiles: ['*.json', 'packages/**/*.json'],
   yamlFiles: ['*.yml'],
