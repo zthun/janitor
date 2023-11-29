@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { IZConfigExtender } from './config-extender.interface';
+import { IZConfigExtender } from './config-extender.mjs';
 import { ZConfigReaderCosmic } from './config-reader-cosmic.mjs';
 
 describe('ZConfigCosmicReader', () => {
