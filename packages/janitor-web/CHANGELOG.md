@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [15.1.1](https://github.com/zthun/janitor/compare/v15.1.0...v15.1.1) (2023-11-29)
+
+
+### Bug Fixes
+
+* adding config dependency ([c720c65](https://github.com/zthun/janitor/commit/c720c6515622f24f417612c1b11bcbaee57180c1))
+
+
+
 ## [15.1.0](https://github.com/zthun/janitor/compare/v15.0.0...v15.1.0) (2023-11-29)
 
 

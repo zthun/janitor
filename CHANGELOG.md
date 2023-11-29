@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [15.1.1](https://github.com/zthun/janitor/compare/v15.1.0...v15.1.1) (2023-11-29)
+
+
+### Bug Fixes
+
+* added additional stylelint-configs ([7da19eb](https://github.com/zthun/janitor/commit/7da19eb57ad95eeb0fb860a2feb1f863b8d38200))
+* adding config dependency ([c720c65](https://github.com/zthun/janitor/commit/c720c6515622f24f417612c1b11bcbaee57180c1))
+* update lint-janitor peer dependency ([9643e92](https://github.com/zthun/janitor/commit/9643e927c760b33c1d4278a134b6e9535c0108e0))
+
+
+
 ## [15.1.0](https://github.com/zthun/janitor/compare/v15.0.0...v15.1.0) (2023-11-29)
 
 

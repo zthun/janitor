@@ -1,6 +1,6 @@
 {
   "name": "@zthun/stylelint-config-less",
-  "version": "15.1.0",
+  "version": "15.1.1",
   "description": "A shared configuration for stylelint for @zthun scoped projects.",
   "keywords": [
     "stylelint",
@@ -15,7 +15,7 @@
     "directory": "packages/stylelint-config-less"
   },
   "dependencies": {
-    "@zthun/stylelint-config": "^15.1.0",
+    "@zthun/stylelint-config": "^15.1.1",
     "stylelint-config-standard-less": "^2.0.0"
   },
   "peerDependencies": {
