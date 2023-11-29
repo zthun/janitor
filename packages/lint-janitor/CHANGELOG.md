@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [15.1.0](https://github.com/zthun/janitor/compare/v15.0.0...v15.1.0) (2023-11-29)
+
+
+### Bug Fixes
+
+* prettier lint should now properly identify errors ([d492e8b](https://github.com/zthun/janitor/commit/d492e8b9098039f624ed729ccad84ca192a1f9ef))
+
+
+
 ## [15.0.0](https://github.com/zthun/janitor/compare/v14.4.0...v15.0.0) (2023-11-28)
 
 

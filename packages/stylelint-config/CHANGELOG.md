@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [15.1.0](https://github.com/zthun/janitor/compare/v15.0.0...v15.1.0) (2023-11-29)
+
+
+### Features
+
+* remove string-quotes ([6ccb2db](https://github.com/zthun/janitor/commit/6ccb2db7afcf270f1a081c5bd42298ec7d156806))
+
+
+
 ## [15.0.0](https://github.com/zthun/janitor/compare/v14.4.0...v15.0.0) (2023-11-28)
 
 **Note:** Version bump only for package @zthun/stylelint-config

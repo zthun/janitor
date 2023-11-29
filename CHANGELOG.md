@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [15.1.0](https://github.com/zthun/janitor/compare/v15.0.0...v15.1.0) (2023-11-29)
+
+
+### Features
+
+* janitor now has an icon ([3a82827](https://github.com/zthun/janitor/commit/3a82827c2bb945f837455f44f09a86d7a5558b0a))
+* janitor web showcases the docs for janitor projects ([2da70dc](https://github.com/zthun/janitor/commit/2da70dc7fff4b39468aa09183c376eb345564d3b))
+* remove string-quotes ([6ccb2db](https://github.com/zthun/janitor/commit/6ccb2db7afcf270f1a081c5bd42298ec7d156806))
+* stylelint config less helps with less based style projects ([21d9f70](https://github.com/zthun/janitor/commit/21d9f70f6b929c18aa87295e099bc68ec2354b7d))
+* stylelint-config-sass can be used to lint sass projects ([0015ed6](https://github.com/zthun/janitor/commit/0015ed62399ea377f76a38f51b2712ae420f8595))
+
+
+### Bug Fixes
+
+* prettier lint should now properly identify errors ([d492e8b](https://github.com/zthun/janitor/commit/d492e8b9098039f624ed729ccad84ca192a1f9ef))
+
+
+
 ## [15.0.0](https://github.com/zthun/janitor/compare/v14.4.0...v15.0.0) (2023-11-28)
 
 
