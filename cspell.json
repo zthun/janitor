@@ -4,9 +4,12 @@
   "language": "en",
   "words": [
     "Bonta",
+    "BUILDKIT",
+    "buildx",
     "commitlint",
     "conventionalcommits",
     "cosmiconfig",
+    "DOCKERHUB",
     "errored",
     "estree",
     "htmlhint",

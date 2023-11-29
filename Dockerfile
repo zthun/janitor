@@ -25,3 +25,9 @@ RUN --mount=type=secret,id=GIT_CREDENTIALS,dst=/root/.git-credentials npx lerna 
     git push && \
     git push --tags
 RUN --mount=type=secret,id=NPM_CREDENTIALS,dst=/root/.npmrc npx lerna publish from-package --yes
+
+FROM node:lts-alpine as janitor-web-install
+RUN npm install -g @zthun/janitor-web
+
+FROM nginx:stable-alpine as janitor-web
+COPY --from=janitor-web-install /usr/local/lib/node_modules/@zthun/janitor-web/dist/. /usr/share/nginx/html/
