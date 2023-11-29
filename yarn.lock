@@ -2440,6 +2440,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@zthun/stylelint-config-less@workspace:packages/stylelint-config-less":
+  version: 0.0.0-use.local
+  resolution: "@zthun/stylelint-config-less@workspace:packages/stylelint-config-less"
+  dependencies:
+    "@zthun/stylelint-config": "npm:^15.0.0"
+    stylelint-config-standard-less: "npm:^2.0.0"
+  peerDependencies:
+    stylelint: ^15.7.0
+  languageName: unknown
+  linkType: soft
+
 "@zthun/stylelint-config-sass@workspace:packages/stylelint-config-sass":
   version: 0.0.0-use.local
   resolution: "@zthun/stylelint-config-sass@workspace:packages/stylelint-config-sass"
@@ -8498,6 +8509,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"postcss-less@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "postcss-less@npm:6.0.0"
+  peerDependencies:
+    postcss: ^8.3.5
+  checksum: 75db4ed39d53ff973ef17d7ed9e398f8f1da0fd2b3bc604ea59586a4fd9f7b5364204a5085500e12381326c11488c46c088b269348eb66607509d1a28971d18b
+  languageName: node
+  linkType: hard
+
 "postcss-media-query-parser@npm:^0.2.3":
   version: 0.2.3
   resolution: "postcss-media-query-parser@npm:0.2.3"
@@ -8540,7 +8560,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-value-parser@npm:^4.2.0":
+"postcss-value-parser@npm:4.2.0, postcss-value-parser@npm:^4.2.0":
   version: 4.2.0
   resolution: "postcss-value-parser@npm:4.2.0"
   checksum: e4e4486f33b3163a606a6ed94f9c196ab49a37a7a7163abfcd469e5f113210120d70b8dd5e33d64636f41ad52316a3725655421eb9a1094f1bcab1db2f555c62
@@ -9730,6 +9750,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"stylelint-config-recommended-less@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "stylelint-config-recommended-less@npm:2.0.0"
+  dependencies:
+    postcss-less: "npm:^6.0.0"
+    stylelint-config-recommended: "npm:^13.0.0"
+    stylelint-less: "npm:^2.0.0"
+  peerDependencies:
+    postcss: ^8.3.3
+    stylelint: ^15.10.2
+  peerDependenciesMeta:
+    postcss:
+      optional: true
+  checksum: 87ccdbb8c265cc49d091de6a2e793f0c8fe4e748ba7d5ef6c1b9c4b08cd0ab85114b7c4d22ddb3926f85c0b80ed5024e478e9446bbd92b74786d2d243ff02280
+  languageName: node
+  linkType: hard
+
 "stylelint-config-recommended-scss@npm:^13.1.0":
   version: 13.1.0
   resolution: "stylelint-config-recommended-scss@npm:13.1.0"
@@ -9753,6 +9790,22 @@ __metadata:
   peerDependencies:
     stylelint: ^15.10.0
   checksum: a56eb6d1a7c7f3a7a172b54bc34218859ba22a5a06816fb4d0964f66cb83cf372062f2c97830e994ad68243548e15fc49abf28887c3261ab1b471b3aa69f8e82
+  languageName: node
+  linkType: hard
+
+"stylelint-config-standard-less@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "stylelint-config-standard-less@npm:2.0.0"
+  dependencies:
+    stylelint-config-recommended-less: "npm:^2.0.0"
+    stylelint-config-standard: "npm:^34.0.0"
+  peerDependencies:
+    postcss: ^8.3.3
+    stylelint: ^15.0.0
+  peerDependenciesMeta:
+    postcss:
+      optional: true
+  checksum: 98fbdb3337886c7d349a402da527e55a188025dd8a6f94f6ad6779e60934d1b362acf342a84435057c3c51e227dd0ef5da24e6fee346c366a73573576367e0d9
   languageName: node
   linkType: hard
 
@@ -9780,6 +9833,19 @@ __metadata:
   peerDependencies:
     stylelint: ^15.10.0
   checksum: 536249800c04b48a9c354067765f042713982e8222be17bb897a27d26546e50adfb87e6f1e4541807d720de3554345da99ab470e13e8d7ab0ab326c73ae3df61
+  languageName: node
+  linkType: hard
+
+"stylelint-less@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "stylelint-less@npm:2.0.0"
+  dependencies:
+    postcss-resolve-nested-selector: "npm:^0.1.1"
+    postcss-value-parser: "npm:4.2.0"
+  peerDependencies:
+    postcss: ^8.4.14
+    stylelint: ^15.10.3
+  checksum: 7badd789129618c4a4000f2e969c7c402d968587c34dbeb01c7288b8280ef504bef322c61aa385bf286685bd2bed61fbdf81a4083d6f2821980590d278cc05e0
   languageName: node
   linkType: hard
 
