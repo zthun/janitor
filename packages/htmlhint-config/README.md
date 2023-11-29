@@ -1,6 +1,7 @@
-# Description
+# HTMLHint Config
 
-This is the shared htmlhint configuration for @zthun scoped projects. Note that currently, as of htmlhint 0.14.x, extendable configs are not supported, but lint-janitor indirectly adds support for it.
+This is the shared htmlhint configuration for zthun scoped projects. Note that currently, as of htmlhint 0.14.x,
+extendable configs are not supported, but lint-janitor indirectly adds support for it.
 
 ## Getting Started
 
@@ -21,7 +22,7 @@ In the htmlhint config file, add the following
 }
 ```
 
-That's it. You now have the recommended rules for @zthun scoped projects.
+That's it. You now have the recommended rules for zthun scoped projects.
 
 ## HTMLHint
 

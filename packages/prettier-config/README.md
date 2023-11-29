@@ -1,6 +1,6 @@
-# Description
+# Prettier Config
 
-This is the shared prettier configuration for @zthun scoped projects.
+This is the shared prettier configuration for zthun scoped projects.
 
 ## Getting Started
 

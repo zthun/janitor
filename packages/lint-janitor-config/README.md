@@ -1,6 +1,6 @@
-# Description
+# Lint Janitor Config
 
-This is a shared configuration for lint-janitor that contains all of the @zthun scoped shared configurations.
+This is a shared configuration for lint-janitor that contains all of the zthun scoped shared configurations.
 
 ## Getting Started
 

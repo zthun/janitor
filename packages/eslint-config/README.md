@@ -1,6 +1,6 @@
-# Description
+# ESLint Config
 
-This is the shared eslint configuration for @zthun scoped projects. Note that @zthun scoped projects, by default, use TypeScript so @typescript-eslint/eslint-plugin is required for this configuration.
+This is the shared eslint configuration for zthun scoped projects.
 
 ## Getting Started
 
@@ -19,8 +19,8 @@ In the .eslintrc file, add the following
 
 ```json
 {
-  "extends": ["@zthun"]
+  "extends": ["@zthun/eslint-config"]
 }
 ```
 
-That's it. You now have the recommended rules for @zthun scoped projects with typescript.
+That's it. You now have the recommended rules for zthun scoped projects with typescript.

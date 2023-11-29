@@ -1,6 +1,6 @@
-# Description
+# ESLint React Config
 
-This is the shared eslint configuration for @zthun scoped react based projects.
+This is the shared eslint configuration for zthun scoped react based projects.
 
 ## Getting Started
 
@@ -21,4 +21,4 @@ In the .eslintrc file, add the following
 }
 ```
 
-That's it. You now have the recommended rules for @zthun scoped react projects.
+That's it. You now have the recommended rules for zthun scoped react projects.

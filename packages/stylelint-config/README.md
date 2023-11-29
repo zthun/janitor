@@ -1,6 +1,6 @@
-# Description
+# StyleLint Config
 
-This is the shared stylelint configuration for @zthun scoped projects.
+This is the shared stylelint configuration for zthun scoped projects.
 
 ## Getting Started
 
@@ -21,4 +21,4 @@ In the stylelint config file, add the following
 }
 ```
 
-That's it. You now have the recommended rules for @zthun scoped projects.
+That's it. You now have the recommended rules for zthun scoped projects.
