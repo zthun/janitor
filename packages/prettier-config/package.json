@@ -1,6 +1,6 @@
 {
   "name": "@zthun/prettier-config",
-  "version": "15.1.1",
+  "version": "15.1.2",
   "description": "A shared configuration for prettier for @zthun scoped projects.",
   "keywords": [
     "prettier",

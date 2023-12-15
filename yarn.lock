@@ -2319,7 +2319,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zthun/eslint-config@npm:^15.1.1, @zthun/eslint-config@workspace:packages/eslint-config":
+"@zthun/eslint-config@npm:^15.1.2, @zthun/eslint-config@workspace:packages/eslint-config":
   version: 0.0.0-use.local
   resolution: "@zthun/eslint-config@workspace:packages/eslint-config"
   dependencies:
@@ -2332,11 +2332,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zthun/eslint-react-config@npm:^15.1.1, @zthun/eslint-react-config@workspace:packages/eslint-react-config":
+"@zthun/eslint-react-config@npm:^15.1.2, @zthun/eslint-react-config@workspace:packages/eslint-react-config":
   version: 0.0.0-use.local
   resolution: "@zthun/eslint-react-config@workspace:packages/eslint-react-config"
   dependencies:
-    "@zthun/eslint-config": "npm:^15.1.1"
+    "@zthun/eslint-config": "npm:^15.1.2"
     eslint-plugin-react: "npm:^7.33.2"
   peerDependencies:
     eslint: ^8.5.0
@@ -2355,8 +2355,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zthun/janitor-web@workspace:packages/janitor-web"
   dependencies:
-    "@zthun/lint-janitor": "npm:^15.1.1"
-    "@zthun/lint-janitor-config": "npm:^15.1.1"
+    "@zthun/lint-janitor": "npm:^15.1.2"
+    "@zthun/lint-janitor-config": "npm:^15.1.2"
     typedoc: "npm:^0.25.4"
     typedoc-plugin-extras: "npm:^3.0.0"
     typescript: "npm:^5.3.3"
@@ -2389,15 +2389,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zthun/lint-janitor-config@npm:^15.1.1, @zthun/lint-janitor-config@workspace:packages/lint-janitor-config":
+"@zthun/lint-janitor-config@npm:^15.1.2, @zthun/lint-janitor-config@workspace:packages/lint-janitor-config":
   version: 0.0.0-use.local
   resolution: "@zthun/lint-janitor-config@workspace:packages/lint-janitor-config"
   dependencies:
-    "@zthun/eslint-config": "npm:^15.1.1"
-    "@zthun/eslint-react-config": "npm:^15.1.1"
+    "@zthun/eslint-config": "npm:^15.1.2"
+    "@zthun/eslint-react-config": "npm:^15.1.2"
     "@zthun/htmlhint-config": "npm:^15.1.1"
     "@zthun/markdownlint-config": "npm:^15.1.1"
-    "@zthun/prettier-config": "npm:^15.1.1"
+    "@zthun/prettier-config": "npm:^15.1.2"
     "@zthun/stylelint-config": "npm:^15.1.1"
     "@zthun/stylelint-config-less": "npm:^15.1.1"
     "@zthun/stylelint-config-sass": "npm:^15.1.1"
@@ -2411,7 +2411,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zthun/lint-janitor@npm:^15.1.1, @zthun/lint-janitor@workspace:packages/lint-janitor":
+"@zthun/lint-janitor@npm:^15.1.2, @zthun/lint-janitor@workspace:packages/lint-janitor":
   version: 0.0.0-use.local
   resolution: "@zthun/lint-janitor@workspace:packages/lint-janitor"
   dependencies:
@@ -2443,7 +2443,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zthun/prettier-config@npm:^15.1.1, @zthun/prettier-config@workspace:packages/prettier-config":
+"@zthun/prettier-config@npm:^15.1.2, @zthun/prettier-config@workspace:packages/prettier-config":
   version: 0.0.0-use.local
   resolution: "@zthun/prettier-config@workspace:packages/prettier-config"
   peerDependencies:

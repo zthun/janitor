@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [15.1.2](https://github.com/zthun/janitor/compare/v15.1.1...v15.1.2) (2023-12-15)
+
+
+### Bug Fixes
+
+* prettier now correctly discovers the config file ([47bd8a9](https://github.com/zthun/janitor/commit/47bd8a9897389d3cef399d4b7d48a45167930721))
+
+
+
 ## [15.1.1](https://github.com/zthun/janitor/compare/v15.1.0...v15.1.1) (2023-11-29)
 
 

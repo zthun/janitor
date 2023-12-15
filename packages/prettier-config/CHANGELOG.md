@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [15.1.2](https://github.com/zthun/janitor/compare/v15.1.1...v15.1.2) (2023-12-15)
+
+
+### Bug Fixes
+
+* minimum of version of prettier is now a peer dependency ([ed77d2e](https://github.com/zthun/janitor/commit/ed77d2e17ff688efd5a9479aeb98ee26f200b1fa))
+
+
+
 ## [15.1.1](https://github.com/zthun/janitor/compare/v15.1.0...v15.1.1) (2023-11-29)
 
 **Note:** Version bump only for package @zthun/prettier-config
