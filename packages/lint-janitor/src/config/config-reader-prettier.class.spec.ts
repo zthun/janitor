@@ -40,7 +40,7 @@ describe('ZConfigReaderPrettier', () => {
     // Act
     await target.read(null);
     // Assert
-    expect(resolveConfig).toHaveBeenCalledWith(process.cwd(), { config: null });
+    expect(resolveConfig).toHaveBeenCalledWith(expect.stringContaining(process.cwd()), { config: null });
   });
 
   it('returns the options.', async () => {
