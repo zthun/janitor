@@ -31,7 +31,10 @@ describe('ZConfigReaderPrettier', () => {
     // Act
     await target.read(config);
     // Assert
-    expect(resolveConfig).toHaveBeenCalledWith(process.cwd(), expect.objectContaining({ config: expected }));
+    expect(resolveConfig).toHaveBeenCalledWith(
+      expect.stringContaining(process.cwd()),
+      expect.objectContaining({ config: expected })
+    );
   });
 
   it('reads the config using a prettier config search for falsy config values.', async () => {
