@@ -30,6 +30,7 @@ describe('ZLinterStyle', () => {
       errored: false,
       output: '',
       cwd: '',
+      report: '',
       reportedDisables: null,
       results: [],
       ruleMetadata: {}
