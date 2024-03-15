@@ -19,7 +19,7 @@
   "devDependencies": {
     "@zthun/lint-janitor": "^15.1.2",
     "@zthun/lint-janitor-config": "^15.1.2",
-    "typedoc": "^0.25.4",
+    "typedoc": "^0.25.12",
     "typedoc-plugin-extras": "^3.0.0",
     "typescript": "~5.3.3"
   },
