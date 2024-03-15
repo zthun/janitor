@@ -35,7 +35,7 @@
     "stylelint": "^16.2.1"
   },
   "peerDependencies": {
-    "@zthun/lint-janitor": "^15.0.0"
+    "@zthun/lint-janitor": ">=16.0.0"
   },
   "publishConfig": {
     "access": "public"
