@@ -29,13 +29,7 @@ module.exports = {
     'array-bracket-spacing': 'error',
     'array-element-newline': 'off',
     'block-spacing': 'error',
-    'brace-style': [
-      'error',
-      '1tbs',
-      {
-        allowSingleLine: true
-      }
-    ],
+    'brace-style': 'off',
     'comma-dangle': 'error',
     'comma-spacing': 'error',
     'comma-style': 'error',
@@ -128,6 +122,7 @@ module.exports = {
     'wrap-regex': 'off',
 
     '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-namespace': 'off',
     '@typescript-eslint/no-unused-vars': 'error',
     '@typescript-eslint/no-empty-function': ['error', { allow: ['constructors'] }],
     '@typescript-eslint/ban-types': 'off',
