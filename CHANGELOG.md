@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [16.0.1](https://github.com/zthun/janitor/compare/v16.0.0...v16.0.1) (2024-03-15)
+
+
+### Bug Fixes
+
+* lint janitor config peer dependency is now v16 of lint janitor ([29fa865](https://github.com/zthun/janitor/commit/29fa865aa401ffd8a7b952467af010f37e737a8b))
+
+
+
 ## [16.0.0](https://github.com/zthun/janitor/compare/v15.1.2...v16.0.0) (2024-03-15)
 
 
