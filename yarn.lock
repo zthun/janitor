@@ -2423,7 +2423,7 @@ __metadata:
     eslint: "npm:^8.57.0"
     htmlhint: "npm:^1.1.4"
     markdownlint: "npm:~0.33.0"
-    prettier: "npm:^3.1.1"
+    prettier: "npm:^3.2.5"
     stylelint: "npm:^15.11.0"
   peerDependencies:
     "@zthun/lint-janitor": ^15.0.0
@@ -2444,7 +2444,7 @@ __metadata:
     js-yaml: "npm:^4.1.0"
     lodash: "npm:^4.17.21"
     markdownlint: "npm:~0.33.0"
-    prettier: "npm:^3.1.1"
+    prettier: "npm:^3.2.5"
     stylelint: "npm:^15.11.0"
     typescript: "npm:~5.4.2"
     vitest: "npm:^1.4.0"
@@ -2458,7 +2458,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zthun/markdownlint-config@workspace:packages/markdownlint-config"
   peerDependencies:
-    markdownlint: ~0.32.0
+    markdownlint: ">0.32.0 <1.0.0"
   languageName: unknown
   linkType: soft
 
@@ -8756,12 +8756,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:*, prettier@npm:^3.1.1":
+"prettier@npm:*":
   version: 3.1.1
   resolution: "prettier@npm:3.1.1"
   bin:
     prettier: bin/prettier.cjs
   checksum: 10/26a249f321b97d26c04483f1bf2eeb22e082a76f4222a2c922bebdc60111691aad4ec3979610e83942e0b956058ec361d9e9c81c185172264eb6db9aa678082b
+  languageName: node
+  linkType: hard
+
+"prettier@npm:^3.2.5":
+  version: 3.2.5
+  resolution: "prettier@npm:3.2.5"
+  bin:
+    prettier: bin/prettier.cjs
+  checksum: 10/d509f9da0b70e8cacc561a1911c0d99ec75117faed27b95cc8534cb2349667dee6351b0ca83fa9d5703f14127faa52b798de40f5705f02d843da133fc3aa416a
   languageName: node
   linkType: hard
 
