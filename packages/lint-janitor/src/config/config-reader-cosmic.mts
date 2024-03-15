@@ -15,7 +15,7 @@ export class ZConfigReaderCosmic implements IZConfigReader, IZConfigDiscovery {
    *
    * @param name -
    *        The name of the application to load.
-   * @param extends -
+   * @param extender -
    *        The extender to expand upon the read configuration.
    * @param paths -
    *        The additional paths to read if cosmic config does not find a valid config.  Remember that these
