@@ -38,7 +38,7 @@
     "lodash": "^4.17.21",
     "markdownlint": "~0.33.0",
     "prettier": "^3.2.5",
-    "stylelint": "^15.11.0",
+    "stylelint": "^16.2.1",
     "yargs": "^17.7.2"
   },
   "files": [

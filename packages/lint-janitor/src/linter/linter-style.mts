@@ -37,9 +37,10 @@ export class ZLinterStyle implements IZLinter {
     }
 
     const result = await stylelint.lint(options);
+    const verbose = await stylelint.formatters.verbose;
 
     if (result.errored) {
-      const output = stylelint.formatters.verbose(result.results, result);
+      const output = verbose(result.results, result);
       this._logger.log(output);
       return false;
     }
