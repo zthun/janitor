@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [16.0.0](https://github.com/zthun/janitor/compare/v15.1.2...v16.0.0) (2024-03-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* upgrade stylelint to 16.2.1
+
+### Features
+
+* brace style lint is now turned off for better prettier support ([964fa81](https://github.com/zthun/janitor/commit/964fa81bd49b1f27879f52bca7bc17a2e58096e5))
+* upgrade cspell to 8.6.0 ([f2e7ec6](https://github.com/zthun/janitor/commit/f2e7ec60196ab4f09543669e9d78e0b1b8b3a8e9))
+* upgrade markdown lint to 0.33.0 ([bc1b6f1](https://github.com/zthun/janitor/commit/bc1b6f1fe08cef5be9643b02eadb92254d30163b))
+* upgrade prettier to 3.2.5 ([6a00766](https://github.com/zthun/janitor/commit/6a007663742c2bb4f0af1582746d87002bded6bc))
+* upgrade stylelint to 16.2.1 ([281283f](https://github.com/zthun/janitor/commit/281283f5738df0755baacd731d8473453d4a9603))
+
+
+
 ## [15.1.2](https://github.com/zthun/janitor/compare/v15.1.1...v15.1.2) (2023-12-15)
 
 

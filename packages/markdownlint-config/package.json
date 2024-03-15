@@ -1,6 +1,6 @@
 {
   "name": "@zthun/markdownlint-config",
-  "version": "15.1.1",
+  "version": "16.0.0",
   "description": "A shared configuration for markdownlint for @zthun scoped projects.",
   "keywords": [
     "markdownlint",

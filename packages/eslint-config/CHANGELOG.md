@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [16.0.0](https://github.com/zthun/janitor/compare/v15.1.2...v16.0.0) (2024-03-15)
+
+
+### Features
+
+* brace style lint is now turned off for better prettier support ([964fa81](https://github.com/zthun/janitor/commit/964fa81bd49b1f27879f52bca7bc17a2e58096e5))
+
+
+
 ## [15.1.2](https://github.com/zthun/janitor/compare/v15.1.1...v15.1.2) (2023-12-15)
 
 **Note:** Version bump only for package @zthun/eslint-config
