@@ -45,7 +45,7 @@
     "dist"
   ],
   "devDependencies": {
-    "typescript": "~5.4.2",
+    "typescript": "~5.4.5",
     "vitest": "^1.4.0"
   }
 }
