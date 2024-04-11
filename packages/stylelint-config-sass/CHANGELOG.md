@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [16.1.0](https://github.com/zthun/janitor/compare/v16.0.1...v16.1.0) (2024-04-11)
+
+
+### Features
+
+* style lint upgraded to 16.3.1 ([f854af0](https://github.com/zthun/janitor/commit/f854af00e3f264c68929fba5bd9dcabbf27bb1e2))
+
+
+
 ## [16.0.0](https://github.com/zthun/janitor/compare/v15.1.2...v16.0.0) (2024-03-15)
 
 

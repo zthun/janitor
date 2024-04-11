@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [16.1.0](https://github.com/zthun/janitor/compare/v16.0.1...v16.1.0) (2024-04-11)
+
+
+### Features
+
+* style lint upgraded to 16.3.1 ([f854af0](https://github.com/zthun/janitor/commit/f854af00e3f264c68929fba5bd9dcabbf27bb1e2))
+* upgrade cspell to 3.7.0 ([66ef9ba](https://github.com/zthun/janitor/commit/66ef9ba4aa8beb113362da1db8be76fc1768a725))
+* upgraded markdown lint to 0.34.0 ([aab1e76](https://github.com/zthun/janitor/commit/aab1e761055b6da1c1612680c5a9cb3338d8813e))
+
+
+### Bug Fixes
+
+* failures when linting es files will still allow other linters to run their checks ([68e942f](https://github.com/zthun/janitor/commit/68e942f21f8fa415d4f7c19b34c2b596509dbd30))
+
+
+
 ## [16.0.0](https://github.com/zthun/janitor/compare/v15.1.2...v16.0.0) (2024-03-15)
 
 

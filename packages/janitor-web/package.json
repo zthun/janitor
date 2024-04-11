@@ -1,6 +1,6 @@
 {
   "name": "@zthun/janitor-web",
-  "version": "16.0.1",
+  "version": "16.1.0",
   "description": "A documentation website for showing janitor applications.",
   "author": "Anthony Bonta",
   "license": "MIT",
@@ -17,8 +17,8 @@
     "access": "public"
   },
   "devDependencies": {
-    "@zthun/lint-janitor": "^16.0.0",
-    "@zthun/lint-janitor-config": "^16.0.1",
+    "@zthun/lint-janitor": "^16.1.0",
+    "@zthun/lint-janitor-config": "^16.1.0",
     "typedoc": "^0.25.13",
     "typedoc-plugin-extras": "^3.0.0",
     "typescript": "~5.4.5"
