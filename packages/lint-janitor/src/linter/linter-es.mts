@@ -48,19 +48,16 @@ export class ZLinterEs implements IZLinter {
       esOptions.overrideConfigFile = $resolve(config, { paths: [process.cwd()] });
     }
 
-    const engine = this.engineFactory(esOptions);
-    const formatter = await engine.loadFormatter();
-    let report: ESLint.LintResult[];
-
     try {
-      report = await engine.lintFiles(src);
+      const engine = this.engineFactory(esOptions);
+      const formatter = await engine.loadFormatter();
+      const report = await engine.lintFiles(src);
+      const output = formatter.format(report);
+      this._logger.log(output);
+      return every(report, (r) => r.errorCount === 0);
     } catch (err) {
       this._logger.log(err);
       return false;
     }
-
-    const output = formatter.format(report);
-    this._logger.log(output);
-    return every(report, (r) => r.errorCount === 0);
   }
 }
