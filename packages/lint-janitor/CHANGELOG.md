@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [16.1.1](https://github.com/zthun/janitor/compare/v16.1.0...v16.1.1) (2024-07-15)
+
+**Note:** Version bump only for package @zthun/lint-janitor
+
+
+
+
+
 ## [16.1.0](https://github.com/zthun/janitor/compare/v16.0.1...v16.1.0) (2024-04-11)
 
 
