@@ -14,10 +14,10 @@
     "directory": "packages/eslint-config"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^7.6.0",
-    "@typescript-eslint/parser": "^7.6.0",
+    "@typescript-eslint/eslint-plugin": "^7.16.0",
+    "@typescript-eslint/parser": "^7.16.0",
     "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-tsdoc": "^0.2.17"
+    "eslint-plugin-tsdoc": "^0.3.0"
   },
   "peerDependencies": {
     "eslint": "^8.5.0"
