@@ -13,6 +13,16 @@
     "prettier-config"
   ],
   "main": "index.js",
+  "exports": {
+    "./eslint": "./eslint.js",
+    "./eslint-react": "./eslint-react.js",
+    "./htmlhint": "./htmlhint.js",
+    "./markdownlint": "./markdownlint.js",
+    "./prettier": "./prettier.js",
+    "./stylelint/less": "./stylelint-less.js",
+    "./stylelint/sass": "./stylelint-sass.js",
+    "./stylelint": "./stylelint"
+  },
   "license": "MIT",
   "repository": {
     "type": "git",
