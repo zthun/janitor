@@ -11,7 +11,7 @@
   "scripts": {
     "clean": "rimraf --glob 'packages/**/dist' 'packages/**/docs' 'reports' 'coverage' 'packages/**/*.tgz'",
     "test": "vitest --run --coverage",
-    "lint": "node --loader ts-node/esm packages/lint-janitor/src/cli.ts",
+    "lint": "tsx packages/lint-janitor/src/cli.ts",
     "build": "lerna run build",
     "make": "yarn clean && yarn lint && yarn test && yarn build",
     "postinstall": "husky install"
@@ -34,7 +34,7 @@
     "lerna": "^8.1.8",
     "react": "^18.3.1",
     "rimraf": "^6.0.1",
-    "ts-node": "^10.9.2",
+    "tsx": "^4.18.0",
     "typescript": "~5.5.4",
     "vitest": "^2.0.5"
   },
