@@ -1,5 +1,33 @@
 # Change Log
 
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [17.0.0](https://github.com/zthun/janitor/compare/v16.1.2...v17.0.0) (2024-08-27)
+
+
+### ⚠ BREAKING CHANGES
+
+* stylelint-config now favors the default rule set
+* eslint-plugin-react now caters to the default rules
+* eslint now leans towards using defaults as much as possible
+
+### Features
+
+* cosmiconfig now falls back to the default empty config ([3e9fdf6](https://github.com/zthun/janitor/commit/3e9fdf6164a3df1cae71831d1e5dc5ddb2989b92))
+* prettier config file is now optional ([db6d432](https://github.com/zthun/janitor/commit/db6d432ded4ee050cf7f5527fd49ab28d8415a1c))
+
+
+### Code Refactoring
+
+* eslint now leans towards using defaults as much as possible ([c563c78](https://github.com/zthun/janitor/commit/c563c78cbfb24cec479bd1a590e2fad6654e83d1))
+* eslint-plugin-react now caters to the default rules ([68687dc](https://github.com/zthun/janitor/commit/68687dc63983fb50d4aded99760d780d0e16c255))
+* stylelint-config now favors the default rule set ([821cff6](https://github.com/zthun/janitor/commit/821cff6256ee487418e6fa18e686b5c911dba9f6))
+
+
+
+# Change Log
+
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 

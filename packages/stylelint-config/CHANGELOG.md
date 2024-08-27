@@ -1,5 +1,23 @@
 # Change Log
 
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [17.0.0](https://github.com/zthun/janitor/compare/v16.1.2...v17.0.0) (2024-08-27)
+
+
+### ⚠ BREAKING CHANGES
+
+* stylelint-config now favors the default rule set
+
+### Code Refactoring
+
+* stylelint-config now favors the default rule set ([821cff6](https://github.com/zthun/janitor/commit/821cff6256ee487418e6fa18e686b5c911dba9f6))
+
+
+
+# Change Log
+
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 

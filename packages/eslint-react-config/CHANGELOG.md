@@ -1,5 +1,23 @@
 # Change Log
 
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [17.0.0](https://github.com/zthun/janitor/compare/v16.1.2...v17.0.0) (2024-08-27)
+
+
+### ⚠ BREAKING CHANGES
+
+* eslint-plugin-react now caters to the default rules
+
+### Code Refactoring
+
+* eslint-plugin-react now caters to the default rules ([68687dc](https://github.com/zthun/janitor/commit/68687dc63983fb50d4aded99760d780d0e16c255))
+
+
+
+# Change Log
+
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 

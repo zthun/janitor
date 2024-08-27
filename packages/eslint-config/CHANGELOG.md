@@ -1,5 +1,23 @@
 # Change Log
 
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [17.0.0](https://github.com/zthun/janitor/compare/v16.1.2...v17.0.0) (2024-08-27)
+
+
+### ⚠ BREAKING CHANGES
+
+* eslint now leans towards using defaults as much as possible
+
+### Code Refactoring
+
+* eslint now leans towards using defaults as much as possible ([c563c78](https://github.com/zthun/janitor/commit/c563c78cbfb24cec479bd1a590e2fad6654e83d1))
+
+
+
+# Change Log
+
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 

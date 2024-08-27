@@ -1,5 +1,20 @@
 # Change Log
 
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [17.0.0](https://github.com/zthun/janitor/compare/v16.1.2...v17.0.0) (2024-08-27)
+
+
+### Features
+
+* cosmiconfig now falls back to the default empty config ([3e9fdf6](https://github.com/zthun/janitor/commit/3e9fdf6164a3df1cae71831d1e5dc5ddb2989b92))
+* prettier config file is now optional ([db6d432](https://github.com/zthun/janitor/commit/db6d432ded4ee050cf7f5527fd49ab28d8415a1c))
+
+
+
+# Change Log
+
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
