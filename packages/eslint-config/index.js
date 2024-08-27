@@ -1,137 +1,52 @@
 module.exports = {
-  extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+  extends: [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/recommended",
+  ],
   plugins: ["@typescript-eslint", "import", "tsdoc"],
-  parserOptions: {
-    ecmaVersion: 8,
-    sourceType: "module",
-  },
   rules: {
-    "block-scoped-var": "error",
+    // We want to support == null so we get a good check for undefined
+    // or null
     eqeqeq: ["error", "smart"],
-    "no-else-return": "error",
-    "no-eval": "error",
-    "no-implied-eval": "error",
-    strict: "error",
-    "no-undef": "off",
-    "no-undef-init": "error",
-    "no-undefined": "off",
-    "no-unused-vars": "off",
-    "no-use-before-define": [
-      "error",
-      {
-        functions: false,
-        classes: false,
-        variables: true,
-      },
-    ],
-    "no-path-concat": "error",
-    "callback-return": "error",
-    "array-bracket-spacing": "error",
-    "array-element-newline": "off",
-    "block-spacing": "error",
-    "brace-style": "off",
-    "comma-spacing": "error",
-    "comma-style": "error",
-    "computed-property-spacing": "error",
-    "eol-last": "error",
-    "func-call-spacing": "error",
-    indent: "off",
-    "key-spacing": "error",
-    "keyword-spacing": "error",
-    "line-comment-position": "error",
-    "linebreak-style": "off",
-    "lines-around-comment": "off",
-    "max-depth": "error",
-    "max-len": "off",
-    "max-lines": "off",
-    "max-nested-callbacks": "off",
-    "max-params": "off",
-    "max-statements": "off",
-    "max-statements-per-line": "error",
-    "multiline-ternary": "off",
-    "new-cap": "off",
-    "new-parens": "error",
-    "newline-per-chained-call": "off",
-    "no-array-constructor": "error",
-    "no-bitwise": "off",
-    "no-continue": "off",
-    "no-inline-comments": "error",
-    "no-lonely-if": "error",
-    "no-mixed-operators": "off",
-    "no-mixed-spaces-and-tabs": "error",
-    "no-multi-assign": "error",
-    "no-multiple-empty-lines": "error",
-    "no-negated-condition": "off",
-    "no-nested-ternary": "off",
-    "no-new-object": "off",
-    "no-plusplus": "off",
-    "no-tabs": "error",
-    "no-ternary": "off",
-    "no-trailing-spaces": "off",
-    "no-underscore-dangle": "off",
-    "no-unneeded-ternary": "error",
-    "no-whitespace-before-property": "error",
-    "nonblock-statement-body-position": "error",
-    "object-curly-newline": "off",
-    "object-curly-spacing": ["error", "always"],
-    "object-property-newline": "off",
-    "one-var": ["error", "never"],
-    "one-var-declaration-per-line": "error",
-    "operator-assignment": "off",
-    "operator-linebreak": "off",
-    "padded-blocks": ["error", "never"],
-    "padding-line-between-statements": "off",
-    semi: "error",
-    "semi-spacing": "error",
-    "semi-style": "error",
-    "sort-keys": "off",
-    "sort-vars": "off",
-    "sort-imports": "off",
-    "space-before-blocks": "error",
-    "space-in-parens": "error",
-    "space-infix-ops": "error",
-    "space-unary-ops": [
-      "error",
-      {
-        words: true,
-        nonwords: false,
-      },
-    ],
-    "spaced-comment": "error",
-    "switch-colon-spacing": "error",
-    "template-tag-spacing": "error",
-    "unicode-bom": "off",
-    "wrap-regex": "off",
 
+    // There are times when any and legacy namespaces makes sense.
+    // If you use any kind of decorator library, you will almost
+    // be required to use any at some point.  Forcing a non use of them
+    // means you're spending a bunch of time play type gymnastics and to
+    // hell with that.
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/no-namespace": "off",
-    "@typescript-eslint/no-unused-vars": "error",
+
+    // Would be fine, but there's a bug in this where you have a function with
+    // access arguments.  Those constructors are often empty - so we want to let
+    // a part of this one through.
+    "no-empty-function": "off",
     "@typescript-eslint/no-empty-function": [
       "error",
       { allow: ["constructors"] },
     ],
-    "@typescript-eslint/ban-types": "off",
+
+    // A lot of 3rd party libraries still don't support esm
+    // and trying to force this right now just isn't feasible.
     "@typescript-eslint/no-var-requires": "off",
-    "@typescript-eslint/explicit-module-boundary-types": "off",
-    "@typescript-eslint/no-empty-interface": "off",
-    "@typescript-eslint/no-non-null-assertion": "off",
     "@typescript-eslint/no-require-imports": "off",
 
-    "import/first": "error",
-    "import/no-absolute-path": "error",
-    "import/no-extraneous-dependencies": "error",
-    "import/no-deprecated": "warn",
+    // I want aliasing support.
+    "@typescript-eslint/no-empty-interface": "off",
 
-    "tsdoc/syntax": "warn",
-  },
-  env: {
-    browser: true,
-    node: true,
-    commonjs: true,
-    jasmine: true,
-    mocha: true,
-    jest: true,
-    protractor: true,
-    jquery: true,
+    // I can technically agree with this, but where this comes in
+    // handy is unit testing and I value that more than I value
+    // a linter telling me what to do.
+    "@typescript-eslint/no-non-null-assertion": "off",
+
+    // Either I'm reading this wrong or this rule is just straight up
+    // broken when combined with TypeScript.  It requires the types
+    // use import type from { module } even when Typescript is
+    // supporting a direct import.
+    "import/named": "off",
+
+    // This one is not needed - TypeScript does this for us.
+    "import/no-unresolved": "off",
   },
 };
