@@ -1,4 +1,5 @@
 const generated = [
+  "lerna.json",
   "**/CHANGELOG.md",
   "packages/**/dist/**",
   "packages/**/docs/**",
