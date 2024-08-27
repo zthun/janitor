@@ -2,9 +2,10 @@ module.exports = {
   extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:import/recommended",
     "plugin:prettier/recommended",
   ],
-  plugins: ["@typescript-eslint", "tsdoc", "prettier"],
+  plugins: ["@typescript-eslint", "tsdoc", "import", "prettier"],
   rules: {
     // We want to support == null so we get a good check for undefined
     // or null
@@ -39,6 +40,15 @@ module.exports = {
     // handy is unit testing and I value that more than I value
     // linter feedback.
     "@typescript-eslint/no-non-null-assertion": "off",
+
+    // This lint error is the main reason to use import as we want to make
+    // sure we've installed our dependencies correctly.
+    "import/no-extraneous-dependencies": "error",
+
+    // These are straight up broken with Typescript when you need to work with
+    // mts files that must have mjs imports.
+    "import/named": "off",
+    "import/no-unresolved": "off",
 
     // Have to make sure that tsdoc syntax gives us the necessary errors
     "tsdoc/syntax": "warn",
