@@ -58,12 +58,15 @@ describe("ZConfigReaderPrettier", () => {
     expect(actual).toBe(options);
   });
 
-  it("returns a rejected promise if no options can be loaded.", async () => {
+  it("uses the default options when the config does not exist.", async () => {
     // Arrange
     vi.mocked(resolveConfig).mockResolvedValue(null);
     const target = createTestTarget();
+
     // Act
+    const actual = await target.read(null);
+
     // Assert
-    await expect(target.read(null)).rejects.toBeTruthy();
+    expect(actual).toEqual({});
   });
 });

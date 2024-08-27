@@ -30,10 +30,6 @@ export class ZConfigReaderPrettier implements IZConfigReader {
       ops,
     );
 
-    if (!options) {
-      return Promise.reject(new Error("Could not find a valid configuration."));
-    }
-
-    return options;
+    return options || {};
   }
 }
