@@ -1,1 +1,1 @@
-module.exports = require("@zthun/prettier-config");
+module.exports = require("@zthun/lint-janitor-config/prettier");
