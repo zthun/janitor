@@ -30,6 +30,8 @@
     "@types/prettier": "^3.0.0",
     "@types/yargs": "^17.0.33",
     "@vitest/coverage-istanbul": "^2.0.5",
+    "@zthun/lint-janitor": "^17.0.0",
+    "@zthun/lint-janitor-config": "^17.0.0",
     "husky": "^9.1.5",
     "lerna": "^8.1.8",
     "react": "^18.3.1",

@@ -1,4 +1,10 @@
 {
   "extends": "./.config/.tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "packages",
+    "paths": {
+      "@zthun/lint-janitor": ["lint-janitor/index.mts"]
+    }
+  },
   "include": ["packages/**/*.ts", "packages/**/*.mts"]
 }
