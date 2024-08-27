@@ -56,14 +56,17 @@ describe("ZConfigCosmicReader", () => {
     await expect(target.read(config)).rejects.toBeDefined();
   });
 
-  it("throws an exception if there are no config files.", async () => {
+  it("returns the empty config if there are no discovered config files.", async () => {
     // Arrange
     const target = createTestTarget("markdownlint", [
       ".markdownlint-missing",
       "markdown-skip",
     ]);
+
     // Act
+    const actual = await target.read(null);
+
     // Assert
-    await expect(target.read(null)).rejects.toBeDefined();
+    expect(actual).toEqual({});
   });
 });

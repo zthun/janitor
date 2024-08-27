@@ -76,7 +76,7 @@ export class ZConfigReaderCosmic implements IZConfigReader, IZConfigDiscovery {
     const configFile = await configLoad;
 
     if (!configFile) {
-      return Promise.reject(new Error("Could not find a valid configuration."));
+      return {};
     }
 
     const path = $resolve(configFile, { paths: [process.cwd()] });
