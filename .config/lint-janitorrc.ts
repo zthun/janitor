@@ -4,27 +4,38 @@ const generated = [
   "packages/**/docs/**",
 ];
 
+const esFiles = [
+  "*.js",
+  "packages/**/src/**/*.ts",
+  "packages/**/src/**/*.mts",
+  "packages/*-config/*.js",
+  ".config/*.ts",
+];
+
+const styleFiles = ["test/**/*.less", "test/**/*.scss"];
+const htmlFiles = ["test/**/*.html"];
+const markdownFiles = ["*.md", "packages/**/*.md", "packages/**/LICENSE"];
+const jsonFiles = ["*.json", "packages/**/*.json"];
+const yamlFiles = ["*.yml", ".circleci/*.yml"];
+
+const spellingFiles = esFiles
+  .concat(styleFiles)
+  .concat(htmlFiles)
+  .concat(markdownFiles)
+  .concat(jsonFiles)
+  .concat(yamlFiles);
+const prettyFiles = spellingFiles.slice();
+
 export default {
-  esFiles: [
-    "*.js",
-    "packages/**/src/**/*.ts",
-    "packages/**/src/**/*.mts",
-    "packages/*-config/*.js",
-    ".config/*.ts",
-  ],
-  styleFiles: ["test/**/*.less", "test/**/*.scss"],
-  htmlFiles: ["test/**/*.html"],
-  markdownFiles: ["*.md", "packages/**/*.md", "packages/**/LICENSE"],
+  esFiles,
+  styleFiles,
+  htmlFiles,
+  markdownFiles,
   markdownFilesExclude: generated,
-  jsonFiles: ["*.json", "packages/**/*.json"],
-  yamlFiles: ["*.yml"],
-  spellingFiles: [
-    "packages/**/src/**/*.ts",
-    "*.md",
-    "packages/**/*.md",
-    "packages/**/*.json",
-  ],
+  jsonFiles,
+  yamlFiles,
+  spellingFiles,
   spellingFilesExclude: generated,
-  prettyFiles: ["packages/**/src/**/*.ts", "*.md", "packages/**/*.json"],
+  prettyFiles,
   prettyFilesExclude: generated,
 };
