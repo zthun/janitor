@@ -2,9 +2,9 @@ module.exports = {
   extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:import/recommended",
+    "plugin:prettier/recommended",
   ],
-  plugins: ["@typescript-eslint", "import", "tsdoc"],
+  plugins: ["@typescript-eslint", "tsdoc", "prettier"],
   rules: {
     // We want to support == null so we get a good check for undefined
     // or null
@@ -37,16 +37,10 @@ module.exports = {
 
     // I can technically agree with this, but where this comes in
     // handy is unit testing and I value that more than I value
-    // a linter telling me what to do.
+    // linter feedback.
     "@typescript-eslint/no-non-null-assertion": "off",
 
-    // Either I'm reading this wrong or this rule is just straight up
-    // broken when combined with TypeScript.  It requires the types
-    // use import type from { module } even when Typescript is
-    // supporting a direct import.
-    "import/named": "off",
-
-    // This one is not needed - TypeScript does this for us.
-    "import/no-unresolved": "off",
+    // Have to make sure that tsdoc syntax gives us the necessary errors
+    "tsdoc/syntax": "warn",
   },
 };
