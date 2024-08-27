@@ -1,6 +1,6 @@
-import stylelint from 'stylelint';
-import { IZLinter } from './linter.mjs';
-import { $resolve } from '../config/config-resolve.mjs';
+import stylelint from "stylelint";
+import { IZLinter } from "./linter.mjs";
+import { $resolve } from "../config/config-resolve.mjs";
 
 /**
  * Represents a linter for stylelint.
@@ -29,7 +29,7 @@ export class ZLinterStyle implements IZLinter {
    */
   public async lint(content: string[], config: string): Promise<boolean> {
     const options: Partial<stylelint.LinterOptions> = {
-      files: content
+      files: content,
     };
 
     if (config) {
@@ -45,7 +45,7 @@ export class ZLinterStyle implements IZLinter {
       return false;
     }
 
-    this._logger.log('');
+    this._logger.log("");
     return true;
   }
 }

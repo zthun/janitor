@@ -1,4 +1,4 @@
-import { createRequire } from 'node:module';
+import { createRequire } from "node:module";
 
 export function $require(id: string) {
   const require = createRequire(import.meta.url);

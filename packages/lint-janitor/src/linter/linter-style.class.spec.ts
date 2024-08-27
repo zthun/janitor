@@ -1,18 +1,18 @@
-import stylelint from 'stylelint';
-import { ZLinterStyle } from './linter-style.mjs';
-import { describe, beforeEach, it, expect, vi } from 'vitest';
-import { $resolve } from '../config/config-resolve.mjs';
+import stylelint from "stylelint";
+import { ZLinterStyle } from "./linter-style.mjs";
+import { describe, beforeEach, it, expect, vi } from "vitest";
+import { $resolve } from "../config/config-resolve.mjs";
 
-vi.mock('stylelint', () => ({
+vi.mock("stylelint", () => ({
   default: {
     lint: vi.fn(),
     formatters: {
-      verbose: vi.fn()
-    }
-  }
+      verbose: vi.fn(),
+    },
+  },
 }));
 
-describe('ZLinterStyle', () => {
+describe("ZLinterStyle", () => {
   let logger: Console;
   let lintResult: stylelint.LinterResult;
   let content: string[];
@@ -28,33 +28,36 @@ describe('ZLinterStyle', () => {
 
     lintResult = {
       errored: false,
-      output: '',
-      cwd: '',
-      report: '',
+      output: "",
+      cwd: "",
+      report: "",
       reportedDisables: null,
       results: [],
-      ruleMetadata: {}
+      ruleMetadata: {},
     };
 
-    content = ['fileA.less', 'fileB.css'];
-    config = '@zthun/stylelint-config';
+    content = ["fileA.less", "fileB.css"];
+    config = "@zthun/stylelint-config";
 
     vi.mocked(stylelint.lint).mockClear();
     vi.mocked(stylelint.lint).mockResolvedValue(lintResult);
   });
 
-  describe('Config', () => {
-    it('should run the the required options if they are specified.', async () => {
+  describe("Config", () => {
+    it("should run the the required options if they are specified.", async () => {
       // Arrange
       const target = createTestTarget();
       const expected = $resolve(config);
       // Act
       await target.lint(content, config);
       // Assert
-      expect(stylelint.lint).toHaveBeenCalledWith({ files: content, configFile: expected });
+      expect(stylelint.lint).toHaveBeenCalledWith({
+        files: content,
+        configFile: expected,
+      });
     });
 
-    it('should run with the default configuration options if no config is specified.', async () => {
+    it("should run with the default configuration options if no config is specified.", async () => {
       // Arrange
       const target = createTestTarget();
       // Act
@@ -64,17 +67,17 @@ describe('ZLinterStyle', () => {
     });
   });
 
-  describe('Success', () => {
-    it('should not log if there are not lint errors.', async () => {
+  describe("Success", () => {
+    it("should not log if there are not lint errors.", async () => {
       // Arrange
       const target = createTestTarget();
       // Act
       await target.lint(content, config);
       // Assert
-      expect(logger.log).toHaveBeenCalledWith('');
+      expect(logger.log).toHaveBeenCalledWith("");
     });
 
-    it('should return true if there are no lint failures.', async () => {
+    it("should return true if there are no lint failures.", async () => {
       // Arrange
       const target = createTestTarget();
       // Act
@@ -84,26 +87,26 @@ describe('ZLinterStyle', () => {
     });
   });
 
-  describe('Failure.', () => {
+  describe("Failure.", () => {
     let rule: stylelint.LintResult;
 
     beforeEach(() => {
       rule = {
-        source: 'file-ruleA.less',
+        source: "file-ruleA.less",
         errored: true,
         ignored: false,
         warnings: [
           {
             line: 6,
             column: 5,
-            rule: 'rule-empty-line-before',
-            severity: 'error',
-            text: 'Expected empty line before rule'
-          }
+            rule: "rule-empty-line-before",
+            severity: "error",
+            text: "Expected empty line before rule",
+          },
         ],
         deprecations: [],
         invalidOptionWarnings: [],
-        parseErrors: []
+        parseErrors: [],
       };
 
       lintResult.errored = true;
@@ -112,7 +115,7 @@ describe('ZLinterStyle', () => {
       vi.mocked(stylelint.lint).mockResolvedValue(lintResult);
     });
 
-    it('should log if the linter errors.', async () => {
+    it("should log if the linter errors.", async () => {
       // Arrange
       const target = createTestTarget();
       // Act
@@ -121,7 +124,7 @@ describe('ZLinterStyle', () => {
       expect(logger.log).toHaveBeenCalled();
     });
 
-    it('should return false if there are lint failures.', async () => {
+    it("should return false if there are lint failures.", async () => {
       // Arrange
       const target = createTestTarget();
       // Act

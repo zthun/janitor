@@ -1,8 +1,8 @@
-import { ZLinterSilent } from './linter-silent.mjs';
-import { describe, it, expect } from 'vitest';
+import { ZLinterSilent } from "./linter-silent.mjs";
+import { describe, it, expect } from "vitest";
 
-describe('ZLinterSilent', () => {
-  it('resolves to true.', async () => {
+describe("ZLinterSilent", () => {
+  it("resolves to true.", async () => {
     // Arrange
     const target = new ZLinterSilent();
     // Act
@@ -11,7 +11,7 @@ describe('ZLinterSilent', () => {
     expect(actual).toBeTruthy();
   });
 
-  it('resolves to false.', async () => {
+  it("resolves to false.", async () => {
     // Arrange
     const target = new ZLinterSilent(false);
     // Act

@@ -1,9 +1,9 @@
-import { ESLint } from 'eslint';
-import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { ZLinterEs } from './linter-es.mjs';
-import { $resolve } from '../config/config-resolve.mjs';
+import { ESLint } from "eslint";
+import { beforeEach, describe, expect, it, vi } from "vitest";
+import { ZLinterEs } from "./linter-es.mjs";
+import { $resolve } from "../config/config-resolve.mjs";
 
-describe('ZLinterEs', () => {
+describe("ZLinterEs", () => {
   let files: string[];
   let config: string;
   let successA: ESLint.LintResult;
@@ -22,10 +22,10 @@ describe('ZLinterEs', () => {
   }
 
   beforeEach(async () => {
-    config = '@zthun/lint-janitor-config/eslint';
-    files = ['src/**/*.js'];
+    config = "@zthun/lint-janitor-config/eslint";
+    files = ["src/**/*.js"];
     successA = {
-      filePath: 'src/index.js',
+      filePath: "src/index.js",
       messages: [],
       errorCount: 0,
       warningCount: 0,
@@ -33,11 +33,11 @@ describe('ZLinterEs', () => {
       fixableWarningCount: 0,
       fatalErrorCount: 0,
       usedDeprecatedRules: [],
-      suppressedMessages: []
+      suppressedMessages: [],
     };
 
     successB = {
-      filePath: 'src/app/app.js',
+      filePath: "src/app/app.js",
       messages: [],
       errorCount: 0,
       warningCount: 0,
@@ -45,21 +45,21 @@ describe('ZLinterEs', () => {
       fixableWarningCount: 0,
       fatalErrorCount: 0,
       usedDeprecatedRules: [],
-      suppressedMessages: []
+      suppressedMessages: [],
     };
 
     failedA = {
-      filePath: 'src/app/error.js',
+      filePath: "src/app/error.js",
       messages: [
         {
           column: 33,
           line: 10,
-          ruleId: 'equals',
-          message: 'Always use ===',
-          nodeType: 'branch',
+          ruleId: "equals",
+          message: "Always use ===",
+          nodeType: "branch",
           severity: 2,
-          source: 'file'
-        }
+          source: "file",
+        },
       ],
       errorCount: 1,
       warningCount: 0,
@@ -67,7 +67,7 @@ describe('ZLinterEs', () => {
       fixableWarningCount: 0,
       fatalErrorCount: 0,
       usedDeprecatedRules: [],
-      suppressedMessages: []
+      suppressedMessages: [],
     };
 
     successReport = [successA, successB];
@@ -75,32 +75,35 @@ describe('ZLinterEs', () => {
     failedReport = [successA, failedA];
 
     engine = new ESLint({});
-    vi.spyOn(engine, 'lintFiles').mockResolvedValue(successReport);
+    vi.spyOn(engine, "lintFiles").mockResolvedValue(successReport);
 
     logger = {} as any;
     logger.log = vi.fn();
 
     formatter = await engine.loadFormatter();
-    vi.spyOn(engine, 'loadFormatter').mockResolvedValue(formatter);
-    vi.spyOn(formatter, 'format');
+    vi.spyOn(engine, "loadFormatter").mockResolvedValue(formatter);
+    vi.spyOn(formatter, "format");
   });
 
-  describe('Config', () => {
-    it('should run the the required options if they are specified.', async () => {
+  describe("Config", () => {
+    it("should run the the required options if they are specified.", async () => {
       // Arrange
       const target = createTestTarget();
       const expected = $resolve(config);
-      vi.spyOn(target, 'engineFactory');
+      vi.spyOn(target, "engineFactory");
       // Act
       await target.lint(files, config);
       // Assert
-      expect(target.engineFactory).toHaveBeenCalledWith({ useEslintrc: true, overrideConfigFile: expected });
+      expect(target.engineFactory).toHaveBeenCalledWith({
+        useEslintrc: true,
+        overrideConfigFile: expected,
+      });
     });
 
-    it('should run with the default configuration options if no config is specified.', async () => {
+    it("should run with the default configuration options if no config is specified.", async () => {
       // Arrange
       const target = createTestTarget();
-      vi.spyOn(target, 'engineFactory');
+      vi.spyOn(target, "engineFactory");
       // Act
       await target.lint(files, null);
       // Assert
@@ -108,8 +111,8 @@ describe('ZLinterEs', () => {
     });
   });
 
-  describe('Linting', () => {
-    it('constructs a default engine.', () => {
+  describe("Linting", () => {
+    it("constructs a default engine.", () => {
       // Arrange
       const target = new ZLinterEs(logger);
       // Act
@@ -118,27 +121,29 @@ describe('ZLinterEs', () => {
       expect(actual).toBeTruthy();
     });
 
-    it('returns false if an IO exception occurs.', async () => {
+    it("returns false if an IO exception occurs.", async () => {
       // Arrange
       const target = createTestTarget();
-      vi.spyOn(engine, 'lintFiles').mockRejectedValue(new Error('Cannot open file'));
+      vi.spyOn(engine, "lintFiles").mockRejectedValue(
+        new Error("Cannot open file"),
+      );
       // Act
       const actual = await target.lint(files, config);
       // Assert
       expect(actual).toBeFalsy();
     });
 
-    it('returns false if the error count is not 0.', async () => {
+    it("returns false if the error count is not 0.", async () => {
       // Arrange
       const target = createTestTarget();
-      vi.spyOn(engine, 'lintFiles').mockResolvedValue(failedReport);
+      vi.spyOn(engine, "lintFiles").mockResolvedValue(failedReport);
       // Act
       const actual = await target.lint(files, config);
       // Assert
       expect(actual).toBeFalsy();
     });
 
-    it('returns true if the error count is 0.', async () => {
+    it("returns true if the error count is 0.", async () => {
       // Arrange
       const target = createTestTarget();
       // Act
@@ -147,7 +152,7 @@ describe('ZLinterEs', () => {
       expect(actual).toBeTruthy();
     });
 
-    it('displays the formatted output.', async () => {
+    it("displays the formatted output.", async () => {
       // Arrange
       const target = createTestTarget();
       // Act

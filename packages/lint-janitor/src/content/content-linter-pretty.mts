@@ -1,5 +1,5 @@
-import { check, getFileInfo, Options } from 'prettier';
-import { IZContentLinter } from './content-linter.mjs';
+import { check, getFileInfo, Options } from "prettier";
+import { IZContentLinter } from "./content-linter.mjs";
 
 /**
  * Represents an object that can be used to perform prettier checks on files.
@@ -18,9 +18,17 @@ export class ZContentLinterPretty implements IZContentLinter {
    * @returns
    *        A promise that resolves if the content is lint free, and rejects if it has lint errors.
    */
-  public async lint(content: string, contentPath: string, options?: Options): Promise<any> {
+  public async lint(
+    content: string,
+    contentPath: string,
+    options?: Options,
+  ): Promise<any> {
     const file = await getFileInfo(contentPath);
-    const finalOptions = Object.assign({}, { parser: file.inferredParser }, options);
+    const finalOptions = Object.assign(
+      {},
+      { parser: file.inferredParser },
+      options,
+    );
     const formatted = await check(content, finalOptions);
 
     if (!formatted) {

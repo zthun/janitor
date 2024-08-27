@@ -10,9 +10,7 @@
   },
   "changelogPreset": {
     "name": "conventionalcommits",
-    "issuePrefixes": [
-      "#"
-    ],
+    "issuePrefixes": ["#"],
     "types": [
       {
         "type": "feat",

@@ -11,7 +11,8 @@ npm install @zthun/eslint-config --save-dev
 yarn add @zthun/eslint-config --dev
 ```
 
-Make sure to install typescript and @typescript-eslint/eslint-plugin with all peer dependencies.
+Make sure to install typescript and @typescript-eslint/eslint-plugin with all
+peer dependencies.
 
 ## Usage
 
@@ -23,4 +24,5 @@ In the .eslintrc file, add the following
 }
 ```
 
-That's it. You now have the recommended rules for zthun scoped projects with typescript.
+That's it. You now have the recommended rules for zthun scoped projects with
+typescript.

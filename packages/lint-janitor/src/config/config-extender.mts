@@ -1,4 +1,4 @@
-import { $require } from './config-resolve.mjs';
+import { $require } from "./config-resolve.mjs";
 
 /**
  * Represents an object that can be used to build configs using an extends pattern.
@@ -33,7 +33,7 @@ export class ZConfigExtender implements IZConfigExtender {
    * @param key
    *        - The key to extend.
    */
-  public constructor(public key = 'extends') {}
+  public constructor(public key = "extends") {}
 
   /**
    * Extends the configuration value.
@@ -58,7 +58,10 @@ export class ZConfigExtender implements IZConfigExtender {
     const extensions = config[this.key];
     const modules = Array.isArray(extensions) ? extensions : [extensions];
     const resolved = await Promise.all(modules.map((m) => this._read(m)));
-    let updated = resolved.reduce((last, current) => Object.assign({}, last, current), {});
+    let updated = resolved.reduce(
+      (last, current) => Object.assign({}, last, current),
+      {},
+    );
     updated = Object.assign({}, updated, config);
     delete updated[this.key];
     return updated;

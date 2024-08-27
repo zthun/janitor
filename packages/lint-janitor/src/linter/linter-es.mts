@@ -1,7 +1,7 @@
-import { ESLint } from 'eslint';
-import every from 'lodash/every.js';
-import { IZLinter } from './linter.mjs';
-import { $resolve } from '../config/config-resolve.mjs';
+import { ESLint } from "eslint";
+import every from "lodash/every.js";
+import { IZLinter } from "./linter.mjs";
+import { $resolve } from "../config/config-resolve.mjs";
 
 /**
  * Represents an object that can be used to perform eslint on javascript files.
@@ -16,7 +16,8 @@ export class ZLinterEs implements IZLinter {
    * @returns
    *        The engine that can be used to perform eslint.
    */
-  public engineFactory: (options: ESLint.Options) => ESLint = (options) => new ESLint(options);
+  public engineFactory: (options: ESLint.Options) => ESLint = (options) =>
+    new ESLint(options);
 
   /**
    * Initializes a new instance of this object.
@@ -41,11 +42,13 @@ export class ZLinterEs implements IZLinter {
    */
   public async lint(src: string[], config: string): Promise<boolean> {
     const esOptions: ESLint.Options = {
-      useEslintrc: true
+      useEslintrc: true,
     };
 
     if (config) {
-      esOptions.overrideConfigFile = $resolve(config, { paths: [process.cwd()] });
+      esOptions.overrideConfigFile = $resolve(config, {
+        paths: [process.cwd()],
+      });
     }
 
     try {

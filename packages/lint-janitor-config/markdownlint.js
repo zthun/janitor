@@ -1,1 +1,1 @@
-module.exports = require('@zthun/markdownlint-config');
+module.exports = require("@zthun/markdownlint-config");

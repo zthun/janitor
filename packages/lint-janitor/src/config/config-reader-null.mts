@@ -1,4 +1,4 @@
-import { IZConfigReader } from './config-reader.mjs';
+import { IZConfigReader } from "./config-reader.mjs";
 
 /**
  * Represents a config reader that returns the empty options.

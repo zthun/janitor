@@ -1,1 +1,1 @@
-module.exports = require('@zthun/stylelint-config');
+module.exports = require("@zthun/stylelint-config");

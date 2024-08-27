@@ -1,1 +1,1 @@
-module.exports = require('@zthun/htmlhint-config');
+module.exports = require("@zthun/htmlhint-config");

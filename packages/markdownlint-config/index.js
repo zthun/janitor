@@ -1,1 +1,1 @@
-module.exports = require('./as-json.json');
+module.exports = require("./as-json.json");

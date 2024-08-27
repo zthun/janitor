@@ -17,5 +17,10 @@ export interface IZContentLinter {
    * @returns
    *        A resolved promise if the lint is successful, a rejected promise if not.
    */
-  lint(content: string, contentPath: string, options: any, optionsPath: string): Promise<any>;
+  lint(
+    content: string,
+    contentPath: string,
+    options: any,
+    optionsPath: string,
+  ): Promise<any>;
 }

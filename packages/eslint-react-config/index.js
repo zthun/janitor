@@ -1,17 +1,17 @@
 module.exports = {
-  extends: ['@zthun/eslint-config', 'plugin:react/recommended'],
+  extends: ["@zthun/eslint-config", "plugin:react/recommended"],
   parserOptions: {
     ecmaFeatures: {
-      jsx: true
-    }
+      jsx: true,
+    },
   },
-  plugins: ['react'],
+  plugins: ["react"],
   rules: {
-    'react/prop-types': 'off'
+    "react/prop-types": "off",
   },
   settings: {
     react: {
-      version: 'detect'
-    }
-  }
+      version: "detect",
+    },
+  },
 };

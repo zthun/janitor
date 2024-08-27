@@ -1,1 +1,1 @@
-module.exports = require('@zthun/stylelint-config-less');
+module.exports = require("@zthun/stylelint-config-less");

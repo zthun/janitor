@@ -1,6 +1,7 @@
 # StyleLint Config
 
-This is the shared stylelint configuration for zthun scoped projects using sass instead of raw css.
+This is the shared stylelint configuration for zthun scoped projects using sass
+instead of raw css.
 
 ## Getting Started
 

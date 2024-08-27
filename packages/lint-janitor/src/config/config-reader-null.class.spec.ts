@@ -1,12 +1,12 @@
-import { describe, expect, it } from 'vitest';
-import { ZConfigReaderNull } from './config-reader-null.mjs';
+import { describe, expect, it } from "vitest";
+import { ZConfigReaderNull } from "./config-reader-null.mjs";
 
-describe('ZConfigReaderNull', () => {
+describe("ZConfigReaderNull", () => {
   function createTestTarget() {
     return new ZConfigReaderNull();
   }
 
-  it('returns null on read.', async () => {
+  it("returns null on read.", async () => {
     // Arrange
     const target = createTestTarget();
     // Act

@@ -1,8 +1,8 @@
-import chalk from 'chalk';
-import { CSpellApplicationOptions, CSpellReporter, Issue, lint } from 'cspell';
-import noop from 'lodash/noop.js';
-import { IZLinter } from './linter.mjs';
-import { $resolve } from '../config/config-resolve.mjs';
+import chalk from "chalk";
+import { CSpellApplicationOptions, CSpellReporter, Issue, lint } from "cspell";
+import noop from "lodash/noop.js";
+import { IZLinter } from "./linter.mjs";
+import { $resolve } from "../config/config-resolve.mjs";
 
 /**
  * Represents an object that can be used to perform cspell on files.
@@ -31,7 +31,11 @@ export class ZLinterSpelling implements IZLinter {
    *        lint is fully successful, and false if the lint
    *        has errors.
    */
-  public async lint(src: string[], config?: string, exclude?: string[]): Promise<boolean> {
+  public async lint(
+    src: string[],
+    config?: string,
+    exclude?: string[],
+  ): Promise<boolean> {
     const options: CSpellApplicationOptions = { exclude };
 
     if (config) {
@@ -46,10 +50,19 @@ export class ZLinterSpelling implements IZLinter {
 
     const issue = (issue: Issue) => {
       const position = `${issue.row}:${issue.col}`;
-      this._logger.log(`${chalk.green(issue.uri)}:${chalk.yellow(position)} - Unknown word (${chalk.red(issue.text)})`);
+      this._logger.log(
+        `${chalk.green(issue.uri)}:${chalk.yellow(position)} - Unknown word (${chalk.red(issue.text)})`,
+      );
     };
 
-    const emitters: CSpellReporter = { info, debug, error, progress, issue, result };
+    const emitters: CSpellReporter = {
+      info,
+      debug,
+      error,
+      progress,
+      issue,
+      result,
+    };
     const runResult = await lint(src, options, emitters);
 
     if (runResult.errors > 0 || runResult.issues > 0) {

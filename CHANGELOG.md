@@ -1,459 +1,455 @@
 # Change Log
 
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+All notable changes to this project will be documented in this file. See
+[Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
 ## [16.1.2](https://github.com/zthun/janitor/compare/v16.1.1...v16.1.2) (2024-08-27)
 
 **Note:** Version bump only for package @zthun/janitor
 
-
-
-
-
 ## [16.1.1](https://github.com/zthun/janitor/compare/v16.1.0...v16.1.1) (2024-07-15)
 
 **Note:** Version bump only for package @zthun/janitor
 
-
-
-
-
 ## [16.1.0](https://github.com/zthun/janitor/compare/v16.0.1...v16.1.0) (2024-04-11)
-
 
 ### Features
 
-* style lint upgraded to 16.3.1 ([f854af0](https://github.com/zthun/janitor/commit/f854af00e3f264c68929fba5bd9dcabbf27bb1e2))
-* upgrade cspell to 3.7.0 ([66ef9ba](https://github.com/zthun/janitor/commit/66ef9ba4aa8beb113362da1db8be76fc1768a725))
-* upgraded markdown lint to 0.34.0 ([aab1e76](https://github.com/zthun/janitor/commit/aab1e761055b6da1c1612680c5a9cb3338d8813e))
-
+- style lint upgraded to 16.3.1
+  ([f854af0](https://github.com/zthun/janitor/commit/f854af00e3f264c68929fba5bd9dcabbf27bb1e2))
+- upgrade cspell to 3.7.0
+  ([66ef9ba](https://github.com/zthun/janitor/commit/66ef9ba4aa8beb113362da1db8be76fc1768a725))
+- upgraded markdown lint to 0.34.0
+  ([aab1e76](https://github.com/zthun/janitor/commit/aab1e761055b6da1c1612680c5a9cb3338d8813e))
 
 ### Bug Fixes
 
-* failures when linting es files will still allow other linters to run their checks ([68e942f](https://github.com/zthun/janitor/commit/68e942f21f8fa415d4f7c19b34c2b596509dbd30))
-
-
+- failures when linting es files will still allow other linters to run their
+  checks
+  ([68e942f](https://github.com/zthun/janitor/commit/68e942f21f8fa415d4f7c19b34c2b596509dbd30))
 
 ## [16.0.1](https://github.com/zthun/janitor/compare/v16.0.0...v16.0.1) (2024-03-15)
 
-
 ### Bug Fixes
 
-* lint janitor config peer dependency is now v16 of lint janitor ([29fa865](https://github.com/zthun/janitor/commit/29fa865aa401ffd8a7b952467af010f37e737a8b))
-
-
+- lint janitor config peer dependency is now v16 of lint janitor
+  ([29fa865](https://github.com/zthun/janitor/commit/29fa865aa401ffd8a7b952467af010f37e737a8b))
 
 ## [16.0.0](https://github.com/zthun/janitor/compare/v15.1.2...v16.0.0) (2024-03-15)
 
-
 ### ⚠ BREAKING CHANGES
 
-* upgrade stylelint to 16.2.1
+- upgrade stylelint to 16.2.1
 
 ### Features
 
-* brace style lint is now turned off for better prettier support ([964fa81](https://github.com/zthun/janitor/commit/964fa81bd49b1f27879f52bca7bc17a2e58096e5))
-* upgrade cspell to 8.6.0 ([f2e7ec6](https://github.com/zthun/janitor/commit/f2e7ec60196ab4f09543669e9d78e0b1b8b3a8e9))
-* upgrade markdown lint to 0.33.0 ([bc1b6f1](https://github.com/zthun/janitor/commit/bc1b6f1fe08cef5be9643b02eadb92254d30163b))
-* upgrade prettier to 3.2.5 ([6a00766](https://github.com/zthun/janitor/commit/6a007663742c2bb4f0af1582746d87002bded6bc))
-* upgrade stylelint to 16.2.1 ([281283f](https://github.com/zthun/janitor/commit/281283f5738df0755baacd731d8473453d4a9603))
-
-
+- brace style lint is now turned off for better prettier support
+  ([964fa81](https://github.com/zthun/janitor/commit/964fa81bd49b1f27879f52bca7bc17a2e58096e5))
+- upgrade cspell to 8.6.0
+  ([f2e7ec6](https://github.com/zthun/janitor/commit/f2e7ec60196ab4f09543669e9d78e0b1b8b3a8e9))
+- upgrade markdown lint to 0.33.0
+  ([bc1b6f1](https://github.com/zthun/janitor/commit/bc1b6f1fe08cef5be9643b02eadb92254d30163b))
+- upgrade prettier to 3.2.5
+  ([6a00766](https://github.com/zthun/janitor/commit/6a007663742c2bb4f0af1582746d87002bded6bc))
+- upgrade stylelint to 16.2.1
+  ([281283f](https://github.com/zthun/janitor/commit/281283f5738df0755baacd731d8473453d4a9603))
 
 ## [15.1.2](https://github.com/zthun/janitor/compare/v15.1.1...v15.1.2) (2023-12-15)
 
-
 ### Bug Fixes
 
-* minimum of version of prettier is now a peer dependency ([ed77d2e](https://github.com/zthun/janitor/commit/ed77d2e17ff688efd5a9479aeb98ee26f200b1fa))
-* prettier now correctly discovers the config file ([47bd8a9](https://github.com/zthun/janitor/commit/47bd8a9897389d3cef399d4b7d48a45167930721))
-
-
+- minimum of version of prettier is now a peer dependency
+  ([ed77d2e](https://github.com/zthun/janitor/commit/ed77d2e17ff688efd5a9479aeb98ee26f200b1fa))
+- prettier now correctly discovers the config file
+  ([47bd8a9](https://github.com/zthun/janitor/commit/47bd8a9897389d3cef399d4b7d48a45167930721))
 
 ## [15.1.1](https://github.com/zthun/janitor/compare/v15.1.0...v15.1.1) (2023-11-29)
 
-
 ### Bug Fixes
 
-* added additional stylelint-configs ([7da19eb](https://github.com/zthun/janitor/commit/7da19eb57ad95eeb0fb860a2feb1f863b8d38200))
-* adding config dependency ([c720c65](https://github.com/zthun/janitor/commit/c720c6515622f24f417612c1b11bcbaee57180c1))
-* update lint-janitor peer dependency ([9643e92](https://github.com/zthun/janitor/commit/9643e927c760b33c1d4278a134b6e9535c0108e0))
-
-
+- added additional stylelint-configs
+  ([7da19eb](https://github.com/zthun/janitor/commit/7da19eb57ad95eeb0fb860a2feb1f863b8d38200))
+- adding config dependency
+  ([c720c65](https://github.com/zthun/janitor/commit/c720c6515622f24f417612c1b11bcbaee57180c1))
+- update lint-janitor peer dependency
+  ([9643e92](https://github.com/zthun/janitor/commit/9643e927c760b33c1d4278a134b6e9535c0108e0))
 
 ## [15.1.0](https://github.com/zthun/janitor/compare/v15.0.0...v15.1.0) (2023-11-29)
 
-
 ### Features
 
-* janitor now has an icon ([3a82827](https://github.com/zthun/janitor/commit/3a82827c2bb945f837455f44f09a86d7a5558b0a))
-* janitor web showcases the docs for janitor projects ([2da70dc](https://github.com/zthun/janitor/commit/2da70dc7fff4b39468aa09183c376eb345564d3b))
-* remove string-quotes ([6ccb2db](https://github.com/zthun/janitor/commit/6ccb2db7afcf270f1a081c5bd42298ec7d156806))
-* stylelint config less helps with less based style projects ([21d9f70](https://github.com/zthun/janitor/commit/21d9f70f6b929c18aa87295e099bc68ec2354b7d))
-* stylelint-config-sass can be used to lint sass projects ([0015ed6](https://github.com/zthun/janitor/commit/0015ed62399ea377f76a38f51b2712ae420f8595))
-
+- janitor now has an icon
+  ([3a82827](https://github.com/zthun/janitor/commit/3a82827c2bb945f837455f44f09a86d7a5558b0a))
+- janitor web showcases the docs for janitor projects
+  ([2da70dc](https://github.com/zthun/janitor/commit/2da70dc7fff4b39468aa09183c376eb345564d3b))
+- remove string-quotes
+  ([6ccb2db](https://github.com/zthun/janitor/commit/6ccb2db7afcf270f1a081c5bd42298ec7d156806))
+- stylelint config less helps with less based style projects
+  ([21d9f70](https://github.com/zthun/janitor/commit/21d9f70f6b929c18aa87295e099bc68ec2354b7d))
+- stylelint-config-sass can be used to lint sass projects
+  ([0015ed6](https://github.com/zthun/janitor/commit/0015ed62399ea377f76a38f51b2712ae420f8595))
 
 ### Bug Fixes
 
-* prettier lint should now properly identify errors ([d492e8b](https://github.com/zthun/janitor/commit/d492e8b9098039f624ed729ccad84ca192a1f9ef))
-
-
+- prettier lint should now properly identify errors
+  ([d492e8b](https://github.com/zthun/janitor/commit/d492e8b9098039f624ed729ccad84ca192a1f9ef))
 
 ## [15.0.0](https://github.com/zthun/janitor/compare/v14.4.0...v15.0.0) (2023-11-28)
 
-
 ### ⚠ BREAKING CHANGES
 
-* upgrade chalk to 5.x
-* upgrade cspell to 8.0.0
-* convert to esm module
-* convert lint janitor to esm modules only
+- upgrade chalk to 5.x
+- upgrade cspell to 8.0.0
+- convert to esm module
+- convert lint janitor to esm modules only
 
 ### Features
 
-* upgrade chalk to 5.x ([3304bbd](https://github.com/zthun/janitor/commit/3304bbd34090da39a51e2e04a3bf6bfda7b18c62))
-* upgrade cspell to 8.0.0 ([759d837](https://github.com/zthun/janitor/commit/759d8377f74e0494eb8d424d90d0f1c981a02306))
-
+- upgrade chalk to 5.x
+  ([3304bbd](https://github.com/zthun/janitor/commit/3304bbd34090da39a51e2e04a3bf6bfda7b18c62))
+- upgrade cspell to 8.0.0
+  ([759d837](https://github.com/zthun/janitor/commit/759d8377f74e0494eb8d424d90d0f1c981a02306))
 
 ### Code Refactoring
 
-* convert lint janitor to esm modules only ([5d73f75](https://github.com/zthun/janitor/commit/5d73f75615df32025d908e442bfeff2c5fc0c143))
-* convert to esm module ([26f3b64](https://github.com/zthun/janitor/commit/26f3b6460586b0f1b48855e739a894be158985ad))
-
-
+- convert lint janitor to esm modules only
+  ([5d73f75](https://github.com/zthun/janitor/commit/5d73f75615df32025d908e442bfeff2c5fc0c143))
+- convert to esm module
+  ([26f3b64](https://github.com/zthun/janitor/commit/26f3b6460586b0f1b48855e739a894be158985ad))
 
 ## [14.4.0](https://github.com/zthun/janitor/compare/v14.3.2...v14.4.0) (2023-11-21)
 
-
 ### Features
 
-* upgrade eslint tooling ([7bc94d3](https://github.com/zthun/janitor/commit/7bc94d3fcdd25ece893963903a306cd48c0c8fcb))
-* upgrade markdownlint to 0.32.x ([14d9226](https://github.com/zthun/janitor/commit/14d922674fe12b3b4215979759a031473ec9b195))
-* upgrade prettier to 3.1.0 ([8d75669](https://github.com/zthun/janitor/commit/8d75669471e562bd38895b540754ecff8d0a4674))
-* upgrade stylelint to 15.11.x ([87a0b2f](https://github.com/zthun/janitor/commit/87a0b2f714f7fa91f278a3bcab1190cbe513ccce))
-
-
+- upgrade eslint tooling
+  ([7bc94d3](https://github.com/zthun/janitor/commit/7bc94d3fcdd25ece893963903a306cd48c0c8fcb))
+- upgrade markdownlint to 0.32.x
+  ([14d9226](https://github.com/zthun/janitor/commit/14d922674fe12b3b4215979759a031473ec9b195))
+- upgrade prettier to 3.1.0
+  ([8d75669](https://github.com/zthun/janitor/commit/8d75669471e562bd38895b540754ecff8d0a4674))
+- upgrade stylelint to 15.11.x
+  ([87a0b2f](https://github.com/zthun/janitor/commit/87a0b2f714f7fa91f278a3bcab1190cbe513ccce))
 
 ## [14.3.2](https://github.com/zthun/janitor/compare/v14.3.1...v14.3.2) (2023-09-02)
 
 **Note:** Version bump only for package @zthun/janitor
 
-
-
-
-
 ## [14.3.1](https://github.com/zthun/janitor/compare/v14.3.0...v14.3.1) (2023-08-15)
-
 
 ### Bug Fixes
 
-* peer dependencies ([7c5a080](https://github.com/zthun/janitor/commit/7c5a080c6e57007d0801ff4e0dd5d5395d83f199))
-
-
+- peer dependencies
+  ([7c5a080](https://github.com/zthun/janitor/commit/7c5a080c6e57007d0801ff4e0dd5d5395d83f199))
 
 ## [14.3.0](https://github.com/zthun/janitor/compare/v14.2.0...v14.3.0) (2023-08-15)
 
-
 ### Features
 
-* update cspell ([fabb1b8](https://github.com/zthun/janitor/commit/fabb1b84bba4a6c90909bef806be6eecf5183775))
-* update eslint ([ed7ebcb](https://github.com/zthun/janitor/commit/ed7ebcb48ad1199bf4f84cc7e98136ffe513f5ca))
-* update markdown lint ([d1e490c](https://github.com/zthun/janitor/commit/d1e490cb22d6ffac45c81b4076e00fe278f5ed4e))
-* update prettier ([5f1104c](https://github.com/zthun/janitor/commit/5f1104c127830389b46ad4d0954825bb9533ed1c))
-* update stylelint ([6ece8fa](https://github.com/zthun/janitor/commit/6ece8fa9a8ce261147f12f9a027b35f18fbf80f2))
-
-
+- update cspell
+  ([fabb1b8](https://github.com/zthun/janitor/commit/fabb1b84bba4a6c90909bef806be6eecf5183775))
+- update eslint
+  ([ed7ebcb](https://github.com/zthun/janitor/commit/ed7ebcb48ad1199bf4f84cc7e98136ffe513f5ca))
+- update markdown lint
+  ([d1e490c](https://github.com/zthun/janitor/commit/d1e490cb22d6ffac45c81b4076e00fe278f5ed4e))
+- update prettier
+  ([5f1104c](https://github.com/zthun/janitor/commit/5f1104c127830389b46ad4d0954825bb9533ed1c))
+- update stylelint
+  ([6ece8fa](https://github.com/zthun/janitor/commit/6ece8fa9a8ce261147f12f9a027b35f18fbf80f2))
 
 ## [14.2.0](https://github.com/zthun/janitor/compare/v14.1.0...v14.2.0) (2023-06-09)
 
-
 ### Features
 
-* typedoc no longer distributed ([c1d8114](https://github.com/zthun/janitor/commit/c1d811493d669d6148825108bd44ea5008325d8a))
-* update cspell ([94e7464](https://github.com/zthun/janitor/commit/94e7464002cd821ee9a199c4fa474caab647e20f))
-* update markdownlint ([f331048](https://github.com/zthun/janitor/commit/f3310482cd355f382e0f02170b08d031457811af))
-* update prettier ([97bb183](https://github.com/zthun/janitor/commit/97bb183af6b1373567a81d980a7e4c73575e8095))
-* update stylelint ([3c5e59e](https://github.com/zthun/janitor/commit/3c5e59e022a8daec294a776cde24f7f5aebcabbb))
-
-
+- typedoc no longer distributed
+  ([c1d8114](https://github.com/zthun/janitor/commit/c1d811493d669d6148825108bd44ea5008325d8a))
+- update cspell
+  ([94e7464](https://github.com/zthun/janitor/commit/94e7464002cd821ee9a199c4fa474caab647e20f))
+- update markdownlint
+  ([f331048](https://github.com/zthun/janitor/commit/f3310482cd355f382e0f02170b08d031457811af))
+- update prettier
+  ([97bb183](https://github.com/zthun/janitor/commit/97bb183af6b1373567a81d980a7e4c73575e8095))
+- update stylelint
+  ([3c5e59e](https://github.com/zthun/janitor/commit/3c5e59e022a8daec294a776cde24f7f5aebcabbb))
 
 ## [14.1.0](https://github.com/zthun/janitor/compare/v14.0.0...v14.1.0) (2023-01-25)
 
-
 ### Features
 
-* relaxing jsdoc rules and switched to tsdoc ([17f31f1](https://github.com/zthun/janitor/commit/17f31f14bbce83da70239242ffa05deb83508025))
-
+- relaxing jsdoc rules and switched to tsdoc
+  ([17f31f1](https://github.com/zthun/janitor/commit/17f31f14bbce83da70239242ffa05deb83508025))
 
 ### Bug Fixes
 
-* updating peer dependencies ([2c6306b](https://github.com/zthun/janitor/commit/2c6306bf274d072762c1d6335a7237eab9b38d84))
-
-
+- updating peer dependencies
+  ([2c6306b](https://github.com/zthun/janitor/commit/2c6306bf274d072762c1d6335a7237eab9b38d84))
 
 ## [14.0.0](https://github.com/zthun/janitor/compare/v13.0.2...v14.0.0) (2023-01-24)
 
-
 ### ⚠ BREAKING CHANGES
 
-* updated dependencies to latest
-* update minimum node engine to lts version
+- updated dependencies to latest
+- update minimum node engine to lts version
 
 ### Build System
 
-* update minimum node engine to lts version ([8598a44](https://github.com/zthun/janitor/commit/8598a449d5145d80944ba0354ec85b5d6a931cb1))
-* updated dependencies to latest ([e6d7bb5](https://github.com/zthun/janitor/commit/e6d7bb5023193235d7069976a1fe39a59cfed1e4))
-
-
+- update minimum node engine to lts version
+  ([8598a44](https://github.com/zthun/janitor/commit/8598a449d5145d80944ba0354ec85b5d6a931cb1))
+- updated dependencies to latest
+  ([e6d7bb5](https://github.com/zthun/janitor/commit/e6d7bb5023193235d7069976a1fe39a59cfed1e4))
 
 ## [13.0.2](https://github.com/zthun/janitor/compare/v13.0.1...v13.0.2) (2022-11-29)
 
 **Note:** Version bump only for package @zthun/janitor
 
-
-
-
-
 ## [13.0.1](https://github.com/zthun/janitor/compare/v13.0.0...v13.0.1) (2022-10-01)
-
 
 ### Bug Fixes
 
-* update lint-janitor peer dependency ([5cea3ef](https://github.com/zthun/janitor/commit/5cea3ef0d79b6f49d236e5bd724275b7148c45a2))
-
-
+- update lint-janitor peer dependency
+  ([5cea3ef](https://github.com/zthun/janitor/commit/5cea3ef0d79b6f49d236e5bd724275b7148c45a2))
 
 ## [13.0.0](https://github.com/zthun/janitor/compare/v12.0.0...v13.0.0) (2022-09-28)
 
-
 ### ⚠ BREAKING CHANGES
 
-* prettier printWidth is now 120 down from 256
-* added support for the eslint-import plugin
+- prettier printWidth is now 120 down from 256
+- added support for the eslint-import plugin
 
 ### Features
 
-* added support for the eslint-import plugin ([42f91e7](https://github.com/zthun/janitor/commit/42f91e7b6f91ede6ef4dfd8915b5de66c2c74e6a))
-* adding eslint-plugin-import as a dependency ([1625ac7](https://github.com/zthun/janitor/commit/1625ac78a3bf4b0acea1df3296d6da6867c2d64e))
-* prettier printWidth is now 120 down from 256 ([c363685](https://github.com/zthun/janitor/commit/c363685d926b71ea3c609d5d460621fa9331e7b0))
-
-
+- added support for the eslint-import plugin
+  ([42f91e7](https://github.com/zthun/janitor/commit/42f91e7b6f91ede6ef4dfd8915b5de66c2c74e6a))
+- adding eslint-plugin-import as a dependency
+  ([1625ac7](https://github.com/zthun/janitor/commit/1625ac78a3bf4b0acea1df3296d6da6867c2d64e))
+- prettier printWidth is now 120 down from 256
+  ([c363685](https://github.com/zthun/janitor/commit/c363685d926b71ea3c609d5d460621fa9331e7b0))
 
 ## [12.0.0](https://github.com/zthun/janitor/compare/v11.2.1...v12.0.0) (2022-09-28)
 
-
 ### ⚠ BREAKING CHANGES
 
-* updated all dependencies to their latest versions
+- updated all dependencies to their latest versions
 
 ### Build System
 
-* updated all dependencies to their latest versions ([d83fb0d](https://github.com/zthun/janitor/commit/d83fb0ded574e7f8d6052d0cb6d6635a36fc0e96))
-
-
+- updated all dependencies to their latest versions
+  ([d83fb0d](https://github.com/zthun/janitor/commit/d83fb0ded574e7f8d6052d0cb6d6635a36fc0e96))
 
 ### [11.2.1](https://github.com/zthun/janitor/compare/v11.2.0...v11.2.1) (2022-05-21)
 
 **Note:** Version bump only for package @zthun/linting
 
-
-
-
-
 ## [11.2.0](https://github.com/zthun/janitor/compare/v11.1.1...v11.2.0) (2022-01-30)
-
 
 ### Features
 
-* added a shared config for react based projects ([07c6f39](https://github.com/zthun/janitor/commit/07c6f3965a0f93ca2dd9f0cc43338fd3755e281c))
-* added eslint-react ([04e788a](https://github.com/zthun/janitor/commit/04e788ad412e228806751e95c8a90a6d389f3209))
-* adding eslint-react to the default installs ([7404481](https://github.com/zthun/janitor/commit/74044816c6c9e29523e91b73ae86343c6c3aede3))
-* updated markdownlint to 0.25.x ([88a4213](https://github.com/zthun/janitor/commit/88a421300886ef8bd0bd5f0d1aa2b554ab849b47))
-
+- added a shared config for react based projects
+  ([07c6f39](https://github.com/zthun/janitor/commit/07c6f3965a0f93ca2dd9f0cc43338fd3755e281c))
+- added eslint-react
+  ([04e788a](https://github.com/zthun/janitor/commit/04e788ad412e228806751e95c8a90a6d389f3209))
+- adding eslint-react to the default installs
+  ([7404481](https://github.com/zthun/janitor/commit/74044816c6c9e29523e91b73ae86343c6c3aede3))
+- updated markdownlint to 0.25.x
+  ([88a4213](https://github.com/zthun/janitor/commit/88a421300886ef8bd0bd5f0d1aa2b554ab849b47))
 
 ### Bug Fixes
 
-* globs that have duplicates should no longer report double the count ([28ddc8f](https://github.com/zthun/janitor/commit/28ddc8fb2e88ce81e6fe45b5a8712bd49fbbc4bf))
-* markdownlint dependency should now use ~ ([36f46cc](https://github.com/zthun/janitor/commit/36f46cc3c4d065d1a554f81e4c1db11d20ca4165))
-* quotes should now allow template literals ([49fbdd3](https://github.com/zthun/janitor/commit/49fbdd3fe53ac5dda019522c928cef0f64c0abca))
-
-
+- globs that have duplicates should no longer report double the count
+  ([28ddc8f](https://github.com/zthun/janitor/commit/28ddc8fb2e88ce81e6fe45b5a8712bd49fbbc4bf))
+- markdownlint dependency should now use ~
+  ([36f46cc](https://github.com/zthun/janitor/commit/36f46cc3c4d065d1a554f81e4c1db11d20ca4165))
+- quotes should now allow template literals
+  ([49fbdd3](https://github.com/zthun/janitor/commit/49fbdd3fe53ac5dda019522c928cef0f64c0abca))
 
 ### [11.1.1](https://github.com/zthun/janitor/compare/v11.1.0...v11.1.1) (2021-12-22)
 
-
 ### Bug Fixes
 
-* better package information ([8175113](https://github.com/zthun/janitor/commit/8175113d1df0989f9328d7d80ad94d5d6ad573dd))
-
-
+- better package information
+  ([8175113](https://github.com/zthun/janitor/commit/8175113d1df0989f9328d7d80ad94d5d6ad573dd))
 
 ## [11.1.0](https://github.com/zthun/janitor/compare/v11.0.0...v11.1.0) (2021-12-22)
 
-
 ### Features
 
-* added lint-janitor config ([51a8fc0](https://github.com/zthun/janitor/commit/51a8fc065e40317b04cda045998ebf19898ca73d))
-* update htmlhint to 1.0.0 ([a5bee76](https://github.com/zthun/janitor/commit/a5bee764a945e0ea0c62b4e81ed9673e4dca6336))
-
-
+- added lint-janitor config
+  ([51a8fc0](https://github.com/zthun/janitor/commit/51a8fc065e40317b04cda045998ebf19898ca73d))
+- update htmlhint to 1.0.0
+  ([a5bee76](https://github.com/zthun/janitor/commit/a5bee764a945e0ea0c62b4e81ed9673e4dca6336))
 
 ## [11.0.0](https://github.com/zthun/janitor/compare/v10.2.0...v11.0.0) (2021-10-20)
 
-
 ### ⚠ BREAKING CHANGES
 
-* updated cspell to the latest version
-* updated to markdownlint 0.24
-* updated to latest linters
-* updated to eslint 8
+- updated cspell to the latest version
+- updated to markdownlint 0.24
+- updated to latest linters
+- updated to eslint 8
 
 ### Features
 
-* added vscode extension skeleton ([bcda403](https://github.com/zthun/janitor/commit/bcda4037679187a62253bb8759d598c0b682df31))
-* updated cspell to the latest version ([ee1a534](https://github.com/zthun/janitor/commit/ee1a53447787137c3bf2cf87d4476d96ccfecea8))
-* updated to eslint 8 ([bc261c8](https://github.com/zthun/janitor/commit/bc261c8b71585909771a0c368990e22b963294d6))
-* updated to latest linters ([dab8404](https://github.com/zthun/janitor/commit/dab8404554dd111e8577b8a66628fe3d0267281c))
-* updated to markdownlint 0.24 ([049d5a6](https://github.com/zthun/janitor/commit/049d5a6c5e0cad5a70b225830edc2120b27e4c0d))
-
+- added vscode extension skeleton
+  ([bcda403](https://github.com/zthun/janitor/commit/bcda4037679187a62253bb8759d598c0b682df31))
+- updated cspell to the latest version
+  ([ee1a534](https://github.com/zthun/janitor/commit/ee1a53447787137c3bf2cf87d4476d96ccfecea8))
+- updated to eslint 8
+  ([bc261c8](https://github.com/zthun/janitor/commit/bc261c8b71585909771a0c368990e22b963294d6))
+- updated to latest linters
+  ([dab8404](https://github.com/zthun/janitor/commit/dab8404554dd111e8577b8a66628fe3d0267281c))
+- updated to markdownlint 0.24
+  ([049d5a6](https://github.com/zthun/janitor/commit/049d5a6c5e0cad5a70b225830edc2120b27e4c0d))
 
 ### Bug Fixes
 
-* typedoc documentation should now properly generate ([d9bc7cc](https://github.com/zthun/janitor/commit/d9bc7ccade532025e14bb02c98adab75b8809851))
-
-
+- typedoc documentation should now properly generate
+  ([d9bc7cc](https://github.com/zthun/janitor/commit/d9bc7ccade532025e14bb02c98adab75b8809851))
 
 ## [10.2.0](https://github.com/zthun/janitor/compare/v10.1.3...v10.2.0) (2021-06-23)
 
-
 ### Features
 
-* update html hint to 0.15 ([b9c03e9](https://github.com/zthun/janitor/commit/b9c03e96e59644cf89e584d062e5c963b74b7fe3))
-
-
+- update html hint to 0.15
+  ([b9c03e9](https://github.com/zthun/janitor/commit/b9c03e96e59644cf89e584d062e5c963b74b7fe3))
 
 ### [10.1.3](https://github.com/zthun/janitor/compare/v10.1.2...v10.1.3) (2021-05-27)
 
-
 ### Bug Fixes
 
-* updated the readme to be more mobile and browser friendly ([4294212](https://github.com/zthun/janitor/commit/4294212d09e597d962cd4e07a97a5972375c9080))
-
-
+- updated the readme to be more mobile and browser friendly
+  ([4294212](https://github.com/zthun/janitor/commit/4294212d09e597d962cd4e07a97a5972375c9080))
 
 ### [10.1.2](https://github.com/zthun/janitor/compare/v10.1.1...v10.1.2) (2021-05-27)
 
 **Note:** Version bump only for package @zthun/linting
 
-
-
-
-
 ### [10.1.1](https://github.com/zthun/janitor/compare/v10.1.0...v10.1.1) (2021-05-09)
-
 
 ### Bug Fixes
 
-* the icon should now appear visible on dark backgrounds ([ac57418](https://github.com/zthun/janitor/commit/ac57418e8b010c8a3e838485de1e0361dd181461))
-
-
+- the icon should now appear visible on dark backgrounds
+  ([ac57418](https://github.com/zthun/janitor/commit/ac57418e8b010c8a3e838485de1e0361dd181461))
 
 # [10.1.0](https://github.com/zthun/janitor/compare/v10.0.0...v10.1.0) (2021-05-08)
 
-
 ### Features
 
-* it is now possible to exclude globs from the list ([995c7b7](https://github.com/zthun/janitor/commit/995c7b730b1ad6a360b632108595c5833ee32fdb))
-
-
-
-
+- it is now possible to exclude globs from the list
+  ([995c7b7](https://github.com/zthun/janitor/commit/995c7b730b1ad6a360b632108595c5833ee32fdb))
 
 # [10.0.0](https://github.com/zthun/janitor/compare/v9.0.0...v10.0.0) (2021-05-08)
 
-
 ### Bug Fixes
 
-* markdownlint will now properly load .markdownlint.json ([eefbd03](https://github.com/zthun/janitor/commit/eefbd0383346a5e7a729bb276e0735075b23503a))
-* removed logging requirement ([6bbbf3a](https://github.com/zthun/janitor/commit/6bbbf3ad574dba7f1c959219adac0bb324620dfb))
-* travis build migration to yarn ([8468b10](https://github.com/zthun/janitor/commit/8468b10954e046d054fbe1765ae5bfb326874ab1))
-
+- markdownlint will now properly load .markdownlint.json
+  ([eefbd03](https://github.com/zthun/janitor/commit/eefbd0383346a5e7a729bb276e0735075b23503a))
+- removed logging requirement
+  ([6bbbf3a](https://github.com/zthun/janitor/commit/6bbbf3ad574dba7f1c959219adac0bb324620dfb))
+- travis build migration to yarn
+  ([8468b10](https://github.com/zthun/janitor/commit/8468b10954e046d054fbe1765ae5bfb326874ab1))
 
 ### Code Refactoring
 
-*  moving json linter into content ([83795c9](https://github.com/zthun/janitor/commit/83795c90ba80ba119e15011d83a6d0020b7937c4))
-* move file lint report into linter ([09b6772](https://github.com/zthun/janitor/commit/09b677217f42ec4d0c5a71e210dfd74436f3aa78))
-* move file lint to linters ([0c8b761](https://github.com/zthun/janitor/commit/0c8b761fb6d5f0e2471024e6297c63f8b5314a14))
-* move html to content folder ([84eea52](https://github.com/zthun/janitor/commit/84eea52498f0c86bfa9421b429a9e7db8bfe557a))
-* move yaml to content ([6759df5](https://github.com/zthun/janitor/commit/6759df5e7345300e0e7f18a678b8261d29aebd05))
-* moved markdown lint to linter ([8b3de5a](https://github.com/zthun/janitor/commit/8b3de5acd705294fb84f082f461481c1e2feab64))
-* moved silent lint to linter ([44e6932](https://github.com/zthun/janitor/commit/44e69323dbf00c2dd7a73dc04498cb7ab5d21439))
-* moving eslint to linteres ([8f7ee7e](https://github.com/zthun/janitor/commit/8f7ee7e5c7e61cb5f85491f82768d59b63482030))
-* moving style lint into linters ([ac22375](https://github.com/zthun/janitor/commit/ac2237537fed9be7dbf0c72835ec4c69142c5716))
-
+- moving json linter into content
+  ([83795c9](https://github.com/zthun/janitor/commit/83795c90ba80ba119e15011d83a6d0020b7937c4))
+- move file lint report into linter
+  ([09b6772](https://github.com/zthun/janitor/commit/09b677217f42ec4d0c5a71e210dfd74436f3aa78))
+- move file lint to linters
+  ([0c8b761](https://github.com/zthun/janitor/commit/0c8b761fb6d5f0e2471024e6297c63f8b5314a14))
+- move html to content folder
+  ([84eea52](https://github.com/zthun/janitor/commit/84eea52498f0c86bfa9421b429a9e7db8bfe557a))
+- move yaml to content
+  ([6759df5](https://github.com/zthun/janitor/commit/6759df5e7345300e0e7f18a678b8261d29aebd05))
+- moved markdown lint to linter
+  ([8b3de5a](https://github.com/zthun/janitor/commit/8b3de5acd705294fb84f082f461481c1e2feab64))
+- moved silent lint to linter
+  ([44e6932](https://github.com/zthun/janitor/commit/44e69323dbf00c2dd7a73dc04498cb7ab5d21439))
+- moving eslint to linteres
+  ([8f7ee7e](https://github.com/zthun/janitor/commit/8f7ee7e5c7e61cb5f85491f82768d59b63482030))
+- moving style lint into linters
+  ([ac22375](https://github.com/zthun/janitor/commit/ac2237537fed9be7dbf0c72835ec4c69142c5716))
 
 ### Features
 
-* added code of conduct ([7f1535f](https://github.com/zthun/janitor/commit/7f1535f23d2dfeead7def3e0af9e1b6269d43813))
-* added issue templates ([8e1bc13](https://github.com/zthun/janitor/commit/8e1bc13212e3b159af298e9917c47610cf592076))
-* added prettier check support ([83bf62e](https://github.com/zthun/janitor/commit/83bf62eefc68629142dd134ce60cd7ef8cb5cd46))
-* added shared configuration for htmlhint ([9bb3800](https://github.com/zthun/janitor/commit/9bb38004d9f3b5e7d427e815dedc677b41d9a449))
-* added shared markdownlint config ([0a4f3ad](https://github.com/zthun/janitor/commit/0a4f3adc034cb1e3ecec478f1a32b5eb0a18824f))
-* added shared stylelint-config ([9e39267](https://github.com/zthun/janitor/commit/9e39267f4edfeb5ecdaabefa27243f2c574e6408))
-* added spelling lint support ([9053a70](https://github.com/zthun/janitor/commit/9053a70699cb1d031268d5ce21768db0b24234d7))
-* added support for cosmiconfig based config reads ([c7f6a4c](https://github.com/zthun/janitor/commit/c7f6a4cfef4699a58e7c7c3a37f724b362b27f96))
-* adding icon ([6934429](https://github.com/zthun/janitor/commit/693442911bba777ead403edba240022ead3e5ff9))
-* adding shaed prettier config ([36f01fc](https://github.com/zthun/janitor/commit/36f01fc3a8cfedfb6d490a438191fc819f057f32))
-* better icon ([f3c19d1](https://github.com/zthun/janitor/commit/f3c19d1539918df470943e2718433a62ddecda8c))
-* file linting should now discover config files ([9a4282d](https://github.com/zthun/janitor/commit/9a4282ddeaebd38377505c54719b791317a6d756))
-* removed dead code ([c0f33f9](https://github.com/zthun/janitor/commit/c0f33f9cfaf3f371545de664597b742fba54be2a))
-* removed publish lint files ([848554b](https://github.com/zthun/janitor/commit/848554bca0b6964272265632abb0eb8bd10edbfe))
-* silent lint can now take the resolve argument ([1718a2e](https://github.com/zthun/janitor/commit/1718a2e76ef97e6fd595f481a8d827c6827a9a87))
-* the config reader can now take additional paths plus the standards ([1eea5bf](https://github.com/zthun/janitor/commit/1eea5bfe231e9b6a9f0eeee271d3e232838a1e1a))
-* the cosmiconfig reader now supports module configs ([fbe0c65](https://github.com/zthun/janitor/commit/fbe0c6594c0c934413a42d27e4b13e83a709c076))
-* the default paths for eslint and stylelint now run through each respective linter ([fb60cf8](https://github.com/zthun/janitor/commit/fb60cf8e4bc8a23ffb36e0e88224db59c4acfa49))
-* the linters now look at the root of the repository ([901622e](https://github.com/zthun/janitor/commit/901622e07f231016c8f49a998e98b33ab36c8cd6))
-* the spelling linter should now fail with issues ([52daeb8](https://github.com/zthun/janitor/commit/52daeb8f7b134e9b89533670f0d4d6c505269725))
-* updated documentation and the config now requires typescript ([0956bed](https://github.com/zthun/janitor/commit/0956bed1f3c1f1a8a81296e701b34f38fc194729))
-* You can now use node paths in the lint janitor config for stylelint ([8f829c3](https://github.com/zthun/janitor/commit/8f829c331367e1b63c323bce745d7f10c1e3fe39))
-* You can now use node paths to the eslintConfig in the lint janitor config ([f835d3b](https://github.com/zthun/janitor/commit/f835d3b3c82566d6556c1b4b47d386bd37e7f723))
-* you can simply use [@zthun](https://github.com/zthun) in extends to get all configuration ([fdb8354](https://github.com/zthun/janitor/commit/fdb8354e5589ae780ee27fdedd4ef122062b2aec))
-
+- added code of conduct
+  ([7f1535f](https://github.com/zthun/janitor/commit/7f1535f23d2dfeead7def3e0af9e1b6269d43813))
+- added issue templates
+  ([8e1bc13](https://github.com/zthun/janitor/commit/8e1bc13212e3b159af298e9917c47610cf592076))
+- added prettier check support
+  ([83bf62e](https://github.com/zthun/janitor/commit/83bf62eefc68629142dd134ce60cd7ef8cb5cd46))
+- added shared configuration for htmlhint
+  ([9bb3800](https://github.com/zthun/janitor/commit/9bb38004d9f3b5e7d427e815dedc677b41d9a449))
+- added shared markdownlint config
+  ([0a4f3ad](https://github.com/zthun/janitor/commit/0a4f3adc034cb1e3ecec478f1a32b5eb0a18824f))
+- added shared stylelint-config
+  ([9e39267](https://github.com/zthun/janitor/commit/9e39267f4edfeb5ecdaabefa27243f2c574e6408))
+- added spelling lint support
+  ([9053a70](https://github.com/zthun/janitor/commit/9053a70699cb1d031268d5ce21768db0b24234d7))
+- added support for cosmiconfig based config reads
+  ([c7f6a4c](https://github.com/zthun/janitor/commit/c7f6a4cfef4699a58e7c7c3a37f724b362b27f96))
+- adding icon
+  ([6934429](https://github.com/zthun/janitor/commit/693442911bba777ead403edba240022ead3e5ff9))
+- adding shaed prettier config
+  ([36f01fc](https://github.com/zthun/janitor/commit/36f01fc3a8cfedfb6d490a438191fc819f057f32))
+- better icon
+  ([f3c19d1](https://github.com/zthun/janitor/commit/f3c19d1539918df470943e2718433a62ddecda8c))
+- file linting should now discover config files
+  ([9a4282d](https://github.com/zthun/janitor/commit/9a4282ddeaebd38377505c54719b791317a6d756))
+- removed dead code
+  ([c0f33f9](https://github.com/zthun/janitor/commit/c0f33f9cfaf3f371545de664597b742fba54be2a))
+- removed publish lint files
+  ([848554b](https://github.com/zthun/janitor/commit/848554bca0b6964272265632abb0eb8bd10edbfe))
+- silent lint can now take the resolve argument
+  ([1718a2e](https://github.com/zthun/janitor/commit/1718a2e76ef97e6fd595f481a8d827c6827a9a87))
+- the config reader can now take additional paths plus the standards
+  ([1eea5bf](https://github.com/zthun/janitor/commit/1eea5bfe231e9b6a9f0eeee271d3e232838a1e1a))
+- the cosmiconfig reader now supports module configs
+  ([fbe0c65](https://github.com/zthun/janitor/commit/fbe0c6594c0c934413a42d27e4b13e83a709c076))
+- the default paths for eslint and stylelint now run through each respective
+  linter
+  ([fb60cf8](https://github.com/zthun/janitor/commit/fb60cf8e4bc8a23ffb36e0e88224db59c4acfa49))
+- the linters now look at the root of the repository
+  ([901622e](https://github.com/zthun/janitor/commit/901622e07f231016c8f49a998e98b33ab36c8cd6))
+- the spelling linter should now fail with issues
+  ([52daeb8](https://github.com/zthun/janitor/commit/52daeb8f7b134e9b89533670f0d4d6c505269725))
+- updated documentation and the config now requires typescript
+  ([0956bed](https://github.com/zthun/janitor/commit/0956bed1f3c1f1a8a81296e701b34f38fc194729))
+- You can now use node paths in the lint janitor config for stylelint
+  ([8f829c3](https://github.com/zthun/janitor/commit/8f829c331367e1b63c323bce745d7f10c1e3fe39))
+- You can now use node paths to the eslintConfig in the lint janitor config
+  ([f835d3b](https://github.com/zthun/janitor/commit/f835d3b3c82566d6556c1b4b47d386bd37e7f723))
+- you can simply use [@zthun](https://github.com/zthun) in extends to get all
+  configuration
+  ([fdb8354](https://github.com/zthun/janitor/commit/fdb8354e5589ae780ee27fdedd4ef122062b2aec))
 
 ### BREAKING CHANGES
 
-* ZFileReportLint has been renamed to ZLinterReport
-* ZFileLint has been renamed to ZLinterFile
-* ZMarkdownLint has been renamed to ZLinterMarkdown
-* ZStyleLint has been renamed to ZLinterStyle
-* ZSilentLint has been renamed to ZLinterSilent
-* ZYamlLint has been renamed to ZContentLinterYaml
-* ZJsonLint has been renamed to ZContentLinterJson
-* ZHtmlHint has been renamed to ZContentLinterHtml
-* ZEsLint has been renamed to ZLinterEs
-* These have been moved to shared configuration packages
+- ZFileReportLint has been renamed to ZLinterReport
+- ZFileLint has been renamed to ZLinterFile
+- ZMarkdownLint has been renamed to ZLinterMarkdown
+- ZStyleLint has been renamed to ZLinterStyle
+- ZSilentLint has been renamed to ZLinterSilent
+- ZYamlLint has been renamed to ZContentLinterYaml
+- ZJsonLint has been renamed to ZContentLinterJson
+- ZHtmlHint has been renamed to ZContentLinterHtml
+- ZEsLint has been renamed to ZLinterEs
+- These have been moved to shared configuration packages
 
-MIGRATION: Use
-@zthun/eslint-config
-@zthun/htmlhint-config
-@zthun/markdownlint-config
-@zthun/stylelint-config
-instead
-* The following are no longer exported
-IZConfigParser
-ZConfigJsonParser
-ZConfigReader
+MIGRATION: Use @zthun/eslint-config @zthun/htmlhint-config
+@zthun/markdownlint-config @zthun/stylelint-config instead
+
+- The following are no longer exported IZConfigParser ZConfigJsonParser
+  ZConfigReader
 
 MIGRATION: Just use ZConfigCosmicReader
-* ZLintJanitor no longer exports DefaultHtmlHintConfig
-or DefaultMarkdownLintConfig as these will be removed.
+
+- ZLintJanitor no longer exports DefaultHtmlHintConfig or
+  DefaultMarkdownLintConfig as these will be removed.
 
 This also add ZConfigCosmicReader and ZConfigExtender.
 
-MIGRATION:  Use null instead
-* You must now have the appropriate configuration
-at the root of your project.
+MIGRATION: Use null instead
 
-MIGRATION: You should create your own shared configuration based on
-the eslint, stylelint, htmlhind, and markdownlint standards.
+- You must now have the appropriate configuration at the root of your project.
+
+MIGRATION: You should create your own shared configuration based on the eslint,
+stylelint, htmlhind, and markdownlint standards.

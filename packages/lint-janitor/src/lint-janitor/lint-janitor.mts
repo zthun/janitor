@@ -1,22 +1,22 @@
-import chalk from 'chalk';
-import { ZConfigExtender } from '../config/config-extender.mjs';
-import { ZConfigReaderCosmic } from '../config/config-reader-cosmic.mjs';
-import { ZConfigReaderNull } from '../config/config-reader-null.mjs';
-import { ZConfigReaderPrettier } from '../config/config-reader-prettier.mjs';
-import { IZConfigReader } from '../config/config-reader.mjs';
-import { ZContentLinterHtml } from '../content/content-linter-html.mjs';
-import { ZContentLinterJson } from '../content/content-linter-json.mjs';
-import { ZContentLinterPretty } from '../content/content-linter-pretty.mjs';
-import { ZContentLinterYaml } from '../content/content-linter-yaml.mjs';
-import { ZLinterEs } from '../linter/linter-es.mjs';
-import { ZLinterFile } from '../linter/linter-file.mjs';
-import { ZLinterMarkdown } from '../linter/linter-markdown.mjs';
-import { ZLinterReport } from '../linter/linter-report.mjs';
-import { ZLinterSpelling } from '../linter/linter-spelling.mjs';
-import { ZLinterStyle } from '../linter/linter-style.mjs';
-import { IZLinter } from '../linter/linter.mjs';
-import { IZLintJanitorArgs } from './lint-janitor-args.mjs';
-import { IZLintJanitorOptions } from './lint-janitor-options.mjs';
+import chalk from "chalk";
+import { ZConfigExtender } from "../config/config-extender.mjs";
+import { ZConfigReaderCosmic } from "../config/config-reader-cosmic.mjs";
+import { ZConfigReaderNull } from "../config/config-reader-null.mjs";
+import { ZConfigReaderPrettier } from "../config/config-reader-prettier.mjs";
+import { IZConfigReader } from "../config/config-reader.mjs";
+import { ZContentLinterHtml } from "../content/content-linter-html.mjs";
+import { ZContentLinterJson } from "../content/content-linter-json.mjs";
+import { ZContentLinterPretty } from "../content/content-linter-pretty.mjs";
+import { ZContentLinterYaml } from "../content/content-linter-yaml.mjs";
+import { ZLinterEs } from "../linter/linter-es.mjs";
+import { ZLinterFile } from "../linter/linter-file.mjs";
+import { ZLinterMarkdown } from "../linter/linter-markdown.mjs";
+import { ZLinterReport } from "../linter/linter-report.mjs";
+import { ZLinterSpelling } from "../linter/linter-spelling.mjs";
+import { ZLinterStyle } from "../linter/linter-style.mjs";
+import { IZLinter } from "../linter/linter.mjs";
+import { IZLintJanitorArgs } from "./lint-janitor-args.mjs";
+import { IZLintJanitorOptions } from "./lint-janitor-options.mjs";
 
 /**
  * Represents the main entry point object for the application.
@@ -81,27 +81,59 @@ export class ZLintJanitor {
    *        The logger to use when formatting output.
    */
   public constructor(private readonly _logger: Console) {
-    this.esLint = new ZLinterReport(new ZLinterEs(this._logger), this._logger, 'es');
-    this.spellLint = new ZLinterReport(new ZLinterSpelling(this._logger), this._logger, 'various');
-    this.prettyLint = new ZLinterFile(new ZContentLinterPretty(), new ZConfigReaderPrettier(), this._logger, 'pretty');
-    this.styleLint = new ZLinterReport(new ZLinterStyle(this._logger), this._logger, 'style');
+    this.esLint = new ZLinterReport(
+      new ZLinterEs(this._logger),
+      this._logger,
+      "es",
+    );
+    this.spellLint = new ZLinterReport(
+      new ZLinterSpelling(this._logger),
+      this._logger,
+      "various",
+    );
+    this.prettyLint = new ZLinterFile(
+      new ZContentLinterPretty(),
+      new ZConfigReaderPrettier(),
+      this._logger,
+      "pretty",
+    );
+    this.styleLint = new ZLinterReport(
+      new ZLinterStyle(this._logger),
+      this._logger,
+      "style",
+    );
     this.htmlHint = new ZLinterFile(
       new ZContentLinterHtml(),
-      new ZConfigReaderCosmic('htmlhint', new ZConfigExtender()),
+      new ZConfigReaderCosmic("htmlhint", new ZConfigExtender()),
       this._logger,
-      'html'
+      "html",
     );
-    this.jsonLint = new ZLinterFile(new ZContentLinterJson(), new ZConfigReaderNull(), this._logger, 'json');
-    this.yamlLint = new ZLinterFile(new ZContentLinterYaml(), new ZConfigReaderNull(), this._logger, 'yaml');
+    this.jsonLint = new ZLinterFile(
+      new ZContentLinterJson(),
+      new ZConfigReaderNull(),
+      this._logger,
+      "json",
+    );
+    this.yamlLint = new ZLinterFile(
+      new ZContentLinterYaml(),
+      new ZConfigReaderNull(),
+      this._logger,
+      "yaml",
+    );
     this.markdownLint = new ZLinterReport(
       new ZLinterMarkdown(
         this._logger,
-        new ZConfigReaderCosmic('markdownlint', new ZConfigExtender(), ['.markdownlint.json'])
+        new ZConfigReaderCosmic("markdownlint", new ZConfigExtender(), [
+          ".markdownlint.json",
+        ]),
       ),
       this._logger,
-      'markdown'
+      "markdown",
     );
-    this.config = new ZConfigReaderCosmic('lint-janitor', new ZConfigExtender());
+    this.config = new ZConfigReaderCosmic(
+      "lint-janitor",
+      new ZConfigExtender(),
+    );
   }
 
   /**
@@ -119,54 +151,110 @@ export class ZLintJanitor {
     let result = true;
 
     if (options.jsonFiles) {
-      this._logger.log(chalk.magenta.underline(`Linting json files from ${options.jsonFiles.length} globs.`));
-      current = await this.jsonLint.lint(options.jsonFiles, null, options.jsonFilesExclude);
+      this._logger.log(
+        chalk.magenta.underline(
+          `Linting json files from ${options.jsonFiles.length} globs.`,
+        ),
+      );
+      current = await this.jsonLint.lint(
+        options.jsonFiles,
+        null,
+        options.jsonFilesExclude,
+      );
       result = result && current;
     }
 
     if (options.yamlFiles) {
-      this._logger.log(chalk.magenta.underline(`Linting yaml files from ${options.yamlFiles.length} globs.`));
-      current = await this.yamlLint.lint(options.yamlFiles, null, options.yamlFilesExclude);
+      this._logger.log(
+        chalk.magenta.underline(
+          `Linting yaml files from ${options.yamlFiles.length} globs.`,
+        ),
+      );
+      current = await this.yamlLint.lint(
+        options.yamlFiles,
+        null,
+        options.yamlFilesExclude,
+      );
       result = result && current;
     }
 
     if (options.markdownFiles) {
-      this._logger.log(chalk.magenta.underline(`Linting markdown files from ${options.markdownFiles.length} globs.`));
+      this._logger.log(
+        chalk.magenta.underline(
+          `Linting markdown files from ${options.markdownFiles.length} globs.`,
+        ),
+      );
       current = await this.markdownLint.lint(
         options.markdownFiles,
         options.markdownConfig,
-        options.markdownFilesExclude
+        options.markdownFilesExclude,
       );
       result = result && current;
     }
 
     if (options.esFiles) {
-      this._logger.log(chalk.magenta.underline(`Linting ecmaScript files from ${options.esFiles.length} globs.`));
+      this._logger.log(
+        chalk.magenta.underline(
+          `Linting ecmaScript files from ${options.esFiles.length} globs.`,
+        ),
+      );
       current = await this.esLint.lint(options.esFiles, options.esConfig, null);
       result = result && current;
     }
 
     if (options.styleFiles) {
-      this._logger.log(chalk.magenta.underline(`Linting style files from ${options.styleFiles.length} globs.`));
-      current = await this.styleLint.lint(options.styleFiles, options.styleConfig, null);
+      this._logger.log(
+        chalk.magenta.underline(
+          `Linting style files from ${options.styleFiles.length} globs.`,
+        ),
+      );
+      current = await this.styleLint.lint(
+        options.styleFiles,
+        options.styleConfig,
+        null,
+      );
       result = result && current;
     }
 
     if (options.htmlFiles) {
-      this._logger.log(chalk.magenta.underline(`Linting html files from ${options.htmlFiles.length} globs.`));
-      current = await this.htmlHint.lint(options.htmlFiles, options.htmlConfig, options.htmlFilesExclude);
+      this._logger.log(
+        chalk.magenta.underline(
+          `Linting html files from ${options.htmlFiles.length} globs.`,
+        ),
+      );
+      current = await this.htmlHint.lint(
+        options.htmlFiles,
+        options.htmlConfig,
+        options.htmlFilesExclude,
+      );
       result = result && current;
     }
 
     if (options.spellingFiles) {
-      this._logger.log(chalk.magenta.underline(`Checking spelling for ${options.spellingFiles.length} globs.`));
-      current = await this.spellLint.lint(options.spellingFiles, options.spellingConfig, options.spellingFilesExclude);
+      this._logger.log(
+        chalk.magenta.underline(
+          `Checking spelling for ${options.spellingFiles.length} globs.`,
+        ),
+      );
+      current = await this.spellLint.lint(
+        options.spellingFiles,
+        options.spellingConfig,
+        options.spellingFilesExclude,
+      );
       result = result && current;
     }
 
     if (options.prettyFiles) {
-      this._logger.log(chalk.magenta.underline(`Checking formatting for ${options.prettyFiles.length} globs.`));
-      current = await this.prettyLint.lint(options.prettyFiles, options.prettyConfig, options.prettyFilesExclude);
+      this._logger.log(
+        chalk.magenta.underline(
+          `Checking formatting for ${options.prettyFiles.length} globs.`,
+        ),
+      );
+      current = await this.prettyLint.lint(
+        options.prettyFiles,
+        options.prettyConfig,
+        options.prettyFilesExclude,
+      );
       result = result && current;
     }
 

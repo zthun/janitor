@@ -1,13 +1,13 @@
-import { Options, resolveConfig } from 'prettier';
-import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { ZConfigReaderPrettier } from './config-reader-prettier.mjs';
-import { $resolve } from './config-resolve.mjs';
+import { Options, resolveConfig } from "prettier";
+import { beforeEach, describe, expect, it, vi } from "vitest";
+import { ZConfigReaderPrettier } from "./config-reader-prettier.mjs";
+import { $resolve } from "./config-resolve.mjs";
 
-vi.mock('prettier', () => ({
-  resolveConfig: vi.fn()
+vi.mock("prettier", () => ({
+  resolveConfig: vi.fn(),
 }));
 
-describe('ZConfigReaderPrettier', () => {
+describe("ZConfigReaderPrettier", () => {
   let options: Options;
 
   function createTestTarget() {
@@ -16,16 +16,16 @@ describe('ZConfigReaderPrettier', () => {
 
   beforeEach(() => {
     options = {
-      singleQuote: true
+      singleQuote: true,
     };
 
     vi.mocked(resolveConfig).mockClear();
     vi.mocked(resolveConfig).mockResolvedValue(options);
   });
 
-  it('reads the supplied config file if passed.', async () => {
+  it("reads the supplied config file if passed.", async () => {
     // Arrange
-    const config = '@zthun/prettier-config';
+    const config = "@zthun/prettier-config";
     const target = createTestTarget();
     const expected = $resolve(config);
     // Act
@@ -33,20 +33,23 @@ describe('ZConfigReaderPrettier', () => {
     // Assert
     expect(resolveConfig).toHaveBeenCalledWith(
       expect.stringContaining(process.cwd()),
-      expect.objectContaining({ config: expected })
+      expect.objectContaining({ config: expected }),
     );
   });
 
-  it('reads the config using a prettier config search for falsy config values.', async () => {
+  it("reads the config using a prettier config search for falsy config values.", async () => {
     // Arrange
     const target = createTestTarget();
     // Act
     await target.read(null);
     // Assert
-    expect(resolveConfig).toHaveBeenCalledWith(expect.stringContaining(process.cwd()), { config: null });
+    expect(resolveConfig).toHaveBeenCalledWith(
+      expect.stringContaining(process.cwd()),
+      { config: null },
+    );
   });
 
-  it('returns the options.', async () => {
+  it("returns the options.", async () => {
     // Arrange
     const target = createTestTarget();
     // Act
@@ -55,7 +58,7 @@ describe('ZConfigReaderPrettier', () => {
     expect(actual).toBe(options);
   });
 
-  it('returns a rejected promise if no options can be loaded.', async () => {
+  it("returns a rejected promise if no options can be loaded.", async () => {
     // Arrange
     vi.mocked(resolveConfig).mockResolvedValue(null);
     const target = createTestTarget();

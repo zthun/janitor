@@ -1,16 +1,16 @@
-import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { ZContentLinterJson } from './content-linter-json.mjs';
+import { beforeEach, describe, expect, it, vi } from "vitest";
+import { ZContentLinterJson } from "./content-linter-json.mjs";
 
-vi.mock('glob');
-vi.mock('fs');
+vi.mock("glob");
+vi.mock("fs");
 
-describe('ZContentLinterJson', () => {
+describe("ZContentLinterJson", () => {
   let json: any;
 
   beforeEach(() => {
     json = {
-      keyA: 'key-a',
-      keyB: 'key-b'
+      keyA: "key-a",
+      keyB: "key-b",
     };
   });
 
@@ -18,7 +18,7 @@ describe('ZContentLinterJson', () => {
     return new ZContentLinterJson();
   }
 
-  it('returns a resolved promise if the json is valid.', async () => {
+  it("returns a resolved promise if the json is valid.", async () => {
     // Arrange
     const target = createTestTarget();
     // Act
@@ -26,11 +26,11 @@ describe('ZContentLinterJson', () => {
     await expect(target.lint(JSON.stringify(json))).resolves.toBeTruthy();
   });
 
-  it('returns a rejected promise if the json is not valid.', async () => {
+  it("returns a rejected promise if the json is not valid.", async () => {
     // Arrange
     const target = createTestTarget();
     // Act
     // Assert
-    await expect(target.lint('This is not valid json')).rejects.toBeTruthy();
+    await expect(target.lint("This is not valid json")).rejects.toBeTruthy();
   });
 });

@@ -1,11 +1,11 @@
-import chalk from 'chalk';
-import { GlobOptionsWithFileTypesFalse, sync } from 'glob';
-import some from 'lodash/some.js';
-import values from 'lodash/values.js';
-import markdownlint, { Options } from 'markdownlint';
-import { promisify } from 'util';
-import { IZConfigReader } from '../config/config-reader.mjs';
-import { IZLinter } from './linter.mjs';
+import chalk from "chalk";
+import { GlobOptionsWithFileTypesFalse, sync } from "glob";
+import some from "lodash/some.js";
+import values from "lodash/values.js";
+import markdownlint, { Options } from "markdownlint";
+import { promisify } from "util";
+import { IZConfigReader } from "../config/config-reader.mjs";
+import { IZLinter } from "./linter.mjs";
 
 /**
  * Represents a linter object that checks markdown.
@@ -21,7 +21,7 @@ export class ZLinterMarkdown implements IZLinter {
    */
   public constructor(
     private readonly _logger: Console,
-    private readonly _reader: IZConfigReader
+    private readonly _reader: IZConfigReader,
   ) {}
 
   /**
@@ -36,7 +36,11 @@ export class ZLinterMarkdown implements IZLinter {
    *
    * @returns A promise that resolves to true if the linting is ok, and false if the linting fails.
    */
-  public async lint(src: string[], cfg: string, exclude: string[] = []): Promise<boolean> {
+  public async lint(
+    src: string[],
+    cfg: string,
+    exclude: string[] = [],
+  ): Promise<boolean> {
     let config: any;
 
     try {
@@ -46,9 +50,14 @@ export class ZLinterMarkdown implements IZLinter {
       return false;
     }
 
-    const globOptions: GlobOptionsWithFileTypesFalse = { dot: true, ignore: exclude };
+    const globOptions: GlobOptionsWithFileTypesFalse = {
+      dot: true,
+      ignore: exclude,
+    };
     let files: string[] = [];
-    src.forEach((pattern) => (files = files.concat(sync(pattern, globOptions))));
+    src.forEach(
+      (pattern) => (files = files.concat(sync(pattern, globOptions))),
+    );
 
     const options: Options = { files, config };
     const markdownLintAsync = promisify(markdownlint);

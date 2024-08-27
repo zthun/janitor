@@ -1,8 +1,8 @@
-import { HTMLHint } from 'htmlhint';
-import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { ZContentLinterHtml } from './content-linter-html.mjs';
+import { HTMLHint } from "htmlhint";
+import { beforeEach, describe, expect, it, vi } from "vitest";
+import { ZContentLinterHtml } from "./content-linter-html.mjs";
 
-describe('ZContentLinterHtml', () => {
+describe("ZContentLinterHtml", () => {
   let contentPath: string;
   let content: string;
   let options: any;
@@ -16,14 +16,14 @@ describe('ZContentLinterHtml', () => {
     resultB = {};
     results = [resultA, resultB];
 
-    contentPath = '/dev/test.html';
-    content = '<html><head></head><body><div>Some HTML</div></body></html>';
+    contentPath = "/dev/test.html";
+    content = "<html><head></head><body><div>Some HTML</div></body></html>";
     options = {};
 
-    logs = ['Line One', 'Line Two'];
+    logs = ["Line One", "Line Two"];
 
-    vi.spyOn(HTMLHint, 'verify').mockImplementation(() => results);
-    vi.spyOn(HTMLHint, 'format').mockImplementation(() => logs);
+    vi.spyOn(HTMLHint, "verify").mockImplementation(() => results);
+    vi.spyOn(HTMLHint, "format").mockImplementation(() => logs);
   });
 
   function createTestTarget() {
@@ -31,20 +31,24 @@ describe('ZContentLinterHtml', () => {
     return target;
   }
 
-  it('returns a resolved promise if there are no hint messages.', async () => {
+  it("returns a resolved promise if there are no hint messages.", async () => {
     // Arrange
     const target = createTestTarget();
-    vi.spyOn(HTMLHint, 'verify').mockImplementation(() => []);
+    vi.spyOn(HTMLHint, "verify").mockImplementation(() => []);
     // Act
     // Assert
-    await expect(target.lint(content, contentPath, options)).resolves.toBeTruthy();
+    await expect(
+      target.lint(content, contentPath, options),
+    ).resolves.toBeTruthy();
   });
 
-  it('returns a rejected promise with the logs if there are hint messages.', async () => {
+  it("returns a rejected promise with the logs if there are hint messages.", async () => {
     // Arrange
     const target = createTestTarget();
     // Act
     // Assert
-    await expect(target.lint(content, contentPath, options)).rejects.toEqual(logs);
+    await expect(target.lint(content, contentPath, options)).rejects.toEqual(
+      logs,
+    );
   });
 });

@@ -1,2 +1,2 @@
 /* eslint-disable import/no-extraneous-dependencies */
-module.exports = require('@zthun/lint-janitor-config/eslint-react');
+module.exports = require("@zthun/lint-janitor-config/eslint-react");

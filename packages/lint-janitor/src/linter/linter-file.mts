@@ -1,11 +1,11 @@
-import chalk from 'chalk';
-import { readFile } from 'fs';
-import { GlobOptionsWithFileTypesFalse, sync } from 'glob';
-import { resolve } from 'path';
-import { promisify } from 'util';
-import { IZConfigReader } from '../config/config-reader.mjs';
-import { IZLinter } from './linter.mjs';
-import { IZContentLinter } from '../content/content-linter.mjs';
+import chalk from "chalk";
+import { readFile } from "fs";
+import { GlobOptionsWithFileTypesFalse, sync } from "glob";
+import { resolve } from "path";
+import { promisify } from "util";
+import { IZConfigReader } from "../config/config-reader.mjs";
+import { IZLinter } from "./linter.mjs";
+import { IZContentLinter } from "../content/content-linter.mjs";
 
 /**
  * Represents an object that can lint files one at a time.
@@ -27,7 +27,7 @@ export class ZLinterFile implements IZLinter {
     private readonly _contentLint: IZContentLinter,
     private readonly _configReader: IZConfigReader,
     private readonly _logger: Console,
-    private readonly _type: string
+    private readonly _type: string,
   ) {}
 
   /**
@@ -40,16 +40,25 @@ export class ZLinterFile implements IZLinter {
    * @param exclude -
    *        The list of globs to exclude.
    */
-  public async lint(src: string[], config?: string, exclude?: string[]): Promise<boolean> {
+  public async lint(
+    src: string[],
+    config?: string,
+    exclude?: string[],
+  ): Promise<boolean> {
     const readFileAsync = promisify(readFile);
     let options = {};
 
-    const globOptions: GlobOptionsWithFileTypesFalse = { dot: true, ignore: exclude };
+    const globOptions: GlobOptionsWithFileTypesFalse = {
+      dot: true,
+      ignore: exclude,
+    };
     let files: string[] = [];
-    src.forEach((pattern) => (files = files.concat(sync(pattern, globOptions))));
+    src.forEach(
+      (pattern) => (files = files.concat(sync(pattern, globOptions))),
+    );
 
     if (files.length === 0) {
-      this._logger.log(chalk.yellow.italic('No globs matched any files.'));
+      this._logger.log(chalk.yellow.italic("No globs matched any files."));
       return true;
     }
 
@@ -60,7 +69,11 @@ export class ZLinterFile implements IZLinter {
       return false;
     }
 
-    this._logger.log(chalk.green.italic(`Checking syntax for ${files.length} ${this._type} files.`));
+    this._logger.log(
+      chalk.green.italic(
+        `Checking syntax for ${files.length} ${this._type} files.`,
+      ),
+    );
     this._logger.log();
 
     let result = true;
@@ -68,7 +81,7 @@ export class ZLinterFile implements IZLinter {
     for (const file of files) {
       const fullFilePath = resolve(file);
       try {
-        const content = await readFileAsync(fullFilePath, 'utf-8');
+        const content = await readFileAsync(fullFilePath, "utf-8");
         await this._contentLint.lint(content, fullFilePath, options, config);
       } catch (err) {
         result = false;
