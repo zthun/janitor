@@ -2665,8 +2665,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zthun/janitor-web@workspace:packages/janitor-web"
   dependencies:
-    "@zthun/lint-janitor": "npm:^17.0.0"
-    "@zthun/lint-janitor-config": "npm:^17.0.1"
+    "@zthun/lint-janitor": "npm:^17.0.2"
+    "@zthun/lint-janitor-config": "npm:^17.0.2"
     typedoc: "npm:^0.26.6"
     typedoc-plugin-extras: "npm:^3.1.0"
     typescript: "npm:~5.5.4"
@@ -2701,7 +2701,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zthun/lint-janitor-config@npm:^17.0.0, @zthun/lint-janitor-config@npm:^17.0.1, @zthun/lint-janitor-config@workspace:packages/lint-janitor-config":
+"@zthun/lint-janitor-config@npm:^17.0.0, @zthun/lint-janitor-config@npm:^17.0.2, @zthun/lint-janitor-config@workspace:packages/lint-janitor-config":
   version: 0.0.0-use.local
   resolution: "@zthun/lint-janitor-config@workspace:packages/lint-janitor-config"
   dependencies:
@@ -2723,7 +2723,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zthun/lint-janitor@npm:^17.0.0, @zthun/lint-janitor@workspace:packages/lint-janitor":
+"@zthun/lint-janitor@npm:^17.0.0, @zthun/lint-janitor@npm:^17.0.2, @zthun/lint-janitor@workspace:packages/lint-janitor":
   version: 0.0.0-use.local
   resolution: "@zthun/lint-janitor@workspace:packages/lint-janitor"
   dependencies:
