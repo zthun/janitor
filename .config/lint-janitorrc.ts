@@ -3,13 +3,14 @@ const generated = [
   "**/CHANGELOG.md",
   "packages/**/dist/**",
   "packages/**/docs/**",
+  "packages/**/node_modules/**",
 ];
 
 const esFiles = [
-  "*.js",
+  "packages/**/*.cjs",
   "packages/**/src/**/*.ts",
   "packages/**/src/**/*.mts",
-  "packages/*-config/*.js",
+  "packages/*-config/*.cjs",
   ".config/*.ts",
 ];
 
