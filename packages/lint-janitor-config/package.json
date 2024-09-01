@@ -14,14 +14,14 @@
   ],
   "main": "index.js",
   "exports": {
-    "./eslint": "./eslint.js",
-    "./eslint-react": "./eslint-react.js",
-    "./htmlhint": "./htmlhint.js",
-    "./markdownlint": "./markdownlint.js",
-    "./prettier": "./prettier.js",
-    "./stylelint/less": "./stylelint-less.js",
-    "./stylelint/sass": "./stylelint-sass.js",
-    "./stylelint": "./stylelint"
+    "./eslint": "./eslint.cjs",
+    "./eslint-react": "./eslint-react.cjs",
+    "./htmlhint": "./htmlhint.cjs",
+    "./markdownlint": "./markdownlint.cjs",
+    "./prettier": "./prettier.cjs",
+    "./stylelint/less": "./stylelint-less.cjs",
+    "./stylelint/sass": "./stylelint-sass.cjs",
+    "./stylelint": "./stylelint.cjs"
   },
   "license": "MIT",
   "repository": {
