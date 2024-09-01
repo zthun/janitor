@@ -1,6 +1,6 @@
 import chalk from "chalk";
 import { CSpellApplicationOptions, CSpellReporter, Issue, lint } from "cspell";
-import noop from "lodash/noop.js";
+import { noop } from "lodash-es";
 import { IZLinter } from "./linter.mjs";
 import { $resolve } from "../config/config-resolve.mjs";
 

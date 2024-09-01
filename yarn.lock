@@ -2315,7 +2315,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/lodash@npm:*, @types/lodash@npm:^4.17.7":
+"@types/lodash@npm:*":
   version: 4.17.7
   resolution: "@types/lodash@npm:4.17.7"
   checksum: 10/b8177f19cf962414a66989837481b13f546afc2e98e8d465bec59e6ac03a59c584eb7053ce511cde3a09c5f3096d22a5ae22cfb56b23f3b0da75b0743b6b1a44
@@ -2694,7 +2694,7 @@ __metadata:
     "@types/glob": "npm:^8.1.0"
     "@types/htmlhint": "npm:^1.1.5"
     "@types/js-yaml": "npm:^4.0.9"
-    "@types/lodash": "npm:^4.17.7"
+    "@types/lodash-es": "npm:^4.17.12"
     "@types/node": "npm:^22.5.2"
     "@types/prettier": "npm:^3.0.0"
     "@types/yargs": "npm:^17.0.33"
@@ -2742,7 +2742,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zthun/lint-janitor@workspace:packages/lint-janitor"
   dependencies:
-    "@types/lodash-es": "npm:^4.17.12"
     chalk: "npm:^5.3.0"
     cosmiconfig: "npm:^9.0.0"
     cspell: "npm:^8.14.2"
@@ -2750,7 +2749,6 @@ __metadata:
     glob: "npm:^11.0.0"
     htmlhint: "npm:^1.1.4"
     js-yaml: "npm:^4.1.0"
-    lodash: "npm:^4.17.21"
     lodash-es: "npm:^4.17.21"
     markdownlint: "npm:~0.35.0"
     prettier: "npm:^3.3.3"
