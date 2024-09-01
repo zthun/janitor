@@ -19,9 +19,15 @@
     "@zthun/eslint-config": "^17.0.1",
     "eslint-plugin-react": "^7.35.0"
   },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.4"
+  },
   "peerDependencies": {
-    "eslint": "^8.5.0",
-    "prettier": "^3.3.3"
+    "eslint": "^8.0.0",
+    "prettier": "^3.0.0",
+    "typescript": "^5.0.0"
   },
   "publishConfig": {
     "access": "public"

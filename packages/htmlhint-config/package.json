@@ -13,6 +13,9 @@
     "url": "https://github.com/zthun/janitor",
     "directory": "packages/htmlhint-config"
   },
+  "devDependencies": {
+    "htmlhint": "^1.1.4"
+  },
   "peerDependencies": {
     "htmlhint": "^1.0.0"
   },

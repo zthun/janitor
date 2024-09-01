@@ -13,8 +13,11 @@
     "url": "https://github.com/zthun/janitor",
     "directory": "packages/prettier-config"
   },
+  "devDependencies": {
+    "prettier": "^3.3.3"
+  },
   "peerDependencies": {
-    "prettier": "^3.1.1"
+    "prettier": "^3.0.0"
   },
   "publishConfig": {
     "access": "public"

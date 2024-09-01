@@ -44,8 +44,17 @@
     "prettier": "^3.3.3",
     "stylelint": "^16.9.0"
   },
+  "devDependencies": {
+    "typescript": "^5.5.4"
+  },
   "peerDependencies": {
-    "@zthun/lint-janitor": ">=16.0.0"
+    "@zthun/lint-janitor": ">=16.0.0",
+    "typescript": "^5.0.0"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    }
   },
   "publishConfig": {
     "access": "public"
