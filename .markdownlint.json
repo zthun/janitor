@@ -1,3 +1,3 @@
 {
-  "extends": "@zthun/markdownlint-config/as-json"
+  "extends": "@zthun/markdownlint-config"
 }
