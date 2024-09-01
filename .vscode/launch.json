@@ -4,7 +4,7 @@
     {
       "name": "Launch Lint Janitor",
       "program": "${workspaceFolder}/packages/lint-janitor/src/cli.ts",
-      "preLaunchTask": "tsc: build - packages/lint-janitor/tsconfig.dev.json",
+      "preLaunchTask": "tsc: build - packages/lint-janitor/tsconfig.bin.json",
       "request": "launch",
       "skipFiles": ["<node_internals>/**"],
       "type": "node"
