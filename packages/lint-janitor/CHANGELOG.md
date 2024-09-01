@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [17.0.3](https://github.com/zthun/janitor/compare/v17.0.2...v17.0.3) (2024-09-01)
+
+
+### Bug Fixes
+
+* peer dependencies ([e1c270c](https://github.com/zthun/janitor/commit/e1c270c025f1f0b8b0ce02d8e21f6db152b5a92e))
+
+
+
 ## [17.0.2](https://github.com/zthun/janitor/compare/v17.0.1...v17.0.2) (2024-08-31)
 
 **Note:** Version bump only for package @zthun/lint-janitor
