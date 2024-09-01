@@ -8,7 +8,7 @@
     "react",
     "eslint-react-config"
   ],
-  "main": "index.js",
+  "main": "index.cjs",
   "license": "MIT",
   "repository": {
     "type": "git",
