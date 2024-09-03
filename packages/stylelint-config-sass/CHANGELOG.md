@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [17.0.4](https://github.com/zthun/janitor/compare/v17.0.3...v17.0.4) (2024-09-03)
+
+**Note:** Version bump only for package @zthun/stylelint-config-sass
+
+
+
+
+
 ## [17.0.3](https://github.com/zthun/janitor/compare/v17.0.2...v17.0.3) (2024-09-01)
 
 
