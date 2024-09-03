@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@zthun/eslint-config": "^17.0.3",
-    "eslint-plugin-react": "^7.35.0"
+    "eslint-plugin-react": "^7.35.1"
   },
   "devDependencies": {
     "eslint": "^8.57.0",
