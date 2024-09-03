@@ -34,11 +34,20 @@ module.exports = {
     "@typescript-eslint/no-require-imports": "off",
 
     // I want aliasing support.
+    "@typescript-eslint/no-empty-object-type": "off",
     "@typescript-eslint/no-empty-interface": "off",
 
+    // You will need unsafe declaration merging if you are doing anything
+    // with decorators as what often happens is that TypeScript cannot infer
+    // the output type of a decorator. So this has to be on to deal with
+    // TypeScripts shortcoming in this department.  See
+    // https://github.com/microsoft/TypeScript/issues/4881 for more information.
+    "@typescript-eslint/no-unsafe-declaration-merging": "off",
+
     // I can technically agree with this, but where this comes in
-    // handy is unit testing and I value that more than I value
-    // linter feedback.
+    // handy is unit testing and I value that, so I want support
+    // to make the assumption that I know what I'm doing when
+    // I make a non-null assertion.
     "@typescript-eslint/no-non-null-assertion": "off",
 
     // This lint error is the main reason to use import as we want to make
@@ -50,7 +59,9 @@ module.exports = {
     "import/named": "off",
     "import/no-unresolved": "off",
 
-    // Have to make sure that tsdoc syntax gives us the necessary errors
+    // Have to make sure that tsdoc syntax gives us the necessary errors.  There
+    // is no default tsdoc recommended config, so we have to turn it on
+    // explicitly.
     "tsdoc/syntax": "warn",
   },
 };
