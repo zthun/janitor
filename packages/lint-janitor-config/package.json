@@ -41,7 +41,7 @@
     "eslint": "^8.57.0",
     "htmlhint": "^1.1.4",
     "markdownlint": "~0.35.0",
-    "postcss": "^8.4.44",
+    "postcss": "^8.4.45",
     "prettier": "^3.3.3",
     "stylelint": "^16.9.0"
   },
