@@ -19,8 +19,8 @@
     "stylelint-config-standard-less": "^3.0.1"
   },
   "devDependencies": {
-    "postcss": "^8.4.45",
-    "stylelint": "^16.9.0"
+    "postcss": "^8.4.47",
+    "stylelint": "^16.10.0"
   },
   "peerDependencies": {
     "postcss": "^8.0.0",
