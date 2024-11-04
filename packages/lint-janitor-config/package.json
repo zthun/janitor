@@ -40,7 +40,7 @@
     "@zthun/stylelint-config-sass": "^17.0.6",
     "eslint": "^8.57.0",
     "htmlhint": "^1.1.4",
-    "markdownlint": "~0.36.0",
+    "markdownlint": "~0.36.1",
     "postcss": "^8.4.47",
     "prettier": "^3.3.3",
     "stylelint": "^16.10.0"
