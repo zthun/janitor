@@ -1384,14 +1384,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint-community/regexpp@npm:^4.10.0":
-  version: 4.10.0
-  resolution: "@eslint-community/regexpp@npm:4.10.0"
-  checksum: 10/8c36169c815fc5d726078e8c71a5b592957ee60d08c6470f9ce0187c8046af1a00afbda0a065cc40ff18d5d83f82aed9793c6818f7304a74a7488dc9f3ecbd42
-  languageName: node
-  linkType: hard
-
-"@eslint-community/regexpp@npm:^4.12.1":
+"@eslint-community/regexpp@npm:^4.10.0, @eslint-community/regexpp@npm:^4.12.1":
   version: 4.12.1
   resolution: "@eslint-community/regexpp@npm:4.12.1"
   checksum: 10/c08f1dd7dd18fbb60bdd0d85820656d1374dd898af9be7f82cb00451313402a22d5e30569c150315b4385907cdbca78c22389b2a72ab78883b3173be317620cc
@@ -1433,7 +1426,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/js@npm:9.14.0":
+"@eslint/js@npm:9.14.0, @eslint/js@npm:^9.14.0":
   version: 9.14.0
   resolution: "@eslint/js@npm:9.14.0"
   checksum: 10/897e26bd68f898e56e96f85c92a1d823ef3d9f34e17d88d0ff40e88882ddae28d2f35915150c21cf640e0c64cb23703d0fbe6f7c9b9d6328aabe58ca30d9b4fe
@@ -3060,33 +3053,19 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zthun/eslint-config@workspace:packages/eslint-config"
   dependencies:
+    "@eslint/js": "npm:^9.14.0"
     "@typescript-eslint/eslint-plugin": "npm:^8.13.0"
     "@typescript-eslint/parser": "npm:^8.13.0"
     eslint: "npm:^9.14.0"
     eslint-config-prettier: "npm:^9.1.0"
     eslint-plugin-import: "npm:^2.31.0"
     eslint-plugin-prettier: "npm:^5.2.1"
+    eslint-plugin-react: "npm:^7.37.2"
     eslint-plugin-tsdoc: "npm:^0.3.0"
     prettier: "npm:^3.3.3"
     typescript: "npm:^5.6.3"
   peerDependencies:
-    eslint: ^8.0.0
-    prettier: ^3.0.0
-    typescript: ^5.0.0
-  languageName: unknown
-  linkType: soft
-
-"@zthun/eslint-react-config@npm:^17.1.0, @zthun/eslint-react-config@workspace:packages/eslint-react-config":
-  version: 0.0.0-use.local
-  resolution: "@zthun/eslint-react-config@workspace:packages/eslint-react-config"
-  dependencies:
-    "@zthun/eslint-config": "npm:^17.1.0"
-    eslint: "npm:^9.14.0"
-    eslint-plugin-react: "npm:^7.37.2"
-    prettier: "npm:^3.3.3"
-    typescript: "npm:^5.6.3"
-  peerDependencies:
-    eslint: ^8.0.0
+    eslint: ^9.0.0
     prettier: ^3.0.0
     typescript: ^5.0.0
   languageName: unknown
@@ -3152,7 +3131,6 @@ __metadata:
   resolution: "@zthun/lint-janitor-config@workspace:packages/lint-janitor-config"
   dependencies:
     "@zthun/eslint-config": "npm:^17.1.0"
-    "@zthun/eslint-react-config": "npm:^17.1.0"
     "@zthun/htmlhint-config": "npm:^17.1.0"
     "@zthun/markdownlint-config": "npm:^17.1.0"
     "@zthun/prettier-config": "npm:^17.1.0"
