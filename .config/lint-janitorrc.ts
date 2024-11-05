@@ -7,6 +7,7 @@ const generated = [
 ];
 
 const esFiles = [
+  "*.cjs",
   "packages/**/src/**/*.ts",
   "packages/**/src/**/*.mts",
   ".config/*.ts",
