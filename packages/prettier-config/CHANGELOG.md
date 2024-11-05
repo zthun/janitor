@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [17.1.0](https://github.com/zthun/janitor/compare/v17.0.8...v17.1.0) (2024-11-05)
+
+
+### Features
+
+* prettier-config now supports cjs and esm ([6fd3f1c](https://github.com/zthun/janitor/commit/6fd3f1cd42a880bfeaa73d1ee51355d12c659f48))
+
+
+
 ## [17.0.3](https://github.com/zthun/janitor/compare/v17.0.2...v17.0.3) (2024-09-01)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "@zthun/htmlhint-config",
-  "version": "17.0.3",
+  "version": "17.1.0",
   "description": "A shared configuration for htmlhint for @zthun scoped projects.",
   "keywords": [
     "htmlhint",

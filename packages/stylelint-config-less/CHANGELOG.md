@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [17.1.0](https://github.com/zthun/janitor/compare/v17.0.8...v17.1.0) (2024-11-05)
+
+
+### Features
+
+* lint-janitor-config now supports esm in addition to cjs ([e662d7c](https://github.com/zthun/janitor/commit/e662d7c75151a38b0d6d8d1b3d964c8d8ac5a3a6))
+
+
+
 ## [17.0.6](https://github.com/zthun/janitor/compare/v17.0.5...v17.0.6) (2024-10-27)
 
 **Note:** Version bump only for package @zthun/stylelint-config-less

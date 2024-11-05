@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [17.1.0](https://github.com/zthun/janitor/compare/v17.0.8...v17.1.0) (2024-11-05)
+
+
+### Features
+
+* eslint-react-config now supports esm as well as cjs ([78261af](https://github.com/zthun/janitor/commit/78261af8cb0cfbd8d679642396a6351efacac5c1))
+
+
+
 ## [17.0.8](https://github.com/zthun/janitor/compare/v17.0.7...v17.0.8) (2024-11-05)
 
 **Note:** Version bump only for package @zthun/eslint-react-config

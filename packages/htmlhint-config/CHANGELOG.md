@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [17.1.0](https://github.com/zthun/janitor/compare/v17.0.8...v17.1.0) (2024-11-05)
+
+
+### Features
+
+* htmlhint now outputs esm as well as cjs ([b01689a](https://github.com/zthun/janitor/commit/b01689aaf0ac2d947a78d2850f8d26859034d808))
+
+
+
 ## [17.0.3](https://github.com/zthun/janitor/compare/v17.0.2...v17.0.3) (2024-09-01)
 
 

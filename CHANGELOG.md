@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [17.1.0](https://github.com/zthun/janitor/compare/v17.0.8...v17.1.0) (2024-11-05)
+
+
+### Features
+
+* eslint-config now supports esm as well as cjs ([63f7d6e](https://github.com/zthun/janitor/commit/63f7d6e4f5f580166cc1a4993d0772805b75e26a))
+* eslint-react-config now supports esm as well as cjs ([78261af](https://github.com/zthun/janitor/commit/78261af8cb0cfbd8d679642396a6351efacac5c1))
+* htmlhint now outputs esm as well as cjs ([b01689a](https://github.com/zthun/janitor/commit/b01689aaf0ac2d947a78d2850f8d26859034d808))
+* lint-janitor-config now supports esm in addition to cjs ([e662d7c](https://github.com/zthun/janitor/commit/e662d7c75151a38b0d6d8d1b3d964c8d8ac5a3a6))
+* prettier-config now supports cjs and esm ([6fd3f1c](https://github.com/zthun/janitor/commit/6fd3f1cd42a880bfeaa73d1ee51355d12c659f48))
+
+
+
 ## [17.0.8](https://github.com/zthun/janitor/compare/v17.0.7...v17.0.8) (2024-11-05)
 
 **Note:** Version bump only for package @zthun/janitor
