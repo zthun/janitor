@@ -3158,6 +3158,7 @@ __metadata:
   resolution: "@zthun/prettier-config@workspace:packages/prettier-config"
   dependencies:
     prettier: "npm:^3.3.3"
+    vite: "npm:^5.4.10"
   peerDependencies:
     prettier: ^3.0.0
   languageName: unknown

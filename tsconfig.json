@@ -3,7 +3,8 @@
   "compilerOptions": {
     "baseUrl": "packages",
     "paths": {
-      "@zthun/lint-janitor": ["lint-janitor/index.mts"]
+      "@zthun/lint-janitor": ["lint-janitor/src/index.mts"],
+      "@zthun/prettier-config": ["prettier-config/src/index.mts"]
     }
   },
   "include": ["packages/**/*.ts", "packages/**/*.mts"]

@@ -6,15 +6,30 @@
     "prettier",
     "prettier-config"
   ],
-  "main": "index.js",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "require": "./dist/index.cjs",
+    "import": "./dist/index.js",
+    "types": "./dist/index.d.ts"
+  },
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/zthun/janitor",
     "directory": "packages/prettier-config"
   },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build"
+  },
   "devDependencies": {
-    "prettier": "^3.3.3"
+    "prettier": "^3.3.3",
+    "vite": "^5.4.10"
   },
   "peerDependencies": {
     "prettier": "^3.0.0"
