@@ -1,3 +1,0 @@
-{
-  "extends": ["@zthun/lint-janitor-config/stylelint/less"]
-}
