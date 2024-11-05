@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   extends: ["@zthun/eslint-config", "plugin:react/recommended"],
   rules: {
     // This one is not needed any longer as TypeScript jsx option
