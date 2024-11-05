@@ -6,13 +6,27 @@
     "eslint",
     "eslint-config"
   ],
-  "main": "index.cjs",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "require": "./dist/index.cjs",
+    "import": "./dist/index.js",
+    "types": "./dist/index.d.ts"
+  },
+  "scripts": {
+    "build": "vite build"
+  },
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/zthun/janitor",
     "directory": "packages/eslint-config"
   },
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^8.13.0",
     "@typescript-eslint/parser": "^8.13.0",
