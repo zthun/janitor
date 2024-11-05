@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [18.0.1](https://github.com/zthun/janitor/compare/v18.0.0...v18.0.1) (2024-11-05)
+
+
+### Bug Fixes
+
+* allow react rules to run on files that are not jsx and tsx ([718dab0](https://github.com/zthun/janitor/commit/718dab0b0ef191e8ff48cf40c1c0ce8eab25d6d0))
+
+
+
 ## [18.0.0](https://github.com/zthun/janitor/compare/v17.1.0...v18.0.0) (2024-11-05)
 
 
