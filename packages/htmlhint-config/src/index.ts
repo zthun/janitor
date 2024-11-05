@@ -1,5 +1,5 @@
 // HTMLHint doesn't export it's rule set.  Htmlhint just sucks - plan on this being removed
-// in version 20.
+// sometime in the future.
 interface RuleSet {
   "alt-require"?: boolean;
   "attr-lowercase"?: boolean | Array<string | RegExp>;
