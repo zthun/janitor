@@ -1,3 +1,1 @@
-module.exports = {
-  extends: ["@zthun/htmlhint-config"],
-};
+module.exports = require("@zthun/lint-janitor-config/htmlhint");
