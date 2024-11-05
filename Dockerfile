@@ -3,14 +3,14 @@ WORKDIR /usr/dev
 COPY . .
 RUN yarn install
 
-FROM setup as analyze
-RUN yarn lint
-
-FROM setup as test
-RUN yarn test
-
 FROM setup as build
 RUN yarn build
+
+FROM build as analyze
+RUN yarn lint
+
+FROM build as test
+RUN yarn test
 
 FROM build as release
 USER root
