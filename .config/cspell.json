@@ -21,10 +21,16 @@
     "nonwords",
     "plusplus",
     "prettierrc",
+    "specialchars",
     "stylelint",
     "stylelintrc",
     "tsdoc",
     "zthun"
   ],
-  "dictionaries": ["typescript", "node", "npm", "en_US"]
+  "dictionaries": [
+    "typescript",
+    "node",
+    "npm",
+    "en_US"
+  ]
 }
