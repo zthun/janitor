@@ -79,12 +79,14 @@ The configuration file uses the following schema.
   // The configuration file or module for formatting checks
   prettyConfig?: string;
 
-  // The white list of ECMAScript globs to lint.  This should include JavaScript and TypeScript based files
-  // Note that eslint supports excludes directly in the config file so there is no exclude support for it here.
+  // The white list of ECMAScript globs to lint.  This should
+  // include JavaScript and TypeScript based files
+  // Note that eslint supports excludes directly in the
+  // config file so there is no exclude support for it here.
   esFiles?: string[];
   // The white list of CSS, Less, and Sass globs to lint.
-  // Note that stylelint supports excludes directly in the config file so there is no
-  // exclude support for it here.
+  // Note that stylelint supports excludes directly in
+  // the config file so there is no exclude support for it here.
   styleFiles?: string[];
   // The white list of HTML globs to lint.
   htmlFiles?: string[];
@@ -174,9 +176,22 @@ options, as lint-janitor intends to be fully driven by the config file.
 
 ```json
 [
-  { "option": "--version", "description": "Show version number", "type": "boolean" }
-  { "option": "--config", "alias": "-c", "description": "Optional config file to use", "type": "string" },
-  { "option": "--help", "description": "Show help", "type": "boolean" }
+  {
+    "option": "--version",
+    "description": "Show version number",
+    "type": "boolean"
+  },
+  {
+    "option": "--config",
+    "alias": "-c",
+    "description": "Optional config file to use",
+    "type": "string"
+  },
+  {
+    "option": "--help",
+    "description": "Show help",
+    "type": "boolean"
+  }
 ]
 ```
 
