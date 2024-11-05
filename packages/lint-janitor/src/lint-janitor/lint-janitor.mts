@@ -63,9 +63,10 @@ export class ZLintJanitor {
   /**
    * The linter for markdown files.
    *
-   * Markdownlint used to have support for cosmiconfig based paths officially, but it seems now
-   * they just use .markdownlint.json.  We have to add support for that path, which is not
-   * a cosmiconfig path.
+   * Markdownlint is a bit annoying with this.  They
+   * don't really fully support the cosmiconfig standard,
+   * and they only support the config files that are named
+   * .markdownlint.yaml, .markdownlint.json, and .markdownlint.cjs
    */
   public markdownLint: IZLinter;
 
@@ -125,6 +126,8 @@ export class ZLintJanitor {
         this._logger,
         new ZConfigReaderCosmic("markdownlint", new ZConfigExtender(), [
           ".markdownlint.json",
+          ".markdownlint.yaml",
+          ".markdownlint.cjs",
         ]),
       ),
       this._logger,
