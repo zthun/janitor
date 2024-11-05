@@ -14,7 +14,7 @@
     "test": "vitest --run --coverage",
     "lint": "tsx packages/lint-janitor/src/cli.ts",
     "build": "lerna run build",
-    "make": "yarn clean && yarn lint && yarn test && yarn build",
+    "make": "yarn clean && yarn build && yarn lint && yarn test",
     "postinstall": "husky install"
   },
   "author": "Anthony Bonta",
