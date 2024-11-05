@@ -1,3 +1,1 @@
-export default {
-  extends: ["@zthun/prettier-config"],
-};
+export * from "@zthun/lint-janitor-config/prettier";
