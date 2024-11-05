@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [18.0.0](https://github.com/zthun/janitor/compare/v17.1.0...v18.0.0) (2024-11-05)
+
+
+### ⚠ BREAKING CHANGES
+
+* eslint-react-config has been collapsed into eslint-confg
+
+### Features
+
+* eslint-react-config has been collapsed into eslint-confg ([1bfe75f](https://github.com/zthun/janitor/commit/1bfe75f1035460152ab52903e2d97ec1bbc19e1f))
+
+
+
 ## [17.1.0](https://github.com/zthun/janitor/compare/v17.0.8...v17.1.0) (2024-11-05)
 
 
