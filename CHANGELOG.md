@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [18.0.0](https://github.com/zthun/janitor/compare/v17.1.0...v18.0.0) (2024-11-05)
+
+
+### ⚠ BREAKING CHANGES
+
+* eslint-config now requires eslint 9.x
+* eslint-react-config has been collapsed into eslint-config
+* eslint-react-config has been collapsed into eslint-confg
+* eslint-react-config has been collapsed into eslint-config
+
+### Features
+
+* eslint-config now requires eslint 9.x ([7426498](https://github.com/zthun/janitor/commit/742649839b356dc85e9349a44669c67aa175c977))
+* eslint-react-config has been collapsed into eslint-confg ([1bfe75f](https://github.com/zthun/janitor/commit/1bfe75f1035460152ab52903e2d97ec1bbc19e1f))
+* eslint-react-config has been collapsed into eslint-config ([4e4ed09](https://github.com/zthun/janitor/commit/4e4ed09d76d49222d30fccabe774e76bba37bd5c))
+* eslint-react-config has been collapsed into eslint-config ([ea49be1](https://github.com/zthun/janitor/commit/ea49be1fc5f801d94fbb567760823b20e3aa9351))
+* recommended includes the recommendations across all technologies and projects ([f622df4](https://github.com/zthun/janitor/commit/f622df4442c2de53b352f8b4163de1496f6ba9bd))
+* specify standards for environments ([e6e1cfc](https://github.com/zthun/janitor/commit/e6e1cfcc9a71d8f0241c8491409b1af46b12a137))
+* standards for import are now composable ([5148aa4](https://github.com/zthun/janitor/commit/5148aa422d574e0c0964cdfcddce3d5b7b872e35))
+* standards for javascript are now composable ([2d0abd4](https://github.com/zthun/janitor/commit/2d0abd4b8f4fd1871502d084081ef6772a805ab1))
+* standards for prettier are now composable ([2c995df](https://github.com/zthun/janitor/commit/2c995df53bec5374f4e088bdbae9f02d0deb0a51))
+* standards for the react framework are now composable ([31197b5](https://github.com/zthun/janitor/commit/31197b54a3f631e82a8027f2cafbb948d4ba771b))
+* standards for typescript are now composable ([e94db89](https://github.com/zthun/janitor/commit/e94db899d9ea10d330dc908e0919b9c0a4d5b6bf))
+
+
+
 ## [17.1.0](https://github.com/zthun/janitor/compare/v17.0.8...v17.1.0) (2024-11-05)
 
 

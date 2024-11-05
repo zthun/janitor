@@ -1,6 +1,6 @@
 {
   "name": "@zthun/stylelint-config-sass",
-  "version": "17.1.0",
+  "version": "18.0.0",
   "description": "A shared configuration for stylelint for @zthun scoped projects.",
   "keywords": [
     "stylelint",
@@ -29,7 +29,7 @@
     "build": "vite build"
   },
   "dependencies": {
-    "@zthun/stylelint-config": "^17.1.0",
+    "@zthun/stylelint-config": "^18.0.0",
     "stylelint-config-standard-scss": "^13.1.0"
   },
   "devDependencies": {
