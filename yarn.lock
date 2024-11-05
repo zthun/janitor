@@ -3148,6 +3148,7 @@ __metadata:
   resolution: "@zthun/markdownlint-config@workspace:packages/markdownlint-config"
   dependencies:
     markdownlint: "npm:~0.36.1"
+    vite: "npm:^5.4.10"
   peerDependencies:
     markdownlint: ">0.32.0 <1.0.0"
   languageName: unknown

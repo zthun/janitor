@@ -6,15 +6,27 @@
     "markdownlint",
     "markdownlint-config"
   ],
-  "main": "index.cjs",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "require": "./dist/index.cjs",
+    "import": "./dist/index.js",
+    "types": "./dist/index.d.ts"
+  },
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/zthun/janitor",
     "directory": "packages/markdownlint-config"
   },
+  "scripts": {
+    "build": "vite build"
+  },
   "devDependencies": {
-    "markdownlint": "~0.36.1"
+    "markdownlint": "~0.36.1",
+    "vite": "^5.4.10"
   },
   "peerDependencies": {
     "markdownlint": ">0.32.0 <1.0.0"
