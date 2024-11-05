@@ -1,1 +1,3 @@
-export * from "@zthun/prettier-config";
+export default {
+  extends: ["@zthun/prettier-config"],
+};
