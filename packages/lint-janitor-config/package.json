@@ -27,11 +27,6 @@
       "import": "./dist/eslint.js",
       "types": "./dist/es/eslint.d.mts"
     },
-    "./eslint/react": {
-      "require": "./dist/eslint-react.cjs",
-      "import": "./dist/eslint-react.js",
-      "types": "./dist/es/eslint-react.d.mts"
-    },
     "./htmlhint": {
       "require": "./dist/htmlhint.cjs",
       "import": "./dist/htmlhint.js",
@@ -77,7 +72,6 @@
   ],
   "dependencies": {
     "@zthun/eslint-config": "^17.1.0",
-    "@zthun/eslint-react-config": "^17.1.0",
     "@zthun/htmlhint-config": "^17.1.0",
     "@zthun/markdownlint-config": "^17.1.0",
     "@zthun/prettier-config": "^17.1.0",

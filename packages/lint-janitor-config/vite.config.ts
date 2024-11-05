@@ -7,7 +7,6 @@ export default defineConfig({
     lib: {
       entry: {
         eslint: "./src/es/eslint.mts",
-        "eslint-react": "./src/es/eslint-react.mts",
         htmlhint: "./src/html/htmlhint.mts",
         markdown: "./src/markdown/markdownlint.mts",
         prettier: "./src/pretty/prettier.mts",

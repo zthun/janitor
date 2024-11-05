@@ -1,2 +1,1 @@
-import config from "@zthun/eslint-config";
-export default config;
+export * from "@zthun/eslint-config";
