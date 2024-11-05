@@ -1,1 +1,2 @@
-module.exports = require("@zthun/eslint-config");
+import config from "@zthun/eslint-config";
+export default config;

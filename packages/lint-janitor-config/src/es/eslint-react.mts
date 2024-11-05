@@ -1,1 +1,2 @@
-module.exports = require("@zthun/eslint-react-config");
+import config from "@zthun/eslint-react-config";
+export default config;
