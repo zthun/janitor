@@ -5,6 +5,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "moduleResolution": "Node",
+    "resolveJsonModule": true,
     "module": "ESNext",
     "target": "ES2015",
     "lib": ["ESNext"],

@@ -3043,6 +3043,7 @@ __metadata:
   resolution: "@zthun/htmlhint-config@workspace:packages/htmlhint-config"
   dependencies:
     htmlhint: "npm:^1.1.4"
+    vite: "npm:^5.4.10"
   peerDependencies:
     htmlhint: ^1.0.0
   languageName: unknown
