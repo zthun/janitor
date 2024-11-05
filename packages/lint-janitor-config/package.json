@@ -12,16 +12,59 @@
     "prettier",
     "prettier-config"
   ],
-  "main": "index.js",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.mts",
   "exports": {
-    "./eslint": "./eslint.cjs",
-    "./eslint-react": "./eslint-react.cjs",
-    "./htmlhint": "./htmlhint.cjs",
-    "./markdownlint": "./markdownlint.cjs",
-    "./prettier": "./prettier.cjs",
-    "./stylelint/less": "./stylelint-less.cjs",
-    "./stylelint/sass": "./stylelint-sass.cjs",
-    "./stylelint": "./stylelint.cjs"
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.mts"
+    },
+    "./eslint": {
+      "require": "./dist/eslint.cjs",
+      "import": "./dist/eslint.js",
+      "types": "./dist/es/eslint.d.mts"
+    },
+    "./eslint/react": {
+      "require": "./dist/eslint-react.cjs",
+      "import": "./dist/eslint-react.js",
+      "types": "./dist/es/eslint-react.d.mts"
+    },
+    "./htmlhint": {
+      "require": "./dist/htmlhint.cjs",
+      "import": "./dist/htmlhint.js",
+      "types": "./dist/html/htmlhint.d.mts"
+    },
+    "./markdownlint": {
+      "require": "./dist/markdownlint.cjs",
+      "import": "./dist/markdownlint.js",
+      "types": "./dist/markdown/markdownlint.d.mts"
+    },
+    "./prettier": {
+      "require": "./dist/prettier.cjs",
+      "import": "./dist/prettier.js",
+      "types": "./dist/pretty/prettier.d.mts"
+    },
+    "./stylelint": {
+      "require": "./dist/stylelint.cjs",
+      "import": "./dist/stylelint.js",
+      "types": "./dist/style/stylelint.d.mts"
+    },
+    "./stylelint/less": {
+      "require": "./dist/stylelint-less.cjs",
+      "import": "./dist/stylelint-less.js",
+      "types": "./dist/style/stylelint-less.d.mts"
+    },
+    "./stylelint/sass": {
+      "require": "./dist/stylelint-sass.cjs",
+      "import": "./dist/stylelint-sass.js",
+      "types": "./dist/style/stylelint-sass.d.mts"
+    }
+  },
+  "scripts": {
+    "build": "vite build"
   },
   "license": "MIT",
   "repository": {
@@ -29,6 +72,9 @@
     "url": "https://github.com/zthun/janitor",
     "directory": "packages/lint-janitor-config"
   },
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "@zthun/eslint-config": "^17.0.8",
     "@zthun/eslint-react-config": "^17.0.8",

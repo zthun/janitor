@@ -1,3 +1,7 @@
-export default {
-  extends: ["stylelint-config-standard-scss", "@zthun/stylelint-config"],
+import { Config } from "stylelint";
+
+const config: Config = {
+  extends: ["stylelint-config-standard-sass", "@zthun/stylelint-config"],
 };
+
+export default config;
