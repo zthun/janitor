@@ -21,7 +21,7 @@
   "devDependencies": {
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
-    "@types/eslint": "^8.56.12",
+    "@types/eslint": "^9.6.1",
     "@types/estree": "^1.0.6",
     "@types/glob": "^8.1.0",
     "@types/htmlhint": "^1.1.5",

@@ -1,7 +1,7 @@
 import { ESLint } from "eslint";
 import { every } from "lodash-es";
-import { IZLinter } from "./linter.mjs";
 import { $resolve } from "../config/config-resolve.mjs";
+import { IZLinter } from "./linter.mjs";
 
 /**
  * Represents an object that can be used to perform eslint on javascript files.
@@ -41,9 +41,7 @@ export class ZLinterEs implements IZLinter {
    *        has errors.
    */
   public async lint(src: string[], config: string): Promise<boolean> {
-    const esOptions: ESLint.Options = {
-      useEslintrc: true,
-    };
+    const esOptions: ESLint.Options = {};
 
     if (config) {
       esOptions.overrideConfigFile = $resolve(config, {

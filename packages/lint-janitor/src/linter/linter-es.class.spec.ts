@@ -1,7 +1,7 @@
 import { ESLint } from "eslint";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { ZLinterEs } from "./linter-es.mjs";
 import { $resolve } from "../config/config-resolve.mjs";
+import { ZLinterEs } from "./linter-es.mjs";
 
 describe("ZLinterEs", () => {
   let files: string[];
@@ -95,7 +95,6 @@ describe("ZLinterEs", () => {
       await target.lint(files, config);
       // Assert
       expect(target.engineFactory).toHaveBeenCalledWith({
-        useEslintrc: true,
         overrideConfigFile: expected,
       });
     });
@@ -107,7 +106,7 @@ describe("ZLinterEs", () => {
       // Act
       await target.lint(files, null);
       // Assert
-      expect(target.engineFactory).toHaveBeenCalledWith({ useEslintrc: true });
+      expect(target.engineFactory).toHaveBeenCalled();
     });
   });
 

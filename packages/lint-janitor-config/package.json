@@ -84,7 +84,7 @@
     "@zthun/stylelint-config": "^17.1.0",
     "@zthun/stylelint-config-less": "^17.1.0",
     "@zthun/stylelint-config-sass": "^17.1.0",
-    "eslint": "^8.57.0",
+    "eslint": "^9.14.0",
     "htmlhint": "^1.1.4",
     "markdownlint": "~0.36.1",
     "postcss": "^8.4.47",
