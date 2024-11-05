@@ -1,71 +1,46 @@
-import { Linter } from "eslint";
+export * from "./configs/environments";
+export * from "./configs/javascript";
+export * from "./configs/recommended";
+export * from "./configs/typescript";
 
-const config: Linter.Config = {
+/*
   extends: [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
     "plugin:import/recommended",
     "plugin:prettier/recommended",
   ],
-  plugins: ["@typescript-eslint", "tsdoc", "import", "prettier"],
   rules: {
-    // We want to support == null so we get a good check for undefined
-    // or null
-    eqeqeq: ["error", "smart"],
-
-    // There are times when any and legacy namespaces makes sense.
-    // If you use any kind of decorator library, you will almost
-    // be required to use any at some point.  Forcing a non use of them
-    // means you're spending a bunch of time play type gymnastics and to
-    // hell with that.
-    "@typescript-eslint/no-explicit-any": "off",
-    "@typescript-eslint/no-namespace": "off",
-
-    // Would be fine, but there's a bug in this where you have a function with
-    // access arguments.  Those constructors are often empty - so we want to let
-    // a part of this one through.
-    "no-empty-function": "off",
-    "@typescript-eslint/no-empty-function": [
-      "error",
-      { allow: ["constructors"] },
-    ],
-
-    // A lot of 3rd party libraries still don't support esm
-    // and trying to force this right now just isn't feasible.
-    "@typescript-eslint/no-var-requires": "off",
-    "@typescript-eslint/no-require-imports": "off",
-
-    // I want aliasing support.
-    "@typescript-eslint/no-empty-object-type": "off",
-    "@typescript-eslint/no-empty-interface": "off",
-
-    // You will need unsafe declaration merging if you are doing anything
-    // with decorators as what often happens is that TypeScript cannot infer
-    // the output type of a decorator. So this has to be on to deal with
-    // TypeScripts shortcoming in this department.  See
-    // https://github.com/microsoft/TypeScript/issues/4881 for more information.
-    "@typescript-eslint/no-unsafe-declaration-merging": "off",
-
-    // I can technically agree with this, but where this comes in
-    // handy is unit testing and I value that, so I want support
-    // to make the assumption that I know what I'm doing when
-    // I make a non-null assertion.
-    "@typescript-eslint/no-non-null-assertion": "off",
-
-    // This lint error is the main reason to use import as we want to make
-    // sure we've installed our dependencies correctly.
-    "import/no-extraneous-dependencies": "error",
-
-    // These are straight up broken with Typescript when you need to work with
-    // mts files that must have mjs imports.
-    "import/named": "off",
-    "import/no-unresolved": "off",
-
     // Have to make sure that tsdoc syntax gives us the necessary errors.  There
     // is no default tsdoc recommended config, so we have to turn it on
     // explicitly.
     "tsdoc/syntax": "warn",
   },
 };
+*/
+
+/*
+import { Linter } from "eslint";
+
+const config: Linter.Config = {
+  extends: ["@zthun/eslint-config", "plugin:react/recommended"],
+  rules: {
+    // This one is not needed any longer as TypeScript jsx option
+    // should be set to react-jsx.  You will need to turn this on
+    // manually if it is set to the legacy react setting. See
+    // https://legacy.reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html#whats-different-in-the-new-transform
+    "react/react-in-jsx-scope": "off",
+  },
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+  },
+  plugins: ["react"],
+  settings: {
+    react: {
+      version: "detect",
+    },
+  },
+};
 
 export default config;
+*/
