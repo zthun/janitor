@@ -21,6 +21,9 @@
     "url": "https://github.com/zthun/janitor",
     "directory": "packages/stylelint-config"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "vite build"
   },

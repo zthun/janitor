@@ -22,6 +22,9 @@
     "url": "https://github.com/zthun/janitor",
     "directory": "packages/stylelint-config-less"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "vite build"
   },
