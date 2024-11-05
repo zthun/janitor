@@ -1,10 +1,11 @@
+import { ESLint, Linter } from "eslint";
 import _react from "eslint-plugin-react";
 
-export const react = [
+export const react: Linter.Config[] = [
   {
-    files: ["**/*.{jsx,tsx}"],
+    files: ["**/*.{js,cjs,mjs,ts,mts,jsx,tsx}"],
     plugins: {
-      react: _react,
+      react: _react as ESLint.Plugin,
     },
     languageOptions: {
       parserOptions: {
