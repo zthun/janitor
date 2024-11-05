@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [18.0.2](https://github.com/zthun/janitor/compare/v18.0.1...v18.0.2) (2024-11-05)
+
+
+### Bug Fixes
+
+* markdownlint is now properly exported ([a755349](https://github.com/zthun/janitor/commit/a755349cf4a5f022255691fc9d0dc3e0012da3b3))
+
+
+
 ## [18.0.1](https://github.com/zthun/janitor/compare/v18.0.0...v18.0.1) (2024-11-05)
 
 **Note:** Version bump only for package @zthun/lint-janitor-config
