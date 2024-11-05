@@ -8,7 +8,7 @@ export default defineConfig({
       entry: {
         eslint: "./src/es/eslint.mts",
         htmlhint: "./src/html/htmlhint.mts",
-        markdown: "./src/markdown/markdownlint.mts",
+        markdownlint: "./src/markdown/markdownlint.mts",
         prettier: "./src/pretty/prettier.mts",
         stylelint: "./src/style/stylelint.mts",
         "stylelint-less": "./src/style/stylelint-less.mts",
