@@ -1,2 +1,2 @@
-import { react, vanilla } from "@zthun/lint-janitor-config/eslint";
-export default [...vanilla, ...react];
+import { react, recommended } from "@zthun/lint-janitor-config/eslint";
+export default [...recommended, ...react];
