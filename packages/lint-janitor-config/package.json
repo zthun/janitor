@@ -20,7 +20,7 @@
     ".": {
       "require": "./dist/index.cjs",
       "import": "./dist/index.js",
-      "types": "./dist/index.d.mts"
+      "types": "./dist/index.d.ts"
     },
     "./eslint": {
       "require": "./dist/eslint.cjs",

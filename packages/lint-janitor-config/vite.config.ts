@@ -13,7 +13,7 @@ export default defineConfig({
         stylelint: "./src/style/stylelint.mts",
         "stylelint-less": "./src/style/stylelint-less.mts",
         "stylelint-sass": "./src/style/stylelint-sass.mts",
-        index: "./src/index.mts",
+        index: "./src/index.ts",
       },
       formats: ["es", "cjs"],
     },
