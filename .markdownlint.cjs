@@ -1,3 +1,1 @@
-module.exports = {
-  extends: "@zthun/markdownlint-config",
-};
+module.exports = require("@zthun/lint-janitor-config/markdownlint");
