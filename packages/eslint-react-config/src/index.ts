@@ -1,4 +1,6 @@
-export default {
+import { Linter } from "eslint";
+
+const config: Linter.Config = {
   extends: ["@zthun/eslint-config", "plugin:react/recommended"],
   rules: {
     // This one is not needed any longer as TypeScript jsx option
@@ -19,3 +21,5 @@ export default {
     },
   },
 };
+
+export default config;

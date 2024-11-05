@@ -1,4 +1,6 @@
-export default {
+import { Linter } from "eslint";
+
+const config: Linter.Config = {
   extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
@@ -65,3 +67,5 @@ export default {
     "tsdoc/syntax": "warn",
   },
 };
+
+export default config;
