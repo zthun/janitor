@@ -1,3 +1,2 @@
-export default {
-  extends: ["@zthun/stylelint-config-less"],
-};
+import config from "@zthun/lint-janitor-config/stylelint/less";
+export default config;
