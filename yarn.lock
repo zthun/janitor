@@ -3109,8 +3109,8 @@ __metadata:
     "@types/prettier": "npm:^3.0.0"
     "@types/yargs": "npm:^17.0.33"
     "@vitest/coverage-istanbul": "npm:^2.1.4"
-    "@zthun/lint-janitor": "npm:^18.0.0"
-    "@zthun/lint-janitor-config": "npm:^18.0.0"
+    "@zthun/lint-janitor": "npm:*"
+    "@zthun/lint-janitor-config": "npm:*"
     husky: "npm:^9.1.6"
     lerna: "npm:^8.1.9"
     react: "npm:^18.3.1"
@@ -3125,7 +3125,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zthun/lint-janitor-config@npm:^18.0.0, @zthun/lint-janitor-config@npm:^18.0.1, @zthun/lint-janitor-config@workspace:packages/lint-janitor-config":
+"@zthun/lint-janitor-config@npm:*, @zthun/lint-janitor-config@npm:^18.0.1, @zthun/lint-janitor-config@workspace:packages/lint-janitor-config":
   version: 0.0.0-use.local
   resolution: "@zthun/lint-janitor-config@workspace:packages/lint-janitor-config"
   dependencies:
@@ -3152,7 +3152,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zthun/lint-janitor@npm:^18.0.0, @zthun/lint-janitor@npm:^18.0.1, @zthun/lint-janitor@workspace:packages/lint-janitor":
+"@zthun/lint-janitor@npm:*, @zthun/lint-janitor@npm:^18.0.1, @zthun/lint-janitor@workspace:packages/lint-janitor":
   version: 0.0.0-use.local
   resolution: "@zthun/lint-janitor@workspace:packages/lint-janitor"
   dependencies:
