@@ -58,7 +58,6 @@ describe("ZLinterEs", () => {
           message: "Always use ===",
           nodeType: "branch",
           severity: 2,
-          source: "file",
         },
       ],
       errorCount: 1,
