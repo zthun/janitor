@@ -43,6 +43,17 @@ export const typescript = [
       // to make the assumption that I know what I'm doing when
       // I make a non-null assertion.
       "@typescript-eslint/no-non-null-assertion": "off",
+
+      // This is actually fine, but this is broken in typescript eslint 8.14.x.
+      // See https://github.com/typescript-eslint/typescript-eslint/issues/10353
+      // for the bug.
+      "no-unused-expressions": "off",
+      "@typescript-eslint/no-unused-expressions": [
+        "error",
+        {
+          allowShortCircuit: false,
+        },
+      ],
     },
   } satisfies Linter.Config,
 ];
