@@ -30,7 +30,7 @@
     "chalk": "^5.3.0",
     "cosmiconfig": "^9.0.0",
     "cspell": "^8.16.0",
-    "eslint": "^9.14.0",
+    "eslint": "^9.15.0",
     "glob": "^11.0.0",
     "htmlhint": "^1.1.4",
     "js-yaml": "^4.1.0",
