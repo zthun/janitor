@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [18.0.4](https://github.com/zthun/janitor/compare/v18.0.3...v18.0.4) (2024-11-17)
+
+
+### Bug Fixes
+
+* no-unused-expressions should no longer crash janitor for the time being ([93ee348](https://github.com/zthun/janitor/commit/93ee348dec5db864924973d108e329f05a1bac2e))
+
+
+
 ## [18.0.3](https://github.com/zthun/janitor/compare/v18.0.2...v18.0.3) (2024-11-06)
 
 **Note:** Version bump only for package @zthun/janitor
