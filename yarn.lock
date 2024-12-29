@@ -3046,7 +3046,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zthun/eslint-config@npm:^18.0.4, @zthun/eslint-config@workspace:packages/eslint-config":
+"@zthun/eslint-config@npm:^18.0.5, @zthun/eslint-config@workspace:packages/eslint-config":
   version: 0.0.0-use.local
   resolution: "@zthun/eslint-config@workspace:packages/eslint-config"
   dependencies:
@@ -3087,8 +3087,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zthun/janitor-web@workspace:packages/janitor-web"
   dependencies:
-    "@zthun/lint-janitor": "npm:^18.0.4"
-    "@zthun/lint-janitor-config": "npm:^18.0.4"
+    "@zthun/lint-janitor": "npm:^18.0.5"
+    "@zthun/lint-janitor-config": "npm:^18.0.5"
     typedoc: "npm:^0.26.11"
     typedoc-plugin-extras: "npm:^3.1.0"
     typescript: "npm:~5.6.3"
@@ -3127,18 +3127,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zthun/lint-janitor-config@npm:*, @zthun/lint-janitor-config@npm:^18.0.4, @zthun/lint-janitor-config@workspace:packages/lint-janitor-config":
+"@zthun/lint-janitor-config@npm:*, @zthun/lint-janitor-config@npm:^18.0.5, @zthun/lint-janitor-config@workspace:packages/lint-janitor-config":
   version: 0.0.0-use.local
   resolution: "@zthun/lint-janitor-config@workspace:packages/lint-janitor-config"
   dependencies:
-    "@zthun/eslint-config": "npm:^18.0.4"
+    "@zthun/eslint-config": "npm:^18.0.5"
     "@zthun/htmlhint-config": "npm:^18.0.4"
-    "@zthun/lint-janitor": "npm:^18.0.4"
+    "@zthun/lint-janitor": "npm:^18.0.5"
     "@zthun/markdownlint-config": "npm:^18.0.4"
-    "@zthun/prettier-config": "npm:^18.0.4"
-    "@zthun/stylelint-config": "npm:^18.0.4"
-    "@zthun/stylelint-config-less": "npm:^18.0.4"
-    "@zthun/stylelint-config-sass": "npm:^18.0.4"
+    "@zthun/prettier-config": "npm:^18.0.5"
+    "@zthun/stylelint-config": "npm:^18.0.5"
+    "@zthun/stylelint-config-less": "npm:^18.0.5"
+    "@zthun/stylelint-config-sass": "npm:^18.0.5"
     eslint: "npm:^9.17.0"
     htmlhint: "npm:^1.1.4"
     markdownlint: "npm:~0.36.1"
@@ -3159,7 +3159,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zthun/lint-janitor@npm:*, @zthun/lint-janitor@npm:^18.0.4, @zthun/lint-janitor@workspace:packages/lint-janitor":
+"@zthun/lint-janitor@npm:*, @zthun/lint-janitor@npm:^18.0.5, @zthun/lint-janitor@workspace:packages/lint-janitor":
   version: 0.0.0-use.local
   resolution: "@zthun/lint-janitor@workspace:packages/lint-janitor"
   dependencies:
@@ -3193,7 +3193,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zthun/prettier-config@npm:^18.0.4, @zthun/prettier-config@workspace:packages/prettier-config":
+"@zthun/prettier-config@npm:^18.0.5, @zthun/prettier-config@workspace:packages/prettier-config":
   version: 0.0.0-use.local
   resolution: "@zthun/prettier-config@workspace:packages/prettier-config"
   dependencies:
@@ -3204,11 +3204,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zthun/stylelint-config-less@npm:^18.0.4, @zthun/stylelint-config-less@workspace:packages/stylelint-config-less":
+"@zthun/stylelint-config-less@npm:^18.0.5, @zthun/stylelint-config-less@workspace:packages/stylelint-config-less":
   version: 0.0.0-use.local
   resolution: "@zthun/stylelint-config-less@workspace:packages/stylelint-config-less"
   dependencies:
-    "@zthun/stylelint-config": "npm:^18.0.4"
+    "@zthun/stylelint-config": "npm:^18.0.5"
     postcss: "npm:^8.4.49"
     stylelint: "npm:^16.12.0"
     stylelint-config-standard-less: "npm:^3.0.1"
@@ -3219,11 +3219,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zthun/stylelint-config-sass@npm:^18.0.4, @zthun/stylelint-config-sass@workspace:packages/stylelint-config-sass":
+"@zthun/stylelint-config-sass@npm:^18.0.5, @zthun/stylelint-config-sass@workspace:packages/stylelint-config-sass":
   version: 0.0.0-use.local
   resolution: "@zthun/stylelint-config-sass@workspace:packages/stylelint-config-sass"
   dependencies:
-    "@zthun/stylelint-config": "npm:^18.0.4"
+    "@zthun/stylelint-config": "npm:^18.0.5"
     postcss: "npm:^8.4.49"
     stylelint: "npm:^16.12.0"
     stylelint-config-standard-scss: "npm:^14.0.0"
@@ -3234,7 +3234,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zthun/stylelint-config@npm:^18.0.4, @zthun/stylelint-config@workspace:packages/stylelint-config":
+"@zthun/stylelint-config@npm:^18.0.5, @zthun/stylelint-config@workspace:packages/stylelint-config":
   version: 0.0.0-use.local
   resolution: "@zthun/stylelint-config@workspace:packages/stylelint-config"
   dependencies:
