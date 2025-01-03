@@ -2,8 +2,8 @@ import { cosmiconfig } from "cosmiconfig";
 
 import { resolve } from "path";
 import { IZConfigDiscovery } from "./config-discovery.mjs";
-import { IZConfigReader } from "./config-reader.mjs";
 import { IZConfigExtender } from "./config-extender.mjs";
+import { IZConfigReader } from "./config-reader.mjs";
 import { $resolve } from "./config-resolve.mjs";
 
 /**
@@ -38,7 +38,7 @@ export class ZConfigReaderCosmic implements IZConfigReader, IZConfigDiscovery {
    *        A promise that resolves with the expanded configuration.
    */
   public async search() {
-    const explorer = cosmiconfig(this.name);
+    const explorer = cosmiconfig(this.name, { searchStrategy: "project" });
 
     // The first step is the standard cosmiconfig
     // search to see if any of these paths exists.
