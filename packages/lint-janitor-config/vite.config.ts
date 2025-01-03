@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
-import { externalizeDeps } from "vite-plugin-externalize-deps";
+import external from "vite-plugin-external";
+import pkg from "./package.json";
 
 export default defineConfig({
   build: {
@@ -20,5 +21,15 @@ export default defineConfig({
     minify: false,
     sourcemap: true,
   },
-  plugins: [externalizeDeps(), dts({ tsconfigPath: `./tsconfig.prod.json` })],
+  plugins: [
+    external({
+      nodeBuiltins: true,
+      externalizeDeps: [
+        ...Object.keys(pkg.dependencies || {}),
+        ...Object.keys(pkg.devDependencies || {}),
+      ],
+    }),
+    ,
+    dts({ tsconfigPath: `./tsconfig.prod.json` }),
+  ],
 });
