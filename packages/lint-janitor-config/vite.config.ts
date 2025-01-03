@@ -29,7 +29,6 @@ export default defineConfig({
         ...Object.keys(pkg.devDependencies || {}),
       ],
     }),
-    ,
     dts({ tsconfigPath: `./tsconfig.prod.json` }),
   ],
 });
