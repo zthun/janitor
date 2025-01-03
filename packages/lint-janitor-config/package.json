@@ -13,49 +13,49 @@
     "prettier-config"
   ],
   "type": "module",
+  "types": "./dist/index.d.mts",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
-  "types": "./dist/index.d.mts",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "require": "./dist/index.cjs",
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "import": "./dist/index.js"
     },
     "./eslint": {
+      "types": "./dist/es/eslint.d.mts",
       "require": "./dist/eslint.cjs",
-      "import": "./dist/eslint.js",
-      "types": "./dist/es/eslint.d.mts"
+      "import": "./dist/eslint.js"
     },
     "./htmlhint": {
+      "types": "./dist/html/htmlhint.d.mts",
       "require": "./dist/htmlhint.cjs",
-      "import": "./dist/htmlhint.js",
-      "types": "./dist/html/htmlhint.d.mts"
+      "import": "./dist/htmlhint.js"
     },
     "./markdownlint": {
+      "types": "./dist/markdown/markdownlint.d.mts",
       "require": "./dist/markdownlint.cjs",
-      "import": "./dist/markdownlint.js",
-      "types": "./dist/markdown/markdownlint.d.mts"
+      "import": "./dist/markdownlint.js"
     },
     "./prettier": {
+      "types": "./dist/pretty/prettier.d.mts",
       "require": "./dist/prettier.cjs",
-      "import": "./dist/prettier.js",
-      "types": "./dist/pretty/prettier.d.mts"
+      "import": "./dist/prettier.js"
     },
     "./stylelint": {
+      "types": "./dist/style/stylelint.d.mts",
       "require": "./dist/stylelint.cjs",
-      "import": "./dist/stylelint.js",
-      "types": "./dist/style/stylelint.d.mts"
+      "import": "./dist/stylelint.js"
     },
     "./stylelint/less": {
+      "types": "./dist/style/stylelint-less.d.mts",
       "require": "./dist/stylelint-less.cjs",
-      "import": "./dist/stylelint-less.js",
-      "types": "./dist/style/stylelint-less.d.mts"
+      "import": "./dist/stylelint-less.js"
     },
     "./stylelint/sass": {
+      "types": "./dist/style/stylelint-sass.d.mts",
       "require": "./dist/stylelint-sass.cjs",
-      "import": "./dist/stylelint-sass.js",
-      "types": "./dist/style/stylelint-sass.d.mts"
+      "import": "./dist/stylelint-sass.js"
     }
   },
   "scripts": {
