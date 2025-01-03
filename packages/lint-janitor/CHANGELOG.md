@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [18.0.6](https://github.com/zthun/janitor/compare/v18.0.5...v18.0.6) (2025-01-03)
+
+
+### Bug Fixes
+
+* search strategy for config is now project ([ae2984b](https://github.com/zthun/janitor/commit/ae2984bab66dd7342b5e096fd84c218b0ff0e3ab))
+
+
+
 ## [18.0.5](https://github.com/zthun/janitor/compare/v18.0.4...v18.0.5) (2024-12-29)
 
 **Note:** Version bump only for package @zthun/lint-janitor

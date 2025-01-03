@@ -1,6 +1,6 @@
 {
   "name": "@zthun/lint-janitor",
-  "version": "18.0.5",
+  "version": "18.0.6",
   "description": "Style checks with tools for web projects using common rules.",
   "keywords": [
     "linters"
