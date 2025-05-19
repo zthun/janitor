@@ -28,8 +28,8 @@
     "build": "vite build"
   },
   "devDependencies": {
-    "prettier": "^3.4.2",
-    "vite": "^5.4.11"
+    "prettier": "^3.5.3",
+    "vite": "^5.4.19"
   },
   "peerDependencies": {
     "prettier": "^3.0.0"

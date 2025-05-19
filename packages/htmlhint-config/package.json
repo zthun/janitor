@@ -29,7 +29,7 @@
   ],
   "devDependencies": {
     "htmlhint": "^1.1.4",
-    "vite": "^5.4.11"
+    "vite": "^5.4.19"
   },
   "peerDependencies": {
     "htmlhint": "^1.0.0"
