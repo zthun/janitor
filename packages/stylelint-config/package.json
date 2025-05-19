@@ -33,7 +33,7 @@
   "devDependencies": {
     "postcss": "^8.5.3",
     "stylelint": "^16.19.1",
-    "vite": "^5.4.19"
+    "vite": "^6.3.5"
   },
   "peerDependencies": {
     "postcss": "^8.0.0",
