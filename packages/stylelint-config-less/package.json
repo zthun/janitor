@@ -1,6 +1,6 @@
 {
   "name": "@zthun/stylelint-config-less",
-  "version": "18.0.6",
+  "version": "18.1.0",
   "description": "A shared configuration for stylelint for @zthun scoped projects.",
   "keywords": [
     "stylelint",
@@ -29,7 +29,7 @@
     "build": "vite build"
   },
   "dependencies": {
-    "@zthun/stylelint-config": "^18.0.6",
+    "@zthun/stylelint-config": "^18.1.0",
     "stylelint-config-standard-less": "^3.0.1"
   },
   "devDependencies": {

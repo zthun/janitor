@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [18.1.0](https://github.com/zthun/janitor/compare/v18.0.6...v18.1.0) (2025-05-20)
+
+
+### Features
+
+* upgrade eslint-prettier to 10.x and globals to 16.x ([64c3fa7](https://github.com/zthun/janitor/commit/64c3fa729c8cec3ad24795390feb17fc05b8a15b))
+
+
+
 ## [18.0.6](https://github.com/zthun/janitor/compare/v18.0.5...v18.0.6) (2025-01-03)
 
 **Note:** Version bump only for package @zthun/eslint-config

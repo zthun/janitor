@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [18.1.0](https://github.com/zthun/janitor/compare/v18.0.6...v18.1.0) (2025-05-20)
+
+
+### Features
+
+* upgrade stylelint-config-standard-scss to 15.x ([c200468](https://github.com/zthun/janitor/commit/c20046895d087e7f07456b8fdea00fedcda1b741))
+
+
+
 ## [18.0.6](https://github.com/zthun/janitor/compare/v18.0.5...v18.0.6) (2025-01-03)
 
 **Note:** Version bump only for package @zthun/stylelint-config-sass

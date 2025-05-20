@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [18.1.0](https://github.com/zthun/janitor/compare/v18.0.6...v18.1.0) (2025-05-20)
+
+
+### Features
+
+* upgrade cspell to 9.x ([e31d12d](https://github.com/zthun/janitor/commit/e31d12d6b0a7bd4289e5e5515930f2c427865d01))
+
+
+
 ## [18.0.6](https://github.com/zthun/janitor/compare/v18.0.5...v18.0.6) (2025-01-03)
 
 

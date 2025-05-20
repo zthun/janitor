@@ -1,6 +1,6 @@
 {
   "name": "@zthun/lint-janitor-config",
-  "version": "18.0.6",
+  "version": "18.1.0",
   "description": "A shared configuration for lint janitor for @zthun scoped projects.",
   "keywords": [
     "eslint",
@@ -71,13 +71,13 @@
     "dist"
   ],
   "dependencies": {
-    "@zthun/eslint-config": "^18.0.6",
-    "@zthun/htmlhint-config": "^18.0.6",
-    "@zthun/markdownlint-config": "^18.0.6",
-    "@zthun/prettier-config": "^18.0.6",
-    "@zthun/stylelint-config": "^18.0.6",
-    "@zthun/stylelint-config-less": "^18.0.6",
-    "@zthun/stylelint-config-sass": "^18.0.6",
+    "@zthun/eslint-config": "^18.1.0",
+    "@zthun/htmlhint-config": "^18.1.0",
+    "@zthun/markdownlint-config": "^18.1.0",
+    "@zthun/prettier-config": "^18.1.0",
+    "@zthun/stylelint-config": "^18.1.0",
+    "@zthun/stylelint-config-less": "^18.1.0",
+    "@zthun/stylelint-config-sass": "^18.1.0",
     "eslint": "^9.27.0",
     "htmlhint": "^1.1.4",
     "markdownlint": "~0.36.1",
@@ -86,7 +86,7 @@
     "stylelint": "^16.19.1"
   },
   "devDependencies": {
-    "@zthun/lint-janitor": "^18.0.6",
+    "@zthun/lint-janitor": "^18.1.0",
     "typescript": "~5.8.3",
     "vite": "^6.3.5",
     "vite-plugin-dts": "^4.5.4",
