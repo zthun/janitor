@@ -15,8 +15,8 @@ import { ZLinterReport } from "../linter/linter-report.mjs";
 import { ZLinterSpelling } from "../linter/linter-spelling.mjs";
 import { ZLinterStyle } from "../linter/linter-style.mjs";
 import { IZLinter } from "../linter/linter.mjs";
-import { IZLintJanitorArgs } from "./lint-janitor-args.mjs";
-import { IZLintJanitorOptions } from "./lint-janitor-options.mjs";
+import { IZLintJanitorArgs } from "./janitor-lint-args.mjs";
+import { IZLintJanitorOptions } from "./janitor-lint-options.mjs";
 
 /**
  * Represents the main entry point object for the application.
