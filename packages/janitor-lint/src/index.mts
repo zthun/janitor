@@ -1,3 +1,6 @@
+export * from "./app/janitor-lint-args.mjs";
+export * from "./app/janitor-lint-options.mjs";
+export * from "./app/janitor-lint.mjs";
 export * from "./config/config-discovery.mjs";
 export * from "./config/config-extender.mjs";
 export * from "./config/config-reader-cosmic.mjs";
@@ -10,9 +13,6 @@ export * from "./content/content-linter-json.mjs";
 export * from "./content/content-linter-pretty.mjs";
 export * from "./content/content-linter-yaml.mjs";
 export * from "./content/content-linter.mjs";
-export * from "./janitor-lint/janitor-lint-args.mjs";
-export * from "./janitor-lint/janitor-lint-options.mjs";
-export * from "./janitor-lint/janitor-lint.mjs";
 export * from "./linter/linter-es.mjs";
 export * from "./linter/linter-file.mjs";
 export * from "./linter/linter-markdown.mjs";
