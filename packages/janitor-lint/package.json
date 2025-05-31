@@ -1,5 +1,5 @@
 {
-  "name": "@zthun/lint-janitor",
+  "name": "@zthun/janitor-lint",
   "version": "18.1.0",
   "description": "Style checks with tools for web projects using common rules.",
   "keywords": [
@@ -10,10 +10,10 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/zthun/janitor",
-    "directory": "packages/lint-janitor"
+    "directory": "packages/janitor-lint"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=22.16.0"
   },
   "publishConfig": {
     "access": "public"
