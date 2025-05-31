@@ -20,8 +20,10 @@ describe("ZConfigCosmicReader", () => {
   it("reads the config file.", async () => {
     // Arrange
     const target = createTestTarget();
+
     // Act
     const actual = await target.read(config);
+
     // Assert
     expect(actual).toBeTruthy();
   });
@@ -29,8 +31,10 @@ describe("ZConfigCosmicReader", () => {
   it("reads the cosmiconfig file if no config specified.", async () => {
     // Arrange
     const target = createTestTarget();
+
     // Act
     const actual = await target.read(null);
+
     // Assert
     expect(actual).toBeTruthy();
   });
@@ -41,8 +45,10 @@ describe("ZConfigCosmicReader", () => {
       ".markdownlint-skip.json",
       ".markdownlint.json",
     ]);
+
     // Act
     const actual = await target.read(null);
+
     // Assert
     expect(actual).toBeTruthy();
   });
@@ -51,9 +57,12 @@ describe("ZConfigCosmicReader", () => {
     // Arrange
     const target = createTestTarget();
     config = "@zthun/janitor-htmlhint-config-does-not-exist";
+
     // Act
+    const actual = target.read(config);
+
     // Assert
-    await expect(target.read(config)).rejects.toBeDefined();
+    await expect(actual).rejects.toBeDefined();
   });
 
   it("returns the empty config if there are no discovered config files.", async () => {
@@ -68,5 +77,17 @@ describe("ZConfigCosmicReader", () => {
 
     // Assert
     expect(actual).toEqual({});
+  });
+
+  it("returns a file from the paths if one exists outside of the standard file array", async () => {
+    // Arrange.
+    const expected = "htmlhint.config.cjs";
+    const target = createTestTarget("markdownlint", [expected]);
+
+    // Act.
+    const actual = await target.search();
+
+    // Assert.
+    expect(actual).toContain(expected);
   });
 });
