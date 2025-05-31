@@ -9,7 +9,8 @@ const generated = [
 const esFiles = [
   "*.{js,cjs,mjs,ts,mts}",
   "packages/**/src/**/*.{ts,mts}",
-  "packages/**/vite.config.ts",
+  "packages/**/vite.config.{ts,mts}",
+  "packages/**/vitest.config.{ts,mts}",
   ".config/*.{js,cjs,mjs,ts,mts}",
 ];
 
