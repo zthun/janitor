@@ -1,7 +1,7 @@
 /**
  * Represents the command line arguments.
  */
-export interface IZLintJanitorArgs {
+export interface IZJanitorLintArgs {
   /**
    * The config file path.
    */

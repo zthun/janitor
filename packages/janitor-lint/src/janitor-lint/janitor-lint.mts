@@ -15,7 +15,7 @@ import { ZLinterReport } from "../linter/linter-report.mjs";
 import { ZLinterSpelling } from "../linter/linter-spelling.mjs";
 import { ZLinterStyle } from "../linter/linter-style.mjs";
 import { IZLinter } from "../linter/linter.mjs";
-import { IZLintJanitorArgs } from "./janitor-lint-args.mjs";
+import { IZJanitorLintArgs } from "./janitor-lint-args.mjs";
 import { IZLintJanitorOptions } from "./janitor-lint-options.mjs";
 
 /**
@@ -274,7 +274,7 @@ export class ZLintJanitor {
    *        A promise that returns 0 if all linting was
    *        successful, and 1 if any of the linting failed.
    */
-  public async run(args: IZLintJanitorArgs): Promise<number> {
+  public async run(args: IZJanitorLintArgs): Promise<number> {
     try {
       const options = await this.config.read(args.config);
       return this.lint(options);
