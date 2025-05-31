@@ -347,10 +347,10 @@ along with it.
 
 ```json
 {
-  "extends": "@zthun/markdownlint-config/as-json"
+  "extends": "@zthun/janitor-markdownlint-config/as-json"
 }
 
-// node_modules/@zthun/markdownlint-config/as-json.json
+// node_modules/@zthun/janitor-markdownlint-config/as-json.json
 {
   "line-length": false,
   "no-inline-html": false,

@@ -28,7 +28,7 @@ describe("ZLinterMarkdown", () => {
   beforeEach(() => {
     changelog = "CHANGELOG.md";
     readme = "README.md";
-    config = "@zthun/markdownlint-config";
+    config = "@zthun/janitor-markdownlint-config";
     files = ["*.md"];
 
     results = {};

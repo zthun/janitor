@@ -73,7 +73,7 @@
   "dependencies": {
     "@zthun/janitor-eslint-config": "^18.1.0",
     "@zthun/janitor-htmlhint-config": "^18.1.0",
-    "@zthun/markdownlint-config": "^18.1.0",
+    "@zthun/janitor-markdownlint-config": "^18.1.0",
     "@zthun/prettier-config": "^18.1.0",
     "@zthun/stylelint-config": "^18.1.0",
     "@zthun/stylelint-config-less": "^18.1.0",

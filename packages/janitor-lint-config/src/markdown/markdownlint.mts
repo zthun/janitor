@@ -1,2 +1,2 @@
-import config from "@zthun/markdownlint-config";
+import config from "@zthun/janitor-markdownlint-config";
 export default config;
