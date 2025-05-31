@@ -32,7 +32,7 @@ describe("ZJanitorLint", () => {
     logger.error = vi.fn();
 
     args = {
-      config: "./cfg/lint-janitor.json",
+      config: "./cfg/janitor.json",
     };
 
     options = {

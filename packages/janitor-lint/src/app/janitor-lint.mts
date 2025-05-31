@@ -133,10 +133,7 @@ export class ZJanitorLint {
       this._logger,
       "markdown",
     );
-    this.config = new ZConfigReaderCosmic(
-      "lint-janitor",
-      new ZConfigExtender(),
-    );
+    this.config = new ZConfigReaderCosmic("janitor", new ZConfigExtender());
   }
 
   /**
