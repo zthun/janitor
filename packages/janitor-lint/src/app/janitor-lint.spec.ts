@@ -36,14 +36,14 @@ describe("ZJanitorLint", () => {
     };
 
     options = {
-      esConfig: "@zthun/eslint-config",
+      esConfig: "@zthun/janitor-eslint-config",
       esFiles: ["**/*.js"],
-      styleConfig: "@zthun/stylelint-config",
+      styleConfig: "@zthun/janitor-stylelint-config",
       styleFiles: ["**/*.css", "**/*.less", "**/*.scss", "**/*.sass"],
-      markdownConfig: "@zthun/markdownlint-config",
+      markdownConfig: "@zthun/janitor-markdownlint-config",
       markdownFiles: ["**/*.md"],
       markdownFilesExclude: ["**/exclude.md"],
-      htmlConfig: "@zthun/htmlhint-config",
+      htmlConfig: "@zthun/janitor-htmlhint-config",
       htmlFiles: ["**/*.html"],
       htmlFilesExclude: ["**/exclude.html"],
       jsonFiles: ["**/*.json"],
@@ -53,7 +53,7 @@ describe("ZJanitorLint", () => {
       spellingConfig: "./cspell.json",
       spellingFiles: ["**/*.md"],
       spellingFilesExclude: ["**/exclude.md"],
-      prettyConfig: "@zthun/prettier-config",
+      prettyConfig: "@zthun/janitor-prettier-config",
       prettyFiles: ["**/*.ts"],
       prettyFilesExclude: ["**/exclude.ts"],
     };

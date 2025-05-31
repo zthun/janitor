@@ -6,9 +6,9 @@ This is the shared eslint configuration for zthun scoped projects.
 
 ```sh
 # NPM
-npm install @zthun/eslint-config --save-dev
+npm install @zthun/janitor-eslint-config --save-dev
 # Yarn
-yarn add @zthun/eslint-config --dev
+yarn add @zthun/janitor-eslint-config --dev
 ```
 
 Make sure to install typescript and @typescript-eslint/eslint-plugin with all
@@ -20,7 +20,7 @@ In the .eslintrc file, add the following
 
 ```json
 {
-  "extends": ["@zthun/eslint-config"]
+  "extends": ["@zthun/janitor-eslint-config"]
 }
 ```
 

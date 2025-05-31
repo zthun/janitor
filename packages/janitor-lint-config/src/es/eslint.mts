@@ -1,1 +1,1 @@
-export * from "@zthun/eslint-config";
+export * from "@zthun/janitor-eslint-config";

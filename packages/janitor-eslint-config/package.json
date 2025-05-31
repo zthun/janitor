@@ -1,5 +1,5 @@
 {
-  "name": "@zthun/eslint-config",
+  "name": "@zthun/janitor-eslint-config",
   "version": "18.1.0",
   "description": "A shared configuration for eslint for @zthun scoped projects.",
   "keywords": [
@@ -22,7 +22,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/zthun/janitor",
-    "directory": "packages/eslint-config"
+    "directory": "packages/janitor-eslint-config"
   },
   "files": [
     "dist"

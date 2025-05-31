@@ -2,7 +2,7 @@
 
 Thanks for taking the time to contribute! Generally, the big secret of this
 project is that it is mostly done as a hobby. There is no big intention to make
-lint janitor the code cleanliness standard and anyone who uses it would just
+janitor the code cleanliness standard and anyone who uses it would just
 have to find it useful. It is not marketed or advertised; a good product should
 sell itself. However, at the minimum, people would need to know about it, so
 unless you are looking to make code contributions, the minimum contribution that
@@ -46,9 +46,9 @@ yarn install
 yarn make
 ```
 
-If you want to step into the debugger for the lint janitor, this repository
+If you want to step into the debugger for the janitor lint, this repository
 comes with the appropriate vscode launch.json configurations to start debugging.
-Simply hit the run button under Launch Lint Janitor, set your breakpoints and
+Simply hit the run button under Launch Janitor Lint, set your breakpoints and
 away you go.
 
 ## Test

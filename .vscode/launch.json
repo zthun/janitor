@@ -2,7 +2,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Launch Lint Janitor",
+      "name": "Launch Janitor Lint",
       "program": "${workspaceFolder}/packages/janitor-lint/src/cli.ts",
       "preLaunchTask": "tsc: build - packages/janitor-lint/tsconfig.bin.json",
       "request": "launch",

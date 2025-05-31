@@ -23,10 +23,10 @@ order to set each one of them up and run them in your pipeline to verify all of
 the different code files you have. There's linters for code, applications,
 spelling, and formatting; it's easy to get overwhelmed.
 
-**Lint Janitor** was created under the guise that there is beauty in simplicity.
+**Janitor Lint** was created under the guise that there is beauty in simplicity.
 Having a single application that takes care of ones needs leads to greater
 happiness then having to piece meal together tons of tools, each with individual
-needs and maintainability issues. Just let **Lint Janitor** do the heavy lifting
+needs and maintainability issues. Just let **Janitor Lint** do the heavy lifting
 for you.
 
 ## Getting Started
@@ -40,14 +40,14 @@ yarn add @zthun/janitor-lint --dev
 
 ## Configuration
 
-Lint Janitor uses an opt-in approach to linting, meaning that it will not lint
+Janitor Lint uses an opt-in approach to linting, meaning that it will not lint
 any files that you do not tell it to lint. You will need to add a configuration
 file that describes the list of files to lint and the sub configurations of each
 internal linter. Each linter is described in further detail. In the end, the
 expectation is that you will provide you're own collection of shared
 configurations that you can reuse in all your projects.
 
-Lint Janitor uses the [cosmiconfig](https://www.npmjs.com/package/cosmiconfig)
+Janitor Lint uses the [cosmiconfig](https://www.npmjs.com/package/cosmiconfig)
 standard for loading its configuration. In short, it will search the current
 working directory for the following files:
 
@@ -201,9 +201,9 @@ options, as janitor-lint intends to be fully driven by the config file.
 
 While you can always recreate individual configurations for each linter, it is
 **HIGHLY** recommended to create a set of shared configurations for your
-organization. Most linters supported by Lint Janitor have some form of support
+organization. Most linters supported by Janitor Lint have some form of support
 for extending configurations and sharing them so you don't need to reinvent the
-wheel. In the place that such extensions are missing, Lint Janitor attempts to
+wheel. In the place that such extensions are missing, Janitor Lint attempts to
 bridge this gap but it will not add support for IDE based tooling and
 extensions. You'll have to decide what's best for your project and your
 organization.
@@ -250,13 +250,14 @@ that will give you highlighting for any linting errors while you type. This
 makes ESLint the go to linter for web based ECMAScript code.
 
 For the configuration schema, you can find it
-[here](https://eslint.org/docs/user-guide/configuring/). If you create a shared
-configuration, as recommended, you can simply add that to the extends key in the
-ESLint configuration file to share configuration throughout your organization.
+[at the eslint configuration guide](https://eslint.org/docs/user-guide/configuring/).
+If you create a shared configuration, as recommended, you can simply add that to
+the extends key in the ESLint configuration file to share configuration throughout
+your organization.
 
 ```js
 // .eslintrc.js
-module.exports = require("@zthun/eslint-config");
+module.exports = require("@zthun/janitor-eslint-config");
 ```
 
 ### Styles (CSS, Less, SASS)
@@ -268,7 +269,7 @@ There are several linters for style based files.
 3. [StyleLint](https://stylelint.io/)
 
 CSSLint and SassLint are no longer actively maintained. Thus, for linting style
-based files, Lint Janitor uses StyleLint under the hood.
+based files, Janitor Lint uses StyleLint under the hood.
 
 StyleLint is similar to [ESLint](https://eslint.org/). It too, has a nice
 ecosystem of plugins and it supports shared configurations. Stylelint, unlike
@@ -303,7 +304,7 @@ application is [HTMLHint](https://github.com/htmlhint/HTMLHint).
 
 HTMLHint does NOT support shared configurations at all. To do that,
 [this issue](https://github.com/htmlhint/HTMLHint/issues/621) would need to be
-approved and supported. In the meantime, Lint Janitor bridges this gap by
+approved and supported. In the meantime, Janitor Lint bridges this gap by
 sending just the content to HTMLHint instead of the file list. This allows Lint
 Janitor to implement a [cosmiconfig](https://www.npmjs.com/package/cosmiconfig)
 standard for loading and extending the configuration to support shared configs.
@@ -325,7 +326,7 @@ module.exports = require("@zthun/htmlhint-config");
 Good old markdown has a couple of linters available, but considering that
 [MarkdownLint](https://github.com/DavidAnson/markdownlint) has a working
 [VisualStudio Code plugin](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint),
-that's the one that Lint Janitor uses.
+that's the one that Janitor Lint uses.
 
 MarkdownLint searches for the following configuration files at the root of your
 repository.
@@ -402,7 +403,7 @@ are generally two tools that are used for this.
 1. [EditorConfig](https://editorconfig.org/)
 1. [Prettier](https://prettier.io/)
 
-For code formatting, Lint Janitor went with Prettier since it supports all the
+For code formatting, Janitor Lint went with Prettier since it supports all the
 features of EditorConfig and a bunch of others. Prettier also supports shared
 configurations and is highly recommended to use them because the
 [VisualStudio Code plugin](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
@@ -430,19 +431,19 @@ format as you type.
 
 Q. Can this support my other favorite linter?
 
-A. Possibly, but whether or not Lint Janitor will bother at the moment depends
+A. Possibly, but whether or not Janitor Lint will bother at the moment depends
 on a few factors:
 
 1. Is there an IDE plugin that makes it so you can validate, lint, and cleanup
    while you go along so you're not left with a lot of surprises at the end?
 1. Does the linter support shared configuration to not reinvent the wheel
-   everywhere? Does Lint Janitor have to bridge that gap?
+   everywhere? Does Janitor Lint have to bridge that gap?
 1. Is the linter in question a node linter that has its API exported and can be
    integrated into a node application? **Important!**
 
-If you answered No to the last question, then the answer is No. Lint Janitor
+If you answered No to the last question, then the answer is No. Janitor Lint
 does not invoke external command lines of linters and instead calls into their
-node API directly. This is how Lint Janitor succeeds in not having you worry
+node API directly. This is how Janitor Lint succeeds in not having you worry
 about what tools to install and what versions to use; it uses transitive
 dependencies.
 
@@ -453,9 +454,9 @@ may not need more than what is available here. If you need the mother of all
 linters, there is the heavy
 [Mega Linter](https://github.com/nvuillam/mega-linter) which aggregates every
 linter in existence. Very cool, but a bit overkill for the solution we are
-trying to solve with Lint Janitor.
+trying to solve with Janitor Lint.
 
-Q. Is there an IDE plugin for Lint Janitor?
+Q. Is there an IDE plugin for Janitor Lint?
 
 A. Not yet. That would solve the issue of wanting an IDE plugin for each
 individual linter and would allow you to just have a single

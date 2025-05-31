@@ -1,4 +1,4 @@
-# Lint Janitor Config
+# Janitor Lint Config
 
 This is a shared configuration for janitor-lint that contains all of the zthun
 scoped shared configurations.
