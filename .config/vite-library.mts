@@ -1,13 +1,8 @@
-import { createRequire } from "node:module";
-import { resolve } from "node:path";
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
-import external from "vite-plugin-external";
+import { externalizeDeps } from "vite-plugin-externalize-deps";
 
 export function defineLibrary(dir: string) {
-  const $require = createRequire(import.meta.url);
-  const pkg = $require(resolve(dir, "package.json"));
-
   return defineConfig({
     build: {
       lib: {
@@ -19,13 +14,7 @@ export function defineLibrary(dir: string) {
       sourcemap: true,
     },
     plugins: [
-      external({
-        nodeBuiltins: true,
-        externalizeDeps: [
-          ...Object.keys(pkg.dependencies || {}),
-          ...Object.keys(pkg.devDependencies || {}),
-        ],
-      }),
+      externalizeDeps(),
       dts({ tsconfigPath: `${dir}/tsconfig.prod.json` }),
     ],
   });

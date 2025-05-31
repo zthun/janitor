@@ -2435,15 +2435,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/debug@npm:^4.1.12":
-  version: 4.1.12
-  resolution: "@types/debug@npm:4.1.12"
-  dependencies:
-    "@types/ms": "npm:*"
-  checksum: 10/47876a852de8240bfdaf7481357af2b88cb660d30c72e73789abf00c499d6bc7cd5e52f41c915d1b9cd8ec9fef5b05688d7b7aef17f7f272c2d04679508d1053
-  languageName: node
-  linkType: hard
-
 "@types/eslint@npm:^9.6.1":
   version: 9.6.1
   resolution: "@types/eslint@npm:9.6.1"
@@ -2458,16 +2449,6 @@ __metadata:
   version: 1.0.7
   resolution: "@types/estree@npm:1.0.7"
   checksum: 10/419c845ece767ad4b21171e6e5b63dabb2eb46b9c0d97361edcd9cabbf6a95fcadb91d89b5fa098d1336fa0b8fceaea82fca97a2ef3971f5c86e53031e157b21
-  languageName: node
-  linkType: hard
-
-"@types/fs-extra@npm:^11.0.4":
-  version: 11.0.4
-  resolution: "@types/fs-extra@npm:11.0.4"
-  dependencies:
-    "@types/jsonfile": "npm:*"
-    "@types/node": "npm:*"
-  checksum: 10/acc4c1eb0cde7b1f23f3fe6eb080a14832d8fa9dc1761aa444c5e2f0f6b6fa657ed46ebae32fb580a6700fc921b6165ce8ac3e3ba030c3dd15f10ad4dd4cae98
   languageName: node
   linkType: hard
 
@@ -2518,15 +2499,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jsonfile@npm:*":
-  version: 6.1.4
-  resolution: "@types/jsonfile@npm:6.1.4"
-  dependencies:
-    "@types/node": "npm:*"
-  checksum: 10/309fda20eb5f1cf68f2df28931afdf189c5e7e6bec64ac783ce737bb98908d57f6f58757ad5da9be37b815645a6f914e2d4f3ac66c574b8fe1ba6616284d0e97
-  languageName: node
-  linkType: hard
-
 "@types/lodash-es@npm:^4.17.12":
   version: 4.17.12
   resolution: "@types/lodash-es@npm:4.17.12"
@@ -2561,13 +2533,6 @@ __metadata:
   version: 1.2.5
   resolution: "@types/minimist@npm:1.2.5"
   checksum: 10/477047b606005058ab0263c4f58097136268007f320003c348794f74adedc3166ffc47c80ec3e94687787f2ab7f4e72c468223946e79892cf0fd9e25e9970a90
-  languageName: node
-  linkType: hard
-
-"@types/ms@npm:*":
-  version: 2.1.0
-  resolution: "@types/ms@npm:2.1.0"
-  checksum: 10/532d2ebb91937ccc4a89389715e5b47d4c66e708d15942fe6cc25add6dc37b2be058230a327dd50f43f89b8b6d5d52b74685a9e8f70516edfc9bdd6be910eff4
   languageName: node
   linkType: hard
 
@@ -3053,7 +3018,7 @@ __metadata:
     typescript: "npm:~5.8.3"
     vite: "npm:^6.3.5"
     vite-plugin-dts: "npm:^4.5.4"
-    vite-plugin-external: "npm:^6.2.2"
+    vite-plugin-externalize-deps: "npm:^0.9.0"
     vite-tsconfig-paths: "npm:^5.1.4"
   peerDependencies:
     "@zthun/janitor-lint": ">=19.0.0"
@@ -3190,7 +3155,7 @@ __metadata:
     typescript: "npm:~5.8.3"
     vite: "npm:^6.3.5"
     vite-plugin-dts: "npm:^4.5.4"
-    vite-plugin-external: "npm:^6.2.2"
+    vite-plugin-externalize-deps: "npm:^0.9.0"
     vite-tsconfig-paths: "npm:^5.1.4"
     vitest: "npm:^3.1.4"
   languageName: unknown
@@ -3640,16 +3605,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"base-log-factory@npm:^2.1.4":
-  version: 2.1.4
-  resolution: "base-log-factory@npm:2.1.4"
-  dependencies:
-    date-manip: "npm:^2.0.6"
-    is-what-type: "npm:^1.0.1"
-  checksum: 10/76fc3bd3eed142e0916aefdade3b2029607c630d5166adb41ed44ead7b9df00c873b438eeee9bdfa941e69e605bdc8eceb001d597cde91db16d92f069e95fbab
-  languageName: node
-  linkType: hard
-
 "base64-js@npm:^1.3.1":
   version: 1.5.1
   resolution: "base64-js@npm:1.5.1"
@@ -3684,29 +3639,6 @@ __metadata:
     inherits: "npm:^2.0.4"
     readable-stream: "npm:^3.4.0"
   checksum: 10/b7904e66ed0bdfc813c06ea6c3e35eafecb104369dbf5356d0f416af90c1546de3b74e5b63506f0629acf5e16a6f87c3798f16233dcff086e9129383aa02ab55
-  languageName: node
-  linkType: hard
-
-"blf-colorful-appender@npm:^1.0.6":
-  version: 1.0.6
-  resolution: "blf-colorful-appender@npm:1.0.6"
-  dependencies:
-    base-log-factory: "npm:^2.1.4"
-    picocolors: "npm:^1.1.1"
-  checksum: 10/b26d64c243dc170ecd3f950690c5c3006d58a2fdbbcb13de4924cdff0f48bcd0f73a9f250546f614e7aaa17a45c9d8ddd25fc1d8d88687aa3943dbcd6da7422c
-  languageName: node
-  linkType: hard
-
-"blf-debug-appender@npm:^1.0.2":
-  version: 1.0.5
-  resolution: "blf-debug-appender@npm:1.0.5"
-  dependencies:
-    "@types/debug": "npm:^4.1.12"
-    base-log-factory: "npm:^2.1.4"
-    blf-colorful-appender: "npm:^1.0.6"
-    date-manip: "npm:^2.0.6"
-    debug: "npm:^4.4.0"
-  checksum: 10/a6a52cfa4b10a13050446ebaea6270ca6ed76353f0b9352ac62770ea88dcc92d1a2e23cbe22a7234ab557627fa9c19ecfb7bf8736844021b77e7e0695c7fa04e
   languageName: node
   linkType: hard
 
@@ -4625,13 +4557,6 @@ __metadata:
     es-errors: "npm:^1.3.0"
     is-data-view: "npm:^1.0.1"
   checksum: 10/fa3bdfa0968bea6711ee50375094b39f561bce3f15f9e558df59de9c25f0bdd4cddc002d9c1d70ac7772ebd36854a7e22d1761e7302a934e6f1c2263bcf44aa2
-  languageName: node
-  linkType: hard
-
-"date-manip@npm:^2.0.6":
-  version: 2.0.6
-  resolution: "date-manip@npm:2.0.6"
-  checksum: 10/d2db834e85683df96ecbe419b1db0362bad835048954b5a77f3274628503eccfa05ef479960aac184da3ec443a0b6c02ce323baff66ca3bc45ff6da1083b69a9
   languageName: node
   linkType: hard
 
@@ -5613,15 +5538,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"figlet@npm:^1.8.0":
-  version: 1.8.1
-  resolution: "figlet@npm:1.8.1"
-  bin:
-    figlet: bin/index.js
-  checksum: 10/250e817d2e6df3d494e1044e6f4d3397d3fffa7618fe505c283ccdf02163593883423c89cddd26af99b5684fef887709cc2d41734d2f0babc5a465e0747e72f9
-  languageName: node
-  linkType: hard
-
 "figures@npm:3.2.0, figures@npm:^3.0.0":
   version: 3.2.0
   resolution: "figures@npm:3.2.0"
@@ -5819,7 +5735,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fs-extra@npm:^11.1.1, fs-extra@npm:^11.2.0, fs-extra@npm:^11.3.0, fs-extra@npm:~11.3.0":
+"fs-extra@npm:^11.2.0, fs-extra@npm:~11.3.0":
   version: 11.3.0
   resolution: "fs-extra@npm:11.3.0"
   dependencies:
@@ -7039,13 +6955,6 @@ __metadata:
     call-bound: "npm:^1.0.3"
     get-intrinsic: "npm:^1.2.6"
   checksum: 10/1d5e1d0179beeed3661125a6faa2e59bfb48afda06fc70db807f178aa0ebebc3758fb6358d76b3d528090d5ef85148c345dcfbf90839592fe293e3e5e82f2134
-  languageName: node
-  linkType: hard
-
-"is-what-type@npm:^1.0.1, is-what-type@npm:^1.1.4":
-  version: 1.1.4
-  resolution: "is-what-type@npm:1.1.4"
-  checksum: 10/22ffa4bc9abcd32ce7c84aafe78d6a1b0b50362e1f606b63f7a275d800ae54a76980b634d08f83d77d97257fe31610de967d9063e155b046aaf79034150a590d
   languageName: node
   linkType: hard
 
@@ -11368,15 +11277,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite-plugin-external@npm:^6.2.2":
-  version: 6.2.2
-  resolution: "vite-plugin-external@npm:6.2.2"
-  dependencies:
-    "@types/fs-extra": "npm:^11.0.4"
-    fs-extra: "npm:^11.1.1"
-    is-what-type: "npm:^1.1.4"
-    vp-runtime-helper: "npm:^1.0.10"
-  checksum: 10/c2a5503310dabec8e5ae817e48f8777750b62b4410b69f406c64eb83acc519ae7cfc4f626099df0bb802ced1b53d6f6edd34a19f08b279258e341e23d5da42c2
+"vite-plugin-externalize-deps@npm:^0.9.0":
+  version: 0.9.0
+  resolution: "vite-plugin-externalize-deps@npm:0.9.0"
+  peerDependencies:
+    vite: ^2.0.0 || ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0
+  checksum: 10/da6169f6ffe6f75e0b524916bc1bfa4cacefa1042a0c48320cbea514d35505614bf2a25f988e5b3dbb24e1f1d5630644bf37b3977b8bdc92f2c194c518483254
   languageName: node
   linkType: hard
 
@@ -11502,20 +11408,6 @@ __metadata:
   bin:
     vitest: vitest.mjs
   checksum: 10/e30f8df59d3e551c9a104dcf1e9937a0b1c3731072bcfe054a17124689852046b5c44bca0316b6ece0b301225f904709e2b990e8122d5bc7d08327d78785d6ac
-  languageName: node
-  linkType: hard
-
-"vp-runtime-helper@npm:^1.0.10":
-  version: 1.0.10
-  resolution: "vp-runtime-helper@npm:1.0.10"
-  dependencies:
-    "@types/fs-extra": "npm:^11.0.4"
-    base-log-factory: "npm:^2.1.4"
-    blf-debug-appender: "npm:^1.0.2"
-    figlet: "npm:^1.8.0"
-    fs-extra: "npm:^11.3.0"
-    picocolors: "npm:^1.0.0"
-  checksum: 10/b5c3f792485f60bd2f0625ead11bac790dc879ff335fd763ca2482e48d03666e0214463321d18d6bd859551a6b1ced0975059b2cb13764899b759dd50777be6a
   languageName: node
   linkType: hard
 
