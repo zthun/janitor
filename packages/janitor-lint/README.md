@@ -149,9 +149,11 @@ module.exports = {
 
 In your package json, add the following
 
-```sh
-"scripts": {
+```json
+{
+  "scripts": {
     "lint": "janitor-lint"
+  }
 }
 ```
 
