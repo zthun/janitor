@@ -1,8 +1,8 @@
 import chalk from "chalk";
 import { GlobOptionsWithFileTypesFalse, sync } from "glob";
 import { some, values } from "lodash-es";
-import markdownlint, { Options } from "markdownlint";
-import { promisify } from "util";
+import { Options } from "markdownlint";
+import { lint } from "markdownlint/promise";
 import { IZConfigReader } from "../config/config-reader.mjs";
 import { IZLinter } from "./linter.mjs";
 
@@ -59,8 +59,7 @@ export class ZLinterMarkdown implements IZLinter {
     );
 
     const options: Options = { files, config };
-    const markdownLintAsync = promisify(markdownlint);
-    const result = await markdownLintAsync(options);
+    const result = await lint(options);
     this._logger.log(`${result.toString().trim()}`);
     return !some(values(result), (val) => val.length > 0);
   }

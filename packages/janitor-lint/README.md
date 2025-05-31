@@ -236,15 +236,7 @@ has a very large eco system with support for shared configurations and plugins.
 It supports both TypeScript and JavaScript so it covers the entire feature
 spectrum. The configuration file for ESLint uses something similar to a
 [cosmiconfig](https://www.npmjs.com/package/cosmiconfig) standard but it's more
-restrictive. Instead, it looks for the following files in the current working
-directory.
-
-1. .eslintrc.js
-1. .eslintrc.cjs
-1. .eslintrc.yaml
-1. .eslintrc.yml
-1. .eslintrc.json
-1. package.json
+restrictive.
 
 There is also a
 [VisualStudio Code plugin](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
@@ -274,18 +266,10 @@ CSSLint and SassLint are no longer actively maintained. Thus, for linting style
 based files, Janitor Lint uses StyleLint under the hood.
 
 StyleLint is similar to [ESLint](https://eslint.org/). It too, has a nice
-ecosystem of plugins and it supports shared configurations. Stylelint, unlike
-ESLint, does support the
-[cosmiconfig](https://www.npmjs.com/package/cosmiconfig) standard, but it is
-recommended to use .stylelintrc.json convention. The main reason is that the
-actual
-[VisualStudio Code plugin](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
-specifically looks for this file so you can get lint errors directly in your
-IDE.
+ecosystem of plugins and it supports shared configurations.
 
-You can find the configuration schema
-[here](https://stylelint.io/user-guide/configure) and you can use the extends
-key in the configuration to load a shared configuration.
+You can find the configuration schema [in the user guid for stylelint](https://stylelint.io/user-guide/configure)
+and you can use the extends key in the configuration to load a shared configuration.
 
 ```jsonc
 // .stylelintrc.json
@@ -294,15 +278,9 @@ key in the configuration to load a shared configuration.
 }
 ```
 
-As usual, the list of html rules are
-[here](https://htmlhint.com/docs/user-guide/list-rules).
-
 ### HTML
 
-There is not a lot of support for HTML linters. There is only really one that is
-used and it is somewhat old and doesn't have a lot of support. A promise of a
-1.0.0 release has been made, but we will have to wait and see what happens. That
-application is [HTMLHint](https://github.com/htmlhint/HTMLHint).
+There is not a lot of support for HTML linters, so we are using HTMLHint.
 
 HTMLHint does NOT support shared configurations at all. To do that,
 [this issue](https://github.com/htmlhint/HTMLHint/issues/621) would need to be
@@ -330,42 +308,8 @@ Good old markdown has a couple of linters available, but considering that
 [VisualStudio Code plugin](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint),
 that's the one that Janitor Lint uses.
 
-MarkdownLint searches for the following configuration files at the root of your
-repository.
-
-1. .markdownlint.json
-1. .markdownlint.yaml or .markdownlint.yml
-1. .markdownlintrc
-
-Strangely enough, if you are using the vscode plugin, then it is recommended to
-just use the .markdownlint.json name because that seems to be the only one that
-the plugin will respect. There's not a lot of rules to markdown. You can find
-the list of rules [here](https://github.com/DavidAnson/markdownlint). While it's
-not documented, MarkdownLint does have support for shared configurations, but
-there is a gotcha with it. The actual shared configuration MUST be in a json
-format. If you are creating a shared configuration for markdown, you will want
-to export a module of it and also have an actual json formatted file that comes
-along with it.
-
-```json
-{
-  "extends": "@zthun/janitor-markdownlint-config/as-json"
-}
-
-// node_modules/@zthun/janitor-markdownlint-config/as-json.json
-{
-  "line-length": false,
-  "no-inline-html": false,
-  "no-duplicate-heading": false
-}
-```
-
-You can still export a node module that has your shared configuration.
-
-```js
-// index.js
-module.exports = require("./as-json.json");
-```
+There's not a lot of rules to markdown. You can find
+the list of rules [at the markdown lint github](https://github.com/DavidAnson/markdownlint).
 
 ### Spelling
 
@@ -420,9 +364,9 @@ It's file lookup is similar to that of ESLint, but we recommended using
 module.exports = require("@zthun/janitor-prettier-config");
 ```
 
-Options are [here](https://prettier.io/docs/en/options.html), and there's not a
-lot of them. See [why](https://prettier.io/docs/en/option-philosophy.html), as
-there's a good reason for this.
+Options are [located at the prettier documentation](https://prettier.io/docs/en/options.html),
+and there's not a lot of them. See [why](https://prettier.io/docs/en/option-philosophy.html),
+as there's a good reason for this.
 
 When doing formatting linting, only the formatting is checked and you are
 notified if the files are formatted or unformatted. The best way to prevent

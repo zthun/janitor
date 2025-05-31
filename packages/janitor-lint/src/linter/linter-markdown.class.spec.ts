@@ -1,11 +1,12 @@
 import { sync } from "glob";
-import markdownlint, { LintError } from "markdownlint";
+import { LintError } from "markdownlint";
+import { lint } from "markdownlint/promise";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { IZConfigReader } from "../config/config-reader.mjs";
 import { ZLinterMarkdown } from "./linter-markdown.mjs";
 
-vi.mock("markdownlint", () => ({
-  default: vi.fn(),
+vi.mock("markdownlint/promise", () => ({
+  lint: vi.fn(),
 }));
 
 vi.mock("glob", () => ({
@@ -43,7 +44,7 @@ describe("ZLinterMarkdown", () => {
     reader.read = vi.fn(() => Promise.resolve({}));
 
     vi.mocked(sync).mockReturnValue([changelog, readme]);
-    vi.mocked(markdownlint).mockImplementation((i, cb) => cb(null, results));
+    vi.mocked(lint).mockResolvedValue(results);
   });
 
   describe("Success", () => {
