@@ -8,9 +8,9 @@ janitor-lint indirectly adds support for it.
 
 ```sh
 # NPM
-npm install @zthun/htmlhint-config --save-dev
+npm install @zthun/janitor-htmlhint-config --save-dev
 # Yarn
-yarn add @zthun/htmlhint-config --dev
+yarn add @zthun/janitor-htmlhint-config --dev
 ```
 
 ## Usage
@@ -19,7 +19,7 @@ In the htmlhint config file, add the following
 
 ```json
 {
-  "extends": ["@zthun/htmlhint-config"]
+  "extends": ["@zthun/janitor-htmlhint-config"]
 }
 ```
 

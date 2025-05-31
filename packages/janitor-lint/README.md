@@ -318,7 +318,7 @@ htmlhint.config.js file at the root of your repository.
 
 ```js
 //htmlhint.config.js
-module.exports = require("@zthun/htmlhint-config");
+module.exports = require("@zthun/janitor-htmlhint-config");
 ```
 
 ### Markdown

@@ -1,5 +1,5 @@
 {
-  "name": "@zthun/htmlhint-config",
+  "name": "@zthun/janitor-htmlhint-config",
   "version": "18.1.0",
   "description": "A shared configuration for htmlhint for @zthun scoped projects.",
   "keywords": [
@@ -22,7 +22,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/zthun/janitor",
-    "directory": "packages/htmlhint-config"
+    "directory": "packages/janitor-htmlhint-config"
   },
   "files": [
     "dist"

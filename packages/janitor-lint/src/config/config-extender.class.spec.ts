@@ -16,7 +16,7 @@ describe("ZConfigExtender", () => {
 
   beforeEach(() => {
     htmlhint = {
-      extends: ["@zthun/htmlhint-config"],
+      extends: ["@zthun/janitor-htmlhint-config"],
     };
   });
 
@@ -62,7 +62,7 @@ describe("ZConfigExtender", () => {
   it("should throw an error if any of the extension modules are not strings.", async () => {
     // Arrange
     const target = createTestTarget();
-    htmlhint.extends = ["@zthun/htmlhint-config", 4];
+    htmlhint.extends = ["@zthun/janitor-htmlhint-config", 4];
     // Act
     // Assert
     await expect(target.extend(htmlhint)).rejects.toBeTruthy();

@@ -14,7 +14,7 @@ describe("ZConfigCosmicReader", () => {
     extender = {} as any;
     extender.extend = vi.fn((cfg) => Promise.resolve(cfg));
 
-    config = "@zthun/htmlhint-config";
+    config = "@zthun/janitor-htmlhint-config";
   });
 
   it("reads the config file.", async () => {
@@ -50,7 +50,7 @@ describe("ZConfigCosmicReader", () => {
   it("throws an exception if the actual module cannot be resolved.", async () => {
     // Arrange
     const target = createTestTarget();
-    config = "@zthun/htmlhint-config-does-not-exist";
+    config = "@zthun/janitor-htmlhint-config-does-not-exist";
     // Act
     // Assert
     await expect(target.read(config)).rejects.toBeDefined();

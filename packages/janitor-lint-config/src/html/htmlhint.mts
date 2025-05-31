@@ -1,2 +1,2 @@
-import config from "@zthun/htmlhint-config";
+import config from "@zthun/janitor-htmlhint-config";
 export default config;

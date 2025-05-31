@@ -2995,17 +2995,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zthun/htmlhint-config@npm:^18.1.0, @zthun/htmlhint-config@workspace:packages/htmlhint-config":
-  version: 0.0.0-use.local
-  resolution: "@zthun/htmlhint-config@workspace:packages/htmlhint-config"
-  dependencies:
-    htmlhint: "npm:^1.3.0"
-    vite: "npm:^6.3.5"
-  peerDependencies:
-    htmlhint: ^1.0.0
-  languageName: unknown
-  linkType: soft
-
 "@zthun/janitor-eslint-config@npm:^18.1.0, @zthun/janitor-eslint-config@workspace:packages/janitor-eslint-config":
   version: 0.0.0-use.local
   resolution: "@zthun/janitor-eslint-config@workspace:packages/janitor-eslint-config"
@@ -3032,12 +3021,23 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@zthun/janitor-htmlhint-config@npm:^18.1.0, @zthun/janitor-htmlhint-config@workspace:packages/janitor-htmlhint-config":
+  version: 0.0.0-use.local
+  resolution: "@zthun/janitor-htmlhint-config@workspace:packages/janitor-htmlhint-config"
+  dependencies:
+    htmlhint: "npm:^1.3.0"
+    vite: "npm:^6.3.5"
+  peerDependencies:
+    htmlhint: ^1.0.0
+  languageName: unknown
+  linkType: soft
+
 "@zthun/janitor-lint-config@npm:*, @zthun/janitor-lint-config@npm:^18.1.0, @zthun/janitor-lint-config@workspace:packages/janitor-lint-config":
   version: 0.0.0-use.local
   resolution: "@zthun/janitor-lint-config@workspace:packages/janitor-lint-config"
   dependencies:
-    "@zthun/htmlhint-config": "npm:^18.1.0"
     "@zthun/janitor-eslint-config": "npm:^18.1.0"
+    "@zthun/janitor-htmlhint-config": "npm:^18.1.0"
     "@zthun/janitor-lint": "npm:^18.1.0"
     "@zthun/markdownlint-config": "npm:^18.1.0"
     "@zthun/prettier-config": "npm:^18.1.0"
