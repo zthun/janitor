@@ -4,7 +4,7 @@ import { ZConfigExtender } from "./config-extender.mjs";
 /*
  * A note on these.  These are more integration tests since we are going to be importing real data.
  * The reason for the extender is mostly geared towards HTMLHint.  HTMLHint has no support for extendable
- * configs, so we want to add that in for lint-janitor support.  Once HTMLHint adds some kind of support
+ * configs, so we want to add that in for janitor-lint support.  Once HTMLHint adds some kind of support
  * for this (later), then we can actually get rid of most of this.
  */
 describe("ZConfigExtender", () => {

@@ -1,1 +1,1 @@
-export * from "@zthun/lint-janitor-config/prettier";
+export * from "@zthun/janitor-lint-config/prettier";

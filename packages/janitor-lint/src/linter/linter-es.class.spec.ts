@@ -22,7 +22,7 @@ describe("ZLinterEs", () => {
   }
 
   beforeEach(async () => {
-    config = "@zthun/lint-janitor-config/eslint";
+    config = "@zthun/janitor-lint-config/eslint";
     files = ["src/**/*.js"];
     successA = {
       filePath: "src/index.js",

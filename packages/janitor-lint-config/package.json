@@ -1,5 +1,5 @@
 {
-  "name": "@zthun/lint-janitor-config",
+  "name": "@zthun/janitor-lint-config",
   "version": "18.1.0",
   "description": "A shared configuration for lint janitor for @zthun scoped projects.",
   "keywords": [
@@ -65,7 +65,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/zthun/janitor",
-    "directory": "packages/lint-janitor-config"
+    "directory": "packages/janitor-lint-config"
   },
   "files": [
     "dist"
@@ -86,7 +86,7 @@
     "stylelint": "^16.20.0"
   },
   "devDependencies": {
-    "@zthun/lint-janitor": "^18.1.0",
+    "@zthun/janitor-lint": "^18.1.0",
     "typescript": "~5.8.3",
     "vite": "^6.3.5",
     "vite-plugin-dts": "^4.5.4",
@@ -94,7 +94,7 @@
     "vite-tsconfig-paths": "^5.1.4"
   },
   "peerDependencies": {
-    "@zthun/lint-janitor": ">=16.0.0",
+    "@zthun/janitor-lint": ">=19.0.0",
     "typescript": "^5.0.0"
   },
   "peerDependenciesMeta": {

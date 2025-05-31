@@ -1,2 +1,2 @@
 import { defineTest } from "../../.config/vitest-project";
-export default defineTest("lint-janitor");
+export default defineTest("janitor-lint");

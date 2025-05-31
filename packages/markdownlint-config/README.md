@@ -22,7 +22,7 @@ In the markdownlint config file, add the following
 ```
 
 That's it. You now have the recommended rules for zthun scoped projects when
-using lint-janitor.
+using janitor-lint.
 
 If you are using the Atom or VSCode plugin, it may not recognize the imported js
 configuration style. Instead, you can use the provided as-json.json file.

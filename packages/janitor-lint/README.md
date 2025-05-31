@@ -1,4 +1,4 @@
-# Lint Janitor
+# Janitor Lint
 
 Code gets messy. You will find that most places you work at will always have a
 big long list of tech debt tasks that need to be taken care of and this becomes
@@ -33,9 +33,9 @@ for you.
 
 ```sh
 # NPM
-npm install @zthun/lint-janitor --save-dev
+npm install @zthun/janitor-lint --save-dev
 # Yarn
-yarn add @zthun/lint-janitor --dev
+yarn add @zthun/janitor-lint --dev
 ```
 
 ## Configuration
@@ -51,11 +51,11 @@ Lint Janitor uses the [cosmiconfig](https://www.npmjs.com/package/cosmiconfig)
 standard for loading its configuration. In short, it will search the current
 working directory for the following files:
 
-1. A property in your package.json named **lint-janitor**.
-1. A json file or yaml file named **lint-janitorrc**.
-1. A json file named **lint-janitorrc.json**.
-1. A yaml file named **lint-janitorrc.yaml** or **lint-janitorrc.yml**.
-1. A javascript file named **lint-janitorrc.js**, **lint-janitor.config.js**.
+1. A property in your package.json named **janitor-lint**.
+1. A json file or yaml file named **janitor-lintrc**.
+1. A json file named **janitor-lintrc.json**.
+1. A yaml file named **janitor-lintrc.yaml** or **janitor-lintrc.yml**.
+1. A javascript file named **janitor-lintrc.js**, **janitor-lint.config.js**.
 
 > It is highly recommended to use a config.js convention for these types of
 > configurations. The main reason is that config.js offers the most flexible way
@@ -115,10 +115,10 @@ The configuration file uses the following schema.
 }
 ```
 
-The following is an example configuration that lint-janitor will read.
+The following is an example configuration that janitor-lint will read.
 
 ```js
-// lint-janitor.config.js
+// janitor-lint.config.js
 
 module.exports = {
   // Configurations are generally optional and will load using the
@@ -151,7 +151,7 @@ In your package json, add the following
 
 ```sh
 "scripts": {
-    "lint": "lint-janitor"
+    "lint": "janitor-lint"
 }
 ```
 
@@ -163,16 +163,16 @@ npm run lint
 # Yarn
 yarn lint
 # NPX
-npx lint-janitor
+npx janitor-lint
 ```
 
 ## Command Line
 
-You can always run lint-janitor on the command line using npx or if it is
+You can always run janitor-lint on the command line using npx or if it is
 installed globally, which is not recommended. There are very few command line
-options, as lint-janitor intends to be fully driven by the config file.
+options, as janitor-lint intends to be fully driven by the config file.
 
-**lint-janitor** [options]
+**janitor-lint** [options]
 
 ```json
 [
@@ -208,7 +208,7 @@ bridge this gap but it will not add support for IDE based tooling and
 extensions. You'll have to decide what's best for your project and your
 organization.
 
-One note is that the housing repository for lint-janitor contains multiple
+One note is that the housing repository for janitor-lint contains multiple
 shared configurations used by zthun scoped projects. You can use them, but it is
 recommended for your organization to create it's own set of configurations that
 meets its needs.
@@ -459,6 +459,6 @@ Q. Is there an IDE plugin for Lint Janitor?
 
 A. Not yet. That would solve the issue of wanting an IDE plugin for each
 individual linter and would allow you to just have a single
-lint-janitor.config.js file at the root of your repository that would handle all
+janitor-lint.config.js file at the root of your repository that would handle all
 linting needs. There is one planned, but it still need to be researched and
 scoped out.
