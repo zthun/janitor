@@ -21,7 +21,7 @@ import { IZJanitorLintOptions } from "./janitor-lint-options.mjs";
 /**
  * Represents the main entry point object for the application.
  */
-export class ZLintJanitor {
+export class ZJanitorLint {
   /**
    * The linter for js files.
    */

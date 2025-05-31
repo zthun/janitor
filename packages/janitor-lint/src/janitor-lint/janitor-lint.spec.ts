@@ -4,16 +4,16 @@ import { ZLinterSilent } from "../linter/linter-silent.mjs";
 import { IZLinter } from "../linter/linter.mjs";
 import { IZJanitorLintArgs } from "./janitor-lint-args.mjs";
 import { IZJanitorLintOptions } from "./janitor-lint-options.mjs";
-import { ZLintJanitor } from "./janitor-lint.mjs";
+import { ZJanitorLint } from "./janitor-lint.mjs";
 
-describe("ZLintJanitor", () => {
+describe("ZJanitorLint", () => {
   let args: IZJanitorLintArgs;
   let options: IZJanitorLintOptions;
   let config: Mocked<IZConfigReader>;
   let logger: Console;
 
   function createTestTarget() {
-    const target = new ZLintJanitor(logger);
+    const target = new ZJanitorLint(logger);
     target.esLint = new ZLinterSilent();
     target.htmlHint = new ZLinterSilent();
     target.jsonLint = new ZLinterSilent();
@@ -65,7 +65,7 @@ describe("ZLintJanitor", () => {
 
   describe("Linting", () => {
     async function assertLinterInvoked(
-      linter: (t: ZLintJanitor) => IZLinter,
+      linter: (t: ZJanitorLint) => IZLinter,
       files: string[],
       config?: string,
       exclude?: string[],
@@ -81,7 +81,7 @@ describe("ZLintJanitor", () => {
     }
 
     async function assertLinterNotInvoked(
-      linter: (t: ZLintJanitor) => IZLinter,
+      linter: (t: ZJanitorLint) => IZLinter,
     ) {
       // Arrange
       const target = createTestTarget();

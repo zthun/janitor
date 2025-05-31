@@ -2,7 +2,7 @@
 
 import usage from "yargs";
 import { IZJanitorLintArgs } from "./janitor-lint/janitor-lint-args.mjs";
-import { ZLintJanitor } from "./janitor-lint/janitor-lint.mjs";
+import { ZJanitorLint } from "./janitor-lint/janitor-lint.mjs";
 
 const args: IZJanitorLintArgs = usage("$0 [options]")
   .alias("c", "config")
@@ -10,5 +10,5 @@ const args: IZJanitorLintArgs = usage("$0 [options]")
   .string("c")
   .help()
   .parse() as any;
-const janitor = new ZLintJanitor(console);
+const janitor = new ZJanitorLint(console);
 janitor.run(args).then((result) => (process.exitCode = result));
