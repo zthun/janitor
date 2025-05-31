@@ -417,7 +417,7 @@ It's file lookup is similar to that of ESLint, but we recommended using
 
 ```js
 //.prettierrc.js
-module.exports = require("@zthun/prettier-config");
+module.exports = require("@zthun/janitor-prettier-config");
 ```
 
 Options are [here](https://prettier.io/docs/en/options.html), and there's not a

@@ -6,9 +6,9 @@ This is the shared prettier configuration for zthun scoped projects.
 
 ```sh
 # NPM
-npm install @zthun/prettier-config --save-dev
+npm install @zthun/janitor-prettier-config --save-dev
 # Yarn
-yarn add @zthun/prettier-config --dev
+yarn add @zthun/janitor-prettier-config --dev
 ```
 
 ## Usage
@@ -16,7 +16,7 @@ yarn add @zthun/prettier-config --dev
 Use the prettier shared config convention.
 
 ```js
-module.exports = require("@zthun/prettier-config");
+module.exports = require("@zthun/janitor-prettier-config");
 ```
 
 That's it.

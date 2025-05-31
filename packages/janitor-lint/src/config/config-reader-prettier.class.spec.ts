@@ -25,7 +25,7 @@ describe("ZConfigReaderPrettier", () => {
 
   it("reads the supplied config file if passed.", async () => {
     // Arrange
-    const config = "@zthun/prettier-config";
+    const config = "@zthun/janitor-prettier-config";
     const target = createTestTarget();
     const expected = $resolve(config);
     // Act

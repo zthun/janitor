@@ -1,2 +1,2 @@
-import config from "@zthun/prettier-config";
+import config from "@zthun/janitor-prettier-config";
 export default config;

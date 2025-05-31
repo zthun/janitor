@@ -1,11 +1,7 @@
 {
   "extends": "./.config/.tsconfig.json",
   "compilerOptions": {
-    "baseUrl": "packages",
-    "paths": {
-      "@zthun/janitor-lint": ["janitor-lint/src/index.mts"],
-      "@zthun/prettier-config": ["prettier-config/src/index.mts"]
-    }
+    "baseUrl": "packages"
   },
   "include": ["packages/**/*.ts", "packages/**/*.mts"]
 }

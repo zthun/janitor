@@ -3040,7 +3040,7 @@ __metadata:
     "@zthun/janitor-htmlhint-config": "npm:^18.1.0"
     "@zthun/janitor-lint": "npm:^18.1.0"
     "@zthun/janitor-markdownlint-config": "npm:^18.1.0"
-    "@zthun/prettier-config": "npm:^18.1.0"
+    "@zthun/janitor-prettier-config": "npm:^18.1.0"
     "@zthun/stylelint-config": "npm:^18.1.0"
     "@zthun/stylelint-config-less": "npm:^18.1.0"
     "@zthun/stylelint-config-sass": "npm:^18.1.0"
@@ -3098,6 +3098,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@zthun/janitor-prettier-config@npm:^18.1.0, @zthun/janitor-prettier-config@workspace:packages/janitor-prettier-config":
+  version: 0.0.0-use.local
+  resolution: "@zthun/janitor-prettier-config@workspace:packages/janitor-prettier-config"
+  dependencies:
+    prettier: "npm:^3.5.3"
+    vite: "npm:^6.3.5"
+  peerDependencies:
+    prettier: ^3.0.0
+  languageName: unknown
+  linkType: soft
+
 "@zthun/janitor-web@workspace:packages/janitor-web":
   version: 0.0.0-use.local
   resolution: "@zthun/janitor-web@workspace:packages/janitor-web"
@@ -3138,17 +3149,6 @@ __metadata:
     vite-plugin-external: "npm:^6.2.2"
     vite-tsconfig-paths: "npm:^5.1.4"
     vitest: "npm:^3.1.4"
-  languageName: unknown
-  linkType: soft
-
-"@zthun/prettier-config@npm:^18.1.0, @zthun/prettier-config@workspace:packages/prettier-config":
-  version: 0.0.0-use.local
-  resolution: "@zthun/prettier-config@workspace:packages/prettier-config"
-  dependencies:
-    prettier: "npm:^3.5.3"
-    vite: "npm:^6.3.5"
-  peerDependencies:
-    prettier: ^3.0.0
   languageName: unknown
   linkType: soft
 

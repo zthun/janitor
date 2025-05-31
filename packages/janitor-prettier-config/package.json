@@ -1,5 +1,5 @@
 {
-  "name": "@zthun/prettier-config",
+  "name": "@zthun/janitor-prettier-config",
   "version": "18.1.0",
   "description": "A shared configuration for prettier for @zthun scoped projects.",
   "keywords": [
@@ -19,7 +19,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/zthun/janitor",
-    "directory": "packages/prettier-config"
+    "directory": "packages/janitor-prettier-config"
   },
   "files": [
     "dist"
