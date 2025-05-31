@@ -7,9 +7,9 @@ instead of raw css.
 
 ```sh
 # NPM
-npm install @zthun/stylelint-config-sass --save-dev
+npm install @zthun/janitor-stylelint-config-sass --save-dev
 # Yarn
-yarn add @zthun/stylelint-config-sass --dev
+yarn add @zthun/janitor-stylelint-config-sass --dev
 ```
 
 ## Usage
@@ -18,7 +18,7 @@ In the stylelint config file, add the following
 
 ```json
 {
-  "extends": ["@zthun/stylelint-config-sass"]
+  "extends": ["@zthun/janitor-stylelint-config-sass"]
 }
 ```
 

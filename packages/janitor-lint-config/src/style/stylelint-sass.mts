@@ -1,2 +1,2 @@
-import config from "@zthun/stylelint-config-sass";
+import config from "@zthun/janitor-stylelint-config-sass";
 export default config;

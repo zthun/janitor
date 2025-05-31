@@ -129,7 +129,7 @@ module.exports = {
   esFiles: ['packages/**/src/**/*.ts'],
   // The configurations can also be shared configuration modules
   // found in node_modules if you're not using IDE extensions.
-  styleConfig: '@zthun/stylelint-config';
+  styleConfig: '@zthun/janitor-stylelint-config';
   // Globs are relative to the current working directory.
   styleFiles: ['packages/**/src/**/*.less'],
   // See notes on html below
@@ -290,7 +290,7 @@ key in the configuration to load a shared configuration.
 ```jsonc
 // .stylelintrc.json
 {
-  "extends": ["@zthun/stylelint-config"],
+  "extends": ["@zthun/janitor-stylelint-config"],
 }
 ```
 

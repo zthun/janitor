@@ -6,9 +6,9 @@ This is the shared stylelint configuration for zthun scoped projects.
 
 ```sh
 # NPM
-npm install @zthun/stylelint-config --save-dev
+npm install @zthun/janitor-stylelint-config --save-dev
 # Yarn
-yarn add @zthun/stylelint-config --dev
+yarn add @zthun/janitor-stylelint-config --dev
 ```
 
 ## Usage
@@ -17,7 +17,7 @@ In the stylelint config file, add the following
 
 ```json
 {
-  "extends": ["@zthun/stylelint-config"]
+  "extends": ["@zthun/janitor-stylelint-config"]
 }
 ```
 

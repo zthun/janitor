@@ -1,2 +1,2 @@
-import config from "@zthun/stylelint-config-less";
+import config from "@zthun/janitor-stylelint-config-less";
 export default config;

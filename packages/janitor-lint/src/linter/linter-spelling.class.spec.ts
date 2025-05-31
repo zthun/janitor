@@ -1,7 +1,7 @@
 import { CSpellReporter, Issue, lint, RunResult } from "cspell";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { ZLinterSpelling } from "./linter-spelling.mjs";
 import { $resolve } from "../config/config-resolve.mjs";
+import { ZLinterSpelling } from "./linter-spelling.mjs";
 
 vi.mock("cspell", () => ({
   lint: vi.fn(),
@@ -29,7 +29,7 @@ describe("ZLinterSpelling", () => {
     };
 
     content = ["fileA.less", "fileB.css"];
-    config = "@zthun/stylelint-config";
+    config = "@zthun/janitor-stylelint-config";
 
     vi.mocked(lint).mockClear();
     vi.mocked(lint).mockResolvedValue(lintResult);

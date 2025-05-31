@@ -1,11 +1,10 @@
 {
-  "name": "@zthun/stylelint-config-less",
+  "name": "@zthun/janitor-stylelint-config",
   "version": "18.1.0",
   "description": "A shared configuration for stylelint for @zthun scoped projects.",
   "keywords": [
     "stylelint",
-    "stylelint-config",
-    "stylelint-config-less"
+    "stylelint-config"
   ],
   "type": "module",
   "types": "./dist/index.d.ts",
@@ -20,7 +19,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/zthun/janitor",
-    "directory": "packages/stylelint-config-less"
+    "directory": "packages/janitor-stylelint-config"
   },
   "files": [
     "dist"
@@ -29,8 +28,7 @@
     "build": "vite build"
   },
   "dependencies": {
-    "@zthun/stylelint-config": "^18.1.0",
-    "stylelint-config-standard-less": "^3.0.1"
+    "stylelint-config-standard": "^38.0.0"
   },
   "devDependencies": {
     "postcss": "^8.5.4",

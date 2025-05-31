@@ -1,7 +1,7 @@
 import stylelint from "stylelint";
-import { ZLinterStyle } from "./linter-style.mjs";
-import { describe, beforeEach, it, expect, vi } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 import { $resolve } from "../config/config-resolve.mjs";
+import { ZLinterStyle } from "./linter-style.mjs";
 
 vi.mock("stylelint", () => ({
   default: {
@@ -37,7 +37,7 @@ describe("ZLinterStyle", () => {
     };
 
     content = ["fileA.less", "fileB.css"];
-    config = "@zthun/stylelint-config";
+    config = "@zthun/janitor-stylelint-config";
 
     vi.mocked(stylelint.lint).mockClear();
     vi.mocked(stylelint.lint).mockResolvedValue(lintResult);
