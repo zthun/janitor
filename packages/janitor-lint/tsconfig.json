@@ -6,6 +6,9 @@
     "paths": {
       "@zthun/janitor-build-config/vite": [
         "../janitor-build-config/src/vite/index"
+      ],
+      "@zthun/janitor-build-config/vitest": [
+        "../janitor-build-config/src/vitest/index"
       ]
     }
   },
