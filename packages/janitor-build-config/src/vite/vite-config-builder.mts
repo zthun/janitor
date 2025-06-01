@@ -1,5 +1,4 @@
 import { cloneDeep } from "lodash-es";
-import { resolve } from "node:path";
 import swc from "unplugin-swc";
 import { LibraryOptions, UserConfig } from "vite";
 import dtsPlugin from "vite-plugin-dts";
@@ -75,8 +74,6 @@ export class ZViteConfigBuilder {
           // sure that your build is building in the correct order and that your
           // actual paths are correct.
           paths: {},
-          // We don't want to include unit test files either.
-          exclude: [resolve(this._dirname, "src/**/*.{spec,test}.{mts,ts}")],
         },
       }),
     ];
@@ -86,23 +83,25 @@ export class ZViteConfigBuilder {
 
   /**
    * Constructs the config to act as if it's compiling a node application.
+   *
+   * This is just an alias to {@link ZViteConfigBuilder.library} with two
+   * entry points.
+   *
+   * 1. The file src/cli.ts is the main entry point of the application.
+   * 1. The file, src/index.ts, is the api for importing
+   *
+   * @returns
+   *        This object.
    */
   public cli() {
     // A cli works similar to a library.  Vite isn't the best when it comes
     // to building complex node apps, but for simple cli tools and non
     // framework based servers, you can do it.
-    this.config.build.target = "NodeNext";
-    this.config.build.outDir = "dist";
-    this.config.build.minify = false;
-    this.config.build.lib = {
-      entry: "src/main.ts",
-      formats: ["es"],
-      fileName: "main",
-    };
-
-    this.config.plugins = [...this.config.plugins, externalizeDeps({})];
-
-    return this;
+    const library = new ZViteLibraryBuilder()
+      .entry("index", "src/index.ts")
+      .entry("cli", "src/cli.ts")
+      .build();
+    return this.library(library);
   }
 
   /**

@@ -4,7 +4,6 @@ import { ZViteLibraryBuilder } from "./src/vite/vite-library-builder.mjs";
 
 const library = new ZViteLibraryBuilder()
   .entry("vite", "./src/vite/index.ts")
-  .entry("vitest", "./src/vitest/index.ts")
   .build();
 
 const config = new ZViteConfigBuilder(__dirname).library(library).build();
