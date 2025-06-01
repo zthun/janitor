@@ -28,6 +28,7 @@
     "dist"
   ],
   "devDependencies": {
+    "@zthun/janitor-build-config": "^18.1.0",
     "htmlhint": "^1.3.0",
     "vite": "^6.3.5"
   },
