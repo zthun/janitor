@@ -1,6 +1,5 @@
 {
   "$schema": "https://typedoc.org/schema.json",
   "extends": ["../../.config/typedoc.json"],
-  "entryPoints": ["./src/index.mts"],
-  "tsconfig": "tsconfig.bin.json"
+  "entryPoints": ["./src/index.ts"]
 }
