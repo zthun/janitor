@@ -1,2 +1,5 @@
-import { defineTest } from "../../.config/vitest-project.mjs";
-export default defineTest("janitor-lint");
+import { ZVitestConfigBuilder } from "@zthun/janitor-build-config/vitest";
+import { defineConfig } from "vitest/config";
+
+const config = new ZVitestConfigBuilder(__dirname).typescript().node().build();
+export default defineConfig(config);
