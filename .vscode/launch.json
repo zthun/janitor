@@ -2,12 +2,13 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Launch Janitor Lint",
-      "program": "${workspaceFolder}/packages/janitor-lint/src/cli.ts",
-      "preLaunchTask": "tsc: build - packages/janitor-lint/tsconfig.bin.json",
+      "name": "Run Janitor Lint",
+      "type": "node",
       "request": "launch",
-      "skipFiles": ["<node_internals>/**"],
-      "type": "node"
+      "program": "${workspaceFolder}/packages/janitor-lint/src/cli.ts",
+      "runtimeExecutable": "tsx",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
     }
   ]
 }
