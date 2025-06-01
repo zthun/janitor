@@ -1,4 +1,4 @@
-import { Plugin } from "vite";
+import { LibraryOptions, Plugin } from "vite";
 import { describe, expect, it } from "vitest";
 import { ZViteConfigBuilder } from "./vite-config-builder.mjs";
 import { ZViteLibraryBuilder } from "./vite-library-builder.mjs";
@@ -22,6 +22,23 @@ describe("Vite Config Builder", () => {
 
     // Assert.
     expect(actual).toBeGreaterThanOrEqual(0);
+  };
+
+  const shouldAddEntryPoint = (
+    expected: string,
+    buildFn: (t: ZViteConfigBuilder) => ZViteConfigBuilder,
+  ) => {
+    // Arrange.
+    const target = createTestTarget();
+
+    // Act.
+    const config = buildFn(target).build();
+    const { lib } = config.build;
+    const { entry } = lib as LibraryOptions;
+    const actual = Object.prototype.hasOwnProperty.call(entry, expected);
+
+    // Assert.
+    expect(actual).toBeTruthy();
   };
 
   describe("Library", () => {
@@ -53,6 +70,20 @@ describe("Vite Config Builder", () => {
 
     it("should add the dts plugin", () => {
       shouldAddPlugin("vite:dts", (t) => t.library());
+    });
+  });
+
+  describe("CLI", () => {
+    it("should construct a library", () => {
+      expect(createTestTarget().cli().build().build.lib).toBeTruthy();
+    });
+
+    it("should add an entry point for index", () => {
+      shouldAddEntryPoint("index", (t) => t.cli());
+    });
+
+    it("should add an entry point for cli", () => {
+      shouldAddEntryPoint("cli", (t) => t.cli());
     });
   });
 
