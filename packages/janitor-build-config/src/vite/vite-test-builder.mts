@@ -15,11 +15,6 @@ export class ZViteTestBuilder {
     };
   }
 
-  public name(name: string) {
-    this.test.name = name;
-    return this;
-  }
-
   public environment(environment: VitestEnvironment) {
     this.test.environment = environment;
     return this;
