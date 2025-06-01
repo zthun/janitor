@@ -13,6 +13,7 @@
     "esModuleInterop": true,
     "isolatedModules": true,
     "skipLibCheck": true,
+    "strictBindCallApply": true,
     "sourceMap": true
   }
 }
