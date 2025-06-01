@@ -3034,6 +3034,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zthun/janitor-htmlhint-config@workspace:packages/janitor-htmlhint-config"
   dependencies:
+    "@zthun/janitor-build-config": "npm:^18.1.0"
     htmlhint: "npm:^1.3.0"
     vite: "npm:^6.3.5"
   peerDependencies:
@@ -3045,6 +3046,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zthun/janitor-lint-config@workspace:packages/janitor-lint-config"
   dependencies:
+    "@zthun/janitor-build-config": "npm:^18.1.0"
     "@zthun/janitor-eslint-config": "npm:^18.1.0"
     "@zthun/janitor-htmlhint-config": "npm:^18.1.0"
     "@zthun/janitor-lint": "npm:^18.1.0"
@@ -3077,6 +3079,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zthun/janitor-lint@workspace:packages/janitor-lint"
   dependencies:
+    "@zthun/janitor-build-config": "npm:^18.1.0"
     chalk: "npm:^5.4.1"
     cosmiconfig: "npm:^9.0.0"
     cspell: "npm:^9.0.2"
@@ -3100,6 +3103,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zthun/janitor-markdownlint-config@workspace:packages/janitor-markdownlint-config"
   dependencies:
+    "@zthun/janitor-build-config": "npm:^18.1.0"
     markdownlint: "npm:~0.38.0"
     vite: "npm:^6.3.5"
   peerDependencies:
@@ -3111,6 +3115,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zthun/janitor-prettier-config@workspace:packages/janitor-prettier-config"
   dependencies:
+    "@zthun/janitor-build-config": "npm:^18.1.0"
     prettier: "npm:^3.5.3"
     vite: "npm:^6.3.5"
   peerDependencies:
@@ -3122,6 +3127,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zthun/janitor-stylelint-config-less@workspace:packages/janitor-stylelint-config-less"
   dependencies:
+    "@zthun/janitor-build-config": "npm:^18.1.0"
     "@zthun/janitor-stylelint-config": "npm:^18.1.0"
     postcss: "npm:^8.5.4"
     stylelint: "npm:^16.20.0"
@@ -3137,6 +3143,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zthun/janitor-stylelint-config-sass@workspace:packages/janitor-stylelint-config-sass"
   dependencies:
+    "@zthun/janitor-build-config": "npm:^18.1.0"
     "@zthun/janitor-stylelint-config": "npm:^18.1.0"
     postcss: "npm:^8.5.4"
     stylelint: "npm:^16.20.0"
@@ -3152,6 +3159,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zthun/janitor-stylelint-config@workspace:packages/janitor-stylelint-config"
   dependencies:
+    "@zthun/janitor-build-config": "npm:^18.1.0"
     postcss: "npm:^8.5.4"
     stylelint: "npm:^16.20.0"
     stylelint-config-standard: "npm:^38.0.0"
