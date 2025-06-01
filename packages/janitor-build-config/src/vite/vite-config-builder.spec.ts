@@ -2,6 +2,7 @@ import { Plugin } from "vite";
 import { describe, expect, it } from "vitest";
 import { ZViteConfigBuilder } from "./vite-config-builder.mjs";
 import { ZViteLibraryBuilder } from "./vite-library-builder.mjs";
+import { ZViteTestBuilder } from "./vite-test-builder.mjs";
 
 describe("Vite Config Builder", () => {
   const createTestTarget = () => new ZViteConfigBuilder(__dirname);
@@ -49,15 +50,20 @@ describe("Vite Config Builder", () => {
     it("should add the external dependencies plugin", () => {
       shouldAddPlugin("vite-plugin-externalize-deps", (t) => t.library());
     });
-  });
-
-  describe("TypeScript", () => {
-    it("should add the tsconfig paths plugin", () => {
-      shouldAddPlugin("vite-tsconfig-paths", (t) => t.typescript());
-    });
 
     it("should add the dts plugin", () => {
-      shouldAddPlugin("vite:dts", (t) => t.typescript());
+      shouldAddPlugin("vite:dts", (t) => t.library());
+    });
+  });
+
+  describe("Test", () => {
+    it("should add the test config", () => {
+      expect(createTestTarget().test().build().test).toBeTruthy();
+    });
+
+    it("should add a custom test config", () => {
+      const expected = new ZViteTestBuilder().browser().v8().build();
+      expect(createTestTarget().test(expected).build().test).toEqual(expected);
     });
   });
 });

@@ -1,10 +1,13 @@
 import { cloneDeep } from "lodash-es";
 import { resolve } from "node:path";
+import swc from "unplugin-swc";
 import { LibraryOptions, UserConfig } from "vite";
 import dtsPlugin from "vite-plugin-dts";
 import { externalizeDeps } from "vite-plugin-externalize-deps";
 import tsConfigPaths from "vite-tsconfig-paths";
+import { InlineConfig as TestConfig } from "vitest/node.js";
 import { ZViteLibraryBuilder } from "./vite-library-builder.mjs";
+import { ZViteTestBuilder } from "./vite-test-builder.mjs";
 
 /**
  * A config builder for the vite build system.
@@ -28,7 +31,7 @@ export class ZViteConfigBuilder {
         minify: true,
         sourcemap: false,
       },
-      plugins: [],
+      plugins: [swc.vite(), tsConfigPaths()],
     };
   }
 
@@ -63,20 +66,9 @@ export class ZViteConfigBuilder {
     // dependencies automatically -> it blows my mind why vite doesn't
     // do this out of the box.  I guess there's some reason or some
     // use case to bundle all the dependencies; I just don't see it.
-    this.config.plugins = [...this.config.plugins, externalizeDeps()];
-
-    return this;
-  }
-
-  /**
-   * Adds typescript support plugins.
-   *
-   * This basically adds vite-tsconfig-paths and vite-dts
-   */
-  public typescript() {
     this.config.plugins = [
       ...this.config.plugins,
-      tsConfigPaths(),
+      externalizeDeps(),
       dtsPlugin({
         compilerOptions: {
           // Always turn off paths when building for production.  You want to make
@@ -88,6 +80,38 @@ export class ZViteConfigBuilder {
         },
       }),
     ];
+
+    return this;
+  }
+
+  /**
+   * Constructs the config to act as if it's compiling a node application.
+   */
+  public cli() {
+    // A cli works similar to a library.  Vite isn't the best when it comes
+    // to building complex node apps, but for simple cli tools and non
+    // framework based servers, you can do it.
+    this.config.build.target = "NodeNext";
+    this.config.build.outDir = "dist";
+    this.config.build.minify = false;
+    this.config.build.lib = {
+      entry: "src/main.ts",
+      formats: ["es"],
+      fileName: "main",
+    };
+
+    this.config.plugins = [...this.config.plugins, externalizeDeps({})];
+
+    return this;
+  }
+
+  /**
+   * Constructs the config to be for testing.
+   */
+  public test(
+    options: TestConfig = new ZViteTestBuilder().node().istanbul().build(),
+  ) {
+    this.config.test = options;
     return this;
   }
 

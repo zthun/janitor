@@ -3,10 +3,9 @@
   "compilerOptions": {
     "baseUrl": "packages",
     "paths": {
-      "@zthun/janitor-build-config/vitest": [
-        "janitor-build-config/vitest/index.ts"
-      ],
-      "@zthun/janitor-build-config/vite": ["janitor-build-config/vite/index.ts"]
+      "@zthun/janitor-build-config/vite": [
+        "janitor-build-config/src/vite/index.ts"
+      ]
     }
   },
   "include": ["**/*.ts", "**/*.mts"]

@@ -15,9 +15,5 @@ const library = new ZViteLibraryBuilder()
   .entry("index", "./src/index.ts")
   .build();
 
-const config = new ZViteConfigBuilder(__dirname)
-  .typescript()
-  .library(library)
-  .build();
-
+const config = new ZViteConfigBuilder(__dirname).library(library).build();
 export default defineConfig(config);
