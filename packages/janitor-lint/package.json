@@ -44,6 +44,7 @@
     "dist"
   ],
   "devDependencies": {
+    "@zthun/janitor-build-config": "^18.1.0",
     "typescript": "~5.8.3",
     "vitest": "^3.1.4"
   }

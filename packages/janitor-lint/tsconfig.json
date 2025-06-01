@@ -2,7 +2,12 @@
   "extends": "../../.config/.tsconfig.json",
   "compilerOptions": {
     "baseUrl": ".",
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "paths": {
+      "@zthun/janitor-build-config/vite": [
+        "../janitor-build-config/src/vite/index"
+      ]
+    }
   },
   "include": ["src/**/*"]
 }

@@ -28,6 +28,7 @@
     "build": "vite build"
   },
   "devDependencies": {
+    "@zthun/janitor-build-config": "^18.1.0",
     "prettier": "^3.5.3",
     "vite": "^6.3.5"
   },

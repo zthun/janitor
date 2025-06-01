@@ -33,6 +33,7 @@
     "stylelint-config-standard-scss": "^15.0.1"
   },
   "devDependencies": {
+    "@zthun/janitor-build-config": "^18.1.0",
     "postcss": "^8.5.4",
     "stylelint": "^16.20.0",
     "vite": "^6.3.5"

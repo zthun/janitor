@@ -86,6 +86,7 @@
     "stylelint": "^16.20.0"
   },
   "devDependencies": {
+    "@zthun/janitor-build-config": "^18.1.0",
     "@zthun/janitor-lint": "^18.1.0",
     "typescript": "~5.8.3",
     "vite": "^6.3.5",
