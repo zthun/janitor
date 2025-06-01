@@ -47,7 +47,7 @@ export class ZViteConfigBuilder {
    */
   public library(
     options: LibraryOptions = new ZViteLibraryBuilder()
-      .entry("index", resolve(this._dirname, "src/index.ts"))
+      .index(this._dirname)
       .build(),
   ) {
     this.config.build.lib = options;

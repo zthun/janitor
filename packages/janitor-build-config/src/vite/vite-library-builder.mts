@@ -1,4 +1,5 @@
 import { cloneDeep } from "lodash-es";
+import { resolve } from "node:path";
 import { LibraryOptions } from "vite";
 
 export class ZViteLibraryBuilder {
@@ -13,6 +14,10 @@ export class ZViteLibraryBuilder {
       [name]: path,
     };
     return this;
+  }
+
+  public index(dirname: string) {
+    return this.entry("index", resolve(dirname, "src/index.ts"));
   }
 
   public build() {
