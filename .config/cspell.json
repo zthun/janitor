@@ -25,6 +25,7 @@
     "stylelint",
     "stylelintrc",
     "tsdoc",
+    "unplugin",
     "zthun"
   ],
   "dictionaries": [
