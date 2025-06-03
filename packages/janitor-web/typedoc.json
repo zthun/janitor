@@ -1,11 +1,11 @@
 {
   "$schema": "https://typedoc.org/schema.json",
-  "out": "./dist",
   "categorizeByGroup": true,
   "entryPointStrategy": "packages",
+  "excludeNotDocumented": true,
+  "out": "./dist",
   "entryPoints": ["../*"],
   "exclude": ["./"],
-  "excludeNotDocumented": true,
   "name": "Janitor",
   "favicon": "public/images/svg/janitor.svg"
 }

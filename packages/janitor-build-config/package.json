@@ -9,8 +9,13 @@
   "exports": {
     "./vite": {
       "types": "./dist/vite/index.d.ts",
-      "require": "./dist/vite/vite",
+      "require": "./dist/vite.cjs",
       "import": "./dist/vite.js"
+    },
+    "./typedoc": {
+      "types": "./dist/typedoc/index.d.ts",
+      "require": "./dist/typedoc.cjs",
+      "import": "./dist/typedoc.js"
     }
   },
   "scripts": {
@@ -28,6 +33,7 @@
   "dependencies": {
     "@swc/core": "^1.11.29",
     "lodash-es": "^4.17.21",
+    "typedoc": "^0.28.5",
     "unplugin-swc": "^1.5.3",
     "vite": "^6.3.5",
     "vite-plugin-dts": "^4.5.4",
