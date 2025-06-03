@@ -1,6 +1,10 @@
-// HTMLHint doesn't export it's rule set.  Htmlhint just sucks - plan on this being removed
-// sometime in the future.
-interface RuleSet {
+/**
+ * HTMLHint doesn't export it's rule set.
+ *
+ * This is the definition of it's Rules that are
+ * now exported
+ */
+export interface RuleSet {
   "alt-require"?: boolean;
   "attr-lowercase"?: boolean | Array<string | RegExp>;
   "attr-no-duplication"?: boolean;

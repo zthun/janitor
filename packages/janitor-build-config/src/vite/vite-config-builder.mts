@@ -20,7 +20,7 @@ export class ZViteConfigBuilder {
   /**
    * Initializes a new instance of this object.
    *
-   * @param dirname -
+   * @param _dirname -
    *        The directory that is housing the vite.config
    *        file.  Pass __dirname to this.
    */
