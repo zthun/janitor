@@ -13,6 +13,40 @@ import { ZViteTestBuilder } from "./vite-test-builder.mjs";
  *
  * This is helpful when building different types
  * of projects and keeping a standard.
+ *
+ * @example vite.config.ts
+ *
+ * ```ts
+ * // Before Config Builder
+ * export default defineConfig({
+ *  build: {
+ *     lib: {
+ *       entry: {
+ *         index: "./src/index.ts",
+ *       },
+ *       formats: ["cjs", "es"],
+ *     },
+ *   },
+ *   minify: false,
+ *   sourceMap: true,
+ *   plugins: [
+ *     swc.vite(),
+ *     tsConfigPaths(),
+ *     externalizeDeps(),
+ *     dtsPlugin({
+ *       compilerOptions: {
+ *         paths: {},
+ *       },
+ *     }),
+ *   ],
+ * });
+ * ```
+ *
+ * ```ts
+ * // After config builder
+ * const config = new ZViteConfigBuilder().library().build();
+ * export default defineConfig(config);
+ * ```
  */
 export class ZViteConfigBuilder {
   private config: UserConfig;
