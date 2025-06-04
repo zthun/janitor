@@ -43,7 +43,7 @@ describe("Vite Config Builder", () => {
 
   describe("Library", () => {
     it("should set the library options", () => {
-      const expected = new ZViteLibraryBuilder().index(__dirname).build();
+      const expected = new ZViteLibraryBuilder().index().build();
       expect(createTestTarget().library().build().build.lib).toEqual(expected);
     });
 

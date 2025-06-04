@@ -82,9 +82,7 @@ export class ZViteConfigBuilder {
    *        This object.
    */
   public library(
-    options: LibraryOptions = new ZViteLibraryBuilder()
-      .index(this._dirname)
-      .build(),
+    options: LibraryOptions = new ZViteLibraryBuilder().index().build(),
   ) {
     this.config.build.lib = options;
 

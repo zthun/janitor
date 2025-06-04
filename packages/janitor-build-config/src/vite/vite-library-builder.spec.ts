@@ -1,4 +1,3 @@
-import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 import { ZViteLibraryBuilder } from "./vite-library-builder.mjs";
 
@@ -10,10 +9,10 @@ describe("Vite Library Builder", () => {
       // Arrange.
       const target = createTestTarget();
       const name = "index";
-      const path = resolve(__dirname, "src/index.ts");
+      const path = "./src/index.ts";
 
       // Act.
-      const actual = target.index(__dirname).build();
+      const actual = target.index().build();
 
       // Assert.
       expect(actual.entry[name]).toEqual(path);
@@ -26,7 +25,7 @@ describe("Vite Library Builder", () => {
       const path = "lol/wut.ts";
 
       // Act.
-      const actual = target.index(__dirname).entry(name, path).build();
+      const actual = target.index().entry(name, path).build();
       const { entry } = actual;
 
       // Assert.
