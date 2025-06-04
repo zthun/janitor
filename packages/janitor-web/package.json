@@ -17,6 +17,7 @@
     "access": "public"
   },
   "devDependencies": {
+    "@zthun/janitor-build-config": "^18.1.0",
     "@zthun/janitor-lint": "^18.1.0",
     "@zthun/janitor-lint-config": "^18.1.0",
     "typedoc": "^0.28.5",

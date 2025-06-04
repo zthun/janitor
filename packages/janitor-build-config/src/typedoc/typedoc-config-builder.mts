@@ -203,7 +203,11 @@ export class ZTypedocConfigBuilder {
    *        This object.
    */
   public web() {
-    return this.packages().excludeNotDocumented().categorizeByGroup();
+    return this.packages()
+      .excludeNotDocumented()
+      .categorizeByGroup()
+      .dist()
+      .exclude("./");
   }
 
   /**
