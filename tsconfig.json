@@ -1,12 +1,7 @@
 {
   "extends": "./.config/.tsconfig.json",
   "compilerOptions": {
-    "baseUrl": "packages",
-    "paths": {
-      "@zthun/janitor-build-config/vite": [
-        "janitor-build-config/src/vite/index.ts"
-      ]
-    }
+    "baseUrl": "packages"
   },
   "include": ["**/*.ts", "**/*.mts"]
 }
