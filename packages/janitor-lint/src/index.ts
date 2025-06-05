@@ -1,6 +1,6 @@
 export * from "./app/janitor-lint-args.mjs";
-export * from "./app/janitor-lint-options.mjs";
 export * from "./app/janitor-lint.mjs";
+export * from "./app/janitor-options.mjs";
 export * from "./config/config-discovery.mjs";
 export * from "./config/config-extender.mjs";
 export * from "./config/config-reader-cosmic.mjs";
