@@ -1,0 +1,39 @@
+{
+  "name": "@zthun/janitor-options",
+  "version": "18.1.0",
+  "description": "Option builders and interfaces for the zthunworks janitor system.",
+  "keywords": [
+    "linters"
+  ],
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zthun/janitor",
+    "directory": "packages/janitor-options"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "types": "./dist/index.d.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "exports": {
+    "types": "./dist/index.d.ts",
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs"
+  },
+  "scripts": {
+    "build": "vite build"
+  },
+  "author": "Anthony Bonta",
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@zthun/janitor-build-config": "^18.1.0",
+    "typescript": "~5.8.3",
+    "vite": "^6.3.5",
+    "vitest": "^3.1.4"
+  }
+}
