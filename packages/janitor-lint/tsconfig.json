@@ -1,7 +1,10 @@
 {
   "extends": "../../.config/.tsconfig.json",
   "compilerOptions": {
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "@zthun/janitor-options": ["../janitor-options/src/index.ts"]
+    }
   },
   "include": ["src/**/*.ts", "src/**/*.mts"]
 }

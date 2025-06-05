@@ -3215,6 +3215,7 @@ __metadata:
   resolution: "@zthun/janitor-lint@workspace:packages/janitor-lint"
   dependencies:
     "@zthun/janitor-build-config": "npm:^18.1.0"
+    "@zthun/janitor-options": "npm:^18.1.0"
     chalk: "npm:^5.4.1"
     cosmiconfig: "npm:^9.0.0"
     cspell: "npm:^9.0.2"
@@ -3245,6 +3246,17 @@ __metadata:
     vite: "npm:^6.3.5"
   peerDependencies:
     markdownlint: ">0.32.0 <1.0.0"
+  languageName: unknown
+  linkType: soft
+
+"@zthun/janitor-options@npm:^18.1.0, @zthun/janitor-options@workspace:packages/janitor-options":
+  version: 0.0.0-use.local
+  resolution: "@zthun/janitor-options@workspace:packages/janitor-options"
+  dependencies:
+    "@zthun/janitor-build-config": "npm:^18.1.0"
+    typescript: "npm:~5.8.3"
+    vite: "npm:^6.3.5"
+    vitest: "npm:^3.1.4"
   languageName: unknown
   linkType: soft
 
