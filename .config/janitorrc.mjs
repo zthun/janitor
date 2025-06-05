@@ -29,15 +29,17 @@ const spellingFiles = esFiles
 const prettyFiles = spellingFiles.slice();
 
 export default {
-  esFiles,
-  styleFiles,
-  htmlFiles,
-  markdownFiles,
-  markdownFilesExclude: generated,
-  jsonFiles,
-  yamlFiles,
-  spellingFiles,
-  spellingFilesExclude: generated,
-  prettyFiles,
-  prettyFilesExclude: generated,
+  lint: {
+    esFiles,
+    styleFiles,
+    htmlFiles,
+    markdownFiles,
+    markdownFilesExclude: generated,
+    jsonFiles,
+    yamlFiles,
+    spellingFiles,
+    spellingFilesExclude: generated,
+    prettyFiles,
+    prettyFilesExclude: generated,
+  },
 };
