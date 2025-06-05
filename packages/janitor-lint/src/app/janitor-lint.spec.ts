@@ -1,14 +1,15 @@
 import { beforeEach, describe, expect, it, Mocked, vi } from "vitest";
+import { mock } from "vitest-mock-extended";
 import { IZConfigReader } from "../config/config-reader.mjs";
 import { ZLinterSilent } from "../linter/linter-silent.mjs";
 import { IZLinter } from "../linter/linter.mjs";
 import { IZJanitorLintArgs } from "./janitor-lint-args.mjs";
-import { IZJanitorLintOptions } from "./janitor-lint-options.mjs";
 import { ZJanitorLint } from "./janitor-lint.mjs";
+import { IZJanitorOptions } from "./janitor-options.mjs";
 
 describe("ZJanitorLint", () => {
   let args: IZJanitorLintArgs;
-  let options: IZJanitorLintOptions;
+  let options: IZJanitorOptions;
   let config: Mocked<IZConfigReader>;
   let logger: Console;
 
@@ -27,39 +28,38 @@ describe("ZJanitorLint", () => {
   }
 
   beforeEach(() => {
-    logger = {} as any;
-    logger.log = vi.fn();
-    logger.error = vi.fn();
+    logger = mock<Console>();
 
     args = {
       config: "./cfg/janitor.json",
     };
 
     options = {
-      esConfig: "@zthun/janitor-eslint-config",
-      esFiles: ["**/*.js"],
-      styleConfig: "@zthun/janitor-stylelint-config",
-      styleFiles: ["**/*.css", "**/*.less", "**/*.scss", "**/*.sass"],
-      markdownConfig: "@zthun/janitor-markdownlint-config",
-      markdownFiles: ["**/*.md"],
-      markdownFilesExclude: ["**/exclude.md"],
-      htmlConfig: "@zthun/janitor-htmlhint-config",
-      htmlFiles: ["**/*.html"],
-      htmlFilesExclude: ["**/exclude.html"],
-      jsonFiles: ["**/*.json"],
-      jsonFilesExclude: ["**/exclude.json"],
-      yamlFiles: ["**/*.yml"],
-      yamlFilesExclude: ["**/exclude.yaml"],
-      spellingConfig: "./cspell.json",
-      spellingFiles: ["**/*.md"],
-      spellingFilesExclude: ["**/exclude.md"],
-      prettyConfig: "@zthun/janitor-prettier-config",
-      prettyFiles: ["**/*.ts"],
-      prettyFilesExclude: ["**/exclude.ts"],
+      lint: {
+        esConfig: "@zthun/janitor-eslint-config",
+        esFiles: ["**/*.js"],
+        styleConfig: "@zthun/janitor-stylelint-config",
+        styleFiles: ["**/*.css", "**/*.less", "**/*.scss", "**/*.sass"],
+        markdownConfig: "@zthun/janitor-markdownlint-config",
+        markdownFiles: ["**/*.md"],
+        markdownFilesExclude: ["**/exclude.md"],
+        htmlConfig: "@zthun/janitor-htmlhint-config",
+        htmlFiles: ["**/*.html"],
+        htmlFilesExclude: ["**/exclude.html"],
+        jsonFiles: ["**/*.json"],
+        jsonFilesExclude: ["**/exclude.json"],
+        yamlFiles: ["**/*.yml"],
+        yamlFilesExclude: ["**/exclude.yaml"],
+        spellingConfig: "./cspell.json",
+        spellingFiles: ["**/*.md"],
+        spellingFilesExclude: ["**/exclude.md"],
+        prettyConfig: "@zthun/janitor-prettier-config",
+        prettyFiles: ["**/*.ts"],
+        prettyFilesExclude: ["**/exclude.ts"],
+      },
     };
 
-    config = {} as any;
-    config.read = vi.fn();
+    config = mock<IZConfigReader>();
     config.read.mockResolvedValue(options);
   });
 
@@ -97,14 +97,14 @@ describe("ZJanitorLint", () => {
       it("invokes the linter if there are esFiles", async () => {
         await assertLinterInvoked(
           (t) => t.esLint,
-          options.esFiles,
-          options.esConfig,
+          options.lint?.esFiles,
+          options.lint?.esConfig,
           null,
         );
       });
 
       it("does not invoke the linter if there are no esFiles.", async () => {
-        delete options.esFiles;
+        delete options.lint?.esFiles;
         await assertLinterNotInvoked((t) => t.esLint);
       });
     });
@@ -113,14 +113,14 @@ describe("ZJanitorLint", () => {
       it("invokes the linter if there are styleFiles", async () => {
         await assertLinterInvoked(
           (t) => t.styleLint,
-          options.styleFiles,
-          options.styleConfig,
+          options.lint?.styleFiles,
+          options.lint?.styleConfig,
           null,
         );
       });
 
       it("does not invoke the linter if there are no styleFiles.", async () => {
-        delete options.styleFiles;
+        delete options.lint?.styleFiles;
         await assertLinterNotInvoked((t) => t.styleLint);
       });
     });
@@ -129,14 +129,14 @@ describe("ZJanitorLint", () => {
       it("invokes the linter if there are markdownFiles", async () => {
         await assertLinterInvoked(
           (t) => t.markdownLint,
-          options.markdownFiles,
-          options.markdownConfig,
-          options.markdownFilesExclude,
+          options.lint?.markdownFiles,
+          options.lint?.markdownConfig,
+          options.lint?.markdownFilesExclude,
         );
       });
 
       it("does not invoke the linter if there are no styleFiles.", async () => {
-        delete options.markdownFiles;
+        delete options.lint?.markdownFiles;
         await assertLinterNotInvoked((t) => t.markdownLint);
       });
     });
@@ -145,14 +145,14 @@ describe("ZJanitorLint", () => {
       it("invokes the linter if there are htmlFiles", async () => {
         await assertLinterInvoked(
           (t) => t.htmlHint,
-          options.htmlFiles,
-          options.htmlConfig,
-          options.htmlFilesExclude,
+          options.lint?.htmlFiles,
+          options.lint?.htmlConfig,
+          options.lint?.htmlFilesExclude,
         );
       });
 
       it("does not invoke the linter if there are no esFiles.", async () => {
-        delete options.htmlFiles;
+        delete options.lint?.htmlFiles;
         await assertLinterNotInvoked((t) => t.htmlHint);
       });
     });
@@ -161,14 +161,14 @@ describe("ZJanitorLint", () => {
       it("invokes the linter if there are jsonFiles", async () => {
         await assertLinterInvoked(
           (t) => t.jsonLint,
-          options.jsonFiles,
+          options.lint?.jsonFiles,
           null,
-          options.jsonFilesExclude,
+          options.lint?.jsonFilesExclude,
         );
       });
 
       it("does not invoke the linter if there are no esFiles.", async () => {
-        delete options.jsonFiles;
+        delete options.lint?.jsonFiles;
         await assertLinterNotInvoked((t) => t.jsonLint);
       });
     });
@@ -177,14 +177,14 @@ describe("ZJanitorLint", () => {
       it("invokes the linter if there are yamlFiles", async () => {
         await assertLinterInvoked(
           (t) => t.yamlLint,
-          options.yamlFiles,
+          options.lint?.yamlFiles,
           null,
-          options.yamlFilesExclude,
+          options.lint?.yamlFilesExclude,
         );
       });
 
       it("does not invoke the linter if there are no esFiles.", async () => {
-        delete options.yamlFiles;
+        delete options.lint?.yamlFiles;
         await assertLinterNotInvoked((t) => t.yamlLint);
       });
     });
@@ -193,14 +193,14 @@ describe("ZJanitorLint", () => {
       it("invokes the linter if there are spellingFiles", async () => {
         await assertLinterInvoked(
           (t) => t.spellLint,
-          options.spellingFiles,
-          options.spellingConfig,
-          options.spellingFilesExclude,
+          options.lint?.spellingFiles,
+          options.lint?.spellingConfig,
+          options.lint?.spellingFilesExclude,
         );
       });
 
       it("does not invoke the linter if there are no spellingFiles.", async () => {
-        delete options.spellingFiles;
+        delete options.lint?.spellingFiles;
         await assertLinterNotInvoked((t) => t.spellLint);
       });
     });
@@ -209,14 +209,14 @@ describe("ZJanitorLint", () => {
       it("invokes the linter if there are prettyFiles.", async () => {
         await assertLinterInvoked(
           (t) => t.prettyLint,
-          options.prettyFiles,
-          options.prettyConfig,
-          options.prettyFilesExclude,
+          options.lint?.prettyFiles,
+          options.lint?.prettyConfig,
+          options.lint?.prettyFilesExclude,
         );
       });
 
       it("does not invoke the linter if there are no prettyFiles.", async () => {
-        delete options.prettyFiles;
+        delete options.lint?.prettyFiles;
         await assertLinterNotInvoked((t) => t.prettyLint);
       });
     });
@@ -229,6 +229,30 @@ describe("ZJanitorLint", () => {
       // Act
       const actual = await target.run(args);
       // Assert
+      expect(actual).toEqual(0);
+    });
+
+    it("returns 0 if the config file is empty", async () => {
+      // Arrange.
+      config.read.mockResolvedValue({});
+      const target = createTestTarget();
+
+      // Act.
+      const actual = await target.run(args);
+
+      // Assert.
+      expect(actual).toEqual(0);
+    });
+
+    it("returns 0 if the config lint options are empty", async () => {
+      // Arrange.
+      config.read.mockResolvedValue({ lint: {} });
+      const target = createTestTarget();
+
+      // Act.
+      const actual = await target.run(args);
+
+      // Assert.
       expect(actual).toEqual(0);
     });
 

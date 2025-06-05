@@ -16,7 +16,7 @@ import { ZLinterSpelling } from "../linter/linter-spelling.mjs";
 import { ZLinterStyle } from "../linter/linter-style.mjs";
 import { IZLinter } from "../linter/linter.mjs";
 import { IZJanitorLintArgs } from "./janitor-lint-args.mjs";
-import { IZJanitorLintOptions } from "./janitor-lint-options.mjs";
+import { IZJanitorOptions } from "./janitor-options.mjs";
 
 /**
  * Represents the main entry point object for the application.
@@ -146,114 +146,125 @@ export class ZJanitorLint {
    *        A promise that returns 0 if all linting was successful,
    *        and 1 if any of the linting failed.
    */
-  public async lint(options: IZJanitorLintOptions): Promise<number> {
+  public async lint(options: IZJanitorOptions): Promise<number> {
     let current = true;
     let result = true;
+    const { lint = {} } = options;
+    const {
+      jsonFiles,
+      jsonFilesExclude,
+      yamlFiles,
+      yamlFilesExclude,
+      markdownConfig,
+      markdownFiles,
+      markdownFilesExclude,
+      esConfig,
+      esFiles,
+      styleConfig,
+      styleFiles,
+      htmlConfig,
+      htmlFiles,
+      htmlFilesExclude,
+      spellingConfig,
+      spellingFiles,
+      spellingFilesExclude,
+      prettyConfig,
+      prettyFiles,
+      prettyFilesExclude,
+    } = lint;
 
-    if (options.jsonFiles) {
+    if (jsonFiles) {
       this._logger.log(
         chalk.magenta.underline(
-          `Linting json files from ${options.jsonFiles.length} globs.`,
+          `Linting json files from ${jsonFiles.length} globs.`,
         ),
       );
-      current = await this.jsonLint.lint(
-        options.jsonFiles,
-        null,
-        options.jsonFilesExclude,
-      );
+      current = await this.jsonLint.lint(jsonFiles, null, jsonFilesExclude);
       result = result && current;
     }
 
-    if (options.yamlFiles) {
+    if (yamlFiles) {
       this._logger.log(
         chalk.magenta.underline(
-          `Linting yaml files from ${options.yamlFiles.length} globs.`,
+          `Linting yaml files from ${yamlFiles.length} globs.`,
         ),
       );
-      current = await this.yamlLint.lint(
-        options.yamlFiles,
-        null,
-        options.yamlFilesExclude,
-      );
+      current = await this.yamlLint.lint(yamlFiles, null, yamlFilesExclude);
       result = result && current;
     }
 
-    if (options.markdownFiles) {
+    if (markdownFiles) {
       this._logger.log(
         chalk.magenta.underline(
-          `Linting markdown files from ${options.markdownFiles.length} globs.`,
+          `Linting markdown files from ${markdownFiles.length} globs.`,
         ),
       );
       current = await this.markdownLint.lint(
-        options.markdownFiles,
-        options.markdownConfig,
-        options.markdownFilesExclude,
+        markdownFiles,
+        markdownConfig,
+        markdownFilesExclude,
       );
       result = result && current;
     }
 
-    if (options.esFiles) {
+    if (esFiles) {
       this._logger.log(
         chalk.magenta.underline(
-          `Linting ecmaScript files from ${options.esFiles.length} globs.`,
+          `Linting ecmaScript files from ${esFiles.length} globs.`,
         ),
       );
-      current = await this.esLint.lint(options.esFiles, options.esConfig, null);
+      current = await this.esLint.lint(esFiles, esConfig, null);
       result = result && current;
     }
 
-    if (options.styleFiles) {
+    if (styleFiles) {
       this._logger.log(
         chalk.magenta.underline(
-          `Linting style files from ${options.styleFiles.length} globs.`,
+          `Linting style files from ${styleFiles.length} globs.`,
         ),
       );
-      current = await this.styleLint.lint(
-        options.styleFiles,
-        options.styleConfig,
-        null,
-      );
+      current = await this.styleLint.lint(styleFiles, styleConfig, null);
       result = result && current;
     }
 
-    if (options.htmlFiles) {
+    if (htmlFiles) {
       this._logger.log(
         chalk.magenta.underline(
-          `Linting html files from ${options.htmlFiles.length} globs.`,
+          `Linting html files from ${htmlFiles.length} globs.`,
         ),
       );
       current = await this.htmlHint.lint(
-        options.htmlFiles,
-        options.htmlConfig,
-        options.htmlFilesExclude,
+        htmlFiles,
+        htmlConfig,
+        htmlFilesExclude,
       );
       result = result && current;
     }
 
-    if (options.spellingFiles) {
+    if (spellingFiles) {
       this._logger.log(
         chalk.magenta.underline(
-          `Checking spelling for ${options.spellingFiles.length} globs.`,
+          `Checking spelling for ${spellingFiles.length} globs.`,
         ),
       );
       current = await this.spellLint.lint(
-        options.spellingFiles,
-        options.spellingConfig,
-        options.spellingFilesExclude,
+        spellingFiles,
+        spellingConfig,
+        spellingFilesExclude,
       );
       result = result && current;
     }
 
-    if (options.prettyFiles) {
+    if (prettyFiles) {
       this._logger.log(
         chalk.magenta.underline(
-          `Checking formatting for ${options.prettyFiles.length} globs.`,
+          `Checking formatting for ${prettyFiles.length} globs.`,
         ),
       );
       current = await this.prettyLint.lint(
-        options.prettyFiles,
-        options.prettyConfig,
-        options.prettyFilesExclude,
+        prettyFiles,
+        prettyConfig,
+        prettyFilesExclude,
       );
       result = result && current;
     }
