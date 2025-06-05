@@ -3229,6 +3229,7 @@ __metadata:
     typescript: "npm:~5.8.3"
     vite: "npm:^6.3.5"
     vitest: "npm:^3.1.4"
+    vitest-mock-extended: "npm:^3.1.0"
     yargs: "npm:^18.0.0"
   bin:
     janitor-lint: dist/cli.js
@@ -11412,6 +11413,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ts-essentials@npm:>=10.0.0":
+  version: 10.0.4
+  resolution: "ts-essentials@npm:10.0.4"
+  peerDependencies:
+    typescript: ">=4.5.0"
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: 10/f0853472370340e7752d4d4ccb18c0289b31c30526674ace288b02c77c6434b9aff04bd7cb55af406dd6f1f66b0a794bb6794c0d7c83e63aadc5d443147e6d60
+  languageName: node
+  linkType: hard
+
 "tsconfck@npm:^3.0.3":
   version: 3.1.4
   resolution: "tsconfck@npm:3.1.4"
@@ -11941,6 +11954,18 @@ __metadata:
   bin:
     vite: bin/vite.js
   checksum: 10/7bc3a1c5ef79413ad70daeeaf69b76cd1218d16aa18ed8ee08d74648ef17284f4a17c11f5cf42b573b6dc5e3d5f115110b67b1d23c2c699cfe404757764a634a
+  languageName: node
+  linkType: hard
+
+"vitest-mock-extended@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "vitest-mock-extended@npm:3.1.0"
+  dependencies:
+    ts-essentials: "npm:>=10.0.0"
+  peerDependencies:
+    typescript: 3.x || 4.x || 5.x
+    vitest: ">=3.0.0"
+  checksum: 10/a64a22fbba75d10948b252e40610bed63c2825a5333fb2b666b9bc0546b45f4da6702b1b1341cded20bc28a91278dbd5ac826da59ad7cd42f504d5a2ce93d95d
   languageName: node
   linkType: hard
 
