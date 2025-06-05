@@ -569,6 +569,24 @@ export class ZJanitorOptionsLintBuilder {
   }
 
   /**
+   * Adds a file to all exclusion lists.
+   *
+   * @param file -
+   *        The file to exclude from all linting.
+   *
+   * @returns
+   *        This object.
+   */
+  public excludeAll(file: string) {
+    return this.htmlExclude(file)
+      .jsonExclude(file)
+      .markdownExclude(file)
+      .prettyExclude(file)
+      .spellingExclude(file)
+      .yamlExclude(file);
+  }
+
+  /**
    * Returns the built linting options object.
    *
    * @returns

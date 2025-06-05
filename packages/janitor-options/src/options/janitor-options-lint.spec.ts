@@ -1,5 +1,8 @@
 import { describe, expect, it } from "vitest";
-import { ZJanitorOptionsLintBuilder } from "./janitor-options-lint.mjs";
+import {
+  IZJanitorOptionsLint,
+  ZJanitorOptionsLintBuilder,
+} from "./janitor-options-lint.mjs";
 
 describe("ZJanitorOptionsLint", () => {
   const createTestTarget = () => new ZJanitorOptionsLintBuilder();
@@ -339,6 +342,55 @@ describe("ZJanitorOptionsLint", () => {
       // Assert.
       expect(actual.yamlFilesExclude).toContain(yamlExcludeAlpha);
       expect(actual.yamlFilesExclude).toContain(yamlExcludeBravo);
+    });
+  });
+
+  describe("Exclude All", () => {
+    const shouldAddFilesToExclude = (
+      filesFn: (config: IZJanitorOptionsLint) => string[],
+    ) => {
+      // Arrange.
+      const globalExcludeAlpha = "lerna.json";
+      const globalExcludeBravo = "cspell.json";
+      const globalExcludeCharlie = "node_modules";
+      const target = createTestTarget();
+
+      // Act.
+      const config = target
+        .excludeAll(globalExcludeAlpha)
+        .excludeAll(globalExcludeBravo)
+        .excludeAll(globalExcludeCharlie)
+        .build();
+      const actual = filesFn(config);
+
+      // Assert.
+      expect(actual).toContain(globalExcludeAlpha);
+      expect(actual).toContain(globalExcludeBravo);
+      expect(actual).toContain(globalExcludeCharlie);
+    };
+
+    it("should add files to exclude html", () => {
+      shouldAddFilesToExclude((c) => c.htmlFilesExclude);
+    });
+
+    it("should add files to exclude json", () => {
+      shouldAddFilesToExclude((c) => c.jsonFilesExclude);
+    });
+
+    it("should add files to exclude markdown", () => {
+      shouldAddFilesToExclude((c) => c.markdownFilesExclude);
+    });
+
+    it("should add files to exclude pretty", () => {
+      shouldAddFilesToExclude((c) => c.prettyFilesExclude);
+    });
+
+    it("should add files to exclude spelling", () => {
+      shouldAddFilesToExclude((c) => c.spellingFilesExclude);
+    });
+
+    it("should add files to exclude yaml", () => {
+      shouldAddFilesToExclude((c) => c.yamlFilesExclude);
     });
   });
 });
