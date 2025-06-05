@@ -26,7 +26,8 @@
     "stylelintrc",
     "tsdoc",
     "unplugin",
-    "zthun"
+    "zthun",
+    "zthunworks"
   ],
   "dictionaries": [
     "typescript",
