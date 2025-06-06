@@ -238,6 +238,51 @@ describe("ZJanitorOptionsLint", () => {
       // Assert.
       expect(actual.prettyConfig).toEqual(expected);
     });
+
+    describe("Generate", () => {
+      const shouldAddPrettyFiles = (
+        appendFn: (
+          target: ZJanitorOptionsLintBuilder,
+          file: string,
+        ) => ZJanitorOptionsLintBuilder,
+      ) => {
+        // Arrange.
+        const file = "**/*.js";
+        const target = createTestTarget();
+
+        // Act.
+        const config = appendFn(target, file).generatePrettyFiles().build();
+        const { spellingFiles: actual } = config;
+
+        // Assert.
+        expect(actual).toHaveLength(1);
+        expect(actual).toContain(file);
+      };
+
+      it("should add es files to generated pretty files", () => {
+        shouldAddPrettyFiles((t, f) => t.esFile(f));
+      });
+
+      it("should add html files to generated pretty files", () => {
+        shouldAddPrettyFiles((t, f) => t.htmlFile(f));
+      });
+
+      it("should add json files to generated pretty files", () => {
+        shouldAddPrettyFiles((t, f) => t.jsonFile(f));
+      });
+
+      it("should add markdown files to generated pretty files", () => {
+        shouldAddPrettyFiles((t, f) => t.markdownFile(f));
+      });
+
+      it("should add style files to generated pretty files", () => {
+        shouldAddPrettyFiles((t, f) => t.styleFile(f));
+      });
+
+      it("should add yaml files to the generated pretty files", () => {
+        shouldAddPrettyFiles((t, f) => t.yamlFile(f));
+      });
+    });
   });
 
   describe("Spelling", () => {

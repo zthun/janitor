@@ -420,6 +420,21 @@ export class ZJanitorOptionsLintBuilder {
   }
 
   /**
+   * Generates the pretty files based on the other files that have been set.
+   *
+   * @returns
+   *        This object.
+   */
+  public generatePrettyFiles() {
+    return this.spellingFile(this.lint.esFiles)
+      .spellingFile(this.lint.htmlFiles)
+      .spellingFile(this.lint.jsonFiles)
+      .spellingFile(this.lint.markdownFiles)
+      .spellingFile(this.lint.styleFiles)
+      .spellingFile(this.lint.yamlFiles);
+  }
+
+  /**
    * Returns the built linting options object.
    *
    * @returns
