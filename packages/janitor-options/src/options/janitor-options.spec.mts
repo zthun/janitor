@@ -9,8 +9,8 @@ describe("ZJanitorOptions", () => {
     it("should set lint options", () => {
       // Arrange.
       const expected = new ZJanitorOptionsLintBuilder()
-        .esFiles(["**/*.js", "**/*.ts"])
-        .styleFiles(["**/*.css", "**/*.scss"])
+        .esFile(["**/*.js", "**/*.ts"])
+        .styleFile(["**/*.css", "**/*.scss"])
         .build();
 
       // Act.

@@ -17,6 +17,7 @@ describe("ZJanitorOptionsLint", () => {
 
       // Act.
       const actual = target
+        .esFile()
         .esFile(esGlobAlpha)
         .esFile(esGlobBravo)
         .esFile(esGlobCharlie)
@@ -51,6 +52,7 @@ describe("ZJanitorOptionsLint", () => {
 
       // Act.
       const actual = target
+        .htmlFile()
         .htmlFile(htmlGlobAlpha)
         .htmlFile(htmlGlobBravo)
         .htmlFile(htmlGlobCharlie)
@@ -82,6 +84,7 @@ describe("ZJanitorOptionsLint", () => {
 
       // Act.
       const actual = target
+        .htmlExclude()
         .htmlExclude(htmlExcludeAlpha)
         .htmlExclude(htmlExcludeBravo)
         .build();
@@ -102,6 +105,7 @@ describe("ZJanitorOptionsLint", () => {
 
       // Act.
       const actual = target
+        .jsonFile()
         .jsonFile(jsonGlobAlpha)
         .jsonFile(jsonGlobBravo)
         .jsonFile(jsonGlobCharlie)
@@ -120,6 +124,7 @@ describe("ZJanitorOptionsLint", () => {
       const target = createTestTarget();
       // Act.
       const actual = target
+        .jsonExclude()
         .jsonExclude(jsonExcludeAlpha)
         .jsonExclude(jsonExcludeBravo)
         .build();
@@ -139,6 +144,7 @@ describe("ZJanitorOptionsLint", () => {
 
       // Act.
       const actual = target
+        .markdownFile()
         .markdownFile(markdownFileAlpha)
         .markdownFile(markdownFileBravo)
         .markdownFile(markdownFileCharlie)
@@ -158,6 +164,7 @@ describe("ZJanitorOptionsLint", () => {
 
       // Act.
       const actual = target
+        .markdownExclude()
         .markdownExclude(markdownExcludeAlpha)
         .markdownExclude(markdownExcludeBravo)
         .build();
@@ -190,6 +197,7 @@ describe("ZJanitorOptionsLint", () => {
 
       // Act.
       const actual = target
+        .prettyFile()
         .prettyFile(prettyFileAlpha)
         .prettyFile(prettyFileBravo)
         .prettyFile(prettyFileCharlie)
@@ -209,6 +217,7 @@ describe("ZJanitorOptionsLint", () => {
 
       // Act.
       const actual = target
+        .prettyExclude()
         .prettyExclude(prettyExcludeAlpha)
         .prettyExclude(prettyExcludeBravo)
         .build();
@@ -240,6 +249,7 @@ describe("ZJanitorOptionsLint", () => {
       const target = createTestTarget();
       // Act.
       const actual = target
+        .spellingFile()
         .spellingFile(spellingFileAlpha)
         .spellingFile(spellingFileBravo)
         .spellingFile(spellingFileCharlie)
@@ -258,6 +268,7 @@ describe("ZJanitorOptionsLint", () => {
 
       // Act.
       const actual = target
+        .spellingExclude()
         .spellingExclude(spellingExcludeAlpha)
         .spellingExclude(spellingExcludeBravo)
         .build();
@@ -317,6 +328,7 @@ describe("ZJanitorOptionsLint", () => {
 
       // Act.
       const actual = target
+        .styleFile()
         .styleFile(styleFileAlpha)
         .styleFile(styleFileBravo)
         .build();
@@ -347,6 +359,7 @@ describe("ZJanitorOptionsLint", () => {
 
       // Act.
       const actual = target
+        .yamlFile()
         .yamlFile(yamlGlobAlpha)
         .yamlFile(yamlGlobBravo)
         .build();
@@ -364,6 +377,7 @@ describe("ZJanitorOptionsLint", () => {
 
       // Act.
       const actual = target
+        .yamlExclude()
         .yamlExclude(yamlExcludeAlpha)
         .yamlExclude(yamlExcludeBravo)
         .build();
@@ -386,6 +400,7 @@ describe("ZJanitorOptionsLint", () => {
 
       // Act.
       const config = target
+        .excludeAll()
         .excludeAll(globalExcludeAlpha)
         .excludeAll(globalExcludeBravo)
         .excludeAll(globalExcludeCharlie)

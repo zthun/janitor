@@ -297,156 +297,77 @@ export class ZJanitorOptionsLintBuilder {
   }
 
   /**
-   * Sets the files to exclude from linting with htmlhint.
+   * Adds a list of globs to the list of files to exclude from linting with htmlhint.
    *
    * @param files -
-   *        The files to exclude from linting with htmlhint.
+   *        The file globs to exclude from linting with htmlhint.
    *
    * @returns
    *        This object.
    */
-  public htmlFilesExclude(files: string[]) {
-    this.lint.htmlFilesExclude = files;
-    return this;
-  }
-
-  /**
-   * Adds a single file glob to the list of files to exclude from linting with htmlhint.
-   *
-   * @param files -
-   *        The file glob to exclude from linting with htmlhint.
-   *
-   * @returns
-   *        This object.
-   */
-  public htmlExclude(files: string) {
+  public htmlExclude(files: string | string[] = []) {
     const excludes = this.lint.htmlFilesExclude ?? [];
-    return this.htmlFilesExclude(excludes.concat(files));
-  }
-
-  /**
-   * Sets the files to exclude from linting with json.
-   *
-   * @param files -
-   *        The files to exclude from linting with json.
-   *
-   * @returns
-   *        This object.
-   */
-  public jsonFilesExclude(files: string[]) {
-    this.lint.jsonFilesExclude = files;
+    this.lint.htmlFilesExclude = excludes.concat(files);
     return this;
   }
 
   /**
-   * Adds a single file glob to the list of files to exclude from linting with json.
+   * Adds a list of globs to the list of files to exclude from linting with json.
    *
    * @param file -
-   *        The file glob to exclude from linting with json.
+   *        The globs to exclude from linting with json.
    *
    * @returns
    *        This object.
    */
-  public jsonExclude(file: string) {
+  public jsonExclude(file: string | string[] = []) {
     const excludes = this.lint.jsonFilesExclude ?? [];
-    return this.jsonFilesExclude(excludes.concat(file));
-  }
-
-  /**
-   * Sets the files to exclude from linting with markdownlint.
-   *
-   * @param files -
-   *        The files to exclude from linting with markdownlint.
-   *
-   * @returns
-   *        This object.
-   */
-  public markdownFilesExclude(files: string[]) {
-    this.lint.markdownFilesExclude = files;
+    this.lint.jsonFilesExclude = excludes.concat(file);
     return this;
   }
 
   /**
-   * Adds a single file glob to the list of files to exclude from linting with markdownlint.
+   * Adds a list of globs to the list of files to exclude from linting with markdownlint.
    *
    * @param file -
-   *        The file glob to exclude from linting with markdownlint.
+   *        The globs to exclude from linting with markdownlint.
    *
    * @returns
    *        This object.
    */
-  public markdownExclude(file: string) {
+  public markdownExclude(file: string | string[] = []) {
     const excludes = this.lint.markdownFilesExclude ?? [];
-    return this.markdownFilesExclude(excludes.concat(file));
-  }
-
-  /**
-   * Sets the files to exclude from linting with prettier.
-   *
-   * @param files -
-   *        The files to exclude from linting with prettier.
-   *
-   * @returns
-   *        This object.
-   */
-  public prettyFilesExclude(files: string[]) {
-    this.lint.prettyFilesExclude = files;
+    this.lint.markdownFilesExclude = excludes.concat(file);
     return this;
   }
 
   /**
-   * Adds a single file glob to the list of files to exclude from linting with prettier.
+   * Adds a list of globs to the list of files to exclude from linting with prettier.
    *
    * @param file -
-   *        The file glob to exclude from linting with prettier.
+   *        The globs to exclude from linting with prettier.
    *
    * @returns
    *        This object.
    */
-  public prettyExclude(file: string) {
+  public prettyExclude(file: string | string[] = []) {
     const excludes = this.lint.prettyFilesExclude ?? [];
-    return this.prettyFilesExclude(excludes.concat(file));
-  }
-
-  /**
-   * Sets the files to exclude from linting with cspell.
-   *
-   * @param files -
-   *        The files to exclude from linting with cspell.
-   *
-   * @returns
-   *        This object.
-   */
-  public spellingFilesExclude(files: string[]) {
-    this.lint.spellingFilesExclude = files;
+    this.lint.prettyFilesExclude = excludes.concat(file);
     return this;
   }
 
   /**
-   * Adds a single file glob to the list of files to exclude from linting with cspell.
+   * Adds a list of globs to the list of files to exclude from linting with cspell.
    *
    * @param file -
-   *        The file glob to exclude from linting with cspell.
+   *        The globs to exclude from linting with cspell.
    *
    * @returns
    *        This object.
    */
-  public spellingExclude(file: string) {
+  public spellingExclude(file: string | string[] = []) {
     const excludes = this.lint.spellingFilesExclude ?? [];
-    return this.spellingFilesExclude(excludes.concat(file));
-  }
-
-  /**
-   * Sets the files to exclude from linting with yaml.
-   *
-   * @param files -
-   *        The files to exclude from linting with yaml.
-   *
-   * @returns
-   *        This object.
-   */
-  public yamlFilesExclude(files: string[]) {
-    this.lint.yamlFilesExclude = files;
+    this.lint.spellingFilesExclude = excludes.concat(file);
     return this;
   }
 
@@ -459,9 +380,10 @@ export class ZJanitorOptionsLintBuilder {
    * @returns
    *        This object.
    */
-  public yamlExclude(file: string) {
+  public yamlExclude(file: string | string[] = []) {
     const excludes = this.lint.yamlFilesExclude ?? [];
-    return this.yamlFilesExclude(excludes.concat(file));
+    this.lint.yamlFilesExclude = excludes.concat(file);
+    return this;
   }
 
   /**
@@ -473,7 +395,7 @@ export class ZJanitorOptionsLintBuilder {
    * @returns
    *        This object.
    */
-  public excludeAll(file: string) {
+  public excludeAll(file: string | string[] = []) {
     return this.htmlExclude(file)
       .jsonExclude(file)
       .markdownExclude(file)
@@ -482,6 +404,12 @@ export class ZJanitorOptionsLintBuilder {
       .yamlExclude(file);
   }
 
+  /**
+   * Generates the spelling files based on the other files that have been set.
+   *
+   * @returns
+   *        This object.
+   */
   public generateSpellingFiles() {
     return this.spellingFile(this.lint.esFiles).spellingFile(
       this.lint.htmlFiles,
