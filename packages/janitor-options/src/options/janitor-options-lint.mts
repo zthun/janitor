@@ -254,7 +254,7 @@ export class ZJanitorOptionsLintBuilder {
   /**
    * Adds a list of globs to the list of files to lint with cspell.
    *
-   * @param files -
+   * @param file -
    *        The file globs to lint with cspell.
    *
    * @returns
