@@ -177,10 +177,10 @@ export class ZJanitorOptionsLintBuilder {
   }
 
   /**
-   * Adds a single file to the list of files to lint with eslint.
+   * Adds a list of globs to the list of files to lint with eslint.
    *
    * @param file -
-   *        The file to lint with eslint.
+   *        The file globs to lint with eslint.
    *
    * @returns
    *        This object.
@@ -192,10 +192,10 @@ export class ZJanitorOptionsLintBuilder {
   }
 
   /**
-   * Adds a single file glob to the list of files to lint with htmlhint.
+   * Adds a list of globs to the list of files to lint with htmlhint.
    *
    * @param file -
-   *        The file glob to lint with htmlhint.
+   *        The file globs to lint with htmlhint.
    *
    * @returns
    *        This object.
@@ -207,87 +207,48 @@ export class ZJanitorOptionsLintBuilder {
   }
 
   /**
-   * Sets all file globs to lint with json.
+   * Adds a list of globs to the list of files to lint with json.
    *
-   * @param files -
+   * @param file -
    *        The file globs to lint with json.
    *
    * @returns
    *        This object.
    */
-  public jsonFiles(files: string[]) {
-    this.lint.jsonFiles = files;
-    return this;
-  }
-
-  /**
-   * Adds a single file to the list of files to lint with json.
-   *
-   * @param file -
-   *        The file to lint with json.
-   *
-   * @returns
-   *        This object.
-   */
-  public jsonFile(file: string) {
+  public jsonFile(file: string | string[] = []) {
     const files = this.lint.jsonFiles ?? [];
-    return this.jsonFiles(files.concat(file));
-  }
-
-  /**
-   * Sets all file globs to lint with markdownlint.
-   *
-   * @param files -
-   *        The file globs to lint with markdownlint.
-   *
-   * @returns
-   *        This object.
-   */
-  public markdownFiles(files: string[]) {
-    this.lint.markdownFiles = files;
+    this.lint.jsonFiles = files.concat(file);
     return this;
   }
 
   /**
-   * Adds a single file glob to the list of files to lint with markdownlint.
+   * Adds a list of globs to the list of files to lint with markdownlint.
    *
    * @param file -
-   *        The file glob to lint with markdownlint.
+   *        The globs to lint with markdownlint.
    *
    * @returns
    *        This object.
    */
-  public markdownFile(file: string) {
+  public markdownFile(file: string | string[] = []) {
     const files = this.lint.markdownFiles ?? [];
-    return this.markdownFiles(files.concat(file));
-  }
-
-  /**
-   * Sets all file globs to lint with prettier.
-   *
-   * @param files -
-   *        The file globs to lint with prettier.
-   *
-   * @returns
-   *        This object.
-   */
-  public prettyFiles(files: string[]) {
-    this.lint.prettyFiles = files;
+    this.lint.markdownFiles = files.concat(file);
     return this;
   }
 
   /**
-   * Adds a single file glob to the list of files to lint with prettier.
+   * Adds a list of globs to the list of files to lint with prettier.
    *
    * @param file -
-   *        The file glob to lint with prettier.
+   *        The globs to lint with prettier.
    *
    * @returns
    *        This object.
    */
-  public prettyFile(file: string) {
+  public prettyFile(file: string | string[] = []) {
     const files = this.lint.prettyFiles ?? [];
-    return this.prettyFiles(files.concat(file));
+    this.lint.prettyFiles = files.concat(file);
+    return this;
   }
 
   /**
@@ -306,59 +267,33 @@ export class ZJanitorOptionsLintBuilder {
   }
 
   /**
-   * Sets the files to lint with stylelint.
-   *
-   * @param files -
-   *        The files to lint with stylelint.
-   *
-   * @returns
-   *        This object.
-   */
-  public styleFiles(files: string[]) {
-    this.lint.styleFiles = files;
-    return this;
-  }
-
-  /**
-   * Adds a single file glob to the list of files to lint with stylelint.
+   * Adds a list of globs to the list of files to lint with stylelint.
    *
    * @param file -
-   *        The file glob to lint with stylelint.
+   *        The file globs to lint with stylelint.
    *
    * @returns
    *        This object.
    */
-  public styleFile(file: string) {
+  public styleFile(file: string | string[] = []) {
     const files = this.lint.styleFiles ?? [];
-    return this.styleFiles(files.concat(file));
-  }
-
-  /**
-   * Sets the files to lint with yaml.
-   *
-   * @param files -
-   *        The files to lint with yaml.
-   *
-   * @returns
-   *        This object.
-   */
-  public yamlFiles(files: string[]) {
-    this.lint.yamlFiles = files;
+    this.lint.styleFiles = files.concat(file);
     return this;
   }
 
   /**
-   * Adds a single file glob to the list of files to lint with yaml.
+   * Adds a list of globs to the list of files to lint with yaml.
    *
    * @param file -
-   *        The file glob to lint with yaml.
+   *        The file globs to lint with yaml.
    *
    * @returns
    *        This object.
    */
-  public yamlFile(file: string) {
+  public yamlFile(file: string | string[] = []) {
     const files = this.lint.yamlFiles ?? [];
-    return this.yamlFiles(files.concat(file));
+    this.lint.yamlFiles = files.concat(file);
+    return this;
   }
 
   /**
