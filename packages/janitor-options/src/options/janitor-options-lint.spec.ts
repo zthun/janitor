@@ -278,24 +278,33 @@ describe("ZJanitorOptionsLint", () => {
       expect(actual.spellingConfig).toEqual(expected);
     });
 
-    it("should add es files to generated spelling files", () => {
-      // Arrange.
-      const esFileAlpha = "**/*.js";
-      const esFileBravo = "**/*.ts";
-      const target = createTestTarget();
+    describe("Generate", () => {
+      const shouldAddSpellingFiles = (
+        appendFn: (
+          target: ZJanitorOptionsLintBuilder,
+          file: string,
+        ) => ZJanitorOptionsLintBuilder,
+      ) => {
+        // Arrange.
+        const file = "**/*.js";
+        const target = createTestTarget();
 
-      // Act.
-      const config = target
-        .esFile(esFileAlpha)
-        .esFile(esFileBravo)
-        .generateSpellingFiles()
-        .build();
-      const { spellingFiles: actual } = config;
+        // Act.
+        const config = appendFn(target, file).generateSpellingFiles().build();
+        const { spellingFiles: actual } = config;
 
-      // Assert.
-      expect(actual).toHaveLength(2);
-      expect(actual).toContain(esFileAlpha);
-      expect(actual).toContain(esFileBravo);
+        // Assert.
+        expect(actual).toHaveLength(1);
+        expect(actual).toContain(file);
+      };
+
+      it("should add es files to generated spelling files", () => {
+        shouldAddSpellingFiles((t, f) => t.esFile(f));
+      });
+
+      it("should add html files to generated spelling files", () => {
+        shouldAddSpellingFiles((t, f) => t.htmlFile(f));
+      });
     });
   });
 

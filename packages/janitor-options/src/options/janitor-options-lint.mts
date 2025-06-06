@@ -185,23 +185,9 @@ export class ZJanitorOptionsLintBuilder {
    * @returns
    *        This object.
    */
-  public esFile(file: string | string[]) {
+  public esFile(file: string | string[] = []) {
     const files = this.lint.esFiles ?? [];
     this.lint.esFiles = files.concat(file);
-    return this;
-  }
-
-  /**
-   * Sets all file globs to lint with htmlhint.
-   *
-   * @param files -
-   *        The file globs to lint with htmlhint.
-   *
-   * @returns
-   *        This object.
-   */
-  public htmlFiles(files: string[]) {
-    this.lint.htmlFiles = files;
     return this;
   }
 
@@ -214,9 +200,10 @@ export class ZJanitorOptionsLintBuilder {
    * @returns
    *        This object.
    */
-  public htmlFile(file: string) {
+  public htmlFile(file: string | string[] = []) {
     const files = this.lint.htmlFiles ?? [];
-    return this.htmlFiles(files.concat(file));
+    this.lint.htmlFiles = files.concat(file);
+    return this;
   }
 
   /**
@@ -312,7 +299,7 @@ export class ZJanitorOptionsLintBuilder {
    * @returns
    *        This object.
    */
-  public spellingFile(file: string | string[]) {
+  public spellingFile(file: string | string[] = []) {
     const files = this.lint.spellingFiles ?? [];
     this.lint.spellingFiles = files.concat(file);
     return this;
@@ -561,7 +548,9 @@ export class ZJanitorOptionsLintBuilder {
   }
 
   public generateSpellingFiles() {
-    return this.spellingFile(this.lint.esFiles);
+    return this.spellingFile(this.lint.esFiles).spellingFile(
+      this.lint.htmlFiles,
+    );
   }
 
   /**
