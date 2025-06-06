@@ -5,10 +5,10 @@ import { EntryPointStrategy, TypeDocOptions } from "typedoc";
  * A builder for TypeDoc configurations.
  */
 export class ZTypedocConfigBuilder {
-  private typedoc: TypeDocOptions = {
-    entryPoints: [],
-    exclude: [],
-  };
+  public static readonly OutputDist = "./dist";
+  public static readonly EntryPointIndex = "./src/index.ts";
+
+  private typedoc: TypeDocOptions = {};
 
   /**
    * Sets the output directory for the documentation.
@@ -29,24 +29,10 @@ export class ZTypedocConfigBuilder {
    * @returns
    *        This object.
    */
-  public dist = this.out.bind(this, "./dist");
+  public dist = this.out.bind(this, ZTypedocConfigBuilder.OutputDist);
 
   /**
-   * Sets the entry points for the documentation.
-   *
-   * @param globs -
-   *        The entry point glob patterns.
-   *
-   * @returns
-   *        This object.
-   */
-  public entryPoints(globs: string[]) {
-    this.typedoc.entryPoints = globs;
-    return this;
-  }
-
-  /**
-   * Adds a single entry point glob to the existing entry points.
+   * Adds a list of entry point glob to the existing entry points.
    *
    * @param glob -
    *        The entry point glob pattern.
@@ -54,9 +40,10 @@ export class ZTypedocConfigBuilder {
    * @returns
    *        This object.
    */
-  public entry(glob: string) {
-    const points = this.typedoc.entryPoints.concat(glob);
-    return this.entryPoints(points);
+  public entry(glob: string | string) {
+    const entry = this.typedoc.entryPoints || [];
+    this.typedoc.entryPoints = entry.concat(glob);
+    return this;
   }
 
   /**
@@ -65,7 +52,7 @@ export class ZTypedocConfigBuilder {
    * @returns
    *        This object.
    */
-  public index = this.entry.bind(this, "./src/index.ts");
+  public index = this.entry.bind(this, ZTypedocConfigBuilder.EntryPointIndex);
 
   /**
    * Sets the entry point strategy.
@@ -151,20 +138,6 @@ export class ZTypedocConfigBuilder {
   }
 
   /**
-   * Sets the exclude patterns.
-   *
-   * @param exclude -
-   *        The exclude patterns.
-   *
-   * @returns
-   *        This object.
-   */
-  public excludes(exclude: string[]) {
-    this.typedoc.exclude = exclude;
-    return this;
-  }
-
-  /**
    * Adds a single exclude glob to the existing excludes.
    *
    * @param glob -
@@ -173,9 +146,10 @@ export class ZTypedocConfigBuilder {
    * @returns
    *        This object.
    */
-  public exclude(glob: string) {
-    const excludes = this.typedoc.exclude.concat(glob);
-    return this.excludes(excludes);
+  public exclude(glob: string | string[]) {
+    const excludes = this.typedoc.exclude || [];
+    this.typedoc.exclude = excludes.concat(glob);
+    return this;
   }
 
   /**
