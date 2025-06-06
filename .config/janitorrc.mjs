@@ -1,45 +1,34 @@
-const generated = [
-  "lerna.json",
-  ".config/cspell.json",
-  "**/CHANGELOG.md",
-  "packages/**/dist/**",
-  "packages/**/node_modules/**",
-];
+// eslint-disable-next-line import/no-extraneous-dependencies
+import {
+  ZJanitorOptionsBuilder,
+  ZJanitorOptionsLintBuilder,
+} from "@zthun/janitor-options";
 
-const esFiles = [
-  "*.{js,cjs,mjs,ts,mts}",
-  "packages/**/src/**/*.{ts,mts}",
-  "packages/**/vite.config.{ts,mts}",
-  "packages/**/vitest.config.{ts,mts}",
-  ".config/*.{js,cjs,mjs,ts,mts}",
-];
+const lint = new ZJanitorOptionsLintBuilder()
+  .esFile("*.{js,cjs,mjs,ts,mts}")
+  .esFile("packages/**/src/**/*.{ts,mts}")
+  .esFile("packages/**/vite.config.{ts,mts}")
+  .esFile("packages/**/vitest.config.{ts,mts}")
+  .esFile(".config/*.{js,cjs,mjs,ts,mts}")
+  .styleFile("test/**/*.less")
+  .styleFile("test/**/*.scss")
+  .htmlFile("test/**/*.html")
+  .markdownFile("*.md")
+  .markdownFile("packages/**/*.md")
+  .markdownFile("packages/**/LICENSE")
+  .jsonFile("*.json")
+  .jsonFile("packages/**/*.json")
+  .jsonFile(".config/*.json")
+  .yamlFile("*.yml")
+  .yamlFile(".circleci/*.yml")
+  .generateSpellingFiles()
+  .generatePrettyFiles()
+  .excludeAll("lerna.json")
+  .excludeAll(".config/cspell.json")
+  .excludeAll("**/CHANGELOG.md")
+  .excludeAll("packages/**/dist/**")
+  .excludeAll("packages/**/node_modules/**")
+  .build();
 
-const styleFiles = ["test/**/*.less", "test/**/*.scss"];
-const htmlFiles = ["test/**/*.html"];
-const markdownFiles = ["*.md", "packages/**/*.md", "packages/**/LICENSE"];
-const jsonFiles = ["*.json", "packages/**/*.json", ".config/*.json"];
-const yamlFiles = ["*.yml", ".circleci/*.yml"];
-
-const spellingFiles = esFiles
-  .concat(styleFiles)
-  .concat(htmlFiles)
-  .concat(markdownFiles)
-  .concat(jsonFiles)
-  .concat(yamlFiles);
-const prettyFiles = spellingFiles.slice();
-
-export default {
-  lint: {
-    esFiles,
-    styleFiles,
-    htmlFiles,
-    markdownFiles,
-    markdownFilesExclude: generated,
-    jsonFiles,
-    yamlFiles,
-    spellingFiles,
-    spellingFilesExclude: generated,
-    prettyFiles,
-    prettyFilesExclude: generated,
-  },
-};
+const config = new ZJanitorOptionsBuilder().lint(lint).build();
+export default config;
