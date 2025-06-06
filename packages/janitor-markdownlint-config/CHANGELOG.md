@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [19.0.0](https://github.com/zthun/janitor/compare/v18.1.0...v19.0.0) (2025-06-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* markdownlint-config is now janitor-markdownlint-config
+
+### Code Refactoring
+
+* markdownlint-config is now janitor-markdownlint-config ([b4ed3ee](https://github.com/zthun/janitor/commit/b4ed3ee364ff85cb28f30572fee6a42924a0ebf5))
+
+
+
 ## [18.1.0](https://github.com/zthun/janitor/compare/v18.0.6...v18.1.0) (2025-05-20)
 
 **Note:** Version bump only for package @zthun/markdownlint-config

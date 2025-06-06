@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [19.0.0](https://github.com/zthun/janitor/compare/v18.1.0...v19.0.0) (2025-06-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* rename lint-janitor-config to janitor-lint-config
+
+### Code Refactoring
+
+* rename lint-janitor-config to janitor-lint-config ([9c9aebf](https://github.com/zthun/janitor/commit/9c9aebfb7f9cc7f91bcf9005739f17bb8f37699a))
+
+
+
 ## [18.1.0](https://github.com/zthun/janitor/compare/v18.0.6...v18.1.0) (2025-05-20)
 
 **Note:** Version bump only for package @zthun/janitor-web

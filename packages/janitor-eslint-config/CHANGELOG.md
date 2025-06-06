@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [19.0.0](https://github.com/zthun/janitor/compare/v18.1.0...v19.0.0) (2025-06-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* rename @zthun/eslint-config to @zthun/janitor-eslint-config
+
+### Code Refactoring
+
+* rename @zthun/eslint-config to @zthun/janitor-eslint-config ([01494c6](https://github.com/zthun/janitor/commit/01494c6a476d60ce45d4a18ae7c5be40aaab2363))
+
+
+
 ## [18.1.0](https://github.com/zthun/janitor/compare/v18.0.6...v18.1.0) (2025-05-20)
 
 

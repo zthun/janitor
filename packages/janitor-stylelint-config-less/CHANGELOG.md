@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [19.0.0](https://github.com/zthun/janitor/compare/v18.1.0...v19.0.0) (2025-06-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* rename stylelint-config to janitor-stylelint-config
+
+### Code Refactoring
+
+* rename stylelint-config to janitor-stylelint-config ([0d6cd68](https://github.com/zthun/janitor/commit/0d6cd68c05ee246d8188627165d9f81877a9ac25))
+
+
+
 ## [18.1.0](https://github.com/zthun/janitor/compare/v18.0.6...v18.1.0) (2025-05-20)
 
 **Note:** Version bump only for package @zthun/stylelint-config-less

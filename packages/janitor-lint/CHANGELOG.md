@@ -3,6 +3,37 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [19.0.0](https://github.com/zthun/janitor/compare/v18.1.0...v19.0.0) (2025-06-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* janitor lint options is now janitor options
+* config file for janitor is now janitor instead of lint-janitor
+* rename stylelint-config to janitor-stylelint-config
+* markdownlint-config is now janitor-markdownlint-config
+* htmlhint-config is now janitor-htmlhint-config
+* rename @zthun/eslint-config to @zthun/janitor-eslint-config
+* class ZLintJanitor is now ZJanitorLint
+* interface, IZLintJanitorOptions, is now IZJanitorLintOptions
+* rename lint-janitor-config to janitor-lint-config
+* lint-janitor is now janitor-lint
+
+### Code Refactoring
+
+* class ZLintJanitor is now ZJanitorLint ([b74881e](https://github.com/zthun/janitor/commit/b74881ea89cdf405b81283c39303fa8e5e13ff0b))
+* config file for janitor is now janitor instead of lint-janitor ([0ec0792](https://github.com/zthun/janitor/commit/0ec07921c0135de6f06ebd13ba56740e8848154a))
+* htmlhint-config is now janitor-htmlhint-config ([6407b0f](https://github.com/zthun/janitor/commit/6407b0fb9b8935a70233d724c2eed23b2da04309))
+* interface, IZLintJanitorOptions, is now IZJanitorLintOptions ([77cb00d](https://github.com/zthun/janitor/commit/77cb00dc4464984a84292a4687c07c4f5255c4ce))
+* janitor lint options is now janitor options ([e8e4578](https://github.com/zthun/janitor/commit/e8e4578711efccef9e23ade8450f07db2178127f))
+* lint-janitor is now janitor-lint ([e70b671](https://github.com/zthun/janitor/commit/e70b6713850499841df1e49413dba19cafebe32a))
+* markdownlint-config is now janitor-markdownlint-config ([b4ed3ee](https://github.com/zthun/janitor/commit/b4ed3ee364ff85cb28f30572fee6a42924a0ebf5))
+* rename @zthun/eslint-config to @zthun/janitor-eslint-config ([01494c6](https://github.com/zthun/janitor/commit/01494c6a476d60ce45d4a18ae7c5be40aaab2363))
+* rename lint-janitor-config to janitor-lint-config ([9c9aebf](https://github.com/zthun/janitor/commit/9c9aebfb7f9cc7f91bcf9005739f17bb8f37699a))
+* rename stylelint-config to janitor-stylelint-config ([0d6cd68](https://github.com/zthun/janitor/commit/0d6cd68c05ee246d8188627165d9f81877a9ac25))
+
+
+
 ## [18.1.0](https://github.com/zthun/janitor/compare/v18.0.6...v18.1.0) (2025-05-20)
 
 

@@ -3,6 +3,56 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [19.0.0](https://github.com/zthun/janitor/compare/v18.1.0...v19.0.0) (2025-06-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* janitor options have been extracted to @zthun/janitor-options
+* janitor lint options is now janitor options
+* config file for janitor is now janitor instead of lint-janitor
+* module resolution and style are now node next
+* rename stylelint-config to janitor-stylelint-config
+* markdownlint-config is now janitor-markdownlint-config
+* htmlhint-config is now janitor-htmlhint-config
+* rename @zthun/eslint-config to @zthun/janitor-eslint-config
+* class ZLintJanitor is now ZJanitorLint
+* interface, IZLintJanitorOptions, is now IZJanitorLintOptions
+* rename lint-janitor-config to janitor-lint-config
+* lint-janitor is now janitor-lint
+
+### Features
+
+* janitor options allows for using a builder to build options ([b989284](https://github.com/zthun/janitor/commit/b9892849c32d680ae8be64c187e27fe2691624e9))
+* janitor options lint allows you to build lint options programmatically ([0ecab65](https://github.com/zthun/janitor/commit/0ecab65c6a0d68f782452307d56d522643924aaa))
+* janitor options lint can support excludes for every file type ([20208f1](https://github.com/zthun/janitor/commit/20208f115f2d12799e86f9e78cc1159250c7c551))
+* janitor-build-config adds configuration for various projects ([9e7d5c6](https://github.com/zthun/janitor/commit/9e7d5c63c4627e1cc617ddcf04a816a178ebeefd))
+* spelling files can be generated ([377937c](https://github.com/zthun/janitor/commit/377937cbfc674686e6f16998f0718c2f66b3fcbc))
+* typedoc config builder allows for a shared typedoc config ([83815a7](https://github.com/zthun/janitor/commit/83815a71b53a8de94faad2dad93adfbf38c8b718))
+* vitest config builder helps with building configs for vitest ([7a822b7](https://github.com/zthun/janitor/commit/7a822b7c07ae9907b3a9e3b4651a26073b192f80))
+
+
+### Code Refactoring
+
+* class ZLintJanitor is now ZJanitorLint ([b74881e](https://github.com/zthun/janitor/commit/b74881ea89cdf405b81283c39303fa8e5e13ff0b))
+* config file for janitor is now janitor instead of lint-janitor ([0ec0792](https://github.com/zthun/janitor/commit/0ec07921c0135de6f06ebd13ba56740e8848154a))
+* htmlhint-config is now janitor-htmlhint-config ([6407b0f](https://github.com/zthun/janitor/commit/6407b0fb9b8935a70233d724c2eed23b2da04309))
+* interface, IZLintJanitorOptions, is now IZJanitorLintOptions ([77cb00d](https://github.com/zthun/janitor/commit/77cb00dc4464984a84292a4687c07c4f5255c4ce))
+* janitor lint options is now janitor options ([e8e4578](https://github.com/zthun/janitor/commit/e8e4578711efccef9e23ade8450f07db2178127f))
+* janitor options have been extracted to @zthun/janitor-options ([887f6fe](https://github.com/zthun/janitor/commit/887f6fe798a2d6a0e11fee72860d3f25087a2757))
+* lint-janitor is now janitor-lint ([e70b671](https://github.com/zthun/janitor/commit/e70b6713850499841df1e49413dba19cafebe32a))
+* markdownlint-config is now janitor-markdownlint-config ([b4ed3ee](https://github.com/zthun/janitor/commit/b4ed3ee364ff85cb28f30572fee6a42924a0ebf5))
+* rename @zthun/eslint-config to @zthun/janitor-eslint-config ([01494c6](https://github.com/zthun/janitor/commit/01494c6a476d60ce45d4a18ae7c5be40aaab2363))
+* rename lint-janitor-config to janitor-lint-config ([9c9aebf](https://github.com/zthun/janitor/commit/9c9aebfb7f9cc7f91bcf9005739f17bb8f37699a))
+* rename stylelint-config to janitor-stylelint-config ([0d6cd68](https://github.com/zthun/janitor/commit/0d6cd68c05ee246d8188627165d9f81877a9ac25))
+
+
+### Build System
+
+* module resolution and style are now node next ([77fada3](https://github.com/zthun/janitor/commit/77fada3a88a243cda30350a7e0df74269c27142f))
+
+
+
 ## [18.1.0](https://github.com/zthun/janitor/compare/v18.0.6...v18.1.0) (2025-05-20)
 
 

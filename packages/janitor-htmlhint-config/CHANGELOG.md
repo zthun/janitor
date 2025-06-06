@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [19.0.0](https://github.com/zthun/janitor/compare/v18.1.0...v19.0.0) (2025-06-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* htmlhint-config is now janitor-htmlhint-config
+
+### Code Refactoring
+
+* htmlhint-config is now janitor-htmlhint-config ([6407b0f](https://github.com/zthun/janitor/commit/6407b0fb9b8935a70233d724c2eed23b2da04309))
+
+
+
 ## [18.1.0](https://github.com/zthun/janitor/compare/v18.0.6...v18.1.0) (2025-05-20)
 
 **Note:** Version bump only for package @zthun/htmlhint-config
