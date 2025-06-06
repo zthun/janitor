@@ -316,6 +316,22 @@ describe("ZJanitorOptionsLint", () => {
       it("should add html files to generated spelling files", () => {
         shouldAddSpellingFiles((t, f) => t.htmlFile(f));
       });
+
+      it("should add json files to generated spelling files", () => {
+        shouldAddSpellingFiles((t, f) => t.jsonFile(f));
+      });
+
+      it("should add markdown files to generated spelling files", () => {
+        shouldAddSpellingFiles((t, f) => t.markdownFile(f));
+      });
+
+      it("should add style files to generated spelling files", () => {
+        shouldAddSpellingFiles((t, f) => t.styleFile(f));
+      });
+
+      it("should add yaml files to the generated spelling files", () => {
+        shouldAddSpellingFiles((t, f) => t.yamlFile(f));
+      });
     });
   });
 

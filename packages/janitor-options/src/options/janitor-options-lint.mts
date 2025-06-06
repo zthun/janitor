@@ -411,9 +411,12 @@ export class ZJanitorOptionsLintBuilder {
    *        This object.
    */
   public generateSpellingFiles() {
-    return this.spellingFile(this.lint.esFiles).spellingFile(
-      this.lint.htmlFiles,
-    );
+    return this.spellingFile(this.lint.esFiles)
+      .spellingFile(this.lint.htmlFiles)
+      .spellingFile(this.lint.jsonFiles)
+      .spellingFile(this.lint.markdownFiles)
+      .spellingFile(this.lint.styleFiles)
+      .spellingFile(this.lint.yamlFiles);
   }
 
   /**
