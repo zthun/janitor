@@ -277,6 +277,26 @@ describe("ZJanitorOptionsLint", () => {
       // Assert.
       expect(actual.spellingConfig).toEqual(expected);
     });
+
+    it("should add es files to generated spelling files", () => {
+      // Arrange.
+      const esFileAlpha = "**/*.js";
+      const esFileBravo = "**/*.ts";
+      const target = createTestTarget();
+
+      // Act.
+      const config = target
+        .esFile(esFileAlpha)
+        .esFile(esFileBravo)
+        .generateSpellingFiles()
+        .build();
+      const { spellingFiles: actual } = config;
+
+      // Assert.
+      expect(actual).toHaveLength(2);
+      expect(actual).toContain(esFileAlpha);
+      expect(actual).toContain(esFileBravo);
+    });
   });
 
   describe("Style", () => {

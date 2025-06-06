@@ -177,20 +177,6 @@ export class ZJanitorOptionsLintBuilder {
   }
 
   /**
-   * Sets all file globs to lint with eslint.
-   *
-   * @param files -
-   *        The file globs to lint with eslint.
-   *
-   * @returns
-   *        This object.
-   */
-  public esFiles(files: string[]) {
-    this.lint.esFiles = files;
-    return this;
-  }
-
-  /**
    * Adds a single file to the list of files to lint with eslint.
    *
    * @param file -
@@ -199,9 +185,10 @@ export class ZJanitorOptionsLintBuilder {
    * @returns
    *        This object.
    */
-  public esFile(file: string) {
+  public esFile(file: string | string[]) {
     const files = this.lint.esFiles ?? [];
-    return this.esFiles(files.concat(file));
+    this.lint.esFiles = files.concat(file);
+    return this;
   }
 
   /**
@@ -317,7 +304,7 @@ export class ZJanitorOptionsLintBuilder {
   }
 
   /**
-   * Sets all file globs to lint with cspell.
+   * Adds a list of globs to the list of files to lint with cspell.
    *
    * @param files -
    *        The file globs to lint with cspell.
@@ -325,23 +312,10 @@ export class ZJanitorOptionsLintBuilder {
    * @returns
    *        This object.
    */
-  public spellingFiles(files: string[]) {
-    this.lint.spellingFiles = files;
-    return this;
-  }
-
-  /**
-   * Adds a single file glob to the list of files to lint with cspell.
-   *
-   * @param file -
-   *        The file glob to lint with cspell.
-   *
-   * @returns
-   *        This object.
-   */
-  public spellingFile(file: string) {
+  public spellingFile(file: string | string[]) {
     const files = this.lint.spellingFiles ?? [];
-    return this.spellingFiles(files.concat(file));
+    this.lint.spellingFiles = files.concat(file);
+    return this;
   }
 
   /**
@@ -584,6 +558,10 @@ export class ZJanitorOptionsLintBuilder {
       .prettyExclude(file)
       .spellingExclude(file)
       .yamlExclude(file);
+  }
+
+  public generateSpellingFiles() {
+    return this.spellingFile(this.lint.esFiles);
   }
 
   /**
