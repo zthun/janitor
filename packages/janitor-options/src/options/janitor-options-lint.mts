@@ -426,12 +426,12 @@ export class ZJanitorOptionsLintBuilder {
    *        This object.
    */
   public generatePrettyFiles() {
-    return this.spellingFile(this.lint.esFiles)
-      .spellingFile(this.lint.htmlFiles)
-      .spellingFile(this.lint.jsonFiles)
-      .spellingFile(this.lint.markdownFiles)
-      .spellingFile(this.lint.styleFiles)
-      .spellingFile(this.lint.yamlFiles);
+    return this.prettyFile(this.lint.esFiles)
+      .prettyFile(this.lint.htmlFiles)
+      .prettyFile(this.lint.jsonFiles)
+      .prettyFile(this.lint.markdownFiles)
+      .prettyFile(this.lint.styleFiles)
+      .prettyFile(this.lint.yamlFiles);
   }
 
   /**

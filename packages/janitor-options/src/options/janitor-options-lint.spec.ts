@@ -252,7 +252,7 @@ describe("ZJanitorOptionsLint", () => {
 
         // Act.
         const config = appendFn(target, file).generatePrettyFiles().build();
-        const { spellingFiles: actual } = config;
+        const { prettyFiles: actual } = config;
 
         // Assert.
         expect(actual).toHaveLength(1);
