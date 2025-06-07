@@ -55,7 +55,7 @@ describe("ZLinterSpelling", () => {
       // Arrange
       const target = createTestTarget();
       // Act
-      await target.lint(content, null);
+      await target.lint(content);
       // Assert
       expect(lint).toHaveBeenCalledWith(content, {}, expect.anything());
     });
@@ -78,16 +78,22 @@ describe("ZLinterSpelling", () => {
     beforeEach(() => {
       issue = {
         text: "foo",
-        line: null,
+        line: {
+          text: "",
+          offset: 0,
+        },
         offset: 5,
-        context: null,
+        context: {
+          text: "",
+          offset: 0,
+        },
         row: 10,
         col: 5,
         uri: "/path/to/file/with/issue",
       };
 
       vi.mocked(lint).mockImplementation((_, __, e: CSpellReporter) => {
-        e.issue(issue);
+        e?.issue?.call(e, issue);
         return Promise.resolve(lintResult);
       });
     });
@@ -111,7 +117,7 @@ describe("ZLinterSpelling", () => {
       await target.lint(content, config);
       // Assert
       expect(logger.log).toHaveBeenCalledWith(
-        expect.stringContaining(issue.uri),
+        expect.stringContaining(issue.uri!),
       );
     });
 
