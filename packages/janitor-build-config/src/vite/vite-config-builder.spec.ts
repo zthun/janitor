@@ -1,11 +1,13 @@
 import type { LibraryOptions, Plugin } from "vite";
+import dts from "vite-plugin-dts";
+import { externalizeDeps } from "vite-plugin-externalize-deps";
 import { describe, expect, it } from "vitest";
 import { ZViteConfigBuilder } from "./vite-config-builder.mjs";
 import { ZViteLibraryBuilder } from "./vite-library-builder.mjs";
 import { ZViteTestBuilder } from "./vite-test-builder.mjs";
 
 describe("Vite Config Builder", () => {
-  const createTestTarget = () => new ZViteConfigBuilder(__dirname);
+  const createTestTarget = () => new ZViteConfigBuilder();
 
   const shouldAddPlugin = (
     expected: string,
@@ -17,8 +19,8 @@ describe("Vite Config Builder", () => {
     // Act.
     const config = buildFn(target).build();
     const { plugins } = config;
-    const names = plugins.map((p) => p as Plugin).map((p) => p.name);
-    const actual = names.indexOf(expected);
+    const names = plugins?.map((p) => p as Plugin).map((p) => p.name);
+    const actual = names?.indexOf(expected);
 
     // Assert.
     expect(actual).toBeGreaterThanOrEqual(0);
@@ -33,35 +35,54 @@ describe("Vite Config Builder", () => {
 
     // Act.
     const config = buildFn(target).build();
-    const { lib } = config.build;
-    const { entry } = lib as LibraryOptions;
+    const { build = {} } = config;
+    const { lib = {} } = build;
+    const { entry = {} } = lib as LibraryOptions;
     const actual = Object.prototype.hasOwnProperty.call(entry, expected);
 
     // Assert.
     expect(actual).toBeTruthy();
   };
 
+  describe("Plugins", () => {
+    it("should add all plugins", () => {
+      // Arrange
+      const a = externalizeDeps();
+      const b = dts();
+      const target = createTestTarget();
+
+      // Act
+      const { plugins } = target.plugin().plugin(a).plugin([b]).build();
+      const actual = plugins?.map((p) => p as Plugin).map((p) => p.name);
+
+      expect(actual).toContain(a.name);
+      expect(actual).toContain(b.name);
+    });
+  });
+
   describe("Library", () => {
     it("should set the library options", () => {
       const expected = new ZViteLibraryBuilder().index().build();
-      expect(createTestTarget().library().build().build.lib).toEqual(expected);
+      expect(createTestTarget().library().build().build?.lib).toEqual(expected);
     });
 
     it("should set custom library options", () => {
       const expected = new ZViteLibraryBuilder()
         .entry("custom", "path/to/custom.ts")
         .build();
-      expect(createTestTarget().library(expected).build().build.lib).toEqual(
+      expect(createTestTarget().library(expected).build().build?.lib).toEqual(
         expected,
       );
     });
 
     it("should turn on the source maps", () => {
-      expect(createTestTarget().library().build().build.sourcemap).toBeTruthy();
+      expect(
+        createTestTarget().library().build().build?.sourcemap,
+      ).toBeTruthy();
     });
 
     it("should turn off minify", () => {
-      expect(createTestTarget().library().build().build.minify).toBeFalsy();
+      expect(createTestTarget().library().build().build?.minify).toBeFalsy();
     });
 
     it("should add the external dependencies plugin", () => {
@@ -75,7 +96,7 @@ describe("Vite Config Builder", () => {
 
   describe("CLI", () => {
     it("should construct a library", () => {
-      expect(createTestTarget().cli().build().build.lib).toBeTruthy();
+      expect(createTestTarget().cli().build().build?.lib).toBeTruthy();
     });
 
     it("should add an entry point for index", () => {
@@ -84,6 +105,16 @@ describe("Vite Config Builder", () => {
 
     it("should add an entry point for cli", () => {
       shouldAddEntryPoint("cli", (t) => t.cli());
+    });
+  });
+
+  describe("Nest", () => {
+    it("should construct a library", () => {
+      expect(createTestTarget().nest().build().build?.lib).toBeTruthy();
+    });
+
+    it("should add an entry point for main", () => {
+      shouldAddEntryPoint("main", (t) => t.nest());
     });
   });
 

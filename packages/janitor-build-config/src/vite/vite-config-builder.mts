@@ -1,6 +1,6 @@
-import { cloneDeep } from "lodash-es";
+import { castArray, cloneDeep } from "lodash-es";
 import swc from "unplugin-swc";
-import type { LibraryOptions, UserConfig } from "vite";
+import type { LibraryOptions, PluginOption, UserConfig } from "vite";
 import dtsPlugin from "vite-plugin-dts";
 import { externalizeDeps } from "vite-plugin-externalize-deps";
 import tsConfigPaths from "vite-tsconfig-paths";
@@ -53,12 +53,8 @@ export class ZViteConfigBuilder {
 
   /**
    * Initializes a new instance of this object.
-   *
-   * @param _dirname -
-   *        The directory that is housing the vite.config
-   *        file.  Pass __dirname to this.
    */
-  public constructor(private _dirname: string) {
+  public constructor() {
     this.config = {
       build: {
         minify: true,
@@ -66,6 +62,51 @@ export class ZViteConfigBuilder {
       },
       plugins: [swc.vite(), tsConfigPaths()],
     };
+  }
+
+  /**
+   * Sets whether to minify the build output.
+   *
+   * @param minify -
+   *        The flag as to minify the output.
+   *
+   * @returns
+   *        This object.
+   */
+  public minify(minify = true) {
+    this.config.build = { ...this.config.build, minify };
+    return this;
+  }
+
+  /**
+   * Adds a list of plugins.
+   *
+   * @param option -
+   *        The plugins to add.
+   *
+   * @returns
+   *        This object.
+   */
+  public plugin(option: PluginOption | PluginOption[] = []) {
+    // See constructor - the config plugins are guaranteed to
+    // be set.  The swc and paths plugins are automatically added.
+    const plugins = this.config.plugins!;
+    this.config.plugins = plugins.concat(castArray(option));
+    return this;
+  }
+
+  /**
+   * Sets whether to generate source maps.
+   *
+   * @param sourcemap -
+   *        True to generate a sourcemap, false for faster build.
+   *
+   * @returns
+   *        This object.
+   */
+  public sourceMap(sourcemap = true) {
+    this.config.build = { ...this.config.build, sourcemap };
+    return this;
   }
 
   /**
@@ -82,35 +123,21 @@ export class ZViteConfigBuilder {
    *        This object.
    */
   public library(
-    options: LibraryOptions = new ZViteLibraryBuilder().index().build(),
+    lib: LibraryOptions = new ZViteLibraryBuilder().index().build(),
   ) {
-    this.config.build.lib = options;
+    this.config.build = { ...this.config.build, lib };
 
-    // There is almost no value to minifying a library unless you
-    // are bundling it for importing via html.
-    // Thus, just turn off the minify and enable the source map
-    // This makes it much easier for other devs to debug problems
-    this.config.build.minify = false;
-    this.config.build.sourcemap = true;
+    const dts = dtsPlugin({
+      compilerOptions: {
+        // Always turn off paths when building for production.  You want to make
+        // sure that your build is building in the correct order and that your
+        // actual paths are correct.
+        paths: {},
+      },
+    });
+    const external = externalizeDeps();
 
-    // When using a library, we also want to make sure we externalize the
-    // dependencies automatically -> it blows my mind why vite doesn't
-    // do this out of the box.  I guess there's some reason or some
-    // use case to bundle all the dependencies; I just don't see it.
-    this.config.plugins = [
-      ...this.config.plugins,
-      externalizeDeps(),
-      dtsPlugin({
-        compilerOptions: {
-          // Always turn off paths when building for production.  You want to make
-          // sure that your build is building in the correct order and that your
-          // actual paths are correct.
-          paths: {},
-        },
-      }),
-    ];
-
-    return this;
+    return this.minify(false).sourceMap().plugin(external).plugin(dts);
   }
 
   /**
@@ -126,12 +153,28 @@ export class ZViteConfigBuilder {
    *        This object.
    */
   public cli() {
-    // A cli works similar to a library.  Vite isn't the best when it comes
-    // to building complex node apps, but for simple cli tools and non
-    // framework based servers, you can do it.
+    // A cli works similar to a library.
     const library = new ZViteLibraryBuilder()
       .entry("index", "src/index.ts")
       .entry("cli", "src/cli.ts")
+      .build();
+    return this.library(library);
+  }
+
+  /**
+   * Constructs the config to act as if it's compiling a nest application.
+   *
+   * This is just an alias to {@link ZViteConfigBuilder.library} with a single
+   * entry point.
+   *
+   * 1. The file, src/main.mts
+   *
+   * @returns
+   *        This object.
+   */
+  public nest() {
+    const library = new ZViteLibraryBuilder()
+      .entry("main", "src/main.mts")
       .build();
     return this.library(library);
   }
