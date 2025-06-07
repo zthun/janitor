@@ -82,6 +82,31 @@ export class ZViteTestBuilder {
   public istanbul = this.coverage.bind(this, "istanbul");
 
   /**
+   * Adds to the list of projects.
+   *
+   * @param project -
+   *        The list of projects.
+   *
+   * @returns
+   *        This object.
+   */
+  public project(project: string | string[] = []) {
+    const projects = this.test.projects || [];
+    this.test.projects = projects.concat(project);
+    return this;
+  }
+
+  /**
+   * Sets the projects field to ${packages}/*\/vitest.config.ts
+   *
+   * @returns
+   *        This object.
+   */
+  public monorepo(packages = "packages") {
+    return this.project(`${packages}/*/vitest.config.{js,cjs,mjs,ts,mts}`);
+  }
+
+  /**
    * Returns the built test configuration.
    *
    * @returns

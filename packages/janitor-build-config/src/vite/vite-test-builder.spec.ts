@@ -54,4 +54,50 @@ describe("Vite Test Builder", () => {
       shouldSetCoverage("istanbul", (t) => t.istanbul());
     });
   });
+
+  describe("Projects", () => {
+    it("should add a project", () => {
+      // Arrange.
+      const a = "/path/to/a/vite.config.ts";
+      const b = "/path/to/b/vite.config.ts";
+      const c = "/path/to/c/vite.config.ts";
+      const target = createTestTarget();
+
+      // Act.
+      const config = target.project().project(a).project([b, c]).build();
+      const { projects: actual } = config;
+
+      // Assert.
+      expect(actual).toEqual([a, b, c]);
+    });
+  });
+
+  describe("Monorepo", () => {
+    it("should construct a monorepo", () => {
+      // Arrange.
+      const target = createTestTarget();
+
+      // Act.
+      const config = target.monorepo().build();
+      const { projects: actual } = config;
+
+      // Assert.
+      expect(actual).toContain("packages/*/vitest.config.{js,cjs,mjs,ts,mts}");
+    });
+
+    it("should construct a monorepo with a path to the packages folder", () => {
+      // Arrange.
+      const target = createTestTarget();
+      const packages = "libs";
+
+      // Act.
+      const config = target.monorepo(packages).build();
+      const { projects: actual } = config;
+
+      // Assert.
+      expect(actual).toContain(
+        `${packages}/*/vitest.config.{js,cjs,mjs,ts,mts}`,
+      );
+    });
+  });
 });
