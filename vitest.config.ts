@@ -3,5 +3,5 @@ import { defineConfig } from "vite";
 // if paths is available.  So for this special case, we need the relative path.
 import { ZViteConfigBuilder } from "./packages/janitor-build-config/src/vite/vite-config-builder.mjs";
 
-const config = new ZViteConfigBuilder(__dirname).test().build();
+const config = new ZViteConfigBuilder().test().build();
 export default defineConfig(config);
