@@ -449,7 +449,7 @@ describe("ZJanitorOptionsLint", () => {
 
   describe("Exclude All", () => {
     const shouldAddFilesToExclude = (
-      filesFn: (config: IZJanitorOptionsLint) => string[],
+      filesFn: (config: IZJanitorOptionsLint) => string[] | undefined,
     ) => {
       // Arrange.
       const globalExcludeAlpha = "lerna.json";
