@@ -7,6 +7,6 @@ const library = new ZViteLibraryBuilder()
   .entry("typedoc", "./src/typedoc/index.ts")
   .build();
 
-const config = new ZViteConfigBuilder(__dirname).library(library).build();
+const config = new ZViteConfigBuilder().library(library).build();
 
 export default defineConfig(config);
