@@ -103,7 +103,7 @@ describe("ZLinterEs", () => {
       const target = createTestTarget();
       vi.spyOn(target, "engineFactory");
       // Act
-      await target.lint(files, null);
+      await target.lint(files);
       // Assert
       expect(target.engineFactory).toHaveBeenCalled();
     });

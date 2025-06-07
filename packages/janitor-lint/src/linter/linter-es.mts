@@ -40,7 +40,7 @@ export class ZLinterEs implements IZLinter {
    *        fully successful, and false if the lint
    *        has errors.
    */
-  public async lint(src: string[], config: string): Promise<boolean> {
+  public async lint(src: string[], config?: string): Promise<boolean> {
     const esOptions: ESLint.Options = {};
 
     if (config) {
