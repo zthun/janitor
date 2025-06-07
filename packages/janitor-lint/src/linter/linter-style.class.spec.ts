@@ -31,7 +31,7 @@ describe("ZLinterStyle", () => {
       output: "",
       cwd: "",
       report: "",
-      reportedDisables: null,
+      reportedDisables: [],
       results: [],
       ruleMetadata: {},
     };
