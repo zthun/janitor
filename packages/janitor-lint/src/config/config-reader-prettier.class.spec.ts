@@ -42,11 +42,11 @@ describe("ZConfigReaderPrettier", () => {
     // Arrange
     const target = createTestTarget();
     // Act
-    await target.read(null);
+    await target.read();
     // Assert
     expect(resolveConfig).toHaveBeenCalledWith(
       expect.stringContaining(process.cwd()),
-      { config: null },
+      {},
     );
   });
 
@@ -54,7 +54,7 @@ describe("ZConfigReaderPrettier", () => {
     // Arrange
     const target = createTestTarget();
     // Act
-    const actual = await target.read(null);
+    const actual = await target.read();
     // Assert
     expect(actual).toBe(options);
   });
@@ -65,7 +65,7 @@ describe("ZConfigReaderPrettier", () => {
     const target = createTestTarget();
 
     // Act
-    const actual = await target.read(null);
+    const actual = await target.read();
 
     // Assert
     expect(actual).toEqual({});

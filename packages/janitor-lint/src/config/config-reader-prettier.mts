@@ -18,9 +18,9 @@ export class ZConfigReaderPrettier implements IZConfigReader {
    * @returns
    *        The options for the config file.
    */
-  public async read(config: string): Promise<Options> {
+  public async read(config?: string): Promise<Options> {
     const cwd = process.cwd();
-    const configFile = config ? $resolve(config, { paths: [cwd] }) : null;
+    const configFile = config ? $resolve(config, { paths: [cwd] }) : undefined;
     const ops: ResolveConfigOptions = { config: configFile };
     // This function seems to have a slight issue in that it needs one directory deeper than
     // the directory you want to start the search in.  The documentation on this isn't exactly correct,
