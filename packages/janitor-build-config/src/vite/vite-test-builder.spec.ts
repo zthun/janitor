@@ -39,7 +39,7 @@ describe("Vite Test Builder", () => {
 
       // Act.
       const test = buildFn(target).build();
-      const { coverage } = test;
+      const { coverage = {} } = test;
       const { provider: actual } = coverage;
 
       // Assert.

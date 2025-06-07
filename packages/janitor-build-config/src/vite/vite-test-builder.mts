@@ -61,7 +61,7 @@ export class ZViteTestBuilder {
    *        This object.
    */
   public coverage(provider: "v8" | "istanbul") {
-    this.test.coverage.provider = provider;
+    this.test.coverage = { ...this.test.coverage, provider };
     return this;
   }
 
