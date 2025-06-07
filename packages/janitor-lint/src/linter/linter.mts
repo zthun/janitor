@@ -17,9 +17,5 @@ export interface IZLinter {
    *        linting is ok, and false if the linting
    *        fails.
    */
-  lint(
-    src: string[],
-    config?: string | null,
-    exclude?: string[] | null,
-  ): Promise<boolean>;
+  lint(src: string[], config?: string, exclude?: string[]): Promise<boolean>;
 }
