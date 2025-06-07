@@ -97,7 +97,10 @@ export class ZViteTestBuilder {
   }
 
   /**
-   * Sets the projects field to ${packages}/*\/vitest.config.ts
+   * Adds monorepo support to the test builder.
+   *
+   * @param packages -
+   *        The path to the package directory.
    *
    * @returns
    *        This object.
