@@ -61,7 +61,7 @@ describe("ZLinterStyle", () => {
       // Arrange
       const target = createTestTarget();
       // Act
-      await target.lint(content, null);
+      await target.lint(content);
       // Assert
       expect(stylelint.lint).toHaveBeenCalledWith({ files: content });
     });
