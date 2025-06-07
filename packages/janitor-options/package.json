@@ -34,6 +34,6 @@
     "@zthun/janitor-build-config": "^19.0.0",
     "typescript": "~5.8.3",
     "vite": "^6.3.5",
-    "vitest": "^3.1.4"
+    "vitest": "^3.2.2"
   }
 }

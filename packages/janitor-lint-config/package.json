@@ -79,7 +79,7 @@
     "@zthun/janitor-stylelint-config-less": "^19.0.0",
     "@zthun/janitor-stylelint-config-sass": "^19.0.0",
     "eslint": "^9.28.0",
-    "htmlhint": "^1.3.0",
+    "htmlhint": "^1.5.0",
     "markdownlint": "~0.38.0",
     "postcss": "^8.5.4",
     "prettier": "^3.5.3",
