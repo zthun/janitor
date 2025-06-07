@@ -1,5 +1,5 @@
 import { cloneDeep } from "lodash-es";
-import { EntryPointStrategy, TypeDocOptions } from "typedoc";
+import type { EntryPointStrategy, TypeDocOptions } from "typedoc";
 
 /**
  * A builder for TypeDoc configurations.

@@ -1,4 +1,4 @@
-import { IZLinter } from "./linter.mjs";
+import type { IZLinter } from "./linter.mjs";
 
 /**
  * Represents a silent linter that always succeeds.

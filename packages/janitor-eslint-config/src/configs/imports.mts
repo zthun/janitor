@@ -1,4 +1,4 @@
-import { Linter } from "eslint";
+import type { Linter } from "eslint";
 import _import from "eslint-plugin-import";
 
 export const imports: Linter.Config[] = [

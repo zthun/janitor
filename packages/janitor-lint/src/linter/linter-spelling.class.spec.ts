@@ -1,4 +1,5 @@
-import { CSpellReporter, Issue, lint, RunResult } from "cspell";
+import type { CSpellReporter, Issue, RunResult } from "cspell";
+import { lint } from "cspell";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { $resolve } from "../config/config-resolve.mjs";
 import { ZLinterSpelling } from "./linter-spelling.mjs";

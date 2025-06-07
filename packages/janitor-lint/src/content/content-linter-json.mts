@@ -1,4 +1,4 @@
-import { IZContentLinter } from "./content-linter.mjs";
+import type { IZContentLinter } from "./content-linter.mjs";
 
 /**
  * Represents the linter for json files.

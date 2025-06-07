@@ -1,5 +1,6 @@
-import { check, getFileInfo, Options } from "prettier";
-import { IZContentLinter } from "./content-linter.mjs";
+import type { Options } from "prettier";
+import { check, getFileInfo } from "prettier";
+import type { IZContentLinter } from "./content-linter.mjs";
 
 /**
  * Represents an object that can be used to perform prettier checks on files.

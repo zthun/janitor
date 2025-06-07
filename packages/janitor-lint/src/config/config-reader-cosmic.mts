@@ -1,9 +1,9 @@
 import { cosmiconfig } from "cosmiconfig";
 
 import { resolve } from "path";
-import { IZConfigDiscovery } from "./config-discovery.mjs";
-import { IZConfigExtender } from "./config-extender.mjs";
-import { IZConfigReader } from "./config-reader.mjs";
+import type { IZConfigDiscovery } from "./config-discovery.mjs";
+import type { IZConfigExtender } from "./config-extender.mjs";
+import type { IZConfigReader } from "./config-reader.mjs";
 import { $resolve } from "./config-resolve.mjs";
 
 /**

@@ -1,11 +1,12 @@
 import chalk from "chalk";
 import { readFile } from "fs";
-import { GlobOptionsWithFileTypesFalse, sync } from "glob";
+import type { GlobOptionsWithFileTypesFalse } from "glob";
+import { sync } from "glob";
 import { resolve } from "path";
 import { promisify } from "util";
-import { IZConfigReader } from "../config/config-reader.mjs";
-import { IZLinter } from "./linter.mjs";
-import { IZContentLinter } from "../content/content-linter.mjs";
+import type { IZConfigReader } from "../config/config-reader.mjs";
+import type { IZContentLinter } from "../content/content-linter.mjs";
+import type { IZLinter } from "./linter.mjs";
 
 /**
  * Represents an object that can lint files one at a time.

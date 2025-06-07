@@ -1,10 +1,11 @@
 import chalk from "chalk";
-import { GlobOptionsWithFileTypesFalse, sync } from "glob";
+import type { GlobOptionsWithFileTypesFalse } from "glob";
+import { sync } from "glob";
 import { some, values } from "lodash-es";
-import { Options } from "markdownlint";
+import type { Options } from "markdownlint";
 import { lint } from "markdownlint/promise";
-import { IZConfigReader } from "../config/config-reader.mjs";
-import { IZLinter } from "./linter.mjs";
+import type { IZConfigReader } from "../config/config-reader.mjs";
+import type { IZLinter } from "./linter.mjs";
 
 /**
  * Represents a linter object that checks markdown.

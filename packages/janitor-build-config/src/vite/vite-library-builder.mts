@@ -1,5 +1,5 @@
 import { cloneDeep } from "lodash-es";
-import { LibraryOptions } from "vite";
+import type { LibraryOptions } from "vite";
 
 /**
  * A builder for Vite library configurations.

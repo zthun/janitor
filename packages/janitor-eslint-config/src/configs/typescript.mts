@@ -1,10 +1,19 @@
-import { Linter } from "eslint";
+import type { Linter } from "eslint";
 import ts from "typescript-eslint";
 
 export const typescript = [
   ...ts.configs.recommended,
   {
     rules: {
+      // We want to be able to use a single build system for most things.
+      // Ideally, we can use vite to build all project types so we don't
+      // have 4 different build systems across different projects.  Thus
+      // we need to make sure that swc, esbuild, and tsc are supported.
+      // Forcing type imports ensures this.
+      "@typescript-eslint/consistent-type-imports": [
+        "error",
+        { prefer: "type-imports" },
+      ],
       // There are times when any and legacy namespaces makes sense.
       // If you use any kind of decorator library, you will almost
       // be required to use any at some point.  Forcing a non use of them

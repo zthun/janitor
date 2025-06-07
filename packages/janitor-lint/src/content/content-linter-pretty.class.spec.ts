@@ -1,4 +1,5 @@
-import { check, FileInfoResult, getFileInfo, Options } from "prettier";
+import type { FileInfoResult, Options } from "prettier";
+import { check, getFileInfo } from "prettier";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { ZContentLinterPretty } from "./content-linter-pretty.mjs";
 

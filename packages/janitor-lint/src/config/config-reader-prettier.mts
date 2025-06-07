@@ -1,7 +1,8 @@
-import { Options, resolveConfig, ResolveConfigOptions } from "prettier";
-import { IZConfigReader } from "./config-reader.mjs";
-import { $resolve } from "./config-resolve.mjs";
 import { resolve } from "path";
+import type { Options, ResolveConfigOptions } from "prettier";
+import { resolveConfig } from "prettier";
+import type { IZConfigReader } from "./config-reader.mjs";
+import { $resolve } from "./config-resolve.mjs";
 
 /**
  * Represents a configuration reader for prettier.

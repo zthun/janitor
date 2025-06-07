@@ -1,4 +1,4 @@
-import { ESLint, Linter } from "eslint";
+import type { ESLint, Linter } from "eslint";
 import _react from "eslint-plugin-react";
 
 export const react: Linter.Config[] = [

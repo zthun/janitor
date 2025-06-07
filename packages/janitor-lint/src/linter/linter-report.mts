@@ -1,7 +1,8 @@
 import chalk from "chalk";
-import { GlobOptionsWithFileTypesFalse, sync } from "glob";
+import type { GlobOptionsWithFileTypesFalse } from "glob";
+import { sync } from "glob";
 import { uniq } from "lodash-es";
-import { IZLinter } from "./linter.mjs";
+import type { IZLinter } from "./linter.mjs";
 
 /**
  * Represents an object that will report on file globs, but will

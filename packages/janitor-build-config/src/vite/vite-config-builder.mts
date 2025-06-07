@@ -1,10 +1,10 @@
 import { cloneDeep } from "lodash-es";
 import swc from "unplugin-swc";
-import { LibraryOptions, UserConfig } from "vite";
+import type { LibraryOptions, UserConfig } from "vite";
 import dtsPlugin from "vite-plugin-dts";
 import { externalizeDeps } from "vite-plugin-externalize-deps";
 import tsConfigPaths from "vite-tsconfig-paths";
-import { InlineConfig as TestConfig } from "vitest/node.js";
+import type { InlineConfig as TestConfig } from "vitest/node.js";
 import { ZViteLibraryBuilder } from "./vite-library-builder.mjs";
 import { ZViteTestBuilder } from "./vite-test-builder.mjs";
 

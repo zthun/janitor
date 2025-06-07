@@ -1,4 +1,4 @@
-import { LibraryOptions, Plugin } from "vite";
+import type { LibraryOptions, Plugin } from "vite";
 import { describe, expect, it } from "vitest";
 import { ZViteConfigBuilder } from "./vite-config-builder.mjs";
 import { ZViteLibraryBuilder } from "./vite-library-builder.mjs";

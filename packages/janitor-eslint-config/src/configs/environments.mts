@@ -1,4 +1,4 @@
-import { Linter } from "eslint";
+import type { Linter } from "eslint";
 import globals from "globals";
 
 function environment(environment: object): Linter.Config {

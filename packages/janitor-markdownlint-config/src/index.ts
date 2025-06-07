@@ -1,4 +1,4 @@
-import { Configuration } from "markdownlint";
+import type { Configuration } from "markdownlint";
 
 const config: Configuration = {
   // We actually want support sometimes for custom html and images in

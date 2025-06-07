@@ -1,4 +1,5 @@
-import { Options, resolveConfig } from "prettier";
+import type { Options } from "prettier";
+import { resolveConfig } from "prettier";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { ZConfigReaderPrettier } from "./config-reader-prettier.mjs";
 import { $resolve } from "./config-resolve.mjs";

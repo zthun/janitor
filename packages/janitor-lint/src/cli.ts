@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import usage from "yargs";
-import { IZJanitorLintArgs } from "./app/janitor-lint-args.mjs";
+import type { IZJanitorLintArgs } from "./app/janitor-lint-args.mjs";
 import { ZJanitorLint } from "./app/janitor-lint.mjs";
 
 const args: IZJanitorLintArgs = usage("$0 [options]")

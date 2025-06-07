@@ -1,5 +1,6 @@
-import { HTMLHint, FormatOptions } from "htmlhint";
-import { IZContentLinter } from "./content-linter.mjs";
+import type { FormatOptions } from "htmlhint";
+import { HTMLHint } from "htmlhint";
+import type { IZContentLinter } from "./content-linter.mjs";
 
 /**
  * Represents an object that can be used to hint html files.

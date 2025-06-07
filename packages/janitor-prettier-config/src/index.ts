@@ -1,4 +1,4 @@
-import { Config } from "prettier";
+import type { Config } from "prettier";
 
 const config: Config = {
   // Markdown will not format correct when ran through

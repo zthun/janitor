@@ -1,7 +1,7 @@
 import { ESLint } from "eslint";
 import { every } from "lodash-es";
 import { $resolve } from "../config/config-resolve.mjs";
-import { IZLinter } from "./linter.mjs";
+import type { IZLinter } from "./linter.mjs";
 
 /**
  * Represents an object that can be used to perform eslint on javascript files.

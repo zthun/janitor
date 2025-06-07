@@ -1,6 +1,6 @@
 import stylelint from "stylelint";
-import { IZLinter } from "./linter.mjs";
 import { $resolve } from "../config/config-resolve.mjs";
+import type { IZLinter } from "./linter.mjs";
 
 /**
  * Represents a linter for stylelint.

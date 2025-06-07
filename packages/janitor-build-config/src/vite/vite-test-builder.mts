@@ -1,5 +1,5 @@
 import { cloneDeep } from "lodash-es";
-import { InlineConfig, VitestEnvironment } from "vitest/node";
+import type { InlineConfig, VitestEnvironment } from "vitest/node";
 
 /**
  * A builder for test configurations found in vite's defineConfig test field.

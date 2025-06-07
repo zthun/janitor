@@ -1,4 +1,4 @@
-import { IZJanitorOptionsLint } from "./janitor-options-lint.mjs";
+import type { IZJanitorOptionsLint } from "./janitor-options-lint.mjs";
 
 /**
  * Options for the zthunworks janitor system.
