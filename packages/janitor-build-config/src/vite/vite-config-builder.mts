@@ -138,9 +138,18 @@ export class ZViteConfigBuilder {
 
   /**
    * Constructs the config to be for testing.
+   *
+   * @param options -
+   *        The test config to use.  If this is falsy,
+   *        then a test setup using a monorepo with an
+   *        istanbul provider in node is used.
    */
   public test(
-    options: TestConfig = new ZViteTestBuilder().node().istanbul().build(),
+    options: TestConfig = new ZViteTestBuilder()
+      .node()
+      .istanbul()
+      .monorepo()
+      .build(),
   ) {
     this.config.test = options;
     return this;
