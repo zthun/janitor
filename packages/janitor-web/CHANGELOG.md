@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [19.1.0](https://github.com/zthun/janitor/compare/v19.0.0...v19.1.0) (2025-06-08)
+
+**Note:** Version bump only for package @zthun/janitor-web
+
+
+
+
+
 ## [19.0.0](https://github.com/zthun/janitor/compare/v18.1.0...v19.0.0) (2025-06-06)
 
 
