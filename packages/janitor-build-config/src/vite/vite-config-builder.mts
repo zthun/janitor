@@ -1,6 +1,12 @@
 import { castArray, cloneDeep } from "lodash-es";
 import swc from "unplugin-swc";
-import type { LibraryOptions, PluginOption, UserConfig } from "vite";
+import type {
+  LibraryOptions,
+  PluginOption,
+  ServerOptions,
+  UserConfig,
+} from "vite";
+import { checker } from "vite-plugin-checker";
 import dtsPlugin from "vite-plugin-dts";
 import { externalizeDeps } from "vite-plugin-externalize-deps";
 import tsConfigPaths from "vite-tsconfig-paths";
@@ -110,6 +116,20 @@ export class ZViteConfigBuilder {
   }
 
   /**
+   * Assigns the server options.
+   *
+   * @param options -
+   *        The server options to assign.
+   *
+   * @returns
+   *        This object.
+   */
+  public server(options: ServerOptions) {
+    this.config.server = cloneDeep(options);
+    return this;
+  }
+
+  /**
    * Sets vite into library mode.
    *
    * @param lib -
@@ -178,6 +198,26 @@ export class ZViteConfigBuilder {
       .build();
     return this.library(library);
   }
+
+  /**
+   * Constructs the config to act as if it's compiling a web application.
+   *
+   * @returns
+   *        This object.
+   */
+  public web() {
+    return this.minify()
+      .sourceMap(false)
+      .plugin(checker({ typescript: true }));
+  }
+
+  /**
+   * An alias to {@link web}
+   *
+   * @returns
+   *        This object.
+   */
+  public react = this.web;
 
   /**
    * Constructs the config to be for testing.

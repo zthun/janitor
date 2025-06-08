@@ -4,6 +4,7 @@ import { externalizeDeps } from "vite-plugin-externalize-deps";
 import { describe, expect, it } from "vitest";
 import { ZViteConfigBuilder } from "./vite-config-builder.mjs";
 import { ZViteLibraryBuilder } from "./vite-library-builder.mjs";
+import { ZViteServerBuilder } from "./vite-server-builder.mjs";
 import { ZViteTestBuilder } from "./vite-test-builder.mjs";
 
 describe("Vite Config Builder", () => {
@@ -57,6 +58,13 @@ describe("Vite Config Builder", () => {
 
       expect(actual).toContain(a.name);
       expect(actual).toContain(b.name);
+    });
+  });
+
+  describe("Server", () => {
+    it("should set the server options", () => {
+      const server = new ZViteServerBuilder().dev().build();
+      expect(createTestTarget().server(server).build().server).toEqual(server);
     });
   });
 
@@ -115,6 +123,20 @@ describe("Vite Config Builder", () => {
 
     it("should add an entry point for main", () => {
       shouldAddEntryPoint("main", (t) => t.nest());
+    });
+  });
+
+  describe("Web", () => {
+    it("should add the checker plugin", () => {
+      shouldAddPlugin("vite-plugin-checker", (t) => t.web());
+    });
+
+    it("should minify the output", () => {
+      expect(createTestTarget().react().build().build?.minify).toBe(true);
+    });
+
+    it("should not generate a source map", () => {
+      expect(createTestTarget().web().build().build?.sourcemap).toBe(false);
     });
   });
 
