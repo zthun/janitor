@@ -186,8 +186,8 @@ export class ZViteConfigBuilder {
   public cli() {
     // A cli works similar to a library.
     const library = new ZViteLibraryBuilder()
-      .entry("index", "src/index.ts")
-      .entry("cli", "src/cli.ts")
+      .entry("index", "src/index.mts")
+      .entry("cli", "src/cli.mts")
       .build();
     return this.library(library);
   }

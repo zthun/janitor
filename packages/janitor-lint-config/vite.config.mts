@@ -12,7 +12,7 @@ const library = new ZViteLibraryBuilder()
   .entry("stylelint", "./src/style/stylelint.mts")
   .entry("stylelint-less", "./src/style/stylelint-less.mts")
   .entry("stylelint-sass", "./src/style/stylelint-sass.mts")
-  .entry("index", "./src/index.ts")
+  .index()
   .build();
 
 const config = new ZViteConfigBuilder().library(library).build();

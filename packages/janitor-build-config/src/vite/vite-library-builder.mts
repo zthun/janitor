@@ -37,7 +37,7 @@ export class ZViteLibraryBuilder {
    *        This object.
    */
   public index() {
-    return this.entry("index", "./src/index.ts");
+    return this.entry("index", "./src/index.mts");
   }
 
   /**

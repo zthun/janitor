@@ -6,7 +6,7 @@ import type { EntryPointStrategy, TypeDocOptions } from "typedoc";
  */
 export class ZTypedocConfigBuilder {
   public static readonly OutputDist = "./dist";
-  public static readonly EntryPointIndex = "./src/index.ts";
+  public static readonly EntryPointIndex = "./src/index.mts";
 
   private typedoc: TypeDocOptions = {};
 

@@ -21,7 +21,7 @@
   "types": "./dist/index.d.ts",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
-  "bin": "dist/cli.js",
+  "bin": "dist/cli.mjs",
   "exports": {
     "types": "./dist/index.d.ts",
     "import": "./dist/index.js",

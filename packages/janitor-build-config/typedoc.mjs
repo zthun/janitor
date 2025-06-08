@@ -7,7 +7,7 @@ import { ZTypedocConfigBuilder } from "@zthun/janitor-build-config/typedoc";
 
 const config = new ZTypedocConfigBuilder()
   .project()
-  .entry("./src/typedoc/index.ts")
-  .entry("./src/vite/index.ts")
+  .entry("./src/typedoc/index.mts")
+  .entry("./src/vite/index.mts")
   .build();
 export default config;
