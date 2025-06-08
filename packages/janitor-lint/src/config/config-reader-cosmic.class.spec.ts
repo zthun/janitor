@@ -33,7 +33,7 @@ describe("ZConfigCosmicReader", () => {
     const target = createTestTarget();
 
     // Act
-    const actual = await target.read(null);
+    const actual = await target.read();
 
     // Assert
     expect(actual).toBeTruthy();
@@ -47,7 +47,7 @@ describe("ZConfigCosmicReader", () => {
     ]);
 
     // Act
-    const actual = await target.read(null);
+    const actual = await target.read();
 
     // Assert
     expect(actual).toBeTruthy();
@@ -73,7 +73,7 @@ describe("ZConfigCosmicReader", () => {
     ]);
 
     // Act
-    const actual = await target.read(null);
+    const actual = await target.read();
 
     // Assert
     expect(actual).toEqual({});

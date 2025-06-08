@@ -71,7 +71,7 @@ export class ZConfigReaderCosmic implements IZConfigReader, IZConfigDiscovery {
    * @returns
    *        A promise that resolves the json object that represents the config.
    */
-  public async read(config: string): Promise<any> {
+  public async read(config?: string): Promise<any> {
     const configLoad = config ? Promise.resolve(config) : this.search();
     const configFile = await configLoad;
 
@@ -81,6 +81,6 @@ export class ZConfigReaderCosmic implements IZConfigReader, IZConfigDiscovery {
 
     const path = $resolve(configFile, { paths: [process.cwd()] });
     const buffer = await cosmiconfig(this.name).load(path);
-    return await this.extender.extend(buffer.config);
+    return await this.extender.extend(buffer?.config);
   }
 }
