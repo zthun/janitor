@@ -112,7 +112,7 @@ export class ZViteConfigBuilder {
   /**
    * Sets vite into library mode.
    *
-   * @param options -
+   * @param lib -
    *        The options for the library.  You can set this to
    *        nothing to use the default library which looks for
    *        an entry point at the source directory called index.ts
