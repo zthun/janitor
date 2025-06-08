@@ -20,6 +20,28 @@ describe("ZConfigExtender", () => {
     };
   });
 
+  it("should return null for null", async () => {
+    // Arrange.
+    const target = createTestTarget();
+
+    // Act.
+    const actual = await target.extend(null);
+
+    // Assert.
+    expect(actual).toBeNull();
+  });
+
+  it("should return undefined for undefined", async () => {
+    // Arrange.
+    const target = createTestTarget();
+
+    // Act.
+    const actual = await target.extend(undefined);
+
+    // Assert.
+    expect(actual).toBeUndefined();
+  });
+
   it("should return the original config if the key is missing.", async () => {
     // Arrange
     const target = createTestTarget("inherits");

@@ -51,7 +51,7 @@ export class ZConfigExtender implements IZConfigExtender {
    *        A promise that resolves the extended configuration.
    */
   public async extend(config: any): Promise<any> {
-    if (!Object.hasOwnProperty.call(config, this.key)) {
+    if (config == null || !Object.hasOwnProperty.call(config, this.key)) {
       return config;
     }
 
