@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [19.1.1](https://github.com/zthun/janitor/compare/v19.1.0...v19.1.1) (2025-06-08)
+
+
+### Bug Fixes
+
+* swc plugin is now optional ([e8afb4c](https://github.com/zthun/janitor/commit/e8afb4cdfc5e6bece013614c0cf057f61a21650b))
+
+
+
 ## [19.1.0](https://github.com/zthun/janitor/compare/v19.0.0...v19.1.0) (2025-06-08)
 
 
