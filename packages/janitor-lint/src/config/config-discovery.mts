@@ -9,5 +9,5 @@ export interface IZConfigDiscovery {
    *        The path to the discovered configuration file
    *        or null if no such configuration can be found.
    */
-  search(): Promise<string>;
+  search(): Promise<string | null>;
 }
