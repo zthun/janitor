@@ -29,7 +29,7 @@
   ],
   "devDependencies": {
     "@zthun/janitor-build-config": "^19.0.0",
-    "htmlhint": "^1.5.0",
+    "htmlhint": "^1.5.1",
     "vite": "^6.3.5"
   },
   "peerDependencies": {
