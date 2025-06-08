@@ -124,6 +124,10 @@ describe("Vite Config Builder", () => {
     it("should add an entry point for main", () => {
       shouldAddEntryPoint("main", (t) => t.nest());
     });
+
+    it("should add the swc plugin", () => {
+      shouldAddPlugin("swc", (t) => t.nest());
+    });
   });
 
   describe("Web", () => {
@@ -132,11 +136,29 @@ describe("Vite Config Builder", () => {
     });
 
     it("should minify the output", () => {
-      expect(createTestTarget().react().build().build?.minify).toBe(true);
+      expect(createTestTarget().web().build().build?.minify).toBe(true);
     });
 
     it("should not generate a source map", () => {
       expect(createTestTarget().web().build().build?.sourcemap).toBe(false);
+    });
+  });
+
+  describe("React", () => {
+    it("should add the checker plugin", () => {
+      shouldAddPlugin("vite-plugin-checker", (t) => t.react());
+    });
+
+    it("should minify the output", () => {
+      expect(createTestTarget().react().build().build?.minify).toBe(true);
+    });
+
+    it("should not generate a source map", () => {
+      expect(createTestTarget().react().build().build?.sourcemap).toBe(false);
+    });
+
+    it("should add the react plugin", () => {
+      shouldAddPlugin("vite:react-refresh", (t) => t.react());
     });
   });
 

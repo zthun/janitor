@@ -1,3 +1,4 @@
+import react from "@vitejs/plugin-react";
 import { castArray, cloneDeep } from "lodash-es";
 import swc from "unplugin-swc";
 import type {
@@ -66,7 +67,7 @@ export class ZViteConfigBuilder {
         minify: true,
         sourcemap: false,
       },
-      plugins: [swc.vite(), tsConfigPaths()],
+      plugins: [tsConfigPaths()],
     };
   }
 
@@ -99,6 +100,16 @@ export class ZViteConfigBuilder {
     const plugins = this.config.plugins!;
     this.config.plugins = plugins.concat(castArray(option));
     return this;
+  }
+
+  /**
+   * Adds the swc plugin.
+   *
+   * This is mostly for nest projects as nest requires
+   * swc to support decorators.
+   */
+  public swc() {
+    return this.plugin(swc.vite());
   }
 
   /**
@@ -196,7 +207,7 @@ export class ZViteConfigBuilder {
     const library = new ZViteLibraryBuilder()
       .entry("main", "src/main.mts")
       .build();
-    return this.library(library);
+    return this.library(library).swc();
   }
 
   /**
@@ -212,12 +223,14 @@ export class ZViteConfigBuilder {
   }
 
   /**
-   * An alias to {@link web}
+   * Constructs the config to compile a react application.
    *
    * @returns
    *        This object.
    */
-  public react = this.web;
+  public react() {
+    return this.web().plugin(react());
+  }
 
   /**
    * Constructs the config to be for testing.
