@@ -67,7 +67,7 @@ describe("ZJanitorLint", () => {
   describe("Linting", () => {
     async function assertLinterInvoked(
       linter: (t: ZJanitorLint) => IZLinter,
-      files: string[],
+      files?: string[],
       config?: string,
       exclude?: string[],
     ) {
@@ -100,7 +100,7 @@ describe("ZJanitorLint", () => {
           (t) => t.esLint,
           options.lint?.esFiles,
           options.lint?.esConfig,
-          null,
+          undefined,
         );
       });
 
@@ -116,7 +116,7 @@ describe("ZJanitorLint", () => {
           (t) => t.styleLint,
           options.lint?.styleFiles,
           options.lint?.styleConfig,
-          null,
+          undefined,
         );
       });
 
@@ -163,7 +163,7 @@ describe("ZJanitorLint", () => {
         await assertLinterInvoked(
           (t) => t.jsonLint,
           options.lint?.jsonFiles,
-          null,
+          undefined,
           options.lint?.jsonFilesExclude,
         );
       });
@@ -179,7 +179,7 @@ describe("ZJanitorLint", () => {
         await assertLinterInvoked(
           (t) => t.yamlLint,
           options.lint?.yamlFiles,
-          null,
+          undefined,
           options.lint?.yamlFilesExclude,
         );
       });

@@ -20,7 +20,7 @@ export interface IZContentLinter {
   lint(
     content: string,
     contentPath: string,
-    options: any,
-    optionsPath: string,
+    options?: any,
+    optionsPath?: string,
   ): Promise<any>;
 }

@@ -179,7 +179,11 @@ export class ZJanitorLint {
           `Linting json files from ${jsonFiles.length} globs.`,
         ),
       );
-      current = await this.jsonLint.lint(jsonFiles, null, jsonFilesExclude);
+      current = await this.jsonLint.lint(
+        jsonFiles,
+        undefined,
+        jsonFilesExclude,
+      );
       result = result && current;
     }
 
@@ -189,7 +193,11 @@ export class ZJanitorLint {
           `Linting yaml files from ${yamlFiles.length} globs.`,
         ),
       );
-      current = await this.yamlLint.lint(yamlFiles, null, yamlFilesExclude);
+      current = await this.yamlLint.lint(
+        yamlFiles,
+        undefined,
+        yamlFilesExclude,
+      );
       result = result && current;
     }
 
@@ -213,7 +221,7 @@ export class ZJanitorLint {
           `Linting ecmaScript files from ${esFiles.length} globs.`,
         ),
       );
-      current = await this.esLint.lint(esFiles, esConfig, null);
+      current = await this.esLint.lint(esFiles, esConfig, undefined);
       result = result && current;
     }
 
@@ -223,7 +231,7 @@ export class ZJanitorLint {
           `Linting style files from ${styleFiles.length} globs.`,
         ),
       );
-      current = await this.styleLint.lint(styleFiles, styleConfig, null);
+      current = await this.styleLint.lint(styleFiles, styleConfig, undefined);
       result = result && current;
     }
 
