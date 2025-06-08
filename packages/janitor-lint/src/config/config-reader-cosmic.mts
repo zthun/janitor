@@ -81,6 +81,6 @@ export class ZConfigReaderCosmic implements IZConfigReader, IZConfigDiscovery {
 
     const path = $resolve(configFile, { paths: [process.cwd()] });
     const buffer = await cosmiconfig(this.name).load(path);
-    return await this.extender.extend(buffer?.config);
+    return await this.extender.extend(buffer!.config);
   }
 }
