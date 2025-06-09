@@ -9,7 +9,7 @@ describe("Vite Library Builder", () => {
       // Arrange.
       const target = createTestTarget();
       const name = "index";
-      const path = "./src/index.ts";
+      const path = "./src/index.mts";
 
       // Act.
       const actual = target.index().build();
@@ -22,7 +22,7 @@ describe("Vite Library Builder", () => {
       // Arrange.
       const target = createTestTarget();
       const name = "lol-wut";
-      const path = "lol/wut.ts";
+      const path = "lol/wut.mts";
 
       // Act.
       const actual = target.index().entry(name, path).build();

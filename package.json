@@ -13,7 +13,7 @@
     "clean": "rimraf --glob 'packages/**/dist' 'packages/**/docs' 'reports' 'coverage' 'packages/**/*.tgz'",
     "check": "tsc --noEmit",
     "test": "vitest --run --coverage",
-    "lint": "tsx packages/janitor-lint/src/cli.ts",
+    "lint": "tsx packages/janitor-lint/src/cli.mts",
     "build": "lerna run build",
     "make": "yarn clean && yarn build && yarn check && yarn lint && yarn test",
     "postinstall": "husky install"

@@ -5,10 +5,9 @@
       "name": "Run Janitor Lint",
       "type": "node",
       "request": "launch",
-      "program": "${workspaceFolder}/packages/janitor-lint/src/cli.ts",
+      "program": "${workspaceFolder}/packages/janitor-lint/src/cli.mts",
       "runtimeExecutable": "tsx",
-      "console": "integratedTerminal",
-      "internalConsoleOptions": "neverOpen"
+      "console": "integratedTerminal"
     }
   ]
 }

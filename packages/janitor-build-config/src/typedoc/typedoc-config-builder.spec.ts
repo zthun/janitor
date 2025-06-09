@@ -15,7 +15,7 @@ describe("TypedocConfigBuilder", () => {
   describe("Entry Points", () => {
     it("should add entry points", () => {
       // Arrange.
-      const index = "./src/index.ts";
+      const index = "./src/index.mts";
       const entry = "./src/entry.ts";
       const target = createTestTarget();
 
