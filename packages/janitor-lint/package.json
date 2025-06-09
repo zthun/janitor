@@ -54,7 +54,7 @@
     "@zthun/janitor-build-config": "^19.1.4",
     "typescript": "~5.8.3",
     "vite": "^6.3.5",
-    "vitest": "^3.2.2",
+    "vitest": "^3.2.3",
     "vitest-mock-extended": "^3.1.0"
   }
 }

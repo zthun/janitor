@@ -31,7 +31,7 @@
     "@types/node": "^22.15.30",
     "@types/prettier": "^3.0.0",
     "@types/yargs": "^17.0.33",
-    "@vitest/coverage-istanbul": "^3.2.2",
+    "@vitest/coverage-istanbul": "^3.2.3",
     "@zthun/janitor-lint": "*",
     "@zthun/janitor-lint-config": "*",
     "husky": "^9.1.7",
@@ -44,7 +44,7 @@
     "vite-plugin-dts": "^4.5.4",
     "vite-plugin-externalize-deps": "^0.9.0",
     "vite-tsconfig-paths": "^5.1.4",
-    "vitest": "^3.2.2"
+    "vitest": "^3.2.3"
   },
   "workspaces": [
     "packages/*"
