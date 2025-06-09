@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [19.1.3](https://github.com/zthun/janitor/compare/v19.1.2...v19.1.3) (2025-06-09)
+
+
+### Bug Fixes
+
+* types should use mts and not ts ([cb6a2fb](https://github.com/zthun/janitor/commit/cb6a2fbe5974d947017f8c056dadb78d994a8ef7))
+
+
+
 ## [19.1.2](https://github.com/zthun/janitor/compare/v19.1.1...v19.1.2) (2025-06-09)
 
 
