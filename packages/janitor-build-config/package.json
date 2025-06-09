@@ -8,12 +8,12 @@
   "module": "./dist/index.js",
   "exports": {
     "./vite": {
-      "types": "./dist/vite/index.d.ts",
+      "types": "./dist/vite/index.d.mts",
       "require": "./dist/vite.cjs",
       "import": "./dist/vite.js"
     },
     "./typedoc": {
-      "types": "./dist/typedoc/index.d.ts",
+      "types": "./dist/typedoc/index.d.mts",
       "require": "./dist/typedoc.cjs",
       "import": "./dist/typedoc.js"
     }
