@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [19.1.4](https://github.com/zthun/janitor/compare/v19.1.3...v19.1.4) (2025-06-09)
+
+
+### Bug Fixes
+
+* vite, vitest, and typedoc are now transitive since they are optional ([4a22aef](https://github.com/zthun/janitor/commit/4a22aef5be9352926ba179e5296cd9ccad45b13d))
+
+
+
 ## [19.1.3](https://github.com/zthun/janitor/compare/v19.1.2...v19.1.3) (2025-06-09)
 
 
