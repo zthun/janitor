@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [19.1.2](https://github.com/zthun/janitor/compare/v19.1.1...v19.1.2) (2025-06-09)
+
+
+### Bug Fixes
+
+* entry points are now mts files and not ts files ([3fd6ffe](https://github.com/zthun/janitor/commit/3fd6ffe4f0bfec8a5478ef340736c4cce7c6be7b))
+
+
+
 ## [19.1.1](https://github.com/zthun/janitor/compare/v19.1.0...v19.1.1) (2025-06-08)
 
 **Note:** Version bump only for package @zthun/janitor-options
