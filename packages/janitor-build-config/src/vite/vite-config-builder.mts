@@ -127,6 +127,32 @@ export class ZViteConfigBuilder {
   }
 
   /**
+   * Adds an alias to the resolution options.
+   *
+   * @param key -
+   *        The name of the package to alias
+   * @param value -
+   *        The alias resolution
+   *
+   * @returns
+   *        This object.
+   */
+  public alias(key: string, value: string) {
+    this.config.resolve = this.config.resolve || {};
+    this.config.resolve.alias = this.config.resolve.alias || {};
+    this.config.resolve.alias[key] = value;
+    return this;
+  }
+
+  /**
+   * Adds an alias for lodash to lodash-es.
+   *
+   * @returns
+   *        This object.
+   */
+  public lodash = this.alias.bind(this, "lodash", "lodash-es");
+
+  /**
    * Assigns the server options.
    *
    * @param options -

@@ -61,6 +61,15 @@ describe("Vite Config Builder", () => {
     });
   });
 
+  describe("Alias", () => {
+    it("should add alias values", () => {
+      const expected = { lodash: "lodash-es", v1: "v2" };
+      expect(
+        createTestTarget().lodash().alias("v1", "v2").build().resolve?.alias,
+      ).toEqual(expected);
+    });
+  });
+
   describe("Server", () => {
     it("should set the server options", () => {
       const server = new ZViteServerBuilder().dev().build();
