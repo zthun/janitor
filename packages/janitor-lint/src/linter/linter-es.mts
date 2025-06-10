@@ -41,7 +41,9 @@ export class ZLinterEs implements IZLinter {
    *        has errors.
    */
   public async lint(src: string[], config?: string): Promise<boolean> {
-    const esOptions: ESLint.Options = {};
+    const esOptions: ESLint.Options = {
+      errorOnUnmatchedPattern: false,
+    };
 
     if (config) {
       esOptions.overrideConfigFile = $resolve(config, {
