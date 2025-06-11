@@ -162,6 +162,7 @@ export class ZJanitorLint {
       esFiles,
       styleConfig,
       styleFiles,
+      styleFilesExclude,
       htmlConfig,
       htmlFiles,
       htmlFilesExclude,
@@ -231,7 +232,11 @@ export class ZJanitorLint {
           `Linting style files from ${styleFiles.length} globs.`,
         ),
       );
-      current = await this.styleLint.lint(styleFiles, styleConfig, undefined);
+      current = await this.styleLint.lint(
+        styleFiles,
+        styleConfig,
+        styleFilesExclude,
+      );
       result = result && current;
     }
 

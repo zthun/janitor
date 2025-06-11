@@ -41,6 +41,7 @@ describe("ZJanitorLint", () => {
         esFiles: ["**/*.js"],
         styleConfig: "@zthun/janitor-stylelint-config",
         styleFiles: ["**/*.css", "**/*.less", "**/*.scss", "**/*.sass"],
+        styleFilesExclude: ["**/*.exclude.css"],
         markdownConfig: "@zthun/janitor-markdownlint-config",
         markdownFiles: ["**/*.md"],
         markdownFilesExclude: ["**/exclude.md"],
@@ -116,7 +117,7 @@ describe("ZJanitorLint", () => {
           (t) => t.styleLint,
           options.lint?.styleFiles,
           options.lint?.styleConfig,
-          undefined,
+          options.lint?.styleFilesExclude,
         );
       });
 
