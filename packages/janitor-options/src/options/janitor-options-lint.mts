@@ -465,7 +465,9 @@ export class ZJanitorOptionsLintBuilder {
 
     return this.esFile(`*.{${extensions}}`)
       .esFile(`src/**/*.{${extensions}}`)
+      .esFile(`features/**/*.{${extensions}}`)
       .esFile(`packages/**/src/**/*.{${extensions}}`)
+      .esFile(`packages/**/features/**/*.{${extensions}}`)
       .esFile(`packages/*/vite.config.{${extensions}}`)
       .esFile(`packages/*/vitest.config.{${extensions}}`)
       .esFile(`.config/*.{${extensions}}`);
@@ -480,7 +482,7 @@ export class ZJanitorOptionsLintBuilder {
   public commonCssFiles() {
     return this.styleFile(`src/**/*.css`)
       .styleFile(`packages/**/*.css`)
-      .styleFile("styles/**/*.{sass,scss}");
+      .styleFile("styles/**/*.css");
   }
 
   /**
@@ -542,11 +544,11 @@ export class ZJanitorOptionsLintBuilder {
    */
   public commonYamlFiles() {
     const extensions = "yml,yaml";
-    return this.yamlFile(`*.${extensions}`)
-      .yamlFile(`src/**/*.${extensions}`)
-      .yamlFile(`packages/**/*.${extensions}`)
-      .yamlFile(`.config/*.${extensions}`)
-      .yamlFile(`.circleci/*.${extensions}`);
+    return this.yamlFile(`*.{${extensions}}`)
+      .yamlFile(`src/**/*.{${extensions}}`)
+      .yamlFile(`packages/**/*.{${extensions}}`)
+      .yamlFile(`.config/*.{${extensions}}`)
+      .yamlFile(`.circleci/*.{${extensions}}`);
   }
 
   /**
