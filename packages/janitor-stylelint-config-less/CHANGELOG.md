@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [19.2.0](https://github.com/zthun/janitor/compare/v19.1.5...v19.2.0) (2025-06-11)
+
+**Note:** Version bump only for package @zthun/janitor-stylelint-config-less
+
+
+
+
+
 ## [19.1.5](https://github.com/zthun/janitor/compare/v19.1.4...v19.1.5) (2025-06-09)
 
 **Note:** Version bump only for package @zthun/janitor-stylelint-config-less

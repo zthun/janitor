@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [19.2.0](https://github.com/zthun/janitor/compare/v19.1.5...v19.2.0) (2025-06-11)
+
+
+### Features
+
+* you can add conventional excludes ([ba2a09b](https://github.com/zthun/janitor/commit/ba2a09b93a1e384cd5ee915ce7827f5dd91e9ffb))
+* you can now add conventional html files ([d6a6550](https://github.com/zthun/janitor/commit/d6a655002af1f1556f752798a64f63ef61acda0d))
+* you can now add conventional yaml files ([1c664cd](https://github.com/zthun/janitor/commit/1c664cd479a01e997a955c789c39d09f5370535d))
+* you can now exclude style files ([c47d280](https://github.com/zthun/janitor/commit/c47d280f42ecbc1036534f69e3a0539b42113da1))
+* you can now have common es files and style files ([56b5052](https://github.com/zthun/janitor/commit/56b50525c04cbf4378af149a317b94753ac0c654))
+
+
+
 ## [19.1.5](https://github.com/zthun/janitor/compare/v19.1.4...v19.1.5) (2025-06-09)
 
 **Note:** Version bump only for package @zthun/janitor-options
