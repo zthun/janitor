@@ -81,6 +81,10 @@ export interface IZJanitorOptionsLint {
    */
   spellingFilesExclude?: string[];
   /**
+   * The files to exclude from linting with stylelint.
+   */
+  styleFilesExclude?: string[];
+  /**
    * The files globs to exclude from linting with yaml.
    */
   yamlFilesExclude?: string[];
@@ -90,11 +94,6 @@ export interface IZJanitorOptionsLint {
  * A builder for creating linting options for the zthunworks janitor system.
  */
 export class ZJanitorOptionsLintBuilder {
-  public static readonly EsExtensions = "js,cjs,mjs,ts,mts,jsx,tsx";
-  public static readonly CssExtensions = "css";
-  public static readonly LessExtensions = "less";
-  public static readonly SassExtensions = "scss,sass";
-
   private lint: IZJanitorOptionsLint = {};
 
   /**
@@ -377,6 +376,21 @@ export class ZJanitorOptionsLintBuilder {
   }
 
   /**
+   * Adds a list of globs to the list of files to exclude from linting with stylelint.
+   *
+   * @param file -
+   *        The globs to exclude from linting with stylelint.
+   *
+   * @returns
+   *        This object.
+   */
+  public styleExclude(file: string | string[] = []) {
+    const excludes = this.lint.styleFilesExclude ?? [];
+    this.lint.styleFilesExclude = excludes.concat(file);
+    return this;
+  }
+
+  /**
    * Adds a single file glob to the list of files to exclude from linting with yaml.
    *
    * @param file -
@@ -406,6 +420,7 @@ export class ZJanitorOptionsLintBuilder {
       .markdownExclude(file)
       .prettyExclude(file)
       .spellingExclude(file)
+      .styleExclude(file)
       .yamlExclude(file);
   }
 
@@ -450,7 +465,7 @@ export class ZJanitorOptionsLintBuilder {
    *        This object
    */
   public commonEsFiles() {
-    const extensions = ZJanitorOptionsLintBuilder.EsExtensions;
+    const extensions = "js,cjs,mjs,ts,mts,jsx,tsx";
 
     return this.esFile(`*.{${extensions}}`)
       .esFile(`src/**/*.{${extensions}}`)
@@ -458,12 +473,6 @@ export class ZJanitorOptionsLintBuilder {
       .esFile(`packages/*/vite.config.{${extensions}}`)
       .esFile(`packages/*/vitest.config.{${extensions}}`)
       .esFile(`.config/*.{${extensions}}`);
-  }
-
-  private commonStyleFiles(extensions: string) {
-    const src = `src/**/*.{${extensions}}`;
-    const packages = `packages/**/src/**/*.{${extensions}}`;
-    return this.styleFile(src).styleFile(packages);
   }
 
   /**
@@ -475,10 +484,11 @@ export class ZJanitorOptionsLintBuilder {
    * @returns
    *        This object.
    */
-  public commonCssFiles = this.commonStyleFiles.bind(
-    this,
-    ZJanitorOptionsLintBuilder.CssExtensions,
-  );
+  public commonCssFiles() {
+    return this.styleFile(`src/**/*.css`)
+      .styleFile(`packages/**/*.css`)
+      .styleFile("styles/**/*.{sass,scss}");
+  }
 
   /**
    * Adds the common sass files.
@@ -489,10 +499,11 @@ export class ZJanitorOptionsLintBuilder {
    * @returns
    *        This object.
    */
-  public commonSassFiles = this.commonStyleFiles.bind(
-    this,
-    ZJanitorOptionsLintBuilder.SassExtensions,
-  );
+  public commonSassFiles() {
+    return this.styleFile(`src/**/*.{sass,scss}`)
+      .styleFile(`packages/**/src/**/*.{sass,scss}`)
+      .styleFile("styles/**/*.{sass,scss}");
+  }
 
   /**
    * Adds the common sass files.
@@ -503,10 +514,44 @@ export class ZJanitorOptionsLintBuilder {
    * @returns
    *        This object.
    */
-  public commonLessFiles = this.commonStyleFiles.bind(
-    this,
-    ZJanitorOptionsLintBuilder.LessExtensions,
-  );
+  public commonLessFiles() {
+    return this.styleFile(`src/**/*.less`)
+      .styleFile("packages/**/src/**/*.less")
+      .styleFile("styles/**/*.less");
+  }
+
+  /**
+   * Add common markdown files
+   *
+   * Common markdown files include root md files, md files under packages,
+   * md files under src, and no extension LICENSE files.
+   *
+   * @returns
+   *        This object.
+   */
+  public commonMarkdownFiles() {
+    return this.markdownFile("LICENSE")
+      .markdownFile(`*.md`)
+      .markdownFile(`src/**/*.md`)
+      .markdownFile(`packages/**/*.md`)
+      .markdownFile(`packages/**/LICENSE`);
+  }
+
+  /**
+   * Add common markdown files
+   *
+   * Common json files include root json files, json files under packages,
+   * json files under src, json files under .config.
+   *
+   * @returns
+   *        This object.
+   */
+  public commonJsonFiles() {
+    return this.jsonFile("*.json")
+      .jsonFile("src/**/*.json")
+      .jsonFile("packages/**/*.json")
+      .jsonFile(".config/*.json");
+  }
 
   /**
    * Returns the built linting options object.

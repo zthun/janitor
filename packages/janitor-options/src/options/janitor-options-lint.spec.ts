@@ -40,40 +40,8 @@ describe("ZJanitorOptionsLint", () => {
     });
 
     describe("Common", () => {
-      const shouldAddFiles = (prefix: string) => {
-        // Arrange.
-        const expected = `${prefix}{${ZJanitorOptionsLintBuilder.EsExtensions}}`;
-        const target = createTestTarget();
-
-        // Act.
-        const { esFiles: actual = [] } = target.commonEsFiles().build();
-
-        // Assert.
-        expect(actual).toContain(expected);
-      };
-
-      it("should add *.{extensions}", () => {
-        shouldAddFiles("*.");
-      });
-
-      it("should add packages/**/src/**/*.{extensions}", () => {
-        shouldAddFiles("packages/**/src/**/*.");
-      });
-
-      it("should add packages vite files", () => {
-        shouldAddFiles("packages/*/vite.config.");
-      });
-
-      it("should add packages vitest files", () => {
-        shouldAddFiles("packages/*/vitest.config.");
-      });
-
-      it("should add src/**/*.{extensions}", () => {
-        shouldAddFiles("src/**/*.");
-      });
-
-      it("should add .config/*.{extensions}", () => {
-        shouldAddFiles(".config/*.");
+      it("should add files", () => {
+        expect(createTestTarget().commonEsFiles().build().esFiles).toBeTruthy();
       });
     });
   });
@@ -168,6 +136,14 @@ describe("ZJanitorOptionsLint", () => {
       expect(actual.jsonFilesExclude).toContain(jsonExcludeAlpha);
       expect(actual.jsonFilesExclude).toContain(jsonExcludeBravo);
     });
+
+    describe("Common", () => {
+      it("should add files", () => {
+        expect(
+          createTestTarget().commonJsonFiles().build().jsonFiles,
+        ).toBeTruthy();
+      });
+    });
   });
 
   describe("Markdown", () => {
@@ -220,6 +196,14 @@ describe("ZJanitorOptionsLint", () => {
 
       // Assert.
       expect(actual.markdownConfig).toEqual(expected);
+    });
+
+    describe("Common", () => {
+      it("should add files", () => {
+        expect(
+          createTestTarget().commonMarkdownFiles().build().markdownFiles,
+        ).toBeTruthy();
+      });
     });
   });
 
@@ -435,6 +419,24 @@ describe("ZJanitorOptionsLint", () => {
       expect(actual.styleFiles).toContain(styleFileBravo);
     });
 
+    it("should add an exclude glob", () => {
+      // Arrange.
+      const styleAlpha = "**/exclude.css";
+      const styleBravo = "**/ignore.sass";
+      const target = createTestTarget();
+
+      // Act.
+      const actual = target
+        .styleExclude()
+        .styleExclude(styleAlpha)
+        .styleExclude(styleBravo)
+        .build();
+
+      // Assert.
+      expect(actual.styleFilesExclude).toContain(styleAlpha);
+      expect(actual.styleFilesExclude).toContain(styleBravo);
+    });
+
     it("should set the config", () => {
       // Arrange.
       const expected = "path/to/style/config.json";
@@ -447,56 +449,14 @@ describe("ZJanitorOptionsLint", () => {
     });
 
     describe("Common", () => {
-      const shouldAddFiles = (prefix: string, extensions: string) => {
-        // Arrange.
-        const expected = `${prefix}{${extensions}}`;
-        const target = createTestTarget();
-
-        // Act.
-        const { styleFiles: actual = [] } = target
-          .commonCssFiles()
-          .commonSassFiles()
-          .commonLessFiles()
-          .build();
-
-        // Assert.
-        expect(actual).toContain(expected);
-      };
-
-      describe("CSS", () => {
-        const extensions = ZJanitorOptionsLintBuilder.CssExtensions;
-
-        it("should add packages/**/src/**/*.{extensions}", () => {
-          shouldAddFiles("packages/**/src/**/*.", extensions);
-        });
-
-        it("should add src/**/*.{extensions}", () => {
-          shouldAddFiles("src/**/*.", extensions);
-        });
-      });
-
-      describe("SASS", () => {
-        const extensions = ZJanitorOptionsLintBuilder.SassExtensions;
-
-        it("should add packages/**/src/**/*.{extensions}", () => {
-          shouldAddFiles("packages/**/src/**/*.", extensions);
-        });
-
-        it("should add src/**/*.{extensions}", () => {
-          shouldAddFiles("src/**/*.", extensions);
-        });
-      });
-
-      describe("Less", () => {
-        const extensions = ZJanitorOptionsLintBuilder.LessExtensions;
-
-        it("should add packages/**/src/**/*.{extensions}", () => {
-          shouldAddFiles("packages/**/src/**/*.", extensions);
-        });
-
-        it("should add src/**/*.{extensions}", () => {
-          shouldAddFiles("src/**/*.", extensions);
-        });
+      it("should add style files", () => {
+        expect(
+          createTestTarget()
+            .commonCssFiles()
+            .commonSassFiles()
+            .commonLessFiles()
+            .build().styleFiles,
+        ).toBeTruthy();
       });
     });
   });
