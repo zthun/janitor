@@ -21,15 +21,22 @@ export class ZLinterStyle implements IZLinter {
    *        The list of globs to lint.
    * @param config -
    *        The linter config file.
+   * @param exclude
+   *        The globs to exclude.
    *
    * @returns
    *        A promise that, when resolved, returns true
    *        if there are no lint errors, or
    *        false if errors are present.
    */
-  public async lint(content: string[], config?: string): Promise<boolean> {
+  public async lint(
+    content: string[],
+    config?: string,
+    exclude?: string[],
+  ): Promise<boolean> {
     const options: Partial<stylelint.LinterOptions> = {
       files: content,
+      ignorePattern: exclude,
     };
 
     if (config) {
