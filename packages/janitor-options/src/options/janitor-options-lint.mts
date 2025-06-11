@@ -552,6 +552,21 @@ export class ZJanitorOptionsLintBuilder {
   }
 
   /**
+   * Adds conventional exclude files.
+   *
+   * @returns
+   *        This object.
+   */
+  public commonExcludes() {
+    return this.excludeAll("**/CHANGELOG.md")
+      .excludeAll("**/dist/**")
+      .excludeAll("**/node_modules/**")
+      .excludeAll("package-lock.json")
+      .excludeAll("lerna.json")
+      .excludeAll("**/cspell.json");
+  }
+
+  /**
    * Returns the built linting options object.
    *
    * @returns

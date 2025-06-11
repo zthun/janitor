@@ -559,5 +559,13 @@ describe("ZJanitorOptionsLint", () => {
     it("should add files to exclude yaml", () => {
       shouldAddFilesToExclude((c) => c.yamlFilesExclude);
     });
+
+    describe("Common", () => {
+      it("should add exclude files", () => {
+        expect(
+          createTestTarget().commonExcludes().build().htmlFilesExclude,
+        ).toBeTruthy();
+      });
+    });
   });
 });
