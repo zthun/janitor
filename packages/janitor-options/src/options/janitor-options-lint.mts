@@ -455,11 +455,7 @@ export class ZJanitorOptionsLintBuilder {
   }
 
   /**
-   * Adds the common es files.
-   *
-   * The common es files are any es files with extensions
-   * of js,cjs,mjs,ts,mts,jsx,tsx under the direct root,
-   * packages directory, src directory, or .config directory.
+   * Adds conventional es files.
    *
    * @returns
    *        This object
@@ -476,10 +472,7 @@ export class ZJanitorOptionsLintBuilder {
   }
 
   /**
-   * Adds the common css files.
-   *
-   * The common css files are any css files under the
-   * src and packages directory.
+   * Adds conventional css files.
    *
    * @returns
    *        This object.
@@ -491,10 +484,7 @@ export class ZJanitorOptionsLintBuilder {
   }
 
   /**
-   * Adds the common sass files.
-   *
-   * The common sass files are any sass or scss files under the
-   * src and packages directory.
+   * Adds conventional sass files.
    *
    * @returns
    *        This object.
@@ -506,10 +496,7 @@ export class ZJanitorOptionsLintBuilder {
   }
 
   /**
-   * Adds the common sass files.
-   *
-   * The common sass files are any sass or scss files under the
-   * src and packages directory.
+   * Adds conventional less files.
    *
    * @returns
    *        This object.
@@ -521,10 +508,7 @@ export class ZJanitorOptionsLintBuilder {
   }
 
   /**
-   * Add common markdown files
-   *
-   * Common markdown files include root md files, md files under packages,
-   * md files under src, and no extension LICENSE files.
+   * Adds conventional markdown files.
    *
    * @returns
    *        This object.
@@ -538,10 +522,7 @@ export class ZJanitorOptionsLintBuilder {
   }
 
   /**
-   * Add common markdown files
-   *
-   * Common json files include root json files, json files under packages,
-   * json files under src, json files under .config.
+   * Add conventional json files.
    *
    * @returns
    *        This object.
@@ -551,6 +532,21 @@ export class ZJanitorOptionsLintBuilder {
       .jsonFile("src/**/*.json")
       .jsonFile("packages/**/*.json")
       .jsonFile(".config/*.json");
+  }
+
+  /**
+   * Adds conventional yaml files.
+   *
+   * @returns
+   *        This object.
+   */
+  public commonYamlFiles() {
+    const extensions = "yml,yaml";
+    return this.yamlFile(`*.${extensions}`)
+      .yamlFile(`src/**/*.${extensions}`)
+      .yamlFile(`packages/**/*.${extensions}`)
+      .yamlFile(`.config/*.${extensions}`)
+      .yamlFile(`.circleci/*.${extensions}`);
   }
 
   /**

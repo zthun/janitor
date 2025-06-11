@@ -497,6 +497,14 @@ describe("ZJanitorOptionsLint", () => {
       expect(actual.yamlFilesExclude).toContain(yamlExcludeAlpha);
       expect(actual.yamlFilesExclude).toContain(yamlExcludeBravo);
     });
+
+    describe("Common", () => {
+      it("should add yaml files", () => {
+        expect(
+          createTestTarget().commonYamlFiles().build().yamlFiles,
+        ).toBeTruthy();
+      });
+    });
   });
 
   describe("Exclude All", () => {
@@ -542,6 +550,10 @@ describe("ZJanitorOptionsLint", () => {
 
     it("should add files to exclude spelling", () => {
       shouldAddFilesToExclude((c) => c.spellingFilesExclude);
+    });
+
+    it("should add files to exclude styles", () => {
+      shouldAddFilesToExclude((c) => c.styleFilesExclude);
     });
 
     it("should add files to exclude yaml", () => {
