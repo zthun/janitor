@@ -510,6 +510,19 @@ export class ZJanitorOptionsLintBuilder {
   }
 
   /**
+   * Adds conventional less files.
+   *
+   * @returns
+   *        This object.
+   */
+  public commonHtmlFiles() {
+    const extensions = "html,htm";
+    return this.htmlFile(`src/**/*.{${extensions}}`).htmlFile(
+      `packages/**/src/**/*.{${extensions}}`,
+    );
+  }
+
+  /**
    * Adds conventional markdown files.
    *
    * @returns

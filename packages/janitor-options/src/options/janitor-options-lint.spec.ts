@@ -97,6 +97,14 @@ describe("ZJanitorOptionsLint", () => {
       expect(actual.htmlFilesExclude).toContain(htmlExcludeAlpha);
       expect(actual.htmlFilesExclude).toContain(htmlExcludeBravo);
     });
+
+    describe("Common", () => {
+      it("should add files", () => {
+        expect(
+          createTestTarget().commonHtmlFiles().build().htmlFiles,
+        ).toBeTruthy();
+      });
+    });
   });
 
   describe("JSON", () => {
