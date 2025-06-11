@@ -5,13 +5,11 @@ import {
 } from "@zthun/janitor-options";
 
 const lint = new ZJanitorOptionsLintBuilder()
-  .esFile("*.{js,cjs,mjs,ts,mts}")
-  .esFile("packages/**/src/**/*.{ts,mts}")
-  .esFile("packages/**/vite.config.{ts,mts}")
-  .esFile("packages/**/vitest.config.{ts,mts}")
-  .esFile(".config/*.{js,cjs,mjs,ts,mts}")
-  .styleFile("test/**/*.less")
-  .styleFile("test/**/*.scss")
+  .commonEsFiles()
+  .commonCssFiles()
+  .commonLessFiles()
+  .commonSassFiles()
+  .styleFile("test/**/*.{less,scss,sass,css}")
   .htmlFile("test/**/*.html")
   .markdownFile("*.md")
   .markdownFile("packages/**/*.md")

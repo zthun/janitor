@@ -90,6 +90,11 @@ export interface IZJanitorOptionsLint {
  * A builder for creating linting options for the zthunworks janitor system.
  */
 export class ZJanitorOptionsLintBuilder {
+  public static readonly EsExtensions = "js,cjs,mjs,ts,mts,jsx,tsx";
+  public static readonly CssExtensions = "css";
+  public static readonly LessExtensions = "less";
+  public static readonly SassExtensions = "scss,sass";
+
   private lint: IZJanitorOptionsLint = {};
 
   /**
@@ -433,6 +438,75 @@ export class ZJanitorOptionsLintBuilder {
       .prettyFile(this.lint.styleFiles)
       .prettyFile(this.lint.yamlFiles);
   }
+
+  /**
+   * Adds the common es files.
+   *
+   * The common es files are any es files with extensions
+   * of js,cjs,mjs,ts,mts,jsx,tsx under the direct root,
+   * packages directory, src directory, or .config directory.
+   *
+   * @returns
+   *        This object
+   */
+  public commonEsFiles() {
+    const extensions = ZJanitorOptionsLintBuilder.EsExtensions;
+
+    return this.esFile(`*.{${extensions}}`)
+      .esFile(`src/**/*.{${extensions}}`)
+      .esFile(`packages/**/src/**/*.{${extensions}}`)
+      .esFile(`packages/*/vite.config.{${extensions}}`)
+      .esFile(`packages/*/vitest.config.{${extensions}}`)
+      .esFile(`.config/*.{${extensions}}`);
+  }
+
+  private commonStyleFiles(extensions: string) {
+    const src = `src/**/*.{${extensions}}`;
+    const packages = `packages/**/src/**/*.{${extensions}}`;
+    return this.styleFile(src).styleFile(packages);
+  }
+
+  /**
+   * Adds the common css files.
+   *
+   * The common css files are any css files under the
+   * src and packages directory.
+   *
+   * @returns
+   *        This object.
+   */
+  public commonCssFiles = this.commonStyleFiles.bind(
+    this,
+    ZJanitorOptionsLintBuilder.CssExtensions,
+  );
+
+  /**
+   * Adds the common sass files.
+   *
+   * The common sass files are any sass or scss files under the
+   * src and packages directory.
+   *
+   * @returns
+   *        This object.
+   */
+  public commonSassFiles = this.commonStyleFiles.bind(
+    this,
+    ZJanitorOptionsLintBuilder.SassExtensions,
+  );
+
+  /**
+   * Adds the common sass files.
+   *
+   * The common sass files are any sass or scss files under the
+   * src and packages directory.
+   *
+   * @returns
+   *        This object.
+   */
+  public commonLessFiles = this.commonStyleFiles.bind(
+    this,
+    ZJanitorOptionsLintBuilder.LessExtensions,
+  );
 
   /**
    * Returns the built linting options object.
