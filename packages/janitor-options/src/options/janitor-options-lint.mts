@@ -529,11 +529,9 @@ export class ZJanitorOptionsLintBuilder {
    *        This object.
    */
   public commonMarkdownFiles() {
-    return this.markdownFile("LICENSE")
-      .markdownFile(`*.md`)
+    return this.markdownFile(`*.md`)
       .markdownFile(`src/**/*.md`)
-      .markdownFile(`packages/**/*.md`)
-      .markdownFile(`packages/**/LICENSE`);
+      .markdownFile(`packages/**/*.md`);
   }
 
   /**
