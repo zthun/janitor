@@ -1,6 +1,6 @@
 {
   "name": "@zthun/janitor-options",
-  "version": "19.2.2",
+  "version": "19.2.3",
   "description": "Option builders and interfaces for the zthunworks janitor system.",
   "keywords": [
     "linters"

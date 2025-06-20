@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [19.2.3](https://github.com/zthun/janitor/compare/v19.2.2...v19.2.3) (2025-06-20)
+
+
+### Bug Fixes
+
+* common html files now include files at the root of the src and individual project folders ([d2fef02](https://github.com/zthun/janitor/commit/d2fef0266b2d01cd6387fd0639961c4f9b9c8566))
+
+
+
 ## [19.2.2](https://github.com/zthun/janitor/compare/v19.2.1...v19.2.2) (2025-06-20)
 
 
