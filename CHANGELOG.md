@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [19.2.2](https://github.com/zthun/janitor/compare/v19.2.1...v19.2.2) (2025-06-20)
+
+
+### Bug Fixes
+
+* swc is now the default compiler for all projects ([2b4b71d](https://github.com/zthun/janitor/commit/2b4b71ddbce2bce12f99171cc7cb1887805c0719))
+
+
+
 ## [19.2.1](https://github.com/zthun/janitor/compare/v19.2.0...v19.2.1) (2025-06-12)
 
 

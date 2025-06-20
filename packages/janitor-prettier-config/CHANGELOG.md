@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [19.2.2](https://github.com/zthun/janitor/compare/v19.2.1...v19.2.2) (2025-06-20)
+
+**Note:** Version bump only for package @zthun/janitor-prettier-config
+
+
+
+
+
 ## [19.2.0](https://github.com/zthun/janitor/compare/v19.1.5...v19.2.0) (2025-06-11)
 
 **Note:** Version bump only for package @zthun/janitor-prettier-config
