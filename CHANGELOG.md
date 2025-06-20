@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [19.2.1](https://github.com/zthun/janitor/compare/v19.2.0...v19.2.1) (2025-06-12)
+
+
+### Bug Fixes
+
+* remove LICENSE from common markdown files ([d84462f](https://github.com/zthun/janitor/commit/d84462f39a66355716887b7847de257a9a8d0840))
+
+
+
 ## [19.2.0](https://github.com/zthun/janitor/compare/v19.1.5...v19.2.0) (2025-06-11)
 
 
