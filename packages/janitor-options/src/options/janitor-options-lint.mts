@@ -517,9 +517,10 @@ export class ZJanitorOptionsLintBuilder {
    */
   public commonHtmlFiles() {
     const extensions = "html,htm";
-    return this.htmlFile(`src/**/*.{${extensions}}`).htmlFile(
-      `packages/**/src/**/*.{${extensions}}`,
-    );
+    return this.htmlFile(`src/**/*.{${extensions}}`)
+      .htmlFile(`packages/**/src/**/*.{${extensions}}`)
+      .htmlFile(`src/*.{${extensions}}`)
+      .htmlFile(`packages/*/*.{${extensions}}`);
   }
 
   /**
