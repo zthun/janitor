@@ -67,7 +67,18 @@ export class ZViteConfigBuilder {
         minify: true,
         sourcemap: false,
       },
-      plugins: [tsConfigPaths()],
+      plugins: [
+        swc.vite({
+          jsc: {
+            transform: {
+              react: {
+                runtime: "automatic",
+              },
+            },
+          },
+        }),
+        tsConfigPaths(),
+      ],
     };
   }
 
@@ -100,16 +111,6 @@ export class ZViteConfigBuilder {
     const plugins = this.config.plugins!;
     this.config.plugins = plugins.concat(castArray(option));
     return this;
-  }
-
-  /**
-   * Adds the swc plugin.
-   *
-   * This is mostly for nest projects as nest requires
-   * swc to support decorators.
-   */
-  public swc() {
-    return this.plugin(swc.vite());
   }
 
   /**
@@ -204,7 +205,7 @@ export class ZViteConfigBuilder {
    * entry points.
    *
    * 1. The file src/cli.ts is the main entry point of the application.
-   * 1. The file, src/index.ts, is the api for importing
+   * 1. The file, src/index.ts, is the api for importing and using it as an api.
    *
    * @returns
    *        This object.
@@ -233,7 +234,7 @@ export class ZViteConfigBuilder {
     const library = new ZViteLibraryBuilder()
       .entry("main", "src/main.mts")
       .build();
-    return this.library(library).swc();
+    return this.library(library);
   }
 
   /**

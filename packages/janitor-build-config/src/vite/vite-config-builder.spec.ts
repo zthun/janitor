@@ -59,6 +59,14 @@ describe("Vite Config Builder", () => {
       expect(actual).toContain(a.name);
       expect(actual).toContain(b.name);
     });
+
+    it("should add the tsConfigPaths plugin by default", () => {
+      shouldAddPlugin("vite-tsconfig-paths", (t) => t);
+    });
+
+    it("should add the swc plugin by default", () => {
+      shouldAddPlugin("swc", (t) => t);
+    });
   });
 
   describe("Alias", () => {
@@ -132,10 +140,6 @@ describe("Vite Config Builder", () => {
 
     it("should add an entry point for main", () => {
       shouldAddEntryPoint("main", (t) => t.nest());
-    });
-
-    it("should add the swc plugin", () => {
-      shouldAddPlugin("swc", (t) => t.nest());
     });
   });
 
