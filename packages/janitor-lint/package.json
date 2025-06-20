@@ -36,15 +36,15 @@
     "@zthun/janitor-options": "^19.2.0",
     "chalk": "^5.4.1",
     "cosmiconfig": "^9.0.0",
-    "cspell": "^9.0.2",
-    "eslint": "^9.28.0",
-    "glob": "^11.0.2",
-    "htmlhint": "^1.5.1",
+    "cspell": "^9.1.1",
+    "eslint": "^9.29.0",
+    "glob": "^11.0.3",
+    "htmlhint": "^1.6.3",
     "js-yaml": "^4.1.0",
     "lodash-es": "^4.17.21",
     "markdownlint": "~0.38.0",
     "prettier": "^3.5.3",
-    "stylelint": "^16.20.0",
+    "stylelint": "^16.21.0",
     "yargs": "^18.0.0"
   },
   "files": [
@@ -54,7 +54,7 @@
     "@zthun/janitor-build-config": "^19.2.0",
     "typescript": "~5.8.3",
     "vite": "^6.3.5",
-    "vitest": "^3.2.3",
+    "vitest": "^3.2.4",
     "vitest-mock-extended": "^3.1.0"
   }
 }

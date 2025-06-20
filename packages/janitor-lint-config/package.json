@@ -78,12 +78,12 @@
     "@zthun/janitor-stylelint-config": "^19.2.0",
     "@zthun/janitor-stylelint-config-less": "^19.2.0",
     "@zthun/janitor-stylelint-config-sass": "^19.2.0",
-    "eslint": "^9.28.0",
-    "htmlhint": "^1.5.1",
+    "eslint": "^9.29.0",
+    "htmlhint": "^1.6.3",
     "markdownlint": "~0.38.0",
-    "postcss": "^8.5.4",
+    "postcss": "^8.5.6",
     "prettier": "^3.5.3",
-    "stylelint": "^16.20.0"
+    "stylelint": "^16.21.0"
   },
   "devDependencies": {
     "@zthun/janitor-build-config": "^19.2.0",
