@@ -266,16 +266,10 @@ export class ZViteConfigBuilder {
    *
    * @param options -
    *        The test config to use.  If this is falsy,
-   *        then a test setup using a monorepo with an
-   *        istanbul provider in node is used.
+   *        then a test setup using a monorepo with the default
+   *        provider and environment will be used.
    */
-  public test(
-    options: TestConfig = new ZViteTestBuilder()
-      .node()
-      .istanbul()
-      .monorepo()
-      .build(),
-  ) {
+  public test(options: TestConfig = new ZViteTestBuilder().monorepo().build()) {
     this.config.test = options;
     return this;
   }
