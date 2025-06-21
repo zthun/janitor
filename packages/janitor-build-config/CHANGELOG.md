@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [19.2.4](https://github.com/zthun/janitor/compare/v19.2.3...v19.2.4) (2025-06-21)
+
+
+### Bug Fixes
+
+* generating types should no longer generate types for spec/test files ([c14e540](https://github.com/zthun/janitor/commit/c14e540c59af58743c9d4a3890ab3389aee7fdfb))
+* the test builder now defaults to v8 as the coverage provider ([a9bf26d](https://github.com/zthun/janitor/commit/a9bf26d3a170f0451d9b7da2ab9729efb622ac9f))
+
+
+
 ## [19.2.2](https://github.com/zthun/janitor/compare/v19.2.1...v19.2.2) (2025-06-20)
 
 **Note:** Version bump only for package @zthun/janitor-build-config

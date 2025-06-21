@@ -1,6 +1,6 @@
 {
   "name": "@zthun/janitor-prettier-config",
-  "version": "19.2.2",
+  "version": "19.2.4",
   "description": "A shared configuration for prettier for @zthun scoped projects.",
   "keywords": [
     "prettier",
@@ -28,7 +28,7 @@
     "build": "vite build"
   },
   "devDependencies": {
-    "@zthun/janitor-build-config": "^19.2.2",
+    "@zthun/janitor-build-config": "^19.2.4",
     "prettier": "^3.5.3",
     "vite": "^6.3.5"
   },
