@@ -16,7 +16,7 @@ export class ZViteTestBuilder {
       testTimeout: 30000,
       coverage: {
         all: false,
-        provider: undefined,
+        provider: "v8",
       },
     };
   }
