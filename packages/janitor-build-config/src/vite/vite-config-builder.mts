@@ -192,6 +192,8 @@ export class ZViteConfigBuilder {
         // actual paths are correct.
         paths: {},
       },
+      // Make sure to exclude spec and test files.
+      exclude: ["**/*.{spec,test}.{js,mjs,cjs,ts,mts,jsx,tsx}"],
     });
     const external = externalizeDeps();
 
