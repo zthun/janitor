@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [19.2.5](https://github.com/zthun/janitor/compare/v19.2.4...v19.2.5) (2025-06-22)
+
+
+### Bug Fixes
+
+* mui style selectors are now supported ([ba158c5](https://github.com/zthun/janitor/commit/ba158c50846a4b48b5ebf29158078e54f172bc22))
+
+
+
 ## [19.2.4](https://github.com/zthun/janitor/compare/v19.2.3...v19.2.4) (2025-06-21)
 
 
