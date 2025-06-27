@@ -31,10 +31,10 @@
     "dist"
   ],
   "dependencies": {
-    "@swc/core": "^1.12.5",
-    "@vitejs/plugin-react": "^4.5.2",
+    "@swc/core": "^1.12.7",
+    "@vitejs/plugin-react": "^4.6.0",
     "lodash-es": "^4.17.21",
-    "typedoc": "^0.28.5",
+    "typedoc": "^0.28.6",
     "unplugin-swc": "^1.5.5",
     "vite": "^6.3.5",
     "vite-plugin-checker": "^0.9.3",
