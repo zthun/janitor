@@ -64,8 +64,8 @@ export class ZViteConfigBuilder {
   public constructor() {
     this.config = {
       build: {
-        minify: true,
-        sourcemap: false,
+        minify: false,
+        sourcemap: true,
       },
       plugins: [
         swc.vite({
@@ -197,7 +197,7 @@ export class ZViteConfigBuilder {
     });
     const external = externalizeDeps();
 
-    return this.minify(false).sourceMap().plugin(external).plugin(dts);
+    return this.plugin(external).plugin(dts);
   }
 
   /**

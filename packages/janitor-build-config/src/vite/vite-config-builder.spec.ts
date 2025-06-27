@@ -45,6 +45,16 @@ describe("Vite Config Builder", () => {
     expect(actual).toBeTruthy();
   };
 
+  describe("Options", () => {
+    it("should turn on the source maps", () => {
+      expect(createTestTarget().build().build?.sourcemap).toBeTruthy();
+    });
+
+    it("should turn off minify", () => {
+      expect(createTestTarget().build().build?.minify).toBeFalsy();
+    });
+  });
+
   describe("Plugins", () => {
     it("should add all plugins", () => {
       // Arrange
@@ -98,16 +108,6 @@ describe("Vite Config Builder", () => {
       expect(createTestTarget().library(expected).build().build?.lib).toEqual(
         expected,
       );
-    });
-
-    it("should turn on the source maps", () => {
-      expect(
-        createTestTarget().library().build().build?.sourcemap,
-      ).toBeTruthy();
-    });
-
-    it("should turn off minify", () => {
-      expect(createTestTarget().library().build().build?.minify).toBeFalsy();
     });
 
     it("should add the external dependencies plugin", () => {
