@@ -1,6 +1,6 @@
 {
   "name": "@zthun/janitor-lint",
-  "version": "19.2.4",
+  "version": "19.2.6",
   "description": "Style checks with tools for web projects using common rules.",
   "keywords": [
     "linters"
@@ -33,7 +33,7 @@
   },
   "author": "Anthony Bonta",
   "dependencies": {
-    "@zthun/janitor-options": "^19.2.4",
+    "@zthun/janitor-options": "^19.2.6",
     "chalk": "^5.4.1",
     "cosmiconfig": "^9.0.0",
     "cspell": "^9.1.2",
@@ -51,7 +51,7 @@
     "dist"
   ],
   "devDependencies": {
-    "@zthun/janitor-build-config": "^19.2.4",
+    "@zthun/janitor-build-config": "^19.2.6",
     "typescript": "~5.8.3",
     "vite": "^7.0.0",
     "vitest": "^3.2.4",

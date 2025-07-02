@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [19.2.6](https://github.com/zthun/janitor/compare/v19.2.5...v19.2.6) (2025-06-28)
+
+
+### Bug Fixes
+
+* source map is now true by default and minify is now off by default ([a8c4744](https://github.com/zthun/janitor/commit/a8c4744215cc34d067514d2055959f2e2eb2c3b8))
+
+
+
 ## [19.2.4](https://github.com/zthun/janitor/compare/v19.2.3...v19.2.4) (2025-06-21)
 
 
