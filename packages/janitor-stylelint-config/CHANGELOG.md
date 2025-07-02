@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [19.3.0](https://github.com/zthun/janitor/compare/v19.2.6...v19.3.0) (2025-07-02)
+
+
+### Features
+
+* add support for vite 7.x ([3242082](https://github.com/zthun/janitor/commit/32420828b8972549fc2c953d83ab350aa7aac04f))
+
+
+
 ## [19.2.6](https://github.com/zthun/janitor/compare/v19.2.5...v19.2.6) (2025-06-28)
 
 **Note:** Version bump only for package @zthun/janitor-stylelint-config

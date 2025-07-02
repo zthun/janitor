@@ -1,6 +1,6 @@
 {
   "name": "@zthun/janitor-markdownlint-config",
-  "version": "19.2.6",
+  "version": "19.3.0",
   "description": "A shared configuration for markdownlint for @zthun scoped projects.",
   "keywords": [
     "markdownlint",
@@ -28,7 +28,7 @@
     "build": "vite build"
   },
   "devDependencies": {
-    "@zthun/janitor-build-config": "^19.2.6",
+    "@zthun/janitor-build-config": "^19.3.0",
     "markdownlint": "~0.38.0",
     "vite": "^7.0.0"
   },
