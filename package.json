@@ -40,7 +40,7 @@
     "rimraf": "^6.0.1",
     "tsx": "^4.20.3",
     "typescript": "~5.8.3",
-    "vite": "^6.3.5",
+    "vite": "^7.0.0",
     "vite-plugin-dts": "^4.5.4",
     "vite-plugin-externalize-deps": "^0.9.0",
     "vite-tsconfig-paths": "^5.1.4",
@@ -49,8 +49,5 @@
   "workspaces": [
     "packages/*"
   ],
-  "resolutions": {
-    "vite": "^6.0.0"
-  },
   "packageManager": "yarn@4.9.2"
 }
