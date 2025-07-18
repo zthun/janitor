@@ -1,6 +1,6 @@
 {
   "name": "@zthun/janitor-htmlhint-config",
-  "version": "19.3.0",
+  "version": "19.3.1",
   "description": "A shared configuration for htmlhint for @zthun scoped projects.",
   "keywords": [
     "htmlhint",
@@ -28,7 +28,7 @@
     "dist"
   ],
   "devDependencies": {
-    "@zthun/janitor-build-config": "^19.3.0",
+    "@zthun/janitor-build-config": "^19.3.1",
     "htmlhint": "^1.6.3",
     "vite": "^7.0.5"
   },
