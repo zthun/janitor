@@ -1,7 +1,7 @@
 import type { Linter } from "eslint";
 import ts from "typescript-eslint";
 
-export const typescript = [
+export const typescript: Linter.Config[] = [
   ...ts.configs.recommended,
   {
     rules: {
