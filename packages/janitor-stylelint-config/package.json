@@ -28,7 +28,7 @@
     "build": "vite build"
   },
   "dependencies": {
-    "stylelint-config-standard": "^38.0.0"
+    "stylelint-config-standard": "^39.0.0"
   },
   "devDependencies": {
     "@zthun/janitor-build-config": "^19.3.1",

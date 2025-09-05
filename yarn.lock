@@ -3215,7 +3215,7 @@ __metadata:
     "@vitejs/plugin-react": "npm:^5.0.2"
     lodash-es: "npm:^4.17.21"
     typedoc: "npm:^0.28.12"
-    typescript: "npm:~5.8.3"
+    typescript: "npm:~5.9.2"
     unplugin-swc: "npm:^1.5.7"
     vite: "npm:^7.1.4"
     vite-plugin-checker: "npm:^0.10.3"
@@ -3250,7 +3250,7 @@ __metadata:
     eslint-plugin-react: "npm:^7.37.5"
     globals: "npm:^16.3.0"
     prettier: "npm:^3.6.2"
-    typescript: "npm:~5.8.3"
+    typescript: "npm:~5.9.2"
     typescript-eslint: "npm:^8.42.0"
     vite: "npm:^7.1.4"
   peerDependencies:
@@ -3295,7 +3295,7 @@ __metadata:
     postcss: "npm:^8.5.6"
     prettier: "npm:^3.6.2"
     stylelint: "npm:^16.23.1"
-    typescript: "npm:~5.8.3"
+    typescript: "npm:~5.9.2"
     vite: "npm:^7.1.4"
     vite-plugin-dts: "npm:^4.5.4"
     vite-plugin-externalize-deps: "npm:^0.9.0"
@@ -3326,7 +3326,7 @@ __metadata:
     markdownlint: "npm:~0.38.0"
     prettier: "npm:^3.6.2"
     stylelint: "npm:^16.23.1"
-    typescript: "npm:~5.8.3"
+    typescript: "npm:~5.9.2"
     vite: "npm:^7.1.4"
     vitest: "npm:^3.2.4"
     vitest-mock-extended: "npm:^3.1.0"
@@ -3353,7 +3353,7 @@ __metadata:
   resolution: "@zthun/janitor-options@workspace:packages/janitor-options"
   dependencies:
     "@zthun/janitor-build-config": "npm:^19.3.1"
-    typescript: "npm:~5.8.3"
+    typescript: "npm:~5.9.2"
     vite: "npm:^7.1.4"
     vitest: "npm:^3.2.4"
   languageName: unknown
@@ -3410,7 +3410,7 @@ __metadata:
     "@zthun/janitor-build-config": "npm:^19.3.1"
     postcss: "npm:^8.5.6"
     stylelint: "npm:^16.23.1"
-    stylelint-config-standard: "npm:^38.0.0"
+    stylelint-config-standard: "npm:^39.0.0"
     vite: "npm:^7.1.4"
   peerDependencies:
     postcss: ^8.0.0
@@ -3426,7 +3426,7 @@ __metadata:
     "@zthun/janitor-lint": "npm:^19.3.1"
     "@zthun/janitor-lint-config": "npm:^19.3.1"
     typedoc: "npm:^0.28.12"
-    typescript: "npm:~5.8.3"
+    typescript: "npm:~5.9.2"
   languageName: unknown
   linkType: soft
 
@@ -3449,11 +3449,11 @@ __metadata:
     "@zthun/janitor-lint": "npm:*"
     "@zthun/janitor-lint-config": "npm:*"
     husky: "npm:^9.1.7"
-    lerna: "npm:^8.2.4"
+    lerna: "npm:8.2.4"
     react: "npm:^19.1.1"
     rimraf: "npm:^6.0.1"
     tsx: "npm:^4.20.5"
-    typescript: "npm:~5.8.3"
+    typescript: "npm:~5.9.2"
     vite: "npm:^7.1.4"
     vite-plugin-dts: "npm:^4.5.4"
     vite-plugin-externalize-deps: "npm:^0.9.0"
@@ -7676,7 +7676,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lerna@npm:^8.2.4":
+"lerna@npm:8.2.4":
   version: 8.2.4
   resolution: "lerna@npm:8.2.4"
   dependencies:
@@ -11137,6 +11137,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"stylelint-config-recommended@npm:^17.0.0":
+  version: 17.0.0
+  resolution: "stylelint-config-recommended@npm:17.0.0"
+  peerDependencies:
+    stylelint: ^16.23.0
+  checksum: 10/8164ed0b2cfc7eed58a0239a9689c37f088cedbc0049eea45f855d471ea2e32bf35d6aa60a6115e39d2b863f599f70f81e5bb7f5d84c60a94de186351790a610
+  languageName: node
+  linkType: hard
+
 "stylelint-config-standard-less@npm:^3.0.1":
   version: 3.0.1
   resolution: "stylelint-config-standard-less@npm:3.0.1"
@@ -11188,6 +11197,17 @@ __metadata:
   peerDependencies:
     stylelint: ^16.18.0
   checksum: 10/6704f80e93990a15e28043f25b926f08b6a585a6374d3610e1fa782c6e39279cdbd963c4614a58045372dc70254101f5d622f6578bbd7b2974fc3b4ce629db26
+  languageName: node
+  linkType: hard
+
+"stylelint-config-standard@npm:^39.0.0":
+  version: 39.0.0
+  resolution: "stylelint-config-standard@npm:39.0.0"
+  dependencies:
+    stylelint-config-recommended: "npm:^17.0.0"
+  peerDependencies:
+    stylelint: ^16.23.0
+  checksum: 10/b8131329cd1c4f728441babc1cb68f0a60766c67a76ea1445e287de7d7fafd57ffe2222bb13cebcd7d04b3554112ad4de8de03e1c447e11347bf80ad99f5ae0a
   languageName: node
   linkType: hard
 
@@ -11765,13 +11785,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:>=3 < 6, typescript@npm:~5.8.3":
-  version: 5.8.3
-  resolution: "typescript@npm:5.8.3"
+"typescript@npm:>=3 < 6, typescript@npm:~5.9.2":
+  version: 5.9.2
+  resolution: "typescript@npm:5.9.2"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10/65c40944c51b513b0172c6710ee62e951b70af6f75d5a5da745cb7fab132c09ae27ffdf7838996e3ed603bb015dadd099006658046941bd0ba30340cc563ae92
+  checksum: 10/cc2fe6c822819de5d453fa25aa9f32096bf70dde215d481faa1ad84a283dfb264e33988ed8f6d36bc803dd0b16dbe943efa311a798ef76d5b3892a05dfbfd628
   languageName: node
   linkType: hard
 
@@ -11785,13 +11805,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A>=3 < 6#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A~5.8.3#optional!builtin<compat/typescript>":
-  version: 5.8.3
-  resolution: "typescript@patch:typescript@npm%3A5.8.3#optional!builtin<compat/typescript>::version=5.8.3&hash=5786d5"
+"typescript@patch:typescript@npm%3A>=3 < 6#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A~5.9.2#optional!builtin<compat/typescript>":
+  version: 5.9.2
+  resolution: "typescript@patch:typescript@npm%3A5.9.2#optional!builtin<compat/typescript>::version=5.9.2&hash=5786d5"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10/b9b1e73dabac5dc730c041325dbd9c99467c1b0d239f1b74ec3b90d831384af3e2ba973946232df670519147eb51a2c20f6f96163cea2b359f03de1e2091cc4f
+  checksum: 10/bd810ab13e8e557225a8b5122370385440b933e4e077d5c7641a8afd207fdc8be9c346e3c678adba934b64e0e70b0acf5eef9493ea05170a48ce22bef845fdc7
   languageName: node
   linkType: hard
 
