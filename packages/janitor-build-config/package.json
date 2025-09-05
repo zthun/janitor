@@ -32,7 +32,7 @@
   ],
   "dependencies": {
     "@swc/core": "^1.13.5",
-    "@vitejs/plugin-react": "^4.7.0",
+    "@vitejs/plugin-react": "^5.0.2",
     "lodash-es": "^4.17.21",
     "typedoc": "^0.28.12",
     "unplugin-swc": "^1.5.7",
