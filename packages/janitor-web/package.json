@@ -20,7 +20,7 @@
     "@zthun/janitor-build-config": "^19.3.1",
     "@zthun/janitor-lint": "^19.3.1",
     "@zthun/janitor-lint-config": "^19.3.1",
-    "typedoc": "^0.28.7",
+    "typedoc": "^0.28.12",
     "typescript": "~5.8.3"
   },
   "files": [
