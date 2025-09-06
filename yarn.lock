@@ -3220,7 +3220,6 @@ __metadata:
     vite: "npm:^7.1.4"
     vite-plugin-checker: "npm:^0.10.3"
     vite-plugin-dts: "npm:^4.5.4"
-    vite-plugin-externalize-deps: "npm:^0.9.0"
     vite-tsconfig-paths: "npm:^5.1.4"
     vitest: "npm:^3.2.4"
   peerDependencies:
@@ -3297,9 +3296,6 @@ __metadata:
     stylelint: "npm:^16.23.1"
     typescript: "npm:~5.9.2"
     vite: "npm:^7.1.4"
-    vite-plugin-dts: "npm:^4.5.4"
-    vite-plugin-externalize-deps: "npm:^0.9.0"
-    vite-tsconfig-paths: "npm:^5.1.4"
   peerDependencies:
     "@zthun/janitor-lint": ">=19.0.0"
     typescript: ^5.0.0
@@ -3455,9 +3451,6 @@ __metadata:
     tsx: "npm:^4.20.5"
     typescript: "npm:~5.9.2"
     vite: "npm:^7.1.4"
-    vite-plugin-dts: "npm:^4.5.4"
-    vite-plugin-externalize-deps: "npm:^0.9.0"
-    vite-tsconfig-paths: "npm:^5.1.4"
     vitest: "npm:^3.2.4"
   languageName: unknown
   linkType: soft
@@ -12073,15 +12066,6 @@ __metadata:
     vite:
       optional: true
   checksum: 10/1504a8da02f8015c3138ef57a690179ad9b9d4369a054ae48b52a1c8cbc7ad05474551eab309cd90cf758800e17b67ccd13317aa5f8e28efde957547c7a339fb
-  languageName: node
-  linkType: hard
-
-"vite-plugin-externalize-deps@npm:^0.9.0":
-  version: 0.9.0
-  resolution: "vite-plugin-externalize-deps@npm:0.9.0"
-  peerDependencies:
-    vite: ^2.0.0 || ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0
-  checksum: 10/da6169f6ffe6f75e0b524916bc1bfa4cacefa1042a0c48320cbea514d35505614bf2a25f988e5b3dbb24e1f1d5630644bf37b3977b8bdc92f2c194c518483254
   languageName: node
   linkType: hard
 

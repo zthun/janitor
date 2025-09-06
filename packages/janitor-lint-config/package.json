@@ -89,10 +89,7 @@
     "@zthun/janitor-build-config": "^19.3.2",
     "@zthun/janitor-lint": "^19.3.2",
     "typescript": "~5.9.2",
-    "vite": "^7.1.4",
-    "vite-plugin-dts": "^4.5.4",
-    "vite-plugin-externalize-deps": "^0.9.0",
-    "vite-tsconfig-paths": "^5.1.4"
+    "vite": "^7.1.4"
   },
   "peerDependencies": {
     "@zthun/janitor-lint": ">=19.0.0",
