@@ -1,7 +1,7 @@
 import type { LibraryOptions, Plugin } from "vite";
 import dts from "vite-plugin-dts";
-import { externalizeDeps } from "vite-plugin-externalize-deps";
 import { describe, expect, it } from "vitest";
+import { externalizeDeps } from "../plugin/vite-plugin-externalize-deps.js";
 import { ZViteConfigBuilder } from "./vite-config-builder.mjs";
 import { ZViteLibraryBuilder } from "./vite-library-builder.mjs";
 import { ZViteServerBuilder } from "./vite-server-builder.mjs";

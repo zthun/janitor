@@ -9,9 +9,9 @@ import type {
 } from "vite";
 import { checker } from "vite-plugin-checker";
 import dtsPlugin from "vite-plugin-dts";
-import { externalizeDeps } from "vite-plugin-externalize-deps";
 import tsConfigPaths from "vite-tsconfig-paths";
 import type { InlineConfig as TestConfig } from "vitest/node.js";
+import { externalizeDeps } from "../plugin/vite-plugin-externalize-deps.js";
 import { ZViteLibraryBuilder } from "./vite-library-builder.mjs";
 import { ZViteTestBuilder } from "./vite-test-builder.mjs";
 
