@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [19.3.3](https://github.com/zthun/janitor/compare/v19.3.2...v19.3.3) (2025-09-06)
+
+
+### Bug Fixes
+
+* externalize deps should no longer give any errors ([213a8e2](https://github.com/zthun/janitor/commit/213a8e26ca8fe5b86316e3fb93470e6e7a9e0089))
+
+
+
 ## [19.3.2](https://github.com/zthun/janitor/compare/v19.3.1...v19.3.2) (2025-09-05)
 
 **Note:** Version bump only for package @zthun/janitor-build-config
