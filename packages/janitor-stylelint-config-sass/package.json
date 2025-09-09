@@ -1,6 +1,6 @@
 {
   "name": "@zthun/janitor-stylelint-config-sass",
-  "version": "19.3.3",
+  "version": "19.3.4",
   "description": "A shared configuration for stylelint for @zthun scoped projects.",
   "keywords": [
     "stylelint",
@@ -29,11 +29,11 @@
     "build": "vite build"
   },
   "dependencies": {
-    "@zthun/janitor-stylelint-config": "^19.3.3",
+    "@zthun/janitor-stylelint-config": "^19.3.4",
     "stylelint-config-standard-scss": "^15.0.1"
   },
   "devDependencies": {
-    "@zthun/janitor-build-config": "^19.3.3",
+    "@zthun/janitor-build-config": "^19.3.4",
     "postcss": "^8.5.6",
     "stylelint": "^16.24.0",
     "vite": "^7.1.5"

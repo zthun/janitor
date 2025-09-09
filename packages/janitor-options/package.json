@@ -1,6 +1,6 @@
 {
   "name": "@zthun/janitor-options",
-  "version": "19.3.3",
+  "version": "19.3.4",
   "description": "Option builders and interfaces for the zthunworks janitor system.",
   "keywords": [
     "linters"
@@ -31,7 +31,7 @@
     "dist"
   ],
   "devDependencies": {
-    "@zthun/janitor-build-config": "^19.3.3",
+    "@zthun/janitor-build-config": "^19.3.4",
     "typescript": "~5.9.2",
     "vite": "^7.1.5",
     "vitest": "^3.2.4"
