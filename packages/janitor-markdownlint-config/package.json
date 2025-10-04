@@ -30,7 +30,7 @@
   "devDependencies": {
     "@zthun/janitor-build-config": "^19.3.4",
     "markdownlint": "~0.38.0",
-    "vite": "^7.1.5"
+    "vite": "^7.1.9"
   },
   "peerDependencies": {
     "markdownlint": ">0.32.0 <1.0.0"

@@ -31,19 +31,19 @@
     "dist"
   ],
   "dependencies": {
-    "@swc/core": "^1.13.5",
-    "@vitejs/plugin-react": "^5.0.2",
+    "@swc/core": "1.13.20",
+    "@vitejs/plugin-react": "^5.0.4",
     "lodash-es": "^4.17.21",
-    "typedoc": "^0.28.12",
+    "typedoc": "^0.28.13",
     "unplugin-swc": "^1.5.7",
-    "vite": "^7.1.5",
-    "vite-plugin-checker": "^0.10.3",
+    "vite": "^7.1.9",
+    "vite-plugin-checker": "^0.11.0",
     "vite-plugin-dts": "^4.5.4",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.2.4"
   },
   "devDependencies": {
-    "typescript": "~5.9.2"
+    "typescript": "~5.9.3"
   },
   "peerDependencies": {
     "typedoc": ">=0.28.5 <1.0.0",

@@ -32,8 +32,8 @@
   ],
   "devDependencies": {
     "@zthun/janitor-build-config": "^19.3.4",
-    "typescript": "~5.9.2",
-    "vite": "^7.1.5",
+    "typescript": "~5.9.3",
+    "vite": "^7.1.9",
     "vitest": "^3.2.4"
   }
 }

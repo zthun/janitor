@@ -30,7 +30,7 @@
   "devDependencies": {
     "@zthun/janitor-build-config": "^19.3.4",
     "prettier": "^3.6.2",
-    "vite": "^7.1.5"
+    "vite": "^7.1.9"
   },
   "peerDependencies": {
     "prettier": "^3.0.0"
