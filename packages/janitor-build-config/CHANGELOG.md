@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [19.3.6](https://github.com/zthun/janitor/compare/v19.3.5...v19.3.6) (2025-10-04)
+
+
+### Reverts
+
+* swc core to 1.13.5 ([9ac5216](https://github.com/zthun/janitor/commit/9ac5216e9a6d86f8621532efecaecafad45daf17)), closes [/github.com/swc-project/swc/issues/11126#issuecomment-3343258214](https://github.com/zthun//github.com/swc-project/swc/issues/11126/issues/issuecomment-3343258214)
+
+
+
 ## [19.3.5](https://github.com/zthun/janitor/compare/v19.3.4...v19.3.5) (2025-10-04)
 
 **Note:** Version bump only for package @zthun/janitor-build-config
