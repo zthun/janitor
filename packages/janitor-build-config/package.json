@@ -31,7 +31,7 @@
     "dist"
   ],
   "dependencies": {
-    "@swc/core": "1.13.20",
+    "@swc/core": "=1.13.5",
     "@vitejs/plugin-react": "^5.0.4",
     "lodash-es": "^4.17.21",
     "typedoc": "^0.28.13",
