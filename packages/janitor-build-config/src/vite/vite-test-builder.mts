@@ -110,6 +110,27 @@ export class ZViteTestBuilder {
   }
 
   /**
+   * This sets the max concurrency to one and resets
+   * the environment after every test.
+   *
+   * Use this in the case that you want to have
+   * strategic tests that can step over one another. For example,
+   * writing to the file system and deleting from the file system
+   * can have race conditions.  If your app or library tests heavily
+   * depend on those operations, then you should run your tests serially.
+   *
+   * @returns
+   *        This object.
+   */
+  public runSerially() {
+    this.test.fileParallelism = false;
+    this.test.maxConcurrency = 1;
+    this.test.isolate = true;
+
+    return this;
+  }
+
+  /**
    * Returns the built test configuration.
    *
    * @returns
