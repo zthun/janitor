@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [19.4.0](https://github.com/zthun/janitor/compare/v19.3.6...v19.4.0) (2025-10-21)
+
+
+### Features
+
+* you can now run test serially ([34d9edc](https://github.com/zthun/janitor/commit/34d9edc7a39fca1159f97a771daa48905af25480))
+
+
+
 ## [19.3.6](https://github.com/zthun/janitor/compare/v19.3.5...v19.3.6) (2025-10-04)
 
 
