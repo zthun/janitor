@@ -28,20 +28,20 @@
     "dist"
   ],
   "dependencies": {
-    "@eslint/js": "^9.37.0",
+    "@eslint/js": "^9.38.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-prettier": "^5.5.4",
     "eslint-plugin-react": "^7.37.5",
     "globals": "^16.4.0",
-    "typescript-eslint": "^8.45.0"
+    "typescript-eslint": "^8.46.2"
   },
   "devDependencies": {
     "@zthun/janitor-build-config": "^19.3.6",
-    "eslint": "^9.37.0",
+    "eslint": "^9.38.0",
     "prettier": "^3.6.2",
     "typescript": "~5.9.3",
-    "vite": "^7.1.9"
+    "vite": "^7.1.11"
   },
   "peerDependencies": {
     "eslint": "^9.0.0",

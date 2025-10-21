@@ -70,6 +70,8 @@ describe("ZLinterMarkdown", () => {
         errorDetail: "Line length too much",
         errorContext: "",
         errorRange: [],
+        severity: "error",
+        fixInfo: null,
       };
     });
 
