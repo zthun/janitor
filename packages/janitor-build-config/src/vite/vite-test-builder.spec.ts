@@ -100,4 +100,31 @@ describe("Vite Test Builder", () => {
       );
     });
   });
+
+  describe("Serially", () => {
+    it("should only allow one test to run at a time", () => {
+      // Arrange.
+      const target = createTestTarget();
+
+      // Act.
+      const config = target.runSerially().build();
+      const { fileParallelism, maxConcurrency } = config;
+
+      // Assert.
+      expect(fileParallelism).toBeFalsy();
+      expect(maxConcurrency).toEqual(1);
+    });
+
+    it("should reset the environment after each test", () => {
+      // Arrange.
+      const target = createTestTarget();
+
+      // Act.
+      const config = target.runSerially().build();
+      const { isolate } = config;
+
+      // Assert.
+      expect(isolate).toBeTruthy();
+    });
+  });
 });
