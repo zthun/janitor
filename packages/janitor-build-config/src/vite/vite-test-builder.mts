@@ -106,7 +106,7 @@ export class ZViteTestBuilder {
    *        This object.
    */
   public monorepo(packages = "packages") {
-    return this.project(`${packages}/*/vitest.config.{js,cjs,mjs,ts,mts}`);
+    return this.project(`${packages}/*/vite.config.{js,cjs,mjs,ts,mts}`);
   }
 
   /**
