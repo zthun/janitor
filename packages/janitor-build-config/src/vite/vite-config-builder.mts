@@ -13,7 +13,6 @@ import tsConfigPaths from "vite-tsconfig-paths";
 import type { InlineConfig as TestConfig } from "vitest/node.js";
 import { externalizeDeps } from "../plugin/vite-plugin-externalize-deps.js";
 import { ZViteLibraryBuilder } from "./vite-library-builder.mjs";
-import { ZViteTestBuilder } from "./vite-test-builder.mjs";
 
 /**
  * A config builder for the vite build system.
@@ -265,11 +264,9 @@ export class ZViteConfigBuilder {
    * Constructs the config to be for testing.
    *
    * @param options -
-   *        The test config to use.  If this is falsy,
-   *        then a test setup using a monorepo with the default
-   *        provider and environment will be used.
+   *        The test config to use.
    */
-  public test(options: TestConfig = new ZViteTestBuilder().monorepo().build()) {
+  public test(options: TestConfig) {
     this.config.test = options;
     return this;
   }

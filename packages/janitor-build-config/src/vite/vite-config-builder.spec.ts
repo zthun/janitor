@@ -176,11 +176,7 @@ describe("Vite Config Builder", () => {
   });
 
   describe("Test", () => {
-    it("should add the test config", () => {
-      expect(createTestTarget().test().build().test).toBeTruthy();
-    });
-
-    it("should add a custom test config", () => {
+    it("should add a test config", () => {
       const expected = new ZViteTestBuilder().browser().v8().build();
       expect(createTestTarget().test(expected).build().test).toEqual(expected);
     });
