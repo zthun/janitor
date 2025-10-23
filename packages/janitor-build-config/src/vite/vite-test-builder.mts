@@ -15,7 +15,6 @@ export class ZViteTestBuilder {
       environment: "node",
       testTimeout: 30000,
       coverage: {
-        all: false,
         provider: "v8",
       },
     };

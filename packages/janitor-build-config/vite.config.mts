@@ -7,9 +7,7 @@ const library = new ZViteLibraryBuilder()
   .entry("vite", "./src/vite/index.mts")
   .entry("typedoc", "./src/typedoc/index.mts")
   .build();
-
 const test = new ZViteTestBuilder().node().build();
-
 const config = new ZViteConfigBuilder().library(library).test(test).build();
 
 export default defineConfig(config);
