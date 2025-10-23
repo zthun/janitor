@@ -15,7 +15,6 @@ export class ZViteTestBuilder {
       environment: "node",
       testTimeout: 30000,
       coverage: {
-        all: false,
         provider: "v8",
       },
     };
@@ -106,7 +105,7 @@ export class ZViteTestBuilder {
    *        This object.
    */
   public monorepo(packages = "packages") {
-    return this.project(`${packages}/*/vitest.config.{js,cjs,mjs,ts,mts}`);
+    return this.project(`${packages}/*/vite.config.{js,cjs,mjs,ts,mts}`);
   }
 
   /**

@@ -82,7 +82,7 @@ describe("Vite Test Builder", () => {
       const { projects: actual } = config;
 
       // Assert.
-      expect(actual).toContain("packages/*/vitest.config.{js,cjs,mjs,ts,mts}");
+      expect(actual).toContain("packages/*/vite.config.{js,cjs,mjs,ts,mts}");
     });
 
     it("should construct a monorepo with a path to the packages folder", () => {
@@ -95,9 +95,7 @@ describe("Vite Test Builder", () => {
       const { projects: actual } = config;
 
       // Assert.
-      expect(actual).toContain(
-        `${packages}/*/vitest.config.{js,cjs,mjs,ts,mts}`,
-      );
+      expect(actual).toContain(`${packages}/*/vite.config.{js,cjs,mjs,ts,mts}`);
     });
   });
 
