@@ -31,16 +31,16 @@
     "dist"
   ],
   "dependencies": {
-    "@swc/core": "=1.13.5",
-    "@vitejs/plugin-react": "^5.0.4",
+    "@swc/core": "^1.14.0",
+    "@vitejs/plugin-react": "^5.1.0",
     "lodash-es": "^4.17.21",
     "typedoc": "^0.28.14",
     "unplugin-swc": "^1.5.8",
-    "vite": "^7.1.11",
+    "vite": "^7.1.12",
     "vite-plugin-checker": "^0.11.0",
     "vite-plugin-dts": "^4.5.4",
     "vite-tsconfig-paths": "^5.1.4",
-    "vitest": "^4.0.1"
+    "vitest": "^4.0.5"
   },
   "devDependencies": {
     "typescript": "~5.9.3"

@@ -89,7 +89,7 @@
     "@zthun/janitor-build-config": "^19.4.1",
     "@zthun/janitor-lint": "^19.4.1",
     "typescript": "~5.9.3",
-    "vite": "^7.1.11"
+    "vite": "^7.1.12"
   },
   "peerDependencies": {
     "@zthun/janitor-lint": ">=19.0.0",
