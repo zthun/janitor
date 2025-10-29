@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [19.4.2](https://github.com/zthun/janitor/compare/v19.4.1...v19.4.2) (2025-10-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* update to vitest 4
+
+### Features
+
+* update to vitest 4 ([36f6ca8](https://github.com/zthun/janitor/commit/36f6ca834eb653d183686ad67f2cae85f427f15a))
+
+
+
 ## [19.4.1](https://github.com/zthun/janitor/compare/v19.4.0...v19.4.1) (2025-10-23)
 
 **Note:** Version bump only for package @zthun/janitor
