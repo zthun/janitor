@@ -1,4 +1,5 @@
 {
+  "$schema": "https://www.schemastore.org/tsconfig",
   "extends": [
     "@zthun/janitor-ts-config/base.json",
     "@zthun/janitor-ts-config/node.json"
