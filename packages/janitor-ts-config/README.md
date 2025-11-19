@@ -2,7 +2,7 @@
 
 This package contains shared tsconfig presets used across @zthun scoped projects.
 
-The configs are stackable: start with `base.json` and layer on the
+The configs are composable: start with `base.json` and layer on the
 environment-specific presets you need.
 
 ## Install
