@@ -2,19 +2,18 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
+    "declaration": true,
     "emitDecoratorMetadata": true,
+    "esModuleInterop": true,
     "experimentalDecorators": true,
+    "isolatedModules": true,
+    "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "resolveJsonModule": true,
-    "module": "NodeNext",
-    "target": "ES2015",
-    "lib": ["ESNext"],
-    "declaration": true,
-    "esModuleInterop": true,
-    "isolatedModules": true,
     "skipLibCheck": true,
-    "strictNullChecks": true,
+    "sourceMap": true,
     "strictBindCallApply": true,
-    "sourceMap": true
+    "strictNullChecks": true,
+    "target": "ES2020"
   }
 }
