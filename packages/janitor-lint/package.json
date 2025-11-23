@@ -44,7 +44,7 @@
     "lodash-es": "^4.17.21",
     "markdownlint": "~0.39.0",
     "prettier": "^3.6.2",
-    "stylelint": "^16.25.0",
+    "stylelint": "^16.26.0",
     "yargs": "^18.0.0"
   },
   "files": [
@@ -53,8 +53,8 @@
   "devDependencies": {
     "@zthun/janitor-build-config": "^19.5.1",
     "typescript": "~5.9.3",
-    "vite": "^7.2.2",
-    "vitest": "^4.0.10",
+    "vite": "^7.2.4",
+    "vitest": "^4.0.13",
     "vitest-mock-extended": "^3.1.0"
   }
 }
