@@ -2,12 +2,12 @@
 
 Thanks for taking the time to contribute! Generally, the big secret of this
 project is that it is mostly done as a hobby. There is no big intention to make
-janitor the code cleanliness standard and anyone who uses it would just
-have to find it useful. It is not marketed or advertised; a good product should
-sell itself. However, at the minimum, people would need to know about it, so
-unless you are looking to make code contributions, the minimum contribution that
-ANYONE can make is to let their friends know about a tool that they found
-helpful and provided value.
+janitor the code cleanliness standard and anyone who uses it would just have to
+find it useful. It is not marketed or advertised; a good product should sell
+itself. However, at the minimum, people would need to know about it, so unless
+you are looking to make code contributions, the minimum contribution that ANYONE
+can make is to let their friends know about a tool that they found helpful and
+provided value.
 
 However, if you are looking to make code contributions to this repository, then
 this document should get you set up.

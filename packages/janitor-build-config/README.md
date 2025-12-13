@@ -1,7 +1,7 @@
 # Janitor Build Config
 
-This is a set of common configurations for vite and vitest to simplify
-build configuration files.
+This is a set of common configurations for vite and vitest to simplify build
+configuration files.
 
 ## Getting Started
 

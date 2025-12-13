@@ -1,6 +1,7 @@
 # Description
 
-This package contains shared tsconfig presets used across @zthun scoped projects.
+This package contains shared tsconfig presets used across @zthun scoped
+projects.
 
 The configs are composable: start with `base.json` and layer on the
 environment-specific presets you need.
@@ -17,10 +18,12 @@ yarn add @zthun/janitor-ts-config typescript --dev
 
 ## Available presets
 
-- `base.json` — strict defaults aimed as the root for all possible configurations
+- `base.json` — strict defaults aimed as the root for all possible
+  configurations
 - `node.json` — for node based projects.
 - `browser.json` — for browser based projects.
-- `react.json` — for projects that are browser based and use react as the framework
+- `react.json` — for projects that are browser based and use react as the
+  framework
 - `nest-js.json` — for node based projects that use nest-js as a framework.
 
 ## Usage examples
