@@ -1,6 +1,6 @@
 {
   "name": "@zthun/janitor-lint-config",
-  "version": "19.5.2",
+  "version": "19.5.3",
   "description": "A shared configuration for janitor lint for @zthun scoped projects.",
   "keywords": [
     "eslint",
@@ -71,13 +71,13 @@
     "dist"
   ],
   "dependencies": {
-    "@zthun/janitor-eslint-config": "^19.5.2",
-    "@zthun/janitor-htmlhint-config": "^19.5.2",
-    "@zthun/janitor-markdownlint-config": "^19.5.2",
-    "@zthun/janitor-prettier-config": "^19.5.2",
-    "@zthun/janitor-stylelint-config": "^19.5.2",
-    "@zthun/janitor-stylelint-config-less": "^19.5.2",
-    "@zthun/janitor-stylelint-config-sass": "^19.5.2",
+    "@zthun/janitor-eslint-config": "^19.5.3",
+    "@zthun/janitor-htmlhint-config": "^19.5.3",
+    "@zthun/janitor-markdownlint-config": "^19.5.3",
+    "@zthun/janitor-prettier-config": "^19.5.3",
+    "@zthun/janitor-stylelint-config": "^19.5.3",
+    "@zthun/janitor-stylelint-config-less": "^19.5.3",
+    "@zthun/janitor-stylelint-config-sass": "^19.5.3",
     "eslint": "^9.39.2",
     "htmlhint": "^1.8.0",
     "markdownlint": "~0.40.0",
@@ -86,8 +86,8 @@
     "stylelint": "^16.26.1"
   },
   "devDependencies": {
-    "@zthun/janitor-build-config": "^19.5.2",
-    "@zthun/janitor-lint": "^19.5.2",
+    "@zthun/janitor-build-config": "^19.5.3",
+    "@zthun/janitor-lint": "^19.5.3",
     "typescript": "~5.9.3",
     "vite": "^7.2.7"
   },
