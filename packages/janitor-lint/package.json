@@ -41,7 +41,7 @@
     "glob": "^13.0.0",
     "htmlhint": "^1.8.0",
     "js-yaml": "^4.1.1",
-    "lodash-es": "^4.17.21",
+    "lodash-es": "^4.17.22",
     "markdownlint": "~0.40.0",
     "prettier": "^3.7.4",
     "stylelint": "^16.26.1",
@@ -53,8 +53,8 @@
   "devDependencies": {
     "@zthun/janitor-build-config": "^19.5.3",
     "typescript": "~5.9.3",
-    "vite": "^7.2.7",
-    "vitest": "^4.0.15",
+    "vite": "^7.3.0",
+    "vitest": "^4.0.16",
     "vitest-mock-extended": "^3.1.0"
   }
 }
