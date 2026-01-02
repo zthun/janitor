@@ -3594,7 +3594,7 @@ __metadata:
     vite: "npm:^7.3.0"
     vite-plugin-checker: "npm:^0.12.0"
     vite-plugin-dts: "npm:^4.5.4"
-    vite-tsconfig-paths: "npm:^5.1.4"
+    vite-tsconfig-paths: "npm:^6.0.3"
     vitest: "npm:^4.0.16"
   peerDependencies:
     typedoc: ">=0.28.5 <1.0.0"
@@ -3621,7 +3621,7 @@ __metadata:
     eslint-plugin-import: "npm:^2.32.0"
     eslint-plugin-prettier: "npm:^5.5.4"
     eslint-plugin-react: "npm:^7.37.5"
-    globals: "npm:^16.5.0"
+    globals: "npm:^17.0.0"
     prettier: "npm:^3.7.4"
     typescript: "npm:~5.9.3"
     typescript-eslint: "npm:^8.51.0"
@@ -3749,7 +3749,7 @@ __metadata:
     "@zthun/janitor-stylelint-config": "npm:^19.5.3"
     postcss: "npm:^8.5.6"
     stylelint: "npm:^16.26.1"
-    stylelint-config-standard-less: "npm:^3.0.1"
+    stylelint-config-standard-less: "npm:^4.0.0"
     vite: "npm:^7.3.0"
   peerDependencies:
     postcss: ^8.0.0
@@ -6791,10 +6791,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"globals@npm:^16.5.0":
-  version: 16.5.0
-  resolution: "globals@npm:16.5.0"
-  checksum: 10/f9e8a2a13f50222c127030a619e283e7bbfe32966316bdde0715af1d15a7e40cb9c24ff52cad59671f97762ed8b515353c2f8674f560c63d9385f19ee26735a6
+"globals@npm:^17.0.0":
+  version: 17.0.0
+  resolution: "globals@npm:17.0.0"
+  checksum: 10/af6213db9bf5f599b8a609061984c4d5fedb23db336228b866eba70819fe13ea3d11ca507b4799e8afc888331d0f7e5760d01507e38cb988fff9ad3a9635b312
   languageName: node
   linkType: hard
 
@@ -11571,20 +11571,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stylelint-config-recommended-less@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "stylelint-config-recommended-less@npm:3.0.1"
+"stylelint-config-recommended-less@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "stylelint-config-recommended-less@npm:4.0.0"
   dependencies:
     postcss-less: "npm:^6.0.0"
     stylelint-config-recommended: "npm:^14.0.0"
-    stylelint-less: "npm:^3.0.1"
+    stylelint-less: "npm:^4.0.0"
   peerDependencies:
     postcss: ^8.3.3
-    stylelint: ^16.0.2
+    stylelint: ^16.26.1 || ^17.0.0
   peerDependenciesMeta:
     postcss:
       optional: true
-  checksum: 10/db7beca8e2deb117c629efa80f39b125d26cb9c4be065a5a7743a8de244bca19ac173908405425e442b6e4465c79e1317ce829edf47bd7262aaefb6dc469f946
+  checksum: 10/bffa8818bc79e7db1ebc98fedc1669fa2f8ea4a0a217d2c37e29bfc13717a201bfeb56858a3249a8b819a8334c003de89d317433707914c071e9b21cd6b16055
   languageName: node
   linkType: hard
 
@@ -11605,7 +11605,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stylelint-config-recommended@npm:^14.0.0":
+"stylelint-config-recommended@npm:^14.0.0, stylelint-config-recommended@npm:^14.0.1":
   version: 14.0.1
   resolution: "stylelint-config-recommended@npm:14.0.1"
   peerDependencies:
@@ -11623,19 +11623,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stylelint-config-standard-less@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "stylelint-config-standard-less@npm:3.0.1"
+"stylelint-config-standard-less@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "stylelint-config-standard-less@npm:4.0.0"
   dependencies:
-    stylelint-config-recommended-less: "npm:^3.0.1"
-    stylelint-config-standard: "npm:^35.0.0"
+    stylelint-config-recommended-less: "npm:^4.0.0"
+    stylelint-config-standard: "npm:^36.0.0"
   peerDependencies:
     postcss: ^8.3.3
-    stylelint: ^16.0.2
+    stylelint: ^16.26.1 || ^17.0.0
   peerDependenciesMeta:
     postcss:
       optional: true
-  checksum: 10/b6fcf76c3823599ac41d9bf922aa5d5866aa72d77846b2b06ecb65f02ce695a66b707d09d43c460a4939054c55c3b6ff38b40d650a1b7703391a4725ebf06a66
+  checksum: 10/1fbaca7ac54161065180c6b172871503a8334d342f0c8d97fe6b43d2d62d6a03b7265803d142ee78cb030dd81d4345e9a275c65eb65b8c53a5a41a0dc9793b63
   languageName: node
   linkType: hard
 
@@ -11655,14 +11655,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stylelint-config-standard@npm:^35.0.0":
-  version: 35.0.0
-  resolution: "stylelint-config-standard@npm:35.0.0"
+"stylelint-config-standard@npm:^36.0.0":
+  version: 36.0.1
+  resolution: "stylelint-config-standard@npm:36.0.1"
   dependencies:
-    stylelint-config-recommended: "npm:^14.0.0"
+    stylelint-config-recommended: "npm:^14.0.1"
   peerDependencies:
-    stylelint: ^16.0.0
-  checksum: 10/527420c64615cb9a403573d0a7b051b4fac4c0eb17b634973fe31a6953217ea4a768283f9cad34e95143f0a3b98ec51c7e379c3199996976ef86696c3a9671f2
+    stylelint: ^16.1.0
+  checksum: 10/50b8fb396f1cb8cb3539aa97187eb8c2a4b2858c897374faa726837a809dae7c686cb5dc32528c9698745d4e97af1fe9035a04a5a8cb220bd6b1530795437013
   languageName: node
   linkType: hard
 
@@ -11677,16 +11677,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stylelint-less@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "stylelint-less@npm:3.0.1"
+"stylelint-less@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "stylelint-less@npm:4.0.0"
   dependencies:
     postcss-resolve-nested-selector: "npm:^0.1.1"
     postcss-value-parser: "npm:4.2.0"
   peerDependencies:
     postcss: ^8.4.31
-    stylelint: ^16.0.2
-  checksum: 10/61c5d6f2c0fc53e3461ce3b2259a3498f4e5712f5f9cafe541e34ba2d7366dcff95cf8b6b010d4a4bb3d109baef7aefcfb4f802f848e28b8d9fb67398e1280f2
+    stylelint: ^16.26.1 || ^17.0.0
+  checksum: 10/f541238585903fc2812107a6a312f54e6f9720128b674a76ce654d3b47ee57adfcc87e52874184765a49e59d53c460851d5af71ce45e316c8ecade1604553afc
   languageName: node
   linkType: hard
 
@@ -12515,9 +12515,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite-tsconfig-paths@npm:^5.1.4":
-  version: 5.1.4
-  resolution: "vite-tsconfig-paths@npm:5.1.4"
+"vite-tsconfig-paths@npm:^6.0.3":
+  version: 6.0.3
+  resolution: "vite-tsconfig-paths@npm:6.0.3"
   dependencies:
     debug: "npm:^4.1.1"
     globrex: "npm:^0.1.2"
@@ -12527,7 +12527,7 @@ __metadata:
   peerDependenciesMeta:
     vite:
       optional: true
-  checksum: 10/b409dbd17829f560021a71dba3e473b9c06dcf5fdc9d630b72c1f787145ec478b38caff1be04868971ac8bdcbf0f5af45eeece23dbc9c59c54b901f867740ae0
+  checksum: 10/271cdc040a03181d13e4253e99ec6deec1cbe4ec4cb2a1377d46dba403483f8e38a5c2ed29ad0493ed51c2cfd658847cb1cdc73e438d6a8bcdd2b52df19d72e2
   languageName: node
   linkType: hard
 

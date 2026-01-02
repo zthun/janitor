@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@zthun/janitor-stylelint-config": "^19.5.3",
-    "stylelint-config-standard-less": "^3.0.1"
+    "stylelint-config-standard-less": "^4.0.0"
   },
   "devDependencies": {
     "@zthun/janitor-build-config": "^19.5.3",
