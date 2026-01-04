@@ -1,6 +1,6 @@
 {
   "name": "@zthun/janitor-lint-config",
-  "version": "19.5.4",
+  "version": "19.5.5",
   "description": "A shared configuration for janitor lint for @zthun scoped projects.",
   "keywords": [
     "eslint",
@@ -76,7 +76,7 @@
     "@zthun/janitor-markdownlint-config": "^19.5.4",
     "@zthun/janitor-prettier-config": "^19.5.4",
     "@zthun/janitor-stylelint-config": "^19.5.4",
-    "@zthun/janitor-stylelint-config-less": "^19.5.4",
+    "@zthun/janitor-stylelint-config-less": "^19.5.5",
     "@zthun/janitor-stylelint-config-sass": "^19.5.4",
     "eslint": "^9.39.2",
     "htmlhint": "^1.8.0",

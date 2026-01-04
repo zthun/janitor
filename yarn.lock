@@ -3649,7 +3649,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zthun/janitor-lint-config@npm:*, @zthun/janitor-lint-config@npm:^19.5.4, @zthun/janitor-lint-config@workspace:packages/janitor-lint-config":
+"@zthun/janitor-lint-config@npm:*, @zthun/janitor-lint-config@npm:^19.5.5, @zthun/janitor-lint-config@workspace:packages/janitor-lint-config":
   version: 0.0.0-use.local
   resolution: "@zthun/janitor-lint-config@workspace:packages/janitor-lint-config"
   dependencies:
@@ -3660,7 +3660,7 @@ __metadata:
     "@zthun/janitor-markdownlint-config": "npm:^19.5.4"
     "@zthun/janitor-prettier-config": "npm:^19.5.4"
     "@zthun/janitor-stylelint-config": "npm:^19.5.4"
-    "@zthun/janitor-stylelint-config-less": "npm:^19.5.4"
+    "@zthun/janitor-stylelint-config-less": "npm:^19.5.5"
     "@zthun/janitor-stylelint-config-sass": "npm:^19.5.4"
     eslint: "npm:^9.39.2"
     htmlhint: "npm:^1.8.0"
@@ -3741,7 +3741,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zthun/janitor-stylelint-config-less@npm:^19.5.4, @zthun/janitor-stylelint-config-less@workspace:packages/janitor-stylelint-config-less":
+"@zthun/janitor-stylelint-config-less@npm:^19.5.5, @zthun/janitor-stylelint-config-less@workspace:packages/janitor-stylelint-config-less":
   version: 0.0.0-use.local
   resolution: "@zthun/janitor-stylelint-config-less@workspace:packages/janitor-stylelint-config-less"
   dependencies:
@@ -3802,7 +3802,7 @@ __metadata:
   dependencies:
     "@zthun/janitor-build-config": "npm:^19.5.4"
     "@zthun/janitor-lint": "npm:^19.5.4"
-    "@zthun/janitor-lint-config": "npm:^19.5.4"
+    "@zthun/janitor-lint-config": "npm:^19.5.5"
     typedoc: "npm:^0.28.15"
     typescript: "npm:~5.9.3"
   languageName: unknown

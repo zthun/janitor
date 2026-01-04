@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [19.5.5](https://github.com/zthun/janitor/compare/v19.5.4...v19.5.5) (2026-01-04)
+
+**Note:** Version bump only for package @zthun/janitor
+
+
+
+
+
 ## [19.5.4](https://github.com/zthun/janitor/compare/v19.5.3...v19.5.4) (2026-01-02)
 
 **Note:** Version bump only for package @zthun/janitor
