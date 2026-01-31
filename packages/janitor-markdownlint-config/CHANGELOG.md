@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>19.5.6 (2026-01-31)</small>
+
+* build: update outdated packages ([eee3a6b](https://github.com/zthun/janitor/commit/eee3a6b))
+
+
+
+
+
 ## [19.5.4](https://github.com/zthun/janitor/compare/v19.5.3...v19.5.4) (2026-01-02)
 
 **Note:** Version bump only for package @zthun/janitor-markdownlint-config
