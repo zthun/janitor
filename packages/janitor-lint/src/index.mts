@@ -6,7 +6,6 @@ export * from "./config/config-reader-cosmic.mjs";
 export * from "./config/config-reader-null.mjs";
 export * from "./config/config-reader-prettier.mjs";
 export * from "./config/config-reader.mjs";
-export * from "./content/content-linter-html.mjs";
 export * from "./content/content-linter-json.mjs";
 export * from "./content/content-linter-pretty.mjs";
 export * from "./content/content-linter-yaml.mjs";

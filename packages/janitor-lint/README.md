@@ -61,10 +61,6 @@ export interface IZJanitorOptionsLint {
    */
   esConfig?: string;
   /**
-   * The path to the config file for htmlhint.
-   */
-  htmlConfig?: string;
-  /**
    * The path to the config file for markdownlint.
    */
   markdownConfig?: string;
@@ -85,10 +81,6 @@ export interface IZJanitorOptionsLint {
    * The file globs to lint with eslint.
    */
   esFiles?: string[];
-  /**
-   * The file globs to lint with htmlhint.
-   */
-  htmlFiles?: string[];
   /**
    * The file globs to lint with json.
    */
@@ -114,10 +106,6 @@ export interface IZJanitorOptionsLint {
    */
   yamlFiles?: string[];
 
-  /**
-   * The files globs to exclude from linting with htmlhint.
-   */
-  htmlFilesExclude?: string[];
   /**
    * The files globs to exclude from linting with json.
    */
@@ -156,8 +144,7 @@ export interface IZJanitorOptions {
 ```
 
 The value of each `*Config` can be a local path or a shared module such as
-`@zthun/janitor-*-config`. HTMLHint and Markdownlint configs support `extends`
-via Janitor Lint even though the underlying tools have limited support.
+`@zthun/janitor-*-config`.
 
 ## Example config
 
@@ -176,7 +163,6 @@ const lint = new ZJanitorOptionsLintBuilder()
   .commonCssFiles()
   .commonLessFiles()
   .commonSassFiles()
-  .commonHtmlFiles()
   .commonMarkdownFiles()
   .commonJsonFiles()
   .commonYamlFiles()
@@ -196,7 +182,6 @@ Point to shared configs if you want opinionated defaults:
 const lint = new ZJanitorOptionsLintBuilder()
   .esConfig("@zthun/janitor-eslint-config")
   .styleConfig("@zthun/janitor-stylelint-config")
-  .htmlConfig("@zthun/janitor-htmlhint-config")
   .markdownConfig("@zthun/janitor-markdownlint-config")
   .prettyConfig("@zthun/janitor-prettier-config")
   .build();

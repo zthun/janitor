@@ -17,7 +17,6 @@ describe("ZJanitorLint", () => {
   function createTestTarget() {
     const target = new ZJanitorLint(logger);
     target.esLint = new ZLinterSilent();
-    target.htmlHint = new ZLinterSilent();
     target.jsonLint = new ZLinterSilent();
     target.yamlLint = new ZLinterSilent();
     target.styleLint = new ZLinterSilent();
@@ -45,9 +44,6 @@ describe("ZJanitorLint", () => {
         markdownConfig: "@zthun/janitor-markdownlint-config",
         markdownFiles: ["**/*.md"],
         markdownFilesExclude: ["**/exclude.md"],
-        htmlConfig: "@zthun/janitor-htmlhint-config",
-        htmlFiles: ["**/*.html"],
-        htmlFilesExclude: ["**/exclude.html"],
         jsonFiles: ["**/*.json"],
         jsonFilesExclude: ["**/exclude.json"],
         yamlFiles: ["**/*.yml"],
@@ -140,22 +136,6 @@ describe("ZJanitorLint", () => {
       it("does not invoke the linter if there are no styleFiles.", async () => {
         delete options.lint?.markdownFiles;
         await assertLinterNotInvoked((t) => t.markdownLint);
-      });
-    });
-
-    describe("HtmlHint", () => {
-      it("invokes the linter if there are htmlFiles", async () => {
-        await assertLinterInvoked(
-          (t) => t.htmlHint,
-          options.lint?.htmlFiles,
-          options.lint?.htmlConfig,
-          options.lint?.htmlFilesExclude,
-        );
-      });
-
-      it("does not invoke the linter if there are no esFiles.", async () => {
-        delete options.lint?.htmlFiles;
-        await assertLinterNotInvoked((t) => t.htmlHint);
       });
     });
 

@@ -6,7 +6,6 @@ import { defineConfig } from "vite";
 
 const library = new ZViteLibraryBuilder()
   .entry("eslint", "./src/es/eslint.mts")
-  .entry("htmlhint", "./src/html/htmlhint.mts")
   .entry("markdownlint", "./src/markdown/markdownlint.mts")
   .entry("prettier", "./src/pretty/prettier.mts")
   .entry("stylelint", "./src/style/stylelint.mts")

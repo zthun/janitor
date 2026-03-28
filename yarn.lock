@@ -3249,13 +3249,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/htmlhint@npm:^1.1.5":
-  version: 1.1.5
-  resolution: "@types/htmlhint@npm:1.1.5"
-  checksum: 10/639bf4d1ea244630b6ee6df3793d510c751b69cfa9f269f927c0bbb794cd0e0b28a4d4b1e93d36a9eb1bed8475eade1402ec0b0947bdc72d6613ffec46c73629
-  languageName: node
-  linkType: hard
-
 "@types/js-yaml@npm:^4.0.9":
   version: 4.0.9
   resolution: "@types/js-yaml@npm:4.0.9"
@@ -3327,13 +3320,6 @@ __metadata:
   version: 2.4.4
   resolution: "@types/normalize-package-data@npm:2.4.4"
   checksum: 10/65dff72b543997b7be8b0265eca7ace0e34b75c3e5fee31de11179d08fa7124a7a5587265d53d0409532ecb7f7fba662c2012807963e1f9b059653ec2c83ee05
-  languageName: node
-  linkType: hard
-
-"@types/sarif@npm:^2.1.7":
-  version: 2.1.7
-  resolution: "@types/sarif@npm:2.1.7"
-  checksum: 10/0901acef0b77b7c9eaacd6827796cda9c124cc7b871aa6f91de6ec8869fbc699c6d5c510d61f9e6b1c312ea668aa33f08d81cdd2bd55c462bbbe323a5e4c8c5e
   languageName: node
   linkType: hard
 
@@ -3812,17 +3798,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zthun/janitor-htmlhint-config@npm:^19.5.6, @zthun/janitor-htmlhint-config@workspace:packages/janitor-htmlhint-config":
-  version: 0.0.0-use.local
-  resolution: "@zthun/janitor-htmlhint-config@workspace:packages/janitor-htmlhint-config"
-  dependencies:
-    "@zthun/janitor-build-config": "npm:^19.5.6"
-    htmlhint: "npm:^1.8.0"
-    vite: "npm:^7.3.1"
+"@zthun/janitor-htmlhint-config@npm:^19.5.6":
+  version: 19.5.6
+  resolution: "@zthun/janitor-htmlhint-config@npm:19.5.6"
   peerDependencies:
     htmlhint: ^1.0.0
-  languageName: unknown
-  linkType: soft
+  checksum: 10/4f9fc1e2e60a6fbd8eef133b40f8f70e92e633b15dfec57d3108d7411ae3b10eddb8fa5d1aa23891fe7f353e30f23c9b8d8d165238c18cdad20506dd1d5df882
+  languageName: node
+  linkType: hard
 
 "@zthun/janitor-lint-config@npm:*, @zthun/janitor-lint-config@npm:^19.5.6, @zthun/janitor-lint-config@workspace:packages/janitor-lint-config":
   version: 0.0.0-use.local
@@ -3838,7 +3821,6 @@ __metadata:
     "@zthun/janitor-stylelint-config-less": "npm:^19.5.6"
     "@zthun/janitor-stylelint-config-sass": "npm:^19.5.6"
     eslint: "npm:^9.39.4"
-    htmlhint: "npm:^1.8.0"
     markdownlint: "npm:~0.40.0"
     postcss: "npm:^8.5.8"
     prettier: "npm:^3.8.1"
@@ -3865,7 +3847,6 @@ __metadata:
     cspell: "npm:^9.7.0"
     eslint: "npm:^9.39.4"
     glob: "npm:^13.0.6"
-    htmlhint: "npm:^1.8.0"
     js-yaml: "npm:^4.1.1"
     lodash-es: "npm:^4.17.23"
     markdownlint: "npm:~0.40.0"
@@ -3991,7 +3972,6 @@ __metadata:
     "@commitlint/config-conventional": "npm:^20.5.0"
     "@types/eslint": "npm:^9.6.1"
     "@types/estree": "npm:^1.0.8"
-    "@types/htmlhint": "npm:^1.1.5"
     "@types/js-yaml": "npm:^4.0.9"
     "@types/lodash-es": "npm:^4.17.12"
     "@types/node": "npm:^25.5.0"
@@ -4391,7 +4371,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"async@npm:3.2.6, async@npm:^3.2.3":
+"async@npm:^3.2.3":
   version: 3.2.6
   resolution: "async@npm:3.2.6"
   checksum: 10/cb6e0561a3c01c4b56a799cc8bab6ea5fef45f069ab32500b6e19508db270ef2dffa55e5aed5865c5526e9907b1f8be61b27530823b411ffafb5e1538c86c368
@@ -4721,7 +4701,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chalk@npm:4.1.2, chalk@npm:^4.0.0, chalk@npm:^4.0.2, chalk@npm:^4.1.0, chalk@npm:^4.1.2":
+"chalk@npm:^4.0.0, chalk@npm:^4.0.2, chalk@npm:^4.1.0, chalk@npm:^4.1.2":
   version: 4.1.2
   resolution: "chalk@npm:4.1.2"
   dependencies:
@@ -4959,13 +4939,6 @@ __metadata:
   dependencies:
     delayed-stream: "npm:~1.0.0"
   checksum: 10/2e969e637d05d09fa50b02d74c83a1186f6914aae89e6653b62595cc75a221464f884f55f231b8f4df7a49537fba60bdc0427acd2bf324c09a1dbb84837e36e4
-  languageName: node
-  linkType: hard
-
-"commander@npm:11.1.0":
-  version: 11.1.0
-  resolution: "commander@npm:11.1.0"
-  checksum: 10/66bd2d8a0547f6cb1d34022efb25f348e433b0e04ad76a65279b1b09da108f59a4d3001ca539c60a7a46ea38bcf399fc17d91adad76a8cf43845d8dcbaf5cda1
   languageName: node
   linkType: hard
 
@@ -6607,7 +6580,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fs-extra@npm:^11.1.1, fs-extra@npm:^11.2.0, fs-extra@npm:~11.3.0":
+"fs-extra@npm:^11.2.0, fs-extra@npm:~11.3.0":
   version: 11.3.0
   resolution: "fs-extra@npm:11.3.0"
   dependencies:
@@ -6944,18 +6917,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:^9.0.0":
-  version: 9.3.5
-  resolution: "glob@npm:9.3.5"
-  dependencies:
-    fs.realpath: "npm:^1.0.0"
-    minimatch: "npm:^8.0.2"
-    minipass: "npm:^4.2.4"
-    path-scurry: "npm:^1.6.1"
-  checksum: 10/e5fa8a58adf53525bca42d82a1fad9e6800032b7e4d372209b80cfdca524dd9a7dbe7d01a92d7ed20d89c572457f12c250092bc8817cb4f1c63efefdf9b658c0
-  languageName: node
-  linkType: hard
-
 "global-directory@npm:^4.0.1":
   version: 4.0.1
   resolution: "global-directory@npm:4.0.1"
@@ -7219,24 +7180,6 @@ __metadata:
   version: 3.3.1
   resolution: "html-tags@npm:3.3.1"
   checksum: 10/d0e808544b92d8b999cbcc86d539577255a2f0f2f4f73110d10749d1d36e6fe6ad706a0355a8477afb6e000ecdc93d8455b3602951f9a2b694ac9e28f1b52878
-  languageName: node
-  linkType: hard
-
-"htmlhint@npm:^1.8.0":
-  version: 1.8.0
-  resolution: "htmlhint@npm:1.8.0"
-  dependencies:
-    async: "npm:3.2.6"
-    chalk: "npm:4.1.2"
-    commander: "npm:11.1.0"
-    glob: "npm:^9.0.0"
-    is-glob: "npm:^4.0.3"
-    node-sarif-builder: "npm:^3.3.1"
-    strip-json-comments: "npm:3.1.1"
-    xml: "npm:1.0.1"
-  bin:
-    htmlhint: bin/htmlhint
-  checksum: 10/59eebfa61b4ab5d1b392437623230a710a86b1d1450680a06a282a94a217078b5b2e0639ce6447c6e18bbd3446d33fc79568614e3c90d7842d1782a567e3030d
   languageName: node
   linkType: hard
 
@@ -9308,15 +9251,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minimatch@npm:^8.0.2":
-  version: 8.0.4
-  resolution: "minimatch@npm:8.0.4"
-  dependencies:
-    brace-expansion: "npm:^2.0.1"
-  checksum: 10/aef05598ee565e1013bc8a10f53410ac681561f901c1a084b8ecfd016c9ed919f58f4bbd5b63e05643189dfb26e8106a84f0e1ff12e4a263aa37e1cae7ce9828
-  languageName: node
-  linkType: hard
-
 "minimatch@npm:^9.0.3, minimatch@npm:^9.0.4, minimatch@npm:^9.0.5":
   version: 9.0.5
   resolution: "minimatch@npm:9.0.5"
@@ -9425,13 +9359,6 @@ __metadata:
   dependencies:
     yallist: "npm:^4.0.0"
   checksum: 10/a5c6ef069f70d9a524d3428af39f2b117ff8cd84172e19b754e7264a33df460873e6eb3d6e55758531580970de50ae950c496256bb4ad3691a2974cddff189f0
-  languageName: node
-  linkType: hard
-
-"minipass@npm:^4.2.4":
-  version: 4.2.8
-  resolution: "minipass@npm:4.2.8"
-  checksum: 10/e148eb6dcb85c980234cad889139ef8ddf9d5bdac534f4f0268446c8792dd4c74f4502479be48de3c1cce2f6450f6da4d0d4a86405a8a12be04c1c36b339569a
   languageName: node
   linkType: hard
 
@@ -9632,16 +9559,6 @@ __metadata:
   version: 2.0.19
   resolution: "node-releases@npm:2.0.19"
   checksum: 10/c2b33b4f0c40445aee56141f13ca692fa6805db88510e5bbb3baadb2da13e1293b738e638e15e4a8eb668bb9e97debb08e7a35409b477b5cc18f171d35a83045
-  languageName: node
-  linkType: hard
-
-"node-sarif-builder@npm:^3.3.1":
-  version: 3.3.1
-  resolution: "node-sarif-builder@npm:3.3.1"
-  dependencies:
-    "@types/sarif": "npm:^2.1.7"
-    fs-extra: "npm:^11.1.1"
-  checksum: 10/2e7826aa5bd43b5d7fa9384f596b2307a5efff1342581f2177646220032d356cbc6a023566c7ff789e76d0c4e963da4be984048cdfc15f13d83b5d8c5ead34b0
   languageName: node
   linkType: hard
 
@@ -10421,7 +10338,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"path-scurry@npm:^1.11.1, path-scurry@npm:^1.6.1":
+"path-scurry@npm:^1.11.1":
   version: 1.11.1
   resolution: "path-scurry@npm:1.11.1"
   dependencies:
@@ -11902,7 +11819,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"strip-json-comments@npm:3.1.1, strip-json-comments@npm:^3.1.1, strip-json-comments@npm:~3.1.1":
+"strip-json-comments@npm:^3.1.1, strip-json-comments@npm:~3.1.1":
   version: 3.1.1
   resolution: "strip-json-comments@npm:3.1.1"
   checksum: 10/492f73e27268f9b1c122733f28ecb0e7e8d8a531a6662efbd08e22cccb3f9475e90a1b82cab06a392f6afae6d2de636f977e231296400d0ec5304ba70f166443
@@ -13297,13 +13214,6 @@ __metadata:
   version: 5.1.0
   resolution: "xdg-basedir@npm:5.1.0"
   checksum: 10/b60e8a2c663ccb1dac77c2d913f3b96de48dafbfa083657171d3d50e10820b8a04bb4edfe9f00808c8c20e5f5355e1927bea9029f03136e29265cb98291e1fea
-  languageName: node
-  linkType: hard
-
-"xml@npm:1.0.1":
-  version: 1.0.1
-  resolution: "xml@npm:1.0.1"
-  checksum: 10/6c4c31a1308e45732e5ac6b50edbca0e8f7abe5cb5de10215d8e3c688819fe7c7706e056f6fb59b1a23fdf1000c2d7a8bba0a89e94aa1796cd2376d9a5ba401e
   languageName: node
   linkType: hard
 

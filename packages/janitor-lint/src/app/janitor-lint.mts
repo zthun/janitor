@@ -5,7 +5,6 @@ import { ZConfigReaderCosmic } from "../config/config-reader-cosmic.mjs";
 import { ZConfigReaderNull } from "../config/config-reader-null.mjs";
 import { ZConfigReaderPrettier } from "../config/config-reader-prettier.mjs";
 import type { IZConfigReader } from "../config/config-reader.mjs";
-import { ZContentLinterHtml } from "../content/content-linter-html.mjs";
 import { ZContentLinterJson } from "../content/content-linter-json.mjs";
 import { ZContentLinterPretty } from "../content/content-linter-pretty.mjs";
 import { ZContentLinterYaml } from "../content/content-linter-yaml.mjs";
@@ -41,14 +40,6 @@ export class ZJanitorLint {
    * The linter for style files.
    */
   public styleLint: IZLinter;
-
-  /**
-   * The linter for html files.
-   *
-   * Currently, htmlhint has no support for cosmiconfig based paths, so we're going to
-   * add them here.
-   */
-  public htmlHint: IZLinter;
 
   /**
    * The linter for json files.
@@ -102,12 +93,6 @@ export class ZJanitorLint {
       new ZLinterStyle(this._logger),
       this._logger,
       "style",
-    );
-    this.htmlHint = new ZLinterFile(
-      new ZContentLinterHtml(),
-      new ZConfigReaderCosmic("htmlhint", new ZConfigExtender()),
-      this._logger,
-      "html",
     );
     this.jsonLint = new ZLinterFile(
       new ZContentLinterJson(),
@@ -163,9 +148,6 @@ export class ZJanitorLint {
       styleConfig,
       styleFiles,
       styleFilesExclude,
-      htmlConfig,
-      htmlFiles,
-      htmlFilesExclude,
       spellingConfig,
       spellingFiles,
       spellingFilesExclude,
@@ -236,20 +218,6 @@ export class ZJanitorLint {
         styleFiles,
         styleConfig,
         styleFilesExclude,
-      );
-      result = result && current;
-    }
-
-    if (htmlFiles) {
-      this._logger.log(
-        chalk.magenta.underline(
-          `Linting html files from ${htmlFiles.length} globs.`,
-        ),
-      );
-      current = await this.htmlHint.lint(
-        htmlFiles,
-        htmlConfig,
-        htmlFilesExclude,
       );
       result = result && current;
     }

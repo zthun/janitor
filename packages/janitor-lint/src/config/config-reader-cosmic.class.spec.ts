@@ -6,7 +6,7 @@ describe("ZConfigCosmicReader", () => {
   let config: string;
   let extender: IZConfigExtender;
 
-  function createTestTarget(name = "htmlhint", paths?: string[]) {
+  function createTestTarget(name = "markdownlint", paths?: string[]) {
     return new ZConfigReaderCosmic(name, extender, paths);
   }
 
@@ -77,17 +77,5 @@ describe("ZConfigCosmicReader", () => {
 
     // Assert
     expect(actual).toEqual({});
-  });
-
-  it("returns a file from the paths if one exists outside of the standard file array", async () => {
-    // Arrange.
-    const expected = "htmlhint.config.cjs";
-    const target = createTestTarget("markdownlint", [expected]);
-
-    // Act.
-    const actual = await target.search();
-
-    // Assert.
-    expect(actual).toContain(expected);
   });
 });

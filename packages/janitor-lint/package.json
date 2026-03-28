@@ -39,7 +39,6 @@
     "cspell": "^9.7.0",
     "eslint": "^9.39.4",
     "glob": "^13.0.6",
-    "htmlhint": "^1.8.0",
     "js-yaml": "^4.1.1",
     "lodash-es": "^4.17.23",
     "markdownlint": "~0.40.0",
