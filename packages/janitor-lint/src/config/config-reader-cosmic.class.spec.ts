@@ -1,19 +1,14 @@
-import { beforeEach, describe, expect, it } from "vitest";
+import { describe, expect, it } from "vitest";
 import { ZConfigReaderCosmic } from "./config-reader-cosmic.mjs";
 
 describe("ZConfigCosmicReader", () => {
-  let config: string;
-
-  function createTestTarget(name = "markdownlint") {
+  function createTestTarget(name = "prettier") {
     return new ZConfigReaderCosmic(name);
   }
 
-  beforeEach(() => {
-    config = "@zthun/janitor-eslint-config";
-  });
-
   it("reads the config file.", async () => {
     // Arrange
+    const config = "@zthun/janitor-prettier-config";
     const target = createTestTarget();
 
     // Act
@@ -37,7 +32,7 @@ describe("ZConfigCosmicReader", () => {
   it("throws an exception if the actual module cannot be resolved.", async () => {
     // Arrange
     const target = createTestTarget();
-    config = "@zthun/janitor-htmlhint-config-does-not-exist";
+    const config = "@zthun/janitor-htmlhint-config-does-not-exist";
 
     // Act
     const actual = target.read(config);
