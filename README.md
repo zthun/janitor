@@ -18,6 +18,4 @@ high quality working code without worrying about how it looks.
 
 ## Community
 
-See [Contributing](CONTRIBUTING.md) for info on how to contribute. See
-[Code of Conduct](CODE_OF_CONDUCT.md) for acceptable behavior.See
-[License](LICENSE.md) for license information.
+See [License](LICENSE.md) for license information.
