@@ -4,7 +4,6 @@ import swc from "unplugin-swc";
 import type { LibraryOptions, PluginOption, ServerOptions } from "vite";
 import { checker } from "vite-plugin-checker";
 import dtsPlugin from "vite-plugin-dts";
-import tsConfigPaths from "vite-tsconfig-paths";
 import type { ViteUserConfig } from "vitest/config";
 import type { InlineConfig } from "vitest/node";
 import { externalizeDeps } from "../plugin/vite-plugin-externalize-deps.js";
@@ -58,6 +57,7 @@ export class ZViteConfigBuilder {
    */
   public constructor() {
     this.config = {
+      oxc: false,
       build: {
         minify: false,
         sourcemap: true,
@@ -72,7 +72,6 @@ export class ZViteConfigBuilder {
             },
           },
         }),
-        tsConfigPaths(),
       ],
     };
   }

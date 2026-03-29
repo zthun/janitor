@@ -70,10 +70,6 @@ describe("Vite Config Builder", () => {
       expect(actual).toContain(b.name);
     });
 
-    it("should add the tsConfigPaths plugin by default", () => {
-      shouldAddPlugin("vite-tsconfig-paths", (t) => t);
-    });
-
     it("should add the swc plugin by default", () => {
       shouldAddPlugin("swc", (t) => t);
     });
