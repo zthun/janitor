@@ -254,7 +254,7 @@ export class ZJanitorOptionsLintBuilder {
   }
 
   private getOtherFiles() {
-    const extensions = "html,htm,md,css,scss,less,sass";
+    const extensions = "html,htm,md";
     return [`*.{${extensions}`, `**/*.{${extensions}`];
   }
 
@@ -291,7 +291,7 @@ export class ZJanitorOptionsLintBuilder {
    *        This object
    */
   public commonEsFiles() {
-    const extensions = "js,cjs,mjs,ts,mts,jsx,tsx";
+    const extensions = "js,cjs,mjs,ts,mts,jsx,tsx,css";
 
     return this.esFile(`*.{${extensions}}`)
       .esFile(`src/**/*.{${extensions}}`)
