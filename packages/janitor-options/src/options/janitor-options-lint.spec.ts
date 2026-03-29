@@ -346,5 +346,21 @@ describe("ZJanitorOptionsLint", () => {
     it("should add files to exclude yaml", () => {
       shouldAddFilesToExclude((c) => c.yamlFilesExclude);
     });
+
+    describe("Common", () => {
+      it("should add node_modules", () => {
+        // Arrange.
+        const target = createTestTarget();
+
+        // Act.
+        const { prettyFilesExclude } = target.commonExcludes().build();
+        const actual = prettyFilesExclude?.find((p) =>
+          p.includes("**/node_modules/**"),
+        );
+
+        // Assert.
+        expect(actual).toBeTruthy();
+      });
+    });
   });
 });
