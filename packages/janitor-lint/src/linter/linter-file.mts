@@ -1,9 +1,8 @@
 import chalk from "chalk";
-import { readFile } from "fs";
 import type { GlobOptionsWithFileTypesFalse } from "glob";
 import { sync } from "glob";
-import { resolve } from "path";
-import { promisify } from "util";
+import { readFile } from "node:fs/promises";
+import { resolve } from "node:path";
 import type { IZConfigReader } from "../config/config-reader.mjs";
 import type { IZContentLinter } from "../content/content-linter.mjs";
 import type { IZLinter } from "./linter.mjs";
@@ -46,8 +45,7 @@ export class ZLinterFile implements IZLinter {
     config?: string,
     exclude?: string[],
   ): Promise<boolean> {
-    const readFileAsync = promisify(readFile);
-    let options = {};
+    let options: any = {};
 
     const globOptions: GlobOptionsWithFileTypesFalse = {
       dot: true,
@@ -82,7 +80,7 @@ export class ZLinterFile implements IZLinter {
     for (const file of files) {
       const fullFilePath = resolve(file);
       try {
-        const content = await readFileAsync(fullFilePath, "utf-8");
+        const content = await readFile(fullFilePath, "utf-8");
         await this._contentLint.lint(content, fullFilePath, options, config);
       } catch (err) {
         result = false;

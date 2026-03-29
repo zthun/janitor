@@ -1,7 +1,8 @@
-import type { PathOrFileDescriptor } from "fs";
-import { readFile } from "fs";
 import { sync } from "glob";
+import { readFile } from "node:fs/promises";
+import type { Mocked } from "vitest";
 import { beforeEach, describe, expect, it, vi } from "vitest";
+import { mock } from "vitest-mock-extended";
 import type { IZConfigReader } from "../config/config-reader.mjs";
 import type { IZContentLinter } from "../content/content-linter.mjs";
 import { ZLinterFile } from "./linter-file.mjs";
@@ -10,26 +11,16 @@ vi.mock("glob", () => ({
   sync: vi.fn(),
 }));
 
-vi.mock("fs", () => ({
+vi.mock("node:fs/promises", () => ({
   readFile: vi.fn(),
 }));
-
-function readFileMock(
-  _: PathOrFileDescriptor,
-  __: BufferEncoding,
-  cb: any,
-): void {
-  cb(null, "FileContent");
-}
-
-type ReadFile = typeof readFileMock;
 
 describe("ZLinterFile", () => {
   let files: string[];
   let config: string;
-  let options: any;
-  let contentLint: IZContentLinter;
-  let configReader: IZConfigReader;
+  let options: unknown;
+  let contentLint: Mocked<IZContentLinter>;
+  let configReader: Mocked<IZConfigReader>;
   let logger: Console;
 
   beforeEach(() => {
@@ -43,16 +34,16 @@ describe("ZLinterFile", () => {
     logger.error = vi.fn();
     logger.log = vi.fn();
 
-    configReader = {} as any;
-    configReader.read = vi.fn(() => Promise.resolve(options));
+    configReader = mock<IZConfigReader>();
+    configReader.read.mockResolvedValue(options);
 
-    contentLint = {} as any;
-    contentLint.lint = vi.fn(() => Promise.resolve(true));
+    contentLint = mock<IZContentLinter>();
+    contentLint.lint.mockResolvedValue(true);
 
     files = ["/files/log-a.json", "/files/lob-b.json", "/files/log-c.json"];
 
     vi.mocked(sync).mockImplementation(() => files);
-    vi.mocked<ReadFile>(readFile).mockImplementation(readFileMock);
+    vi.mocked(readFile).mockResolvedValue(Buffer.from("FileContent"));
   });
 
   function createTestTarget() {
@@ -64,8 +55,10 @@ describe("ZLinterFile", () => {
       // Arrange
       const target = createTestTarget();
       files = [];
+
       // Act
       const actual = await target.lint(files);
+
       // Assert
       expect(actual).toBeTruthy();
     });
@@ -73,8 +66,10 @@ describe("ZLinterFile", () => {
     it("returns true if all files pass.", async () => {
       // Arrange
       const target = createTestTarget();
+
       // Act
       const actual = await target.lint(files);
+
       // Assert
       expect(actual).toBeTruthy();
     });
@@ -82,21 +77,24 @@ describe("ZLinterFile", () => {
     it("returns false if any file cannot be read.", async () => {
       // Arrange
       const target = createTestTarget();
-      vi.mocked<ReadFile>(readFile).mockImplementation((p, o, cb) =>
-        cb("Cannot read", null),
-      );
+      vi.mocked(readFile).mockRejectedValue(new Error("Cannot read"));
+
       // Act
       const actual = await target.lint(files);
+
       // Assert
       expect(actual).toBeFalsy();
     });
 
     it("returns false if any file fail the lint.", async () => {
       // Arrange
+      const error = new Error("Lint failed");
       const target = createTestTarget();
-      contentLint.lint = vi.fn(() => Promise.reject("failed"));
+      contentLint.lint.mockRejectedValue(error);
+
       // Act
       const actual = await target.lint(files);
+
       // Assert
       expect(actual).toBeFalsy();
     });
@@ -106,8 +104,10 @@ describe("ZLinterFile", () => {
     it("returns true if all files pass.", async () => {
       // Arrange
       const target = createTestTarget();
+
       // Act
       const actual = await target.lint(files, config);
+
       // Assert
       expect(actual).toBeTruthy();
     });
@@ -115,8 +115,10 @@ describe("ZLinterFile", () => {
     it("reads the config and passes it to the content linter.", async () => {
       // Arrange
       const target = createTestTarget();
+
       // Act
       await target.lint(files, config);
+
       // Assert
       expect(contentLint.lint).toHaveBeenCalledWith(
         expect.anything(),
@@ -129,9 +131,7 @@ describe("ZLinterFile", () => {
     it("returns false if the config cannot be read.", async () => {
       // Arrange
       const target = createTestTarget();
-      (configReader.read as any) = vi.fn(() =>
-        Promise.reject("Cannot read file"),
-      );
+      configReader.read.mockRejectedValue(new Error("Cannot read file"));
       // Act
       const actual = await target.lint(files, config);
       // Assert
@@ -140,21 +140,23 @@ describe("ZLinterFile", () => {
   });
 
   describe("Logging", () => {
-    let cfg: any;
+    let cfg: { errors: string | string[] };
 
     beforeEach(() => {
       cfg = {
         errors: "File is bad",
       };
 
-      (contentLint.lint as any) = vi.fn(() => Promise.reject(cfg.errors));
+      contentLint.lint.mockRejectedValue(cfg.errors);
     });
 
-    async function assertLogged(logs: string[]) {
+    async function assertLogged(logs: string[] | (string | string[])[]) {
       // Arrange
       const target = createTestTarget();
+
       // Act
       await target.lint(files, config);
+
       // Assert
       logs.forEach((log) =>
         expect(logger.error).toHaveBeenCalledWith(expect.stringContaining(log)),
@@ -163,6 +165,7 @@ describe("ZLinterFile", () => {
 
     it("logs all errors on separate lines if an array is passed.", async () => {
       cfg.errors = ["Bad line one", "Bad line two", "Bad line three"];
+      contentLint.lint.mockRejectedValue(cfg.errors);
       await assertLogged(cfg.errors);
     });
 

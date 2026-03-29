@@ -23,7 +23,7 @@ export class ZContentLinterPretty implements IZContentLinter {
     content: string,
     contentPath: string,
     options?: Options,
-  ): Promise<any> {
+  ): Promise<unknown> {
     const file = await getFileInfo(contentPath);
     const finalOptions = Object.assign(
       {},
@@ -33,9 +33,9 @@ export class ZContentLinterPretty implements IZContentLinter {
     const formatted = await check(content, finalOptions);
 
     if (!formatted) {
-      return Promise.reject(`${contentPath} is not formatted.`);
+      throw new Error(`${contentPath} is not formatted.`);
     }
 
-    return Promise.resolve(`${contentPath} is properly formatted.`);
+    return `${contentPath} is properly formatted.`;
   }
 }

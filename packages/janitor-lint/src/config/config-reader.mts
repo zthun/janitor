@@ -1,7 +1,7 @@
 /**
  * Represents an object that can read a config file.
  */
-export interface IZConfigReader {
+export interface IZConfigReader<T = unknown> {
   /**
    * Reads the config file and returns the contents as an object.
    *
@@ -11,5 +11,5 @@ export interface IZConfigReader {
    * @returns
    *        A promise that returns the content of the config file.
    */
-  read(config?: string): Promise<any>;
+  read(config?: string): Promise<T>;
 }

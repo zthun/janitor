@@ -10,7 +10,8 @@ export class ZContentLinterJson implements IZContentLinter {
    * @param contents -
    *        The json file contents.
    */
-  public async lint(contents: string): Promise<any> {
+  public async lint(contents: string): Promise<unknown> {
+    await Promise.resolve();
     return JSON.parse(contents);
   }
 }

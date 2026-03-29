@@ -11,7 +11,7 @@ import { ZJanitorLint } from "./janitor-lint.mjs";
 describe("ZJanitorLint", () => {
   let args: IZJanitorLintArgs;
   let options: IZJanitorOptions;
-  let config: Mocked<IZConfigReader>;
+  let config: Mocked<IZConfigReader<IZJanitorOptions>>;
   let logger: Console;
 
   function createTestTarget() {
@@ -49,7 +49,7 @@ describe("ZJanitorLint", () => {
       },
     };
 
-    config = mock<IZConfigReader>();
+    config = mock<IZConfigReader<IZJanitorOptions>>();
     config.read.mockResolvedValue(options);
   });
 

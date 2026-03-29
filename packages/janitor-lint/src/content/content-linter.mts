@@ -22,5 +22,5 @@ export interface IZContentLinter {
     contentPath: string,
     options?: any,
     optionsPath?: string,
-  ): Promise<any>;
+  ): Promise<unknown>;
 }

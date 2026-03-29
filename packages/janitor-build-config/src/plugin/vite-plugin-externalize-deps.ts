@@ -1,7 +1,7 @@
 import { existsSync, readFileSync, type PathLike } from "node:fs";
 import { builtinModules } from "node:module";
 import { resolve } from "node:path";
-import type { Plugin } from "vite";
+import type { Plugin, UserConfig } from "vite";
 
 // Original source code from
 // https://github.com/davidmyersdev/vite-plugin-externalize-deps/blob/main/src/index.ts
@@ -24,7 +24,7 @@ export const externalizeDeps = (options: ExternalizeOptions = {}): Plugin => {
 
       if (!existsSync(packageJson)) {
         const context = "janitor-build-config:externalizeDeps";
-        const msg = `[${context}] Could not find package.json at ${packageJson}.`;
+        const msg = `[${context}] Could not find package.json at ${String(packageJson)}.`;
         throw new Error(msg);
       }
 
@@ -34,7 +34,7 @@ export const externalizeDeps = (options: ExternalizeOptions = {}): Plugin => {
         devDependencies = [],
         optionalDependencies = [],
         peerDependencies = [],
-      } = JSON.parse(contents);
+      } = JSON.parse(contents) as Record<string, Record<string, string>>;
 
       const push = externalDeps.add.bind(externalDeps);
 
@@ -53,13 +53,13 @@ export const externalizeDeps = (options: ExternalizeOptions = {}): Plugin => {
 
       return {
         build: {
-          rollupOptions: {
+          rolldownOptions: {
             external: (source) => {
               return depMatchers.some((depMatcher) => depMatcher.test(source));
             },
           },
         },
-      };
+      } satisfies UserConfig;
     },
   };
 };

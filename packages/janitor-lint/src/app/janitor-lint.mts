@@ -46,7 +46,7 @@ export class ZJanitorLint {
   /**
    * The configuration reader.
    */
-  public config: IZConfigReader;
+  public config: IZConfigReader<IZJanitorOptions>;
 
   /**
    * Initializes a new instance of this object.

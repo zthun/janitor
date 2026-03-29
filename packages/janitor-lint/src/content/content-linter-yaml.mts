@@ -14,7 +14,8 @@ export class ZContentLinterYaml implements IZContentLinter {
    * @returns
    *        A promise that resolves if successful, or rejects if failed.
    */
-  public async lint(contents: string): Promise<any> {
+  public async lint(contents: string): Promise<unknown> {
+    await Promise.resolve();
     return load(contents);
   }
 }

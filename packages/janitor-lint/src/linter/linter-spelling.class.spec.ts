@@ -1,6 +1,7 @@
 import type { CSpellReporter, Issue, RunResult } from "cspell";
 import { lint } from "cspell";
 import { beforeEach, describe, expect, it, vi } from "vitest";
+import { mock } from "vitest-mock-extended";
 import { $resolve } from "../config/config-resolve.mjs";
 import { ZLinterSpelling } from "./linter-spelling.mjs";
 
@@ -19,8 +20,7 @@ describe("ZLinterSpelling", () => {
   }
 
   beforeEach(() => {
-    logger = {} as any;
-    logger.log = vi.fn();
+    logger = mock<Console>();
 
     lintResult = {
       errors: 0,
@@ -113,20 +113,21 @@ describe("ZLinterSpelling", () => {
       // Arrange
       lintResult.issues = 1;
       const target = createTestTarget();
+      const { log } = logger;
+
       // Act
       await target.lint(content, config);
+
       // Assert
-      expect(logger.log).toHaveBeenCalledWith(
-        expect.stringContaining(issue.uri!),
-      );
+      expect(log).toHaveBeenCalledWith(expect.stringContaining(issue.uri!));
     });
 
     it("should return false if there are lint issues.", async () => {
-      assertLintFailure(1, 0);
+      await assertLintFailure(1, 0);
     });
 
     it("should return false if there are lint errors.", async () => {
-      assertLintFailure(0, 1);
+      await assertLintFailure(0, 1);
     });
   });
 });

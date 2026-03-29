@@ -1,9 +1,29 @@
 import type { Linter } from "eslint";
 import ts from "typescript-eslint";
 
+// The default typescript linter recommended rules operate on js files
+// as well, which is something we don't actually want.  JS files should
+// only need the javascript rules, not the typescript rules.  You
+// really shouldn't expect js, mjs, jsx, and cjs to follow typescript
+// standards.
+const files = ["**/*.ts", "**/*.mts", "**/*.tsx", "**/*.cts"];
+const { recommended, recommendedTypeCheckedOnly } = ts.configs;
+const target = "typescript-eslint/recommended-type-checked-only";
+const recommendedTypeChecked = recommendedTypeCheckedOnly.find(
+  (x) => x.name === target,
+)?.rules;
+
 export const typescript: Linter.Config[] = [
-  ...ts.configs.recommended,
+  ...recommended,
   {
+    files,
+    rules: {
+      // TypeScript overtakes these.
+      "no-empty-function": "off",
+    },
+  },
+  {
+    files,
     rules: {
       // We want to be able to use a single build system for most things.
       // Ideally, we can use vite to build all project types so we don't
@@ -25,7 +45,6 @@ export const typescript: Linter.Config[] = [
       // Would be fine, but there's a bug in this where you have a function with
       // access arguments.  Those constructors are often empty - so we want to let
       // a part of this one through.
-      "no-empty-function": "off",
       "@typescript-eslint/no-empty-function": [
         "error",
         { allow: ["constructors"] },
@@ -56,7 +75,6 @@ export const typescript: Linter.Config[] = [
       // This is actually fine, but this is broken in typescript eslint 8.14.x.
       // See https://github.com/typescript-eslint/typescript-eslint/issues/10353
       // for the bug.
-      "no-unused-expressions": "off",
       "@typescript-eslint/no-unused-expressions": [
         "error",
         {
@@ -64,5 +82,25 @@ export const typescript: Linter.Config[] = [
         },
       ],
     },
-  } satisfies Linter.Config,
+  },
+  {
+    files,
+    languageOptions: {
+      parserOptions: {
+        projectService: true,
+      },
+    },
+    rules: {
+      ...recommendedTypeChecked,
+    },
+  },
+  {
+    files: ["**/*.{spec,test}.{ts,mts,tsx}"],
+    rules: {
+      // This rule is great for normal use, but it prevents
+      // toHaveBeenCalled style invocations, so for test files
+      // we are turning this one off.
+      "@typescript-eslint/unbound-method": "off",
+    },
+  },
 ];

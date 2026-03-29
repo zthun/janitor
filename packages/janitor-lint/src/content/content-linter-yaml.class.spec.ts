@@ -26,13 +26,13 @@ describe("ZContentLinterYaml", () => {
 
   it("returns a rejected promise if the json is not valid.", async () => {
     // Arrange
+    const contents =
+      'brackets: invalid: "Square [brackets] can not go in the middle of strings"';
     const target = createTestTarget();
+
     // Act
+    const actual = target.lint(contents);
     // Assert
-    await expect(
-      target.lint(
-        'brackets: invalid: "Square [brackets] can not go in the middle of strings"',
-      ),
-    ).rejects.toBeTruthy();
+    await expect(actual).rejects.toBeTruthy();
   });
 });

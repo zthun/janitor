@@ -29,8 +29,11 @@ describe("ZContentLinterJson", () => {
   it("returns a rejected promise if the json is not valid.", async () => {
     // Arrange
     const target = createTestTarget();
+
     // Act
+    const actual = target.lint("This is not valid json");
+
     // Assert
-    await expect(target.lint("This is not valid json")).rejects.toBeTruthy();
+    await expect(actual).rejects.toBeTruthy();
   });
 });

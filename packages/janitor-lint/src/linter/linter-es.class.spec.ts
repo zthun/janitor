@@ -1,5 +1,6 @@
 import { ESLint } from "eslint";
 import { beforeEach, describe, expect, it, vi } from "vitest";
+import { mock } from "vitest-mock-extended";
 import { $resolve } from "../config/config-resolve.mjs";
 import { ZLinterEs } from "./linter-es.mjs";
 
@@ -76,8 +77,7 @@ describe("ZLinterEs", () => {
     engine = new ESLint({});
     vi.spyOn(engine, "lintFiles").mockResolvedValue(successReport);
 
-    logger = {} as any;
-    logger.log = vi.fn();
+    logger = mock<Console>();
 
     formatter = await engine.loadFormatter();
     vi.spyOn(engine, "loadFormatter").mockResolvedValue(formatter);

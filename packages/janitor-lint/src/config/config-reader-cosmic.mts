@@ -7,7 +7,9 @@ import { $resolve } from "./config-resolve.mjs";
 /**
  * Represents a reader that uses the cosmiconfig standard for files.
  */
-export class ZConfigReaderCosmic implements IZConfigReader, IZConfigDiscovery {
+export class ZConfigReaderCosmic<TConfig = unknown>
+  implements IZConfigReader<TConfig>, IZConfigDiscovery
+{
   /**
    * Initializes a new instance of this object.
    *
@@ -43,16 +45,16 @@ export class ZConfigReaderCosmic implements IZConfigReader, IZConfigDiscovery {
    * @returns
    *        A promise that resolves the json object that represents the config.
    */
-  public async read(config?: string): Promise<any> {
+  public async read(config?: string): Promise<TConfig> {
     const configLoad = config ? Promise.resolve(config) : this.search();
     const configFile = await configLoad;
 
     if (!configFile) {
-      return {};
+      return {} as TConfig;
     }
 
     const path = $resolve(configFile, { paths: [process.cwd()] });
     const buffer = await cosmiconfig(this.name).load(path);
-    return buffer!.config;
+    return buffer!.config as TConfig;
   }
 }

@@ -9,6 +9,9 @@ const args: IZJanitorLintArgs = usage("$0 [options]")
   .describe("c", "Optional config file to use.")
   .string("c")
   .help()
-  .parse() as any;
+  .parse() as IZJanitorLintArgs;
+
 const janitor = new ZJanitorLint(console);
-janitor.run(args).then((result) => (process.exitCode = result));
+void janitor.run(args).then((result) => {
+  process.exitCode = result;
+});

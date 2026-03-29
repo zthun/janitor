@@ -7,7 +7,7 @@ import { $resolve } from "./config-resolve.mjs";
 /**
  * Represents a configuration reader for prettier.
  */
-export class ZConfigReaderPrettier implements IZConfigReader {
+export class ZConfigReaderPrettier implements IZConfigReader<Options> {
   /**
    * Reads the configuration file.
    *
