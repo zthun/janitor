@@ -1,8 +1,6 @@
 import { cosmiconfig } from "cosmiconfig";
 
-import { resolve } from "path";
 import type { IZConfigDiscovery } from "./config-discovery.mjs";
-import type { IZConfigExtender } from "./config-extender.mjs";
 import type { IZConfigReader } from "./config-reader.mjs";
 import { $resolve } from "./config-resolve.mjs";
 
@@ -15,19 +13,8 @@ export class ZConfigReaderCosmic implements IZConfigReader, IZConfigDiscovery {
    *
    * @param name -
    *        The name of the application to load.
-   * @param extender -
-   *        The extender to expand upon the read configuration.
-   * @param paths -
-   *        The additional paths to read if cosmic config does not find a valid config.  Remember that these
-   *        are paths, not modules in this case, so you can't load things from the node modules directory
-   *        using these values.  These only affect the search for the config file, not the actual
-   *        read of the config.
    */
-  public constructor(
-    public name: string,
-    public extender: IZConfigExtender,
-    public paths: string[] = [],
-  ) {}
+  public constructor(public name: string) {}
 
   /**
    * Runs a search for the appropriate configuration file.
@@ -44,22 +31,7 @@ export class ZConfigReaderCosmic implements IZConfigReader, IZConfigDiscovery {
     // search to see if any of these paths exists.
     // These are highest priority.
     const searched = await explorer.search();
-
-    if (searched) {
-      return searched.filepath;
-    }
-
-    // Try our additional paths, if any.
-    for (const path of this.paths) {
-      const full = resolve(path);
-      const result = await explorer.load(full).catch(() => null);
-
-      if (result) {
-        return result.filepath;
-      }
-    }
-
-    return null;
+    return searched?.filepath;
   }
 
   /**
@@ -81,6 +53,6 @@ export class ZConfigReaderCosmic implements IZConfigReader, IZConfigDiscovery {
 
     const path = $resolve(configFile, { paths: [process.cwd()] });
     const buffer = await cosmiconfig(this.name).load(path);
-    return await this.extender.extend(buffer!.config);
+    return buffer!.config;
   }
 }

@@ -7,10 +7,6 @@ export interface IZJanitorOptionsLint {
    */
   esConfig?: string;
   /**
-   * The path to the config file for htmlhint.
-   */
-  htmlConfig?: string;
-  /**
    * The path to the config file for prettier.
    */
   prettyConfig?: string;
@@ -27,10 +23,6 @@ export interface IZJanitorOptionsLint {
    * The file globs to lint with eslint.
    */
   esFiles?: string[];
-  /**
-   * The file globs to lint with htmlhint.
-   */
-  htmlFiles?: string[];
   /**
    * The file globs to lint with json.
    */
@@ -52,10 +44,6 @@ export interface IZJanitorOptionsLint {
    */
   yamlFiles?: string[];
 
-  /**
-   * The files globs to exclude from linting with htmlhint.
-   */
-  htmlFilesExclude?: string[];
   /**
    * The files globs to exclude from linting with json.
    */
@@ -95,20 +83,6 @@ export class ZJanitorOptionsLintBuilder {
    */
   public esConfig(esConfig: string): ZJanitorOptionsLintBuilder {
     this.lint.esConfig = esConfig;
-    return this;
-  }
-
-  /**
-   * Sets the path to the config file for htmlhint.
-   *
-   * @param htmlConfig -
-   *        The path to the config file for htmlhint.
-   *
-   * @returns
-   *        This object.
-   */
-  public htmlConfig(htmlConfig: string): ZJanitorOptionsLintBuilder {
-    this.lint.htmlConfig = htmlConfig;
     return this;
   }
 
@@ -166,21 +140,6 @@ export class ZJanitorOptionsLintBuilder {
   public esFile(file: string | string[] = []) {
     const files = this.lint.esFiles ?? [];
     this.lint.esFiles = files.concat(file);
-    return this;
-  }
-
-  /**
-   * Adds a list of globs to the list of files to lint with htmlhint.
-   *
-   * @param file -
-   *        The file globs to lint with htmlhint.
-   *
-   * @returns
-   *        This object.
-   */
-  public htmlFile(file: string | string[] = []) {
-    const files = this.lint.htmlFiles ?? [];
-    this.lint.htmlFiles = files.concat(file);
     return this;
   }
 
@@ -256,21 +215,6 @@ export class ZJanitorOptionsLintBuilder {
   public yamlFile(file: string | string[] = []) {
     const files = this.lint.yamlFiles ?? [];
     this.lint.yamlFiles = files.concat(file);
-    return this;
-  }
-
-  /**
-   * Adds a list of globs to the list of files to exclude from linting with htmlhint.
-   *
-   * @param files -
-   *        The file globs to exclude from linting with htmlhint.
-   *
-   * @returns
-   *        This object.
-   */
-  public htmlExclude(files: string | string[] = []) {
-    const excludes = this.lint.htmlFilesExclude ?? [];
-    this.lint.htmlFilesExclude = excludes.concat(files);
     return this;
   }
 
@@ -359,8 +303,7 @@ export class ZJanitorOptionsLintBuilder {
    *        This object.
    */
   public excludeAll(file: string | string[] = []) {
-    return this.htmlExclude(file)
-      .jsonExclude(file)
+    return this.jsonExclude(file)
       .prettyExclude(file)
       .spellingExclude(file)
       .styleExclude(file)
@@ -380,7 +323,6 @@ export class ZJanitorOptionsLintBuilder {
    */
   public generateSpellingFiles() {
     return this.spellingFile(this.lint.esFiles)
-      .spellingFile(this.lint.htmlFiles)
       .spellingFile(this.lint.jsonFiles)
       .spellingFile(this.lint.styleFiles)
       .spellingFile(this.lint.yamlFiles)
@@ -395,7 +337,6 @@ export class ZJanitorOptionsLintBuilder {
    */
   public generatePrettyFiles() {
     return this.prettyFile(this.lint.esFiles)
-      .prettyFile(this.lint.htmlFiles)
       .prettyFile(this.lint.jsonFiles)
       .prettyFile(this.lint.styleFiles)
       .prettyFile(this.lint.yamlFiles)

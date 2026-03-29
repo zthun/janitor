@@ -1,20 +1,15 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
-import type { IZConfigExtender } from "./config-extender.mjs";
+import { beforeEach, describe, expect, it } from "vitest";
 import { ZConfigReaderCosmic } from "./config-reader-cosmic.mjs";
 
 describe("ZConfigCosmicReader", () => {
   let config: string;
-  let extender: IZConfigExtender;
 
-  function createTestTarget(name = "markdownlint", paths?: string[]) {
-    return new ZConfigReaderCosmic(name, extender, paths);
+  function createTestTarget(name = "markdownlint") {
+    return new ZConfigReaderCosmic(name);
   }
 
   beforeEach(() => {
-    extender = {} as any;
-    extender.extend = vi.fn((cfg) => Promise.resolve(cfg));
-
-    config = "@zthun/janitor-htmlhint-config";
+    config = "@zthun/janitor-eslint-config";
   });
 
   it("reads the config file.", async () => {
@@ -39,20 +34,6 @@ describe("ZConfigCosmicReader", () => {
     expect(actual).toBeTruthy();
   });
 
-  it("retrieves the config from the additional supported paths.", async () => {
-    // Arrange
-    const target = createTestTarget("markdownlint", [
-      ".markdownlint-skip.json",
-      ".markdownlint.json",
-    ]);
-
-    // Act
-    const actual = await target.read();
-
-    // Assert
-    expect(actual).toBeTruthy();
-  });
-
   it("throws an exception if the actual module cannot be resolved.", async () => {
     // Arrange
     const target = createTestTarget();
@@ -67,10 +48,7 @@ describe("ZConfigCosmicReader", () => {
 
   it("returns the empty config if there are no discovered config files.", async () => {
     // Arrange
-    const target = createTestTarget("markdownlint", [
-      ".markdownlint-missing",
-      "markdown-skip",
-    ]);
+    const target = createTestTarget("markdownlint");
 
     // Act
     const actual = await target.read();

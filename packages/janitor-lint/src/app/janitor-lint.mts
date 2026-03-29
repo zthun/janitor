@@ -1,6 +1,5 @@
 import type { IZJanitorOptions } from "@zthun/janitor-options";
 import chalk from "chalk";
-import { ZConfigExtender } from "../config/config-extender.mjs";
 import { ZConfigReaderCosmic } from "../config/config-reader-cosmic.mjs";
 import { ZConfigReaderNull } from "../config/config-reader-null.mjs";
 import { ZConfigReaderPrettier } from "../config/config-reader-prettier.mjs";
@@ -96,7 +95,7 @@ export class ZJanitorLint {
       "yaml",
     );
 
-    this.config = new ZConfigReaderCosmic("janitor", new ZConfigExtender());
+    this.config = new ZConfigReaderCosmic("janitor");
   }
 
   /**
