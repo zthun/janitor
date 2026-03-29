@@ -39,7 +39,7 @@ yarn add @zthun/janitor-ts-config typescript --dev
   "compilerOptions": {
     "baseUrl": "."
   },
-  "include": ["src/**/*.ts"]
+  "include": ["**/*.ts"]
 }
 ```
 
@@ -55,7 +55,7 @@ yarn add @zthun/janitor-ts-config typescript --dev
   "compilerOptions": {
     "baseUrl": "."
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx"]
+  "include": ["**/*.ts", "**/*.tsx"]
 }
 ```
 
@@ -71,7 +71,7 @@ yarn add @zthun/janitor-ts-config typescript --dev
   "compilerOptions": {
     "baseUrl": "."
   },
-  "include": ["src/**/*.ts"]
+  "include": ["**/*.ts"]
 }
 ```
 
