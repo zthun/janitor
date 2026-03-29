@@ -10,5 +10,5 @@
       "@zthun/janitor-options": ["../janitor-options/src/index.mts"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.mts"]
+  "include": ["**/*.ts", "**/*.mts"]
 }
