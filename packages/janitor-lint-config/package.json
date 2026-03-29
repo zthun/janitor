@@ -27,21 +27,6 @@
       "types": "./dist/pretty/prettier.d.mts",
       "require": "./dist/prettier.cjs",
       "import": "./dist/prettier.js"
-    },
-    "./stylelint": {
-      "types": "./dist/style/stylelint.d.mts",
-      "require": "./dist/stylelint.cjs",
-      "import": "./dist/stylelint.js"
-    },
-    "./stylelint/less": {
-      "types": "./dist/style/stylelint-less.d.mts",
-      "require": "./dist/stylelint-less.cjs",
-      "import": "./dist/stylelint-less.js"
-    },
-    "./stylelint/sass": {
-      "types": "./dist/style/stylelint-sass.d.mts",
-      "require": "./dist/stylelint-sass.cjs",
-      "import": "./dist/stylelint-sass.js"
     }
   },
   "scripts": {
@@ -59,13 +44,9 @@
   "dependencies": {
     "@zthun/janitor-eslint-config": "^19.5.6",
     "@zthun/janitor-prettier-config": "^19.5.6",
-    "@zthun/janitor-stylelint-config": "^19.5.6",
-    "@zthun/janitor-stylelint-config-less": "^19.5.6",
-    "@zthun/janitor-stylelint-config-sass": "^19.5.6",
     "eslint": "^9.39.4",
     "postcss": "^8.5.8",
-    "prettier": "^3.8.1",
-    "stylelint": "^16.26.1"
+    "prettier": "^3.8.1"
   },
   "devDependencies": {
     "@zthun/janitor-build-config": "^19.5.6",

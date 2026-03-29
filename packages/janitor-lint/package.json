@@ -42,7 +42,6 @@
     "js-yaml": "^4.1.1",
     "lodash-es": "^4.17.23",
     "prettier": "^3.8.1",
-    "stylelint": "^16.26.1",
     "yargs": "^18.0.0"
   },
   "files": [

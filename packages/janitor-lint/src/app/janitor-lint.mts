@@ -11,7 +11,6 @@ import { ZLinterEs } from "../linter/linter-es.mjs";
 import { ZLinterFile } from "../linter/linter-file.mjs";
 import { ZLinterReport } from "../linter/linter-report.mjs";
 import { ZLinterSpelling } from "../linter/linter-spelling.mjs";
-import { ZLinterStyle } from "../linter/linter-style.mjs";
 import type { IZLinter } from "../linter/linter.mjs";
 import type { IZJanitorLintArgs } from "./janitor-lint-args.mjs";
 
@@ -33,11 +32,6 @@ export class ZJanitorLint {
    * The linter for prettier formatting checks.
    */
   public prettyLint: IZLinter;
-
-  /**
-   * The linter for style files.
-   */
-  public styleLint: IZLinter;
 
   /**
    * The linter for json files.
@@ -77,11 +71,6 @@ export class ZJanitorLint {
       this._logger,
       "pretty",
     );
-    this.styleLint = new ZLinterReport(
-      new ZLinterStyle(this._logger),
-      this._logger,
-      "style",
-    );
     this.jsonLint = new ZLinterFile(
       new ZContentLinterJson(),
       new ZConfigReaderNull(),
@@ -119,9 +108,6 @@ export class ZJanitorLint {
       yamlFilesExclude,
       esConfig,
       esFiles,
-      styleConfig,
-      styleFiles,
-      styleFilesExclude,
       spellingConfig,
       spellingFiles,
       spellingFilesExclude,
@@ -165,20 +151,6 @@ export class ZJanitorLint {
         ),
       );
       current = await this.esLint.lint(esFiles, esConfig, undefined);
-      result = result && current;
-    }
-
-    if (styleFiles) {
-      this._logger.log(
-        chalk.magenta.underline(
-          `Linting style files from ${styleFiles.length} globs.`,
-        ),
-      );
-      current = await this.styleLint.lint(
-        styleFiles,
-        styleConfig,
-        styleFilesExclude,
-      );
       result = result && current;
     }
 

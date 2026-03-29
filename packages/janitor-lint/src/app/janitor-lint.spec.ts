@@ -19,7 +19,6 @@ describe("ZJanitorLint", () => {
     target.esLint = new ZLinterSilent();
     target.jsonLint = new ZLinterSilent();
     target.yamlLint = new ZLinterSilent();
-    target.styleLint = new ZLinterSilent();
     target.spellLint = new ZLinterSilent();
     target.prettyLint = new ZLinterSilent();
     target.config = config;
@@ -37,9 +36,6 @@ describe("ZJanitorLint", () => {
       lint: {
         esConfig: "@zthun/janitor-eslint-config",
         esFiles: ["**/*.js"],
-        styleConfig: "@zthun/janitor-stylelint-config",
-        styleFiles: ["**/*.css", "**/*.less", "**/*.scss", "**/*.sass"],
-        styleFilesExclude: ["**/*.exclude.css"],
         jsonFiles: ["**/*.json"],
         jsonFilesExclude: ["**/exclude.json"],
         yamlFiles: ["**/*.yml"],
@@ -100,22 +96,6 @@ describe("ZJanitorLint", () => {
       it("does not invoke the linter if there are no esFiles.", async () => {
         delete options.lint?.esFiles;
         await assertLinterNotInvoked((t) => t.esLint);
-      });
-    });
-
-    describe("StyleLint", () => {
-      it("invokes the linter if there are styleFiles", async () => {
-        await assertLinterInvoked(
-          (t) => t.styleLint,
-          options.lint?.styleFiles,
-          options.lint?.styleConfig,
-          options.lint?.styleFilesExclude,
-        );
-      });
-
-      it("does not invoke the linter if there are no styleFiles.", async () => {
-        delete options.lint?.styleFiles;
-        await assertLinterNotInvoked((t) => t.styleLint);
       });
     });
 

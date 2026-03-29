@@ -30,7 +30,7 @@ describe("ZLinterSpelling", () => {
     };
 
     content = ["fileA.less", "fileB.css"];
-    config = "@zthun/janitor-stylelint-config";
+    config = "@zthun/janitor-eslint-config";
 
     vi.mocked(lint).mockClear();
     vi.mocked(lint).mockResolvedValue(lintResult);

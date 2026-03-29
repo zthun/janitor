@@ -6,9 +6,6 @@ import {
 
 const lint = new ZJanitorOptionsLintBuilder()
   .commonEsFiles()
-  .commonCssFiles()
-  .commonLessFiles()
-  .commonSassFiles()
   .commonJsonFiles()
   .commonYamlFiles()
   .generateSpellingFiles()

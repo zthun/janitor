@@ -172,10 +172,6 @@ describe("ZJanitorOptionsLint", () => {
         shouldAddPrettyFiles((t, f) => t.jsonFile(f));
       });
 
-      it("should add style files to generated pretty files", () => {
-        shouldAddPrettyFiles((t, f) => t.styleFile(f));
-      });
-
       it("should add yaml files to the generated pretty files", () => {
         shouldAddPrettyFiles((t, f) => t.yamlFile(f));
       });
@@ -258,73 +254,8 @@ describe("ZJanitorOptionsLint", () => {
         shouldAddSpellingFiles((t, f) => t.jsonFile(f));
       });
 
-      it("should add style files to generated spelling files", () => {
-        shouldAddSpellingFiles((t, f) => t.styleFile(f));
-      });
-
       it("should add yaml files to the generated spelling files", () => {
         shouldAddSpellingFiles((t, f) => t.yamlFile(f));
-      });
-    });
-  });
-
-  describe("Style", () => {
-    it("should add an include glob", () => {
-      // Arrange.
-      const styleFileAlpha = "**/*.css";
-      const styleFileBravo = "**/*.scss";
-      const target = createTestTarget();
-
-      // Act.
-      const actual = target
-        .styleFile()
-        .styleFile(styleFileAlpha)
-        .styleFile(styleFileBravo)
-        .build();
-
-      // Assert.
-      expect(actual.styleFiles).toContain(styleFileAlpha);
-      expect(actual.styleFiles).toContain(styleFileBravo);
-    });
-
-    it("should add an exclude glob", () => {
-      // Arrange.
-      const styleAlpha = "**/exclude.css";
-      const styleBravo = "**/ignore.sass";
-      const target = createTestTarget();
-
-      // Act.
-      const actual = target
-        .styleExclude()
-        .styleExclude(styleAlpha)
-        .styleExclude(styleBravo)
-        .build();
-
-      // Assert.
-      expect(actual.styleFilesExclude).toContain(styleAlpha);
-      expect(actual.styleFilesExclude).toContain(styleBravo);
-    });
-
-    it("should set the config", () => {
-      // Arrange.
-      const expected = "path/to/style/config.json";
-
-      // Act.
-      const actual = createTestTarget().styleConfig(expected).build();
-
-      // Assert.
-      expect(actual.styleConfig).toEqual(expected);
-    });
-
-    describe("Common", () => {
-      it("should add style files", () => {
-        expect(
-          createTestTarget()
-            .commonCssFiles()
-            .commonSassFiles()
-            .commonLessFiles()
-            .build().styleFiles,
-        ).toBeTruthy();
       });
     });
   });
@@ -410,10 +341,6 @@ describe("ZJanitorOptionsLint", () => {
 
     it("should add files to exclude spelling", () => {
       shouldAddFilesToExclude((c) => c.spellingFilesExclude);
-    });
-
-    it("should add files to exclude styles", () => {
-      shouldAddFilesToExclude((c) => c.styleFilesExclude);
     });
 
     it("should add files to exclude yaml", () => {

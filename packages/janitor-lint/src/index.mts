@@ -14,5 +14,4 @@ export * from "./linter/linter-file.mjs";
 export * from "./linter/linter-report.mjs";
 export * from "./linter/linter-silent.mjs";
 export * from "./linter/linter-spelling.mjs";
-export * from "./linter/linter-style.mjs";
 export * from "./linter/linter.mjs";

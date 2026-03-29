@@ -72,10 +72,6 @@ export interface IZJanitorOptionsLint {
    * The path to the config file for cspell.
    */
   spellingConfig?: string;
-  /**
-   * The path to the config file for stylelint.
-   */
-  styleConfig?: string;
 
   /**
    * The file globs to lint with eslint.
@@ -98,10 +94,6 @@ export interface IZJanitorOptionsLint {
    */
   spellingFiles?: string[];
   /**
-   * The file globs to lint with stylelint.
-   */
-  styleFiles?: string[];
-  /**
    * The file globs to lint with yaml.
    */
   yamlFiles?: string[];
@@ -122,10 +114,6 @@ export interface IZJanitorOptionsLint {
    * The files globs to exclude from linting with cspell.
    */
   spellingFilesExclude?: string[];
-  /**
-   * The files to exclude from linting with stylelint.
-   */
-  styleFilesExclude?: string[];
   /**
    * The files globs to exclude from linting with yaml.
    */
@@ -160,9 +148,6 @@ import {
 const lint = new ZJanitorOptionsLintBuilder()
   // Conventional globs for this workspace
   .commonEsFiles()
-  .commonCssFiles()
-  .commonLessFiles()
-  .commonSassFiles()
   .commonJsonFiles()
   .commonYamlFiles()
   // Reuse the same files for spell checks and format checks
@@ -180,7 +165,6 @@ Point to shared configs if you want opinionated defaults:
 ```js
 const lint = new ZJanitorOptionsLintBuilder()
   .esConfig("@zthun/janitor-eslint-config")
-  .styleConfig("@zthun/janitor-stylelint-config")
   .markdownConfig("@zthun/janitor-markdownlint-config")
   .prettyConfig("@zthun/janitor-prettier-config")
   .build();

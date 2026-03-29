@@ -14,10 +14,6 @@ export interface IZJanitorOptionsLint {
    * The path to the config file for cspell.
    */
   spellingConfig?: string;
-  /**
-   * The path to the config file for stylelint.
-   */
-  styleConfig?: string;
 
   /**
    * The file globs to lint with eslint.
@@ -36,10 +32,6 @@ export interface IZJanitorOptionsLint {
    */
   spellingFiles?: string[];
   /**
-   * The file globs to lint with stylelint.
-   */
-  styleFiles?: string[];
-  /**
    * The file globs to lint with yaml.
    */
   yamlFiles?: string[];
@@ -56,10 +48,6 @@ export interface IZJanitorOptionsLint {
    * The files globs to exclude from linting with cspell.
    */
   spellingFilesExclude?: string[];
-  /**
-   * The files to exclude from linting with stylelint.
-   */
-  styleFilesExclude?: string[];
   /**
    * The files globs to exclude from linting with yaml.
    */
@@ -111,20 +99,6 @@ export class ZJanitorOptionsLintBuilder {
    */
   public spellingConfig(spellingConfig: string): ZJanitorOptionsLintBuilder {
     this.lint.spellingConfig = spellingConfig;
-    return this;
-  }
-
-  /**
-   * Sets the path to the config file for stylelint.
-   *
-   * @param styleConfig -
-   *        The path to the config file for stylelint.
-   *
-   * @returns
-   *        This object.
-   */
-  public styleConfig(styleConfig: string): ZJanitorOptionsLintBuilder {
-    this.lint.styleConfig = styleConfig;
     return this;
   }
 
@@ -189,21 +163,6 @@ export class ZJanitorOptionsLintBuilder {
   }
 
   /**
-   * Adds a list of globs to the list of files to lint with stylelint.
-   *
-   * @param file -
-   *        The file globs to lint with stylelint.
-   *
-   * @returns
-   *        This object.
-   */
-  public styleFile(file: string | string[] = []) {
-    const files = this.lint.styleFiles ?? [];
-    this.lint.styleFiles = files.concat(file);
-    return this;
-  }
-
-  /**
    * Adds a list of globs to the list of files to lint with yaml.
    *
    * @param file -
@@ -264,21 +223,6 @@ export class ZJanitorOptionsLintBuilder {
   }
 
   /**
-   * Adds a list of globs to the list of files to exclude from linting with stylelint.
-   *
-   * @param file -
-   *        The globs to exclude from linting with stylelint.
-   *
-   * @returns
-   *        This object.
-   */
-  public styleExclude(file: string | string[] = []) {
-    const excludes = this.lint.styleFilesExclude ?? [];
-    this.lint.styleFilesExclude = excludes.concat(file);
-    return this;
-  }
-
-  /**
    * Adds a single file glob to the list of files to exclude from linting with yaml.
    *
    * @param file -
@@ -306,12 +250,11 @@ export class ZJanitorOptionsLintBuilder {
     return this.jsonExclude(file)
       .prettyExclude(file)
       .spellingExclude(file)
-      .styleExclude(file)
       .yamlExclude(file);
   }
 
   private getOtherFiles() {
-    const extensions = "html,htm,md";
+    const extensions = "html,htm,md,css,scss,less,sass";
     return [`*.{${extensions}`, `**/*.{${extensions}`];
   }
 
@@ -324,7 +267,6 @@ export class ZJanitorOptionsLintBuilder {
   public generateSpellingFiles() {
     return this.spellingFile(this.lint.esFiles)
       .spellingFile(this.lint.jsonFiles)
-      .spellingFile(this.lint.styleFiles)
       .spellingFile(this.lint.yamlFiles)
       .spellingFile(this.getOtherFiles());
   }
@@ -338,7 +280,6 @@ export class ZJanitorOptionsLintBuilder {
   public generatePrettyFiles() {
     return this.prettyFile(this.lint.esFiles)
       .prettyFile(this.lint.jsonFiles)
-      .prettyFile(this.lint.styleFiles)
       .prettyFile(this.lint.yamlFiles)
       .prettyFile(this.getOtherFiles());
   }
@@ -360,42 +301,6 @@ export class ZJanitorOptionsLintBuilder {
       .esFile(`packages/*/vite.config.{${extensions}}`)
       .esFile(`packages/*/vitest.config.{${extensions}}`)
       .esFile(`.config/*.{${extensions}}`);
-  }
-
-  /**
-   * Adds conventional css files.
-   *
-   * @returns
-   *        This object.
-   */
-  public commonCssFiles() {
-    return this.styleFile(`src/**/*.css`)
-      .styleFile(`packages/**/*.css`)
-      .styleFile("styles/**/*.css");
-  }
-
-  /**
-   * Adds conventional sass files.
-   *
-   * @returns
-   *        This object.
-   */
-  public commonSassFiles() {
-    return this.styleFile(`src/**/*.{sass,scss}`)
-      .styleFile(`packages/**/src/**/*.{sass,scss}`)
-      .styleFile("styles/**/*.{sass,scss}");
-  }
-
-  /**
-   * Adds conventional less files.
-   *
-   * @returns
-   *        This object.
-   */
-  public commonLessFiles() {
-    return this.styleFile(`src/**/*.less`)
-      .styleFile("packages/**/src/**/*.less")
-      .styleFile("styles/**/*.less");
   }
 
   /**

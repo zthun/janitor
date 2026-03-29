@@ -10,7 +10,6 @@ describe("ZJanitorOptions", () => {
       // Arrange.
       const expected = new ZJanitorOptionsLintBuilder()
         .esFile(["**/*.js", "**/*.ts"])
-        .styleFile(["**/*.css", "**/*.scss"])
         .build();
 
       // Act.
