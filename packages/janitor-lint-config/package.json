@@ -5,8 +5,6 @@
   "keywords": [
     "eslint",
     "eslint-config",
-    "markdownlint",
-    "markdownlint-config",
     "prettier",
     "prettier-config"
   ],
@@ -24,11 +22,6 @@
       "types": "./dist/es/eslint.d.mts",
       "require": "./dist/eslint.cjs",
       "import": "./dist/eslint.js"
-    },
-    "./markdownlint": {
-      "types": "./dist/markdown/markdownlint.d.mts",
-      "require": "./dist/markdownlint.cjs",
-      "import": "./dist/markdownlint.js"
     },
     "./prettier": {
       "types": "./dist/pretty/prettier.d.mts",
@@ -65,13 +58,11 @@
   ],
   "dependencies": {
     "@zthun/janitor-eslint-config": "^19.5.6",
-    "@zthun/janitor-markdownlint-config": "^19.5.6",
     "@zthun/janitor-prettier-config": "^19.5.6",
     "@zthun/janitor-stylelint-config": "^19.5.6",
     "@zthun/janitor-stylelint-config-less": "^19.5.6",
     "@zthun/janitor-stylelint-config-sass": "^19.5.6",
     "eslint": "^9.39.4",
-    "markdownlint": "~0.40.0",
     "postcss": "^8.5.8",
     "prettier": "^3.8.1",
     "stylelint": "^16.26.1"

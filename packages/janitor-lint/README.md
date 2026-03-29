@@ -163,7 +163,6 @@ const lint = new ZJanitorOptionsLintBuilder()
   .commonCssFiles()
   .commonLessFiles()
   .commonSassFiles()
-  .commonMarkdownFiles()
   .commonJsonFiles()
   .commonYamlFiles()
   // Reuse the same files for spell checks and format checks

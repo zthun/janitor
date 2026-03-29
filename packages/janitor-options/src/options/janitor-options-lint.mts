@@ -7,9 +7,9 @@ export interface IZJanitorOptionsLint {
    */
   esConfig?: string;
   /**
-   * The path to the config file for markdownlint.
+   * The path to the config file for htmlhint.
    */
-  markdownConfig?: string;
+  htmlConfig?: string;
   /**
    * The path to the config file for prettier.
    */
@@ -28,13 +28,13 @@ export interface IZJanitorOptionsLint {
    */
   esFiles?: string[];
   /**
+   * The file globs to lint with htmlhint.
+   */
+  htmlFiles?: string[];
+  /**
    * The file globs to lint with json.
    */
   jsonFiles?: string[];
-  /**
-   * The file globs to lint with markdownlint.
-   */
-  markdownFiles?: string[];
   /**
    * The file globs to lint with prettier.
    */
@@ -53,13 +53,13 @@ export interface IZJanitorOptionsLint {
   yamlFiles?: string[];
 
   /**
+   * The files globs to exclude from linting with htmlhint.
+   */
+  htmlFilesExclude?: string[];
+  /**
    * The files globs to exclude from linting with json.
    */
   jsonFilesExclude?: string[];
-  /**
-   * The files globs to exclude from linting with markdownlint.
-   */
-  markdownFilesExclude?: string[];
   /**
    * The files globs to exclude from linting with prettier.
    */
@@ -99,16 +99,16 @@ export class ZJanitorOptionsLintBuilder {
   }
 
   /**
-   * Sets the path to the config file for markdownlint.
+   * Sets the path to the config file for htmlhint.
    *
-   * @param markdownConfig -
-   *        The path to the config file for markdownlint.
+   * @param htmlConfig -
+   *        The path to the config file for htmlhint.
    *
    * @returns
    *        This object.
    */
-  public markdownConfig(markdownConfig: string): ZJanitorOptionsLintBuilder {
-    this.lint.markdownConfig = markdownConfig;
+  public htmlConfig(htmlConfig: string): ZJanitorOptionsLintBuilder {
+    this.lint.htmlConfig = htmlConfig;
     return this;
   }
 
@@ -170,6 +170,21 @@ export class ZJanitorOptionsLintBuilder {
   }
 
   /**
+   * Adds a list of globs to the list of files to lint with htmlhint.
+   *
+   * @param file -
+   *        The file globs to lint with htmlhint.
+   *
+   * @returns
+   *        This object.
+   */
+  public htmlFile(file: string | string[] = []) {
+    const files = this.lint.htmlFiles ?? [];
+    this.lint.htmlFiles = files.concat(file);
+    return this;
+  }
+
+  /**
    * Adds a list of globs to the list of files to lint with json.
    *
    * @param file -
@@ -181,21 +196,6 @@ export class ZJanitorOptionsLintBuilder {
   public jsonFile(file: string | string[] = []) {
     const files = this.lint.jsonFiles ?? [];
     this.lint.jsonFiles = files.concat(file);
-    return this;
-  }
-
-  /**
-   * Adds a list of globs to the list of files to lint with markdownlint.
-   *
-   * @param file -
-   *        The globs to lint with markdownlint.
-   *
-   * @returns
-   *        This object.
-   */
-  public markdownFile(file: string | string[] = []) {
-    const files = this.lint.markdownFiles ?? [];
-    this.lint.markdownFiles = files.concat(file);
     return this;
   }
 
@@ -260,6 +260,21 @@ export class ZJanitorOptionsLintBuilder {
   }
 
   /**
+   * Adds a list of globs to the list of files to exclude from linting with htmlhint.
+   *
+   * @param files -
+   *        The file globs to exclude from linting with htmlhint.
+   *
+   * @returns
+   *        This object.
+   */
+  public htmlExclude(files: string | string[] = []) {
+    const excludes = this.lint.htmlFilesExclude ?? [];
+    this.lint.htmlFilesExclude = excludes.concat(files);
+    return this;
+  }
+
+  /**
    * Adds a list of globs to the list of files to exclude from linting with json.
    *
    * @param file -
@@ -271,21 +286,6 @@ export class ZJanitorOptionsLintBuilder {
   public jsonExclude(file: string | string[] = []) {
     const excludes = this.lint.jsonFilesExclude ?? [];
     this.lint.jsonFilesExclude = excludes.concat(file);
-    return this;
-  }
-
-  /**
-   * Adds a list of globs to the list of files to exclude from linting with markdownlint.
-   *
-   * @param file -
-   *        The globs to exclude from linting with markdownlint.
-   *
-   * @returns
-   *        This object.
-   */
-  public markdownExclude(file: string | string[] = []) {
-    const excludes = this.lint.markdownFilesExclude ?? [];
-    this.lint.markdownFilesExclude = excludes.concat(file);
     return this;
   }
 
@@ -359,12 +359,17 @@ export class ZJanitorOptionsLintBuilder {
    *        This object.
    */
   public excludeAll(file: string | string[] = []) {
-    return this.jsonExclude(file)
-      .markdownExclude(file)
+    return this.htmlExclude(file)
+      .jsonExclude(file)
       .prettyExclude(file)
       .spellingExclude(file)
       .styleExclude(file)
       .yamlExclude(file);
+  }
+
+  private getOtherFiles() {
+    const extensions = "html,htm,md";
+    return [`*.{${extensions}`, `**/*.{${extensions}`];
   }
 
   /**
@@ -375,10 +380,11 @@ export class ZJanitorOptionsLintBuilder {
    */
   public generateSpellingFiles() {
     return this.spellingFile(this.lint.esFiles)
+      .spellingFile(this.lint.htmlFiles)
       .spellingFile(this.lint.jsonFiles)
-      .spellingFile(this.lint.markdownFiles)
       .spellingFile(this.lint.styleFiles)
-      .spellingFile(this.lint.yamlFiles);
+      .spellingFile(this.lint.yamlFiles)
+      .spellingFile(this.getOtherFiles());
   }
 
   /**
@@ -389,10 +395,11 @@ export class ZJanitorOptionsLintBuilder {
    */
   public generatePrettyFiles() {
     return this.prettyFile(this.lint.esFiles)
+      .prettyFile(this.lint.htmlFiles)
       .prettyFile(this.lint.jsonFiles)
-      .prettyFile(this.lint.markdownFiles)
       .prettyFile(this.lint.styleFiles)
-      .prettyFile(this.lint.yamlFiles);
+      .prettyFile(this.lint.yamlFiles)
+      .prettyFile(this.getOtherFiles());
   }
 
   /**
@@ -451,18 +458,6 @@ export class ZJanitorOptionsLintBuilder {
   }
 
   /**
-   * Adds conventional markdown files.
-   *
-   * @returns
-   *        This object.
-   */
-  public commonMarkdownFiles() {
-    return this.markdownFile(`*.md`)
-      .markdownFile(`src/**/*.md`)
-      .markdownFile(`packages/**/*.md`);
-  }
-
-  /**
    * Add conventional json files.
    *
    * @returns
@@ -501,6 +496,7 @@ export class ZJanitorOptionsLintBuilder {
       .excludeAll("**/dist/**")
       .excludeAll("**/node_modules/**")
       .excludeAll("package-lock.json")
+      .excludeAll("yarn.lock")
       .excludeAll("lerna.json")
       .excludeAll("**/cspell.json");
   }

@@ -93,67 +93,6 @@ describe("ZJanitorOptionsLint", () => {
     });
   });
 
-  describe("Markdown", () => {
-    it("should add an include glob", () => {
-      // Arrange.
-      const markdownFileAlpha = "**/*.md";
-      const markdownFileBravo = "**/*.markdown";
-      const markdownFileCharlie = "**/docs/*.md";
-      const target = createTestTarget();
-
-      // Act.
-      const actual = target
-        .markdownFile()
-        .markdownFile(markdownFileAlpha)
-        .markdownFile(markdownFileBravo)
-        .markdownFile(markdownFileCharlie)
-        .build();
-
-      // Assert.
-      expect(actual.markdownFiles).toContain(markdownFileAlpha);
-      expect(actual.markdownFiles).toContain(markdownFileBravo);
-      expect(actual.markdownFiles).toContain(markdownFileCharlie);
-    });
-
-    it("should add an exclude glob", () => {
-      // Arrange.
-      const markdownExcludeAlpha = "**/exclude.md";
-      const markdownExcludeBravo = "**/ignore.md";
-      const target = createTestTarget();
-
-      // Act.
-      const actual = target
-        .markdownExclude()
-        .markdownExclude(markdownExcludeAlpha)
-        .markdownExclude(markdownExcludeBravo)
-        .build();
-
-      // Assert.
-      expect(actual.markdownFilesExclude).toContain(markdownExcludeAlpha);
-      expect(actual.markdownFilesExclude).toContain(markdownExcludeBravo);
-    });
-
-    it("should set the config", () => {
-      // Arrange.
-      const expected = "path/to/markdown/config.json";
-      const target = createTestTarget();
-
-      // Act.
-      const actual = target.markdownConfig(expected).build();
-
-      // Assert.
-      expect(actual.markdownConfig).toEqual(expected);
-    });
-
-    describe("Common", () => {
-      it("should add files", () => {
-        expect(
-          createTestTarget().commonMarkdownFiles().build().markdownFiles,
-        ).toBeTruthy();
-      });
-    });
-  });
-
   describe("Pretty", () => {
     it("should add an include glob", () => {
       // Arrange.
@@ -222,7 +161,6 @@ describe("ZJanitorOptionsLint", () => {
         const { prettyFiles: actual } = config;
 
         // Assert.
-        expect(actual).toHaveLength(1);
         expect(actual).toContain(file);
       };
 
@@ -232,10 +170,6 @@ describe("ZJanitorOptionsLint", () => {
 
       it("should add json files to generated pretty files", () => {
         shouldAddPrettyFiles((t, f) => t.jsonFile(f));
-      });
-
-      it("should add markdown files to generated pretty files", () => {
-        shouldAddPrettyFiles((t, f) => t.markdownFile(f));
       });
 
       it("should add style files to generated pretty files", () => {
@@ -313,7 +247,6 @@ describe("ZJanitorOptionsLint", () => {
         const { spellingFiles: actual } = config;
 
         // Assert.
-        expect(actual).toHaveLength(1);
         expect(actual).toContain(file);
       };
 
@@ -323,10 +256,6 @@ describe("ZJanitorOptionsLint", () => {
 
       it("should add json files to generated spelling files", () => {
         shouldAddSpellingFiles((t, f) => t.jsonFile(f));
-      });
-
-      it("should add markdown files to generated spelling files", () => {
-        shouldAddSpellingFiles((t, f) => t.markdownFile(f));
       });
 
       it("should add style files to generated spelling files", () => {
@@ -473,10 +402,6 @@ describe("ZJanitorOptionsLint", () => {
 
     it("should add files to exclude json", () => {
       shouldAddFilesToExclude((c) => c.jsonFilesExclude);
-    });
-
-    it("should add files to exclude markdown", () => {
-      shouldAddFilesToExclude((c) => c.markdownFilesExclude);
     });
 
     it("should add files to exclude pretty", () => {

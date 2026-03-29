@@ -10,7 +10,6 @@ import { ZContentLinterPretty } from "../content/content-linter-pretty.mjs";
 import { ZContentLinterYaml } from "../content/content-linter-yaml.mjs";
 import { ZLinterEs } from "../linter/linter-es.mjs";
 import { ZLinterFile } from "../linter/linter-file.mjs";
-import { ZLinterMarkdown } from "../linter/linter-markdown.mjs";
 import { ZLinterReport } from "../linter/linter-report.mjs";
 import { ZLinterSpelling } from "../linter/linter-spelling.mjs";
 import { ZLinterStyle } from "../linter/linter-style.mjs";
@@ -50,16 +49,6 @@ export class ZJanitorLint {
    * The linter for yaml files.
    */
   public yamlLint: IZLinter;
-
-  /**
-   * The linter for markdown files.
-   *
-   * Markdownlint is a bit annoying with this.  They
-   * don't really fully support the cosmiconfig standard,
-   * and they only support the config files that are named
-   * .markdownlint.yaml, .markdownlint.json, and .markdownlint.cjs
-   */
-  public markdownLint: IZLinter;
 
   /**
    * The configuration reader.
@@ -106,18 +95,7 @@ export class ZJanitorLint {
       this._logger,
       "yaml",
     );
-    this.markdownLint = new ZLinterReport(
-      new ZLinterMarkdown(
-        this._logger,
-        new ZConfigReaderCosmic("markdownlint", new ZConfigExtender(), [
-          ".markdownlint.json",
-          ".markdownlint.yaml",
-          ".markdownlint.cjs",
-        ]),
-      ),
-      this._logger,
-      "markdown",
-    );
+
     this.config = new ZConfigReaderCosmic("janitor", new ZConfigExtender());
   }
 
@@ -140,9 +118,6 @@ export class ZJanitorLint {
       jsonFilesExclude,
       yamlFiles,
       yamlFilesExclude,
-      markdownConfig,
-      markdownFiles,
-      markdownFilesExclude,
       esConfig,
       esFiles,
       styleConfig,
@@ -180,20 +155,6 @@ export class ZJanitorLint {
         yamlFiles,
         undefined,
         yamlFilesExclude,
-      );
-      result = result && current;
-    }
-
-    if (markdownFiles) {
-      this._logger.log(
-        chalk.magenta.underline(
-          `Linting markdown files from ${markdownFiles.length} globs.`,
-        ),
-      );
-      current = await this.markdownLint.lint(
-        markdownFiles,
-        markdownConfig,
-        markdownFilesExclude,
       );
       result = result && current;
     }

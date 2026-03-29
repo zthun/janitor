@@ -12,7 +12,6 @@ export * from "./content/content-linter-yaml.mjs";
 export * from "./content/content-linter.mjs";
 export * from "./linter/linter-es.mjs";
 export * from "./linter/linter-file.mjs";
-export * from "./linter/linter-markdown.mjs";
 export * from "./linter/linter-report.mjs";
 export * from "./linter/linter-silent.mjs";
 export * from "./linter/linter-spelling.mjs";
