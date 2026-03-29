@@ -1,8 +1,10 @@
+import { readFile } from "node:fs/promises";
+import { resolve } from "node:path";
+
 import chalk from "chalk";
 import type { GlobOptionsWithFileTypesFalse } from "glob";
 import { sync } from "glob";
-import { readFile } from "node:fs/promises";
-import { resolve } from "node:path";
+
 import type { IZConfigReader } from "../config/config-reader.mjs";
 import type { IZContentLinter } from "../content/content-linter.mjs";
 import type { IZLinter } from "./linter.mjs";

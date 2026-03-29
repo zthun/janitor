@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+
 import { ZTypedocConfigBuilder } from "./typedoc-config-builder.mjs";
 
 describe("TypedocConfigBuilder", () => {

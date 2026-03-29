@@ -1,5 +1,6 @@
 import { ESLint } from "eslint";
 import { every } from "lodash-es";
+
 import { $resolve } from "../config/config-resolve.mjs";
 import type { IZLinter } from "./linter.mjs";
 

@@ -1,6 +1,8 @@
 import { resolve } from "node:path";
+
 import type { UserConfig } from "vite";
 import { describe, expect, it } from "vitest";
+
 import type { ExternalizeOptions } from "./vite-plugin-externalize-deps.js";
 import { externalizeDeps } from "./vite-plugin-externalize-deps.js";
 

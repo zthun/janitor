@@ -1,17 +1,18 @@
 import type { IZJanitorOptions } from "@zthun/janitor-options";
 import chalk from "chalk";
+
+import type { IZConfigReader } from "../config/config-reader.mjs";
 import { ZConfigReaderCosmic } from "../config/config-reader-cosmic.mjs";
 import { ZConfigReaderNull } from "../config/config-reader-null.mjs";
 import { ZConfigReaderPrettier } from "../config/config-reader-prettier.mjs";
-import type { IZConfigReader } from "../config/config-reader.mjs";
 import { ZContentLinterJson } from "../content/content-linter-json.mjs";
 import { ZContentLinterPretty } from "../content/content-linter-pretty.mjs";
 import { ZContentLinterYaml } from "../content/content-linter-yaml.mjs";
+import type { IZLinter } from "../linter/linter.mjs";
 import { ZLinterEs } from "../linter/linter-es.mjs";
 import { ZLinterFile } from "../linter/linter-file.mjs";
 import { ZLinterReport } from "../linter/linter-report.mjs";
 import { ZLinterSpelling } from "../linter/linter-spelling.mjs";
-import type { IZLinter } from "../linter/linter.mjs";
 import type { IZJanitorLintArgs } from "./janitor-lint-args.mjs";
 
 /**

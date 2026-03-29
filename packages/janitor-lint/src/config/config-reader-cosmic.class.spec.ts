@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+
 import { ZConfigReaderCosmic } from "./config-reader-cosmic.mjs";
 
 describe("ZConfigCosmicReader", () => {

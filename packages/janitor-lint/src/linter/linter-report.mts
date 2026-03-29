@@ -2,6 +2,7 @@ import chalk from "chalk";
 import type { GlobOptionsWithFileTypesFalse } from "glob";
 import { sync } from "glob";
 import { uniq } from "lodash-es";
+
 import type { IZLinter } from "./linter.mjs";
 
 /**

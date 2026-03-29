@@ -1,6 +1,7 @@
-import { existsSync, readFileSync, type PathLike } from "node:fs";
+import { existsSync, type PathLike, readFileSync } from "node:fs";
 import { builtinModules } from "node:module";
 import { resolve } from "node:path";
+
 import type { Plugin, UserConfig } from "vite";
 
 // Original source code from

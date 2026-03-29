@@ -1,4 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
+
 import { ZContentLinterJson } from "./content-linter-json.mjs";
 
 vi.mock("glob");

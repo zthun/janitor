@@ -1,6 +1,7 @@
 import { ESLint } from "eslint";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { mock } from "vitest-mock-extended";
+
 import { $resolve } from "../config/config-resolve.mjs";
 import { ZLinterEs } from "./linter-es.mjs";
 

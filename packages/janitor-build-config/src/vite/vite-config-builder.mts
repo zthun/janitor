@@ -6,6 +6,7 @@ import { checker } from "vite-plugin-checker";
 import dtsPlugin from "vite-plugin-dts";
 import type { ViteUserConfig } from "vitest/config";
 import type { InlineConfig } from "vitest/node";
+
 import { externalizeDeps } from "../plugin/vite-plugin-externalize-deps.js";
 import { ZViteLibraryBuilder } from "./vite-library-builder.mjs";
 

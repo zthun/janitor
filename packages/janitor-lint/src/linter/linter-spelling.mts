@@ -2,6 +2,7 @@ import chalk from "chalk";
 import type { CSpellApplicationOptions, CSpellReporter, Issue } from "cspell";
 import { lint } from "cspell";
 import { noop } from "lodash-es";
+
 import { $resolve } from "../config/config-resolve.mjs";
 import type { IZLinter } from "./linter.mjs";
 

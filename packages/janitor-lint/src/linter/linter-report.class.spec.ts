@@ -2,8 +2,9 @@ import { sync } from "glob";
 import type { Mocked } from "vitest";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { mock } from "vitest-mock-extended";
-import { ZLinterReport } from "./linter-report.mjs";
+
 import type { IZLinter } from "./linter.mjs";
+import { ZLinterReport } from "./linter-report.mjs";
 
 vi.mock("glob", () => ({
   sync: vi.fn(),

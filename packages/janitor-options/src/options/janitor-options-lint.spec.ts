@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+
 import type { IZJanitorOptionsLint } from "./janitor-options-lint.mjs";
 import { ZJanitorOptionsLintBuilder } from "./janitor-options-lint.mjs";
 

@@ -1,4 +1,5 @@
 import { load } from "js-yaml";
+
 import type { IZContentLinter } from "./content-linter.mjs";
 
 /**

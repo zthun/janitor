@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
-import { ZJanitorOptionsLintBuilder } from "./janitor-options-lint.mjs";
+
 import { ZJanitorOptionsBuilder } from "./janitor-options.mjs";
+import { ZJanitorOptionsLintBuilder } from "./janitor-options-lint.mjs";
 
 describe("ZJanitorOptions", () => {
   const createTestTarget = () => new ZJanitorOptionsBuilder();

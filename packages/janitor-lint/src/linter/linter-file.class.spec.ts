@@ -1,8 +1,10 @@
-import { sync } from "glob";
 import { readFile } from "node:fs/promises";
+
+import { sync } from "glob";
 import type { Mocked } from "vitest";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { mock } from "vitest-mock-extended";
+
 import type { IZConfigReader } from "../config/config-reader.mjs";
 import type { IZContentLinter } from "../content/content-linter.mjs";
 import { ZLinterFile } from "./linter-file.mjs";

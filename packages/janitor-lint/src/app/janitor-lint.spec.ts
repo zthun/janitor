@@ -2,11 +2,12 @@ import type { IZJanitorOptions } from "@zthun/janitor-options";
 import type { Mocked } from "vitest";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { mock } from "vitest-mock-extended";
+
 import type { IZConfigReader } from "../config/config-reader.mjs";
-import { ZLinterSilent } from "../linter/linter-silent.mjs";
 import type { IZLinter } from "../linter/linter.mjs";
-import type { IZJanitorLintArgs } from "./janitor-lint-args.mjs";
+import { ZLinterSilent } from "../linter/linter-silent.mjs";
 import { ZJanitorLint } from "./janitor-lint.mjs";
+import type { IZJanitorLintArgs } from "./janitor-lint-args.mjs";
 
 describe("ZJanitorLint", () => {
   let args: IZJanitorLintArgs;

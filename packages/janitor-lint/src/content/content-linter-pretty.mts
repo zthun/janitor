@@ -1,5 +1,6 @@
 import type { Options } from "prettier";
 import { check, getFileInfo } from "prettier";
+
 import type { IZContentLinter } from "./content-linter.mjs";
 
 /**
