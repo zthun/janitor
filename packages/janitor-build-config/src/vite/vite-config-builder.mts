@@ -186,6 +186,10 @@ export class ZViteConfigBuilder {
         // actual paths are correct.
         paths: {},
       },
+      // Our tsconfig will include all ts and mts files, when we output our
+      // source code, we only want the types found in the src directory.
+      // Anything outside of this is config and we don't want to include it.
+      entryRoot: "src",
       // Make sure to exclude spec and test files.
       exclude: ["**/*.{spec,test}.{js,mjs,cjs,ts,mts,jsx,tsx}"],
     });
