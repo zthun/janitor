@@ -112,7 +112,7 @@ export class ZJanitorOptionsLintBuilder {
    *        This object.
    */
   public esFile(file: string | string[] = []) {
-    const files = this.lint.esFiles ?? [];
+    const files = this.lint.esFiles || [];
     this.lint.esFiles = files.concat(file);
     return this;
   }
@@ -127,7 +127,7 @@ export class ZJanitorOptionsLintBuilder {
    *        This object.
    */
   public jsonFile(file: string | string[] = []) {
-    const files = this.lint.jsonFiles ?? [];
+    const files = this.lint.jsonFiles || [];
     this.lint.jsonFiles = files.concat(file);
     return this;
   }
@@ -142,7 +142,7 @@ export class ZJanitorOptionsLintBuilder {
    *        This object.
    */
   public prettyFile(file: string | string[] = []) {
-    const files = this.lint.prettyFiles ?? [];
+    const files = this.lint.prettyFiles || [];
     this.lint.prettyFiles = files.concat(file);
     return this;
   }
@@ -157,7 +157,7 @@ export class ZJanitorOptionsLintBuilder {
    *        This object.
    */
   public spellingFile(file: string | string[] = []) {
-    const files = this.lint.spellingFiles ?? [];
+    const files = this.lint.spellingFiles || [];
     this.lint.spellingFiles = files.concat(file);
     return this;
   }
@@ -172,7 +172,7 @@ export class ZJanitorOptionsLintBuilder {
    *        This object.
    */
   public yamlFile(file: string | string[] = []) {
-    const files = this.lint.yamlFiles ?? [];
+    const files = this.lint.yamlFiles || [];
     this.lint.yamlFiles = files.concat(file);
     return this;
   }
@@ -187,7 +187,7 @@ export class ZJanitorOptionsLintBuilder {
    *        This object.
    */
   public jsonExclude(file: string | string[] = []) {
-    const excludes = this.lint.jsonFilesExclude ?? [];
+    const excludes = this.lint.jsonFilesExclude || [];
     this.lint.jsonFilesExclude = excludes.concat(file);
     return this;
   }
@@ -202,7 +202,7 @@ export class ZJanitorOptionsLintBuilder {
    *        This object.
    */
   public prettyExclude(file: string | string[] = []) {
-    const excludes = this.lint.prettyFilesExclude ?? [];
+    const excludes = this.lint.prettyFilesExclude || [];
     this.lint.prettyFilesExclude = excludes.concat(file);
     return this;
   }
@@ -217,7 +217,7 @@ export class ZJanitorOptionsLintBuilder {
    *        This object.
    */
   public spellingExclude(file: string | string[] = []) {
-    const excludes = this.lint.spellingFilesExclude ?? [];
+    const excludes = this.lint.spellingFilesExclude || [];
     this.lint.spellingFilesExclude = excludes.concat(file);
     return this;
   }
@@ -232,7 +232,7 @@ export class ZJanitorOptionsLintBuilder {
    *        This object.
    */
   public yamlExclude(file: string | string[] = []) {
-    const excludes = this.lint.yamlFilesExclude ?? [];
+    const excludes = this.lint.yamlFilesExclude || [];
     this.lint.yamlFilesExclude = excludes.concat(file);
     return this;
   }
