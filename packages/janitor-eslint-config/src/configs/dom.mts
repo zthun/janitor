@@ -10,7 +10,7 @@ export const dom = defineConfig([
     files: files(ExtHtml),
     rules: {
       // Prettier defaults to 2 spaces, so this needs to as well.
-      "html/indent": ["error", 2],
+      "@html-eslint/indent": ["error", 2],
     },
   },
   {
