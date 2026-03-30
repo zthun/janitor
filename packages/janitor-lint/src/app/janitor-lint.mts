@@ -3,10 +3,8 @@ import chalk from "chalk";
 
 import type { IZConfigReader } from "../config/config-reader.mjs";
 import { ZConfigReaderCosmic } from "../config/config-reader-cosmic.mjs";
-import { ZConfigReaderNull } from "../config/config-reader-null.mjs";
 import { ZConfigReaderPrettier } from "../config/config-reader-prettier.mjs";
 import { ZContentLinterPretty } from "../content/content-linter-pretty.mjs";
-import { ZContentLinterYaml } from "../content/content-linter-yaml.mjs";
 import type { IZLinter } from "../linter/linter.mjs";
 import { ZLinterEs } from "../linter/linter-es.mjs";
 import { ZLinterFile } from "../linter/linter-file.mjs";
@@ -32,11 +30,6 @@ export class ZJanitorLint {
    * The linter for prettier formatting checks.
    */
   public prettyLint: IZLinter;
-
-  /**
-   * The linter for yaml files.
-   */
-  public yamlLint: IZLinter;
 
   /**
    * The configuration reader.
@@ -66,12 +59,6 @@ export class ZJanitorLint {
       this._logger,
       "pretty",
     );
-    this.yamlLint = new ZLinterFile(
-      new ZContentLinterYaml(),
-      new ZConfigReaderNull(),
-      this._logger,
-      "yaml",
-    );
 
     this.config = new ZConfigReaderCosmic("janitor");
   }
@@ -91,8 +78,6 @@ export class ZJanitorLint {
     let result = true;
     const { lint = {} } = options;
     const {
-      yamlFiles,
-      yamlFilesExclude,
       esConfig,
       esFiles,
       spellingConfig,
@@ -102,20 +87,6 @@ export class ZJanitorLint {
       prettyFiles,
       prettyFilesExclude,
     } = lint;
-
-    if (yamlFiles) {
-      this._logger.log(
-        chalk.magenta.underline(
-          `Linting yaml files from ${yamlFiles.length} globs.`,
-        ),
-      );
-      current = await this.yamlLint.lint(
-        yamlFiles,
-        undefined,
-        yamlFilesExclude,
-      );
-      result = result && current;
-    }
 
     if (esFiles) {
       this._logger.log(

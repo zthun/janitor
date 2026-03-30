@@ -27,10 +27,6 @@ export interface IZJanitorOptionsLint {
    * The file globs to lint with cspell.
    */
   spellingFiles?: string[];
-  /**
-   * The file globs to lint with yaml.
-   */
-  yamlFiles?: string[];
 
   /**
    * The files globs to exclude from linting with prettier.
@@ -40,10 +36,6 @@ export interface IZJanitorOptionsLint {
    * The files globs to exclude from linting with cspell.
    */
   spellingFilesExclude?: string[];
-  /**
-   * The files globs to exclude from linting with yaml.
-   */
-  yamlFilesExclude?: string[];
 }
 
 /**
@@ -140,21 +132,6 @@ export class ZJanitorOptionsLintBuilder {
   }
 
   /**
-   * Adds a list of globs to the list of files to lint with yaml.
-   *
-   * @param file -
-   *        The file globs to lint with yaml.
-   *
-   * @returns
-   *        This object.
-   */
-  public yamlFile(file: string | string[] = []) {
-    const files = this.lint.yamlFiles || [];
-    this.lint.yamlFiles = files.concat(file);
-    return this;
-  }
-
-  /**
    * Adds a list of globs to the list of files to exclude from linting with prettier.
    *
    * @param file -
@@ -185,21 +162,6 @@ export class ZJanitorOptionsLintBuilder {
   }
 
   /**
-   * Adds a single file glob to the list of files to exclude from linting with yaml.
-   *
-   * @param file -
-   *        The file glob to exclude from linting with yaml.
-   *
-   * @returns
-   *        This object.
-   */
-  public yamlExclude(file: string | string[] = []) {
-    const excludes = this.lint.yamlFilesExclude || [];
-    this.lint.yamlFilesExclude = excludes.concat(file);
-    return this;
-  }
-
-  /**
    * Adds a file to all exclusion lists.
    *
    * @param file -
@@ -209,7 +171,7 @@ export class ZJanitorOptionsLintBuilder {
    *        This object.
    */
   public excludeAll(file: string | string[] = []) {
-    return this.prettyExclude(file).spellingExclude(file).yamlExclude(file);
+    return this.prettyExclude(file).spellingExclude(file);
   }
 
   /**
@@ -219,9 +181,7 @@ export class ZJanitorOptionsLintBuilder {
    *        This object.
    */
   public generateSpellingFiles() {
-    return this.spellingFile(this.lint.esFiles).spellingFile(
-      this.lint.yamlFiles,
-    );
+    return this.spellingFile(this.lint.esFiles);
   }
 
   /**
@@ -231,7 +191,7 @@ export class ZJanitorOptionsLintBuilder {
    *        This object.
    */
   public generatePrettyFiles() {
-    return this.prettyFile(this.lint.esFiles).prettyFile(this.lint.yamlFiles);
+    return this.prettyFile(this.lint.esFiles);
   }
 
   /**
@@ -241,7 +201,8 @@ export class ZJanitorOptionsLintBuilder {
    *        This object
    */
   public commonEsFiles() {
-    const extensions = "js,cjs,mjs,ts,mts,jsx,tsx,css,html,htm,md,json,jsonc";
+    const extensions =
+      "js,cjs,mjs,ts,mts,jsx,tsx,css,html,htm,md,json,jsonc,yml,yaml";
 
     return this.esFile(`*.{${extensions}}`)
       .esFile(`src/**/*.{${extensions}}`)
@@ -251,21 +212,6 @@ export class ZJanitorOptionsLintBuilder {
       .esFile(`packages/*/vite.config.{${extensions}}`)
       .esFile(`packages/*/vitest.config.{${extensions}}`)
       .esFile(`.config/*.{${extensions}}`);
-  }
-
-  /**
-   * Adds conventional yaml files.
-   *
-   * @returns
-   *        This object.
-   */
-  public commonYamlFiles() {
-    const extensions = "yml,yaml";
-    return this.yamlFile(`*.{${extensions}}`)
-      .yamlFile(`src/**/*.{${extensions}}`)
-      .yamlFile(`packages/**/*.{${extensions}}`)
-      .yamlFile(`.config/*.{${extensions}}`)
-      .yamlFile(`.circleci/*.{${extensions}}`);
   }
 
   /**

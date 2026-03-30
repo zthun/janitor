@@ -121,10 +121,6 @@ describe("ZJanitorOptionsLint", () => {
       it("should add es files to generated pretty files", () => {
         shouldAddPrettyFiles((t, f) => t.esFile(f));
       });
-
-      it("should add yaml files to the generated pretty files", () => {
-        shouldAddPrettyFiles((t, f) => t.yamlFile(f));
-      });
     });
   });
 
@@ -199,56 +195,6 @@ describe("ZJanitorOptionsLint", () => {
       it("should add es files to generated spelling files", () => {
         shouldAddSpellingFiles((t, f) => t.esFile(f));
       });
-
-      it("should add yaml files to the generated spelling files", () => {
-        shouldAddSpellingFiles((t, f) => t.yamlFile(f));
-      });
-    });
-  });
-
-  describe("YAML", () => {
-    it("should add an include glob", () => {
-      // Arrange.
-      const yamlGlobAlpha = "**/*.yaml";
-      const yamlGlobBravo = "**/*.yml";
-      const target = createTestTarget();
-
-      // Act.
-      const actual = target
-        .yamlFile()
-        .yamlFile(yamlGlobAlpha)
-        .yamlFile(yamlGlobBravo)
-        .build();
-
-      // Assert.
-      expect(actual.yamlFiles).toContain(yamlGlobAlpha);
-      expect(actual.yamlFiles).toContain(yamlGlobBravo);
-    });
-
-    it("should add an exclude glob", () => {
-      // Arrange.
-      const yamlExcludeAlpha = "**/exclude.yaml";
-      const yamlExcludeBravo = "**/ignore.yml";
-      const target = createTestTarget();
-
-      // Act.
-      const actual = target
-        .yamlExclude()
-        .yamlExclude(yamlExcludeAlpha)
-        .yamlExclude(yamlExcludeBravo)
-        .build();
-
-      // Assert.
-      expect(actual.yamlFilesExclude).toContain(yamlExcludeAlpha);
-      expect(actual.yamlFilesExclude).toContain(yamlExcludeBravo);
-    });
-
-    describe("Common", () => {
-      it("should add yaml files", () => {
-        expect(
-          createTestTarget().commonYamlFiles().build().yamlFiles,
-        ).toBeTruthy();
-      });
     });
   });
 
@@ -283,10 +229,6 @@ describe("ZJanitorOptionsLint", () => {
 
     it("should add files to exclude spelling", () => {
       shouldAddFilesToExclude((c) => c.spellingFilesExclude);
-    });
-
-    it("should add files to exclude yaml", () => {
-      shouldAddFilesToExclude((c) => c.yamlFilesExclude);
     });
 
     describe("Common", () => {
