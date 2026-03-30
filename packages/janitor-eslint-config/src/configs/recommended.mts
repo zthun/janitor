@@ -9,6 +9,7 @@ import { prettier } from "./prettier.mjs";
 import { styles } from "./styles.mjs";
 import { test } from "./test.mjs";
 import { typescript } from "./typescript.mjs";
+import { yaml } from "./yaml.mjs";
 
 export const recommended = defineConfig([
   ...ignores,
@@ -16,6 +17,7 @@ export const recommended = defineConfig([
   ...typescript,
   ...markdown,
   ...json,
+  ...yaml,
   ...styles,
   ...html,
   ...test,

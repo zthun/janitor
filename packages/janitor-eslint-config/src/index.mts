@@ -10,3 +10,4 @@ export * from "./configs/recommended.mjs";
 export * from "./configs/styles.mjs";
 export * from "./configs/test.mjs";
 export * from "./configs/typescript.mjs";
+export * from "./configs/yaml.mjs";
