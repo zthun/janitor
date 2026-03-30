@@ -1,12 +1,3 @@
-import {
-  environments,
-  react,
-  recommended,
-} from "@zthun/janitor-lint-config/eslint";
+import { environments, recommended } from "@zthun/janitor-lint-config/eslint";
 
-export default [
-  ...recommended,
-  ...react,
-  ...environments.node,
-  ...environments.browser,
-];
+export default [...recommended, ...environments.node, ...environments.browser];
