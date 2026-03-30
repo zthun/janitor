@@ -39,6 +39,11 @@ export const ExtHtml = ["html", "htm"];
 export const ExtMd = ["md"];
 
 /**
+ * Json specific extensions
+ */
+export const ExtJson = ["json", "jsonc", "json5"];
+
+/**
  * Generates the file patterns for the given extensions.
  *
  * @param extensions -
