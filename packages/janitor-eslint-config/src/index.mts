@@ -1,6 +1,5 @@
 export * from "./configs/dom.mjs";
 export * from "./configs/environments.mjs";
-export * from "./configs/imports.mjs";
 export * from "./configs/javascript.mjs";
 export * from "./configs/prettier.mjs";
 export * from "./configs/react.mjs";
