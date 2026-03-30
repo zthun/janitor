@@ -44,6 +44,11 @@ export const ExtMd = ["md"];
 export const ExtJson = ["json", "jsonc", "json5"];
 
 /**
+ * Yaml specific extensions
+ */
+export const ExtYaml = ["yml", "yaml"];
+
+/**
  * Generates the file patterns for the given extensions.
  *
  * @param extensions -
