@@ -1,12 +1,12 @@
 import css from "@eslint/css";
-import html from "@html-eslint/eslint-plugin";
+import _html from "@html-eslint/eslint-plugin";
 import { defineConfig } from "eslint/config";
 
 import { ExtCss, ExtHtml, files } from "../files/files.mjs";
 
-export const dom = defineConfig([
+export const html = defineConfig([
   {
-    ...html.configs["flat/recommended"],
+    ..._html.configs["flat/recommended"],
     files: files(...ExtHtml),
     language: "@html-eslint/html",
   },
