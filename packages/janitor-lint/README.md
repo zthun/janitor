@@ -148,7 +148,6 @@ import {
 const lint = new ZJanitorOptionsLintBuilder()
   // Conventional globs for this workspace
   .commonEsFiles()
-  .commonJsonFiles()
   .commonYamlFiles()
   // Reuse the same files for spell checks and format checks
   .generateSpellingFiles()

@@ -20,10 +20,6 @@ export interface IZJanitorOptionsLint {
    */
   esFiles?: string[];
   /**
-   * The file globs to lint with json.
-   */
-  jsonFiles?: string[];
-  /**
    * The file globs to lint with prettier.
    */
   prettyFiles?: string[];
@@ -36,10 +32,6 @@ export interface IZJanitorOptionsLint {
    */
   yamlFiles?: string[];
 
-  /**
-   * The files globs to exclude from linting with json.
-   */
-  jsonFilesExclude?: string[];
   /**
    * The files globs to exclude from linting with prettier.
    */
@@ -118,21 +110,6 @@ export class ZJanitorOptionsLintBuilder {
   }
 
   /**
-   * Adds a list of globs to the list of files to lint with json.
-   *
-   * @param file -
-   *        The file globs to lint with json.
-   *
-   * @returns
-   *        This object.
-   */
-  public jsonFile(file: string | string[] = []) {
-    const files = this.lint.jsonFiles || [];
-    this.lint.jsonFiles = files.concat(file);
-    return this;
-  }
-
-  /**
    * Adds a list of globs to the list of files to lint with prettier.
    *
    * @param file -
@@ -174,21 +151,6 @@ export class ZJanitorOptionsLintBuilder {
   public yamlFile(file: string | string[] = []) {
     const files = this.lint.yamlFiles || [];
     this.lint.yamlFiles = files.concat(file);
-    return this;
-  }
-
-  /**
-   * Adds a list of globs to the list of files to exclude from linting with json.
-   *
-   * @param file -
-   *        The globs to exclude from linting with json.
-   *
-   * @returns
-   *        This object.
-   */
-  public jsonExclude(file: string | string[] = []) {
-    const excludes = this.lint.jsonFilesExclude || [];
-    this.lint.jsonFilesExclude = excludes.concat(file);
     return this;
   }
 
@@ -247,10 +209,7 @@ export class ZJanitorOptionsLintBuilder {
    *        This object.
    */
   public excludeAll(file: string | string[] = []) {
-    return this.jsonExclude(file)
-      .prettyExclude(file)
-      .spellingExclude(file)
-      .yamlExclude(file);
+    return this.prettyExclude(file).spellingExclude(file).yamlExclude(file);
   }
 
   /**
@@ -260,9 +219,9 @@ export class ZJanitorOptionsLintBuilder {
    *        This object.
    */
   public generateSpellingFiles() {
-    return this.spellingFile(this.lint.esFiles)
-      .spellingFile(this.lint.jsonFiles)
-      .spellingFile(this.lint.yamlFiles);
+    return this.spellingFile(this.lint.esFiles).spellingFile(
+      this.lint.yamlFiles,
+    );
   }
 
   /**
@@ -272,9 +231,7 @@ export class ZJanitorOptionsLintBuilder {
    *        This object.
    */
   public generatePrettyFiles() {
-    return this.prettyFile(this.lint.esFiles)
-      .prettyFile(this.lint.jsonFiles)
-      .prettyFile(this.lint.yamlFiles);
+    return this.prettyFile(this.lint.esFiles).prettyFile(this.lint.yamlFiles);
   }
 
   /**
@@ -284,7 +241,7 @@ export class ZJanitorOptionsLintBuilder {
    *        This object
    */
   public commonEsFiles() {
-    const extensions = "js,cjs,mjs,ts,mts,jsx,tsx,css,html,htm,md";
+    const extensions = "js,cjs,mjs,ts,mts,jsx,tsx,css,html,htm,md,json,jsonc";
 
     return this.esFile(`*.{${extensions}}`)
       .esFile(`src/**/*.{${extensions}}`)
@@ -294,19 +251,6 @@ export class ZJanitorOptionsLintBuilder {
       .esFile(`packages/*/vite.config.{${extensions}}`)
       .esFile(`packages/*/vitest.config.{${extensions}}`)
       .esFile(`.config/*.{${extensions}}`);
-  }
-
-  /**
-   * Add conventional json files.
-   *
-   * @returns
-   *        This object.
-   */
-  public commonJsonFiles() {
-    return this.jsonFile("*.json")
-      .jsonFile("src/**/*.json")
-      .jsonFile("packages/**/*.json")
-      .jsonFile(".config/*.json");
   }
 
   /**

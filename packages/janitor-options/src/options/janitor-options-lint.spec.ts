@@ -47,53 +47,6 @@ describe("ZJanitorOptionsLint", () => {
     });
   });
 
-  describe("JSON", () => {
-    it("should add an include glob", () => {
-      // Arrange.
-      const jsonGlobAlpha = "**/*.json";
-      const jsonGlobBravo = "**/data/*.json";
-      const jsonGlobCharlie = "**/config/*.json";
-      const target = createTestTarget();
-
-      // Act.
-      const actual = target
-        .jsonFile()
-        .jsonFile(jsonGlobAlpha)
-        .jsonFile(jsonGlobBravo)
-        .jsonFile(jsonGlobCharlie)
-        .build();
-
-      // Assert.
-      expect(actual.jsonFiles).toContain(jsonGlobAlpha);
-      expect(actual.jsonFiles).toContain(jsonGlobBravo);
-      expect(actual.jsonFiles).toContain(jsonGlobCharlie);
-    });
-
-    it("should add an exclude glob", () => {
-      // Arrange.
-      const jsonExcludeAlpha = "**/exclude.json";
-      const jsonExcludeBravo = "**/ignore.json";
-      const target = createTestTarget();
-      // Act.
-      const actual = target
-        .jsonExclude()
-        .jsonExclude(jsonExcludeAlpha)
-        .jsonExclude(jsonExcludeBravo)
-        .build();
-      // Assert.
-      expect(actual.jsonFilesExclude).toContain(jsonExcludeAlpha);
-      expect(actual.jsonFilesExclude).toContain(jsonExcludeBravo);
-    });
-
-    describe("Common", () => {
-      it("should add files", () => {
-        expect(
-          createTestTarget().commonJsonFiles().build().jsonFiles,
-        ).toBeTruthy();
-      });
-    });
-  });
-
   describe("Pretty", () => {
     it("should add an include glob", () => {
       // Arrange.
@@ -167,10 +120,6 @@ describe("ZJanitorOptionsLint", () => {
 
       it("should add es files to generated pretty files", () => {
         shouldAddPrettyFiles((t, f) => t.esFile(f));
-      });
-
-      it("should add json files to generated pretty files", () => {
-        shouldAddPrettyFiles((t, f) => t.jsonFile(f));
       });
 
       it("should add yaml files to the generated pretty files", () => {
@@ -251,10 +200,6 @@ describe("ZJanitorOptionsLint", () => {
         shouldAddSpellingFiles((t, f) => t.esFile(f));
       });
 
-      it("should add json files to generated spelling files", () => {
-        shouldAddSpellingFiles((t, f) => t.jsonFile(f));
-      });
-
       it("should add yaml files to the generated spelling files", () => {
         shouldAddSpellingFiles((t, f) => t.yamlFile(f));
       });
@@ -331,10 +276,6 @@ describe("ZJanitorOptionsLint", () => {
       expect(actual).toContain(globalExcludeBravo);
       expect(actual).toContain(globalExcludeCharlie);
     };
-
-    it("should add files to exclude json", () => {
-      shouldAddFilesToExclude((c) => c.jsonFilesExclude);
-    });
 
     it("should add files to exclude pretty", () => {
       shouldAddFilesToExclude((c) => c.prettyFilesExclude);

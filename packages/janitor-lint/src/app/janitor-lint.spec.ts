@@ -18,7 +18,6 @@ describe("ZJanitorLint", () => {
   function createTestTarget() {
     const target = new ZJanitorLint(logger);
     target.esLint = new ZLinterSilent();
-    target.jsonLint = new ZLinterSilent();
     target.yamlLint = new ZLinterSilent();
     target.spellLint = new ZLinterSilent();
     target.prettyLint = new ZLinterSilent();
@@ -37,8 +36,6 @@ describe("ZJanitorLint", () => {
       lint: {
         esConfig: "@zthun/janitor-eslint-config",
         esFiles: ["**/*.js"],
-        jsonFiles: ["**/*.json"],
-        jsonFilesExclude: ["**/exclude.json"],
         yamlFiles: ["**/*.yml"],
         yamlFilesExclude: ["**/exclude.yaml"],
         spellingConfig: "./cspell.json",
@@ -97,22 +94,6 @@ describe("ZJanitorLint", () => {
       it("does not invoke the linter if there are no esFiles.", async () => {
         delete options.lint?.esFiles;
         await assertLinterNotInvoked((t) => t.esLint);
-      });
-    });
-
-    describe("JsonLint", () => {
-      it("invokes the linter if there are jsonFiles", async () => {
-        await assertLinterInvoked(
-          (t) => t.jsonLint,
-          options.lint?.jsonFiles,
-          undefined,
-          options.lint?.jsonFilesExclude,
-        );
-      });
-
-      it("does not invoke the linter if there are no esFiles.", async () => {
-        delete options.lint?.jsonFiles;
-        await assertLinterNotInvoked((t) => t.jsonLint);
       });
     });
 
