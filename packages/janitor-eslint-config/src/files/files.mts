@@ -34,6 +34,11 @@ export const ExtCss = ["css"];
 export const ExtHtml = ["html", "htm"];
 
 /**
+ * Markdown specific extensions
+ */
+export const ExtMd = ["md"];
+
+/**
  * Generates the file patterns for the given extensions.
  *
  * @param extensions -
