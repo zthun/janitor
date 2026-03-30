@@ -6,6 +6,7 @@ import { javascript } from "./javascript.mjs";
 import { json } from "./json.mjs";
 import { markdown } from "./markdown.mjs";
 import { prettier } from "./prettier.mjs";
+import { spelling } from "./spelling.mjs";
 import { styles } from "./styles.mjs";
 import { test } from "./test.mjs";
 import { typescript } from "./typescript.mjs";
@@ -21,5 +22,6 @@ export const recommended = defineConfig([
   ...styles,
   ...html,
   ...test,
+  ...spelling,
   ...prettier,
 ]);

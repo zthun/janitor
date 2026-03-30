@@ -7,6 +7,7 @@ export * from "./configs/markdown.mjs";
 export * from "./configs/prettier.mjs";
 export * from "./configs/react.mjs";
 export * from "./configs/recommended.mjs";
+export * from "./configs/spelling.mjs";
 export * from "./configs/styles.mjs";
 export * from "./configs/test.mjs";
 export * from "./configs/typescript.mjs";
