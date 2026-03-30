@@ -1,18 +1,20 @@
+import css from "@eslint/css";
 import html from "@html-eslint/eslint-plugin";
-import type { Linter } from "eslint";
+import { defineConfig } from "eslint/config";
 
-const files = ["**/*.html", "**/*.htm"];
+import { ExtCss, ExtHtml, files } from "../files/files.mjs";
 
-export const dom: Linter.Config[] = [
+export const dom = defineConfig([
   {
-    files,
     ...html.configs["flat/recommended"],
-  },
-  {
-    files,
+    files: files(ExtHtml),
     rules: {
       // Prettier defaults to 2 spaces, so this needs to as well.
-      "@html-eslint/indent": ["error", 2],
+      "html/indent": ["error", 2],
     },
   },
-];
+  {
+    ...css.configs.recommended,
+    files: files(ExtCss),
+  },
+]);
