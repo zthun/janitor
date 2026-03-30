@@ -253,11 +253,6 @@ export class ZJanitorOptionsLintBuilder {
       .yamlExclude(file);
   }
 
-  private getOtherFiles() {
-    const extensions = "md";
-    return [`*.{${extensions}`, `**/*.{${extensions}`];
-  }
-
   /**
    * Generates the spelling files based on the other files that have been set.
    *
@@ -267,8 +262,7 @@ export class ZJanitorOptionsLintBuilder {
   public generateSpellingFiles() {
     return this.spellingFile(this.lint.esFiles)
       .spellingFile(this.lint.jsonFiles)
-      .spellingFile(this.lint.yamlFiles)
-      .spellingFile(this.getOtherFiles());
+      .spellingFile(this.lint.yamlFiles);
   }
 
   /**
@@ -280,8 +274,7 @@ export class ZJanitorOptionsLintBuilder {
   public generatePrettyFiles() {
     return this.prettyFile(this.lint.esFiles)
       .prettyFile(this.lint.jsonFiles)
-      .prettyFile(this.lint.yamlFiles)
-      .prettyFile(this.getOtherFiles());
+      .prettyFile(this.lint.yamlFiles);
   }
 
   /**
@@ -291,7 +284,7 @@ export class ZJanitorOptionsLintBuilder {
    *        This object
    */
   public commonEsFiles() {
-    const extensions = "js,cjs,mjs,ts,mts,jsx,tsx,css,html,htm";
+    const extensions = "js,cjs,mjs,ts,mts,jsx,tsx,css,html,htm,md";
 
     return this.esFile(`*.{${extensions}}`)
       .esFile(`src/**/*.{${extensions}}`)
