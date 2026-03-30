@@ -1,30 +1,34 @@
-import type { Linter } from "eslint";
-import ts from "typescript-eslint";
+import { defineConfig } from "eslint/config";
+import { configs, parser } from "typescript-eslint";
 
-// The default typescript linter recommended rules operate on js files
-// as well, which is something we don't actually want.  JS files should
-// only need the javascript rules, not the typescript rules.  You
-// really shouldn't expect js, mjs, jsx, and cjs to follow typescript
-// standards.
-const files = ["**/*.ts", "**/*.mts", "**/*.tsx", "**/*.cts"];
-const { recommended, recommendedTypeCheckedOnly } = ts.configs;
-const target = "typescript-eslint/recommended-type-checked-only";
-const recommendedTypeChecked = recommendedTypeCheckedOnly.find(
-  (x) => x.name === target,
-)?.rules;
+import { ExtTs, ExtTsx, files, filesTest } from "../files/files.mjs";
 
-export const typescript: Linter.Config[] = [
-  ...recommended,
+// The default typescript linter recommended shared configs are
+// absolutely terrible as they weave their way into every single
+// file, even if the extensions make no sense.  So we are going
+// to be more selective about which files we actually will apply
+// these rules to.  We have to flatten all this mess out.
+// Seriously, do better Microsoft.
+const { base, eslintRecommended, recommendedTypeChecked } = configs;
+const name = "typescript-eslint/recommended-type-checked";
+const recommended = recommendedTypeChecked.find((x) => x.name === name);
+const rules = recommended?.rules;
+
+export const typescript = defineConfig([
   {
-    files,
-    rules: {
-      // TypeScript overtakes these.
-      "no-empty-function": "off",
+    ...base,
+    ...eslintRecommended,
+    ...recommended,
+    languageOptions: {
+      parser,
+      parserOptions: {
+        projectService: true,
+      },
+      sourceType: "module",
     },
-  },
-  {
-    files,
+    files: files(...ExtTs, ...ExtTsx),
     rules: {
+      ...rules,
       // We want to be able to use a single build system for most things.
       // Ideally, we can use vite to build all project types so we don't
       // have 4 different build systems across different projects.  Thus
@@ -45,6 +49,7 @@ export const typescript: Linter.Config[] = [
       // Would be fine, but there's a bug in this where you have a function with
       // access arguments.  Those constructors are often empty - so we want to let
       // a part of this one through.
+      "no-empty-function": "off",
       "@typescript-eslint/no-empty-function": [
         "error",
         { allow: ["constructors"] },
@@ -84,23 +89,11 @@ export const typescript: Linter.Config[] = [
     },
   },
   {
-    files,
-    languageOptions: {
-      parserOptions: {
-        projectService: true,
-      },
-    },
+    files: filesTest(...ExtTs, ...ExtTsx),
     rules: {
-      ...recommendedTypeChecked,
-    },
-  },
-  {
-    files: ["**/*.{spec,test}.{ts,mts,tsx}"],
-    rules: {
-      // This rule is great for normal use, but it prevents
-      // toHaveBeenCalled style invocations, so for test files
-      // we are turning this one off.
+      // This is fine in non tests, but in tests, it prevents the
+      // use of toHaveBeenCalled matchers, so it has to be turned off.
       "@typescript-eslint/unbound-method": "off",
     },
   },
-];
+]);
