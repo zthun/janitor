@@ -164,7 +164,6 @@ Point to shared configs if you want opinionated defaults:
 ```js
 const lint = new ZJanitorOptionsLintBuilder()
   .esConfig("@zthun/janitor-eslint-config")
-  .markdownConfig("@zthun/janitor-markdownlint-config")
   .prettyConfig("@zthun/janitor-prettier-config")
   .build();
 ```
