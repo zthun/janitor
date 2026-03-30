@@ -17,7 +17,13 @@ const rules = recommended?.rules;
 export const typescript = defineConfig([
   {
     ...base,
+    files: files(...ExtTs, ...ExtTsx),
+  },
+  {
     ...eslintRecommended,
+    files: files(...ExtTs, ...ExtTsx),
+  },
+  {
     ...recommended,
     languageOptions: {
       parser,
