@@ -9,7 +9,6 @@ import type { IZLinter } from "../linter/linter.mjs";
 import { ZLinterEs } from "../linter/linter-es.mjs";
 import { ZLinterFile } from "../linter/linter-file.mjs";
 import { ZLinterReport } from "../linter/linter-report.mjs";
-import { ZLinterSpelling } from "../linter/linter-spelling.mjs";
 import type { IZJanitorLintArgs } from "./janitor-lint-args.mjs";
 
 /**
@@ -20,12 +19,6 @@ export class ZJanitorLint {
    * The linter for js files.
    */
   public esLint: IZLinter;
-
-  /**
-   * The linter for cspell.  Useful for multiple file types.
-   */
-  public spellLint: IZLinter;
-
   /**
    * The linter for prettier formatting checks.
    */
@@ -47,11 +40,6 @@ export class ZJanitorLint {
       new ZLinterEs(this._logger),
       this._logger,
       "es",
-    );
-    this.spellLint = new ZLinterReport(
-      new ZLinterSpelling(this._logger),
-      this._logger,
-      "various",
     );
     this.prettyLint = new ZLinterFile(
       new ZContentLinterPretty(),
@@ -77,16 +65,8 @@ export class ZJanitorLint {
     let current = true;
     let result = true;
     const { lint = {} } = options;
-    const {
-      esConfig,
-      esFiles,
-      spellingConfig,
-      spellingFiles,
-      spellingFilesExclude,
-      prettyConfig,
-      prettyFiles,
-      prettyFilesExclude,
-    } = lint;
+    const { esConfig, esFiles, prettyConfig, prettyFiles, prettyFilesExclude } =
+      lint;
 
     if (esFiles) {
       this._logger.log(
@@ -95,20 +75,6 @@ export class ZJanitorLint {
         ),
       );
       current = await this.esLint.lint(esFiles, esConfig, undefined);
-      result = result && current;
-    }
-
-    if (spellingFiles) {
-      this._logger.log(
-        chalk.magenta.underline(
-          `Checking spelling for ${spellingFiles.length} globs.`,
-        ),
-      );
-      current = await this.spellLint.lint(
-        spellingFiles,
-        spellingConfig,
-        spellingFilesExclude,
-      );
       result = result && current;
     }
 

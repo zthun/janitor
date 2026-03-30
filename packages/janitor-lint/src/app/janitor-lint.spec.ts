@@ -18,7 +18,6 @@ describe("ZJanitorLint", () => {
   function createTestTarget() {
     const target = new ZJanitorLint(logger);
     target.esLint = new ZLinterSilent();
-    target.spellLint = new ZLinterSilent();
     target.prettyLint = new ZLinterSilent();
     target.config = config;
     return target;
@@ -35,9 +34,6 @@ describe("ZJanitorLint", () => {
       lint: {
         esConfig: "@zthun/janitor-eslint-config",
         esFiles: ["**/*.js"],
-        spellingConfig: "./cspell.json",
-        spellingFiles: ["**/*.md"],
-        spellingFilesExclude: ["**/exclude.md"],
         prettyConfig: "@zthun/janitor-prettier-config",
         prettyFiles: ["**/*.ts"],
         prettyFilesExclude: ["**/exclude.ts"],
@@ -91,22 +87,6 @@ describe("ZJanitorLint", () => {
       it("does not invoke the linter if there are no esFiles.", async () => {
         delete options.lint?.esFiles;
         await assertLinterNotInvoked((t) => t.esLint);
-      });
-    });
-
-    describe("SpellingLint", () => {
-      it("invokes the linter if there are spellingFiles", async () => {
-        await assertLinterInvoked(
-          (t) => t.spellLint,
-          options.lint?.spellingFiles,
-          options.lint?.spellingConfig,
-          options.lint?.spellingFilesExclude,
-        );
-      });
-
-      it("does not invoke the linter if there are no spellingFiles.", async () => {
-        delete options.lint?.spellingFiles;
-        await assertLinterNotInvoked((t) => t.spellLint);
       });
     });
 

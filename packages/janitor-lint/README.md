@@ -149,8 +149,7 @@ const lint = new ZJanitorOptionsLintBuilder()
   // Conventional globs for this workspace
   .commonEsFiles()
   .commonYamlFiles()
-  // Reuse the same files for spell checks and format checks
-  .generateSpellingFiles()
+  // Reuse the same files for format checks
   .generatePrettyFiles()
   // Ignore build artifacts and vendored content
   .commonExcludes()

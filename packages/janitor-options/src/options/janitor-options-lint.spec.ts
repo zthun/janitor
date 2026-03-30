@@ -124,80 +124,6 @@ describe("ZJanitorOptionsLint", () => {
     });
   });
 
-  describe("Spelling", () => {
-    it("should add an include glob", () => {
-      // Arrange.
-      const spellingFileAlpha = "**/*.txt";
-      const spellingFileBravo = "**/*.md";
-      const spellingFileCharlie = "**/docs/*.txt";
-      const target = createTestTarget();
-      // Act.
-      const actual = target
-        .spellingFile()
-        .spellingFile(spellingFileAlpha)
-        .spellingFile(spellingFileBravo)
-        .spellingFile(spellingFileCharlie)
-        .build();
-      // Assert.
-      expect(actual.spellingFiles).toContain(spellingFileAlpha);
-      expect(actual.spellingFiles).toContain(spellingFileBravo);
-      expect(actual.spellingFiles).toContain(spellingFileCharlie);
-    });
-
-    it("should add an exclude glob", () => {
-      // Arrange.
-      const spellingExcludeAlpha = "**/exclude.txt";
-      const spellingExcludeBravo = "**/ignore.txt";
-      const target = createTestTarget();
-
-      // Act.
-      const actual = target
-        .spellingExclude()
-        .spellingExclude(spellingExcludeAlpha)
-        .spellingExclude(spellingExcludeBravo)
-        .build();
-
-      // Assert.
-      expect(actual.spellingFilesExclude).toContain(spellingExcludeAlpha);
-      expect(actual.spellingFilesExclude).toContain(spellingExcludeBravo);
-    });
-
-    it("should set the config", () => {
-      // Arrange.
-      const expected = "path/to/spelling/config.json";
-
-      // Act.
-      const actual = createTestTarget().spellingConfig(expected).build();
-
-      // Assert.
-      expect(actual.spellingConfig).toEqual(expected);
-    });
-
-    describe("Generate", () => {
-      const shouldAddSpellingFiles = (
-        appendFn: (
-          target: ZJanitorOptionsLintBuilder,
-          file: string,
-        ) => ZJanitorOptionsLintBuilder,
-      ) => {
-        // Arrange.
-        const file = "**/*.js";
-        const target = createTestTarget();
-
-        // Act.
-        const config = appendFn(target, file).generateSpellingFiles().build();
-        const { spellingFiles: actual } = config;
-
-        // Assert.
-        expect(actual).toContain(file);
-      };
-
-      it("should add es files to generated spelling files", () => {
-        shouldAddSpellingFiles((t, f) => t.esFile(f));
-      });
-    });
-  });
-
   describe("Exclude All", () => {
     const shouldAddFilesToExclude = (
       filesFn: (config: IZJanitorOptionsLint) => string[] | undefined,
@@ -225,10 +151,6 @@ describe("ZJanitorOptionsLint", () => {
 
     it("should add files to exclude pretty", () => {
       shouldAddFilesToExclude((c) => c.prettyFilesExclude);
-    });
-
-    it("should add files to exclude spelling", () => {
-      shouldAddFilesToExclude((c) => c.spellingFilesExclude);
     });
 
     describe("Common", () => {

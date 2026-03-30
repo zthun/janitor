@@ -10,10 +10,6 @@ export interface IZJanitorOptionsLint {
    * The path to the config file for prettier.
    */
   prettyConfig?: string;
-  /**
-   * The path to the config file for cspell.
-   */
-  spellingConfig?: string;
 
   /**
    * The file globs to lint with eslint.
@@ -23,19 +19,11 @@ export interface IZJanitorOptionsLint {
    * The file globs to lint with prettier.
    */
   prettyFiles?: string[];
-  /**
-   * The file globs to lint with cspell.
-   */
-  spellingFiles?: string[];
 
   /**
    * The files globs to exclude from linting with prettier.
    */
   prettyFilesExclude?: string[];
-  /**
-   * The files globs to exclude from linting with cspell.
-   */
-  spellingFilesExclude?: string[];
 }
 
 /**
@@ -73,20 +61,6 @@ export class ZJanitorOptionsLintBuilder {
   }
 
   /**
-   * Sets the path to the config file for cspell.
-   *
-   * @param spellingConfig -
-   *        The path to the config file for cspell.
-   *
-   * @returns
-   *        This object.
-   */
-  public spellingConfig(spellingConfig: string): ZJanitorOptionsLintBuilder {
-    this.lint.spellingConfig = spellingConfig;
-    return this;
-  }
-
-  /**
    * Adds a list of globs to the list of files to lint with eslint.
    *
    * @param file -
@@ -117,21 +91,6 @@ export class ZJanitorOptionsLintBuilder {
   }
 
   /**
-   * Adds a list of globs to the list of files to lint with cspell.
-   *
-   * @param file -
-   *        The file globs to lint with cspell.
-   *
-   * @returns
-   *        This object.
-   */
-  public spellingFile(file: string | string[] = []) {
-    const files = this.lint.spellingFiles || [];
-    this.lint.spellingFiles = files.concat(file);
-    return this;
-  }
-
-  /**
    * Adds a list of globs to the list of files to exclude from linting with prettier.
    *
    * @param file -
@@ -147,21 +106,6 @@ export class ZJanitorOptionsLintBuilder {
   }
 
   /**
-   * Adds a list of globs to the list of files to exclude from linting with cspell.
-   *
-   * @param file -
-   *        The globs to exclude from linting with cspell.
-   *
-   * @returns
-   *        This object.
-   */
-  public spellingExclude(file: string | string[] = []) {
-    const excludes = this.lint.spellingFilesExclude || [];
-    this.lint.spellingFilesExclude = excludes.concat(file);
-    return this;
-  }
-
-  /**
    * Adds a file to all exclusion lists.
    *
    * @param file -
@@ -171,17 +115,7 @@ export class ZJanitorOptionsLintBuilder {
    *        This object.
    */
   public excludeAll(file: string | string[] = []) {
-    return this.prettyExclude(file).spellingExclude(file);
-  }
-
-  /**
-   * Generates the spelling files based on the other files that have been set.
-   *
-   * @returns
-   *        This object.
-   */
-  public generateSpellingFiles() {
-    return this.spellingFile(this.lint.esFiles);
+    return this.prettyExclude(file);
   }
 
   /**
