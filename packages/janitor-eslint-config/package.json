@@ -20,7 +20,7 @@
     "directory": "packages/janitor-eslint-config"
   },
   "files": [
-    "dist"
+    "lib"
   ],
   "dependencies": {
     "@cspell/eslint-plugin": "^9.7.0",
