@@ -168,7 +168,7 @@ describe("Vite Config Builder", () => {
     });
 
     it("should add the react plugin", () => {
-      shouldAddPlugin("vite:react-refresh", (t) => t.react());
+      shouldAddPlugin("vite:react-swc", (t) => t.react());
     });
   });
 

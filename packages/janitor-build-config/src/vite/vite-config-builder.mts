@@ -1,4 +1,4 @@
-import react from "@vitejs/plugin-react";
+import react from "@vitejs/plugin-react-swc";
 import { castArray, cloneDeep } from "lodash-es";
 import swc from "unplugin-swc";
 import type { LibraryOptions, PluginOption, ServerOptions } from "vite";
