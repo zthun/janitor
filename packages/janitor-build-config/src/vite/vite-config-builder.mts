@@ -59,6 +59,9 @@ export class ZViteConfigBuilder {
   public constructor() {
     this.config = {
       oxc: false,
+      resolve: {
+        tsconfigPaths: true,
+      },
       build: {
         minify: false,
         sourcemap: true,
