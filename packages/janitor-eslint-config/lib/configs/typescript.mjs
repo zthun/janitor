@@ -82,6 +82,11 @@ export const typescript = defineConfig([
       "@typescript-eslint/no-empty-object-type": "off",
       "@typescript-eslint/no-empty-interface": "off",
 
+      // This rule conflicts with development styles like react which use hooks and
+      // often want to pass methods around without the assumption that it is attached
+      // to a this pointer.
+      "@typescript-eslint/unbound-method": "off",
+
       // You will need unsafe declaration merging if you are doing anything
       // with decorators as what often happens is that TypeScript cannot infer
       // the output type of a decorator. So this has to be on to deal with
