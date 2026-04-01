@@ -49,8 +49,20 @@ export const typescript = defineConfig([
       // be required to use any at some point.  Forcing a non use of them
       // means you're spending a bunch of time play type gymnastics and to
       // hell with that.
-      "@typescript-eslint/no-explicit-any": "off",
       "@typescript-eslint/no-namespace": "off",
+
+      // JavaScript is any by default; The sentiment here is understood
+      // to prefer unknown over any but there are times where any
+      // helps, especially if we don't have a typescript api for
+      // a 3rd party dependency.  If something is declared as any,
+      // let's treat it as it is meant to be used.  May revisit this
+      // decision later on, but for now, any is allowed.
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-unsafe-assignment": "off",
+      "@typescript-eslint/no-unsafe-argument": "off",
+      "@typescript-eslint/no-unsafe-call": "off",
+      "@typescript-eslint/no-unsafe-member-access": "off",
+      "@typescript-eslint/no-unsafe-return": "off",
 
       // Would be fine, but there's a bug in this where you have a function with
       // access arguments.  Those constructors are often empty - so we want to let
