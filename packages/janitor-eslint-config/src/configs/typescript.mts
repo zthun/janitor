@@ -11,8 +11,8 @@ import { ExtTs, ExtTsx, files, filesTest } from "../files/files.mjs";
 // Seriously, do better Microsoft.
 const { base, eslintRecommended, recommendedTypeChecked } = configs;
 const name = "typescript-eslint/recommended-type-checked";
-const recommended = recommendedTypeChecked.find((x) => x.name === name);
-const rules = recommended?.rules;
+const recommended = recommendedTypeChecked.find((x) => x.name === name) || {};
+const { rules } = recommended;
 
 export const typescript = defineConfig([
   {
