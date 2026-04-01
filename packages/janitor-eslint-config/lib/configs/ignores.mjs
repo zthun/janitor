@@ -12,5 +12,6 @@ export const ignores = defineConfig([
     "**/.yarn",
     "**/*.husky",
     "**/lerna.json",
+    "**/cspell.json",
   ]),
 ]);
