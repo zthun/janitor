@@ -15,7 +15,7 @@
     "test": "vitest --run --coverage",
     "lint": "eslint",
     "build": "lerna run build",
-    "make": "yarn clean && yarn build && yarn check && yarn lint && yarn test",
+    "make": "yarn clean && yarn check && yarn lint && yarn test && yarn build",
     "postinstall": "husky install"
   },
   "author": "Anthony Bonta",
@@ -26,7 +26,7 @@
     "@types/lodash-es": "^4.17.12",
     "@types/node": "^25.5.0",
     "@vitest/coverage-v8": "^4.1.2",
-    "eslint": "^9.39.4",
+    "eslint": "^10.1.0",
     "husky": "^9.1.7",
     "lerna": "9.0.7",
     "react": "^19.2.4",

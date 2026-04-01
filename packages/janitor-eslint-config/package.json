@@ -25,7 +25,7 @@
   "dependencies": {
     "@cspell/eslint-plugin": "^9.7.0",
     "@eslint/css": "^1.1.0",
-    "@eslint/js": "^10.0.1",
+    "@eslint/js": "^9.39.4",
     "@eslint/json": "^1.2.0",
     "@eslint/markdown": "^8.0.1",
     "@html-eslint/eslint-plugin": "^0.58.1",
@@ -43,7 +43,7 @@
   },
   "devDependencies": {
     "@zthun/janitor-build-config": "^19.5.6",
-    "eslint": "^10.1.0",
+    "eslint": "^9.39.4",
     "prettier": "^3.8.1",
     "typescript": "~5.9.3",
     "vite": "^8.0.3"
