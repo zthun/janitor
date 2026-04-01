@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [20.0.0](https://github.com/zthun/janitor/compare/v19.5.6...v20.0.0) (2026-04-01)
+
+### ⚠ BREAKING CHANGES
+
+* janitor lint is now deprecated
+* eslint recommended type check rules are now turned on
+
+### Features
+
+* added css support for eslint shared config
+* eslint config now checks spelling
+* eslint config now embeds the full prettier config
+* eslint config now lints json files
+* eslint config now lints yaml files
+* eslint config now validates vitest techniques
+* eslint now check import and export sorting
+* eslint now reports on react hooks
+* eslint now supports html
+* eslint recommended type check rules are now turned on
+* eslint will now lint markdown files
+* janitor lint is now deprecated
+* janitor-eslint-config now has global ignores
+
+
 ## <small>19.5.6 (2026-01-31)</small>
 
 * build: update outdated packages ([eee3a6b](https://github.com/zthun/janitor/commit/eee3a6b))

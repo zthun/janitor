@@ -1,7 +1,7 @@
 {
   "npmClient": "yarn",
   "stream": true,
-  "version": "19.5.6",
+  "version": "20.0.0",
   "nx": true,
   "command": {
     "publish": {
@@ -10,7 +10,9 @@
   },
   "changelogPreset": {
     "name": "conventionalcommits",
-    "issuePrefixes": ["#"],
+    "issuePrefixes": [
+      "#"
+    ],
     "types": [
       {
         "type": "feat",

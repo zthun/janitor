@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [20.0.0](https://github.com/zthun/janitor/compare/v19.5.6...v20.0.0) (2026-04-01)
+
+### ⚠ BREAKING CHANGES
+
+* janitor lint is now deprecated
+* eslint recommended type check rules are now turned on
+* janitor-build-config now requires vite 8
+
+### Features
+
+* eslint now check import and export sorting
+* eslint recommended type check rules are now turned on
+* janitor lint is now deprecated
+* janitor-build-config now requires vite 8
+* vite config builder now uses tsconfigpaths natively instead of a plugin
+
+### Bug Fixes
+
+* dts now properly only outputs types from the src directory
+
+
 ## <small>19.5.6 (2026-01-31)</small>
 
 * build: update outdated packages ([eee3a6b](https://github.com/zthun/janitor/commit/eee3a6b))
