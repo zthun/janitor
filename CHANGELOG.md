@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [20.0.3](https://github.com/zthun/janitor/compare/v20.0.2...v20.0.3) (2026-04-01)
+
+### Bug Fixes
+
+* turn off unbound method for react app support
+
+
 ## [20.0.2](https://github.com/zthun/janitor/compare/v20.0.1...v20.0.2) (2026-04-01)
 
 ### Bug Fixes
