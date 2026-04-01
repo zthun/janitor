@@ -1,7 +1,7 @@
 import { defineConfig } from "eslint/config";
 import globals from "globals";
 
-function environment(environment: object) {
+function environment(environment) {
   return defineConfig({
     languageOptions: {
       globals: {

@@ -22,6 +22,15 @@ export const javascript = defineConfig([
   {
     ..._import.flatConfigs.recommended,
     files: files(...ExtEs),
+    languageOptions: {
+      parserOptions: {
+        // The ecma version from the import config is 2018, and we
+        // want some later features.  This should support
+        // our current version that janitor-ts-config supports
+        // by default.
+        ecmaVersion: 2022,
+      },
+    },
   },
   {
     files: files(...ExtEs),

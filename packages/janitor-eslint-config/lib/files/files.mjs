@@ -57,7 +57,7 @@ export const ExtYaml = ["yml", "yaml"];
  * @returns
  *        A glob pattern for each extension string provided.
  */
-export function files(...extensions: string[]) {
+export function files(...extensions) {
   return extensions.map((ext) => `**/*.${ext}`);
 }
 
@@ -70,6 +70,6 @@ export function files(...extensions: string[]) {
  * @returns
  *        A glob pattern for test files for each extension string provided.
  */
-export function filesTest(...extensions: string[]) {
+export function filesTest(...extensions) {
   return extensions.flatMap((ext) => [`**/*.test.${ext}`, `**/*.spec.${ext}`]);
 }
