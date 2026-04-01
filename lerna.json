@@ -5,14 +5,12 @@
   "nx": true,
   "command": {
     "publish": {
-      "message": "chore(release): publish [skip ci]"
+      "message": "build(release): publish [skip ci]"
     }
   },
   "changelogPreset": {
     "name": "conventionalcommits",
-    "issuePrefixes": [
-      "#"
-    ],
+    "issuePrefixes": ["#"],
     "types": [
       {
         "type": "feat",

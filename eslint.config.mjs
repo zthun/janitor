@@ -1,12 +1,4 @@
-import {
-  environments,
-  react,
-  recommended,
-} from "@zthun/janitor-lint-config/eslint";
+/* eslint-disable import/no-extraneous-dependencies */
+import { environments, recommended } from "@zthun/janitor-eslint-config";
 
-export default [
-  ...recommended,
-  ...react,
-  ...environments.node,
-  ...environments.browser,
-];
+export default [...recommended, ...environments.node];

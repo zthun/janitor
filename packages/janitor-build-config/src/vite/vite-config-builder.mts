@@ -4,9 +4,9 @@ import swc from "unplugin-swc";
 import type { LibraryOptions, PluginOption, ServerOptions } from "vite";
 import { checker } from "vite-plugin-checker";
 import dtsPlugin from "vite-plugin-dts";
-import tsConfigPaths from "vite-tsconfig-paths";
 import type { ViteUserConfig } from "vitest/config";
 import type { InlineConfig } from "vitest/node";
+
 import { externalizeDeps } from "../plugin/vite-plugin-externalize-deps.js";
 import { ZViteLibraryBuilder } from "./vite-library-builder.mjs";
 
@@ -58,6 +58,10 @@ export class ZViteConfigBuilder {
    */
   public constructor() {
     this.config = {
+      oxc: false,
+      resolve: {
+        tsconfigPaths: true,
+      },
       build: {
         minify: false,
         sourcemap: true,
@@ -72,7 +76,6 @@ export class ZViteConfigBuilder {
             },
           },
         }),
-        tsConfigPaths(),
       ],
     };
   }
@@ -187,6 +190,10 @@ export class ZViteConfigBuilder {
         // actual paths are correct.
         paths: {},
       },
+      // Our tsconfig will include all ts and mts files, when we output our
+      // source code, we only want the types found in the src directory.
+      // Anything outside of this is config and we don't want to include it.
+      entryRoot: "src",
       // Make sure to exclude spec and test files.
       exclude: ["**/*.{spec,test}.{js,mjs,cjs,ts,mts,jsx,tsx}"],
     });

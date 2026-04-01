@@ -40,7 +40,7 @@ export class ZTypedocConfigBuilder {
    * @returns
    *        This object.
    */
-  public entry(glob: string | string) {
+  public entry(glob: string) {
     const entry = this.typedoc.entryPoints || [];
     this.typedoc.entryPoints = entry.concat(glob);
     return this;

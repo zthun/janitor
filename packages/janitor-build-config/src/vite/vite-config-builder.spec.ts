@@ -1,6 +1,7 @@
 import type { LibraryOptions, Plugin } from "vite";
 import dts from "vite-plugin-dts";
 import { describe, expect, it } from "vitest";
+
 import { externalizeDeps } from "../plugin/vite-plugin-externalize-deps.js";
 import { ZViteConfigBuilder } from "./vite-config-builder.mjs";
 import { ZViteLibraryBuilder } from "./vite-library-builder.mjs";
@@ -68,10 +69,6 @@ describe("Vite Config Builder", () => {
 
       expect(actual).toContain(a.name);
       expect(actual).toContain(b.name);
-    });
-
-    it("should add the tsConfigPaths plugin by default", () => {
-      shouldAddPlugin("vite-tsconfig-paths", (t) => t);
     });
 
     it("should add the swc plugin by default", () => {

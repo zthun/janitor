@@ -7,16 +7,11 @@
     "eslint-config"
   ],
   "type": "module",
-  "types": "./dist/index.d.mts",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
+  "types": "./lib/index.d.mts",
+  "module": "./lib/index.mjs",
   "exports": {
-    "types": "./dist/index.d.mts",
-    "require": "./dist/index.cjs",
-    "import": "./dist/index.js"
-  },
-  "scripts": {
-    "build": "vite build"
+    "types": "./lib/index.d.mts",
+    "import": "./lib/index.mjs"
   },
   "license": "MIT",
   "repository": {
@@ -25,28 +20,38 @@
     "directory": "packages/janitor-eslint-config"
   },
   "files": [
-    "dist"
+    "lib"
   ],
   "dependencies": {
-    "@eslint/js": "^9.39.2",
+    "@cspell/eslint-plugin": "^9.7.0",
+    "@eslint/css": "^1.1.0",
+    "@eslint/js": "^9.39.4",
+    "@eslint/json": "^1.2.0",
+    "@eslint/markdown": "^8.0.1",
+    "@html-eslint/eslint-plugin": "^0.58.1",
+    "@vitest/eslint-plugin": "^1.6.14",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-prettier": "^5.5.5",
     "eslint-plugin-react": "^7.37.5",
-    "globals": "^17.2.0",
-    "typescript-eslint": "^8.54.0"
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-unused-imports": "^4.4.1",
+    "eslint-plugin-yml": "^3.3.1",
+    "globals": "^17.4.0",
+    "typescript-eslint": "^8.58.0"
   },
   "devDependencies": {
     "@zthun/janitor-build-config": "^19.5.6",
-    "eslint": "^9.39.2",
+    "eslint": "^9.39.4",
     "prettier": "^3.8.1",
     "typescript": "~5.9.3",
-    "vite": "^7.3.1"
+    "vite": "^8.0.3"
   },
   "peerDependencies": {
-    "eslint": "^9.0.0",
-    "prettier": "^3.0.0",
-    "react": ">=18.0.0 <=20.0.0",
+    "eslint": ">=9",
+    "prettier": ">=3",
+    "react": ">=18 <20",
     "typescript": "^5.0.0"
   },
   "peerDependenciesMeta": {

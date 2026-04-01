@@ -12,12 +12,16 @@ It is not only important that your code works, but it is also important that
 your code is somewhat clean. This leads to less bugs, less complaints, and less
 rot.
 
-This repository contains series of tools and configurations that help with code
-cleanliness. By keeping our code clean and consistent, we can focus on writing
-high quality working code without worrying about how it looks.
+This repository contains several shared configurations for eslint, vite,
+tsconfig, and typedoc.
+
+## Janitor Lint
+
+This is no more. ESLint 9.x is now a multi format linter and can do everything
+janitor lint was able to do and more. Thus, janitor-lint has been retired and
+it's better to just use eslint as the be all end all linter for all things
+JavaScript, TypeScript, CSS, Markdown, HTML, JSON and YAML.
 
 ## Community
 
-See [Contributing](CONTRIBUTING.md) for info on how to contribute. See
-[Code of Conduct](CODE_OF_CONDUCT.md) for acceptable behavior.See
-[License](LICENSE.md) for license information.
+See [License](LICENSE.md) for license information.

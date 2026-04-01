@@ -1,5 +1,8 @@
 import { resolve } from "node:path";
+
+import type { UserConfig } from "vite";
 import { describe, expect, it } from "vitest";
+
 import type { ExternalizeOptions } from "./vite-plugin-externalize-deps.js";
 import { externalizeDeps } from "./vite-plugin-externalize-deps.js";
 
@@ -11,10 +14,10 @@ describe("Externalize Dependencies", () => {
   const createTestTarget = (options?: ExternalizeOptions) => {
     const plugin = externalizeDeps(options);
     const { config } = plugin;
-    const _config = config as any;
-    const { build } = _config();
-    const { rollupOptions } = build;
-    const { external } = rollupOptions;
+    const _config = config as unknown as () => UserConfig;
+    const { build = {} } = _config();
+    const { rolldownOptions = {} } = build;
+    const { external } = rolldownOptions;
     return external as (source: string) => void;
   };
 

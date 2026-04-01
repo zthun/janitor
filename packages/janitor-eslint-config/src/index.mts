@@ -1,7 +1,0 @@
-export * from "./configs/environments.mjs";
-export * from "./configs/imports.mjs";
-export * from "./configs/javascript.mjs";
-export * from "./configs/prettier.mjs";
-export * from "./configs/react.mjs";
-export * from "./configs/recommended.mjs";
-export * from "./configs/typescript.mjs";
