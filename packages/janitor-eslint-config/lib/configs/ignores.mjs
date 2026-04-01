@@ -11,5 +11,6 @@ export const ignores = defineConfig([
     // Generated
     "**/.yarn",
     "**/*.husky",
+    "**/lerna.json",
   ]),
 ]);
