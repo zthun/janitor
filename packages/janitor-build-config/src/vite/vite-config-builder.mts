@@ -137,7 +137,7 @@ export class ZViteConfigBuilder {
    *        This object.
    */
   public alias(key: string, value: string) {
-    this.config.resolve = this.config.resolve || {};
+    this.config.resolve ??= {};
     this.config.resolve.alias = this.config.resolve.alias || {};
     this.config.resolve.alias[key] = value;
     return this;
