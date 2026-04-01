@@ -13,8 +13,13 @@ export const html = defineConfig([
   {
     files: files(...ExtHtml),
     rules: {
-      // Prettier defaults to 2 spaces, so this needs to as well.
-      "@html-eslint/indent": ["error", 2],
+      // All of these rules conflict with prettier and that linter
+      // is the highest priority for formatting.  So we don't need
+      // these rules turned on.
+      "@html-eslint/indent": "off",
+      "@html-eslint/no-extra-spacing-attrs": "off",
+      "@html-eslint/require-closing-tags": "off",
+      "@html-eslint/attrs-newline": "off",
     },
   },
   {
