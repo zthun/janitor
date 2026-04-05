@@ -3578,7 +3578,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zthun/janitor-ts-config@workspace:packages/janitor-ts-config"
   peerDependencies:
-    typescript: ">=6 <7"
+    typescript: ">=5 <7"
   languageName: unknown
   linkType: soft
 
