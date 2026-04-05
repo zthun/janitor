@@ -4,8 +4,5 @@
     "@zthun/janitor-ts-config/base.json",
     "@zthun/janitor-ts-config/node.json"
   ],
-  "compilerOptions": {
-    "baseUrl": "."
-  },
   "include": ["**/*.ts", "**/*.mts"]
 }
