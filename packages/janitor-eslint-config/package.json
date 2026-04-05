@@ -45,14 +45,14 @@
     "@zthun/janitor-build-config": "^20.0.2",
     "eslint": "^9.39.4",
     "prettier": "^3.8.1",
-    "typescript": "~5.9.3",
+    "typescript": "~6.0.2",
     "vite": "^8.0.3"
   },
   "peerDependencies": {
     "eslint": ">=9",
     "prettier": ">=3",
     "react": ">=18 <20",
-    "typescript": "^5.0.0"
+    "typescript": ">=5 <7"
   },
   "peerDependenciesMeta": {
     "react": {
