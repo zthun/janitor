@@ -41,8 +41,8 @@ export class ZViteServerBuilder {
     return this.strictPort().host("0.0.0.0").allowedHost(true);
   }
 
-  public build() {
+  public build(): ServerOptions {
     const clone = cloneDeep(this.options);
-    return omitBy<ServerOptions>(clone, isUndefined) as ServerOptions;
+    return omitBy<ServerOptions>(clone, isUndefined);
   }
 }
