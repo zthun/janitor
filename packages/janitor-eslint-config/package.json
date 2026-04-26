@@ -1,6 +1,6 @@
 {
   "name": "@zthun/janitor-eslint-config",
-  "version": "20.0.4",
+  "version": "20.0.5",
   "description": "A shared configuration for eslint for @zthun scoped projects.",
   "keywords": [
     "eslint",
@@ -42,7 +42,7 @@
     "typescript-eslint": "^8.59.0"
   },
   "devDependencies": {
-    "@zthun/janitor-build-config": "^20.0.4",
+    "@zthun/janitor-build-config": "^20.0.5",
     "eslint": "^9.39.4",
     "prettier": "^3.8.3",
     "typescript": "~6.0.3",

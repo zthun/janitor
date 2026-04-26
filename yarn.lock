@@ -3511,7 +3511,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zthun/janitor-build-config@npm:^20.0.4, @zthun/janitor-build-config@workspace:packages/janitor-build-config":
+"@zthun/janitor-build-config@npm:^20.0.5, @zthun/janitor-build-config@workspace:packages/janitor-build-config":
   version: 0.0.0-use.local
   resolution: "@zthun/janitor-build-config@workspace:packages/janitor-build-config"
   dependencies:
@@ -3550,7 +3550,7 @@ __metadata:
     "@eslint/markdown": "npm:^8.0.1"
     "@html-eslint/eslint-plugin": "npm:^0.59.0"
     "@vitest/eslint-plugin": "npm:^1.6.16"
-    "@zthun/janitor-build-config": "npm:^20.0.4"
+    "@zthun/janitor-build-config": "npm:^20.0.5"
     eslint: "npm:^9.39.4"
     eslint-config-prettier: "npm:^10.1.8"
     eslint-plugin-import: "npm:^2.32.0"
