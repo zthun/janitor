@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [20.0.7](https://github.com/zthun/janitor/compare/v20.0.6...v20.0.7) (2026-05-26)
+
+### Bug Fixes
+
+* turn off no-extra-spacing-tags
+
+
 ## [20.0.6](https://github.com/zthun/janitor/compare/v20.0.5...v20.0.6) (2026-05-26)
 
 **Note:** Version bump only for package @zthun/janitor-eslint-config
