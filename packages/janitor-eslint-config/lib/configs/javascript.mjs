@@ -10,6 +10,9 @@ export const javascript = defineConfig([
   {
     ...js.configs.recommended,
     files: files(...ExtEs),
+  },
+  {
+    files: files(...ExtEs),
     rules: {
       // We want to support == null so we get a good check for undefined
       // or null
@@ -28,6 +31,9 @@ export const javascript = defineConfig([
         ecmaVersion: 2022,
       },
     },
+  },
+  {
+    files: files(...ExtEs),
     rules: {
       // This lint error is the main reason to use import as we want to make
       // sure we've installed our dependencies correctly.
