@@ -20,6 +20,9 @@ export const react = defineConfig([
   {
     ..._hooks.configs.flat.recommended,
     files: files(...ExtEs),
+  },
+  {
+    files: files(...ExtEs),
     rules: {
       // There are times when refs are appropriate, especially if you are using
       // html dialog based elements, which you will most likely need to use
