@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [21.0.1](https://github.com/zthun/janitor/compare/v21.0.0...v21.0.1) (2026-08-09)
+
+### Bug Fixes
+
+* removed react-hooks plugin ([d0040b5](https://github.com/zthun/janitor/commit/d0040b55ae036f3be934c7e8382e9492b400720f))
+
+
 # [21.0.0](https://github.com/zthun/janitor/compare/v20.0.7...v21.0.0) (2026-08-09)
 
 ### Build System
