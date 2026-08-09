@@ -16,7 +16,7 @@ describe("Vite Library Builder", () => {
       const actual = target.index().build();
 
       // Assert.
-      expect(actual.entry[name]).toEqual(path);
+      expect(actual.entry?.[name]).toEqual(path);
     });
 
     it("should add a new entry", () => {
@@ -30,8 +30,8 @@ describe("Vite Library Builder", () => {
       const { entry } = actual;
 
       // Assert.
-      expect(Object.keys(entry).length).toEqual(2);
-      expect(entry[name]).toEqual(path);
+      expect(Object.keys(entry ?? {}).length).toEqual(2);
+      expect(entry?.[name]).toEqual(path);
     });
   });
 });
