@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [21.0.0](https://github.com/zthun/janitor/compare/v20.0.7...v21.0.0) (2026-08-09)
+
+### Build System
+
+* update lint packages ([ce20530](https://github.com/zthun/janitor/commit/ce20530473ca91d07179f1d16100954540f58c0c))
+
+### BREAKING CHANGES
+
+* eslint 10.x is now required
+
+
 ## [20.0.7](https://github.com/zthun/janitor/compare/v20.0.6...v20.0.7) (2026-05-26)
 
 ### Bug Fixes
