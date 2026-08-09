@@ -1,3 +1,4 @@
+import { castArray, first } from "lodash-es";
 import type { LibraryOptions, Plugin } from "vite";
 import dts from "vite-plugin-dts";
 import { describe, expect, it } from "vitest";
@@ -60,7 +61,7 @@ describe("Vite Config Builder", () => {
     it("should add all plugins", () => {
       // Arrange
       const a = externalizeDeps();
-      const b = dts();
+      const b = first(castArray(dts()));
       const target = createTestTarget();
 
       // Act
@@ -68,7 +69,7 @@ describe("Vite Config Builder", () => {
       const actual = plugins?.map((p) => p as Plugin).map((p) => p.name);
 
       expect(actual).toContain(a.name);
-      expect(actual).toContain(b.name);
+      expect(actual).toContain(b?.name);
     });
 
     it("should add the swc plugin by default", () => {
@@ -112,7 +113,7 @@ describe("Vite Config Builder", () => {
     });
 
     it("should add the dts plugin", () => {
-      shouldAddPlugin("vite:dts", (t) => t.library());
+      shouldAddPlugin("unplugin-dts", (t) => t.library());
     });
   });
 
