@@ -23,33 +23,33 @@
     "lib"
   ],
   "dependencies": {
-    "@cspell/eslint-plugin": "^10.0.0",
-    "@eslint/css": "^1.2.0",
-    "@eslint/js": "^9.39.4",
-    "@eslint/json": "^1.2.0",
-    "@eslint/markdown": "^8.0.2",
-    "@html-eslint/eslint-plugin": "^0.61.0",
-    "@vitest/eslint-plugin": "^1.6.18",
+    "@cspell/eslint-plugin": "^10.0.1",
+    "@eslint-react/eslint-plugin": "^5.18.3",
+    "@eslint/css": "^1.4.0",
+    "@eslint/js": "^10.0.1",
+    "@eslint/json": "^2.0.1",
+    "@eslint/markdown": "^8.0.3",
+    "@html-eslint/eslint-plugin": "^0.64.0",
+    "@vitest/eslint-plugin": "^1.6.26",
     "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-prettier": "^5.5.5",
-    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-import-x": "^4.17.1",
+    "eslint-plugin-prettier": "^5.5.6",
     "eslint-plugin-react-hooks": "^7.1.1",
-    "eslint-plugin-simple-import-sort": "^13.0.0",
+    "eslint-plugin-simple-import-sort": "^14.0.0",
     "eslint-plugin-unused-imports": "^4.4.1",
-    "eslint-plugin-yml": "^3.3.2",
-    "globals": "^17.6.0",
-    "typescript-eslint": "^8.60.0"
+    "eslint-plugin-yml": "^3.8.1",
+    "globals": "^17.9.0",
+    "typescript-eslint": "^8.66.0"
   },
   "devDependencies": {
     "@zthun/janitor-build-config": "^20.0.6",
-    "eslint": "^9.39.4",
-    "prettier": "^3.8.3",
-    "typescript": "~6.0.3",
-    "vite": "^8.0.14"
+    "eslint": "^10.8.1",
+    "prettier": "^3.9.6",
+    "typescript": "^6.0.3",
+    "vite": "^8.2.1"
   },
   "peerDependencies": {
-    "eslint": ">=9",
+    "eslint": "^10",
     "prettier": ">=3",
     "react": ">=18 <20",
     "typescript": ">=5 <7"

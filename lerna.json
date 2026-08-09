@@ -9,7 +9,7 @@
     }
   },
   "changelogPreset": {
-    "name": "conventionalcommits",
+    "name": "angular",
     "issuePrefixes": [
       "#"
     ],
