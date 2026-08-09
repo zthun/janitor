@@ -15,8 +15,7 @@
     "test": "vitest --run --coverage",
     "lint": "eslint",
     "build": "lerna run build",
-    "make": "yarn clean && yarn check && yarn lint && yarn test && yarn build",
-    "postinstall": "husky install"
+    "make": "yarn clean && yarn check && yarn lint && yarn test && yarn build"
   },
   "author": "Anthony Bonta",
   "devDependencies": {
