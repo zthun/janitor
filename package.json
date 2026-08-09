@@ -21,7 +21,7 @@
   "author": "Anthony Bonta",
   "devDependencies": {
     "@commitlint/cli": "^21.2.1",
-    "@commitlint/config-conventional": "^21.2.0",
+    "@commitlint/config-angular": "^21.2.0",
     "@types/eslint": "^9.6.1",
     "@types/lodash-es": "^4.17.12",
     "@types/node": "^26.2.0",

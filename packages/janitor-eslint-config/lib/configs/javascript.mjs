@@ -1,6 +1,6 @@
 import js from "@eslint/js";
 import { defineConfig } from "eslint/config";
-import _import from "eslint-plugin-import";
+import { flatConfigs as _import } from "eslint-plugin-import-x";
 import _simple from "eslint-plugin-simple-import-sort";
 import _unused from "eslint-plugin-unused-imports";
 
@@ -10,9 +10,6 @@ export const javascript = defineConfig([
   {
     ...js.configs.recommended,
     files: files(...ExtEs),
-  },
-  {
-    files: files(...ExtEs),
     rules: {
       // We want to support == null so we get a good check for undefined
       // or null
@@ -20,7 +17,7 @@ export const javascript = defineConfig([
     },
   },
   {
-    ..._import.flatConfigs.recommended,
+    ..._import.recommended,
     files: files(...ExtEs),
     languageOptions: {
       parserOptions: {
@@ -31,21 +28,18 @@ export const javascript = defineConfig([
         ecmaVersion: 2022,
       },
     },
-  },
-  {
-    files: files(...ExtEs),
     rules: {
       // This lint error is the main reason to use import as we want to make
       // sure we've installed our dependencies correctly.
-      "import/no-extraneous-dependencies": "error",
+      "import-x/no-extraneous-dependencies": "error",
 
       // These are straight up broken with Typescript when you need to work with
       // mts files that must have the file extension present.  These can be fixed
       // using resolves, but it's such a pain and it's just not worth the hassle
       // for basic linting support.  The no-extraneous-dependencies is really
       // the recommended config we want, so these being forced off are fine.
-      "import/named": "off",
-      "import/no-unresolved": "off",
+      "import-x/named": "off",
+      "import-x/no-unresolved": "off",
     },
   },
   {
@@ -75,7 +69,7 @@ export const javascript = defineConfig([
       // auto fix when it's detected and this one does, so we are favoring this
       // one instead.  We're turning off no-unused-modules in case the default
       // recommended config ever turns it on.
-      "import/no-unused-modules": "off",
+      "import-x/no-unused-modules": "off",
       "unused-imports/no-unused-imports": "error",
     },
   },
