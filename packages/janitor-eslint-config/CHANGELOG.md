@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [21.0.3](https://github.com/zthun/janitor/compare/v21.0.2...v21.0.3) (2026-08-10)
+
+### Bug Fixes
+
+* turn off broken rules ([7ea4b3b](https://github.com/zthun/janitor/commit/7ea4b3ba3641f9a424fd957c122bac4afc85410d))
+
+
 ## [21.0.2](https://github.com/zthun/janitor/compare/v21.0.1...v21.0.2) (2026-08-10)
 
 ### Bug Fixes
