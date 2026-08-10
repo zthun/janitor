@@ -46,6 +46,7 @@ export const javascript = defineConfig([
       // the recommended config we want, so these being forced off are fine.
       "import-x/named": "off",
       "import-x/no-unresolved": "off",
+      "import-x/namespace": "off",
     },
   },
   {
