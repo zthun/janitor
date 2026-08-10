@@ -16,4 +16,13 @@ export const react = defineConfig([
     ..._react.configs.recommended,
     files: files(...ExtEs),
   },
+  {
+    files: files(...ExtEs),
+    rules: {
+      // This one is broken.  You actually don't need a removeEventListener
+      // if you are using an AbortController.  This results in false
+      // positives.
+      "@eslint-react/web-api-no-leaked-event-listener": "off",
+    },
+  },
 ]);
