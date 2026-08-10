@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [21.0.2](https://github.com/zthun/janitor/compare/v21.0.1...v21.0.2) (2026-08-10)
+
+### Bug Fixes
+
+* import-x/namespace is now turned off ([4653e90](https://github.com/zthun/janitor/commit/4653e905dbd5e24c9e51d7893712cae21562b6de))
+
+
 ## [21.0.1](https://github.com/zthun/janitor/compare/v21.0.0...v21.0.1) (2026-08-09)
 
 ### Bug Fixes
