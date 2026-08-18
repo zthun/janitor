@@ -5,7 +5,7 @@ import dts from "unplugin-dts/vite";
 import type { Plugin } from "vite";
 
 import { resolveCwd } from "../path/resolve-cwd.mjs";
-import { externalizeDeps } from "./plugin-externalize-deps.mjs";
+import { extensionExternalize } from "./extension-externalize.mjs";
 
 /**
  * Turns any project into a shared library.
@@ -24,7 +24,6 @@ import { externalizeDeps } from "./plugin-externalize-deps.mjs";
  * When you classify something as a library, source maps are turned on,
  * and none of your code for it will be minified.  This is to help with
  * debugging library code outside of the library development environment.
- * This is the only type of plugin that will not bundle your code for you.
  * Module libraries in the janitor system are not expected to be deployed
  * to a system by themselves.  They are bundled with the overarching parent
  * application.
@@ -34,7 +33,7 @@ import { externalizeDeps } from "./plugin-externalize-deps.mjs";
  */
 export function extensionLibrary(): Plugin[] {
   return [
-    externalizeDeps(),
+    ...extensionExternalize(),
     ...castArray(
       dts({
         compilerOptions: {
