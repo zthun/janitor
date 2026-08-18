@@ -5,7 +5,7 @@ import dts from "unplugin-dts/vite";
 import type { Plugin } from "vite";
 
 import { resolveCwd } from "../path/resolve-cwd.mjs";
-import { externalizeDeps } from "../plugins/plugin-externalize-deps.mjs";
+import { externalizeDeps } from "./plugin-externalize-deps.mjs";
 
 /**
  * Turns any project into a shared library.
