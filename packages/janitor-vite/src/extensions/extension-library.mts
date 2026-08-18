@@ -42,11 +42,11 @@ export function extensionLibrary(): Plugin[] {
           // actual paths are correct.
           paths: {},
         },
-        // Our tsconfig will include all ts and mts files, when we output our
-        // source code, we only want the types found in the src directory.
-        // Anything outside of this is config and we don't want to include it.
-        entryRoot: "src",
-        // Make sure to exclude spec and test files.
+        // We only want to include output source files, not any config files outside
+        // of our source code directory.
+        include: ["src/**/*.{js,mjs,cjs,ts,mts,jsx,tsx}"],
+        // Make sure to exclude spec and test files as well, these don't need to
+        // be included (and shouldn't be).
         exclude: ["**/*.{spec,test}.{js,mjs,cjs,ts,mts,jsx,tsx}"],
       }),
     ),
