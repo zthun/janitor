@@ -1,3 +1,4 @@
+export * from "./extensions/extension-externalize.mjs";
 export * from "./extensions/extension-library.mjs";
 export * from "./projects/project.mjs";
 export * from "./projects/project-cli.mjs";

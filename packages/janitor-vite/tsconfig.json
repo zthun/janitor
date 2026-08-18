@@ -1,0 +1,7 @@
+{
+  "extends": [
+    "@zthun/janitor-ts-config/base.json",
+    "@zthun/janitor-ts-config/node.json"
+  ],
+  "include": ["**/*.ts", "**/*.mts"]
+}
