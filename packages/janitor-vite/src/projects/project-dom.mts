@@ -1,3 +1,5 @@
+import "vitest/config";
+
 import type { Plugin } from "vite";
 
 import { project } from "./project.mjs";
