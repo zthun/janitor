@@ -3,6 +3,8 @@ import { resolve } from "node:path";
 import type { Plugin, UserConfig } from "vite";
 import { describe, expect, it } from "vitest";
 
+import type { ExtensionDevServerOptions } from "./extension-dev-server.mjs";
+import { extensionDevServer } from "./extension-dev-server.mjs";
 import type { ExternalizeOptions } from "./extension-externalize.mjs";
 import { extensionExternalize } from "./extension-externalize.mjs";
 import { extensionLibrary } from "./extension-library.mjs";
@@ -25,12 +27,13 @@ describe("Extension", () => {
     expected: T,
     target: string,
     value: (c: UserConfig | undefined) => T,
-    fn: () => Plugin[],
+    fn: Plugin[] | (() => Plugin[]),
   ) {
     // Arrange.
+    const _fn = typeof fn === "function" ? fn : () => fn;
 
     // Act.
-    const plugins = fn();
+    const plugins = _fn();
     const plugin = plugins.find((p) => p.name === target);
     const config = plugin?.config as unknown as (() => UserConfig) | undefined;
     const configured = config?.();
@@ -157,6 +160,33 @@ describe("Extension", () => {
         `${domain}:extension-library`,
         (c) => c?.build?.sourcemap,
         extensionLibrary,
+      );
+    });
+  });
+
+  describe("Server", () => {
+    it("should add the plugin", () => {
+      shouldAddPlugin(`${domain}:extension-dev-server`, extensionDevServer);
+    });
+
+    it("should bind to the correct host", () => {
+      const options: ExtensionDevServerOptions = { host: "127.0.0.1" };
+      shouldSetConfig(
+        options.host,
+        `${domain}:extension-dev-server`,
+        (c) => c?.server?.host,
+        extensionDevServer(options),
+      );
+    });
+
+    it("should bind to the correct port", () => {
+      const options: ExtensionDevServerOptions = { port: 5090 };
+
+      shouldSetConfig(
+        options.port,
+        `${domain}:extension-dev-server`,
+        (c) => c?.server?.port,
+        extensionDevServer(options),
       );
     });
   });
