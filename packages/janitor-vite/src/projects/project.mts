@@ -28,7 +28,7 @@ export function project(): Plugin[] {
       name: "janitor:project",
       config: () => {
         return {
-          ocx: false,
+          oxc: false,
           resolve: {
             tsconfigPaths: true,
           },
