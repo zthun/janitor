@@ -130,7 +130,9 @@ describe("Project", () => {
     });
 
     it("should enter into the app at main.mts under the source folder", () => {
-      const expected = resolve(cwd(), "./src/main.mts");
+      const main = resolve(cwd(), "./src/main.mts");
+      const expected = expect.objectContaining({ main });
+
       shouldSetConfig(
         expected,
         `${domain}:project-node`,

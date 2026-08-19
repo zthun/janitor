@@ -19,13 +19,17 @@ import { project } from "./project.mjs";
 export function projectNode(): Plugin[] {
   return [
     ...project(),
-    ...extensionExternalize(),
+    ...extensionExternalize({ packageJson: false }),
     {
       name: "janitor:project-node",
       config: (current) => {
         const cwd = resolveCwd(current);
 
         return {
+          resolve: {
+            conditions: ["module", "node", "development|production"],
+            mainFields: ["module", "jsnext:main", "jsnext"],
+          },
           build: {
             lib: {
               entry: {
