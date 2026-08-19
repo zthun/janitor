@@ -1,6 +1,9 @@
 import { cloneDeep, isUndefined, omitBy } from "lodash-es";
 import type { ServerOptions } from "vite";
 
+/**
+ * @deprecated Use @zthun/janitor-vite plugins instead.  Specifically extensionDevServer()
+ */
 export class ZViteServerBuilder {
   private options: ServerOptions = {};
 
