@@ -24,8 +24,8 @@ export interface ExternalizeOptions {
 /**
  * An externalize extension tells a project to not bundle the dependencies together.  
  *
- * This is mostly used for libraries and if you use extensionLibrary(), you do not
- * need to include this extension as it will be included for you already.
+ * This is mostly used for libraries and if you use extensionLibrary(), or projectNode()
+ * you do not need to include this extension as it will be included for you already.
  *
  * @param options -
  *        Optional options for how to externalize dependency values.
