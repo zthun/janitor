@@ -7,7 +7,7 @@
   "module": "./dist/index.js",
   "exports": {
     "types": "./dist/index.d.mts",
-    "import": "./disc/index.js"
+    "import": "./dist/index.js"
   },
   "scripts": {
     "build": "vite build"
