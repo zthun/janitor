@@ -19,7 +19,7 @@ import { project } from "./project.mjs";
 export function projectNode(): Plugin[] {
   return [
     ...project(),
-    ...extensionExternalize({ packageJson: false }),
+    ...extensionExternalize(),
     {
       name: "janitor:project-node",
       config: (current) => {
@@ -28,7 +28,9 @@ export function projectNode(): Plugin[] {
         return {
           build: {
             lib: {
-              entry: resolve(cwd, "./src/main.mts"),
+              entry: {
+                main: resolve(cwd, "./src/main.mts"),
+              },
               formats: ["es"],
             },
           },
