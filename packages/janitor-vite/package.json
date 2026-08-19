@@ -28,7 +28,7 @@
     "unplugin-dts": "^1.0.3",
     "unplugin-swc": "^1.5.11",
     "vite": "^8.2.1",
-    "vitest": "^4.1.10"
+    "vitest": "^4.1.11"
   },
   "devDependencies": {
     "typescript": "^6.0.3"
