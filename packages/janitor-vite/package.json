@@ -11,6 +11,9 @@
     "require": "./dist/index.cjs",
     "import": "./dist/index.js"
   },
+  "engines": {
+    "node": ">=24"
+  },
   "scripts": {
     "build": "vite build"
   },
