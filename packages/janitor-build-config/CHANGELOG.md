@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [21.1.0](https://github.com/zthun/janitor/compare/v21.0.3...v21.1.0) (2026-08-19)
+
+### Features
+
+* class, ZViteConfigBuilder has been deprecated ([6fff939](https://github.com/zthun/janitor/commit/6fff9397045403b194f2962651de3fe40f05e7cb))
+* class, ZViteLibraryBuilder, has been deprecated ([615c8b4](https://github.com/zthun/janitor/commit/615c8b467b86adcd7c28132a1a5bf935fbf3e101))
+* class, ZViteServerBuilder, has been deprecated ([3588af4](https://github.com/zthun/janitor/commit/3588af43cd351bb8bf6479664249149cf598856a))
+* class, ZViteTestBuilder, has been deprecated ([c0de9f7](https://github.com/zthun/janitor/commit/c0de9f7f85d5b9c98085269410c51c8b10d7ab1e))
+
+
 # [21.0.0](https://github.com/zthun/janitor/compare/v20.0.7...v21.0.0) (2026-08-09)
 
 ### Build System
