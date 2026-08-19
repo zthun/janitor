@@ -49,6 +49,8 @@ import { ZViteLibraryBuilder } from "./vite-library-builder.mjs";
  * const config = new ZViteConfigBuilder().library().build();
  * export default defineConfig(config);
  * ```
+ *
+ * @deprecated Use @zthun/janitor-vite plugins instead.
  */
 export class ZViteConfigBuilder {
   private config: ViteUserConfig;
