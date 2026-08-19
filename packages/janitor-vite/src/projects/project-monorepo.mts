@@ -3,6 +3,7 @@ import "vitest/config";
 import type { Plugin } from "vite";
 
 import { resolveCwd } from "../path/resolve-cwd.mjs";
+import { project } from "./project.mjs";
 
 /**
  * A special project type for the root vite config or vitest config where
@@ -18,6 +19,7 @@ import { resolveCwd } from "../path/resolve-cwd.mjs";
  */
 export function projectMonorepo(): Plugin[] {
   return [
+    ...project(),
     {
       name: "janitor:project-monorepo",
       config: (current) => {

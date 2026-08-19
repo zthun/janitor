@@ -160,6 +160,10 @@ describe("Project", () => {
   });
 
   describe("Monorepo", () => {
+    it("should add the project plugin", () => {
+      shouldAddPlugin(`${domain}:project`, projectMonorepo);
+    });
+
     it("should add the plugin", () => {
       shouldAddPlugin(`${domain}:project-monorepo`, projectMonorepo);
     });
