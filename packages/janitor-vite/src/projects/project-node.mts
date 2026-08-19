@@ -2,6 +2,7 @@ import { resolve } from "node:path";
 
 import type { Plugin } from "vite";
 
+import { extensionExternalize } from "../extensions/extension-externalize.mjs";
 import { resolveCwd } from "../helpful/resolve-cwd.mjs";
 import { project } from "./project.mjs";
 
@@ -18,6 +19,7 @@ import { project } from "./project.mjs";
 export function projectNode(): Plugin[] {
   return [
     ...project(),
+    ...extensionExternalize({ packageJson: false }),
     {
       name: "janitor:project-node",
       config: (current) => {

@@ -80,11 +80,6 @@ describe("Extension", () => {
       shouldAddPlugin(`${domain}:extension-externalize`, extensionExternalize);
     });
 
-    it("should throw an error if the package.json file does not exist", () => {
-      const packageJson = "/path/to/package/json/does/not/exist";
-      expect(() => createTestTarget({ packageJson })).toThrow(Error);
-    });
-
     describe("Dependencies", () => {
       describe("Transitive", () => {
         it("should be external", () => {
@@ -121,11 +116,19 @@ describe("Extension", () => {
 
     describe("Node Builtins", () => {
       it("should be external for classic node", () => {
-        shouldBeExternal(true, "path");
+        shouldBeExternal(true, "path", { packageJson: false });
       });
 
       it("should be external for modern node", () => {
-        shouldBeExternal(true, "node:fs");
+        shouldBeExternal(true, "node:fs", {
+          packageJson: "/path/does/not/exist",
+        });
+      });
+
+      it("should be. external for node with prefix only", () => {
+        shouldBeExternal(true, "node:sqlite", {
+          packageJson: import.meta.filename,
+        });
       });
     });
 
