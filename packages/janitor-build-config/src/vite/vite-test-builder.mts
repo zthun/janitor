@@ -3,6 +3,11 @@ import type { InlineConfig, VitestEnvironment } from "vitest/node";
 
 /**
  * A builder for test configurations found in vite's defineConfig test field.
+ *
+ * @deprecated
+ *        Use @zthun/janitor-vite plugins instead.  Those plugins automatically
+ *        give test configuration.
+ *
  */
 export class ZViteTestBuilder {
   private test: InlineConfig;

@@ -1,0 +1,56 @@
+{
+  "name": "@zthun/janitor-vite",
+  "version": "21.0.3",
+  "description": "A shared set of plugins for vite that use conventions over configuration",
+  "type": "module",
+  "types": "./dist/index.d.mts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "exports": {
+    "types": "./dist/index.d.mts",
+    "require": "./dist/index.cjs",
+    "import": "./dist/index.js"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "vite build"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zthun/janitor",
+    "directory": "packages/janitor-vite"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@swc/core": "^1.16.0",
+    "@vitejs/plugin-react-swc": "^4.3.3",
+    "happy-dom": "^20.11.2",
+    "lodash-es": "^4.18.1",
+    "unplugin-dts": "^1.0.3",
+    "unplugin-swc": "^1.5.11",
+    "vite": "^8.2.1",
+    "vitest": "^4.1.11"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.3"
+  },
+  "peerDependencies": {
+    "happy-dom": "^20.11.2",
+    "vite": "^8.2.1",
+    "vitest": "^4.1.11"
+  },
+  "peerDependenciesMeta": {
+    "happy-dom": {
+      "optional": true
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Anthony Bonta"
+}

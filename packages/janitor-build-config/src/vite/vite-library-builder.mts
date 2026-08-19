@@ -3,6 +3,8 @@ import type { LibraryOptions } from "vite";
 
 /**
  * A builder for Vite library configurations.
+ *
+ * @deprecated Use @zthun/janitor-vite plugins instead
  */
 export class ZViteLibraryBuilder {
   private library: LibraryOptions = {
