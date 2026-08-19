@@ -2,7 +2,7 @@ import { resolve } from "node:path";
 
 import type { Plugin } from "vite";
 
-import { resolveCwd } from "../path/resolve-cwd.mjs";
+import { resolveCwd } from "../helpful/resolve-cwd.mjs";
 import { project } from "./project.mjs";
 
 /**

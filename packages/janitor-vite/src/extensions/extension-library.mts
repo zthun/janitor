@@ -4,7 +4,7 @@ import { castArray } from "lodash-es";
 import dts from "unplugin-dts/vite";
 import type { Plugin } from "vite";
 
-import { resolveCwd } from "../path/resolve-cwd.mjs";
+import { resolveCwd } from "../helpful/resolve-cwd.mjs";
 import { extensionExternalize } from "./extension-externalize.mjs";
 
 /**

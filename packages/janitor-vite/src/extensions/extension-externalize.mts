@@ -5,7 +5,7 @@ import { resolve } from "node:path";
 
 import type { Plugin, UserConfig } from "vite";
 
-import { resolveCwd } from "../path/resolve-cwd.mjs";
+import { resolveCwd } from "../helpful/resolve-cwd.mjs";
 
 /**
  * Options for externalizing dependencies.
