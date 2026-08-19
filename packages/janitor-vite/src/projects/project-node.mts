@@ -27,9 +27,8 @@ export function projectNode(): Plugin[] {
           build: {
             lib: {
               entry: resolve(cwd, "./src/main.mts"),
+              formats: ["es"],
             },
-
-            formats: ["es"],
           },
         };
       },
