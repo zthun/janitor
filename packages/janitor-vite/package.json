@@ -21,7 +21,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/zthun/janitor",
-    "directory": "packages/janitor-build-config"
+    "directory": "packages/janitor-vite"
   },
   "files": [
     "dist"
