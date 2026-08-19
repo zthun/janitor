@@ -21,6 +21,11 @@ export function projectReact(): Plugin[] {
     ...react(),
     {
       name: "janitor:project-react",
+      config: () => {
+        return {
+          oxc: false,
+        };
+      },
     },
   ];
 }

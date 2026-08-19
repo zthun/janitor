@@ -109,6 +109,15 @@ describe("Project", () => {
     it("should contain the plugin", () => {
       shouldAddPlugin(`${domain}:project-react`, projectReact);
     });
+
+    it("should not build with oxc", () => {
+      shouldSetConfig(
+        false,
+        `${domain}:project-react`,
+        (c) => c?.oxc,
+        projectReact,
+      );
+    });
   });
 
   describe("Node", () => {
