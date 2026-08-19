@@ -7,6 +7,7 @@ import { describe, expect, it } from "vitest";
 import { project } from "./project.mjs";
 import { projectCli } from "./project-cli.mjs";
 import { projectDom } from "./project-dom.mjs";
+import { projectMonorepo } from "./project-monorepo.mjs";
 import { projectNestJs } from "./project-nestjs.mjs";
 import { projectNode } from "./project-node.mjs";
 import { projectReact } from "./project-react.mjs";
@@ -155,6 +156,24 @@ describe("Project", () => {
 
     it("should contain the plugin", () => {
       shouldAddPlugin(`${domain}:project-nestjs`, projectNestJs);
+    });
+  });
+
+  describe("Monorepo", () => {
+    it("should add the plugin", () => {
+      shouldAddPlugin(`${domain}:project-monorepo`, projectMonorepo);
+    });
+
+    it("should add all found projects inside the packages folder", () => {
+      const pattern = "{vite,vitest}.config.{js,cjs,mjs,ts,mts}";
+      const expected = expect.stringContaining(pattern);
+
+      shouldSetConfig(
+        expect.arrayContaining([expected]),
+        `${domain}:project-monorepo`,
+        (c) => c?.test?.projects,
+        projectMonorepo,
+      );
     });
   });
 });
