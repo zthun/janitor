@@ -63,7 +63,7 @@ export function extensionLibrary(): Plugin[] {
               entry: {
                 index: resolve(cwd, "./src/index.mts"),
               },
-              formats: ["es"],
+              formats: ["cjs", "es"],
             },
           },
         };

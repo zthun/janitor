@@ -4,9 +4,11 @@
   "description": "A shared set of plugins for vite that use conventions over configuration",
   "type": "module",
   "types": "./dist/index.d.mts",
+  "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "exports": {
     "types": "./dist/index.d.mts",
+    "require": "./dist/index.cjs",
     "import": "./dist/index.js"
   },
   "scripts": {
