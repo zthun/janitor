@@ -18,17 +18,30 @@ yarn add @zthun/janitor-ts-config typescript --dev
 
 ## Available presets
 
-- `base.json` — strict defaults aimed as the root for all possible
-  configurations
-- `node.json` — for node based projects.
-- `browser.json` — for browser based projects.
-- `react.json` — for projects that are browser based and use react as the
-  framework
-- `nest-js.json` — for node based projects that use nest-js as a framework.
+| Name      | Description                                                        |
+| --------- | ------------------------------------------------------------------ |
+| base      | Core file that should always be included                           |
+| universal | Project libraries that output for both node and browsers           |
+| node      | Specific to projects that output only for node                     |
+| browser   | Specific to projects that only target the browser                  |
+| nest-js.  | Specific to projects that target node using the nest-js framework  |
+| react     | Specific to projects that target browsers with the react framework |
 
 ## Usage examples
 
-### Node Based - Libraries, CLIs, and Services
+### Universal libraries for node and browser
+
+```json
+{
+  "extends": [
+    "@zthun/janitor-ts-config/base.json",
+    "@zthun/janitor-ts-config/universal.json"
+  ],
+  "include": ["**/*.ts", "**/*.mts"]
+}
+```
+
+### Node apps
 
 ```json
 {
@@ -36,9 +49,6 @@ yarn add @zthun/janitor-ts-config typescript --dev
     "@zthun/janitor-ts-config/base.json",
     "@zthun/janitor-ts-config/node.json"
   ],
-  "compilerOptions": {
-    "baseUrl": "."
-  },
   "include": ["**/*.ts"]
 }
 ```
@@ -52,9 +62,6 @@ yarn add @zthun/janitor-ts-config typescript --dev
     "@zthun/janitor-ts-config/browser.json",
     "@zthun/janitor-ts-config/react.json"
   ],
-  "compilerOptions": {
-    "baseUrl": "."
-  },
   "include": ["**/*.ts", "**/*.tsx"]
 }
 ```
