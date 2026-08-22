@@ -31,6 +31,14 @@ yarn add @zthun/janitor-ts-config typescript --dev
 
 ### Universal libraries for node and browser
 
+> Note that there is no @types support for intersection between node and
+> browsers, thus universal just uses the default types, which does include some
+> exclusive apis. You will need to have the discipline to not use browser or
+> node exclusive apis at the moment, and if you do, you will be responsible for
+> fixing it until an intersection package is available. For today, universal is
+> the same as base, but is just included for semantics so those reading the
+> tsconfig know that the project is meant to run against node and browsers.
+
 ```json
 {
   "extends": [
