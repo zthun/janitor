@@ -53,7 +53,7 @@ yarn add @zthun/janitor-ts-config typescript --dev
 }
 ```
 
-### Browser or React apps
+### React Apps
 
 ```json
 {
