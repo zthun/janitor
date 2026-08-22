@@ -3515,6 +3515,8 @@ __metadata:
 "@zthun/janitor-ts-config@workspace:packages/janitor-ts-config":
   version: 0.0.0-use.local
   resolution: "@zthun/janitor-ts-config@workspace:packages/janitor-ts-config"
+  dependencies:
+    "@types/node": "npm:*"
   peerDependencies:
     typescript: ">=5 <7"
   languageName: unknown
