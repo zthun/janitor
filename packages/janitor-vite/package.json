@@ -27,13 +27,13 @@
     "dist"
   ],
   "dependencies": {
-    "@swc/core": "^1.16.0",
+    "@swc/core": "^1.16.1",
     "@vitejs/plugin-react-swc": "^4.3.3",
-    "happy-dom": "^20.11.2",
+    "happy-dom": "^20.11.6",
     "lodash-es": "^4.18.1",
     "unplugin-dts": "^1.0.3",
     "unplugin-swc": "^1.5.11",
-    "vite": "^8.2.1",
+    "vite": "^8.2.2",
     "vitest": "^4.1.11"
   },
   "devDependencies": {
