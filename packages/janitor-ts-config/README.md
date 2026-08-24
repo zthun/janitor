@@ -18,61 +18,76 @@ yarn add @zthun/janitor-ts-config typescript --dev
 
 ## Available presets
 
-- `base.json` — strict defaults aimed as the root for all possible
-  configurations
-- `node.json` — for node based projects.
-- `browser.json` — for browser based projects.
-- `react.json` — for projects that are browser based and use react as the
-  framework
-- `nest-js.json` — for node based projects that use nest-js as a framework.
+| Project | Description                                                                                   |
+| ------- | --------------------------------------------------------------------------------------------- |
+| base    | Strict defaults aimed as the root for all possible configurations                             |
+| node    | Node based projects. Removes the DOM lib. Should always be paired with base.                  |
+| browser | Browser based projects. Should always be paired with base                                     |
+| nest-js | Node based projects with the NestJS framework. Should always be paired with node and base     |
+| react   | Browser based project with the React framework. Should always be paired with browser and base |
 
 ## Usage examples
 
-### Node Based - Libraries, CLIs, and Services
+### Library for both browser and node
 
 ```json
 {
+  "$schema": "https://www.schemastore.org/tsconfig",
+  "extends": ["@zthun/janitor-ts-config/base.json"]
+}
+```
+
+### Browser
+
+```json
+{
+  "$schema": "https://www.schemastore.org/tsconfig",
+  "extends": [
+    "@zthun/janitor-ts-config/base.json",
+    "@zthun/janitor-ts-config/browser.json"
+  ]
+}
+```
+
+### React
+
+```json
+{
+  "$schema": "https://www.schemastore.org/tsconfig",
+  "extends": [
+    "@zthun/janitor-ts-config/base.json",
+    "@zthun/janitor-ts-config/browser.json",
+    "@zthun/janitor-ts-config/react.json"
+  ]
+}
+```
+
+### Node
+
+Note that for node, you may need to be explicit when using @types/node globals.
+
+```json
+{
+  "$schema": "https://www.schemastore.org/tsconfig",
   "extends": [
     "@zthun/janitor-ts-config/base.json",
     "@zthun/janitor-ts-config/node.json"
   ],
   "compilerOptions": {
-    "baseUrl": "."
-  },
-  "include": ["**/*.ts"]
+    "types": ["node"]
+  }
 }
 ```
 
-### Browser or React apps
+### NestJS
 
 ```json
 {
-  "extends": [
-    "@zthun/janitor-ts-config/base.json",
-    "@zthun/janitor-ts-config/browser.json",
-    "@zthun/janitor-ts-config/react.json"
-  ],
-  "compilerOptions": {
-    "baseUrl": "."
-  },
-  "include": ["**/*.ts", "**/*.tsx"]
-}
-```
-
-### NestJS services
-
-```json
-{
+  "$schema": "https://www.schemastore.org/tsconfig",
   "extends": [
     "@zthun/janitor-ts-config/base.json",
     "@zthun/janitor-ts-config/node.json",
     "@zthun/janitor-ts-config/nest-js.json"
-  ],
-  "compilerOptions": {
-    "baseUrl": "."
-  },
-  "include": ["**/*.ts"]
+  ]
 }
 ```
-
-Adjust `include`, `paths`, and `baseUrl` to fit your project layout as needed.
