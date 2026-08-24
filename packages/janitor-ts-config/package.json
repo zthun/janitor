@@ -16,9 +16,6 @@
   "files": [
     "*.json"
   ],
-  "dependencies": {
-    "@types/node": "*"
-  },
   "peerDependencies": {
     "typescript": ">=5 <7"
   },
