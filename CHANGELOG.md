@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [21.1.1](https://github.com/zthun/janitor/compare/v21.1.0...v21.1.1) (2026-08-24)
+
+### Bug Fixes
+
+* nest-js no longer turns off isolated modules ([2e3b6e1](https://github.com/zthun/janitor/commit/2e3b6e1a7324e6529cbc1ee3c4e7bae2e3f7a303))
+* node now respects node globals ([9c5bd22](https://github.com/zthun/janitor/commit/9c5bd22bc64191d31d16cc09f14d0a6b618f5959))
+
+
 # [21.1.0](https://github.com/zthun/janitor/compare/v21.0.3...v21.1.0) (2026-08-19)
 
 ### Features

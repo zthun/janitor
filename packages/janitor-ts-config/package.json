@@ -1,6 +1,6 @@
 {
   "name": "@zthun/janitor-ts-config",
-  "version": "21.0.0",
+  "version": "21.1.1",
   "description": "A shared configuration for tsconfig files.",
   "keywords": [
     "typescript",
