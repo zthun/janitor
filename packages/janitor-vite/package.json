@@ -1,6 +1,6 @@
 {
   "name": "@zthun/janitor-vite",
-  "version": "21.1.2",
+  "version": "21.1.3",
   "description": "A shared set of plugins for vite that use conventions over configuration",
   "type": "module",
   "types": "./dist/index.d.mts",

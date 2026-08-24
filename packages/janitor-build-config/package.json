@@ -1,6 +1,6 @@
 {
   "name": "@zthun/janitor-build-config",
-  "version": "21.1.2",
+  "version": "21.1.3",
   "description": "A shared configuration for builds that create websites, apis, and tests",
   "type": "module",
   "types": "./dist/index.d.mts",
