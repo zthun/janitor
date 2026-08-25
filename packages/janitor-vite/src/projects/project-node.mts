@@ -19,7 +19,7 @@ import { project } from "./project.mjs";
 export function projectNode(): Plugin[] {
   return [
     ...project(),
-    ...extensionExternalize({ packageJson: false }),
+    ...extensionExternalize(),
     {
       name: "janitor:project-node",
       config: (current) => {
