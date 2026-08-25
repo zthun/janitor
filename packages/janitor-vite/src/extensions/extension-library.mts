@@ -28,6 +28,10 @@ import { extensionExternalize } from "./extension-externalize.mjs";
  * to a system by themselves.  They are bundled with the overarching parent
  * application.
  *
+ * Note that if you combine this with something like node or nest, which
+ * expects a main.mts file as the entry point, that entry point goes away
+ * and the index.mts file will take over.
+ *
  * @returns
  *        The list of plugins that turn any project into a library.
  */
@@ -54,6 +58,10 @@ export function extensionLibrary(): Plugin[] {
       name: "janitor:extension-library",
       config: (current) => {
         const cwd = resolveCwd(current);
+
+        // The library extension fully controls the lib, so if we have additional
+        // formats or entry points, those have to go away.
+        delete current.build?.lib;
 
         return {
           build: {
