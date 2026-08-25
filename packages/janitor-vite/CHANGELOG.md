@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [21.1.4](https://github.com/zthun/janitor/compare/v21.1.3...v21.1.4) (2026-08-25)
+
+### Bug Fixes
+
+* library should no longer require both main and index for node ([ae3cfd5](https://github.com/zthun/janitor/commit/ae3cfd576d16bbfbe337373945e0b3e2d98afb26))
+
+
 ## [21.1.3](https://github.com/zthun/janitor/compare/v21.1.2...v21.1.3) (2026-08-24)
 
 **Note:** Version bump only for package @zthun/janitor-vite
