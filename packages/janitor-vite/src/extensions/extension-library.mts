@@ -61,7 +61,7 @@ export function extensionLibrary(): Plugin[] {
 
         // The library extension fully controls the lib, so if we have additional
         // formats or entry points, those have to go away.
-        delete current.build?.lib;
+        delete current?.build?.lib;
 
         return {
           build: {
