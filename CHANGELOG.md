@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [21.1.5](https://github.com/zthun/janitor/compare/v21.1.4...v21.1.5) (2026-08-25)
+
+### Bug Fixes
+
+* project node now always externalizes dependencies ([6b5e93e](https://github.com/zthun/janitor/commit/6b5e93ef87a55671788224f4c8c077c1c0a3e1ac))
+
+
 ## [21.1.4](https://github.com/zthun/janitor/compare/v21.1.3...v21.1.4) (2026-08-25)
 
 ### Bug Fixes
