@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [21.2.0](https://github.com/zthun/janitor/compare/v21.1.5...v21.2.0) (2026-08-26)
+
+### Features
+
+* extension test serially adds one at a time tests ([62d3c89](https://github.com/zthun/janitor/commit/62d3c892087e6149fad5efc1c2ffa0cf6b128c2b))
+
+
 ## [21.1.5](https://github.com/zthun/janitor/compare/v21.1.4...v21.1.5) (2026-08-25)
 
 ### Bug Fixes
