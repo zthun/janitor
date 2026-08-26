@@ -8,6 +8,7 @@ import { extensionDevServer } from "./extension-dev-server.mjs";
 import type { ExternalizeOptions } from "./extension-externalize.mjs";
 import { extensionExternalize } from "./extension-externalize.mjs";
 import { extensionLibrary } from "./extension-library.mjs";
+import { extensionTestSerially } from "./extension-test-serially.mjs";
 
 describe("Extension", () => {
   const domain = "janitor";
@@ -167,7 +168,7 @@ describe("Extension", () => {
     });
   });
 
-  describe("Server", () => {
+  describe("Dev Server", () => {
     it("should add the plugin", () => {
       shouldAddPlugin(`${domain}:extension-dev-server`, extensionDevServer);
     });
@@ -190,6 +191,42 @@ describe("Extension", () => {
         `${domain}:extension-dev-server`,
         (c) => c?.server?.port,
         extensionDevServer(options),
+      );
+    });
+  });
+
+  describe("Test Serially", () => {
+    it("should add the plugin", () => {
+      shouldAddPlugin(
+        `${domain}:extension-test-serially`,
+        extensionTestSerially,
+      );
+    });
+
+    it("should turn off file parallelism", () => {
+      shouldSetConfig(
+        false,
+        `${domain}:extension-test-serially`,
+        (c) => c?.test?.fileParallelism,
+        extensionTestSerially,
+      );
+    });
+
+    it("should set max concurrency to 1", () => {
+      shouldSetConfig(
+        1,
+        `${domain}:extension-test-serially`,
+        (c) => c?.test?.maxConcurrency,
+        extensionTestSerially,
+      );
+    });
+
+    it("should run in isolate", () => {
+      shouldSetConfig(
+        true,
+        `${domain}:extension-test-serially`,
+        (c) => c?.test?.isolate,
+        extensionTestSerially,
       );
     });
   });

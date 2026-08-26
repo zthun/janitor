@@ -1,6 +1,7 @@
 export * from "./extensions/extension-dev-server.mjs";
 export * from "./extensions/extension-externalize.mjs";
 export * from "./extensions/extension-library.mjs";
+export * from "./extensions/extension-test-serially.mjs";
 export * from "./projects/project.mjs";
 export * from "./projects/project-cli.mjs";
 export * from "./projects/project-dom.mjs";
