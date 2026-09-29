@@ -3480,7 +3480,7 @@ __metadata:
   peerDependencies:
     typedoc: ">=0.28.5 <1.0.0"
     vite: ">=8 <9"
-    vitest: ">=4 <5"
+    vitest: ">=4 <6"
   peerDependenciesMeta:
     typedoc:
       optional: true
