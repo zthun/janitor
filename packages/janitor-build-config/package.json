@@ -31,7 +31,7 @@
     "dist"
   ],
   "dependencies": {
-    "@swc/core": "^1.16.12",
+    "@swc/core": "^1.16.13",
     "@vitejs/plugin-react-swc": "^4.3.3",
     "lodash-es": "^4.18.1",
     "typedoc": "^0.28.20",
@@ -39,7 +39,7 @@
     "vite": "^8.3.1",
     "vite-plugin-checker": "^0.14.5",
     "vite-plugin-dts": "=5.1.0",
-    "vitest": "^5.0.2"
+    "vitest": "^5.0.3"
   },
   "devDependencies": {
     "typescript": "^6.0.3"
