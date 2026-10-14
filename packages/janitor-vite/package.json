@@ -40,8 +40,8 @@
     "typescript": "^6.0.3"
   },
   "peerDependencies": {
-    "happy-dom": "^20.11.2",
-    "vite": "^8.2.1",
+    "happy-dom": ">=20 <22",
+    "vite": ">=8 <9",
     "vitest": ">=4 <6"
   },
   "peerDependenciesMeta": {
