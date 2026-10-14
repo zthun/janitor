@@ -3441,7 +3441,11 @@ __metadata:
     react: ">=18 <20"
     typescript: ">=5 <7"
   peerDependenciesMeta:
+    prettier:
+      optional: true
     react:
+      optional: true
+    typescript:
       optional: true
   languageName: unknown
   linkType: soft
