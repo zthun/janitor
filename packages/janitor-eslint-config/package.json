@@ -53,7 +53,13 @@
     "typescript": ">=5 <7"
   },
   "peerDependenciesMeta": {
+    "prettier": {
+      "optional": true
+    },
     "react": {
+      "optional": true
+    },
+    "typescript": {
       "optional": true
     }
   },
