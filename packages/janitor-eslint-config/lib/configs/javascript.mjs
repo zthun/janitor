@@ -6,6 +6,11 @@ import _unused from "eslint-plugin-unused-imports";
 
 import { ExtEs, files } from "../files/files.mjs";
 
+/**
+ * Adds javascript linting to your project.
+ *
+ * You will most likely always need this one.
+ */
 export const javascript = defineConfig([
   {
     ...js.configs.recommended,

@@ -4,6 +4,9 @@ import { defineConfig } from "eslint/config";
 
 import { ExtCss, ExtHtml, files } from "../files/files.mjs";
 
+/**
+ * Adds html linting to your project.
+ */
 export const html = defineConfig([
   {
     ..._html.configs["flat/recommended"],

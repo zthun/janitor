@@ -3,6 +3,9 @@ import { defineConfig } from "eslint/config";
 
 import { ExtJson, files } from "../files/files.mjs";
 
+/**
+ * Adds json linting to your project.
+ */
 export const json = defineConfig([
   {
     ..._json.configs.recommended,

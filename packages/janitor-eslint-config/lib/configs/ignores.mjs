@@ -1,5 +1,8 @@
 import { defineConfig, globalIgnores } from "eslint/config";
 
+/**
+ * Adds the standard global ignores.
+ */
 export const ignores = defineConfig([
   globalIgnores([
     // Outputs

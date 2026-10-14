@@ -14,6 +14,9 @@ const name = "typescript-eslint/recommended-type-checked";
 const recommended = recommendedTypeChecked.find((x) => x.name === name) || {};
 const { rules } = recommended;
 
+/**
+ * Adds typescript linting to your project.
+ */
 export const typescript = defineConfig([
   {
     ...base,

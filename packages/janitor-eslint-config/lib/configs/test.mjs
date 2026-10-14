@@ -3,6 +3,9 @@ import { defineConfig } from "eslint/config";
 
 import { ExtEs, filesTest } from "../files/files.mjs";
 
+/**
+ * Adds linting for vitest.
+ */
 export const test = defineConfig([
   {
     ...vitest.configs.recommended,

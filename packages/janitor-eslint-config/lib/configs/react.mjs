@@ -3,6 +3,9 @@ import { defineConfig } from "eslint/config";
 
 import { ExtEs, files } from "../files/files.mjs";
 
+/**
+ * Adds linting for react based projects.
+ */
 export const react = defineConfig([
   {
     files: files(...ExtEs),

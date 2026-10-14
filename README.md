@@ -12,8 +12,16 @@ It is not only important that your code works, but it is also important that
 your code is somewhat clean. This leads to less bugs, less complaints, and less
 rot.
 
-This repository contains several shared configurations for eslint, vite,
-tsconfig, and typedoc.
+This repository contains several shared configurations for eslint, vite, and
+tsconfig.
+
+## Packages
+
+| Name                                                                       | Usage                                                 |
+| -------------------------------------------------------------------------- | ----------------------------------------------------- |
+| [@zthun/janitor-eslint-config](./packages/janitor-eslint-config/README.md) | Shared configuration for eslint                       |
+| [@zthun/janitor-ts-config](./packages/janitor-ts-config/README.md)         | Shared configuration for typescript builds            |
+| [@zthun/janitor-vite](./packages/janitor-vite/README.md)                   | Shared vite plugins for common project configurations |
 
 ## Janitor Lint
 
