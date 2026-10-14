@@ -11,7 +11,16 @@ function environment(environment) {
   });
 }
 
+/**
+ * Configurations for different environments.
+ */
 export const environments = {
+  /**
+   * Adds support for browser globals.
+   */
   browser: [...environment(globals.browser)],
+  /**
+   * Adds support for node globals and node built in apis.
+   */
   node: [...environment(globals.node), ...environment(globals.nodeBuiltin)],
 };
