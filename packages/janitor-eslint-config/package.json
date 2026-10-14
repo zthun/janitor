@@ -41,7 +41,6 @@
     "typescript-eslint": "^8.71.2"
   },
   "devDependencies": {
-    "@zthun/janitor-build-config": "^21.2.4",
     "eslint": "^10.12.0",
     "prettier": "^3.9.10",
     "typescript": "^6.0.3",
