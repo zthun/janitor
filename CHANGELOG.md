@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [21.2.5](https://github.com/zthun/janitor/compare/v21.2.4...v21.2.5) (2026-10-14)
+
+### Build System
+
+* remove build config ([d01b321](https://github.com/zthun/janitor/commit/d01b3217aa8d538c4782907b52371708523fda23))
+
+### BREAKING CHANGES
+
+* janitor-build-config and typedoc is no longer supported
+
+
 ## [21.2.4](https://github.com/zthun/janitor/compare/v21.2.3...v21.2.4) (2026-10-01)
 
 **Note:** Version bump only for package @zthun/janitor

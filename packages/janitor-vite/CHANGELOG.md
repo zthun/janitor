@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [21.2.5](https://github.com/zthun/janitor/compare/v21.2.4...v21.2.5) (2026-10-14)
+
+**Note:** Version bump only for package @zthun/janitor-vite
+
+
+
+
+
 ## [21.2.4](https://github.com/zthun/janitor/compare/v21.2.3...v21.2.4) (2026-10-01)
 
 **Note:** Version bump only for package @zthun/janitor-vite
