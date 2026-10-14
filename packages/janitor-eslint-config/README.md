@@ -25,7 +25,7 @@ In your eslint.config.mjs file, add the following.
 ```ts
 import { environments, recommended } from "@zthun/janitor-eslint-config";
 
-export default [...recommended, ...environment.node];
+export default [...recommended, ...environments.node];
 ```
 
 That's it. You now have the recommended rules for zthun scoped projects with
