@@ -33,8 +33,20 @@ typescript.
 
 ## Available configs
 
-| Config | For | In Recommended |
-| ------ | --- | -------------- |
+| Config                                     | For                                                           | Recommended |
+| ------------------------------------------ | ------------------------------------------------------------- | ----------- |
+| [html](./lib/configs/html.mjs)             | HTML linting                                                  | ✅          |
+| [ignores](./lib/configs/ignores.mjs)       | Standard global ignores for generated files and build outputs | ✅          |
+| [javascript](./lib/configs/javascript.mjs) | JavaScript linting and import sorting                         | ✅          |
+| [json](./lib/configs/json.mjs)             | JSON, JSONC, and JSON5 linting                                | ✅          |
+| [markdown](./lib/configs/markdown.mjs)     | Markdown linting                                              | ✅          |
+| [prettier](./lib/configs/prettier.mjs)     | Code formatting with Prettier                                 | ✅          |
+| [react](./lib/configs/react.mjs)           | React linting                                                 |             |
+| [spelling](./lib/configs/spelling.mjs)     | Spell checking with a project dictionary                      | ✅          |
+| [styles](./lib/configs/styles.mjs)         | CSS linting                                                   | ✅          |
+| [test](./lib/configs/test.mjs)             | Vitest test linting                                           | ✅          |
+| [typescript](./lib/configs/typescript.mjs) | TypeScript linting with type checking                         | ✅          |
+| [yaml](./lib/configs/yaml.mjs)             | YAML linting                                                  | ✅          |
 
 ## Environments
 
