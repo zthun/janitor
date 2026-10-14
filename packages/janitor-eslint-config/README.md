@@ -6,10 +6,10 @@ This is the shared eslint configuration for zthun scoped projects.
 
 ```sh
 # NPM
-npm install @zthun/janitor-eslint-config eslint prettier --save-dev
+npm install @zthun/janitor-eslint-config eslint --save-dev
 
 # Yarn
-yarn add @zthun/janitor-eslint-config eslint prettier --dev
+yarn add @zthun/janitor-eslint-config eslint --dev
 ```
 
 ## Usage
@@ -29,24 +29,25 @@ export default [...recommended, ...environments.node];
 ```
 
 That's it. You now have the recommended rules for zthun scoped projects with
-typescript.
+typescript. Note that using recommended also requires the prettier and
+typescript node packages to be installed.
 
 ## Available configs
 
-| Config                                     | For                                                           | Recommended |
-| ------------------------------------------ | ------------------------------------------------------------- | ----------- |
-| [html](./lib/configs/html.mjs)             | HTML linting                                                  | ✅          |
-| [ignores](./lib/configs/ignores.mjs)       | Standard global ignores for generated files and build outputs | ✅          |
-| [javascript](./lib/configs/javascript.mjs) | JavaScript linting and import sorting                         | ✅          |
-| [json](./lib/configs/json.mjs)             | JSON, JSONC, and JSON5 linting                                | ✅          |
-| [markdown](./lib/configs/markdown.mjs)     | Markdown linting                                              | ✅          |
-| [prettier](./lib/configs/prettier.mjs)     | Code formatting with Prettier                                 | ✅          |
-| [react](./lib/configs/react.mjs)           | React linting                                                 |             |
-| [spelling](./lib/configs/spelling.mjs)     | Spell checking with a project dictionary                      | ✅          |
-| [styles](./lib/configs/styles.mjs)         | CSS linting                                                   | ✅          |
-| [test](./lib/configs/test.mjs)             | Vitest test linting                                           | ✅          |
-| [typescript](./lib/configs/typescript.mjs) | TypeScript linting with type checking                         | ✅          |
-| [yaml](./lib/configs/yaml.mjs)             | YAML linting                                                  | ✅          |
+| Config                                     | For                                                                                           | Recommended |
+| ------------------------------------------ | --------------------------------------------------------------------------------------------- | ----------- |
+| [html](./lib/configs/html.mjs)             | HTML linting                                                                                  | ✅          |
+| [ignores](./lib/configs/ignores.mjs)       | Standard global ignores for generated files and build outputs                                 | ✅          |
+| [javascript](./lib/configs/javascript.mjs) | JavaScript linting and import sorting                                                         | ✅          |
+| [json](./lib/configs/json.mjs)             | JSON, JSONC, and JSON5 linting                                                                | ✅          |
+| [markdown](./lib/configs/markdown.mjs)     | Markdown linting                                                                              | ✅          |
+| [prettier](./lib/configs/prettier.mjs)     | Code formatting with Prettier. Requires [prettier](https://prettier.io/)                      | ✅          |
+| [react](./lib/configs/react.mjs)           | React linting. Requires [react](https://react.dev/)                                           |             |
+| [spelling](./lib/configs/spelling.mjs)     | Spell checking with a project dictionary                                                      | ✅          |
+| [styles](./lib/configs/styles.mjs)         | CSS linting                                                                                   | ✅          |
+| [test](./lib/configs/test.mjs)             | Vitest test linting                                                                           | ✅          |
+| [typescript](./lib/configs/typescript.mjs) | TypeScript linting with type checking. Requires [typescript](https://www.typescriptlang.org/) | ✅          |
+| [yaml](./lib/configs/yaml.mjs)             | YAML linting                                                                                  | ✅          |
 
 ## Environments
 
